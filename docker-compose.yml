@@ -1,0 +1,9 @@
+version: "3"
+services:
+  app:
+    build: .
+    volumes:
+      - .:/usr/local/app
+    environment:
+      - PYTHONPATH=/usr/local/app
+    env_file: .env

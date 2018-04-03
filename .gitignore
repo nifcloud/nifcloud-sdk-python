@@ -1,0 +1,9 @@
+/.env
+/build/
+/dist/
+/nifcloud.egg-info/
+/.pytest_cache/
+/docs/build/
+/docs/source/reference/services/
+__pycache__/
+*.pyc

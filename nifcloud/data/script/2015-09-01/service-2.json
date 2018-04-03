@@ -1,0 +1,141 @@
+{
+  "metadata": {
+    "apiVersion": "2015-09-01",
+    "endpointPrefix": "script",
+    "protocol": "script",
+    "serviceAbbreviation": "script",
+    "serviceFullName": "NIFCLOUD Script",
+    "signatureVersion": "v4",
+    "targetPrefix": "2015-09-01",
+    "uid": "script-2015-09-01"
+  },
+  "operations": {
+    "ExecuteScript": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/2015-09-01/"
+      },
+      "input": {
+        "shape": "ExecuteScriptRequest"
+      },
+      "name": "ExecuteScript",
+      "output": {
+        "resultWrapper": "ExecuteScriptResult",
+        "shape": "ExecuteScriptResult"
+      }
+    }
+  },
+  "shapes": {
+    "Boolean": {
+      "name": "Boolean",
+      "type": "boolean"
+    },
+    "Double": {
+      "name": "Double",
+      "type": "double"
+    },
+    "ExecuteScriptRequest": {
+      "members": {
+        "Body": {
+          "locationName": "Body",
+          "shape": "String"
+        },
+        "Header": {
+          "locationName": "Header",
+          "shape": "String"
+        },
+        "Method": {
+          "locationName": "Method",
+          "shape": "String"
+        },
+        "Query": {
+          "locationName": "Query",
+          "shape": "String"
+        },
+        "ScriptIdentifier": {
+          "locationName": "ScriptIdentifier",
+          "shape": "String"
+        }
+      },
+      "name": "ExecuteScriptRequest",
+      "type": "structure"
+    },
+    "ExecuteScriptResult": {
+      "members": {
+        "Result": {
+          "shape": "Result"
+        }
+      },
+      "name": "ExecuteScriptResult",
+      "type": "structure"
+    },
+    "Integer": {
+      "name": "Integer",
+      "type": "integer"
+    },
+    "RequestBody": {
+      "name": "RequestBody",
+      "type": "string"
+    },
+    "RequestHeader": {
+      "name": "RequestHeader",
+      "type": "string"
+    },
+    "RequestQuery": {
+      "name": "RequestQuery",
+      "type": "string"
+    },
+    "ResponseData": {
+      "name": "ResponseData",
+      "type": "string"
+    },
+    "ResponseHeader": {
+      "name": "ResponseHeader",
+      "type": "string"
+    },
+    "ResponseStatus": {
+      "name": "ResponseStatus",
+      "type": "integer"
+    },
+    "Result": {
+      "members": {
+        "RequestBody": {
+          "shape": "RequestBody"
+        },
+        "RequestHeader": {
+          "shape": "RequestHeader"
+        },
+        "RequestQuery": {
+          "shape": "RequestQuery"
+        },
+        "ResponseData": {
+          "shape": "ResponseData"
+        },
+        "ResponseHeader": {
+          "shape": "ResponseHeader"
+        },
+        "ResponseStatus": {
+          "shape": "ResponseStatus"
+        },
+        "ScriptIdentifier": {
+          "shape": "ScriptIdentifier"
+        }
+      },
+      "name": "Result",
+      "type": "structure"
+    },
+    "ScriptIdentifier": {
+      "name": "ScriptIdentifier",
+      "type": "string"
+    },
+    "String": {
+      "name": "String",
+      "type": "string"
+    },
+    "TStamp": {
+      "name": "TStamp",
+      "type": "timestamp"
+    }
+  },
+  "version": "2.0"
+}

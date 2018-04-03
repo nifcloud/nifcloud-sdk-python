@@ -1,0 +1,15 @@
+language: python
+python:
+  - 2.7
+  - 3.6
+cache: pip
+install:
+  - pip install pipenv==11.8.0
+  - pipenv install --ignore-pipfile -d
+  - |
+    if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]] ; then
+      pipenv install configparser==3.5.0 futures==3.2.0
+    fi
+script:
+  - isort --check-only --diff --quiet
+  - make lint

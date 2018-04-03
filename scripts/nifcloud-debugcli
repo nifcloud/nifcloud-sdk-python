@@ -1,0 +1,219 @@
+#!/usr/bin/env python
+import os
+import sys
+
+import awscli.help
+from awscli import (EnvironmentVariables, argparser, clidocs, clidriver,
+                    handlers, topictags)
+from awscli.argprocess import ParamShorthandParser, uri_param
+from awscli.plugin import HierarchicalEmitter, load_plugins
+from botocore import __version__ as botocore_version
+
+from nifcloud import __version__ as nifcloud_version
+from nifcloud import session
+
+AWS_CLI_COMMAND = 'aws'
+NIFCLOUD_CLI_COMMAND = 'nifcloud-debug-cli'
+AWS_SERVICE_NAME = 'AWS'
+NIFCLOUD_SERVICE_NAME = 'NIFCLOUD'
+
+argparser.USAGE = argparser.USAGE.replace(
+    AWS_CLI_COMMAND,
+    NIFCLOUD_CLI_COMMAND
+)
+
+root_dir = os.path.dirname(os.path.dirname(os.path.dirname(
+    os.path.abspath(__file__)
+)))
+
+
+class TopicTagsDB(topictags.TopicTagDB):
+
+    TOPIC_DIR = os.path.join(root_dir, 'nifcloud/data/topics')
+    JSON_INDEX = os.path.join(TOPIC_DIR, 'topic-tags.json')
+
+    def __init__(self, tag_dictionary=None, index_file=None,
+                 topic_dir=None):
+        index_file = (TopicTagsDB.JSON_INDEX
+                      if index_file is None else index_file)
+        topic_dir = TopicTagsDB.TOPIC_DIR if topic_dir is None else topic_dir
+        super(TopicTagsDB, self).__init__(
+            tag_dictionary,
+            index_file,
+            topic_dir
+        )
+
+
+class TopicListerDocumentEventHandler(clidocs.TopicListerDocumentEventHandler):
+
+    DESCRIPTION = (clidocs.TopicListerDocumentEventHandler.DESCRIPTION
+                   .replace(AWS_SERVICE_NAME, NIFCLOUD_SERVICE_NAME)
+                   .replace(AWS_CLI_COMMAND, NIFCLOUD_CLI_COMMAND))
+
+    def __init__(self, *args, **kwargs):
+        super(TopicListerDocumentEventHandler, self).__init__(*args, **kwargs)
+        self._topic_tag_db = TopicTagsDB()
+        self._topic_tag_db.load_json_index()
+
+    def doc_title(self, help_command, **kwargs):
+        doc = help_command.doc
+        doc.style.new_paragraph()
+        doc.style.link_target_definition(
+            refname='cli:aws help %s' % self.help_command.name,
+            link='')
+        doc.style.h1('NIFCLOUD CLI Topic Guide')
+
+
+TopicListerCommand = awscli.help.TopicListerCommand
+TopicListerCommand.EventHandlerClass = TopicListerDocumentEventHandler
+
+
+class TopicDocumentEventHandler(clidocs.TopicDocumentEventHandler):
+
+    def __init__(self, *args, **kwargs):
+        super(TopicDocumentEventHandler, self).__init__(*args, **kwargs)
+        self._topic_tag_db = TopicTagsDB()
+        self._topic_tag_db.load_json_index()
+
+
+TopicHelpCommand = awscli.help.TopicHelpCommand
+TopicHelpCommand.EventHandlerClass = TopicDocumentEventHandler
+
+
+class OperationDocumentEventHandler(clidocs.OperationDocumentEventHandler):
+
+    NIFCLOUD_DOC_BASE = 'https://cloud.nifty.com/api/'
+
+    def _add_top_level_args_reference(self, help_command):
+        help_command.doc.writeln('')
+        help_command.doc.write("See ")
+        help_command.doc.style.internal_link(
+            title="'%s help'" % NIFCLOUD_CLI_COMMAND,
+            page='/reference/index'
+        )
+        help_command.doc.writeln(' for descriptions of global parameters.')
+
+    def _add_webapi_crosslink(self, help_command):
+        doc = help_command.doc
+        operation_model = help_command.obj
+        service_model = operation_model.service_model
+        service_uid = service_model.metadata.get('uid')
+        if service_uid is None:
+            # If there's no service_uid in the model, we can't
+            # be certain if the generated cross link will work
+            # so we don't generate any crosslink info.
+            return
+        doc.style.new_paragraph()
+        doc.write("See also: ")
+        link = '%s/%s/%s' % (self.NIFCLOUD_DOC_BASE, service_uid,
+                             operation_model.name)
+        doc.style.external_link(
+            title="%s API Documentation" % NIFCLOUD_SERVICE_NAME,
+            link=link
+        )
+        doc.writeln('')
+
+
+OperationHelpCommand = awscli.help.OperationHelpCommand
+OperationHelpCommand.EventHandlerClass = OperationDocumentEventHandler
+
+
+class ProviderHelpCommand(awscli.help.ProviderHelpCommand):
+
+    def __init__(self, session, command_table, arg_table,
+                 description, synopsis, usage):
+        super(ProviderHelpCommand, self).__init__(
+            session, command_table, arg_table,
+            description, synopsis, usage
+        )
+        self._related_items = ['%s help topics' % NIFCLOUD_CLI_COMMAND]
+        self._topic_tag_db = TopicTagsDB()
+
+    @property
+    def event_class(self):
+        return NIFCLOUD_CLI_COMMAND
+
+    @property
+    def name(self):
+        return NIFCLOUD_CLI_COMMAND
+
+
+LOG = clidriver.LOG
+
+
+class CLIDriver(clidriver.CLIDriver):
+
+    def create_help_command(self):
+        cli_data = self._get_cli_data()
+        return ProviderHelpCommand(self.session, self._get_command_table(),
+                                   self._get_argument_table(),
+                                   cli_data.get('description', None),
+                                   cli_data.get('synopsis', None),
+                                   cli_data.get('help_usage', None))
+
+    def _show_error(self, msg):
+        msg = msg.replace(AWS_CLI_COMMAND, NIFCLOUD_CLI_COMMAND)
+        LOG.debug(msg, exc_info=True)
+        sys.stderr.write(msg)
+        sys.stderr.write('\n')
+
+    def _create_parser(self, command_table):
+        # Also add a 'help' command.
+        command_table['help'] = self.create_help_command()
+        cli_data = self._get_cli_data()
+        parser = argparser.MainArgParser(
+            command_table, self.session.user_agent(),
+            cli_data.get('description', None),
+            self._get_argument_table(),
+            prog=NIFCLOUD_CLI_COMMAND)
+        return parser
+
+
+clidriver.CLIDriver = CLIDriver
+
+
+# Delete awscli data path from botocore's search path
+_cli_data_path = []
+if 'AWS_DATA_PATH' in os.environ:
+    for path in os.environ['AWS_DATA_PATH'].split(os.pathsep)[:-1]:
+        path = os.path.expandvars(path)
+        path = os.path.expanduser(path)
+        _cli_data_path.append(path)
+os.environ['AWS_DATA_PATH'] = os.pathsep.join(_cli_data_path)
+
+
+def awscli_initialize(event_handlers):
+
+    event_handlers.register('load-cli-arg', uri_param)
+    param_shorthand = ParamShorthandParser()
+    event_handlers.register('process-cli-arg', param_shorthand)
+
+
+handlers.awscli_initialize = awscli_initialize
+
+
+def main():
+    driver = create_clidriver()
+    rc = driver.main()
+
+    return rc
+
+
+def create_clidriver():
+    emitter = HierarchicalEmitter()
+    nifcloud_session = session.Session(EnvironmentVariables, emitter)
+    _set_user_agent_for_session(nifcloud_session)
+    load_plugins(nifcloud_session.full_config.get('plugins', {}),
+                 event_hooks=emitter)
+    driver = clidriver.CLIDriver(session=nifcloud_session)
+    return driver
+
+
+def _set_user_agent_for_session(session):
+    session.user_agent_name = 'nifcloud-debugcli'
+    session.user_agent_version = nifcloud_version
+    session.user_agent_extra = 'botocore/%s' % botocore_version
+
+
+if __name__ == '__main__':
+    sys.exit(main())

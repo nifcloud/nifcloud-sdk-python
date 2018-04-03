@@ -1,0 +1,69 @@
+{
+    "description": "The NIFCLOUD Debug CLI is a command line tool to debug NIFCLOUD SDK.",
+    "synopsis": "nifcloud-debugcli [options] <command> <subcommand> [parameters]",
+    "help_usage": "*nifcloud-debugcli command help* shows how to use a specific command.",
+    "options": {
+        "debug": {
+            "action": "store_true",
+            "help": "<p>Debug.</p>"
+        },
+        "endpoint-url": {
+            "help": "<p>Endpoint URL.</p>"
+        },
+        "no-verify-ssl": {
+            "action": "store_false",
+            "dest": "verify_ssl",
+            "help": "<p>No verify SSL</p>"
+        },
+        "no-paginate": {
+            "action": "store_false",
+            "help": "<p>No paginate.</p>",
+            "dest": "paginate"
+        },
+        "output": {
+            "choices": [
+                "json",
+                "text",
+                "table"
+            ],
+	        "help": "<p>Output format.</p>"
+        },
+        "query": {
+            "help": "<p>JMESPath query.</p>"
+        },
+        "profile": {
+            "help": "<p>Profile.</p>"
+        },
+        "region": {
+	        "help": "<p>Region.</p>"
+        },
+        "version": {
+            "action": "version",
+            "help": "<p>Version.</p>"
+        },
+        "color": {
+            "choices": ["on", "off", "auto"],
+            "default": "auto",
+            "help": "<p>Color.</p>"
+        },
+        "no-sign-request": {
+            "action": "store_false",
+            "dest": "sign_request",
+            "help": "<p>No sign request.</p>"
+        },
+        "ca-bundle": {
+            "dest": "ca_bundle",
+            "help": "<p>CA bundle.</p>"
+        },
+        "cli-read-timeout": {
+            "dest": "read_timeout",
+            "type": "int",
+            "help": "<p>CLI read timeout.</p>"
+        },
+        "cli-connect-timeout": {
+            "dest": "connect_timeout",
+            "type": "int",
+            "help": "<p>CLI connect timeout.</p>"
+        }
+    }
+}

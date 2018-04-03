@@ -1,0 +1,89 @@
+{
+  "partitions": [
+    {
+      "defaults": {
+        "hostname": "{service}.{region}.{dnsSuffix}",
+        "protocols": [
+          "https"
+        ],
+        "signatureVersions": [
+          "v4",
+          "v3",
+          "v2-computing"
+        ]
+      },
+      "dnsSuffix": "api.cloud.nifty.com",
+      "partition": "nifcloud",
+      "partitionName": "NIFCLOUD Standard",
+      "regionRegex": "^(us|jp)\\-\\w+\\-\\d+$",
+      "regions": {
+        "jp-east-1": {
+          "description": "jp-east-1"
+        },
+        "jp-east-2": {
+          "description": "jp-east-2"
+        },
+        "jp-east-3": {
+          "description": "jp-east-3"
+        },
+        "jp-east-4": {
+          "description": "jp-east-4"
+        },
+        "jp-west-1": {
+          "description": "jp-west-1"
+        },
+        "us-east-1": {
+          "description": "us-east-1"
+        }
+      },
+      "services": {
+        "computing": {
+          "defaults": {
+            "signatureVersions": [
+              "v2-computing"
+            ]
+          },
+          "endpoints": {
+            "jp-east-1": {},
+            "jp-east-2": {},
+            "jp-east-3": {},
+            "jp-east-4": {},
+            "jp-west-1": {},
+            "us-east-1": {}
+          }
+        },
+        "nas": {
+          "endpoints": {
+            "jp-east-1": {},
+            "jp-east-2": {},
+            "jp-east-3": {},
+            "jp-east-4": {},
+            "jp-west-1": {}
+          }
+        },
+        "rdb": {
+          "endpoints": {
+            "jp-east-1": {},
+            "jp-east-2": {},
+            "jp-east-3": {},
+            "jp-east-4": {},
+            "jp-west-1": {}
+          }
+        },
+        "script" : {
+          "endpoints" : {
+            "aws-global" : {
+              "credentialScope" : {
+                "region" : "jp-east-1"
+              },
+              "hostname" : "script.api.cloud.nifty.com"
+            }
+          },
+          "isRegionalized" : false,
+          "partitionEndpoint" : "aws-global"
+        }
+      }
+    }
+  ],
+  "version": 3
+}
