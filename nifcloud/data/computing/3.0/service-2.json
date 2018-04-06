@@ -2670,7 +2670,20 @@
       "type": "structure"
     },
     "AllocateAddressRequest": {
-      "members": {},
+      "members": {
+        "InstanceId": {
+          "locationName": "InstanceId",
+          "shape": "String"
+        },
+        "NiftyPrivateIp": {
+          "locationName": "NiftyPrivateIp",
+          "shape": "Boolean"
+        },
+        "Placement": {
+          "locationName": "Placement",
+          "shape": "RequestPlacementStruct"
+        }
+      },
       "name": "AllocateAddressRequest",
       "type": "structure"
     },
@@ -2790,8 +2803,20 @@
     },
     "AssociateRouteTableRequest": {
       "members": {
+        "Agreement": {
+          "locationName": "Agreement",
+          "shape": "Boolean"
+        },
         "RouteTableId": {
           "locationName": "RouteTableId",
+          "shape": "String"
+        },
+        "RouterId": {
+          "locationName": "RouterId",
+          "shape": "String"
+        },
+        "RouterName": {
+          "locationName": "RouterName",
           "shape": "String"
         }
       },
@@ -3051,7 +3076,16 @@
       "type": "structure"
     },
     "AuthorizeSecurityGroupIngressRequest": {
-      "members": {},
+      "members": {
+        "GroupName": {
+          "locationName": "GroupName",
+          "shape": "String"
+        },
+        "IpPermissions": {
+          "locationName": "IpPermissions",
+          "shape": "RequestIpPermissions"
+        }
+      },
       "name": "AuthorizeSecurityGroupIngressRequest",
       "type": "structure"
     },
@@ -3670,6 +3704,10 @@
         "InstanceId": {
           "locationName": "InstanceId",
           "shape": "String"
+        },
+        "NetworkInterface": {
+          "locationName": "NetworkInterface",
+          "shape": "RequestNetworkInterface"
         }
       },
       "name": "CopyInstancesRequest",
@@ -3700,7 +3738,28 @@
       "type": "structure"
     },
     "CreateCustomerGatewayRequest": {
-      "members": {},
+      "members": {
+        "IpAddress": {
+          "locationName": "IpAddress",
+          "shape": "String"
+        },
+        "NiftyCustomerGatewayDescription": {
+          "locationName": "NiftyCustomerGatewayDescription",
+          "shape": "String"
+        },
+        "NiftyCustomerGatewayName": {
+          "locationName": "NiftyCustomerGatewayName",
+          "shape": "String"
+        },
+        "NiftyLanSideCidrBlock": {
+          "locationName": "NiftyLanSideCidrBlock",
+          "shape": "String"
+        },
+        "NiftyLanSideIpAddress": {
+          "locationName": "NiftyLanSideIpAddress",
+          "shape": "String"
+        }
+      },
       "name": "CreateCustomerGatewayRequest",
       "type": "structure"
     },
@@ -3774,9 +3833,17 @@
           "locationName": "InstanceId",
           "shape": "String"
         },
+        "LeftInstance": {
+          "locationName": "LeftInstance",
+          "shape": "Boolean"
+        },
         "Name": {
           "locationName": "Name",
           "shape": "String"
+        },
+        "Placement": {
+          "locationName": "Placement",
+          "shape": "RequestPlacementStruct"
         }
       },
       "name": "CreateImageRequest",
@@ -3892,6 +3959,18 @@
       "members": {
         "DestinationCidrBlock": {
           "locationName": "DestinationCidrBlock",
+          "shape": "String"
+        },
+        "IpAddress": {
+          "locationName": "IpAddress",
+          "shape": "String"
+        },
+        "NetworkId": {
+          "locationName": "NetworkId",
+          "shape": "String"
+        },
+        "NetworkName": {
+          "locationName": "NetworkName",
           "shape": "String"
         },
         "RouteTableId": {
@@ -4071,9 +4150,29 @@
     },
     "CreateVolumeRequest": {
       "members": {
+        "AccountingType": {
+          "locationName": "AccountingType",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "Description",
+          "shape": "String"
+        },
+        "DiskType": {
+          "locationName": "DiskType",
+          "shape": "String"
+        },
+        "InstanceId": {
+          "locationName": "InstanceId",
+          "shape": "String"
+        },
         "Size": {
           "locationName": "Size",
           "shape": "Integer"
+        },
+        "VolumeId": {
+          "locationName": "VolumeId",
+          "shape": "String"
         }
       },
       "name": "CreateVolumeRequest",
@@ -4123,12 +4222,36 @@
     },
     "CreateVpnConnectionRequest": {
       "members": {
+        "Agreement": {
+          "locationName": "Agreement",
+          "shape": "Boolean"
+        },
         "CustomerGatewayId": {
           "locationName": "CustomerGatewayId",
           "shape": "String"
         },
         "NiftyCustomerGatewayName": {
           "locationName": "NiftyCustomerGatewayName",
+          "shape": "String"
+        },
+        "NiftyIPsecConfiguration": {
+          "locationName": "NiftyIPsecConfiguration",
+          "shape": "RequestNiftyIPsecConfigurationStruct"
+        },
+        "NiftyIpsecConfiguration": {
+          "locationName": "NiftyIpsecConfiguration",
+          "shape": "RequestNiftyIpsecConfigurationStruct"
+        },
+        "NiftyTunnel": {
+          "locationName": "NiftyTunnel",
+          "shape": "RequestNiftyTunnelStruct"
+        },
+        "NiftyVpnConnectionDescription": {
+          "locationName": "NiftyVpnConnectionDescription",
+          "shape": "String"
+        },
+        "NiftyVpnConnectionMtu": {
+          "locationName": "NiftyVpnConnectionMtu",
           "shape": "String"
         },
         "NiftyVpnGatewayName": {
@@ -4163,9 +4286,37 @@
     },
     "CreateVpnGatewayRequest": {
       "members": {
+        "AccountingType": {
+          "locationName": "AccountingType",
+          "shape": "String"
+        },
+        "NiftyNetwork": {
+          "locationName": "NiftyNetwork",
+          "shape": "RequestNiftyNetworkStruct"
+        },
+        "NiftyRedundancy": {
+          "locationName": "NiftyRedundancy",
+          "shape": "Boolean"
+        },
+        "NiftyVpnGatewayDescription": {
+          "locationName": "NiftyVpnGatewayDescription",
+          "shape": "String"
+        },
         "NiftyVpnGatewayName": {
           "locationName": "NiftyVpnGatewayName",
           "shape": "String"
+        },
+        "NiftyVpnGatewayType": {
+          "locationName": "NiftyVpnGatewayType",
+          "shape": "String"
+        },
+        "Placement": {
+          "locationName": "Placement",
+          "shape": "RequestPlacementStruct"
+        },
+        "SecurityGroup": {
+          "locationName": "SecurityGroup",
+          "shape": "RequestSecurityGroup"
         }
       },
       "name": "CreateVpnGatewayRequest",
@@ -4886,7 +5037,20 @@
       "type": "structure"
     },
     "DescribeImagesRequest": {
-      "members": {},
+      "members": {
+        "ImageId": {
+          "locationName": "ImageId",
+          "shape": "RequestImageId"
+        },
+        "ImageName": {
+          "locationName": "ImageName",
+          "shape": "RequestImageName"
+        },
+        "Owner": {
+          "locationName": "Owner",
+          "shape": "RequestOwner"
+        }
+      },
       "name": "DescribeImagesRequest",
       "type": "structure"
     },
@@ -5720,6 +5884,10 @@
     },
     "DetachVolumeRequest": {
       "members": {
+        "Agreement": {
+          "locationName": "Agreement",
+          "shape": "Boolean"
+        },
         "InstanceId": {
           "locationName": "InstanceId",
           "shape": "String"
@@ -6790,9 +6958,45 @@
     },
     "ImportInstanceRequest": {
       "members": {
+        "AccountingType": {
+          "locationName": "AccountingType",
+          "shape": "String"
+        },
         "Description": {
           "locationName": "Description",
           "shape": "String"
+        },
+        "InstanceId": {
+          "locationName": "InstanceId",
+          "shape": "String"
+        },
+        "InstanceType": {
+          "locationName": "InstanceType",
+          "shape": "String"
+        },
+        "IpType": {
+          "locationName": "IpType",
+          "shape": "String"
+        },
+        "NetworkInterface": {
+          "locationName": "NetworkInterface",
+          "shape": "RequestNetworkInterface"
+        },
+        "Ovf": {
+          "locationName": "Ovf",
+          "shape": "String"
+        },
+        "Placement": {
+          "locationName": "Placement",
+          "shape": "RequestPlacementStruct"
+        },
+        "PublicIp": {
+          "locationName": "PublicIp",
+          "shape": "String"
+        },
+        "SecurityGroup": {
+          "locationName": "SecurityGroup",
+          "shape": "RequestSecurityGroup"
         }
       },
       "name": "ImportInstanceRequest",
@@ -9290,9 +9494,17 @@
           "locationName": "Description",
           "shape": "String"
         },
+        "NetworkInterface": {
+          "locationName": "NetworkInterface",
+          "shape": "RequestNetworkInterface"
+        },
         "RouterName": {
           "locationName": "RouterName",
           "shape": "String"
+        },
+        "SecurityGroup": {
+          "locationName": "SecurityGroup",
+          "shape": "RequestSecurityGroup"
         },
         "Type": {
           "locationName": "Type",
@@ -12125,6 +12337,18 @@
     },
     "NiftyUpdateRouterNetworkInterfacesRequest": {
       "members": {
+        "Agreement": {
+          "locationName": "Agreement",
+          "shape": "Boolean"
+        },
+        "NetworkInterface": {
+          "locationName": "NetworkInterface",
+          "shape": "RequestNetworkInterface"
+        },
+        "NiftyReboot": {
+          "locationName": "NiftyReboot",
+          "shape": "String"
+        },
         "RouterId": {
           "locationName": "RouterId",
           "shape": "String"
@@ -12933,9 +13157,21 @@
     },
     "RebootInstancesRequest": {
       "members": {
+        "Force": {
+          "locationName": "Force",
+          "shape": "Boolean"
+        },
         "InstanceId": {
           "locationName": "InstanceId",
           "shape": "RequestInstanceId"
+        },
+        "NiftyIsBios": {
+          "locationName": "NiftyIsBios",
+          "shape": "Boolean"
+        },
+        "Tenancy": {
+          "locationName": "Tenancy",
+          "shape": "RequestTenancy"
         },
         "UserData": {
           "locationName": "UserData",
@@ -13279,6 +13515,18 @@
           "locationName": "DestinationCidrBlock",
           "shape": "String"
         },
+        "IpAddress": {
+          "locationName": "IpAddress",
+          "shape": "String"
+        },
+        "NetworkId": {
+          "locationName": "NetworkId",
+          "shape": "String"
+        },
+        "NetworkName": {
+          "locationName": "NetworkName",
+          "shape": "String"
+        },
         "RouteTableId": {
           "locationName": "RouteTableId",
           "shape": "String"
@@ -13393,12 +13641,20 @@
     },
     "RequestCertInfoStruct": {
       "members": {
+        "LocationName": {
+          "locationName": "LocationName",
+          "shape": "String"
+        },
         "OrganizationName": {
           "locationName": "OrganizationName",
           "shape": "String"
         },
         "OrganizationUnitName": {
           "locationName": "OrganizationUnitName",
+          "shape": "String"
+        },
+        "StateName": {
+          "locationName": "StateName",
           "shape": "String"
         }
       },
@@ -13666,6 +13922,23 @@
       "name": "RequestGroupName",
       "type": "list"
     },
+    "RequestGroups": {
+      "member": {
+        "shape": "RequestGroupsStruct"
+      },
+      "name": "RequestGroups",
+      "type": "list"
+    },
+    "RequestGroupsStruct": {
+      "members": {
+        "GroupName": {
+          "locationName": "GroupName",
+          "shape": "String"
+        }
+      },
+      "name": "RequestGroupsStruct",
+      "type": "structure"
+    },
     "RequestHealthCheckStruct": {
       "members": {
         "Interval": {
@@ -13705,6 +13978,20 @@
       },
       "name": "RequestIPAddressesStruct",
       "type": "structure"
+    },
+    "RequestImageId": {
+      "member": {
+        "shape": "String"
+      },
+      "name": "RequestImageId",
+      "type": "list"
+    },
+    "RequestImageName": {
+      "member": {
+        "shape": "String"
+      },
+      "name": "RequestImageName",
+      "type": "list"
     },
     "RequestInboundInterfaceStruct": {
       "members": {
@@ -13777,12 +14064,91 @@
       "name": "RequestInstancesStruct",
       "type": "structure"
     },
+    "RequestIpPermissions": {
+      "member": {
+        "shape": "RequestIpPermissionsStruct"
+      },
+      "name": "RequestIpPermissions",
+      "type": "list"
+    },
+    "RequestIpPermissionsStruct": {
+      "members": {
+        "Description": {
+          "locationName": "Description",
+          "shape": "String"
+        },
+        "FromPort": {
+          "locationName": "FromPort",
+          "shape": "Integer"
+        },
+        "InOut": {
+          "locationName": "InOut",
+          "shape": "String"
+        },
+        "IpProtocol": {
+          "locationName": "IpProtocol",
+          "shape": "String"
+        },
+        "RequestGroups": {
+          "locationName": "Groups",
+          "shape": "RequestGroups"
+        },
+        "RequestIpRanges": {
+          "locationName": "IpRanges",
+          "shape": "RequestIpRanges"
+        },
+        "ToPort": {
+          "locationName": "ToPort",
+          "shape": "Integer"
+        }
+      },
+      "name": "RequestIpPermissionsStruct",
+      "type": "structure"
+    },
+    "RequestIpRanges": {
+      "member": {
+        "shape": "RequestIpRangesStruct"
+      },
+      "name": "RequestIpRanges",
+      "type": "list"
+    },
+    "RequestIpRangesStruct": {
+      "members": {
+        "CidrIp": {
+          "locationName": "CidrIp",
+          "shape": "String"
+        }
+      },
+      "name": "RequestIpRangesStruct",
+      "type": "structure"
+    },
     "RequestKeyName": {
       "member": {
         "shape": "String"
       },
       "name": "RequestKeyName",
       "type": "list"
+    },
+    "RequestLicense": {
+      "member": {
+        "shape": "RequestLicenseStruct"
+      },
+      "name": "RequestLicense",
+      "type": "list"
+    },
+    "RequestLicenseStruct": {
+      "members": {
+        "LicenseName": {
+          "locationName": "LicenseName",
+          "shape": "String"
+        },
+        "LicenseNum": {
+          "locationName": "LicenseNum",
+          "shape": "String"
+        }
+      },
+      "name": "RequestLicenseStruct",
+      "type": "structure"
     },
     "RequestListenInterfaceStruct": {
       "members": {
@@ -14024,6 +14390,18 @@
           "locationName": "DeviceIndex",
           "shape": "Integer"
         },
+        "Dhcp": {
+          "locationName": "Dhcp",
+          "shape": "Boolean"
+        },
+        "DhcpConfigId": {
+          "locationName": "DhcpConfigId",
+          "shape": "String"
+        },
+        "DhcpOptionsId": {
+          "locationName": "DhcpOptionsId",
+          "shape": "String"
+        },
         "IpAddress": {
           "locationName": "IpAddress",
           "shape": "String"
@@ -14055,6 +14433,94 @@
       "name": "RequestNiftyCustomerGatewayName",
       "type": "list"
     },
+    "RequestNiftyIPsecConfigurationStruct": {
+      "members": {
+        "EncryptionAlgorithm": {
+          "locationName": "EncryptionAlgorithm",
+          "shape": "String"
+        },
+        "HashAlgorithm": {
+          "locationName": "HashAlgorithm",
+          "shape": "String"
+        },
+        "PreSharedKey": {
+          "locationName": "PreSharedKey",
+          "shape": "String"
+        }
+      },
+      "name": "RequestNiftyIPsecConfigurationStruct",
+      "type": "structure"
+    },
+    "RequestNiftyIpsecConfigurationStruct": {
+      "members": {
+        "InternetKeyExchange": {
+          "locationName": "InternetKeyExchange",
+          "shape": "String"
+        }
+      },
+      "name": "RequestNiftyIpsecConfigurationStruct",
+      "type": "structure"
+    },
+    "RequestNiftyNetworkStruct": {
+      "members": {
+        "IpAddress": {
+          "locationName": "IpAddress",
+          "shape": "String"
+        },
+        "NetworkId": {
+          "locationName": "NetworkId",
+          "shape": "String"
+        },
+        "NetworkName": {
+          "locationName": "NetworkName",
+          "shape": "String"
+        }
+      },
+      "name": "RequestNiftyNetworkStruct",
+      "type": "structure"
+    },
+    "RequestNiftyTunnelStruct": {
+      "members": {
+        "DestinationPort": {
+          "locationName": "DestinationPort",
+          "shape": "String"
+        },
+        "Encapsulation": {
+          "locationName": "Encapsulation",
+          "shape": "String"
+        },
+        "Mode": {
+          "locationName": "Mode",
+          "shape": "String"
+        },
+        "PeerSessionId": {
+          "locationName": "PeerSessionId",
+          "shape": "String"
+        },
+        "PeerTunnelId": {
+          "locationName": "PeerTunnelId",
+          "shape": "String"
+        },
+        "SessionId": {
+          "locationName": "SessionId",
+          "shape": "String"
+        },
+        "SourcePort": {
+          "locationName": "SourcePort",
+          "shape": "String"
+        },
+        "TunnelId": {
+          "locationName": "TunnelId",
+          "shape": "String"
+        },
+        "Type": {
+          "locationName": "Type",
+          "shape": "String"
+        }
+      },
+      "name": "RequestNiftyTunnelStruct",
+      "type": "structure"
+    },
     "RequestNiftyVpnGatewayName": {
       "member": {
         "shape": "String"
@@ -14085,6 +14551,13 @@
       },
       "name": "RequestOutboundInterfaceStruct",
       "type": "structure"
+    },
+    "RequestOwner": {
+      "member": {
+        "shape": "String"
+      },
+      "name": "RequestOwner",
+      "type": "list"
     },
     "RequestPartition": {
       "member": {
@@ -14746,7 +15219,16 @@
       "type": "structure"
     },
     "RevokeSecurityGroupIngressRequest": {
-      "members": {},
+      "members": {
+        "GroupName": {
+          "locationName": "GroupName",
+          "shape": "String"
+        },
+        "IpPermissions": {
+          "locationName": "IpPermissions",
+          "shape": "RequestIpPermissions"
+        }
+      },
       "name": "RevokeSecurityGroupIngressRequest",
       "type": "structure"
     },
@@ -15216,8 +15698,72 @@
     },
     "RunInstancesRequest": {
       "members": {
+        "AccountingType": {
+          "locationName": "AccountingType",
+          "shape": "String"
+        },
+        "Admin": {
+          "locationName": "Admin",
+          "shape": "String"
+        },
+        "Agreement": {
+          "locationName": "Agreement",
+          "shape": "Boolean"
+        },
+        "Description": {
+          "locationName": "Description",
+          "shape": "String"
+        },
+        "DisableApiTermination": {
+          "locationName": "DisableApiTermination",
+          "shape": "Boolean"
+        },
         "ImageId": {
           "locationName": "ImageId",
+          "shape": "String"
+        },
+        "InstanceId": {
+          "locationName": "InstanceId",
+          "shape": "String"
+        },
+        "InstanceType": {
+          "locationName": "InstanceType",
+          "shape": "String"
+        },
+        "IpType": {
+          "locationName": "IpType",
+          "shape": "String"
+        },
+        "KeyName": {
+          "locationName": "KeyName",
+          "shape": "String"
+        },
+        "License": {
+          "locationName": "License",
+          "shape": "RequestLicense"
+        },
+        "NetworkInterface": {
+          "locationName": "NetworkInterface",
+          "shape": "RequestNetworkInterface"
+        },
+        "Password": {
+          "locationName": "Password",
+          "shape": "String"
+        },
+        "Placement": {
+          "locationName": "Placement",
+          "shape": "RequestPlacementStruct"
+        },
+        "PublicIp": {
+          "locationName": "PublicIp",
+          "shape": "String"
+        },
+        "SecurityGroup": {
+          "locationName": "SecurityGroup",
+          "shape": "RequestSecurityGroup"
+        },
+        "UserData": {
+          "locationName": "UserData",
           "shape": "String"
         }
       },
@@ -15804,6 +16350,14 @@
           "locationName": "InstanceType",
           "shape": "RequestInstanceType"
         },
+        "NiftyIsBios": {
+          "locationName": "NiftyIsBios",
+          "shape": "Boolean"
+        },
+        "Tenancy": {
+          "locationName": "Tenancy",
+          "shape": "RequestTenancy"
+        },
         "UserData": {
           "locationName": "UserData",
           "shape": "String"
@@ -16223,7 +16777,12 @@
       "type": "structure"
     },
     "UpdateSecurityGroupOptionRequest": {
-      "members": {},
+      "members": {
+        "SecurityGroupLimitUpdate": {
+          "locationName": "SecurityGroupLimitUpdate",
+          "shape": "Integer"
+        }
+      },
       "name": "UpdateSecurityGroupOptionRequest",
       "type": "structure"
     },
@@ -16246,6 +16805,10 @@
         "GroupDescriptionUpdate": {
           "locationName": "GroupDescriptionUpdate",
           "shape": "String"
+        },
+        "GroupLogLimitUpdate": {
+          "locationName": "GroupLogLimitUpdate",
+          "shape": "Integer"
         },
         "GroupName": {
           "locationName": "GroupName",
