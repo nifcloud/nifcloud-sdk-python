@@ -567,6 +567,10 @@
         "DBSecurityGroupName": {
           "locationName": "DBSecurityGroupName",
           "shape": "String"
+        },
+        "EC2SecurityGroupName": {
+          "locationName": "EC2SecurityGroupName",
+          "shape": "String"
         }
       },
       "name": "AuthorizeDBSecurityGroupIngressRequest",
@@ -631,7 +635,28 @@
       "type": "structure"
     },
     "CreateDBInstanceReadReplicaRequest": {
-      "members": {},
+      "members": {
+        "DBInstanceClass": {
+          "locationName": "DBInstanceClass",
+          "shape": "String"
+        },
+        "DBInstanceIdentifier": {
+          "locationName": "DBInstanceIdentifier",
+          "shape": "String"
+        },
+        "NiftyReadReplicaPrivateAddress": {
+          "locationName": "NiftyReadReplicaPrivateAddress",
+          "shape": "String"
+        },
+        "NiftyStorageType": {
+          "locationName": "NiftyStorageType",
+          "shape": "Integer"
+        },
+        "SourceDBInstanceIdentifier": {
+          "locationName": "SourceDBInstanceIdentifier",
+          "shape": "String"
+        }
+      },
       "name": "CreateDBInstanceReadReplicaRequest",
       "type": "structure"
     },
@@ -649,6 +674,106 @@
         "AllocatedStorage": {
           "locationName": "AllocatedStorage",
           "shape": "Integer"
+        },
+        "AvailabilityZone": {
+          "locationName": "AvailabilityZone",
+          "shape": "String"
+        },
+        "BackupRetentionPeriod": {
+          "locationName": "BackupRetentionPeriod",
+          "shape": "Integer"
+        },
+        "DBInstanceClass": {
+          "locationName": "DBInstanceClass",
+          "shape": "String"
+        },
+        "DBInstanceIdentifier": {
+          "locationName": "DBInstanceIdentifier",
+          "shape": "String"
+        },
+        "DBName": {
+          "locationName": "DBName",
+          "shape": "String"
+        },
+        "DBParameterGroupName": {
+          "locationName": "DBParameterGroupName",
+          "shape": "String"
+        },
+        "DBSecurityGroups": {
+          "locationName": "DBSecurityGroups",
+          "shape": "RequestDBSecurityGroups"
+        },
+        "Engine": {
+          "locationName": "Engine",
+          "shape": "String"
+        },
+        "EngineVersion": {
+          "locationName": "EngineVersion",
+          "shape": "String"
+        },
+        "LicenseModel": {
+          "locationName": "LicenseModel",
+          "shape": "String"
+        },
+        "MasterUserPassword": {
+          "locationName": "MasterUserPassword",
+          "shape": "String"
+        },
+        "MasterUsername": {
+          "locationName": "MasterUsername",
+          "shape": "String"
+        },
+        "MultiAZ": {
+          "locationName": "MultiAZ",
+          "shape": "Boolean"
+        },
+        "NiftyMasterPrivateAddress": {
+          "locationName": "NiftyMasterPrivateAddress",
+          "shape": "String"
+        },
+        "NiftyMultiAZType": {
+          "locationName": "NiftyMultiAZType",
+          "shape": "Integer"
+        },
+        "NiftyNetworkId": {
+          "locationName": "NiftyNetworkId",
+          "shape": "String"
+        },
+        "NiftyReadReplicaDBInstanceIdentifier": {
+          "locationName": "NiftyReadReplicaDBInstanceIdentifier",
+          "shape": "String"
+        },
+        "NiftyReadReplicaPrivateAddress": {
+          "locationName": "NiftyReadReplicaPrivateAddress",
+          "shape": "String"
+        },
+        "NiftySlavePrivateAddress": {
+          "locationName": "NiftySlavePrivateAddress",
+          "shape": "String"
+        },
+        "NiftyStorageType": {
+          "locationName": "NiftyStorageType",
+          "shape": "Integer"
+        },
+        "NiftyVirtualPrivateAddress": {
+          "locationName": "NiftyVirtualPrivateAddress",
+          "shape": "String"
+        },
+        "Port": {
+          "locationName": "Port",
+          "shape": "Integer"
+        },
+        "PreferredBackupWindow": {
+          "locationName": "PreferredBackupWindow",
+          "shape": "String"
+        },
+        "PreferredMaintenanceWindow": {
+          "locationName": "PreferredMaintenanceWindow",
+          "shape": "String"
+        },
+        "PubliclyAccessible": {
+          "locationName": "PubliclyAccessible",
+          "shape": "Boolean"
         }
       },
       "name": "CreateDBInstanceRequest",
@@ -1158,6 +1283,14 @@
         "EngineVersion": {
           "locationName": "EngineVersion",
           "shape": "String"
+        },
+        "Marker": {
+          "locationName": "Marker",
+          "shape": "String"
+        },
+        "MaxRecords": {
+          "locationName": "MaxRecords",
+          "shape": "Integer"
         }
       },
       "name": "DescribeDBEngineVersionsRequest",
@@ -1180,6 +1313,14 @@
         "DBInstanceIdentifier": {
           "locationName": "DBInstanceIdentifier",
           "shape": "String"
+        },
+        "Marker": {
+          "locationName": "Marker",
+          "shape": "String"
+        },
+        "MaxRecords": {
+          "locationName": "MaxRecords",
+          "shape": "Integer"
         }
       },
       "name": "DescribeDBInstancesRequest",
@@ -1266,6 +1407,14 @@
         "DBParameterGroupName": {
           "locationName": "DBParameterGroupName",
           "shape": "String"
+        },
+        "Marker": {
+          "locationName": "Marker",
+          "shape": "String"
+        },
+        "MaxRecords": {
+          "locationName": "MaxRecords",
+          "shape": "Integer"
         }
       },
       "name": "DescribeDBParameterGroupsRequest",
@@ -1322,6 +1471,14 @@
         "DBSecurityGroupName": {
           "locationName": "DBSecurityGroupName",
           "shape": "String"
+        },
+        "Marker": {
+          "locationName": "Marker",
+          "shape": "String"
+        },
+        "MaxRecords": {
+          "locationName": "MaxRecords",
+          "shape": "Integer"
         }
       },
       "name": "DescribeDBSecurityGroupsRequest",
@@ -1347,6 +1504,18 @@
         },
         "DBSnapshotIdentifier": {
           "locationName": "DBSnapshotIdentifier",
+          "shape": "String"
+        },
+        "Marker": {
+          "locationName": "Marker",
+          "shape": "String"
+        },
+        "MaxRecords": {
+          "locationName": "MaxRecords",
+          "shape": "Integer"
+        },
+        "SnapshotType": {
+          "locationName": "SnapshotType",
           "shape": "String"
         }
       },
@@ -1773,6 +1942,66 @@
         "AllocatedStorage": {
           "locationName": "AllocatedStorage",
           "shape": "Integer"
+        },
+        "ApplyImmediately": {
+          "locationName": "ApplyImmediately",
+          "shape": "Boolean"
+        },
+        "BackupRetentionPeriod": {
+          "locationName": "BackupRetentionPeriod",
+          "shape": "Integer"
+        },
+        "DBInstanceClass": {
+          "locationName": "DBInstanceClass",
+          "shape": "String"
+        },
+        "DBInstanceIdentifier": {
+          "locationName": "DBInstanceIdentifier",
+          "shape": "String"
+        },
+        "DBParameterGroupName": {
+          "locationName": "DBParameterGroupName",
+          "shape": "String"
+        },
+        "DBSecurityGroups": {
+          "locationName": "DBSecurityGroups",
+          "shape": "RequestDBSecurityGroups"
+        },
+        "MasterUserPassword": {
+          "locationName": "MasterUserPassword",
+          "shape": "String"
+        },
+        "MultiAZ": {
+          "locationName": "MultiAZ",
+          "shape": "Boolean"
+        },
+        "NewDBInstanceIdentifier": {
+          "locationName": "NewDBInstanceIdentifier",
+          "shape": "String"
+        },
+        "NiftyMultiAZType": {
+          "locationName": "NiftyMultiAZType",
+          "shape": "Integer"
+        },
+        "NiftyReadReplicaDBInstanceIdentifier": {
+          "locationName": "NiftyReadReplicaDBInstanceIdentifier",
+          "shape": "String"
+        },
+        "NiftyReadReplicaPrivateAddress": {
+          "locationName": "NiftyReadReplicaPrivateAddress",
+          "shape": "String"
+        },
+        "NiftySlavePrivateAddress": {
+          "locationName": "NiftySlavePrivateAddress",
+          "shape": "String"
+        },
+        "PreferredBackupWindow": {
+          "locationName": "PreferredBackupWindow",
+          "shape": "String"
+        },
+        "PreferredMaintenanceWindow": {
+          "locationName": "PreferredMaintenanceWindow",
+          "shape": "String"
         }
       },
       "name": "ModifyDBInstanceRequest",
@@ -2114,6 +2343,14 @@
       "name": "RemoveSourceIdentifierFromSubscriptionResult",
       "type": "structure"
     },
+    "RequestDBSecurityGroups": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "RequestDBSecurityGroups",
+      "type": "list"
+    },
     "RequestDimensions": {
       "member": {
         "locationName": "member",
@@ -2142,6 +2379,14 @@
         "shape": "String"
       },
       "name": "RequestEventCategories",
+      "type": "list"
+    },
+    "RequestNiftyDBSecurityGroups": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "RequestNiftyDBSecurityGroups",
       "type": "list"
     },
     "RequestNiftyEmailAddresses": {
@@ -2223,7 +2468,88 @@
       "type": "structure"
     },
     "RestoreDBInstanceFromDBSnapshotRequest": {
-      "members": {},
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "AvailabilityZone",
+          "shape": "String"
+        },
+        "DBInstanceClass": {
+          "locationName": "DBInstanceClass",
+          "shape": "String"
+        },
+        "DBInstanceIdentifier": {
+          "locationName": "DBInstanceIdentifier",
+          "shape": "String"
+        },
+        "DBName": {
+          "locationName": "DBName",
+          "shape": "String"
+        },
+        "DBSnapshotIdentifier": {
+          "locationName": "DBSnapshotIdentifier",
+          "shape": "String"
+        },
+        "Engine": {
+          "locationName": "Engine",
+          "shape": "String"
+        },
+        "LicenseModel": {
+          "locationName": "LicenseModel",
+          "shape": "String"
+        },
+        "MultiAZ": {
+          "locationName": "MultiAZ",
+          "shape": "Boolean"
+        },
+        "NiftyDBParameterGroupName": {
+          "locationName": "NiftyDBParameterGroupName",
+          "shape": "String"
+        },
+        "NiftyDBSecurityGroups": {
+          "locationName": "NiftyDBSecurityGroups",
+          "shape": "RequestNiftyDBSecurityGroups"
+        },
+        "NiftyMasterPrivateAddress": {
+          "locationName": "NiftyMasterPrivateAddress",
+          "shape": "String"
+        },
+        "NiftyMultiAZType": {
+          "locationName": "NiftyMultiAZType",
+          "shape": "Integer"
+        },
+        "NiftyNetworkId": {
+          "locationName": "NiftyNetworkId",
+          "shape": "String"
+        },
+        "NiftyReadReplicaDBInstanceIdentifier": {
+          "locationName": "NiftyReadReplicaDBInstanceIdentifier",
+          "shape": "Integer"
+        },
+        "NiftyReadReplicaPrivateAddress": {
+          "locationName": "NiftyReadReplicaPrivateAddress",
+          "shape": "String"
+        },
+        "NiftySlavePrivateAddress": {
+          "locationName": "NiftySlavePrivateAddress",
+          "shape": "String"
+        },
+        "NiftyStorageType": {
+          "locationName": "NiftyStorageType",
+          "shape": "Integer"
+        },
+        "NiftyVirtualPrivateAddress": {
+          "locationName": "NiftyVirtualPrivateAddress",
+          "shape": "String"
+        },
+        "Port": {
+          "locationName": "Port",
+          "shape": "Integer"
+        },
+        "PubliclyAccessible": {
+          "locationName": "PubliclyAccessible",
+          "shape": "Boolean"
+        }
+      },
       "name": "RestoreDBInstanceFromDBSnapshotRequest",
       "type": "structure"
     },
@@ -2237,7 +2563,96 @@
       "type": "structure"
     },
     "RestoreDBInstanceToPointInTimeRequest": {
-      "members": {},
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "AvailabilityZone",
+          "shape": "String"
+        },
+        "DBInstanceClass": {
+          "locationName": "DBInstanceClass",
+          "shape": "String"
+        },
+        "DBName": {
+          "locationName": "DBName",
+          "shape": "String"
+        },
+        "Engine": {
+          "locationName": "Engine",
+          "shape": "String"
+        },
+        "LicenseModel": {
+          "locationName": "LicenseModel",
+          "shape": "String"
+        },
+        "MultiAZ": {
+          "locationName": "MultiAZ",
+          "shape": "Boolean"
+        },
+        "NiftyDBParameterGroupName": {
+          "locationName": "NiftyDBParameterGroupName",
+          "shape": "String"
+        },
+        "NiftyDBSecurityGroups": {
+          "locationName": "NiftyDBSecurityGroups",
+          "shape": "RequestNiftyDBSecurityGroups"
+        },
+        "NiftyMasterPrivateAddress": {
+          "locationName": "NiftyMasterPrivateAddress",
+          "shape": "String"
+        },
+        "NiftyMultiAZType": {
+          "locationName": "NiftyMultiAZType",
+          "shape": "Integer"
+        },
+        "NiftyNetworkId": {
+          "locationName": "NiftyNetworkId",
+          "shape": "String"
+        },
+        "NiftyReadReplicaDBInstanceIdentifier": {
+          "locationName": "NiftyReadReplicaDBInstanceIdentifier",
+          "shape": "String"
+        },
+        "NiftyReadReplicaPrivateAddress": {
+          "locationName": "NiftyReadReplicaPrivateAddress",
+          "shape": "String"
+        },
+        "NiftySlavePrivateAddress": {
+          "locationName": "NiftySlavePrivateAddress",
+          "shape": "String"
+        },
+        "NiftyStorageType": {
+          "locationName": "NiftyStorageType",
+          "shape": "Integer"
+        },
+        "NiftyVirtualPrivateAddress": {
+          "locationName": "NiftyVirtualPrivateAddress",
+          "shape": "String"
+        },
+        "Port": {
+          "locationName": "Port",
+          "shape": "Integer"
+        },
+        "PubliclyAccessible": {
+          "locationName": "PubliclyAccessible",
+          "shape": "Boolean"
+        },
+        "RestoreTime": {
+          "locationName": "RestoreTime",
+          "shape": "TStamp"
+        },
+        "SourceDBInstanceIdentifier": {
+          "locationName": "SourceDBInstanceIdentifier",
+          "shape": "String"
+        },
+        "TargetDBInstanceIdentifier": {
+          "locationName": "TargetDBInstanceIdentifier",
+          "shape": "String"
+        },
+        "UseLatestRestorableTime": {
+          "locationName": "UseLatestRestorableTime",
+          "shape": "Boolean"
+        }
+      },
       "name": "RestoreDBInstanceToPointInTimeRequest",
       "type": "structure"
     },
@@ -2258,6 +2673,10 @@
         },
         "DBSecurityGroupName": {
           "locationName": "DBSecurityGroupName",
+          "shape": "String"
+        },
+        "EC2SecurityGroupName": {
+          "locationName": "EC2SecurityGroupName",
           "shape": "String"
         }
       },
