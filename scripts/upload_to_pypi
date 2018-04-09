@@ -1,0 +1,115 @@
+#!/bin/bash
+
+# =====================================
+# This script is for uploading to PyPI.
+# =====================================
+
+INDEX_URL_FOR_TEST='https://test.pypi.org/simple/'
+PACKAGE_NAME='nifcloud'
+REPOSITORY_NAME='pypi'
+REPOSITORY_NAME_FOR_TEST='testpypi'
+UPLOADED_URL="https://pypi.python.org/pypi/${PACKAGE_NAME}"
+UPLOADED_URL_FOR_TEST="https://testpypi.python.org/pypi/${PACKAGE_NAME}"
+
+CMD_NAME=$(basename $0)
+output_help_message () {
+  echo "Usage: ${CMD_NAME} [-h] [-t]" 1>&2
+  echo '   -h: See help message' 1>&2
+  echo '   -t: Upload to PyPI test environment' 1>&2
+}
+
+while getopts 'ht' OPT
+do
+  case ${OPT} in
+    h )
+      OutputHelpMessage
+      exit 0
+      ;;
+    t )
+      IS_TEST=true
+      ;;
+    * )
+      OutputHelpMessage
+      exit 1
+      ;;
+  esac
+done
+
+install_required_libraries () {
+  echo '* Install required libraries.'
+  pip install wheel twine
+}
+
+remove_old_build_files () {
+  echo '* Remove old build files.'
+  rm -f -r ${PACKAGE_NAME}.egg-info/* dist/*   
+}
+
+build () {
+  echo '* Start Build.'
+  python setup.py sdist bdist_wheel
+}
+
+confirm () {
+  echo "$1"
+  local answer
+  while true; do
+    read answer
+    case ${answer} in
+      YES | Yes| yes | Y | y)
+        $2
+        break
+        ;;
+      NO | No | no | N | n)
+        break
+        ;;
+      *)
+        echo '* Please enter [y/n].'
+        ;;
+    esac
+  done
+}
+
+upload_to_testpypi () {
+  local MSG="* Do you upload to PyPI test environment? [y/n]: ${UPLOADED_URL_FOR_TEST}"
+  local CMD="twine upload --repository ${REPOSITORY_NAME_FOR_TEST} dist/*"
+  confirm "${MSG}" "${CMD}"
+}
+
+upload_to_pypi () {
+  local MSG="* Do you upload to PyPI? [y/n]: ${UPLOADED_URL}"
+  local CMD="twine upload --repository ${REPOSITORY_NAME} dist/*"
+  confirm "${MSG}" "${CMD}"
+}
+
+install_from_testpypi () {
+  local MSG='* Do you run pip install from test environtment to confirm that the upload has been successfully completed? [y/n]'
+  local CMD="pip --no-cache-dir install --upgrade --index-url ${INDEX_URL_FOR_TEST} ${PACKAGE_NAME}"
+  confirm "${MSG}" "${CMD}"
+}
+
+install_from_pypi () {
+  local MSG='* Do you run pip install to confirm that the upload has been successfully completed? [y/n]'
+  local CMD="pip --no-cache-dir install --upgrade ${PACKAGE_NAME}"
+  confirm "${MSG}" "${CMD}"
+}
+
+main () {
+  install_required_libraries
+  echo 
+  remove_old_build_files
+  echo
+  build
+  echo 
+  if [ ${IS_TEST} ]; then
+    upload_to_testpypi
+    echo
+    install_from_testpypi
+  else
+    upload_to_pypi
+    echo
+    install_from_pypi
+  fi
+}
+
+main
