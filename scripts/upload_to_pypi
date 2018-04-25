@@ -73,21 +73,12 @@ class CommandRunner:
 
 class Builder:
 
-    VERSION_PATTERN = re.compile("^\d+\.\d+\.\d+$")
     COMMAND_RUNNNER = CommandRunner
 
     def __init__(self, cmd_runner=None):
         if cmd_runner is None:
             cmd_runner = Builder.COMMAND_RUNNNER()
         self.cmd_runner = cmd_runner
-
-    def _validate_version(self, version):
-        if not Builder.VERSION_PATTERN.match(version):
-            self.cmd_runner.display(
-                "Version is required format such as '1.0.0'. "
-                "not {}".format(version)
-            )
-            self.cmd_runner.exit(1)
 
     def _install_required_libraries(self):
         self.cmd_runner.display("\n* Install required libraries.")
@@ -105,7 +96,6 @@ class Builder:
         self.cmd_runner.run(cmd)
 
     def build(self, version):
-        self._validate_version(version)
         self._install_required_libraries()
         self._remove_old_build_files()
         self._build_sdist_and_bdist_wheel()
@@ -150,7 +140,6 @@ def confirm_upload(is_yes, is_test):
 
 def parse_args():
     parser = argparse.ArgumentParser(description="PyPI package uploader")
-    parser.add_argument("version", help="Version to release")
     parser.add_argument("--yes", "-y", action="store_true", default=False,
                         help="Skip confirmation.")
     parser.add_argument("--test", "-t", action="store_true", default=False,
@@ -161,5 +150,5 @@ def parse_args():
 if __name__ == "__main__":
     args = parse_args()
     if confirm_upload(args.yes, args.test):
-        Builder().build(args.version)
+        Builder().build()
         Uploader().upload(args.test)
