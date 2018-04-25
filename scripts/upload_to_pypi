@@ -1,115 +1,165 @@
-#!/bin/bash
+#!/usr/bin/env python
 
-# =====================================
-# This script is for uploading to PyPI.
-# =====================================
+"""This script is for uploading to PyPI.
 
-INDEX_URL_FOR_TEST='https://test.pypi.org/simple/'
-PACKAGE_NAME='nifcloud'
-REPOSITORY_NAME='pypi'
-REPOSITORY_NAME_FOR_TEST='testpypi'
-UPLOADED_URL="https://pypi.python.org/pypi/${PACKAGE_NAME}"
-UPLOADED_URL_FOR_TEST="https://testpypi.python.org/pypi/${PACKAGE_NAME}"
+To run this script,
+it is necessary to prepare the following setting file beforehand.
 
-CMD_NAME=$(basename $0)
-output_help_message () {
-  echo "Usage: ${CMD_NAME} [-h] [-t]" 1>&2
-  echo '   -h: See help message' 1>&2
-  echo '   -t: Upload to PyPI test environment' 1>&2
-}
+```
+[distutils]
+index-servers =
+  pypi
+  testpypi
 
-while getopts 'ht' OPT
-do
-  case ${OPT} in
-    h )
-      OutputHelpMessage
-      exit 0
-      ;;
-    t )
-      IS_TEST=true
-      ;;
-    * )
-      OutputHelpMessage
-      exit 1
-      ;;
-  esac
-done
+[pypi]
+repository: https://upload.pypi.org/legacy/
+username: {username}
+password: {password}
 
-install_required_libraries () {
-  echo '* Install required libraries.'
-  pip install wheel twine
-}
+[testpypi]
+repository: https://test.pypi.org/legacy/
+username: {username}
+password: {password}
+```
+"""
 
-remove_old_build_files () {
-  echo '* Remove old build files.'
-  rm -f -r ${PACKAGE_NAME}.egg-info/* dist/*   
-}
+import argparse
+import os
+import re
+import subprocess
+import sys
 
-build () {
-  echo '* Start Build.'
-  python setup.py sdist bdist_wheel
-}
+PACKAGE_NAME = "nifcloud"
+REPOSITORY_NAME = "pypi"
+TEST_REPOSITORY_NAME = "testpypi"
 
-confirm () {
-  echo "$1"
-  local answer
-  while true; do
-    read answer
-    case ${answer} in
-      YES | Yes| yes | Y | y)
-        $2
-        break
-        ;;
-      NO | No | no | N | n)
-        break
-        ;;
-      *)
-        echo '* Please enter [y/n].'
-        ;;
-    esac
-  done
-}
 
-upload_to_testpypi () {
-  local MSG="* Do you upload to PyPI test environment? [y/n]: ${UPLOADED_URL_FOR_TEST}"
-  local CMD="twine upload --repository ${REPOSITORY_NAME_FOR_TEST} dist/*"
-  confirm "${MSG}" "${CMD}"
-}
+class CommandRunner:
 
-upload_to_pypi () {
-  local MSG="* Do you upload to PyPI? [y/n]: ${UPLOADED_URL}"
-  local CMD="twine upload --repository ${REPOSITORY_NAME} dist/*"
-  confirm "${MSG}" "${CMD}"
-}
+    def __init__(self, work_dir=None):
+        if work_dir is None:
+            dirname = os.path.dirname
+            work_dir = dirname(dirname(os.path.abspath(__file__)))
+        self.work_dir = work_dir
 
-install_from_testpypi () {
-  local MSG='* Do you run pip install from test environtment to confirm that the upload has been successfully completed? [y/n]'
-  local CMD="pip --no-cache-dir install --upgrade --index-url ${INDEX_URL_FOR_TEST} ${PACKAGE_NAME}"
-  confirm "${MSG}" "${CMD}"
-}
+    @staticmethod
+    def display(message):
+        sys.stderr.write('{}\n'.format(message))
 
-install_from_pypi () {
-  local MSG='* Do you run pip install to confirm that the upload has been successfully completed? [y/n]'
-  local CMD="pip --no-cache-dir install --upgrade ${PACKAGE_NAME}"
-  confirm "${MSG}" "${CMD}"
-}
+    @staticmethod
+    def prompt(message):
+        CommandRunner.display("{} [y/n]".format(message))
+        while True:
+            choice = input(">> ").lower()
+            if choice in ['y', 'ye', 'yes']:
+                return True
+            elif choice in ['n', 'no']:
+                return False
+            else:
+                CommandRunner.display('Please enter yes or no.')
 
-main () {
-  install_required_libraries
-  echo 
-  remove_old_build_files
-  echo
-  build
-  echo 
-  if [ ${IS_TEST} ]; then
-    upload_to_testpypi
-    echo
-    install_from_testpypi
-  else
-    upload_to_pypi
-    echo
-    install_from_pypi
-  fi
-}
+    @staticmethod
+    def exit(state):
+        sys.exit(state)
 
-main
+    def run(self, cmd, cwd=None):
+        cwd = cwd if cwd is not None else self.work_dir
+        try:
+            subprocess.check_call(cmd, shell=True, cwd=cwd)
+        except subprocess.CalledProcessError:
+            CommandRunner.display("Error: Command '{}' failed.".format(cmd))
+            CommandRunner.exit(1)
+
+
+class Builder:
+
+    VERSION_PATTERN = re.compile("^\d+\.\d+\.\d+$")
+    COMMAND_RUNNNER = CommandRunner
+
+    def __init__(self, cmd_runner=None):
+        if cmd_runner is None:
+            cmd_runner = Builder.COMMAND_RUNNNER()
+        self.cmd_runner = cmd_runner
+
+    def _validate_version(self, version):
+        if not Builder.VERSION_PATTERN.match(version):
+            self.cmd_runner.display(
+                "Version is required format such as '1.0.0'. "
+                "not {}".format(version)
+            )
+            self.cmd_runner.exit(1)
+
+    def _install_required_libraries(self):
+        self.cmd_runner.display("\n* Install required libraries.")
+        cmd = "pip install wheel twine"
+        self.cmd_runner.run(cmd)
+
+    def _remove_old_build_files(self):
+        self.cmd_runner.display("\n* Remove old build files.")
+        cmd = "rm -f -r {}.egg-info/* dist/*".format(PACKAGE_NAME)
+        self.cmd_runner.run(cmd)
+
+    def _build_sdist_and_bdist_wheel(self):
+        self.cmd_runner.display("\n* Build sdist and bdist_wheel.")
+        cmd = "python setup.py sdist bdist_wheel"
+        self.cmd_runner.run(cmd)
+
+    def build(self, version):
+        self._validate_version(version)
+        self._install_required_libraries()
+        self._remove_old_build_files()
+        self._build_sdist_and_bdist_wheel()
+
+
+class Uploader():
+
+    COMMAND_RUNNER = CommandRunner
+
+    def __init__(self, cmd_runner=None):
+        if cmd_runner is None:
+            cmd_runner = Builder.COMMAND_RUNNNER()
+        self.cmd_runner = cmd_runner
+
+    def _upload_to_pypi(self, repository):
+        cmd = "twine upload --repository {} dist/*".format(repository)
+        self.cmd_runner.run(cmd)
+
+    def upload(self, is_test):
+        BASE_MESSAGE = "\n* Upload {} to PyPI".format(PACKAGE_NAME)
+        if is_test:
+            self.cmd_runner.display(
+                "{} test environment.".format(BASE_MESSAGE)
+            )
+            self._upload_to_pypi(TEST_REPOSITORY_NAME)
+        else:
+            self.cmd_runner.display("{}.".format(BASE_MESSAGE))
+            self._upload_to_pypi(REPOSITORY_NAME)
+
+
+def confirm_upload(is_yes, is_test):
+    BASE_MESSAGE = "* Do you upload {} to PyPI".format(PACKAGE_NAME)
+    if is_yes:
+        return True
+    else:
+        if is_test:
+            message = "{} test environment?".format(BASE_MESSAGE)
+        else:
+            message = "{}?".format(BASE_MESSAGE)
+        return CommandRunner.prompt(message)
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="PyPI package uploader")
+    parser.add_argument("version", help="Version to release")
+    parser.add_argument("--yes", "-y", action="store_true", default=False,
+                        help="Skip confirmation.")
+    parser.add_argument("--test", "-t", action="store_true", default=False,
+                        help="Upload to PyPI test environment.")
+    return parser.parse_args()
+
+
+if __name__ == "__main__":
+    args = parse_args()
+    if confirm_upload(args.yes, args.test):
+        Builder().build(args.version)
+        Uploader().upload(args.test)
