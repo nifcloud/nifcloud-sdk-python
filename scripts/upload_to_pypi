@@ -25,7 +25,6 @@ password: {password}
 
 import argparse
 import os
-import re
 import subprocess
 import sys
 
@@ -71,59 +70,41 @@ class CommandRunner:
             CommandRunner.exit(1)
 
 
-class Builder:
+def build(cmd_runner):
 
-    COMMAND_RUNNNER = CommandRunner
-
-    def __init__(self, cmd_runner=None):
-        if cmd_runner is None:
-            cmd_runner = Builder.COMMAND_RUNNNER()
-        self.cmd_runner = cmd_runner
-
-    def _install_required_libraries(self):
-        self.cmd_runner.display("\n* Install required libraries.")
+    def _install_required_libraries():
+        cmd_runner.display("\n* Install required libraries.")
         cmd = "pip install wheel twine"
-        self.cmd_runner.run(cmd)
+        cmd_runner.run(cmd)
 
-    def _remove_old_build_files(self):
-        self.cmd_runner.display("\n* Remove old build files.")
+    def _remove_old_build_files():
+        cmd_runner.display("\n* Remove old build files.")
         cmd = "rm -f -r {}.egg-info/* dist/*".format(PACKAGE_NAME)
-        self.cmd_runner.run(cmd)
+        cmd_runner.run(cmd)
 
-    def _build_sdist_and_bdist_wheel(self):
-        self.cmd_runner.display("\n* Build sdist and bdist_wheel.")
+    def _build_sdist_and_bdist_wheel():
+        cmd_runner.display("\n* Build sdist and bdist_wheel.")
         cmd = "python setup.py sdist bdist_wheel"
-        self.cmd_runner.run(cmd)
+        cmd_runner.run(cmd)
 
-    def build(self, version):
-        self._install_required_libraries()
-        self._remove_old_build_files()
-        self._build_sdist_and_bdist_wheel()
+    _install_required_libraries()
+    _remove_old_build_files()
+    _build_sdist_and_bdist_wheel()
 
 
-class Uploader():
+def upload(cmd_runner, is_test):
 
-    COMMAND_RUNNER = CommandRunner
-
-    def __init__(self, cmd_runner=None):
-        if cmd_runner is None:
-            cmd_runner = Builder.COMMAND_RUNNNER()
-        self.cmd_runner = cmd_runner
-
-    def _upload_to_pypi(self, repository):
+    def _upload_to_pypi(repository):
         cmd = "twine upload --repository {} dist/*".format(repository)
-        self.cmd_runner.run(cmd)
+        cmd_runner.run(cmd)
 
-    def upload(self, is_test):
-        BASE_MESSAGE = "\n* Upload {} to PyPI".format(PACKAGE_NAME)
-        if is_test:
-            self.cmd_runner.display(
-                "{} test environment.".format(BASE_MESSAGE)
-            )
-            self._upload_to_pypi(TEST_REPOSITORY_NAME)
-        else:
-            self.cmd_runner.display("{}.".format(BASE_MESSAGE))
-            self._upload_to_pypi(REPOSITORY_NAME)
+    BASE_MESSAGE = "\n* Upload {} to PyPI".format(PACKAGE_NAME)
+    if is_test:
+        cmd_runner.display("{} test environment.".format(BASE_MESSAGE))
+        _upload_to_pypi(TEST_REPOSITORY_NAME)
+    else:
+        cmd_runner.display("{}.".format(BASE_MESSAGE))
+        _upload_to_pypi(REPOSITORY_NAME)
 
 
 def confirm_upload(is_yes, is_test):
@@ -150,5 +131,6 @@ def parse_args():
 if __name__ == "__main__":
     args = parse_args()
     if confirm_upload(args.yes, args.test):
-        Builder().build()
-        Uploader().upload(args.test)
+        cmd_runner = CommandRunner()
+        build(cmd_runner)
+        upload(cmd_runner, args.test)
