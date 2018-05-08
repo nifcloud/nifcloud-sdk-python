@@ -14,3 +14,8 @@ requests = "*"
 awscli = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
+
+[scripts]
+isort = "isort"
+lint = "flake8 --filename=*.py --exclude=.git"
+test = "pytest --capture=sys"
