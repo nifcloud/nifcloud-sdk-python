@@ -1,0 +1,73 @@
+{
+  "version": 2,
+  "waiters": {
+    "InstanceExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "DescribeInstances",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(ReservationSet[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.Instance",
+          "state": "retry"
+        }
+      ]
+    },
+    "InstanceRunning": {
+      "delay": 20,
+      "operation": "DescribeInstances",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "running",
+          "state": "success",
+          "argument": "ReservationSet[].InstancesSet[].InstanceState.Name"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.Instance",
+          "state": "retry"
+        }
+      ]
+    },
+    "InstanceStopped": {
+      "delay": 20,
+      "operation": "DescribeInstances",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "stopped",
+          "state": "success",
+          "argument": "ReservationSet[].InstancesSet[].InstanceState.Name"
+        }
+      ]
+    },
+    "InstanceDeleted": {
+      "delay": 20,
+      "operation": "DescribeInstances",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.Instance",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(ReservationSet[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    }
+  }
+}
+
