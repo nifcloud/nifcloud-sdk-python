@@ -1,0 +1,119 @@
+#!/usr/bin/env python
+
+"""This script is for uploading to PyPI.
+
+To run this script, it is necessary to prepare `.pypirc`.
+(See https://qiita.com/shinichi-takii/items/e90dcf7550ef13b047b5)
+"""
+
+import argparse
+import os
+import subprocess
+import sys
+
+PACKAGE_NAME = "nifcloud"
+REPOSITORY_NAME = "pypi"
+TEST_REPOSITORY_NAME = "testpypi"
+
+
+class CommandRunner:
+
+    def __init__(self, work_dir=None):
+        if work_dir is None:
+            dirname = os.path.dirname
+            work_dir = dirname(dirname(os.path.abspath(__file__)))
+        self.work_dir = work_dir
+
+    @staticmethod
+    def display(message):
+        sys.stderr.write('{}\n'.format(message))
+
+    @staticmethod
+    def prompt(message):
+        CommandRunner.display("{} [y/n]".format(message))
+        while True:
+            choice = input(">> ").lower()
+            if choice in ['y', 'ye', 'yes']:
+                return True
+            elif choice in ['n', 'no']:
+                return False
+            else:
+                CommandRunner.display('Please enter yes or no.')
+
+    @staticmethod
+    def exit(state):
+        sys.exit(state)
+
+    def run(self, cmd, cwd=None):
+        cwd = cwd if cwd is not None else self.work_dir
+        try:
+            subprocess.check_call(cmd, shell=True, cwd=cwd)
+        except subprocess.CalledProcessError:
+            CommandRunner.display("Error: Command '{}' failed.".format(cmd))
+            CommandRunner.exit(1)
+
+
+def build(cmd_runner):
+
+    def _install_required_libraries():
+        cmd_runner.display("\n* Install required libraries.")
+        cmd = "pip install wheel twine"
+        cmd_runner.run(cmd)
+
+    def _remove_old_build_files():
+        cmd_runner.display("\n* Remove old build files.")
+        cmd = "rm -f -r {}.egg-info/* dist/*".format(PACKAGE_NAME)
+        cmd_runner.run(cmd)
+
+    def _build_sdist_and_bdist_wheel():
+        cmd_runner.display("\n* Build sdist and bdist_wheel.")
+        cmd = "python setup.py sdist bdist_wheel"
+        cmd_runner.run(cmd)
+
+    _install_required_libraries()
+    _remove_old_build_files()
+    _build_sdist_and_bdist_wheel()
+
+
+def upload(cmd_runner, is_test):
+
+    def _upload_to_pypi(repository):
+        cmd = "twine upload --repository {} dist/*".format(repository)
+        cmd_runner.run(cmd)
+
+    BASE_MESSAGE = "\n* Upload {} to PyPI".format(PACKAGE_NAME)
+    if is_test:
+        cmd_runner.display("{} test environment.".format(BASE_MESSAGE))
+        _upload_to_pypi(TEST_REPOSITORY_NAME)
+    else:
+        cmd_runner.display("{}.".format(BASE_MESSAGE))
+        _upload_to_pypi(REPOSITORY_NAME)
+
+
+def confirm_upload(is_yes, is_test):
+    BASE_MESSAGE = "* Do you upload {} to PyPI".format(PACKAGE_NAME)
+    if is_yes:
+        return True
+    else:
+        if is_test:
+            message = "{} test environment?".format(BASE_MESSAGE)
+        else:
+            message = "{}?".format(BASE_MESSAGE)
+        return CommandRunner.prompt(message)
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="PyPI package uploader")
+    parser.add_argument("--yes", "-y", action="store_true", default=False,
+                        help="Skip confirmation.")
+    parser.add_argument("--test", "-t", action="store_true", default=False,
+                        help="Upload to PyPI test environment.")
+    return parser.parse_args()
+
+
+if __name__ == "__main__":
+    args = parse_args()
+    if confirm_upload(args.yes, args.test):
+        cmd_runner = CommandRunner()
+        build(cmd_runner)
+        upload(cmd_runner, args.test)
