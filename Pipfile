@@ -17,5 +17,5 @@ sphinx-rtd-theme = "*"
 
 [scripts]
 isort = "isort"
-lint = "flake8 --filename=*.py --exclude=.git"
+lint = "/bin/bash -c 'flake8 scripts/* .'"
 test = "pytest --capture=sys"
