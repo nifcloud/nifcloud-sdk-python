@@ -2,25 +2,8 @@
 
 """This script is for uploading to PyPI.
 
-To run this script,
-it is necessary to prepare the following setting file beforehand.
-
-```
-[distutils]
-index-servers =
-  pypi
-  testpypi
-
-[pypi]
-repository: https://upload.pypi.org/legacy/
-username: {username}
-password: {password}
-
-[testpypi]
-repository: https://test.pypi.org/legacy/
-username: {username}
-password: {password}
-```
+To run this script, it is necessary to prepare `.pypirc`.
+(See https://qiita.com/shinichi-takii/items/e90dcf7550ef13b047b5)
 """
 
 import argparse
