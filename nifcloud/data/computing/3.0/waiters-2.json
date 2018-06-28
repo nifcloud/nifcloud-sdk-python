@@ -67,6 +67,24 @@
           "state": "retry"
         }
       ]
+    },
+    "VpnGatewayAvailable": {
+      "delay": 20,
+      "operation": "DescribeVpnGateways",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "available",
+          "state": "success",
+          "argument": "VpnGatewaySet[].State"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.VpnGateway",
+          "state": "retry"
+        }
+      ]
     }
   }
 }
