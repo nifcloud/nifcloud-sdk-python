@@ -182,7 +182,7 @@
     "AuthorizeNASSecurityGroupIngressResult": {
       "members": {
         "NASSecurityGroup": {
-          "shape": "NASSecurityGroupResult"
+          "shape": "NASSecurityGroup"
         }
       },
       "name": "AuthorizeNASSecurityGroupIngressResult",
@@ -245,7 +245,7 @@
     "CreateNASInstanceResult": {
       "members": {
         "NASInstance": {
-          "shape": "NASInstanceResult"
+          "shape": "NASInstance"
         }
       },
       "name": "CreateNASInstanceResult",
@@ -272,17 +272,18 @@
     "CreateNASSecurityGroupResult": {
       "members": {
         "NASSecurityGroup": {
-          "shape": "NASSecurityGroupResult"
+          "shape": "NASSecurityGroup"
         }
       },
       "name": "CreateNASSecurityGroupResult",
       "type": "structure"
     },
-    "DatapointsResult": {
+    "Datapoints": {
       "member": {
-        "shape": "MemberResult"
+        "locationName": "member",
+        "shape": "Member"
       },
-      "name": "DatapointsResult",
+      "name": "Datapoints",
       "type": "list"
     },
     "DeleteNASInstanceRequest": {
@@ -306,7 +307,7 @@
     "DeleteNASInstanceResult": {
       "members": {
         "NASInstance": {
-          "shape": "NASInstanceResult"
+          "shape": "NASInstance"
         }
       },
       "name": "DeleteNASInstanceResult",
@@ -335,7 +336,7 @@
     "DescribeNASInstancesResult": {
       "members": {
         "NASInstances": {
-          "shape": "NASInstancesResult"
+          "shape": "NASInstances"
         }
       },
       "name": "DescribeNASInstancesResult",
@@ -354,13 +355,13 @@
     "DescribeNASSecurityGroupsResult": {
       "members": {
         "NASSecurityGroups": {
-          "shape": "NASSecurityGroupsResult"
+          "shape": "NASSecurityGroups"
         }
       },
       "name": "DescribeNASSecurityGroupsResult",
       "type": "structure"
     },
-    "DomainControllerResult": {
+    "DomainController": {
       "members": {
         "Hostname": {
           "shape": "String"
@@ -369,21 +370,22 @@
           "shape": "String"
         }
       },
-      "name": "DomainControllerResult",
+      "name": "DomainController",
       "type": "structure"
     },
-    "DomainControllersResult": {
+    "DomainControllers": {
       "member": {
-        "shape": "DomainControllerResult"
+        "locationName": "DomainController",
+        "shape": "DomainController"
       },
-      "name": "DomainControllersResult",
+      "name": "DomainControllers",
       "type": "list"
     },
     "Double": {
       "name": "Double",
       "type": "double"
     },
-    "EndpointResult": {
+    "Endpoint": {
       "members": {
         "Address": {
           "shape": "String"
@@ -392,7 +394,7 @@
           "shape": "String"
         }
       },
-      "name": "EndpointResult",
+      "name": "Endpoint",
       "type": "structure"
     },
     "GetMetricStatisticsRequest": {
@@ -420,7 +422,7 @@
     "GetMetricStatisticsResult": {
       "members": {
         "Datapoints": {
-          "shape": "DatapointsResult"
+          "shape": "Datapoints"
         },
         "Label": {
           "shape": "String"
@@ -429,7 +431,7 @@
       "name": "GetMetricStatisticsResult",
       "type": "structure"
     },
-    "IPRangeResult": {
+    "IPRange": {
       "members": {
         "CIDRIP": {
           "shape": "String"
@@ -438,21 +440,22 @@
           "shape": "String"
         }
       },
-      "name": "IPRangeResult",
+      "name": "IPRange",
       "type": "structure"
     },
-    "IPRangesResult": {
+    "IPRanges": {
       "member": {
-        "shape": "IPRangeResult"
+        "locationName": "IPRange",
+        "shape": "IPRange"
       },
-      "name": "IPRangesResult",
+      "name": "IPRanges",
       "type": "list"
     },
     "Integer": {
       "name": "Integer",
       "type": "integer"
     },
-    "MemberResult": {
+    "Member": {
       "members": {
         "SampleCount": {
           "shape": "String"
@@ -467,7 +470,7 @@
           "shape": "String"
         }
       },
-      "name": "MemberResult",
+      "name": "Member",
       "type": "structure"
     },
     "ModifyNASInstanceRequest": {
@@ -531,7 +534,7 @@
     "ModifyNASInstanceResult": {
       "members": {
         "NASInstance": {
-          "shape": "NASInstanceResult"
+          "shape": "NASInstance"
         }
       },
       "name": "ModifyNASInstanceResult",
@@ -558,25 +561,13 @@
     "ModifyNASSecurityGroupResult": {
       "members": {
         "NASSecurityGroup": {
-          "shape": "NASSecurityGroupResult"
+          "shape": "NASSecurityGroup"
         }
       },
       "name": "ModifyNASSecurityGroupResult",
       "type": "structure"
     },
-    "NASInstanceErrorInfoResult": {
-      "members": {
-        "NASInstanceErrorCode": {
-          "shape": "String"
-        },
-        "NASInstanceErrorMessage": {
-          "shape": "String"
-        }
-      },
-      "name": "NASInstanceErrorInfoResult",
-      "type": "structure"
-    },
-    "NASInstanceResult": {
+    "NASInstance": {
       "members": {
         "AllocatedStorage": {
           "shape": "String"
@@ -594,10 +585,10 @@
           "shape": "String"
         },
         "DomainControllers": {
-          "shape": "DomainControllersResult"
+          "shape": "DomainControllers"
         },
         "Endpoint": {
-          "shape": "EndpointResult"
+          "shape": "Endpoint"
         },
         "MasterUsername": {
           "shape": "String"
@@ -609,7 +600,7 @@
           "shape": "String"
         },
         "NASInstanceErrorInfo": {
-          "shape": "NASInstanceErrorInfoResult"
+          "shape": "NASInstanceErrorInfo"
         },
         "NASInstanceIdentifier": {
           "shape": "String"
@@ -621,7 +612,7 @@
           "shape": "Integer"
         },
         "NASSecurityGroups": {
-          "shape": "NASSecurityGroupsResult"
+          "shape": "NASSecurityGroups"
         },
         "NetworkId": {
           "shape": "String"
@@ -636,23 +627,36 @@
           "shape": "Integer"
         }
       },
-      "name": "NASInstanceResult",
+      "name": "NASInstance",
       "type": "structure"
     },
-    "NASInstancesResult": {
-      "member": {
-        "shape": "NASInstanceResult"
+    "NASInstanceErrorInfo": {
+      "members": {
+        "NASInstanceErrorCode": {
+          "shape": "String"
+        },
+        "NASInstanceErrorMessage": {
+          "shape": "String"
+        }
       },
-      "name": "NASInstancesResult",
+      "name": "NASInstanceErrorInfo",
+      "type": "structure"
+    },
+    "NASInstances": {
+      "member": {
+        "locationName": "NASInstance",
+        "shape": "NASInstance"
+      },
+      "name": "NASInstances",
       "type": "list"
     },
-    "NASSecurityGroupResult": {
+    "NASSecurityGroup": {
       "members": {
         "AvailabilityZone": {
           "shape": "String"
         },
         "IPRanges": {
-          "shape": "IPRangesResult"
+          "shape": "IPRanges"
         },
         "NASSecurityGroupDescription": {
           "shape": "String"
@@ -664,17 +668,18 @@
           "shape": "String"
         },
         "SecurityGroups": {
-          "shape": "SecurityGroupsResult"
+          "shape": "SecurityGroups"
         }
       },
-      "name": "NASSecurityGroupResult",
+      "name": "NASSecurityGroup",
       "type": "structure"
     },
-    "NASSecurityGroupsResult": {
+    "NASSecurityGroups": {
       "member": {
-        "shape": "NASSecurityGroupResult"
+        "locationName": "NASSecurityGroup",
+        "shape": "NASSecurityGroup"
       },
-      "name": "NASSecurityGroupsResult",
+      "name": "NASSecurityGroups",
       "type": "list"
     },
     "RequestDimensions": {
@@ -750,13 +755,13 @@
     "RevokeNASSecurityGroupIngressResult": {
       "members": {
         "NASSecurityGroup": {
-          "shape": "NASSecurityGroupResult"
+          "shape": "NASSecurityGroup"
         }
       },
       "name": "RevokeNASSecurityGroupIngressResult",
       "type": "structure"
     },
-    "SecurityGroupResult": {
+    "SecurityGroup": {
       "members": {
         "SecurityGroupName": {
           "shape": "String"
@@ -768,14 +773,15 @@
           "shape": "String"
         }
       },
-      "name": "SecurityGroupResult",
+      "name": "SecurityGroup",
       "type": "structure"
     },
-    "SecurityGroupsResult": {
+    "SecurityGroups": {
       "member": {
-        "shape": "SecurityGroupResult"
+        "locationName": "SecurityGroup",
+        "shape": "SecurityGroup"
       },
-      "name": "SecurityGroupsResult",
+      "name": "SecurityGroups",
       "type": "list"
     },
     "String": {
