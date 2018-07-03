@@ -602,6 +602,7 @@
     },
     "AvailabilityZones": {
       "member": {
+        "locationName": "AvailabilityZone",
         "shape": "AvailabilityZone"
       },
       "name": "AvailabilityZones",
@@ -931,6 +932,7 @@
     },
     "DBEngineVersions": {
       "member": {
+        "locationName": "DBEngineVersion",
         "shape": "DBEngineVersion"
       },
       "name": "DBEngineVersions",
@@ -1061,6 +1063,7 @@
     },
     "DBInstances": {
       "member": {
+        "locationName": "DBInstance",
         "shape": "DBInstance"
       },
       "name": "DBInstances",
@@ -1083,6 +1086,7 @@
     },
     "DBParameterGroups": {
       "member": {
+        "locationName": "DBParameterGroup",
         "shape": "DBParameterGroup"
       },
       "name": "DBParameterGroups",
@@ -1114,6 +1118,7 @@
     },
     "DBSecurityGroups": {
       "member": {
+        "locationName": "DBSecurityGroup",
         "shape": "DBSecurityGroup"
       },
       "name": "DBSecurityGroups",
@@ -1169,6 +1174,7 @@
     },
     "DBSnapshots": {
       "member": {
+        "locationName": "DBSnapshot",
         "shape": "DBSnapshot"
       },
       "name": "DBSnapshots",
@@ -1176,6 +1182,7 @@
     },
     "Datapoints": {
       "member": {
+        "locationName": "member",
         "shape": "Member"
       },
       "name": "Datapoints",
@@ -1340,6 +1347,7 @@
     },
     "DescribeDBLogFiles": {
       "member": {
+        "locationName": "DescribeDBLogFilesDetails",
         "shape": "DescribeDBLogFilesDetails"
       },
       "name": "DescribeDBLogFiles",
@@ -1760,6 +1768,7 @@
     },
     "EC2SecurityGroups": {
       "member": {
+        "locationName": "EC2SecurityGroup",
         "shape": "EC2SecurityGroup"
       },
       "name": "EC2SecurityGroups",
@@ -1844,6 +1853,7 @@
     },
     "EventCategoriesMapList": {
       "member": {
+        "locationName": "EventCategoriesMap",
         "shape": "EventCategoriesMap"
       },
       "name": "EventCategoriesMapList",
@@ -1884,6 +1894,7 @@
     },
     "EventSubscriptionsList": {
       "member": {
+        "locationName": "EventSubscription",
         "shape": "EventSubscription"
       },
       "name": "EventSubscriptionsList",
@@ -1891,6 +1902,7 @@
     },
     "Events": {
       "member": {
+        "locationName": "Event",
         "shape": "Event"
       },
       "name": "Events",
@@ -1910,6 +1922,7 @@
     },
     "IPRanges": {
       "member": {
+        "locationName": "IPRange",
         "shape": "IPRange"
       },
       "name": "IPRanges",
@@ -2024,7 +2037,7 @@
         },
         "Parameters": {
           "locationName": "Parameters",
-          "shape": "RequestParametersStruct"
+          "shape": "RequestParameters"
         }
       },
       "name": "ModifyDBParameterGroupRequest",
@@ -2159,6 +2172,7 @@
     },
     "OptionGroupMemberships": {
       "member": {
+        "locationName": "OptionGroupMembership",
         "shape": "OptionGroupMembership"
       },
       "name": "OptionGroupMemberships",
@@ -2196,6 +2210,7 @@
     },
     "OrderableDBInstanceOptions": {
       "member": {
+        "locationName": "OrderableDBInstanceOption",
         "shape": "OrderableDBInstanceOption"
       },
       "name": "OrderableDBInstanceOptions",
@@ -2239,6 +2254,7 @@
     },
     "Parameters": {
       "member": {
+        "locationName": "Parameter",
         "shape": "Parameter"
       },
       "name": "Parameters",
@@ -2288,6 +2304,7 @@
     },
     "ReadReplicaDBInstanceIdentifiers": {
       "member": {
+        "locationName": "ReadReplicaDBInstanceIdentifier",
         "shape": "ReadReplicaDBInstanceIdentifier"
       },
       "name": "ReadReplicaDBInstanceIdentifiers",
@@ -2397,14 +2414,15 @@
       "name": "RequestNiftyEmailAddresses",
       "type": "list"
     },
-    "RequestParameter": {
+    "RequestParameters": {
       "member": {
-        "shape": "RequestParameterStruct"
+        "locationName": "member",
+        "shape": "RequestParametersStruct"
       },
-      "name": "RequestParameter",
+      "name": "RequestParameters",
       "type": "list"
     },
-    "RequestParameterStruct": {
+    "RequestParametersStruct": {
       "members": {
         "ApplyMethod": {
           "locationName": "ApplyMethod",
@@ -2417,16 +2435,6 @@
         "ParameterValue": {
           "locationName": "ParameterValue",
           "shape": "String"
-        }
-      },
-      "name": "RequestParameterStruct",
-      "type": "structure"
-    },
-    "RequestParametersStruct": {
-      "members": {
-        "RequestParameter": {
-          "locationName": "Parameter",
-          "shape": "RequestParameter"
         }
       },
       "name": "RequestParametersStruct",
@@ -2448,7 +2456,7 @@
         },
         "Parameters": {
           "locationName": "Parameters",
-          "shape": "RequestParametersStruct"
+          "shape": "RequestParameters"
         },
         "ResetAllParameters": {
           "locationName": "ResetAllParameters",
@@ -2701,6 +2709,7 @@
     },
     "StatusInfos": {
       "member": {
+        "locationName": "DBInstanceStatusInfo",
         "shape": "DBInstanceStatusInfo"
       },
       "name": "StatusInfos",
@@ -2721,6 +2730,7 @@
     },
     "VpcSecurityGroups": {
       "member": {
+        "locationName": "VpcSecurityGroup",
         "shape": "VpcSecurityGroup"
       },
       "name": "VpcSecurityGroups",
