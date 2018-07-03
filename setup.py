@@ -36,7 +36,7 @@ setup(
                                'data/topics/*',
                                'data/*/*/*.json']},
     include_package_data=True,
-    install_requires=['botocore>=1.9.11', 'awscli>=1.14.63'],
+    install_requires=['botocore==1.9.16', 'awscli==1.14.63'],
     license='Apache License 2.0',
     classifiers=(
         'Development Status :: 4 - Beta',
