@@ -1,6 +1,12 @@
 
 # CHANGELOG
 
+## v0.1.5
+
+* fix: fix #11, and add location names for other SDKs (#12 by @tily)
+* fix: Fixed version of the following dependencies: botocore and awscli (#10 by @alice02)
+* feature: Add `register_add_waiters` handler to support wait command of nifcloud-debugcli (#8 by @alice02)
+
 ## v0.1.4
 
 * feature: Add computing instance waiters (#7 by @tily)
