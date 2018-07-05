@@ -85,6 +85,24 @@
           "state": "retry"
         }
       ]
+    },
+    "VpnConnectionDeleted": {
+      "delay": 20,
+      "operation": "DescribeVpnConnections",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.VpnConnectionId",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(VpnConnectionSet[]) > `0`",
+          "state": "retry"
+        }
+      ]
     }
   }
 }
