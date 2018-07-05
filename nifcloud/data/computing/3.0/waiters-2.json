@@ -86,6 +86,24 @@
         }
       ]
     },
+    "VpnGatewayDeleted": {
+      "delay": 20,
+      "operation": "DescribeVpnGateways",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.VpnGatewayNameu",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(VpnGatewaySet[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    },
     "VpnConnectionDeleted": {
       "delay": 20,
       "operation": "DescribeVpnConnections",
