@@ -93,7 +93,7 @@
       "acceptors": [
         {
           "matcher": "error",
-          "expected": "Client.InvalidParameterNotFound.VpnGatewayNameu",
+          "expected": "Client.InvalidParameterNotFound.VpnGatewayName",
           "state": "success"
         },
         {
