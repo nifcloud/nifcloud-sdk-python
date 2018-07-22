@@ -16838,8 +16838,8 @@
     },
     "UploadSslCertificateRequest": {
       "members": {
-        "CA": {
-          "locationName": "CA",
+        "Ca": {
+          "locationName": "Ca",
           "shape": "String"
         },
         "Certificate": {
