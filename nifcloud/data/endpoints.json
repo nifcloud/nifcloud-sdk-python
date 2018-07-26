@@ -2,7 +2,7 @@
   "partitions": [
     {
       "defaults": {
-        "hostname": "{service}.{region}.{dnsSuffix}",
+        "hostname": "{region}.{service}.{dnsSuffix}",
         "protocols": [
           "https"
         ],
@@ -12,7 +12,7 @@
           "v2-computing"
         ]
       },
-      "dnsSuffix": "api.cloud.nifty.com",
+      "dnsSuffix": "api.nifcloud.com",
       "partition": "nifcloud",
       "partitionName": "NIFCLOUD Standard",
       "regionRegex": "^(us|jp)\\-\\w+\\-\\d+$",
@@ -76,7 +76,7 @@
               "credentialScope" : {
                 "region" : "jp-east-1"
               },
-              "hostname" : "script.api.cloud.nifty.com"
+              "hostname" : "script.api.nifcloud.com"
             }
           },
           "isRegionalized" : false,
