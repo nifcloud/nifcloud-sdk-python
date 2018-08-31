@@ -5,12 +5,12 @@ import sys
 import awscli.help
 from awscli import (EnvironmentVariables, argparser, clidocs, clidriver,
                     handlers, topictags)
-from awscli.argprocess import ParamShorthandParser, uri_param
+from awscli.argprocess import ParamShorthandParser
 from awscli.customizations.globalargs import register_parse_global_args
 from awscli.customizations.waiters import register_add_waiters
+from awscli.paramfile import register_uri_param_handler
 from awscli.plugin import HierarchicalEmitter, load_plugins
 from botocore import __version__ as botocore_version
-
 from nifcloud import __version__ as nifcloud_version
 from nifcloud import session
 
@@ -186,7 +186,7 @@ os.environ['AWS_DATA_PATH'] = os.pathsep.join(_cli_data_path)
 
 def awscli_initialize(event_handlers):
 
-    event_handlers.register('load-cli-arg', uri_param)
+    event_handlers.register('session-initialized', register_uri_param_handler)
     param_shorthand = ParamShorthandParser()
     event_handlers.register('process-cli-arg', param_shorthand)
     register_parse_global_args(event_handlers)
