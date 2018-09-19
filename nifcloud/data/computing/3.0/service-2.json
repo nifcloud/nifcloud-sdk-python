@@ -62,6 +62,19 @@
         "shape": "AssociateUsersResult"
       }
     },
+    "AttachNetworkInterface": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "AttachNetworkInterfaceRequest"
+      },
+      "name": "AttachNetworkInterface",
+      "output": {
+        "shape": "AttachNetworkInterfaceResult"
+      }
+    },
     "AttachVolume": {
       "http": {
         "method": "POST",
@@ -218,6 +231,19 @@
         "shape": "CreateLoadBalancerResult"
       }
     },
+    "CreateNetworkInterface": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "CreateNetworkInterfaceRequest"
+      },
+      "name": "CreateNetworkInterface",
+      "output": {
+        "shape": "CreateNetworkInterfaceResult"
+      }
+    },
     "CreateRoute": {
       "http": {
         "method": "POST",
@@ -372,6 +398,19 @@
       "name": "DeleteLoadBalancer",
       "output": {
         "shape": "DeleteLoadBalancerResult"
+      }
+    },
+    "DeleteNetworkInterface": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "DeleteNetworkInterfaceRequest"
+      },
+      "name": "DeleteNetworkInterface",
+      "output": {
+        "shape": "DeleteNetworkInterfaceResult"
       }
     },
     "DeleteRoute": {
@@ -634,6 +673,19 @@
         "shape": "DescribeLoadBalancersResult"
       }
     },
+    "DescribeNetworkInterfaces": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "DescribeNetworkInterfacesRequest"
+      },
+      "name": "DescribeNetworkInterfaces",
+      "output": {
+        "shape": "DescribeNetworkInterfacesResult"
+      }
+    },
     "DescribeRegions": {
       "http": {
         "method": "POST",
@@ -829,6 +881,19 @@
         "shape": "DescribeVpnGatewaysResult"
       }
     },
+    "DetachNetworkInterface": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "DetachNetworkInterfaceRequest"
+      },
+      "name": "DetachNetworkInterface",
+      "output": {
+        "shape": "DetachNetworkInterfaceResult"
+      }
+    },
     "DetachVolume": {
       "http": {
         "method": "POST",
@@ -944,6 +1009,19 @@
       "name": "ModifyInstanceAttribute",
       "output": {
         "shape": "ModifyInstanceAttributeResult"
+      }
+    },
+    "ModifyNetworkInterfaceAttribute": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "ModifyNetworkInterfaceAttributeRequest"
+      },
+      "name": "ModifyNetworkInterfaceAttribute",
+      "output": {
+        "shape": "ModifyNetworkInterfaceAttributeResult"
       }
     },
     "ModifySslCertificateAttribute": {
@@ -2871,6 +2949,14 @@
     },
     "Association": {
       "members": {
+        "AllocationId": {
+          "locationName": "allocationId",
+          "shape": "String"
+        },
+        "AssociationId": {
+          "locationName": "associationId",
+          "shape": "String"
+        },
         "IpOwnerId": {
           "locationName": "ipOwnerId",
           "shape": "String"
@@ -2937,6 +3023,46 @@
       "name": "AssociationSetItem",
       "type": "structure"
     },
+    "AttachNetworkInterfaceRequest": {
+      "members": {
+        "InstanceId": {
+          "locationName": "InstanceId",
+          "shape": "String"
+        },
+        "InstanceUniqueId": {
+          "locationName": "InstanceUniqueId",
+          "shape": "String"
+        },
+        "NetworkInterfaceId": {
+          "locationName": "NetworkInterfaceId",
+          "shape": "String"
+        },
+        "NiftyReboot": {
+          "locationName": "NiftyReboot",
+          "shape": "String"
+        }
+      },
+      "name": "AttachNetworkInterfaceRequest",
+      "type": "structure"
+    },
+    "AttachNetworkInterfaceResult": {
+      "members": {
+        "AttachmentId": {
+          "locationName": "attachmentId",
+          "shape": "String"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "AttachNetworkInterfaceResult",
+      "type": "structure"
+    },
     "AttachVolumeRequest": {
       "members": {
         "InstanceId": {
@@ -2995,6 +3121,10 @@
           "locationName": "attachmentID",
           "shape": "String"
         },
+        "AttachmentId": {
+          "locationName": "attachmentId",
+          "shape": "String"
+        },
         "DeleteOnTermination": {
           "locationName": "deleteOnTermination",
           "shape": "Boolean"
@@ -3002,6 +3132,14 @@
         "DeviceIndex": {
           "locationName": "deviceIndex",
           "shape": "Integer"
+        },
+        "InstanceId": {
+          "locationName": "instanceId",
+          "shape": "String"
+        },
+        "InstanceOwnerId": {
+          "locationName": "instanceOwnerId",
+          "shape": "String"
         },
         "Status": {
           "locationName": "status",
@@ -3955,6 +4093,46 @@
       "name": "CreateLoadBalancerResult",
       "type": "structure"
     },
+    "CreateNetworkInterfaceRequest": {
+      "members": {
+        "Description": {
+          "locationName": "Description",
+          "shape": "String"
+        },
+        "IpAddress": {
+          "locationName": "IpAddress",
+          "shape": "String"
+        },
+        "NiftyNetworkId": {
+          "locationName": "NiftyNetworkId",
+          "shape": "String"
+        },
+        "Placement": {
+          "locationName": "Placement",
+          "shape": "RequestPlacementStruct"
+        }
+      },
+      "name": "CreateNetworkInterfaceRequest",
+      "type": "structure"
+    },
+    "CreateNetworkInterfaceResult": {
+      "members": {
+        "NetworkInterface": {
+          "locationName": "networkInterface",
+          "shape": "NetworkInterface"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "CreateNetworkInterfaceResult",
+      "type": "structure"
+    },
     "CreateRouteRequest": {
       "members": {
         "DestinationCidrBlock": {
@@ -4648,6 +4826,30 @@
       "name": "DeleteLoadBalancerResult",
       "type": "structure"
     },
+    "DeleteNetworkInterfaceRequest": {
+      "members": {
+        "NetworkInterfaceId": {
+          "locationName": "NetworkInterfaceId",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteNetworkInterfaceRequest",
+      "type": "structure"
+    },
+    "DeleteNetworkInterfaceResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "DeleteNetworkInterfaceResult",
+      "type": "structure"
+    },
     "DeleteRouteRequest": {
       "members": {
         "DestinationCidrBlock": {
@@ -5296,6 +5498,34 @@
       "name": "DescribeLoadBalancersResult",
       "type": "structure"
     },
+    "DescribeNetworkInterfacesRequest": {
+      "members": {
+        "Filter": {
+          "locationName": "Filter",
+          "shape": "RequestFilter"
+        },
+        "NetworkInterfaceId": {
+          "locationName": "NetworkInterfaceId",
+          "shape": "RequestNetworkInterfaceId"
+        }
+      },
+      "name": "DescribeNetworkInterfacesRequest",
+      "type": "structure"
+    },
+    "DescribeNetworkInterfacesResult": {
+      "members": {
+        "NetworkInterfaceSet": {
+          "locationName": "networkInterfaceSet",
+          "shape": "NetworkInterfaceSet"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        }
+      },
+      "name": "DescribeNetworkInterfacesResult",
+      "type": "structure"
+    },
     "DescribeRegionsRequest": {
       "members": {
         "RegionName": {
@@ -5880,6 +6110,34 @@
         }
       },
       "name": "Destination",
+      "type": "structure"
+    },
+    "DetachNetworkInterfaceRequest": {
+      "members": {
+        "AttachmentId": {
+          "locationName": "AttachmentId",
+          "shape": "String"
+        },
+        "NiftyReboot": {
+          "locationName": "NiftyReboot",
+          "shape": "String"
+        }
+      },
+      "name": "DetachNetworkInterfaceRequest",
+      "type": "structure"
+    },
+    "DetachNetworkInterfaceResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "DetachNetworkInterfaceResult",
       "type": "structure"
     },
     "DetachVolumeRequest": {
@@ -7748,6 +8006,24 @@
       "name": "IpType",
       "type": "structure"
     },
+    "Ipv6AddressesSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "Ipv6AddressesSetItem"
+      },
+      "name": "Ipv6AddressesSet",
+      "type": "list"
+    },
+    "Ipv6AddressesSetItem": {
+      "members": {
+        "Ipv6Address": {
+          "locationName": "ipv6Address",
+          "shape": "String"
+        }
+      },
+      "name": "Ipv6AddressesSetItem",
+      "type": "structure"
+    },
     "KeepImageSet": {
       "member": {
         "locationName": "item",
@@ -8394,6 +8670,38 @@
       "name": "ModifyInstanceAttributeResult",
       "type": "structure"
     },
+    "ModifyNetworkInterfaceAttributeRequest": {
+      "members": {
+        "Description": {
+          "locationName": "Description",
+          "shape": "String"
+        },
+        "IpAddress": {
+          "locationName": "IpAddress",
+          "shape": "String"
+        },
+        "NetworkInterfaceId": {
+          "locationName": "NetworkInterfaceId",
+          "shape": "String"
+        }
+      },
+      "name": "ModifyNetworkInterfaceAttributeRequest",
+      "type": "structure"
+    },
+    "ModifyNetworkInterfaceAttributeResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "ModifyNetworkInterfaceAttributeResult",
+      "type": "structure"
+    },
     "ModifySslCertificateAttributeRequest": {
       "members": {
         "Description": {
@@ -8708,6 +9016,100 @@
       "name": "NetworkInfo",
       "type": "structure"
     },
+    "NetworkInterface": {
+      "members": {
+        "Association": {
+          "locationName": "association",
+          "shape": "Association"
+        },
+        "Attachment": {
+          "locationName": "attachment",
+          "shape": "Attachment"
+        },
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "GroupSet": {
+          "locationName": "groupSet",
+          "shape": "GroupSet"
+        },
+        "InterfaceType": {
+          "locationName": "interfaceType",
+          "shape": "String"
+        },
+        "Ipv6AddressesSet": {
+          "locationName": "ipv6AddressesSet",
+          "shape": "Ipv6AddressesSet"
+        },
+        "MacAddress": {
+          "locationName": "macAddress",
+          "shape": "String"
+        },
+        "NetworkInterfaceId": {
+          "locationName": "networkInterfaceId",
+          "shape": "String"
+        },
+        "NiftyNetworkId": {
+          "locationName": "niftyNetworkId",
+          "shape": "String"
+        },
+        "NiftyNetworkName": {
+          "locationName": "niftyNetworkName",
+          "shape": "String"
+        },
+        "OwnerId": {
+          "locationName": "ownerId",
+          "shape": "String"
+        },
+        "PrivateDnsName": {
+          "locationName": "privateDnsName",
+          "shape": "String"
+        },
+        "PrivateIpAddress": {
+          "locationName": "privateIpAddress",
+          "shape": "String"
+        },
+        "PrivateIpAddressesSet": {
+          "locationName": "privateIpAddressesSet",
+          "shape": "PrivateIpAddressesSet"
+        },
+        "RequesterId": {
+          "locationName": "requesterId",
+          "shape": "String"
+        },
+        "RequesterManaged": {
+          "locationName": "requesterManaged",
+          "shape": "String"
+        },
+        "SourceDestCheck": {
+          "locationName": "sourceDestCheck",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        },
+        "SubnetId": {
+          "locationName": "subnetId",
+          "shape": "String"
+        },
+        "TagSet": {
+          "locationName": "tagSet",
+          "shape": "TagSet"
+        },
+        "VpcId": {
+          "locationName": "vpcId",
+          "shape": "String"
+        }
+      },
+      "name": "NetworkInterface",
+      "type": "structure"
+    },
     "NetworkInterfaceSet": {
       "member": {
         "locationName": "item",
@@ -8725,6 +9127,10 @@
         "Attachment": {
           "locationName": "attachment",
           "shape": "Attachment"
+        },
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
         },
         "CidrBlock": {
           "locationName": "cidrBlock",
@@ -8754,9 +9160,17 @@
           "locationName": "groupSet",
           "shape": "GroupSet"
         },
+        "InterfaceType": {
+          "locationName": "interfaceType",
+          "shape": "String"
+        },
         "IpAddress": {
           "locationName": "ipAddress",
           "shape": "String"
+        },
+        "Ipv6AddressesSet": {
+          "locationName": "ipv6AddressesSet",
+          "shape": "Ipv6AddressesSet"
         },
         "MacAddress": {
           "locationName": "macAddress",
@@ -8802,6 +9216,14 @@
           "locationName": "privateIpAddressesSet",
           "shape": "PrivateIpAddressesSet"
         },
+        "RequesterId": {
+          "locationName": "requesterId",
+          "shape": "String"
+        },
+        "RequesterManaged": {
+          "locationName": "requesterManaged",
+          "shape": "String"
+        },
         "SourceDestCheck": {
           "locationName": "sourceDestCheck",
           "shape": "String"
@@ -8813,6 +9235,10 @@
         "SubnetId": {
           "locationName": "subnetId",
           "shape": "String"
+        },
+        "TagSet": {
+          "locationName": "tagSet",
+          "shape": "TagSet"
         },
         "VpcId": {
           "locationName": "vpcId",
@@ -14382,6 +14808,13 @@
         "shape": "RequestNetworkInterfaceStruct"
       },
       "name": "RequestNetworkInterface",
+      "type": "list"
+    },
+    "RequestNetworkInterfaceId": {
+      "member": {
+        "shape": "String"
+      },
+      "name": "RequestNetworkInterfaceId",
       "type": "list"
     },
     "RequestNetworkInterfaceStruct": {
