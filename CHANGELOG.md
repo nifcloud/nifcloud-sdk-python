@@ -1,6 +1,16 @@
 
 # CHANGELOG
 
+## v0.1.6
+
+
+* fix botocore and awscli versions in `setup.*` (#19 by @tily)
+* feature: Support Computing Network Interface API (#18 by @alice02)
+* fix: Modify nifcloud-debugcli to support new version of awscli (#17 by @sato-mh)
+* fix: Fix version of some dependencies for development (#16 by @alice02)
+* fix: Modify to new endpoints (#15 by @sato-mh)
+* fix: Fix Ca parameter of UploadSslCertificate in computing (#14 by @yoshd)
+
 ## v0.1.5
 
 * fix: fix #11, and add location names for other SDKs (#12 by @tily)
