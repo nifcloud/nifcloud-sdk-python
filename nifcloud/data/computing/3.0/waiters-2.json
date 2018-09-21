@@ -67,6 +67,78 @@
           "state": "retry"
         }
       ]
+    },
+    "VpnGatewayAvailable": {
+      "delay": 20,
+      "operation": "DescribeVpnGateways",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "available",
+          "state": "success",
+          "argument": "VpnGatewaySet[].State"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.VpnGateway",
+          "state": "retry"
+        }
+      ]
+    },
+    "VpnGatewayDeleted": {
+      "delay": 20,
+      "operation": "DescribeVpnGateways",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.VpnGatewayName",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(VpnGatewaySet[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    },
+    "VpnConnectionAvailable": {
+      "delay": 20,
+      "operation": "DescribeVpnConnections",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "available",
+          "state": "success",
+          "argument": "VpnConnectionSet[].State"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.VpnConnectionId",
+          "state": "retry"
+        }
+      ]
+    },
+    "VpnConnectionDeleted": {
+      "delay": 20,
+      "operation": "DescribeVpnConnections",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.VpnConnectionId",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(VpnConnectionSet[]) > `0`",
+          "state": "retry"
+        }
+      ]
     }
   }
 }
