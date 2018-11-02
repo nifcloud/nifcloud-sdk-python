@@ -11,6 +11,7 @@ from awscli.customizations.waiters import register_add_waiters
 from awscli.paramfile import register_uri_param_handler
 from awscli.plugin import load_plugins
 from botocore import __version__ as botocore_version
+
 from nifcloud import __version__ as nifcloud_version
 from nifcloud import session
 
