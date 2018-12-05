@@ -8,7 +8,7 @@ install:
   - pipenv install --ignore-pipfile -d
   - |
     if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]] ; then
-      pipenv install configparser==3.5.0 futures==3.2.0
+      pipenv install configparser==3.5.0 futures==3.2.0 urllib3==1.22
     fi
 script:
   - pipenv run isort --check-only --diff --quiet
