@@ -5,6 +5,7 @@
     "protocol": "query",
     "serviceAbbreviation": "rdb",
     "serviceFullName": "NIFCLOUD RDB",
+    "serviceId": "rdb",
     "signatureVersion": "v4",
     "uid": "rdb-2013-05-15N2013-12-16"
   },

@@ -5,6 +5,7 @@
     "protocol": "query",
     "serviceAbbreviation": "nas",
     "serviceFullName": "NIFCLOUD NAS",
+    "serviceId": "nas",
     "signatureVersion": "v4",
     "uid": "nas-N2016-02-24"
   },

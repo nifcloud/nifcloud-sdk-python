@@ -5,6 +5,7 @@
     "protocol": "computing",
     "serviceAbbreviation": "computing",
     "serviceFullName": "NIFCLOUD Computing",
+    "serviceId": "computing",
     "signatureVersion": "v2-computing",
     "uid": "computing-2.2",
     "xmlNamespace": "https://cp.cloud.nifty.com/api/"
