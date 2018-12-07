@@ -5,6 +5,7 @@
     "protocol": "script",
     "serviceAbbreviation": "script",
     "serviceFullName": "NIFCLOUD Script",
+    "serviceId": "script",
     "signatureVersion": "v4",
     "targetPrefix": "2015-09-01",
     "uid": "script-2015-09-01"
