@@ -9,7 +9,7 @@ from awscli.argprocess import ParamShorthandParser
 from awscli.customizations.globalargs import register_parse_global_args
 from awscli.customizations.waiters import register_add_waiters
 from awscli.paramfile import register_uri_param_handler
-from awscli.plugin import HierarchicalEmitter, load_plugins
+from awscli.plugin import load_plugins
 from botocore import __version__ as botocore_version
 
 from nifcloud import __version__ as nifcloud_version
@@ -205,11 +205,10 @@ def main():
 
 
 def create_clidriver():
-    emitter = HierarchicalEmitter()
-    nifcloud_session = session.Session(EnvironmentVariables, emitter)
+    nifcloud_session = session.Session(EnvironmentVariables)
     _set_user_agent_for_session(nifcloud_session)
     load_plugins(nifcloud_session.full_config.get('plugins', {}),
-                 event_hooks=emitter)
+                 event_hooks=nifcloud_session.get_component('event_emitter'))
     driver = clidriver.CLIDriver(session=nifcloud_session)
     return driver
 
