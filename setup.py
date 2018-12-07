@@ -28,6 +28,7 @@ setup(
     version=find_version('nifcloud', '__init__.py'),
     description='Data-driven NIFCLOUD SDK for Python (Developer Preview)',
     long_description=read('README.md'),
+    long_description_content_type='text/markdown',
     author='FUJITSU CLOUD TECHNOLOGIES',
     url='https://github.com/nifcloud/nifcloud-sdk-python',
     scripts=['scripts/nifcloud-debugcli'],
