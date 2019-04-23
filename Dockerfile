@@ -1,4 +1,4 @@
-FROM python:3.6.3
+FROM python:3.7.3
 WORKDIR /usr/local/app
 RUN apt-get update && apt-get install -y groff-base
 ADD Pipfile.lock /usr/local/app
