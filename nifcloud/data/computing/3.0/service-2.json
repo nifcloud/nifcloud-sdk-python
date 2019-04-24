@@ -10227,11 +10227,11 @@
       "members": {
         "InstanceSnapshotId": {
           "locationName": "InstanceSnapshotId",
-          "shape": "RequestInstanceSnapshotId"
+          "shape": "String"
         },
         "SnapshotName": {
           "locationName": "SnapshotName",
-          "shape": "RequestSnapshotName"
+          "shape": "String"
         }
       },
       "name": "NiftyDeleteInstanceSnapshotRequest",
