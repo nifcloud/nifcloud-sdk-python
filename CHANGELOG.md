@@ -1,10 +1,20 @@
 
 # CHANGELOG
 
+## v0.1.7
+
+* fix: Update requires dist (#27 by alice02)
+* fix: update dependencies to fix vulnerability (#26 by alice02)
+* fix: service-2.json for computing (#25 by sato-mh)
+* feature: Add serviceId to models (#24 by alice02)
+* fix: dependency for requests (#23 by sato-mh)
+* feature: Add markdown support for pypi long description (#22 by tottoto)
+* feature: update version of dependency libraries (#21 by sato-mh)
+
 ## v0.1.6
 
 
-* fix botocore and awscli versions in `setup.*` (#19 by @tily)
+* fix: botocore and awscli versions in `setup.*` (#19 by @tily)
 * feature: Support Computing Network Interface API (#18 by @alice02)
 * fix: Modify nifcloud-debugcli to support new version of awscli (#17 by @sato-mh)
 * fix: Fix version of some dependencies for development (#16 by @alice02)
