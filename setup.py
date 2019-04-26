@@ -37,7 +37,7 @@ setup(
                                'data/topics/*',
                                'data/*/*/*.json']},
     include_package_data=True,
-    install_requires=['botocore==1.10.70', 'awscli==1.15.71'],
+    install_requires=['botocore==1.12.134', 'awscli==1.16.144'],
     license='Apache License 2.0',
     classifiers=(
         'Development Status :: 4 - Beta',
@@ -54,5 +54,6 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ),
 )

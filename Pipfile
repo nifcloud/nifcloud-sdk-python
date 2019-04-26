@@ -4,15 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-botocore = "*"
+botocore = "==1.12.134"
 
 [dev-packages]
 isort = "*"
 "flake8" = "*"
 pytest = "*"
 requests = "*"
-awscli = "*"
-sphinx = "*"
+awscli = "==1.16.144"
+sphinx = "==1.8.1"
 sphinx-rtd-theme = "*"
 
 [scripts]

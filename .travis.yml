@@ -1,14 +1,15 @@
+dist: xenial
 language: python
 python:
   - 2.7
-  - 3.6
+  - 3.7
 cache: pip
 install:
-  - pip install pipenv==11.8.0
-  - pipenv install --ignore-pipfile -d
+  - pip install pipenv==2018.11.26
+  - pipenv install --skip-lock -d
   - |
     if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]] ; then
-      pipenv install configparser==3.5.0 futures==3.2.0 urllib3==1.22
+      pipenv install --skip-lock configparser==3.5.0 futures==3.2.0 urllib3==1.22
     fi
 script:
   - pipenv run isort --check-only --diff --quiet
