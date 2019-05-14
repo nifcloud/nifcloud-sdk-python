@@ -1,6 +1,5 @@
 from botocore import configprovider
 
-
 configprovider.BOTOCORE_DEFAUT_SESSION_VARIABLES.update({
     'config_file': (
         None, 'AWS_CONFIG_FILE', '~/.nifcloud/config', None
