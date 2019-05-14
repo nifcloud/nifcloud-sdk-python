@@ -4,15 +4,6 @@ from botocore.session import get_session  # noqa: F401
 
 import nifcloud
 
-session.Session.SESSION_VARIABLES.update({
-    'config_file': (
-        None, 'AWS_CONFIG_FILE', '~/.nifcloud/config', None
-    ),
-    'credentials_file': (
-        None, 'AWS_SHARED_CREDENTIALS_FILE', '~/.nifcloud/credentials', None
-    )
-})
-
 
 class Session(session.Session):
 
