@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## v0.1.8
+
+* fix: Override config load path (#28 by alice02)
+
 ## v0.1.7
 
 * fix: Update requires dist (#27 by alice02)
