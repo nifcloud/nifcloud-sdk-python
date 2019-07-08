@@ -6358,6 +6358,14 @@
       "type": "structure"
     },
     "DhcpOptionsSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "DhcpOptionsSetItem"
+      },
+      "name": "DhcpOptionsSet",
+      "type": "list"
+    },
+    "DhcpOptionsSetItem": {
       "members": {
         "DhcpConfigurationSet": {
           "locationName": "dhcpConfigurationSet",
@@ -6368,7 +6376,7 @@
           "shape": "String"
         }
       },
-      "name": "DhcpOptionsSet",
+      "name": "DhcpOptionsSetItem",
       "type": "structure"
     },
     "DhcpStatusInformationSet": {
