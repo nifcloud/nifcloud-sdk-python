@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## v0.1.9
+
+* fix: Fix bug of cannot parse the DescribeDhcpOptions response (#29 by alice02)
+
 ## v0.1.8
 
 * fix: Override config load path (#28 by alice02)
