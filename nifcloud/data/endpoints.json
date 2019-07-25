@@ -70,6 +70,11 @@
             "jp-west-1": {}
           }
         },
+        "hatoba": {
+          "endpoints": {
+            "jp-east-1": {}
+          }
+        },
         "script" : {
           "endpoints" : {
             "aws-global" : {
