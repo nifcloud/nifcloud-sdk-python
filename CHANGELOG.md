@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## v0.2.0
+
+* feature: Support Hatoba beta (#30 by alice02)
+
 ## v0.1.9
 
 * fix: Fix bug of cannot parse the DescribeDhcpOptions response (#29 by alice02)
