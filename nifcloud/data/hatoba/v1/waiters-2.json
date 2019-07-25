@@ -1,0 +1,85 @@
+{
+  "version": 2,
+  "waiters": {
+    "ClusterRunning": {
+      "delay": 60,
+      "operation": "GetCluster",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "expected": "RUNNING",
+          "matcher": "path",
+          "state": "success",
+          "argument": "Cluster.Status"
+        },
+        {
+          "expected": "ERROR",
+          "matcher": "path",
+          "state": "failure",
+          "argument": "Cluster.Status"
+        },
+        {
+          "expected": "DEGRADED",
+          "matcher": "path",
+          "state": "failure",
+          "argument": "Cluster.Status"
+        },
+        {
+          "expected": "STOPPING",
+          "matcher": "path",
+          "state": "failure",
+          "argument": "Cluster.Status"
+        }
+      ]
+    },
+    "ClusterDeleted": {
+      "delay": 30,
+      "operation": "GetCluster",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "expected": "Client.InvalidParameterNotFound.Cluster",
+          "matcher": "error",
+          "state": "success"
+        },
+        {
+          "expected": "RUNNING",
+          "matcher": "path",
+          "state": "failure",
+          "argument": "Cluster.Status"
+        },
+        {
+          "expected": "ERROR",
+          "matcher": "path",
+          "state": "failure",
+          "argument": "Cluster.Status"
+        },
+        {
+          "expected": "DEGRADED",
+          "matcher": "path",
+          "state": "failure",
+          "argument": "Cluster.Status"
+        }
+      ]
+    },
+    "FirewallRuleAuthorized": {
+      "delay": 20,
+      "operation": "GetFirewallGroup",
+      "maxAttempts": 20,
+      "acceptors": [
+        {
+          "expected": "AUTHORIZED",
+          "matcher": "pathAll",
+          "state": "success",
+          "argument": "FirewallGroup.Rules[].Status"
+        },
+        {
+          "expected": true,
+          "matcher": "path",
+          "state": "success",
+          "argument": "length(FirewallGroup.Rules[]) == `0`"
+        }
+      ]
+    }
+  }
+}

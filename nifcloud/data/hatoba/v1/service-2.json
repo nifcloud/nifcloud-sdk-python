@@ -1,0 +1,2008 @@
+{
+  "metadata": {
+    "apiVersion": "v1",
+    "endpointPrefix": "hatoba",
+    "protocol": "rest-json",
+    "serviceAbbreviation": "hatoba",
+    "serviceFullName": "NIFCLOUD Hatoba beta",
+    "serviceId": "hatoba",
+    "signatureVersion": "v4",
+    "uid": "hatoba-v1"
+  },
+  "operations": {
+    "AuthorizeFirewallGroup": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}/rules",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "AuthorizeFirewallGroupRequest"
+      },
+      "name": "AuthorizeFirewallGroup",
+      "output": {
+        "shape": "AuthorizeFirewallGroupResponse"
+      }
+    },
+    "CreateCluster": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/clusters",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "CreateClusterRequest"
+      },
+      "name": "CreateCluster",
+      "output": {
+        "shape": "CreateClusterResponse"
+      }
+    },
+    "CreateFirewallGroup": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/firewallGroups",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "CreateFirewallGroupRequest"
+      },
+      "name": "CreateFirewallGroup",
+      "output": {
+        "shape": "CreateFirewallGroupResponse"
+      }
+    },
+    "CreateNodePool": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/clusters/{ClusterName}/nodePools",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "CreateNodePoolRequest"
+      },
+      "name": "CreateNodePool",
+      "output": {
+        "shape": "CreateNodePoolResponse"
+      }
+    },
+    "CreateSnapshot": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/snapshots",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "CreateSnapshotRequest"
+      },
+      "name": "CreateSnapshot",
+      "output": {
+        "shape": "CreateSnapshotResponse"
+      }
+    },
+    "DeleteCluster": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/clusters/{ClusterName}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DeleteClusterRequest"
+      },
+      "name": "DeleteCluster",
+      "output": {
+        "shape": "DeleteClusterResponse"
+      }
+    },
+    "DeleteClusters": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/clusters",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DeleteClustersRequest"
+      },
+      "name": "DeleteClusters",
+      "output": {
+        "shape": "DeleteClustersResponse"
+      }
+    },
+    "DeleteFirewallGroup": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DeleteFirewallGroupRequest"
+      },
+      "name": "DeleteFirewallGroup",
+      "output": {
+        "shape": "DeleteFirewallGroupResponse"
+      }
+    },
+    "DeleteFirewallGroups": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/firewallGroups",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DeleteFirewallGroupsRequest"
+      },
+      "name": "DeleteFirewallGroups",
+      "output": {
+        "shape": "DeleteFirewallGroupsResponse"
+      }
+    },
+    "DeleteNodePool": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/clusters/{ClusterName}/nodePools/{NodePoolName}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DeleteNodePoolRequest"
+      },
+      "name": "DeleteNodePool",
+      "output": {
+        "shape": "DeleteNodePoolResponse"
+      }
+    },
+    "DeleteNodePools": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/clusters/{ClusterName}/nodePools",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DeleteNodePoolsRequest"
+      },
+      "name": "DeleteNodePools",
+      "output": {
+        "shape": "DeleteNodePoolsResponse"
+      }
+    },
+    "DeleteSnapshot": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/snapshots/{SnapshotName}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DeleteSnapshotRequest"
+      },
+      "name": "DeleteSnapshot",
+      "output": {
+        "shape": "DeleteSnapshotResponse"
+      }
+    },
+    "DeleteSnapshots": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/snapshots",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DeleteSnapshotsRequest"
+      },
+      "name": "DeleteSnapshots",
+      "output": {
+        "shape": "DeleteSnapshotsResponse"
+      }
+    },
+    "GetCluster": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/clusters/{ClusterName}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetClusterRequest"
+      },
+      "name": "GetCluster",
+      "output": {
+        "shape": "GetClusterResponse"
+      }
+    },
+    "GetClusterCredentials": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/clusters/{ClusterName}/credentials",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetClusterCredentialsRequest"
+      },
+      "name": "GetClusterCredentials",
+      "output": {
+        "shape": "GetClusterCredentialsResponse"
+      }
+    },
+    "GetFirewallGroup": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetFirewallGroupRequest"
+      },
+      "name": "GetFirewallGroup",
+      "output": {
+        "shape": "GetFirewallGroupResponse"
+      }
+    },
+    "GetNodePool": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/clusters/{ClusterName}/nodePools/{NodePoolName}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetNodePoolRequest"
+      },
+      "name": "GetNodePool",
+      "output": {
+        "shape": "GetNodePoolResponse"
+      }
+    },
+    "GetServerConfig": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/serverConfig",
+        "responseCode": 200
+      },
+      "name": "GetServerConfig",
+      "output": {
+        "shape": "GetServerConfigResponse"
+      }
+    },
+    "GetSnapshot": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/snapshots/{SnapshotName}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetSnapshotRequest"
+      },
+      "name": "GetSnapshot",
+      "output": {
+        "shape": "GetSnapshotResponse"
+      }
+    },
+    "ListClusters": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/clusters",
+        "responseCode": 200
+      },
+      "name": "ListClusters",
+      "output": {
+        "shape": "ListClustersResponse"
+      }
+    },
+    "ListFirewallGroups": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/firewallGroups",
+        "responseCode": 200
+      },
+      "name": "ListFirewallGroups",
+      "output": {
+        "shape": "ListFirewallGroupsResponse"
+      }
+    },
+    "ListNodePools": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/clusters/{ClusterName}/nodePools",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListNodePoolsRequest"
+      },
+      "name": "ListNodePools",
+      "output": {
+        "shape": "ListNodePoolsResponse"
+      }
+    },
+    "ListSnapshots": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/snapshots",
+        "responseCode": 200
+      },
+      "name": "ListSnapshots",
+      "output": {
+        "shape": "ListSnapshotsResponse"
+      }
+    },
+    "RestoreClusterFromSnapshot": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/snapshots/{SnapshotName}:restore",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "RestoreClusterFromSnapshotRequest"
+      },
+      "name": "RestoreClusterFromSnapshot",
+      "output": {
+        "shape": "RestoreClusterFromSnapshotResponse"
+      }
+    },
+    "RevokeFirewallGroup": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}/rules",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "RevokeFirewallGroupRequest"
+      },
+      "name": "RevokeFirewallGroup",
+      "output": {
+        "shape": "RevokeFirewallGroupResponse"
+      }
+    },
+    "SetNodePoolSize": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/clusters/{ClusterName}/nodePools/{NodePoolName}:setSize",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "SetNodePoolSizeRequest"
+      },
+      "name": "SetNodePoolSize",
+      "output": {
+        "shape": "SetNodePoolSizeResponse"
+      }
+    },
+    "UpdateCluster": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/clusters/{ClusterName}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UpdateClusterRequest"
+      },
+      "name": "UpdateCluster",
+      "output": {
+        "shape": "UpdateClusterResponse"
+      }
+    },
+    "UpdateFirewallGroup": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UpdateFirewallGroupRequest"
+      },
+      "name": "UpdateFirewallGroup",
+      "output": {
+        "shape": "UpdateFirewallGroupResponse"
+      }
+    },
+    "UpdateSnapshot": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/snapshots/{SnapshotName}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UpdateSnapshotRequest"
+      },
+      "name": "UpdateSnapshot",
+      "output": {
+        "shape": "UpdateSnapshotResponse"
+      }
+    }
+  },
+  "shapes": {
+    "AddonsConfig": {
+      "members": {
+        "HttpLoadBalancing": {
+          "locationName": "httpLoadBalancing",
+          "shape": "HttpLoadBalancing"
+        }
+      },
+      "name": "AddonsConfig",
+      "type": "structure"
+    },
+    "AuthorizeFirewallGroupRequest": {
+      "members": {
+        "FirewallGroupName": {
+          "location": "uri",
+          "locationName": "FirewallGroupName",
+          "shape": "FirewallGroupName"
+        },
+        "Rules": {
+          "locationName": "rules",
+          "shape": "RulesRequest"
+        }
+      },
+      "name": "AuthorizeFirewallGroupRequest",
+      "required": [
+        "FirewallGroupName"
+      ],
+      "type": "structure"
+    },
+    "AuthorizeFirewallGroupRequestFirewallRule": {
+      "members": {
+        "CidrIp": {
+          "locationName": "cidrIp",
+          "shape": "CidrIp"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "Description"
+        },
+        "Direction": {
+          "locationName": "direction",
+          "shape": "Direction"
+        },
+        "FromPort": {
+          "locationName": "fromPort",
+          "shape": "FromPort"
+        },
+        "Protocol": {
+          "locationName": "protocol",
+          "shape": "Protocol"
+        },
+        "ToPort": {
+          "locationName": "toPort",
+          "shape": "ToPort"
+        }
+      },
+      "name": "AuthorizeFirewallGroupRequestFirewallRule",
+      "type": "structure"
+    },
+    "AuthorizeFirewallGroupResponse": {
+      "members": {
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroupResponse"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "AuthorizeFirewallGroupResponse",
+      "type": "structure"
+    },
+    "AvailabilityZone": {
+      "name": "AvailabilityZone",
+      "type": "string"
+    },
+    "Boolean": {
+      "type": "boolean"
+    },
+    "CidrIp": {
+      "name": "CidrIp",
+      "type": "string"
+    },
+    "Cluster": {
+      "members": {
+        "AddonsConfig": {
+          "locationName": "addonsConfig",
+          "shape": "AddonsConfig"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "CreateTime"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "Description"
+        },
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroup"
+        },
+        "InitialKubernetesVersion": {
+          "locationName": "initialKubernetesVersion",
+          "shape": "InitialKubernetesVersion"
+        },
+        "InitialNodeCount": {
+          "locationName": "initialNodeCount",
+          "shape": "InitialNodeCount"
+        },
+        "KubernetesVersion": {
+          "locationName": "kubernetesVersion",
+          "shape": "KubernetesVersion"
+        },
+        "Locations": {
+          "locationName": "locations",
+          "shape": "Locations"
+        },
+        "MasterNodeCount": {
+          "locationName": "masterNodeCount",
+          "shape": "MasterNodeCount"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        },
+        "NetworkConfig": {
+          "locationName": "networkConfig",
+          "shape": "NetworkConfig"
+        },
+        "NodeCount": {
+          "locationName": "nodeCount",
+          "shape": "NodeCount"
+        },
+        "NodePools": {
+          "locationName": "nodePools",
+          "shape": "NodePools"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "ClusterStatus"
+        }
+      },
+      "name": "Cluster",
+      "type": "structure"
+    },
+    "ClusterName": {
+      "name": "ClusterName",
+      "type": "string"
+    },
+    "ClusterStatus": {
+      "name": "ClusterStatus",
+      "type": "string"
+    },
+    "Clusters": {
+      "member": {
+        "shape": "Cluster"
+      },
+      "name": "Clusters",
+      "type": "list"
+    },
+    "CreateClusterRequest": {
+      "members": {
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "CreateClusterRequestCluster"
+        }
+      },
+      "name": "CreateClusterRequest",
+      "required": [
+        "Cluster"
+      ],
+      "type": "structure"
+    },
+    "CreateClusterRequestCluster": {
+      "members": {
+        "AddonsConfig": {
+          "locationName": "addonsConfig",
+          "shape": "AddonsConfig"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "Description"
+        },
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroup"
+        },
+        "KubernetesVersion": {
+          "locationName": "kubernetesVersion",
+          "shape": "KubernetesVersion"
+        },
+        "Locations": {
+          "locationName": "locations",
+          "shape": "Locations"
+        },
+        "MasterNodeCount": {
+          "locationName": "masterNodeCount",
+          "shape": "MasterNodeCount"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        },
+        "NetworkConfig": {
+          "locationName": "networkConfig",
+          "shape": "NetworkConfig"
+        },
+        "NodePools": {
+          "locationName": "nodePools",
+          "shape": "NodePoolsRequest"
+        }
+      },
+      "name": "CreateClusterRequestCluster",
+      "required": [
+        "Name",
+        "Locations",
+        "NodePools",
+        "FirewallGroup"
+      ],
+      "type": "structure"
+    },
+    "CreateClusterRequestNodePool": {
+      "members": {
+        "InstanceType": {
+          "locationName": "instanceType",
+          "shape": "InstanceType"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        },
+        "NodeCount": {
+          "locationName": "nodeCount",
+          "shape": "NodeCount"
+        }
+      },
+      "name": "CreateClusterRequestNodePool",
+      "required": [
+        "Name",
+        "InstanceType"
+      ],
+      "type": "structure"
+    },
+    "CreateClusterResponse": {
+      "members": {
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "Cluster"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "CreateClusterResponse",
+      "type": "structure"
+    },
+    "CreateFirewallGroupRequest": {
+      "members": {
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "CreateFirewallGroupRequestFirewallGroup"
+        }
+      },
+      "name": "CreateFirewallGroupRequest",
+      "required": [
+        "FirewallGroup"
+      ],
+      "type": "structure"
+    },
+    "CreateFirewallGroupRequestFirewallGroup": {
+      "members": {
+        "Description": {
+          "locationName": "description",
+          "shape": "Description"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        }
+      },
+      "name": "CreateFirewallGroupRequestFirewallGroup",
+      "required": [
+        "Name"
+      ],
+      "type": "structure"
+    },
+    "CreateFirewallGroupResponse": {
+      "members": {
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroupResponse"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "CreateFirewallGroupResponse",
+      "type": "structure"
+    },
+    "CreateNodePoolRequest": {
+      "members": {
+        "ClusterName": {
+          "location": "uri",
+          "locationName": "ClusterName",
+          "shape": "ClusterName"
+        },
+        "NodePool": {
+          "locationName": "nodePool",
+          "shape": "CreateClusterRequestNodePool"
+        }
+      },
+      "name": "CreateNodePoolRequest",
+      "required": [
+        "ClusterName",
+        "NodePool"
+      ],
+      "type": "structure"
+    },
+    "CreateNodePoolResponse": {
+      "members": {
+        "NodePool": {
+          "locationName": "nodePool",
+          "shape": "NodePool"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "CreateNodePoolResponse",
+      "type": "structure"
+    },
+    "CreateSnapshotRequest": {
+      "members": {
+        "Snapshot": {
+          "locationName": "snapshot",
+          "shape": "CreateSnapshotRequestSnapshot"
+        }
+      },
+      "name": "CreateSnapshotRequest",
+      "required": [
+        "Snapshot"
+      ],
+      "type": "structure"
+    },
+    "CreateSnapshotRequestSnapshot": {
+      "members": {
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "CreateSnapshotRequestSnapshotCluster"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "Description"
+        },
+        "ExpirationTime": {
+          "locationName": "expirationTime",
+          "shape": "ExpirationTime"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        }
+      },
+      "name": "CreateSnapshotRequestSnapshot",
+      "required": [
+        "Name",
+        "Cluster"
+      ],
+      "type": "structure"
+    },
+    "CreateSnapshotRequestSnapshotCluster": {
+      "members": {
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        }
+      },
+      "name": "CreateSnapshotRequestSnapshotCluster",
+      "type": "structure"
+    },
+    "CreateSnapshotResponse": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        },
+        "Snapshot": {
+          "locationName": "snapshot",
+          "shape": "Snapshot"
+        }
+      },
+      "name": "CreateSnapshotResponse",
+      "type": "structure"
+    },
+    "CreateTime": {
+      "name": "CreateTime",
+      "type": "string"
+    },
+    "Credentials": {
+      "name": "Credentials",
+      "type": "string"
+    },
+    "DefaultKubernetesVersion": {
+      "name": "DefaultKubernetesVersion",
+      "type": "string"
+    },
+    "DeleteClusterRequest": {
+      "members": {
+        "ClusterName": {
+          "location": "uri",
+          "locationName": "ClusterName",
+          "shape": "ClusterName"
+        }
+      },
+      "name": "DeleteClusterRequest",
+      "required": [
+        "ClusterName"
+      ],
+      "type": "structure"
+    },
+    "DeleteClusterResponse": {
+      "members": {
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "Cluster"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "DeleteClusterResponse",
+      "type": "structure"
+    },
+    "DeleteClustersRequest": {
+      "members": {
+        "Names": {
+          "location": "querystring",
+          "locationName": "names",
+          "shape": "Names"
+        }
+      },
+      "name": "DeleteClustersRequest",
+      "required": [],
+      "type": "structure"
+    },
+    "DeleteClustersResponse": {
+      "members": {
+        "Clusters": {
+          "locationName": "clusters",
+          "shape": "Clusters"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "DeleteClustersResponse",
+      "type": "structure"
+    },
+    "DeleteFirewallGroupRequest": {
+      "members": {
+        "FirewallGroupName": {
+          "location": "uri",
+          "locationName": "FirewallGroupName",
+          "shape": "FirewallGroupName"
+        }
+      },
+      "name": "DeleteFirewallGroupRequest",
+      "required": [
+        "FirewallGroupName"
+      ],
+      "type": "structure"
+    },
+    "DeleteFirewallGroupResponse": {
+      "members": {
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroupResponse"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "DeleteFirewallGroupResponse",
+      "type": "structure"
+    },
+    "DeleteFirewallGroupsRequest": {
+      "members": {
+        "Names": {
+          "location": "querystring",
+          "locationName": "names",
+          "shape": "Names"
+        }
+      },
+      "name": "DeleteFirewallGroupsRequest",
+      "required": [],
+      "type": "structure"
+    },
+    "DeleteFirewallGroupsResponse": {
+      "members": {
+        "FirewallGroups": {
+          "locationName": "firewallGroups",
+          "shape": "FirewallGroups"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "DeleteFirewallGroupsResponse",
+      "type": "structure"
+    },
+    "DeleteNodePoolRequest": {
+      "members": {
+        "ClusterName": {
+          "location": "uri",
+          "locationName": "ClusterName",
+          "shape": "ClusterName"
+        },
+        "NodePoolName": {
+          "location": "uri",
+          "locationName": "NodePoolName",
+          "shape": "NodePoolName"
+        }
+      },
+      "name": "DeleteNodePoolRequest",
+      "required": [
+        "ClusterName",
+        "NodePoolName"
+      ],
+      "type": "structure"
+    },
+    "DeleteNodePoolResponse": {
+      "members": {
+        "NodePool": {
+          "locationName": "nodePool",
+          "shape": "NodePool"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "DeleteNodePoolResponse",
+      "type": "structure"
+    },
+    "DeleteNodePoolsRequest": {
+      "members": {
+        "ClusterName": {
+          "location": "uri",
+          "locationName": "ClusterName",
+          "shape": "ClusterName"
+        },
+        "Names": {
+          "location": "querystring",
+          "locationName": "names",
+          "shape": "Names"
+        }
+      },
+      "name": "DeleteNodePoolsRequest",
+      "required": [
+        "ClusterName"
+      ],
+      "type": "structure"
+    },
+    "DeleteNodePoolsResponse": {
+      "members": {
+        "NodePools": {
+          "locationName": "nodePools",
+          "shape": "NodePools"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "DeleteNodePoolsResponse",
+      "type": "structure"
+    },
+    "DeleteSnapshotRequest": {
+      "members": {
+        "SnapshotName": {
+          "location": "uri",
+          "locationName": "SnapshotName",
+          "shape": "SnapshotName"
+        }
+      },
+      "name": "DeleteSnapshotRequest",
+      "required": [
+        "SnapshotName"
+      ],
+      "type": "structure"
+    },
+    "DeleteSnapshotResponse": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        },
+        "Snapshot": {
+          "locationName": "snapshot",
+          "shape": "Snapshot"
+        }
+      },
+      "name": "DeleteSnapshotResponse",
+      "type": "structure"
+    },
+    "DeleteSnapshotsRequest": {
+      "members": {
+        "Names": {
+          "location": "querystring",
+          "locationName": "names",
+          "shape": "Names"
+        }
+      },
+      "name": "DeleteSnapshotsRequest",
+      "required": [],
+      "type": "structure"
+    },
+    "DeleteSnapshotsResponse": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        },
+        "Snapshots": {
+          "locationName": "snapshots",
+          "shape": "Snapshots"
+        }
+      },
+      "name": "DeleteSnapshotsResponse",
+      "type": "structure"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "string"
+    },
+    "Direction": {
+      "name": "Direction",
+      "type": "string"
+    },
+    "Disabled": {
+      "name": "Disabled",
+      "type": "boolean"
+    },
+    "Double": {
+      "type": "double"
+    },
+    "ExpirationTime": {
+      "name": "ExpirationTime",
+      "type": "string"
+    },
+    "FirewallGroup": {
+      "name": "FirewallGroup",
+      "type": "string"
+    },
+    "FirewallGroupName": {
+      "name": "FirewallGroupName",
+      "type": "string"
+    },
+    "FirewallGroupResponse": {
+      "members": {
+        "Description": {
+          "locationName": "description",
+          "shape": "Description"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        },
+        "Rules": {
+          "locationName": "rules",
+          "shape": "Rules"
+        }
+      },
+      "name": "FirewallGroupResponse",
+      "type": "structure"
+    },
+    "FirewallGroups": {
+      "member": {
+        "shape": "FirewallGroupResponse"
+      },
+      "name": "FirewallGroups",
+      "type": "list"
+    },
+    "FirewallRule": {
+      "members": {
+        "CidrIp": {
+          "locationName": "cidrIp",
+          "shape": "CidrIp"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "Description"
+        },
+        "Direction": {
+          "locationName": "direction",
+          "shape": "Direction"
+        },
+        "FromPort": {
+          "locationName": "fromPort",
+          "shape": "FromPort"
+        },
+        "Id": {
+          "locationName": "id",
+          "shape": "Id"
+        },
+        "Protocol": {
+          "locationName": "protocol",
+          "shape": "Protocol"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "FirewallRuleStatus"
+        },
+        "ToPort": {
+          "locationName": "toPort",
+          "shape": "ToPort"
+        }
+      },
+      "name": "FirewallRule",
+      "type": "structure"
+    },
+    "FirewallRuleStatus": {
+      "name": "FirewallRuleStatus",
+      "type": "string"
+    },
+    "FromPort": {
+      "name": "FromPort",
+      "type": "integer"
+    },
+    "GetClusterCredentialsRequest": {
+      "members": {
+        "ClusterName": {
+          "location": "uri",
+          "locationName": "ClusterName",
+          "shape": "ClusterName"
+        }
+      },
+      "name": "GetClusterCredentialsRequest",
+      "required": [
+        "ClusterName"
+      ],
+      "type": "structure"
+    },
+    "GetClusterCredentialsResponse": {
+      "members": {
+        "Credentials": {
+          "locationName": "credentials",
+          "shape": "Credentials"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "GetClusterCredentialsResponse",
+      "type": "structure"
+    },
+    "GetClusterRequest": {
+      "members": {
+        "ClusterName": {
+          "location": "uri",
+          "locationName": "ClusterName",
+          "shape": "ClusterName"
+        }
+      },
+      "name": "GetClusterRequest",
+      "required": [
+        "ClusterName"
+      ],
+      "type": "structure"
+    },
+    "GetClusterResponse": {
+      "members": {
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "Cluster"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "GetClusterResponse",
+      "type": "structure"
+    },
+    "GetFirewallGroupRequest": {
+      "members": {
+        "FirewallGroupName": {
+          "location": "uri",
+          "locationName": "FirewallGroupName",
+          "shape": "FirewallGroupName"
+        }
+      },
+      "name": "GetFirewallGroupRequest",
+      "required": [
+        "FirewallGroupName"
+      ],
+      "type": "structure"
+    },
+    "GetFirewallGroupResponse": {
+      "members": {
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroupResponse"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "GetFirewallGroupResponse",
+      "type": "structure"
+    },
+    "GetNodePoolRequest": {
+      "members": {
+        "ClusterName": {
+          "location": "uri",
+          "locationName": "ClusterName",
+          "shape": "ClusterName"
+        },
+        "NodePoolName": {
+          "location": "uri",
+          "locationName": "NodePoolName",
+          "shape": "NodePoolName"
+        }
+      },
+      "name": "GetNodePoolRequest",
+      "required": [
+        "ClusterName",
+        "NodePoolName"
+      ],
+      "type": "structure"
+    },
+    "GetNodePoolResponse": {
+      "members": {
+        "NodePool": {
+          "locationName": "nodePool",
+          "shape": "NodePool"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "GetNodePoolResponse",
+      "type": "structure"
+    },
+    "GetServerConfigResponse": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        },
+        "ServerConfig": {
+          "locationName": "serverConfig",
+          "shape": "ServerConfig"
+        }
+      },
+      "name": "GetServerConfigResponse",
+      "type": "structure"
+    },
+    "GetSnapshotRequest": {
+      "members": {
+        "SnapshotName": {
+          "location": "uri",
+          "locationName": "SnapshotName",
+          "shape": "SnapshotName"
+        }
+      },
+      "name": "GetSnapshotRequest",
+      "required": [
+        "SnapshotName"
+      ],
+      "type": "structure"
+    },
+    "GetSnapshotResponse": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        },
+        "Snapshot": {
+          "locationName": "snapshot",
+          "shape": "Snapshot"
+        }
+      },
+      "name": "GetSnapshotResponse",
+      "type": "structure"
+    },
+    "HttpLoadBalancing": {
+      "members": {
+        "Disabled": {
+          "locationName": "disabled",
+          "shape": "Disabled"
+        }
+      },
+      "name": "HttpLoadBalancing",
+      "required": [
+        "Disabled"
+      ],
+      "type": "structure"
+    },
+    "Id": {
+      "name": "Id",
+      "type": "string"
+    },
+    "Ids": {
+      "name": "Ids",
+      "type": "string"
+    },
+    "InitialKubernetesVersion": {
+      "name": "InitialKubernetesVersion",
+      "type": "string"
+    },
+    "InitialNodeCount": {
+      "name": "InitialNodeCount",
+      "type": "integer"
+    },
+    "InstanceType": {
+      "name": "InstanceType",
+      "type": "string"
+    },
+    "Integer": {
+      "type": "integer"
+    },
+    "KubernetesVersion": {
+      "name": "KubernetesVersion",
+      "type": "string"
+    },
+    "ListClustersResponse": {
+      "members": {
+        "Clusters": {
+          "locationName": "clusters",
+          "shape": "Clusters"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "ListClustersResponse",
+      "type": "structure"
+    },
+    "ListFirewallGroupsResponse": {
+      "members": {
+        "FirewallGroups": {
+          "locationName": "firewallGroups",
+          "shape": "FirewallGroups"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "ListFirewallGroupsResponse",
+      "type": "structure"
+    },
+    "ListNodePoolsRequest": {
+      "members": {
+        "ClusterName": {
+          "location": "uri",
+          "locationName": "ClusterName",
+          "shape": "ClusterName"
+        }
+      },
+      "name": "ListNodePoolsRequest",
+      "required": [
+        "ClusterName"
+      ],
+      "type": "structure"
+    },
+    "ListNodePoolsResponse": {
+      "members": {
+        "NodePools": {
+          "locationName": "nodePools",
+          "shape": "NodePools"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "ListNodePoolsResponse",
+      "type": "structure"
+    },
+    "ListSnapshotsResponse": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        },
+        "Snapshots": {
+          "locationName": "snapshots",
+          "shape": "Snapshots"
+        }
+      },
+      "name": "ListSnapshotsResponse",
+      "type": "structure"
+    },
+    "Location": {
+      "name": "Location",
+      "type": "string"
+    },
+    "Locations": {
+      "member": {
+        "shape": "Location"
+      },
+      "name": "Locations",
+      "type": "list"
+    },
+    "MasterNodeCount": {
+      "name": "MasterNodeCount",
+      "type": "integer"
+    },
+    "Name": {
+      "name": "Name",
+      "type": "string"
+    },
+    "Names": {
+      "name": "Names",
+      "type": "string"
+    },
+    "NetworkConfig": {
+      "members": {
+        "NetworkId": {
+          "locationName": "networkId",
+          "shape": "NetworkId"
+        }
+      },
+      "name": "NetworkConfig",
+      "required": [
+        "NetworkId"
+      ],
+      "type": "structure"
+    },
+    "NetworkId": {
+      "name": "NetworkId",
+      "type": "string"
+    },
+    "Node": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "AvailabilityZone"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        },
+        "PrivateIpAddress": {
+          "locationName": "privateIpAddress",
+          "shape": "PrivateIpAddress"
+        },
+        "PublicIpAddress": {
+          "locationName": "publicIpAddress",
+          "shape": "PublicIpAddress"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "NodeStatus"
+        }
+      },
+      "name": "Node",
+      "type": "structure"
+    },
+    "NodeCount": {
+      "name": "NodeCount",
+      "type": "integer"
+    },
+    "NodePool": {
+      "members": {
+        "InitialNodeCount": {
+          "locationName": "initialNodeCount",
+          "shape": "InitialNodeCount"
+        },
+        "InstanceType": {
+          "locationName": "instanceType",
+          "shape": "InstanceType"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        },
+        "NodeCount": {
+          "locationName": "nodeCount",
+          "shape": "NodeCount"
+        },
+        "Nodes": {
+          "locationName": "nodes",
+          "shape": "Nodes"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "NodePoolStatus"
+        }
+      },
+      "name": "NodePool",
+      "type": "structure"
+    },
+    "NodePoolName": {
+      "name": "NodePoolName",
+      "type": "string"
+    },
+    "NodePoolStatus": {
+      "name": "NodePoolStatus",
+      "type": "string"
+    },
+    "NodePools": {
+      "member": {
+        "shape": "NodePool"
+      },
+      "name": "NodePools",
+      "type": "list"
+    },
+    "NodePoolsRequest": {
+      "member": {
+        "shape": "CreateClusterRequestNodePool"
+      },
+      "name": "NodePoolsRequest",
+      "type": "list"
+    },
+    "NodePoolsResponse": {
+      "member": {
+        "shape": "SnapshotNodePool"
+      },
+      "name": "NodePoolsResponse",
+      "type": "list"
+    },
+    "NodeStatus": {
+      "name": "NodeStatus",
+      "type": "string"
+    },
+    "Nodes": {
+      "member": {
+        "shape": "Node"
+      },
+      "name": "Nodes",
+      "type": "list"
+    },
+    "PrivateIpAddress": {
+      "name": "PrivateIpAddress",
+      "type": "string"
+    },
+    "Protocol": {
+      "name": "Protocol",
+      "type": "string"
+    },
+    "PublicIpAddress": {
+      "name": "PublicIpAddress",
+      "type": "string"
+    },
+    "RequestId": {
+      "name": "RequestId",
+      "type": "string"
+    },
+    "ResourceVersion": {
+      "name": "ResourceVersion",
+      "type": "string"
+    },
+    "RestoreClusterFromSnapshotRequest": {
+      "members": {
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "RestoreClusterFromSnapshotRequestCluster"
+        },
+        "SnapshotName": {
+          "location": "uri",
+          "locationName": "SnapshotName",
+          "shape": "SnapshotName"
+        }
+      },
+      "name": "RestoreClusterFromSnapshotRequest",
+      "required": [
+        "SnapshotName",
+        "Cluster"
+      ],
+      "type": "structure"
+    },
+    "RestoreClusterFromSnapshotRequestCluster": {
+      "members": {
+        "AddonsConfig": {
+          "locationName": "addonsConfig",
+          "shape": "AddonsConfig"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "Description"
+        },
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroup"
+        },
+        "Locations": {
+          "locationName": "locations",
+          "shape": "Locations"
+        },
+        "MasterNodeCount": {
+          "locationName": "masterNodeCount",
+          "shape": "MasterNodeCount"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        },
+        "NetworkConfig": {
+          "locationName": "networkConfig",
+          "shape": "NetworkConfig"
+        }
+      },
+      "name": "RestoreClusterFromSnapshotRequestCluster",
+      "required": [
+        "Name",
+        "Locations",
+        "FirewallGroup"
+      ],
+      "type": "structure"
+    },
+    "RestoreClusterFromSnapshotResponse": {
+      "members": {
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "Cluster"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "RestoreClusterFromSnapshotResponse",
+      "type": "structure"
+    },
+    "RevokeFirewallGroupRequest": {
+      "members": {
+        "FirewallGroupName": {
+          "location": "uri",
+          "locationName": "FirewallGroupName",
+          "shape": "FirewallGroupName"
+        },
+        "Ids": {
+          "location": "querystring",
+          "locationName": "ids",
+          "shape": "Ids"
+        }
+      },
+      "name": "RevokeFirewallGroupRequest",
+      "required": [
+        "FirewallGroupName"
+      ],
+      "type": "structure"
+    },
+    "RevokeFirewallGroupResponse": {
+      "members": {
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroupResponse"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "RevokeFirewallGroupResponse",
+      "type": "structure"
+    },
+    "Rules": {
+      "member": {
+        "shape": "FirewallRule"
+      },
+      "name": "Rules",
+      "type": "list"
+    },
+    "RulesRequest": {
+      "member": {
+        "shape": "AuthorizeFirewallGroupRequestFirewallRule"
+      },
+      "name": "RulesRequest",
+      "type": "list"
+    },
+    "ServerConfig": {
+      "members": {
+        "DefaultKubernetesVersion": {
+          "locationName": "defaultKubernetesVersion",
+          "shape": "DefaultKubernetesVersion"
+        },
+        "ValidKubernetesVersions": {
+          "locationName": "validKubernetesVersions",
+          "shape": "ValidKubernetesVersions"
+        }
+      },
+      "name": "ServerConfig",
+      "type": "structure"
+    },
+    "SetNodePoolSizeRequest": {
+      "members": {
+        "ClusterName": {
+          "location": "uri",
+          "locationName": "ClusterName",
+          "shape": "ClusterName"
+        },
+        "NodeCount": {
+          "locationName": "nodeCount",
+          "shape": "Integer"
+        },
+        "NodePoolName": {
+          "location": "uri",
+          "locationName": "NodePoolName",
+          "shape": "NodePoolName"
+        }
+      },
+      "name": "SetNodePoolSizeRequest",
+      "required": [
+        "ClusterName",
+        "NodePoolName",
+        "NodeCount"
+      ],
+      "type": "structure"
+    },
+    "SetNodePoolSizeResponse": {
+      "members": {
+        "NodePool": {
+          "locationName": "nodePool",
+          "shape": "NodePool"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "SetNodePoolSizeResponse",
+      "type": "structure"
+    },
+    "Snapshot": {
+      "members": {
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "SnapshotCluster"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "CreateTime"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "Description"
+        },
+        "ExpirationTime": {
+          "locationName": "expirationTime",
+          "shape": "ExpirationTime"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        },
+        "ResourceVersion": {
+          "locationName": "resourceVersion",
+          "shape": "ResourceVersion"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "SnapshotStatus"
+        }
+      },
+      "name": "Snapshot",
+      "type": "structure"
+    },
+    "SnapshotCluster": {
+      "members": {
+        "KubernetesVersion": {
+          "locationName": "kubernetesVersion",
+          "shape": "KubernetesVersion"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        },
+        "NodePools": {
+          "locationName": "nodePools",
+          "shape": "NodePoolsResponse"
+        }
+      },
+      "name": "SnapshotCluster",
+      "type": "structure"
+    },
+    "SnapshotName": {
+      "name": "SnapshotName",
+      "type": "string"
+    },
+    "SnapshotNodePool": {
+      "members": {
+        "InstanceType": {
+          "locationName": "instanceType",
+          "shape": "InstanceType"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        },
+        "NodeCount": {
+          "locationName": "nodeCount",
+          "shape": "NodeCount"
+        }
+      },
+      "name": "SnapshotNodePool",
+      "type": "structure"
+    },
+    "SnapshotStatus": {
+      "name": "SnapshotStatus",
+      "type": "string"
+    },
+    "Snapshots": {
+      "member": {
+        "shape": "Snapshot"
+      },
+      "name": "Snapshots",
+      "type": "list"
+    },
+    "String": {
+      "type": "string"
+    },
+    "TStamp": {
+      "type": "timestamp"
+    },
+    "ToPort": {
+      "name": "ToPort",
+      "type": "integer"
+    },
+    "UpdateClusterRequest": {
+      "members": {
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "UpdateClusterRequestCluster"
+        },
+        "ClusterName": {
+          "location": "uri",
+          "locationName": "ClusterName",
+          "shape": "ClusterName"
+        }
+      },
+      "name": "UpdateClusterRequest",
+      "required": [
+        "ClusterName",
+        "Cluster"
+      ],
+      "type": "structure"
+    },
+    "UpdateClusterRequestCluster": {
+      "members": {
+        "AddonsConfig": {
+          "locationName": "addonsConfig",
+          "shape": "AddonsConfig"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "Description"
+        },
+        "KubernetesVersion": {
+          "locationName": "kubernetesVersion",
+          "shape": "KubernetesVersion"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        }
+      },
+      "name": "UpdateClusterRequestCluster",
+      "type": "structure"
+    },
+    "UpdateClusterResponse": {
+      "members": {
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "Cluster"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "UpdateClusterResponse",
+      "type": "structure"
+    },
+    "UpdateFirewallGroupRequest": {
+      "members": {
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "UpdateFirewallGroupRequestFirewallGroup"
+        },
+        "FirewallGroupName": {
+          "location": "uri",
+          "locationName": "FirewallGroupName",
+          "shape": "FirewallGroupName"
+        }
+      },
+      "name": "UpdateFirewallGroupRequest",
+      "required": [
+        "FirewallGroupName",
+        "FirewallGroup"
+      ],
+      "type": "structure"
+    },
+    "UpdateFirewallGroupRequestFirewallGroup": {
+      "members": {
+        "Description": {
+          "locationName": "description",
+          "shape": "Description"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        }
+      },
+      "name": "UpdateFirewallGroupRequestFirewallGroup",
+      "type": "structure"
+    },
+    "UpdateFirewallGroupResponse": {
+      "members": {
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroupResponse"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        }
+      },
+      "name": "UpdateFirewallGroupResponse",
+      "type": "structure"
+    },
+    "UpdateSnapshotRequest": {
+      "members": {
+        "Snapshot": {
+          "locationName": "snapshot",
+          "shape": "UpdateSnapshotRequestSnapshot"
+        },
+        "SnapshotName": {
+          "location": "uri",
+          "locationName": "SnapshotName",
+          "shape": "SnapshotName"
+        }
+      },
+      "name": "UpdateSnapshotRequest",
+      "required": [
+        "SnapshotName",
+        "Snapshot"
+      ],
+      "type": "structure"
+    },
+    "UpdateSnapshotRequestSnapshot": {
+      "members": {
+        "Description": {
+          "locationName": "description",
+          "shape": "Description"
+        },
+        "ExpirationTime": {
+          "locationName": "expirationTime",
+          "shape": "ExpirationTime"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "Name"
+        }
+      },
+      "name": "UpdateSnapshotRequestSnapshot",
+      "type": "structure"
+    },
+    "UpdateSnapshotResponse": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "RequestId"
+        },
+        "Snapshot": {
+          "locationName": "snapshot",
+          "shape": "Snapshot"
+        }
+      },
+      "name": "UpdateSnapshotResponse",
+      "type": "structure"
+    },
+    "ValidKubernetesVersion": {
+      "name": "ValidKubernetesVersion",
+      "type": "string"
+    },
+    "ValidKubernetesVersions": {
+      "member": {
+        "shape": "ValidKubernetesVersion"
+      },
+      "name": "ValidKubernetesVersions",
+      "type": "list"
+    }
+  },
+  "version": "2.0"
+}
