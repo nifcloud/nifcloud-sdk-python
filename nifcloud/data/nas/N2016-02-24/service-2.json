@@ -24,6 +24,20 @@
         "shape": "AuthorizeNASSecurityGroupIngressResult"
       }
     },
+    "ClearNASSession": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ClearNASSessionRequest"
+      },
+      "name": "ClearNASSession",
+      "output": {
+        "resultWrapper": "ClearNASSessionResult",
+        "shape": "ClearNASSessionResult"
+      }
+    },
     "CreateNASInstance": {
       "http": {
         "method": "POST",
@@ -192,6 +206,29 @@
     "Boolean": {
       "name": "Boolean",
       "type": "boolean"
+    },
+    "ClearNASSessionRequest": {
+      "members": {
+        "NASInstanceIdentifier": {
+          "locationName": "NASInstanceIdentifier",
+          "shape": "String"
+        },
+        "SessionClearType": {
+          "locationName": "SessionClearType",
+          "shape": "String"
+        }
+      },
+      "name": "ClearNASSessionRequest",
+      "type": "structure"
+    },
+    "ClearNASSessionResult": {
+      "members": {
+        "NASInstance": {
+          "shape": "NASInstance"
+        }
+      },
+      "name": "ClearNASSessionResult",
+      "type": "structure"
     },
     "CreateNASInstanceRequest": {
       "members": {
@@ -526,6 +563,10 @@
         },
         "NewNASInstanceIdentifier": {
           "locationName": "NewNASInstanceIdentifier",
+          "shape": "String"
+        },
+        "NoRootSquash": {
+          "locationName": "NoRootSquash",
           "shape": "String"
         }
       },
