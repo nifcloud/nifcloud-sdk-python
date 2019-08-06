@@ -1,6 +1,36 @@
 
 # CHANGELOG
 
+## v0.2.1
+
+* feature: Add APIs and fix some bugs (#31 by tily)
+    * Added APIs
+        * computing:CopyFromBackupInstance
+        * computing:CreateBackupInstances
+        * computing:CreateInstanceBackupRule
+        * computing:DeleteInstanceBackupRule
+        * computing:DescribeInstanceBackupRuleActivities
+        * computing:DescribeInstanceBackupRules
+        * computing:ModifyInstanceBackupRuleAttribute
+        * computing:NiftyAssociateRouteTableWithElasticLoadBalancer
+        * computing:NiftyDescribeLoadBalancerSSLPolicies
+        * computing:NiftyDisassociateRouteTableFromElasticLoadBalancer
+        * computing:NiftyReplaceElasticLoadBalancerListenerSSLCertificate
+        * computing:NiftyReplaceRouteTableAssociationWithElasticLoadBalancer
+        * computing:NiftySetLoadBalancerSSLPoliciesOfListener
+        * computing:NiftyUnsetLoadBalancerSSLPoliciesOfListener
+        * computing:RefreshInstanceBackupRule
+        * computing:SetLoadBalancerListenerSSLCertificate
+        * computing:UnsetLoadBalancerListenerSSLCertificate
+        * nas:ClearNASSession
+        * rdb:DescribeCertificates
+        * rdb:ResetExternalMaster
+        * rdb:SetExternalMaster
+        * rdb:StartReplication
+        * rdb:StopReplication
+    * Fixed some bugs
+
+
 ## v0.2.0
 
 * feature: Support Hatoba beta (#30 by alice02)
