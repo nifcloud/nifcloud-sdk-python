@@ -16,7 +16,7 @@ from nifcloud import __version__ as nifcloud_version
 from nifcloud import session
 
 AWS_CLI_COMMAND = 'aws'
-NIFCLOUD_CLI_COMMAND = 'nifcloud-debug-cli'
+NIFCLOUD_CLI_COMMAND = 'nifcloud-debugcli'
 AWS_SERVICE_NAME = 'AWS'
 NIFCLOUD_SERVICE_NAME = 'NIFCLOUD'
 
