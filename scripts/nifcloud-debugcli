@@ -24,6 +24,7 @@ argparser.USAGE = argparser.USAGE.replace(
     AWS_CLI_COMMAND,
     NIFCLOUD_CLI_COMMAND
 )
+clidriver.USAGE = argparser.USAGE
 
 root_dir = os.path.dirname(os.path.dirname(os.path.dirname(
     os.path.abspath(__file__)
