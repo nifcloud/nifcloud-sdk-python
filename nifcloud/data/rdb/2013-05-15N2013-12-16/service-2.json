@@ -2206,7 +2206,7 @@
         },
         "Parameters": {
           "locationName": "Parameters",
-          "shape": "RequestParametersStruct"
+          "shape": "RequestParameters"
         }
       },
       "name": "ModifyDBParameterGroupRequest",
@@ -2590,14 +2590,15 @@
       "name": "RequestNiftyEmailAddresses",
       "type": "list"
     },
-    "RequestParameter": {
+    "RequestParameters": {
       "member": {
-        "shape": "RequestParameterStruct"
+        "locationName": "member",
+        "shape": "RequestParametersStruct"
       },
-      "name": "RequestParameter",
+      "name": "RequestParameters",
       "type": "list"
     },
-    "RequestParameterStruct": {
+    "RequestParametersStruct": {
       "members": {
         "ApplyMethod": {
           "locationName": "ApplyMethod",
@@ -2610,16 +2611,6 @@
         "ParameterValue": {
           "locationName": "ParameterValue",
           "shape": "String"
-        }
-      },
-      "name": "RequestParameterStruct",
-      "type": "structure"
-    },
-    "RequestParametersStruct": {
-      "members": {
-        "RequestParameter": {
-          "locationName": "Parameter",
-          "shape": "RequestParameter"
         }
       },
       "name": "RequestParametersStruct",
@@ -2641,7 +2632,7 @@
         },
         "Parameters": {
           "locationName": "Parameters",
-          "shape": "RequestParametersStruct"
+          "shape": "RequestParameters"
         },
         "ResetAllParameters": {
           "locationName": "ResetAllParameters",
