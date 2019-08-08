@@ -1,6 +1,13 @@
 
 # CHANGELOG
 
+## v0.2.2
+
+* fix: Fix modify / reset db-parameter-group bug (#35 by tily)
+* fix: Fix upload-ssl-certificate bug (#34 by tily)
+* fix: Fix help text on CLI parameter error  (#33 by tily)
+* fix: Fix CLI command name (#32 by tily)
+
 ## v0.2.1
 
 * feature: Add APIs and fix some bugs (#31 by tily)
