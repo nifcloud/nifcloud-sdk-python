@@ -18913,12 +18913,12 @@
     },
     "UploadSslCertificateRequest": {
       "members": {
-        "Ca": {
-          "locationName": "Ca",
-          "shape": "String"
-        },
         "Certificate": {
           "locationName": "Certificate",
+          "shape": "String"
+        },
+        "CertificateAuthority": {
+          "locationName": "Ca",
           "shape": "String"
         },
         "Key": {
