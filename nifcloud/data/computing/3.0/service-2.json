@@ -8196,24 +8196,6 @@
       "name": "InstanceBackupRule",
       "type": "structure"
     },
-    "InstanceBackupRuleSetItem": {
-      "members": {
-        "BackupInstancesSet": {
-          "locationName": "backupInstancesSet",
-          "shape": "BackupInstancesSet"
-        },
-        "InstanceId": {
-          "locationName": "instanceId",
-          "shape": "String"
-        },
-        "InstanceUniqueId": {
-          "locationName": "instanceUniqueId",
-          "shape": "String"
-        }
-      },
-      "name": "InstanceBackupRuleSetItem",
-      "type": "structure"
-    },
     "InstanceBackupRulesSet": {
       "member": {
         "locationName": "item",
@@ -19274,6 +19256,10 @@
         "CreateTime": {
           "locationName": "createTime",
           "shape": "TStamp"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
         },
         "DiskType": {
           "locationName": "diskType",
