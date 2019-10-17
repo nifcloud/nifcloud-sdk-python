@@ -1,6 +1,11 @@
 
 # CHANGELOG
 
+## v0.2.3
+
+* fix: Add `Description` field to DescribeVolumes response (#36 by tily)
+* fix: Remove unnecessary field (#36 by tily)
+
 ## v0.2.2
 
 * fix: Fix modify / reset db-parameter-group bug (#35 by tily)
