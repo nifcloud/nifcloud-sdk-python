@@ -24,8 +24,7 @@ class ComputingSerializer(serialize.EC2Serializer):
         }
         if not params.get(prefix):
             return body
-        for i, param in enumerate(params[prefix]):
-            i += 1
+        for i, param in enumerate(params[prefix], 1):
             body['%s.member.%d' % (prefix, i)] = param['LoadBalancerName']
             body['%s.LoadBalancerPort.%d' % (prefix, i)] = param['LoadBalancerPort']  # noqa: E501
             body['%s.InstancePort.%d' % (prefix, i)] = param['InstancePort']
