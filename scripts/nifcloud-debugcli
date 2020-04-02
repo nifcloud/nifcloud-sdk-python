@@ -86,7 +86,7 @@ TopicHelpCommand.EventHandlerClass = TopicDocumentEventHandler
 
 class OperationDocumentEventHandler(clidocs.OperationDocumentEventHandler):
 
-    NIFCLOUD_DOC_BASE = 'https://cloud.nifty.com/api/'
+    NIFCLOUD_DOC_BASE = 'https://pfs.nifcloud.com/api/'
 
     def _add_top_level_args_reference(self, help_command):
         help_command.doc.writeln('')

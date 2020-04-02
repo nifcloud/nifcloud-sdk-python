@@ -3,7 +3,7 @@ import re
 from botocore.docs import generate_docs  # noqa: F401
 from botocore.docs import client, service
 
-NIFCLOUD_DOC_BASE = 'https://cloud.nifty.com/api'
+NIFCLOUD_DOC_BASE = 'https://pfs.nifcloud.com/api'
 
 
 class ClientDocumenter(client.ClientDocumenter):
