@@ -14,6 +14,11 @@ class ComputingSerializer(serialize.EC2Serializer):
             serialized["body"] = self._fix_describe_load_balancers_params(
                 parameters, operation_model.metadata['apiVersion']
             )
+        # Fix request parameters of RunInstances, StartInstances, RebootInstances for NIFCLOUD
+        if operation_model.name in ['RunInstances', 'StartInstances', 'RebootInstances']:
+            serialized = self._fix_user_data_param(
+                serialized
+            )
         return serialized
 
     def _fix_describe_load_balancers_params(self, params, api_version):
@@ -29,6 +34,13 @@ class ComputingSerializer(serialize.EC2Serializer):
             body['%s.LoadBalancerPort.%d' % (prefix, i)] = param['LoadBalancerPort']  # noqa: E501
             body['%s.InstancePort.%d' % (prefix, i)] = param['InstancePort']
         return body
+
+    def _fix_user_data_param(self, serialized):
+        if not serialized['body'].get('UserData.Content'):
+            return serialized
+        serialized['body']['UserData'] = serialized['body']['UserData.Content']
+        del serialized['body']['UserData.Content']
+        return serialized
 
     def _serialize_type_list(self, serialized, value, shape, prefix=''):
         # 'locationName' is renamed to 'name'
