@@ -173,6 +173,20 @@
         "resultWrapper": "RevokeNASSecurityGroupIngressResult",
         "shape": "RevokeNASSecurityGroupIngressResult"
       }
+    },
+    "UpgradeNASInstance": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "UpgradeNASInstanceRequest"
+      },
+      "name": "UpgradeNASInstance",
+      "output": {
+        "resultWrapper": "UpgradeNASInstanceResult",
+        "shape": "UpgradeNASInstanceResult"
+      }
     }
   },
   "shapes": {
@@ -632,6 +646,9 @@
         "Endpoint": {
           "shape": "Endpoint"
         },
+        "InstanceCreateTime": {
+          "shape": "String"
+        },
         "MasterUsername": {
           "shape": "String"
         },
@@ -667,6 +684,9 @@
         },
         "StorageType": {
           "shape": "Integer"
+        },
+        "UpgradeRequired": {
+          "shape": "String"
         }
       },
       "name": "NASInstance",
@@ -833,6 +853,25 @@
     "TStamp": {
       "name": "TStamp",
       "type": "timestamp"
+    },
+    "UpgradeNASInstanceRequest": {
+      "members": {
+        "NASInstanceIdentifier": {
+          "locationName": "NASInstanceIdentifier",
+          "shape": "String"
+        }
+      },
+      "name": "UpgradeNASInstanceRequest",
+      "type": "structure"
+    },
+    "UpgradeNASInstanceResult": {
+      "members": {
+        "NASInstance": {
+          "shape": "NASInstance"
+        }
+      },
+      "name": "UpgradeNASInstanceResult",
+      "type": "structure"
     }
   },
   "version": "2.0"

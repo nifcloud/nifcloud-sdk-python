@@ -737,6 +737,10 @@
     },
     "CreateDBInstanceReadReplicaRequest": {
       "members": {
+        "AccountingType": {
+          "locationName": "AccountingType",
+          "shape": "String"
+        },
         "DBInstanceClass": {
           "locationName": "DBInstanceClass",
           "shape": "String"
@@ -772,6 +776,10 @@
     },
     "CreateDBInstanceRequest": {
       "members": {
+        "AccountingType": {
+          "locationName": "AccountingType",
+          "shape": "String"
+        },
         "AllocatedStorage": {
           "locationName": "AllocatedStorage",
           "shape": "Integer"
@@ -875,6 +883,10 @@
         "PubliclyAccessible": {
           "locationName": "PubliclyAccessible",
           "shape": "Boolean"
+        },
+        "ReadReplicaAccountingType": {
+          "locationName": "ReadReplicaAccountingType",
+          "shape": "String"
         }
       },
       "name": "CreateDBInstanceRequest",
@@ -1040,6 +1052,9 @@
     },
     "DBInstance": {
       "members": {
+        "AccountingType": {
+          "shape": "Integer"
+        },
         "AllocatedStorage": {
           "shape": "String"
         },
@@ -1102,6 +1117,9 @@
         },
         "MultiAZ": {
           "shape": "String"
+        },
+        "NextMonthAccountingType": {
+          "shape": "Integer"
         },
         "NiftyMasterPrivateAddress": {
           "shape": "String"
@@ -2060,6 +2078,9 @@
         },
         "ReplicationAddresses": {
           "shape": "ReplicationAddresses"
+        },
+        "ReplicationPrivateAddresses": {
+          "shape": "ReplicationPrivateAddresses"
         }
       },
       "name": "ExternalReplicationInfo",
@@ -2109,6 +2130,10 @@
     },
     "ModifyDBInstanceRequest": {
       "members": {
+        "AccountingType": {
+          "locationName": "AccountingType",
+          "shape": "String"
+        },
         "AllocatedStorage": {
           "locationName": "AllocatedStorage",
           "shape": "Integer"
@@ -2131,7 +2156,7 @@
         },
         "CustomBinlogRetentionPeriod": {
           "locationName": "CustomBinlogRetentionPeriod",
-          "shape": "Integer"
+          "shape": "Boolean"
         },
         "DBInstanceClass": {
           "locationName": "DBInstanceClass",
@@ -2183,6 +2208,10 @@
         },
         "PreferredMaintenanceWindow": {
           "locationName": "PreferredMaintenanceWindow",
+          "shape": "String"
+        },
+        "ReadReplicaAccountingType": {
+          "locationName": "ReadReplicaAccountingType",
           "shape": "String"
         }
       },
@@ -2536,6 +2565,13 @@
       "name": "ReplicationAddresses",
       "type": "list"
     },
+    "ReplicationPrivateAddresses": {
+      "member": {
+        "shape": "String"
+      },
+      "name": "ReplicationPrivateAddresses",
+      "type": "list"
+    },
     "RequestDBSecurityGroups": {
       "member": {
         "locationName": "member",
@@ -2672,6 +2708,10 @@
     },
     "RestoreDBInstanceFromDBSnapshotRequest": {
       "members": {
+        "AccountingType": {
+          "locationName": "AccountingType",
+          "shape": "String"
+        },
         "AvailabilityZone": {
           "locationName": "AvailabilityZone",
           "shape": "String"
@@ -2751,6 +2791,10 @@
         "PubliclyAccessible": {
           "locationName": "PubliclyAccessible",
           "shape": "Boolean"
+        },
+        "ReadReplicaAccountingType": {
+          "locationName": "ReadReplicaAccountingType",
+          "shape": "String"
         }
       },
       "name": "RestoreDBInstanceFromDBSnapshotRequest",
@@ -2767,6 +2811,10 @@
     },
     "RestoreDBInstanceToPointInTimeRequest": {
       "members": {
+        "AccountingType": {
+          "locationName": "AccountingType",
+          "shape": "String"
+        },
         "AvailabilityZone": {
           "locationName": "AvailabilityZone",
           "shape": "String"
@@ -2838,6 +2886,10 @@
         "PubliclyAccessible": {
           "locationName": "PubliclyAccessible",
           "shape": "Boolean"
+        },
+        "ReadReplicaAccountingType": {
+          "locationName": "ReadReplicaAccountingType",
+          "shape": "String"
         },
         "RestoreTime": {
           "locationName": "RestoreTime",
