@@ -7,8 +7,8 @@
     "serviceFullName": "NIFCLOUD Computing",
     "serviceId": "computing",
     "signatureVersion": "v2-computing",
-    "uid": "computing-2.2",
-    "xmlNamespace": "https://cp.cloud.nifty.com/api/"
+    "uid": "computing-2016-11-15",
+    "xmlNamespace": "https://computing.api.nifcloud.com/api/"
   },
   "operations": {
     "AllocateAddress": {
@@ -14917,7 +14917,7 @@
         },
         "UserData": {
           "locationName": "UserData",
-          "shape": "String"
+          "shape": "RequestUserDataStruct"
         }
       },
       "name": "RebootInstancesRequest",
@@ -16876,6 +16876,20 @@
       "name": "RequestTranslationStruct",
       "type": "structure"
     },
+    "RequestUserDataStruct": {
+      "members": {
+        "Content": {
+          "locationName": "Content",
+          "shape": "String"
+        },
+        "Encoding": {
+          "locationName": "Encoding",
+          "shape": "String"
+        }
+      },
+      "name": "RequestUserDataStruct",
+      "type": "structure"
+    },
     "RequestUsers": {
       "member": {
         "locationName": "member",
@@ -17699,7 +17713,7 @@
         },
         "UserData": {
           "locationName": "UserData",
-          "shape": "String"
+          "shape": "RequestUserDataStruct"
         }
       },
       "name": "RunInstancesRequest",
@@ -18385,7 +18399,7 @@
         },
         "UserData": {
           "locationName": "UserData",
-          "shape": "String"
+          "shape": "RequestUserDataStruct"
         }
       },
       "name": "StartInstancesRequest",
