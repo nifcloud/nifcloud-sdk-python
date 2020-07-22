@@ -37,6 +37,19 @@
         "shape": "AssociateAddressResult"
       }
     },
+    "AssociateMultiIpAddressGroup": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "AssociateMultiIpAddressGroupRequest"
+      },
+      "name": "AssociateMultiIpAddressGroup",
+      "output": {
+        "shape": "AssociateMultiIpAddressGroupResult"
+      }
+    },
     "AssociateRouteTable": {
       "http": {
         "method": "POST",
@@ -271,6 +284,19 @@
         "shape": "CreateLoadBalancerResult"
       }
     },
+    "CreateMultiIpAddressGroup": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "CreateMultiIpAddressGroupRequest"
+      },
+      "name": "CreateMultiIpAddressGroup",
+      "output": {
+        "shape": "CreateMultiIpAddressGroupResult"
+      }
+    },
     "CreateNetworkInterface": {
       "http": {
         "method": "POST",
@@ -451,6 +477,19 @@
       "name": "DeleteLoadBalancer",
       "output": {
         "shape": "DeleteLoadBalancerResult"
+      }
+    },
+    "DeleteMultiIpAddressGroup": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "DeleteMultiIpAddressGroupRequest"
+      },
+      "name": "DeleteMultiIpAddressGroup",
+      "output": {
+        "shape": "DeleteMultiIpAddressGroupResult"
       }
     },
     "DeleteNetworkInterface": {
@@ -752,6 +791,19 @@
         "shape": "DescribeLoadBalancersResult"
       }
     },
+    "DescribeMultiIpAddressGroups": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "DescribeMultiIpAddressGroupsRequest"
+      },
+      "name": "DescribeMultiIpAddressGroups",
+      "output": {
+        "shape": "DescribeMultiIpAddressGroupsResult"
+      }
+    },
     "DescribeNetworkInterfaces": {
       "http": {
         "method": "POST",
@@ -999,6 +1051,19 @@
         "shape": "DisassociateAddressResult"
       }
     },
+    "DisassociateMultiIpAddressGroup": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "DisassociateMultiIpAddressGroupRequest"
+      },
+      "name": "DisassociateMultiIpAddressGroup",
+      "output": {
+        "shape": "DisassociateMultiIpAddressGroupResult"
+      }
+    },
     "DisassociateRouteTable": {
       "http": {
         "method": "POST",
@@ -1064,6 +1129,19 @@
         "shape": "ImportKeyPairResult"
       }
     },
+    "IncreaseMultiIpAddressCount": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "IncreaseMultiIpAddressCountRequest"
+      },
+      "name": "IncreaseMultiIpAddressCount",
+      "output": {
+        "shape": "IncreaseMultiIpAddressCountResult"
+      }
+    },
     "ModifyImageAttribute": {
       "http": {
         "method": "POST",
@@ -1101,6 +1179,19 @@
       "name": "ModifyInstanceBackupRuleAttribute",
       "output": {
         "shape": "ModifyInstanceBackupRuleAttributeResult"
+      }
+    },
+    "ModifyMultiIpAddressGroupAttribute": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "ModifyMultiIpAddressGroupAttributeRequest"
+      },
+      "name": "ModifyMultiIpAddressGroupAttribute",
+      "output": {
+        "shape": "ModifyMultiIpAddressGroupAttributeResult"
       }
     },
     "ModifyNetworkInterfaceAttribute": {
@@ -2546,6 +2637,19 @@
         "shape": "ReleaseAddressResult"
       }
     },
+    "ReleaseMultiIpAddresses": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "ReleaseMultiIpAddressesRequest"
+      },
+      "name": "ReleaseMultiIpAddresses",
+      "output": {
+        "shape": "ReleaseMultiIpAddressesResult"
+      }
+    },
     "ReplaceRoute": {
       "http": {
         "method": "POST",
@@ -3141,6 +3245,38 @@
         }
       },
       "name": "AssociateAddressResult",
+      "type": "structure"
+    },
+    "AssociateMultiIpAddressGroupRequest": {
+      "members": {
+        "InstanceUniqueId": {
+          "locationName": "InstanceUniqueId",
+          "shape": "String"
+        },
+        "MultiIpAddressGroupId": {
+          "locationName": "MultiIpAddressGroupId",
+          "shape": "String"
+        },
+        "NiftyReboot": {
+          "locationName": "NiftyReboot",
+          "shape": "String"
+        }
+      },
+      "name": "AssociateMultiIpAddressGroupRequest",
+      "type": "structure"
+    },
+    "AssociateMultiIpAddressGroupResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "AssociateMultiIpAddressGroupResult",
       "type": "structure"
     },
     "AssociateRouteTableRequest": {
@@ -4527,6 +4663,46 @@
       "name": "CreateLoadBalancerResult",
       "type": "structure"
     },
+    "CreateMultiIpAddressGroupRequest": {
+      "members": {
+        "Description": {
+          "locationName": "Description",
+          "shape": "String"
+        },
+        "IpAddressCount": {
+          "locationName": "IpAddressCount",
+          "shape": "Integer"
+        },
+        "MultiIpAddressGroupName": {
+          "locationName": "MultiIpAddressGroupName",
+          "shape": "String"
+        },
+        "Placement": {
+          "locationName": "Placement",
+          "shape": "RequestPlacementStruct"
+        }
+      },
+      "name": "CreateMultiIpAddressGroupRequest",
+      "type": "structure"
+    },
+    "CreateMultiIpAddressGroupResult": {
+      "members": {
+        "MultiIpAddressGroup": {
+          "locationName": "multiIpAddressGroup",
+          "shape": "MultiIpAddressGroup"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "CreateMultiIpAddressGroupResult",
+      "type": "structure"
+    },
     "CreateNetworkInterfaceRequest": {
       "members": {
         "Description": {
@@ -5284,6 +5460,30 @@
       "name": "DeleteLoadBalancerResult",
       "type": "structure"
     },
+    "DeleteMultiIpAddressGroupRequest": {
+      "members": {
+        "MultiIpAddressGroupId": {
+          "locationName": "MultiIpAddressGroupId",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteMultiIpAddressGroupRequest",
+      "type": "structure"
+    },
+    "DeleteMultiIpAddressGroupResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "DeleteMultiIpAddressGroupResult",
+      "type": "structure"
+    },
     "DeleteNetworkInterfaceRequest": {
       "members": {
         "NetworkInterfaceId": {
@@ -6028,6 +6228,30 @@
       "name": "DescribeLoadBalancersResult",
       "type": "structure"
     },
+    "DescribeMultiIpAddressGroupsRequest": {
+      "members": {
+        "MultiIpAddressGroupId": {
+          "locationName": "MultiIpAddressGroupId",
+          "shape": "RequestMultiIpAddressGroupId"
+        }
+      },
+      "name": "DescribeMultiIpAddressGroupsRequest",
+      "type": "structure"
+    },
+    "DescribeMultiIpAddressGroupsResult": {
+      "members": {
+        "MultiIpAddressGroupsSet": {
+          "locationName": "multiIpAddressGroupsSet",
+          "shape": "MultiIpAddressGroupsSet"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        }
+      },
+      "name": "DescribeMultiIpAddressGroupsResult",
+      "type": "structure"
+    },
     "DescribeNetworkInterfacesRequest": {
       "members": {
         "Filter": {
@@ -6433,6 +6657,10 @@
         "MultiAccountInfo": {
           "locationName": "multiAccountInfo",
           "shape": "MultiAccountInfo"
+        },
+        "MultiIpAddressInfo": {
+          "locationName": "multiIpAddressInfo",
+          "shape": "MultiIpAddressInfo"
         },
         "NetworkInfo": {
           "locationName": "networkInfo",
@@ -6986,6 +7214,38 @@
         }
       },
       "name": "DisassociateAddressResult",
+      "type": "structure"
+    },
+    "DisassociateMultiIpAddressGroupRequest": {
+      "members": {
+        "InstanceUniqueId": {
+          "locationName": "InstanceUniqueId",
+          "shape": "String"
+        },
+        "MultiIpAddressGroupId": {
+          "locationName": "MultiIpAddressGroupId",
+          "shape": "String"
+        },
+        "NiftyReboot": {
+          "locationName": "NiftyReboot",
+          "shape": "String"
+        }
+      },
+      "name": "DisassociateMultiIpAddressGroupRequest",
+      "type": "structure"
+    },
+    "DisassociateMultiIpAddressGroupResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "DisassociateMultiIpAddressGroupResult",
       "type": "structure"
     },
     "DisassociateRouteTableRequest": {
@@ -7938,6 +8198,34 @@
       "name": "InboundInterface",
       "type": "structure"
     },
+    "IncreaseMultiIpAddressCountRequest": {
+      "members": {
+        "IpAddressCount": {
+          "locationName": "IpAddressCount",
+          "shape": "Integer"
+        },
+        "MultiIpAddressGroupId": {
+          "locationName": "MultiIpAddressGroupId",
+          "shape": "String"
+        }
+      },
+      "name": "IncreaseMultiIpAddressCountRequest",
+      "type": "structure"
+    },
+    "IncreaseMultiIpAddressCountResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "IncreaseMultiIpAddressCountResult",
+      "type": "structure"
+    },
     "Instance": {
       "members": {
         "AccountingType": {
@@ -8678,6 +8966,10 @@
           "locationName": "monitoring",
           "shape": "Monitoring"
         },
+        "MultiIpAddressGroup": {
+          "locationName": "multiIpAddressGroup",
+          "shape": "MultiIpAddressGroup"
+        },
         "NetworkInterfaceSet": {
           "locationName": "networkInterfaceSet",
           "shape": "NetworkInterfaceSet"
@@ -8894,6 +9186,24 @@
         }
       },
       "name": "IpAddressPoolsSetItem",
+      "type": "structure"
+    },
+    "IpAddressesSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "IpAddressesSetItem"
+      },
+      "name": "IpAddressesSet",
+      "type": "list"
+    },
+    "IpAddressesSetItem": {
+      "members": {
+        "IpAddress": {
+          "locationName": "ipAddress",
+          "shape": "String"
+        }
+      },
+      "name": "IpAddressesSetItem",
       "type": "structure"
     },
     "IpPermissionsSet": {
@@ -9704,6 +10014,38 @@
       "name": "ModifyInstanceBackupRuleAttributeResult",
       "type": "structure"
     },
+    "ModifyMultiIpAddressGroupAttributeRequest": {
+      "members": {
+        "Description": {
+          "locationName": "Description",
+          "shape": "String"
+        },
+        "MultiIpAddressGroupId": {
+          "locationName": "MultiIpAddressGroupId",
+          "shape": "String"
+        },
+        "MultiIpAddressGroupName": {
+          "locationName": "MultiIpAddressGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "ModifyMultiIpAddressGroupAttributeRequest",
+      "type": "structure"
+    },
+    "ModifyMultiIpAddressGroupAttributeResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "ModifyMultiIpAddressGroupAttributeResult",
+      "type": "structure"
+    },
     "ModifyNetworkInterfaceAttributeRequest": {
       "members": {
         "Description": {
@@ -9850,6 +10192,188 @@
         }
       },
       "name": "MultiAccountInfo",
+      "type": "structure"
+    },
+    "MultiIpAddressGroup": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "InstancesSet": {
+          "locationName": "instancesSet",
+          "shape": "InstancesSet"
+        },
+        "MultiIpAddressGroupId": {
+          "locationName": "multiIpAddressGroupId",
+          "shape": "String"
+        },
+        "MultiIpAddressGroupName": {
+          "locationName": "multiIpAddressGroupName",
+          "shape": "String"
+        },
+        "MultiIpAddressNetwork": {
+          "locationName": "multiIpAddressNetwork",
+          "shape": "MultiIpAddressNetwork"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        }
+      },
+      "name": "MultiIpAddressGroup",
+      "type": "structure"
+    },
+    "MultiIpAddressGroupsSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "MultiIpAddressGroupsSetItem"
+      },
+      "name": "MultiIpAddressGroupsSet",
+      "type": "list"
+    },
+    "MultiIpAddressGroupsSetItem": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "InstancesSet": {
+          "locationName": "instancesSet",
+          "shape": "InstancesSet"
+        },
+        "MultiIpAddressGroupId": {
+          "locationName": "multiIpAddressGroupId",
+          "shape": "String"
+        },
+        "MultiIpAddressGroupName": {
+          "locationName": "multiIpAddressGroupName",
+          "shape": "String"
+        },
+        "MultiIpAddressNetwork": {
+          "locationName": "multiIpAddressNetwork",
+          "shape": "MultiIpAddressNetwork"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        }
+      },
+      "name": "MultiIpAddressGroupsSetItem",
+      "type": "structure"
+    },
+    "MultiIpAddressInfo": {
+      "members": {
+        "MultiIpAddressMonthlyRateSet": {
+          "locationName": "multiIpAddressMonthlyRateSet",
+          "shape": "MultiIpAddressMonthlyRateSet"
+        }
+      },
+      "name": "MultiIpAddressInfo",
+      "type": "structure"
+    },
+    "MultiIpAddressItemSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "MultiIpAddressItemSetItem"
+      },
+      "name": "MultiIpAddressItemSet",
+      "type": "list"
+    },
+    "MultiIpAddressItemSetItem": {
+      "members": {
+        "Count": {
+          "locationName": "count",
+          "shape": "Integer"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "String"
+        }
+      },
+      "name": "MultiIpAddressItemSetItem",
+      "type": "structure"
+    },
+    "MultiIpAddressMonthlyRateSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "MultiIpAddressMonthlyRateSetItem"
+      },
+      "name": "MultiIpAddressMonthlyRateSet",
+      "type": "list"
+    },
+    "MultiIpAddressMonthlyRateSetItem": {
+      "members": {
+        "Charge": {
+          "locationName": "charge",
+          "shape": "Integer"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "String"
+        },
+        "Unit": {
+          "locationName": "unit",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "Integer"
+        }
+      },
+      "name": "MultiIpAddressMonthlyRateSetItem",
+      "type": "structure"
+    },
+    "MultiIpAddressNetwork": {
+      "members": {
+        "DefaultGateway": {
+          "locationName": "defaultGateway",
+          "shape": "String"
+        },
+        "IpAddressesSet": {
+          "locationName": "ipAddressesSet",
+          "shape": "IpAddressesSet"
+        },
+        "SubnetMask": {
+          "locationName": "subnetMask",
+          "shape": "String"
+        }
+      },
+      "name": "MultiIpAddressNetwork",
+      "type": "structure"
+    },
+    "MultiIpAddressesSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "MultiIpAddressesSetItem"
+      },
+      "name": "MultiIpAddressesSet",
+      "type": "list"
+    },
+    "MultiIpAddressesSetItem": {
+      "members": {
+        "IpAddress": {
+          "locationName": "ipAddress",
+          "shape": "String"
+        }
+      },
+      "name": "MultiIpAddressesSetItem",
       "type": "structure"
     },
     "MultiIpMonthlyRate": {
@@ -10271,6 +10795,10 @@
         "MacAddress": {
           "locationName": "macAddress",
           "shape": "String"
+        },
+        "MultiIpAddressesSet": {
+          "locationName": "multiIpAddressesSet",
+          "shape": "MultiIpAddressesSet"
         },
         "NetworkId": {
           "locationName": "networkId",
@@ -15275,6 +15803,34 @@
       "name": "ReleaseAddressResult",
       "type": "structure"
     },
+    "ReleaseMultiIpAddressesRequest": {
+      "members": {
+        "IpAddress": {
+          "locationName": "IpAddress",
+          "shape": "RequestIpAddress"
+        },
+        "MultiIpAddressGroupId": {
+          "locationName": "MultiIpAddressGroupId",
+          "shape": "String"
+        }
+      },
+      "name": "ReleaseMultiIpAddressesRequest",
+      "type": "structure"
+    },
+    "ReleaseMultiIpAddressesResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "ReleaseMultiIpAddressesResult",
+      "type": "structure"
+    },
     "RemoteAccessVpnGatewayInfo": {
       "members": {
         "RemoteAccessVpnGatewayMeasuredRateSet": {
@@ -15287,6 +15843,28 @@
         }
       },
       "name": "RemoteAccessVpnGatewayInfo",
+      "type": "structure"
+    },
+    "RemoteAccessVpnGatewayItemSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "RemoteAccessVpnGatewayItemSetItem"
+      },
+      "name": "RemoteAccessVpnGatewayItemSet",
+      "type": "list"
+    },
+    "RemoteAccessVpnGatewayItemSetItem": {
+      "members": {
+        "Count": {
+          "locationName": "count",
+          "shape": "Integer"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "String"
+        }
+      },
+      "name": "RemoteAccessVpnGatewayItemSetItem",
       "type": "structure"
     },
     "RemoteAccessVpnGatewayMeasuredRateSet": {
@@ -15974,6 +16552,13 @@
       "name": "RequestInstancesStruct",
       "type": "structure"
     },
+    "RequestIpAddress": {
+      "member": {
+        "shape": "String"
+      },
+      "name": "RequestIpAddress",
+      "type": "list"
+    },
     "RequestIpPermissions": {
       "member": {
         "shape": "RequestIpPermissionsStruct"
@@ -16272,6 +16857,13 @@
       },
       "name": "RequestMonthStruct",
       "type": "structure"
+    },
+    "RequestMultiIpAddressGroupId": {
+      "member": {
+        "shape": "String"
+      },
+      "name": "RequestMultiIpAddressGroupId",
+      "type": "list"
     },
     "RequestNatTableId": {
       "member": {
@@ -17113,6 +17705,10 @@
           "locationName": "monitoringRuleCount",
           "shape": "Integer"
         },
+        "MultiIpAddressItemSet": {
+          "locationName": "multiIpAddressItemSet",
+          "shape": "MultiIpAddressItemSet"
+        },
         "NetworkFlowAmount": {
           "locationName": "networkFlowAmount",
           "shape": "Integer"
@@ -17132,6 +17728,10 @@
         "PrivateLanCount": {
           "locationName": "privateLanCount",
           "shape": "Integer"
+        },
+        "RemoteAccessVpnGatewayItemSet": {
+          "locationName": "remoteAccessVpnGatewayItemSet",
+          "shape": "RemoteAccessVpnGatewayItemSet"
         },
         "RouterItemSet": {
           "locationName": "routerItemSet",
