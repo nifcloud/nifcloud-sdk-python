@@ -25,7 +25,7 @@ def test_describe_instances(client):
     instances_set = sdktest001["InstancesSet"][0]
     assert instances_set["InstanceId"] == "sdktest001"
     assert instances_set["InstanceUniqueId"] == "i-0nzgxtwf"
-    assert instances_set["ImageId"] == "89"
+    assert instances_set["ImageId"] == "168"
     assert instances_set["InstanceState"]["Code"] == 16
     assert instances_set["InstanceState"]["Name"] == "running"
     assert type(instances_set["PrivateDnsName"]) is str
@@ -40,7 +40,7 @@ def test_describe_instances(client):
     assert instances_set["KernelId"] == ""
     assert instances_set["RamdiskId"] == ""
     assert instances_set["Platform"] == "ubuntu"
-    assert instances_set["ImageName"] == "Ubuntu 16.04 64bit Plain"
+    assert instances_set["ImageName"] == "Ubuntu Server 18.04 LTS"
     assert instances_set["Monitoring"]["State"] == "disabled"
     assert instances_set["SubnetId"] == ""
     assert instances_set["VpcId"] == ""
@@ -139,7 +139,7 @@ def test_describe_instances(client):
     instances_set = sdktest002["InstancesSet"][0]
     assert instances_set["InstanceId"] == "sdktest002"
     assert instances_set["InstanceUniqueId"] == "i-0nzgxdk7"
-    assert instances_set["ImageId"] == "68"
+    assert instances_set["ImageId"] == "215"
     assert instances_set["InstanceState"]["Code"] == 16
     assert instances_set["InstanceState"]["Name"] == "running"
     assert type(instances_set["PrivateDnsName"]) is str
@@ -154,7 +154,7 @@ def test_describe_instances(client):
     assert instances_set["KernelId"] == ""
     assert instances_set["RamdiskId"] == ""
     assert instances_set["Platform"] == "centos"
-    assert instances_set["ImageName"] == "CentOS 7.1 64bit Plain"
+    assert instances_set["ImageName"] == "CentOS 8.1"
     assert instances_set["Monitoring"]["State"] == "disabled"
     assert instances_set["SubnetId"] == ""
     assert instances_set["VpcId"] == ""
@@ -229,23 +229,23 @@ def test_describe_regions(client):
     expected_regions = [
         {
             "RegionName": "east-1",
-            "RegionEndpoint": "east-1.cp.cloud.nifty.com"
+            "RegionEndpoint": "jp-east-1.computing.api.nifcloud.com"
         },
         {
             "RegionName": "east-2",
-            "RegionEndpoint": "east-2.cp.cloud.nifty.com"
+            "RegionEndpoint": "jp-east-2.computing.api.nifcloud.com"
         },
         {
             "RegionName": "east-3",
-            "RegionEndpoint": "east-3.cp.cloud.nifty.com"
+            "RegionEndpoint": "jp-east-3.computing.api.nifcloud.com"
         },
         {
             "RegionName": "jp-east-4",
-            "RegionEndpoint": "jp-east-4.cp.cloud.nifty.com"
+            "RegionEndpoint": "jp-east-4.computing.api.nifcloud.com"
         },
         {
             "RegionName": "west-1",
-            "RegionEndpoint": "west-1.cp.cloud.nifty.com"
+            "RegionEndpoint": "jp-west-1.computing.api.nifcloud.com"
         }
     ]
     for actual, expected in zip(actual_regions, expected_regions):
