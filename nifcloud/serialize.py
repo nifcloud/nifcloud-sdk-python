@@ -14,8 +14,11 @@ class ComputingSerializer(serialize.EC2Serializer):
             serialized["body"] = self._fix_describe_load_balancers_params(
                 parameters, operation_model.metadata['apiVersion']
             )
-        # Fix request parameters of RunInstances, StartInstances, RebootInstances for NIFCLOUD
-        if operation_model.name in ['RunInstances', 'StartInstances', 'RebootInstances']:
+        # Fix user data param of below actions for NIFCLOUD
+        user_data_fix_target = ['RunInstances',
+                                'StartInstances',
+                                'RebootInstances']
+        if operation_model.name in user_data_fix_target:
             serialized = self._fix_user_data_param(
                 serialized
             )
