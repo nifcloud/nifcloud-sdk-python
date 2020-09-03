@@ -7,7 +7,7 @@
     "serviceFullName": "NIFCLOUD Hatoba beta",
     "serviceId": "hatoba",
     "signatureVersion": "v4",
-    "uid": "hatoba-v1"
+    "uid": "hatoba-2019-03-27"
   },
   "operations": {
     "AuthorizeFirewallGroup": {
