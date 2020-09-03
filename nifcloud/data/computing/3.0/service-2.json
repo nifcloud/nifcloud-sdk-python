@@ -6,7 +6,7 @@
     "serviceAbbreviation": "computing",
     "serviceFullName": "NIFCLOUD Computing",
     "serviceId": "computing",
-    "signatureVersion": "v2-computing",
+    "signatureVersion": "v2",
     "uid": "computing-2016-11-15",
     "xmlNamespace": "https://computing.api.nifcloud.com/api/"
   },

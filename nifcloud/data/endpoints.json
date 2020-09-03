@@ -9,7 +9,7 @@
         "signatureVersions": [
           "v4",
           "v3",
-          "v2-computing"
+          "v2"
         ]
       },
       "dnsSuffix": "api.nifcloud.com",
@@ -40,7 +40,7 @@
         "computing": {
           "defaults": {
             "signatureVersions": [
-              "v2-computing"
+              "v2"
             ]
           },
           "endpoints": {

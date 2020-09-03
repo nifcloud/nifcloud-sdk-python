@@ -10,5 +10,5 @@ class SigV2ComputingAuth(auth.SigV2Auth):
 
 
 auth.AUTH_TYPE_MAPS.update({
-    'v2-computing': SigV2ComputingAuth
+    'v2': SigV2ComputingAuth
 })
