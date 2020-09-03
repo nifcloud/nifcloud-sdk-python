@@ -2,7 +2,7 @@
   "metadata": {
     "apiVersion": "2013-05-15N2013-12-16",
     "endpointPrefix": "rdb",
-    "protocol": "query",
+    "protocol": "rdb",
     "serviceAbbreviation": "rdb",
     "serviceFullName": "NIFCLOUD RDB",
     "serviceId": "rdb",

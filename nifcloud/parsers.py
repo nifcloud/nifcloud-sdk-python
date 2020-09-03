@@ -23,5 +23,7 @@ class ComputingQueryParser(parsers.QueryParser):
 
 parsers.PROTOCOL_PARSERS.update({
     'computing': ComputingQueryParser,
-    'script': parsers.QueryParser
+    'script': parsers.QueryParser,
+    'rdb': parsers.QueryParser,
+    'nas': parsers.QueryParser
 })
