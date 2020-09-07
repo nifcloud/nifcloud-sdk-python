@@ -2,7 +2,7 @@
   "metadata": {
     "apiVersion": "N2016-02-24",
     "endpointPrefix": "nas",
-    "protocol": "query",
+    "protocol": "nas",
     "serviceAbbreviation": "nas",
     "serviceFullName": "NIFCLOUD NAS",
     "serviceId": "nas",
