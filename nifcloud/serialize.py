@@ -1,5 +1,6 @@
-from botocore import serialize
 from datetime import datetime as dt
+
+from botocore import serialize
 
 
 # handles both Hoge.1 / Hoges.member.1 parameter according to locationName
