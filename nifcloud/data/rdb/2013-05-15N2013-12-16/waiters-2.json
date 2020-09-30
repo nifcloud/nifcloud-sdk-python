@@ -1,0 +1,220 @@
+{
+  "version": 2,
+  "waiters": {
+    "DBInstanceExists": {
+      "delay": 40,
+      "maxAttempts": 80,
+      "operation": "DescribeDBInstances",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(DBInstances[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.DBInstance",
+          "state": "retry"
+        }
+      ]
+    },
+    "DBInstanceAvailable": {
+      "delay": 40,
+      "operation": "DescribeDBInstances",
+      "maxAttempts": 80,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "available",
+          "state": "success",
+          "argument": "DBInstances[].DBInstanceStatus"
+        }
+      ]
+    },
+    "DBInstanceFailed": {
+      "delay": 40,
+      "operation": "DescribeDBInstances",
+      "maxAttempts": 80,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "failed",
+          "state": "success",
+          "argument": "DBInstances[].DBInstanceStatus"
+        }
+      ]
+    },
+    "DBInstanceStorageFull": {
+      "delay": 40,
+      "operation": "DescribeDBInstances",
+      "maxAttempts": 80,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "storage-full",
+          "state": "success",
+          "argument": "DBInstances[].DBInstanceStatus"
+        }
+      ]
+    },
+    "DBInstanceDeleted": {
+      "delay": 40,
+      "operation": "DescribeDBInstances",
+      "maxAttempts": 80,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.DBInstance",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(DBInstances[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    },
+    "DBSecurityGroupExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "DescribeDBSecurityGroups",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(DBSecurityGroups[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.DBSecurityGroup",
+          "state": "retry"
+        }
+      ]
+    },
+    "DBSecurityGroupEC2SecurityGroupsAuthorized": {
+      "delay": 20,
+      "operation": "DescribeDBSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "authorized",
+          "state": "success",
+          "argument": "DBSecurityGroups[].EC2SecurityGroups[].Status"
+        }
+      ]
+    },
+    "DBSecurityGroupEC2SecurityGroupsAuthFailed": {
+      "delay": 20,
+      "operation": "DescribeDBSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "auth-failed",
+          "state": "success",
+          "argument": "DBSecurityGroups[].EC2SecurityGroups[].Status"
+        }
+      ]
+    },
+    "DBSecurityGroupEC2SecurityGroupsRevokeFailed": {
+      "delay": 20,
+      "operation": "DescribeDBSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "revoke-failed",
+          "state": "success",
+          "argument": "DBSecurityGroups[].EC2SecurityGroups[].Status"
+        }
+      ]
+    },
+    "DBSecurityGroupEC2SecurityGroupsEmptied": {
+      "delay": 20,
+      "operation": "DescribeDBSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(DBSecurityGroups[0].EC2SecurityGroups[]) == `0`",
+          "state": "success"
+        }
+      ]
+    },
+    "DBSecurityGroupIPRangesAuthorized": {
+      "delay": 20,
+      "operation": "DescribeDBSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "authorized",
+          "state": "success",
+          "argument": "DBSecurityGroups[].IPRanges[].Status"
+        }
+      ]
+    },
+    "DBSecurityGroupIPRangesAuthFailed": {
+      "delay": 20,
+      "operation": "DescribeDBSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "auth-failed",
+          "state": "success",
+          "argument": "DBSecurityGroups[].IPRanges[].Status"
+        }
+      ]
+    },
+    "DBSecurityGroupIPRangesRevokeFailed": {
+      "delay": 20,
+      "operation": "DescribeDBSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "revoke-failed",
+          "state": "success",
+          "argument": "DBSecurityGroups[].IPRanges[].Status"
+        }
+      ]
+    },
+    "DBSecurityGroupIPRangesEmptied": {
+      "delay": 20,
+      "operation": "DescribeDBSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(DBSecurityGroups[0].IPRanges[]) == `0`",
+          "state": "success"
+        }
+      ]
+    },
+    "DBSecurityGroupDeleted": {
+      "delay": 20,
+      "operation": "DescribeDBSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.DBSecurityGroup",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(DBSecurityGroups[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    }
+  }
+}

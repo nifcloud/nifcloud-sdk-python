@@ -280,7 +280,7 @@
         },
         "NASSecurityGroups": {
           "locationName": "NASSecurityGroups",
-          "shape": "RequestNASSecurityGroups"
+          "shape": "ListOfRequestNASSecurityGroups"
         },
         "NetworkId": {
           "locationName": "NetworkId",
@@ -453,7 +453,7 @@
       "members": {
         "Dimensions": {
           "locationName": "Dimensions",
-          "shape": "RequestDimensions"
+          "shape": "ListOfRequestDimensions"
         },
         "EndTime": {
           "locationName": "EndTime",
@@ -507,6 +507,30 @@
       "name": "Integer",
       "type": "integer"
     },
+    "ListOfRequestDimensions": {
+      "member": {
+        "locationName": "member",
+        "shape": "RequestDimensions"
+      },
+      "name": "ListOfRequestDimensions",
+      "type": "list"
+    },
+    "ListOfRequestDomainControllers": {
+      "member": {
+        "locationName": "member",
+        "shape": "RequestDomainControllers"
+      },
+      "name": "ListOfRequestDomainControllers",
+      "type": "list"
+    },
+    "ListOfRequestNASSecurityGroups": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfRequestNASSecurityGroups",
+      "type": "list"
+    },
     "Member": {
       "members": {
         "SampleCount": {
@@ -549,7 +573,7 @@
         },
         "DomainControllers": {
           "locationName": "DomainControllers",
-          "shape": "RequestDomainControllers"
+          "shape": "ListOfRequestDomainControllers"
         },
         "MasterPrivateAddress": {
           "locationName": "MasterPrivateAddress",
@@ -569,7 +593,7 @@
         },
         "NASSecurityGroups": {
           "locationName": "NASSecurityGroups",
-          "shape": "RequestNASSecurityGroups"
+          "shape": "ListOfRequestNASSecurityGroups"
         },
         "NetworkId": {
           "locationName": "NetworkId",
@@ -745,14 +769,6 @@
       "type": "list"
     },
     "RequestDimensions": {
-      "member": {
-        "locationName": "member",
-        "shape": "RequestDimensionsStruct"
-      },
-      "name": "RequestDimensions",
-      "type": "list"
-    },
-    "RequestDimensionsStruct": {
       "members": {
         "Name": {
           "locationName": "Name",
@@ -763,18 +779,10 @@
           "shape": "String"
         }
       },
-      "name": "RequestDimensionsStruct",
+      "name": "RequestDimensions",
       "type": "structure"
     },
     "RequestDomainControllers": {
-      "member": {
-        "locationName": "member",
-        "shape": "RequestDomainControllersStruct"
-      },
-      "name": "RequestDomainControllers",
-      "type": "list"
-    },
-    "RequestDomainControllersStruct": {
       "members": {
         "Hostname": {
           "locationName": "Hostname",
@@ -785,16 +793,8 @@
           "shape": "String"
         }
       },
-      "name": "RequestDomainControllersStruct",
+      "name": "RequestDomainControllers",
       "type": "structure"
-    },
-    "RequestNASSecurityGroups": {
-      "member": {
-        "locationName": "member",
-        "shape": "String"
-      },
-      "name": "RequestNASSecurityGroups",
-      "type": "list"
     },
     "RevokeNASSecurityGroupIngressRequest": {
       "members": {

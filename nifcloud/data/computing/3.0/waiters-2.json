@@ -50,6 +50,45 @@
         }
       ]
     },
+    "InstanceWarning": {
+      "delay": 20,
+      "operation": "DescribeInstances",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "warning",
+          "state": "success",
+          "argument": "ReservationSet[].InstancesSet[].InstanceState.Name"
+        }
+      ]
+    },
+    "InstanceSuspending": {
+      "delay": 20,
+      "operation": "DescribeInstances",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "suspending",
+          "state": "success",
+          "argument": "ReservationSet[].InstancesSet[].InstanceState.Name"
+        }
+      ]
+    },
+    "InstanceImportError": {
+      "delay": 20,
+      "operation": "DescribeInstances",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "import_error",
+          "state": "success",
+          "argument": "ReservationSet[].InstancesSet[].InstanceState.Name"
+        }
+      ]
+    },
     "InstanceDeleted": {
       "delay": 20,
       "operation": "DescribeInstances",
@@ -64,6 +103,618 @@
           "matcher": "path",
           "expected": true,
           "argument": "length(ReservationSet[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    },
+    "SnapshotExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "NiftyDescribeInstanceSnapshots",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(SnapshotInfoSet[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.Snapshot",
+          "state": "retry"
+        }
+      ]
+    },
+    "SnapshotNormal": {
+      "delay": 20,
+      "operation": "NiftyDescribeInstanceSnapshots",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "normal",
+          "state": "success",
+          "argument": "SnapshotInfoSet[].Status"
+        }
+      ]
+    },
+    "SnapshotDeleted": {
+      "delay": 20,
+      "operation": "NiftyDescribeInstanceSnapshots",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.Snapshot",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(SnapshotInfoSet[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    },
+    "VolumeExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "DescribeVolumes",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(VolumeSet[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.Volume",
+          "state": "retry"
+        }
+      ]
+    },
+    "VolumeAvailable": {
+      "delay": 20,
+      "operation": "DescribeVolumes",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "available",
+          "state": "success",
+          "argument": "VolumeSet[].Status"
+        }
+      ]
+    },
+    "VolumeInUse": {
+      "delay": 20,
+      "operation": "DescribeVolumes",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "in-use",
+          "state": "success",
+          "argument": "VolumeSet[].Status"
+        }
+      ]
+    },
+    "VolumeDeleted": {
+      "delay": 20,
+      "operation": "DescribeVolumes",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.Volume",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(VolumeSet[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    },
+    "LoadBalancerExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "DescribeLoadBalancers",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(DescribeLoadBalancersResult.LoadBalancerDescriptions[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.LoadBalancer",
+          "state": "retry"
+        }
+      ]
+    },
+    "LoadBalancerInService": {
+      "delay": 20,
+      "operation": "DescribeLoadBalancers",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "InService",
+          "state": "success",
+          "argument": "DescribeLoadBalancersResult.LoadBalancerDescriptions[].State"
+        }
+      ]
+    },
+    "LoadBalancerDeleted": {
+      "delay": 20,
+      "operation": "DescribeLoadBalancers",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.LoadBalancer",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(DescribeLoadBalancersResult.LoadBalancerDescriptions[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    },
+    "ElasticLoadBalancerExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "NiftyDescribeElasticLoadBalancers",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(NiftyDescribeElasticLoadBalancersResult.ElasticLoadBalancerDescriptions[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.ElasticLoadBalancer",
+          "state": "retry"
+        }
+      ]
+    },
+    "ElasticLoadBalancerAvailable": {
+      "delay": 20,
+      "operation": "NiftyDescribeElasticLoadBalancers",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "available",
+          "state": "success",
+          "argument": "NiftyDescribeElasticLoadBalancersResult.ElasticLoadBalancerDescriptions[].State"
+        }
+      ]
+    },
+    "ElasticLoadBalancerDeleted": {
+      "delay": 20,
+      "operation": "NiftyDescribeElasticLoadBalancers",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.ElasticLoadBalancer",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(NiftyDescribeElasticLoadBalancersResult.ElasticLoadBalancerDescriptions[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    },
+    "SecurityGroupExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "DescribeSecurityGroups",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(SecurityGroupInfo[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.SecurityGroup",
+          "state": "retry"
+        }
+      ]
+    },
+    "SecurityGroupApplied": {
+      "delay": 20,
+      "operation": "DescribeSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "applied",
+          "state": "success",
+          "argument": "SecurityGroupInfo[].GroupStatus"
+        }
+      ]
+    },
+    "SecurityGroupDeleted": {
+      "delay": 20,
+      "operation": "DescribeSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(SecurityGroupInfo[]) < `1`",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(SecurityGroupInfo[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    },
+    "PrivateLanExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "NiftyDescribePrivateLans",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(PrivateLanSet[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.PrivateLanName",
+          "state": "retry"
+        }
+      ]
+    },
+    "PrivateLanAvailable": {
+      "delay": 20,
+      "operation": "NiftyDescribePrivateLans",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "available",
+          "state": "success",
+          "argument": "PrivateLanSet[].State"
+        }
+      ]
+    },
+    "PrivateLanDeleted": {
+      "delay": 20,
+      "operation": "NiftyDescribePrivateLans",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.PrivateLanName",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(PrivateLanSet[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    },
+    "RouterExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "NiftyDescribeRouters",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(RouterSet[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.RouterId",
+          "state": "retry"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.RouterName",
+          "state": "retry"
+        }
+      ]
+    },
+    "RouterAvailable": {
+      "delay": 20,
+      "operation": "NiftyDescribeRouters",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "available",
+          "state": "success",
+          "argument": "RouterSet[].State"
+        }
+      ]
+    },
+    "RouterStopped": {
+      "delay": 20,
+      "operation": "NiftyDescribeRouters",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "stopped",
+          "state": "success",
+          "argument": "RouterSet[].State"
+        }
+      ]
+    },
+    "RouterWarning": {
+      "delay": 20,
+      "operation": "NiftyDescribeRouters",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "warning",
+          "state": "success",
+          "argument": "RouterSet[].State"
+        }
+      ]
+    },
+    "RouterDeleted": {
+      "delay": 20,
+      "operation": "NiftyDescribeRouters",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.RouterId",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.RouterName",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(RouterSet[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    },
+    "VpnGatewayExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "DescribeVpnGateways",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(VpnGatewaySet[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.VpnGatewayName",
+          "state": "retry"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.VpnGatewayId",
+          "state": "retry"
+        }
+      ]
+    },
+    "VpnGatewayAvailable": {
+      "delay": 20,
+      "operation": "DescribeVpnGateways",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "available",
+          "state": "success",
+          "argument": "VpnGatewaySet[].State"
+        }
+      ]
+    },
+    "VpnGatewayStopped": {
+      "delay": 20,
+      "operation": "DescribeVpnGateways",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "stopped",
+          "state": "success",
+          "argument": "VpnGatewaySet[].State"
+        }
+      ]
+    },
+    "VpnGatewayWarning": {
+      "delay": 20,
+      "operation": "DescribeVpnGateways",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "warning",
+          "state": "success",
+          "argument": "VpnGatewaySet[].State"
+        }
+      ]
+    },
+    "VpnGatewayDeleted": {
+      "delay": 20,
+      "operation": "DescribeVpnGateways",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.VpnGatewayName",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.VpnGatewayId",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(VpnGatewaySet[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    },
+    "CustomerGatewayExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "DescribeCustomerGateways",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(CustomerGatewaySet[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.CustomerGatewayName",
+          "state": "retry"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.CustomerGatewayId",
+          "state": "retry"
+        }
+      ]
+    },
+    "CustomerGatewayAvailable": {
+      "delay": 20,
+      "operation": "DescribeCustomerGateways",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "available",
+          "state": "success",
+          "argument": "CustomerGatewaySet[].State"
+        }
+      ]
+    },
+    "CustomerGatewayStopped": {
+      "delay": 20,
+      "operation": "DescribeCustomerGateways",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "stopped",
+          "state": "success",
+          "argument": "CustomerGatewaySet[].State"
+        }
+      ]
+    },
+    "CustomerGatewayWarning": {
+      "delay": 20,
+      "operation": "DescribeCustomerGateways",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "warning",
+          "state": "success",
+          "argument": "CustomerGatewaySet[].State"
+        }
+      ]
+    },
+    "CustomerGatewayDeleted": {
+      "delay": 20,
+      "operation": "DescribeCustomerGateways",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.CustomerGatewayName",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.CustomerGatewayId",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(CustomerGatewaySet[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    },
+    "VpnConnectionExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "DescribeVpnConnections",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(VpnConnectionSet[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.VpnConnectionId",
+          "state": "retry"
+        }
+      ]
+    },
+    "VpnConnectionAvailable": {
+      "delay": 20,
+      "operation": "DescribeVpnConnections",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "available",
+          "state": "success",
+          "argument": "VpnConnectionSet[].State"
+        }
+      ]
+    },
+    "VpnConnectionDeleted": {
+      "delay": 20,
+      "operation": "DescribeVpnConnections",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.VpnConnectionId",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(VpnConnectionSet[]) > `0`",
           "state": "retry"
         }
       ]
