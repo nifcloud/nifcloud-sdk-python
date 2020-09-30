@@ -1,6 +1,12 @@
 
 # CHANGELOG
 
+## v0.3.0
+
+* feature: Update model (#46 by fuku2014)
+* feature: Add rdb and nas protocol for date (#44 by tunakyonn)
+* feature: Add support userdata encoding (#39 by fuku2014)
+
 ## v0.2.3
 
 * fix: Add `Description` field to DescribeVolumes response (#36 by tily)
