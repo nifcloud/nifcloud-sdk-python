@@ -523,10 +523,6 @@
           "locationName": "locations",
           "shape": "Locations"
         },
-        "MasterNodeCount": {
-          "locationName": "masterNodeCount",
-          "shape": "MasterNodeCount"
-        },
         "Name": {
           "locationName": "name",
           "shape": "Name"
@@ -600,10 +596,6 @@
         "Locations": {
           "locationName": "locations",
           "shape": "Locations"
-        },
-        "MasterNodeCount": {
-          "locationName": "masterNodeCount",
-          "shape": "MasterNodeCount"
         },
         "Name": {
           "locationName": "name",
@@ -1423,10 +1415,6 @@
       "name": "Locations",
       "type": "list"
     },
-    "MasterNodeCount": {
-      "name": "MasterNodeCount",
-      "type": "integer"
-    },
     "Name": {
       "name": "Name",
       "type": "string"
@@ -1608,10 +1596,6 @@
         "Locations": {
           "locationName": "locations",
           "shape": "Locations"
-        },
-        "MasterNodeCount": {
-          "locationName": "masterNodeCount",
-          "shape": "MasterNodeCount"
         },
         "Name": {
           "locationName": "name",
