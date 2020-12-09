@@ -1,6 +1,6 @@
 # NIFCLOUD SDK for Python (Developer Preview)
 
-[![Build Status](https://travis-ci.org/nifcloud/nifcloud-sdk-python.svg?branch=master)](https://travis-ci.org/nifcloud/nifcloud-sdk-python)
+[![Test](https://github.com/nifcloud/nifcloud-sdk-python/workflows/Test/badge.svg)](https://github.com/nifcloud/nifcloud-sdk-python/actions?query=workflow%3ATest)
 [![Documentation](https://readthedocs.org/projects/nifcloud-sdk-python/badge)](https://nifcloud-sdk-python.readthedocs.io/en/latest/)
 [![PyPI](https://badge.fury.io/py/nifcloud.svg)](https://pypi.python.org/pypi/nifcloud)
 
