@@ -1,6 +1,11 @@
 
 # CHANGELOG
 
+## v0.3.1
+
+* feature: Migrating from Travis CI to GitHub Actions. (#48 by aokumasan)
+* feature: Update to latest computing JSON. (#47 by aokumasan)
+
 ## v0.3.0
 
 * feature: Update model (#46 by fuku2014)
