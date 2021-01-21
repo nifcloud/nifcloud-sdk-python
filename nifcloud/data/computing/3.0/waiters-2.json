@@ -309,6 +309,16 @@
           "state": "success"
         },
         {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.Protocol.or.ElasticLoadBalancerPort",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.ElasticLoadBalancerPort",
+          "state": "success"
+        },
+        {
           "matcher": "path",
           "expected": true,
           "argument": "length(NiftyDescribeElasticLoadBalancersResult.ElasticLoadBalancerDescriptions[]) > `0`",
