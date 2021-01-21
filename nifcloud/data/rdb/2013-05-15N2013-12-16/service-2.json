@@ -408,6 +408,20 @@
         "shape": "ModifyDBInstanceResult"
       }
     },
+    "ModifyDBInstanceNetwork": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ModifyDBInstanceNetworkRequest"
+      },
+      "name": "ModifyDBInstanceNetwork",
+      "output": {
+        "resultWrapper": "ModifyDBInstanceNetworkResult",
+        "shape": "ModifyDBInstanceNetworkResult"
+      }
+    },
     "ModifyDBParameterGroup": {
       "http": {
         "method": "POST",
@@ -2190,6 +2204,41 @@
         }
       },
       "name": "Member",
+      "type": "structure"
+    },
+    "ModifyDBInstanceNetworkRequest": {
+      "members": {
+        "DBInstanceIdentifier": {
+          "locationName": "DBInstanceIdentifier",
+          "shape": "String"
+        },
+        "NiftyMasterPrivateAddress": {
+          "locationName": "NiftyMasterPrivateAddress",
+          "shape": "String"
+        },
+        "NiftyNetworkId": {
+          "locationName": "NiftyNetworkId",
+          "shape": "String"
+        },
+        "NiftySlavePrivateAddress": {
+          "locationName": "NiftySlavePrivateAddress",
+          "shape": "String"
+        },
+        "NiftyVirtualPrivateAddress": {
+          "locationName": "NiftyVirtualPrivateAddress",
+          "shape": "String"
+        }
+      },
+      "name": "ModifyDBInstanceNetworkRequest",
+      "type": "structure"
+    },
+    "ModifyDBInstanceNetworkResult": {
+      "members": {
+        "DBInstance": {
+          "shape": "DBInstance"
+        }
+      },
+      "name": "ModifyDBInstanceNetworkResult",
       "type": "structure"
     },
     "ModifyDBInstanceRequest": {
