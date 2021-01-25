@@ -1,6 +1,11 @@
 
 # CHANGELOG
 
+## v0.4.0
+
+* feature: Update rdb model json for add ModifyDBInstanceNetwork (#50 by fuku2014)
+* fix: Fix computing waiter json for add elb error code. (#49 by fuku2014)
+
 ## v0.3.1
 
 * feature: Migrating from Travis CI to GitHub Actions. (#48 by aokumasan)
