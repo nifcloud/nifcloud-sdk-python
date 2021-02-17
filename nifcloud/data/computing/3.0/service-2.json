@@ -908,19 +908,6 @@
         "shape": "DescribeSecurityActivitiesResult"
       }
     },
-    "DescribeSecurityGroupOption": {
-      "http": {
-        "method": "POST",
-        "requestUri": "/api/"
-      },
-      "input": {
-        "shape": "DescribeSecurityGroupOptionRequest"
-      },
-      "name": "DescribeSecurityGroupOption",
-      "output": {
-        "shape": "DescribeSecurityGroupOptionResult"
-      }
-    },
     "DescribeSecurityGroups": {
       "http": {
         "method": "POST",
@@ -2882,19 +2869,6 @@
       "name": "UpdateSecurityGroup",
       "output": {
         "shape": "UpdateSecurityGroupResult"
-      }
-    },
-    "UpdateSecurityGroupOption": {
-      "http": {
-        "method": "POST",
-        "requestUri": "/api/"
-      },
-      "input": {
-        "shape": "UpdateSecurityGroupOptionRequest"
-      },
-      "name": "UpdateSecurityGroupOption",
-      "output": {
-        "shape": "UpdateSecurityGroupOptionResult"
       }
     },
     "UploadIsoImage": {
@@ -7147,29 +7121,6 @@
         }
       },
       "name": "DescribeSecurityActivitiesResult",
-      "type": "structure"
-    },
-    "DescribeSecurityGroupOptionRequest": {
-      "members": {},
-      "name": "DescribeSecurityGroupOptionRequest",
-      "type": "structure"
-    },
-    "DescribeSecurityGroupOptionResult": {
-      "members": {
-        "Course": {
-          "locationName": "course",
-          "shape": "String"
-        },
-        "RequestId": {
-          "locationName": "requestId",
-          "shape": "String"
-        },
-        "SecurityGroupLimit": {
-          "locationName": "securityGroupLimit",
-          "shape": "Integer"
-        }
-      },
-      "name": "DescribeSecurityGroupOptionResult",
       "type": "structure"
     },
     "DescribeSecurityGroupsRequest": {
@@ -27215,30 +27166,6 @@
         }
       },
       "name": "UpdateLoadBalancerResult",
-      "type": "structure"
-    },
-    "UpdateSecurityGroupOptionRequest": {
-      "members": {
-        "SecurityGroupLimitUpdate": {
-          "locationName": "SecurityGroupLimitUpdate",
-          "shape": "Integer"
-        }
-      },
-      "name": "UpdateSecurityGroupOptionRequest",
-      "type": "structure"
-    },
-    "UpdateSecurityGroupOptionResult": {
-      "members": {
-        "RequestId": {
-          "locationName": "requestId",
-          "shape": "String"
-        },
-        "Return": {
-          "locationName": "return",
-          "shape": "Boolean"
-        }
-      },
-      "name": "UpdateSecurityGroupOptionResult",
       "type": "structure"
     },
     "UpdateSecurityGroupRequest": {
