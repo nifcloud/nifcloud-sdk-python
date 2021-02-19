@@ -1,6 +1,11 @@
 
 # CHANGELOG
 
+## v0.5.0
+
+* feature: Update computing model for remove rip api (#51 by fuku2014)
+* feature: Update rdb model for fixed bug (#51 by fuku2014)
+
 ## v0.4.0
 
 * feature: Update rdb model json for add ModifyDBInstanceNetwork (#50 by fuku2014)
