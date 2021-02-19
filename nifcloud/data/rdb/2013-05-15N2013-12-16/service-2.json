@@ -2837,7 +2837,7 @@
         },
         "NiftyReadReplicaDBInstanceIdentifier": {
           "locationName": "NiftyReadReplicaDBInstanceIdentifier",
-          "shape": "Integer"
+          "shape": "String"
         },
         "NiftyReadReplicaPrivateAddress": {
           "locationName": "NiftyReadReplicaPrivateAddress",
