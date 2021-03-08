@@ -18930,8 +18930,8 @@
           "locationName": "diffieHellmanGroup",
           "shape": "Integer"
         },
-        "EncapsulatiingSecurityPayloadLifetime": {
-          "locationName": "encapsulatiingSecurityPayloadLifetime",
+        "EncapsulatingSecurityPayloadLifetime": {
+          "locationName": "encapsulatingSecurityPayloadLifetime",
           "shape": "Integer"
         },
         "EncryptionAlgorithm": {
