@@ -11,7 +11,7 @@ isort = "*"
 "flake8" = "*"
 pytest = "*"
 requests = "*"
-awscli = "==1.16.144"
+awscli = "==1.19.14"
 sphinx = "==1.8.1"
 sphinx-rtd-theme = "*"
 
