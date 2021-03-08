@@ -3829,8 +3829,8 @@
           "locationName": "attachTime",
           "shape": "TStamp"
         },
-        "AttachmentID": {
-          "locationName": "attachmentID",
+        "AttachmentId": {
+          "locationName": "attachmentId",
           "shape": "String"
         },
         "DeleteOnTermination": {
