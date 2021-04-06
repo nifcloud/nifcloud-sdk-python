@@ -7359,6 +7359,10 @@
           "locationName": "licenseInfo",
           "shape": "LicenseInfo"
         },
+        "LiveMigrationInfo": {
+          "locationName": "liveMigrationInfo",
+          "shape": "LiveMigrationInfo"
+        },
         "LoadBalancerInfo": {
           "locationName": "loadBalancerInfo",
           "shape": "LoadBalancerInfo"
@@ -12565,6 +12569,22 @@
       "name": "ListOfListenersOfNiftyRegisterPortWithElasticLoadBalancer",
       "type": "list"
     },
+    "ListOfLiveMigrationHubMonthlyRateSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "LiveMigrationHubMonthlyRateSet"
+      },
+      "name": "ListOfLiveMigrationHubMonthlyRateSet",
+      "type": "list"
+    },
+    "ListOfLiveMigrationOperationMonthlyRateSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "LiveMigrationOperationMonthlyRateSet"
+      },
+      "name": "ListOfLiveMigrationOperationMonthlyRateSet",
+      "type": "list"
+    },
     "ListOfLoadBalancerDescriptions": {
       "member": {
         "locationName": "member",
@@ -12611,6 +12631,14 @@
         "shape": "String"
       },
       "name": "ListOfMessageSet",
+      "type": "list"
+    },
+    "ListOfMigrationHubItemSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "MigrationHubItemSet"
+      },
+      "name": "ListOfMigrationHubItemSet",
       "type": "list"
     },
     "ListOfMultiIpAddressGroupsSet": {
@@ -14746,6 +14774,64 @@
       "name": "ListenersOfNiftyRegisterPortWithElasticLoadBalancer",
       "type": "structure"
     },
+    "LiveMigrationHubMonthlyRateSet": {
+      "members": {
+        "Charge": {
+          "locationName": "charge",
+          "shape": "Integer"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "String"
+        },
+        "Unit": {
+          "locationName": "unit",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "Integer"
+        }
+      },
+      "name": "LiveMigrationHubMonthlyRateSet",
+      "type": "structure"
+    },
+    "LiveMigrationInfo": {
+      "members": {
+        "LiveMigrationHubMonthlyRateSet": {
+          "locationName": "liveMigrationHubMonthlyRateSet",
+          "shape": "ListOfLiveMigrationHubMonthlyRateSet"
+        },
+        "LiveMigrationOperationMonthlyRateSet": {
+          "locationName": "liveMigrationOperationMonthlyRateSet",
+          "shape": "ListOfLiveMigrationOperationMonthlyRateSet"
+        }
+      },
+      "name": "LiveMigrationInfo",
+      "type": "structure"
+    },
+    "LiveMigrationOperationMonthlyRateSet": {
+      "members": {
+        "Charge": {
+          "locationName": "charge",
+          "shape": "Integer"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "String"
+        },
+        "Unit": {
+          "locationName": "unit",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "Integer"
+        }
+      },
+      "name": "LiveMigrationOperationMonthlyRateSet",
+      "type": "structure"
+    },
     "LoadBalancerDescriptions": {
       "members": {
         "AccountingType": {
@@ -14925,6 +15011,20 @@
       ],
       "name": "MethodOfLoadBalancerAttributesForNiftyModifyElasticLoadBalancerAttributes",
       "type": "string"
+    },
+    "MigrationHubItemSet": {
+      "members": {
+        "Count": {
+          "locationName": "count",
+          "shape": "Integer"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "String"
+        }
+      },
+      "name": "MigrationHubItemSet",
+      "type": "structure"
     },
     "ModeOfNiftyTunnelForCreateVpnConnection": {
       "enum": [
@@ -24827,6 +24927,10 @@
         "LoadBalancerCount": {
           "locationName": "loadBalancerCount",
           "shape": "Integer"
+        },
+        "MigrationHubItemSet": {
+          "locationName": "migrationHubItemSet",
+          "shape": "ListOfMigrationHubItemSet"
         },
         "MonitoringRuleCount": {
           "locationName": "monitoringRuleCount",
