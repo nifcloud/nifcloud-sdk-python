@@ -218,6 +218,19 @@
         }
       ]
     },
+    "VolumeAttached": {
+      "delay": 20,
+      "operation": "DescribeVolumes",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "attached",
+          "state": "success",
+          "argument": "VolumeSet[].AttachmentSet[].Status"
+        }
+      ]
+    },
     "LoadBalancerExists": {
       "delay": 20,
       "maxAttempts": 40,
