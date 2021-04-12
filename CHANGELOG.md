@@ -1,6 +1,11 @@
 
 # CHANGELOG
 
+## v0.7.0
+
+* feature: Add VolumeAttached waiter (#55 by tunakyonn)
+* feature: Update computing model for add live migration api (#54 by miyuush)
+
 ## v0.6.0
 
 * fix: Fix computing model json for typo (#52 by fuku2014, #53 by tunakyonn)
