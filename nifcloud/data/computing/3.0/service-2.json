@@ -15098,7 +15098,7 @@
         },
         "Value": {
           "locationName": "Value",
-          "shape": "ValueOfModifyInstanceAttributeRequest"
+          "shape": "String"
         }
       },
       "name": "ModifyInstanceAttributeRequest",
@@ -19306,7 +19306,7 @@
         },
         "Value": {
           "locationName": "Value",
-          "shape": "ValueOfNiftyModifyRouterAttributeRequest"
+          "shape": "String"
         }
       },
       "name": "NiftyModifyRouterAttributeRequest",
@@ -19342,7 +19342,7 @@
         },
         "Value": {
           "locationName": "Value",
-          "shape": "ValueOfNiftyModifyVpnGatewayAttributeRequest"
+          "shape": "String"
         },
         "VpnGatewayId": {
           "locationName": "VpnGatewayId",
@@ -27507,110 +27507,6 @@
       },
       "name": "UsersOfDissociateUsers",
       "type": "structure"
-    },
-    "ValueOfModifyInstanceAttributeRequest": {
-      "enum": [
-        "e-mini",
-        "mini",
-        "c-small",
-        "e-small",
-        "small",
-        "c-small2",
-        "e-small2",
-        "small2",
-        "c-small4",
-        "e-small4",
-        "small4",
-        "e-small8",
-        "small8",
-        "e-small16",
-        "small16",
-        "c-medium",
-        "e-medium",
-        "medium",
-        "c-medium4",
-        "e-medium4",
-        "medium4",
-        "c-medium8",
-        "e-medium8",
-        "medium8",
-        "e-medium16",
-        "medium16",
-        "e-medium24",
-        "medium24",
-        "c-large",
-        "e-large",
-        "large",
-        "c-large8",
-        "e-large8",
-        "large8",
-        "e-large16",
-        "large16",
-        "e-large24",
-        "large24",
-        "e-large32",
-        "large32",
-        "e-extra-large8",
-        "extra-large8",
-        "e-extra-large16",
-        "extra-large16",
-        "e-extra-large24",
-        "extra-large24",
-        "e-extra-large32",
-        "extra-large32",
-        "e-extra-large48",
-        "extra-large48",
-        "e-double-large16",
-        "double-large16",
-        "e-double-large24",
-        "double-large24",
-        "e-double-large32",
-        "double-large32",
-        "e-double-large48",
-        "double-large48",
-        "e-double-large64",
-        "double-large64",
-        "e-double-large96",
-        "double-large96",
-        "triple-large32",
-        "triple-large48",
-        "triple-large64",
-        "triple-large96",
-        "triple-large128",
-        "quad-large64",
-        "quad-large96",
-        "quad-large128",
-        "quad-large256",
-        "septa-large128",
-        "septa-large256",
-        "octa-large256",
-        "octa-large384",
-        "octa-large512",
-        "true",
-        "false",
-        "static",
-        "none"
-      ],
-      "name": "ValueOfModifyInstanceAttributeRequest",
-      "type": "string"
-    },
-    "ValueOfNiftyModifyRouterAttributeRequest": {
-      "enum": [
-        "small",
-        "medium",
-        "large"
-      ],
-      "name": "ValueOfNiftyModifyRouterAttributeRequest",
-      "type": "string"
-    },
-    "ValueOfNiftyModifyVpnGatewayAttributeRequest": {
-      "enum": [
-        "small",
-        "medium",
-        "large"
-      ],
-      "name": "ValueOfNiftyModifyVpnGatewayAttributeRequest",
-      "type": "string"
     },
     "ValueSet": {
       "members": {
