@@ -1,0 +1,220 @@
+{
+  "version": 2,
+  "waiters": {
+    "NASInstanceExists": {
+      "delay": 40,
+      "maxAttempts": 80,
+      "operation": "DescribeNASInstances",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(NASInstances[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameter.NotFound.NASInstanceIdentifier",
+          "state": "retry"
+        }
+      ]
+    },
+    "NASInstanceAvailable": {
+      "delay": 40,
+      "operation": "DescribeNASInstances",
+      "maxAttempts": 80,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "available",
+          "state": "success",
+          "argument": "NASInstances[].NASInstanceStatus"
+        }
+      ]
+    },
+    "NASInstanceFailed": {
+      "delay": 40,
+      "operation": "DescribeNASInstances",
+      "maxAttempts": 80,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "failed",
+          "state": "success",
+          "argument": "NASInstances[].NASInstanceStatus"
+        }
+      ]
+    },
+    "NASInstanceStorageFull": {
+      "delay": 40,
+      "operation": "DescribeNASInstances",
+      "maxAttempts": 80,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "storage-full",
+          "state": "success",
+          "argument": "NASInstances[].DNASInstanceStatus"
+        }
+      ]
+    },
+    "NASInstanceDeleted": {
+      "delay": 40,
+      "operation": "DescribeNASInstances",
+      "maxAttempts": 80,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameter.NotFound.NASInstanceIdentifier",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(NASInstances[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    },
+    "NASSecurityGroupExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "DescribeNASSecurityGroups",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(NASSecurityGroups[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameter.NotFound.NASSecurityGroupName",
+          "state": "retry"
+        }
+      ]
+    },
+    "NASSecurityGroupSecurityGroupsAuthorized": {
+      "delay": 20,
+      "operation": "DescribeNASSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "authorized",
+          "state": "success",
+          "argument": "NASSecurityGroups[].SecurityGroups[].Status"
+        }
+      ]
+    },
+    "NASSecurityGroupSecurityGroupsAuthFailed": {
+      "delay": 20,
+      "operation": "DescribeNASSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "auth-failed",
+          "state": "success",
+          "argument": "NASSecurityGroups[].SecurityGroups[].Status"
+        }
+      ]
+    },
+    "NASSecurityGroupSecurityGroupsRevokeFailed": {
+      "delay": 20,
+      "operation": "DescribeNASSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "revoke-failed",
+          "state": "success",
+          "argument": "NASSecurityGroups[].SecurityGroups[].Status"
+        }
+      ]
+    },
+    "NASSecurityGroupSecurityGroupsEmptied": {
+      "delay": 20,
+      "operation": "DescribeNASSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(NASSecurityGroups[0].SecurityGroups[]) == `0`",
+          "state": "success"
+        }
+      ]
+    },
+    "NASSecurityGroupIPRangesAuthorized": {
+      "delay": 20,
+      "operation": "DescribeNASSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "authorized",
+          "state": "success",
+          "argument": "NASSecurityGroups[].IPRanges[].Status"
+        }
+      ]
+    },
+    "NASSecurityGroupIPRangesAuthFailed": {
+      "delay": 20,
+      "operation": "DescribeNASSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "auth-failed",
+          "state": "success",
+          "argument": "NASSecurityGroups[].IPRanges[].Status"
+        }
+      ]
+    },
+    "NASSecurityGroupIPRangesRevokeFailed": {
+      "delay": 20,
+      "operation": "DescribeNASSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "revoke-failed",
+          "state": "success",
+          "argument": "NASSecurityGroups[].IPRanges[].Status"
+        }
+      ]
+    },
+    "NASSecurityGroupIPRangesEmptied": {
+      "delay": 20,
+      "operation": "DescribeNASSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(NASSecurityGroups[0].IPRanges[]) == `0`",
+          "state": "success"
+        }
+      ]
+    },
+    "NASSecurityGroupDeleted": {
+      "delay": 20,
+      "operation": "DescribeNASSecurityGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameter.NotFound.NASSecurityGroupName",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(NASSecurityGroups[]) > `0`",
+          "state": "retry"
+        }
+      ]
+    }
+  }
+}
