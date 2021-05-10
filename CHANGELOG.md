@@ -1,6 +1,11 @@
 
 # CHANGELOG
 
+## v0.8.0
+
+* feature: Update computing service JSON (#56 by aokumasan)
+* feature: Add waiter JSON for NAS (#56 by aokumasan)
+
 ## v0.7.0
 
 * feature: Add VolumeAttached waiter (#55 by tunakyonn)
