@@ -632,6 +632,10 @@
         }
       },
       "name": "AddSourceIdentifierToSubscriptionRequest",
+      "required": [
+        "SourceIdentifier",
+        "SubscriptionName"
+      ],
       "type": "structure"
     },
     "AddSourceIdentifierToSubscriptionResult": {
@@ -659,6 +663,9 @@
         }
       },
       "name": "AuthorizeDBSecurityGroupIngressRequest",
+      "required": [
+        "DBSecurityGroupName"
+      ],
       "type": "structure"
     },
     "AuthorizeDBSecurityGroupIngressResult": {
@@ -738,6 +745,10 @@
         }
       },
       "name": "CopyDBSnapshotRequest",
+      "required": [
+        "SourceDBSnapshotIdentifier",
+        "TargetDBSnapshotIdentifier"
+      ],
       "type": "structure"
     },
     "CopyDBSnapshotResult": {
@@ -777,6 +788,10 @@
         }
       },
       "name": "CreateDBInstanceReadReplicaRequest",
+      "required": [
+        "DBInstanceIdentifier",
+        "SourceDBInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "CreateDBInstanceReadReplicaResult": {
@@ -904,6 +919,14 @@
         }
       },
       "name": "CreateDBInstanceRequest",
+      "required": [
+        "AllocatedStorage",
+        "DBInstanceClass",
+        "DBInstanceIdentifier",
+        "Engine",
+        "MasterUserPassword",
+        "MasterUsername"
+      ],
       "type": "structure"
     },
     "CreateDBInstanceResult": {
@@ -931,6 +954,11 @@
         }
       },
       "name": "CreateDBParameterGroupRequest",
+      "required": [
+        "DBParameterGroupFamily",
+        "DBParameterGroupName",
+        "Description"
+      ],
       "type": "structure"
     },
     "CreateDBParameterGroupResult": {
@@ -958,6 +986,11 @@
         }
       },
       "name": "CreateDBSecurityGroupRequest",
+      "required": [
+        "DBSecurityGroupDescription",
+        "DBSecurityGroupName",
+        "NiftyAvailabilityZone"
+      ],
       "type": "structure"
     },
     "CreateDBSecurityGroupResult": {
@@ -981,6 +1014,10 @@
         }
       },
       "name": "CreateDBSnapshotRequest",
+      "required": [
+        "DBInstanceIdentifier",
+        "DBSnapshotIdentifier"
+      ],
       "type": "structure"
     },
     "CreateDBSnapshotResult": {
@@ -1024,6 +1061,10 @@
         }
       },
       "name": "CreateEventSubscriptionRequest",
+      "required": [
+        "NiftyEmailAddresses",
+        "SubscriptionName"
+      ],
       "type": "structure"
     },
     "CreateEventSubscriptionResult": {
@@ -1345,6 +1386,9 @@
         }
       },
       "name": "DeleteDBInstanceRequest",
+      "required": [
+        "DBInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "DeleteDBInstanceResult": {
@@ -1364,6 +1408,9 @@
         }
       },
       "name": "DeleteDBParameterGroupRequest",
+      "required": [
+        "DBParameterGroupName"
+      ],
       "type": "structure"
     },
     "DeleteDBSecurityGroupRequest": {
@@ -1374,6 +1421,9 @@
         }
       },
       "name": "DeleteDBSecurityGroupRequest",
+      "required": [
+        "DBSecurityGroupName"
+      ],
       "type": "structure"
     },
     "DeleteDBSnapshotRequest": {
@@ -1384,6 +1434,9 @@
         }
       },
       "name": "DeleteDBSnapshotRequest",
+      "required": [
+        "DBSnapshotIdentifier"
+      ],
       "type": "structure"
     },
     "DeleteDBSnapshotResult": {
@@ -1403,6 +1456,9 @@
         }
       },
       "name": "DeleteEventSubscriptionRequest",
+      "required": [
+        "SubscriptionName"
+      ],
       "type": "structure"
     },
     "DeleteEventSubscriptionResult": {
@@ -1567,6 +1623,9 @@
         }
       },
       "name": "DescribeDBLogFilesRequest",
+      "required": [
+        "DBInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "DescribeDBLogFilesResult": {
@@ -1631,6 +1690,9 @@
         }
       },
       "name": "DescribeDBParametersRequest",
+      "required": [
+        "DBParameterGroupName"
+      ],
       "type": "structure"
     },
     "DescribeDBParametersResult": {
@@ -1729,6 +1791,9 @@
         }
       },
       "name": "DescribeEngineDefaultParametersRequest",
+      "required": [
+        "DBParameterGroupFamily"
+      ],
       "type": "structure"
     },
     "DescribeEngineDefaultParametersResult": {
@@ -1905,6 +1970,9 @@
         }
       },
       "name": "DownloadDBLogFilePortionRequest",
+      "required": [
+        "DBInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "DownloadDBLogFilePortionResult": {
@@ -2329,6 +2397,9 @@
         }
       },
       "name": "ModifyDBInstanceRequest",
+      "required": [
+        "DBInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "ModifyDBInstanceResult": {
@@ -2352,6 +2423,10 @@
         }
       },
       "name": "ModifyDBParameterGroupRequest",
+      "required": [
+        "DBParameterGroupName",
+        "Parameters"
+      ],
       "type": "structure"
     },
     "ModifyDBParameterGroupResult": {
@@ -2391,6 +2466,10 @@
         }
       },
       "name": "ModifyEventSubscriptionRequest",
+      "required": [
+        "NiftyEmailAddresses",
+        "SubscriptionName"
+      ],
       "type": "structure"
     },
     "ModifyEventSubscriptionResult": {
@@ -2417,6 +2496,9 @@
         }
       },
       "name": "NiftyFailoverDBInstanceRequest",
+      "required": [
+        "DBInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "NiftyFailoverDBInstanceResult": {
@@ -2448,6 +2530,10 @@
         }
       },
       "name": "NiftyGetMetricStatisticsRequest",
+      "required": [
+        "Dimensions",
+        "MetricName"
+      ],
       "type": "structure"
     },
     "NiftyGetMetricStatisticsResult": {
@@ -2637,6 +2723,9 @@
         }
       },
       "name": "RebootDBInstanceRequest",
+      "required": [
+        "DBInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "RebootDBInstanceResult": {
@@ -2660,6 +2749,10 @@
         }
       },
       "name": "RemoveSourceIdentifierFromSubscriptionRequest",
+      "required": [
+        "SourceIdentifier",
+        "SubscriptionName"
+      ],
       "type": "structure"
     },
     "RemoveSourceIdentifierFromSubscriptionResult": {
@@ -2697,6 +2790,10 @@
         }
       },
       "name": "RequestDimensions",
+      "required": [
+        "Name",
+        "Value"
+      ],
       "type": "structure"
     },
     "RequestParameters": {
@@ -2715,6 +2812,11 @@
         }
       },
       "name": "RequestParameters",
+      "required": [
+        "ApplyMethod",
+        "ParameterName",
+        "ParameterValue"
+      ],
       "type": "structure"
     },
     "RequestParametersOfResetDBParameterGroup": {
@@ -2747,6 +2849,9 @@
         }
       },
       "name": "ResetDBParameterGroupRequest",
+      "required": [
+        "DBParameterGroupName"
+      ],
       "type": "structure"
     },
     "ResetDBParameterGroupResult": {
@@ -2766,6 +2871,9 @@
         }
       },
       "name": "ResetExternalMasterRequest",
+      "required": [
+        "DBInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "ResetExternalMasterResult": {
@@ -2869,6 +2977,11 @@
         }
       },
       "name": "RestoreDBInstanceFromDBSnapshotRequest",
+      "required": [
+        "DBInstanceClass",
+        "DBInstanceIdentifier",
+        "DBSnapshotIdentifier"
+      ],
       "type": "structure"
     },
     "RestoreDBInstanceFromDBSnapshotResult": {
@@ -2980,6 +3093,10 @@
         }
       },
       "name": "RestoreDBInstanceToPointInTimeRequest",
+      "required": [
+        "SourceDBInstanceIdentifier",
+        "TargetDBInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "RestoreDBInstanceToPointInTimeResult": {
@@ -3007,6 +3124,9 @@
         }
       },
       "name": "RevokeDBSecurityGroupIngressRequest",
+      "required": [
+        "DBSecurityGroupName"
+      ],
       "type": "structure"
     },
     "RevokeDBSecurityGroupIngressResult": {
@@ -3050,6 +3170,14 @@
         }
       },
       "name": "SetExternalMasterRequest",
+      "required": [
+        "BinlogFileName",
+        "BinlogPosition",
+        "DBInstanceIdentifier",
+        "MasterHost",
+        "ReplicationUserName",
+        "ReplicationUserPassword"
+      ],
       "type": "structure"
     },
     "SetExternalMasterResult": {
@@ -3076,6 +3204,9 @@
         }
       },
       "name": "StartReplicationRequest",
+      "required": [
+        "DBInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "StartReplicationResult": {
@@ -3103,6 +3234,9 @@
         }
       },
       "name": "StopReplicationRequest",
+      "required": [
+        "DBInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "StopReplicationResult": {
