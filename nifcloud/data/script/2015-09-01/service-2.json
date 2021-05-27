@@ -59,6 +59,10 @@
         }
       },
       "name": "ExecuteScriptRequest",
+      "required": [
+        "Method",
+        "ScriptIdentifier"
+      ],
       "type": "structure"
     },
     "ExecuteScriptResult": {

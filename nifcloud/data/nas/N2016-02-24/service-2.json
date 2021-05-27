@@ -206,6 +206,9 @@
         }
       },
       "name": "AuthorizeNASSecurityGroupIngressRequest",
+      "required": [
+        "NASSecurityGroupName"
+      ],
       "type": "structure"
     },
     "AuthorizeNASSecurityGroupIngressResult": {
@@ -233,6 +236,9 @@
         }
       },
       "name": "ClearNASSessionRequest",
+      "required": [
+        "NASInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "ClearNASSessionResult": {
@@ -292,6 +298,11 @@
         }
       },
       "name": "CreateNASInstanceRequest",
+      "required": [
+        "AllocatedStorage",
+        "NASInstanceIdentifier",
+        "Protocol"
+      ],
       "type": "structure"
     },
     "CreateNASInstanceResult": {
@@ -319,6 +330,10 @@
         }
       },
       "name": "CreateNASSecurityGroupRequest",
+      "required": [
+        "AvailabilityZone",
+        "NASSecurityGroupName"
+      ],
       "type": "structure"
     },
     "CreateNASSecurityGroupResult": {
@@ -354,6 +369,9 @@
         }
       },
       "name": "DeleteNASInstanceRequest",
+      "required": [
+        "NASInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "DeleteNASInstanceResult": {
@@ -373,6 +391,9 @@
         }
       },
       "name": "DeleteNASSecurityGroupRequest",
+      "required": [
+        "NASSecurityGroupName"
+      ],
       "type": "structure"
     },
     "DescribeNASInstancesRequest": {
@@ -402,6 +423,9 @@
         }
       },
       "name": "DescribeNASSecurityGroupsRequest",
+      "required": [
+        "NASSecurityGroupName"
+      ],
       "type": "structure"
     },
     "DescribeNASSecurityGroupsResult": {
@@ -469,6 +493,10 @@
         }
       },
       "name": "GetMetricStatisticsRequest",
+      "required": [
+        "Dimensions",
+        "MetricName"
+      ],
       "type": "structure"
     },
     "GetMetricStatisticsResult": {
@@ -609,6 +637,9 @@
         }
       },
       "name": "ModifyNASInstanceRequest",
+      "required": [
+        "NASInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "ModifyNASInstanceResult": {
@@ -636,6 +667,9 @@
         }
       },
       "name": "ModifyNASSecurityGroupRequest",
+      "required": [
+        "NASSecurityGroupName"
+      ],
       "type": "structure"
     },
     "ModifyNASSecurityGroupResult": {
@@ -780,6 +814,10 @@
         }
       },
       "name": "RequestDimensions",
+      "required": [
+        "Name",
+        "Value"
+      ],
       "type": "structure"
     },
     "RequestDomainControllers": {
@@ -812,6 +850,9 @@
         }
       },
       "name": "RevokeNASSecurityGroupIngressRequest",
+      "required": [
+        "NASSecurityGroupName"
+      ],
       "type": "structure"
     },
     "RevokeNASSecurityGroupIngressResult": {
@@ -862,6 +903,9 @@
         }
       },
       "name": "UpgradeNASInstanceRequest",
+      "required": [
+        "NASInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "UpgradeNASInstanceResult": {
