@@ -29,6 +29,12 @@
           "expected": "available",
           "state": "success",
           "argument": "DBInstances[].DBInstanceStatus"
+        },
+        {
+          "matcher": "pathAll",
+          "expected": "failed",
+          "state": "failure",
+          "argument": "DBInstances[].DBInstanceStatus"
         }
       ]
     },
