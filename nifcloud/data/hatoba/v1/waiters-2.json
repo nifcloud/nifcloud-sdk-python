@@ -80,6 +80,25 @@
           "argument": "length(FirewallGroup.Rules[]) == `0`"
         }
       ]
+    },
+    "SnapshotAvailable": {
+      "delay": 20,
+      "operation": "GetSnapshot",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "expected": "AVAILABLE",
+          "matcher": "path",
+          "state": "success",
+          "argument": "Snapshot.Status"
+        },
+        {
+          "expected": "FAILED",
+          "matcher": "path",
+          "state": "failure",
+          "argument": "Snapshot.Status"
+        }
+      ]
     }
   }
 }
