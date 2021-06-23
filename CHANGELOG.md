@@ -1,6 +1,11 @@
 
 # CHANGELOG
 
+## v0.9.0
+
+* feature: Update rdb hatoba waiter (#58 by fuku2014)
+* feature: Update models (#57 by fuku2014)
+
 ## v0.8.0
 
 * feature: Update computing service JSON (#56 by aokumasan)
