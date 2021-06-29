@@ -73,6 +73,7 @@
       },
       "name": "AssociateUsers",
       "output": {
+        "resultWrapper": "AssociateUsersResult",
         "shape": "AssociateUsersResult"
       }
     },
@@ -177,6 +178,7 @@
       },
       "name": "ConfigureHealthCheck",
       "output": {
+        "resultWrapper": "ConfigureHealthCheckResult",
         "shape": "ConfigureHealthCheckResult"
       }
     },
@@ -294,6 +296,7 @@
       },
       "name": "CreateLoadBalancer",
       "output": {
+        "resultWrapper": "CreateLoadBalancerResult",
         "shape": "CreateLoadBalancerResult"
       }
     },
@@ -632,6 +635,7 @@
       },
       "name": "DeregisterInstancesFromLoadBalancer",
       "output": {
+        "resultWrapper": "DeregisterInstancesFromLoadBalancerResult",
         "shape": "DeregisterInstancesFromLoadBalancerResult"
       }
     },
@@ -671,6 +675,7 @@
       },
       "name": "DescribeAssociatedUsers",
       "output": {
+        "resultWrapper": "DescribeAssociatedUsersResult",
         "shape": "DescribeAssociatedUsersResult"
       }
     },
@@ -775,6 +780,7 @@
       },
       "name": "DescribeInstanceHealth",
       "output": {
+        "resultWrapper": "DescribeInstanceHealthResult",
         "shape": "DescribeInstanceHealthResult"
       }
     },
@@ -827,6 +833,7 @@
       },
       "name": "DescribeLoadBalancers",
       "output": {
+        "resultWrapper": "DescribeLoadBalancersResult",
         "shape": "DescribeLoadBalancersResult"
       }
     },
@@ -1126,6 +1133,7 @@
       },
       "name": "DissociateUsers",
       "output": {
+        "resultWrapper": "DissociateUsersResult",
         "shape": "DissociateUsersResult"
       }
     },
@@ -1347,6 +1355,7 @@
       },
       "name": "NiftyConfigureElasticLoadBalancerHealthCheck",
       "output": {
+        "resultWrapper": "NiftyConfigureElasticLoadBalancerHealthCheckResult",
         "shape": "NiftyConfigureElasticLoadBalancerHealthCheckResult"
       }
     },
@@ -1425,6 +1434,7 @@
       },
       "name": "NiftyCreateElasticLoadBalancer",
       "output": {
+        "resultWrapper": "NiftyCreateElasticLoadBalancerResult",
         "shape": "NiftyCreateElasticLoadBalancerResult"
       }
     },
@@ -1854,6 +1864,7 @@
       },
       "name": "NiftyDescribeElasticLoadBalancers",
       "output": {
+        "resultWrapper": "NiftyDescribeElasticLoadBalancersResult",
         "shape": "NiftyDescribeElasticLoadBalancersResult"
       }
     },
@@ -1867,6 +1878,7 @@
       },
       "name": "NiftyDescribeInstanceElasticLoadBalancerHealth",
       "output": {
+        "resultWrapper": "NiftyDescribeInstanceElasticLoadBalancerHealthResult",
         "shape": "NiftyDescribeInstanceElasticLoadBalancerHealthResult"
       }
     },
@@ -1893,6 +1905,7 @@
       },
       "name": "NiftyDescribeLoadBalancerSSLPolicies",
       "output": {
+        "resultWrapper": "NiftyDescribeLoadBalancerSSLPoliciesResult",
         "shape": "NiftyDescribeLoadBalancerSSLPoliciesResult"
       }
     },
@@ -2244,6 +2257,7 @@
       },
       "name": "NiftyRegisterPortWithElasticLoadBalancer",
       "output": {
+        "resultWrapper": "NiftyRegisterPortWithElasticLoadBalancerResult",
         "shape": "NiftyRegisterPortWithElasticLoadBalancerResult"
       }
     },
@@ -2647,6 +2661,7 @@
       },
       "name": "RegisterInstancesWithLoadBalancer",
       "output": {
+        "resultWrapper": "RegisterInstancesWithLoadBalancerResult",
         "shape": "RegisterInstancesWithLoadBalancerResult"
       }
     },
@@ -2673,6 +2688,7 @@
       },
       "name": "RegisterPortWithLoadBalancer",
       "output": {
+        "resultWrapper": "RegisterPortWithLoadBalancerResult",
         "shape": "RegisterPortWithLoadBalancerResult"
       }
     },
@@ -2764,6 +2780,7 @@
       },
       "name": "SetFilterForLoadBalancer",
       "output": {
+        "resultWrapper": "SetFilterForLoadBalancerResult",
         "shape": "SetFilterForLoadBalancerResult"
       }
     },

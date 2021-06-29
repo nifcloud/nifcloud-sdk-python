@@ -239,7 +239,7 @@
         {
           "matcher": "path",
           "expected": true,
-          "argument": "length(DescribeLoadBalancersResult.LoadBalancerDescriptions[]) > `0`",
+          "argument": "length(LoadBalancerDescriptions[]) > `0`",
           "state": "success"
         },
         {
@@ -258,7 +258,7 @@
           "matcher": "pathAll",
           "expected": "InService",
           "state": "success",
-          "argument": "DescribeLoadBalancersResult.LoadBalancerDescriptions[].State"
+          "argument": "LoadBalancerDescriptions[].State"
         }
       ]
     },
@@ -275,7 +275,7 @@
         {
           "matcher": "path",
           "expected": true,
-          "argument": "length(DescribeLoadBalancersResult.LoadBalancerDescriptions[]) > `0`",
+          "argument": "length(LoadBalancerDescriptions[]) > `0`",
           "state": "retry"
         }
       ]
@@ -288,7 +288,7 @@
         {
           "matcher": "path",
           "expected": true,
-          "argument": "length(NiftyDescribeElasticLoadBalancersResult.ElasticLoadBalancerDescriptions[]) > `0`",
+          "argument": "length(ElasticLoadBalancerDescriptions[]) > `0`",
           "state": "success"
         },
         {
@@ -307,7 +307,7 @@
           "matcher": "pathAll",
           "expected": "available",
           "state": "success",
-          "argument": "NiftyDescribeElasticLoadBalancersResult.ElasticLoadBalancerDescriptions[].State"
+          "argument": "ElasticLoadBalancerDescriptions[].State"
         }
       ]
     },
@@ -334,7 +334,7 @@
         {
           "matcher": "path",
           "expected": true,
-          "argument": "length(NiftyDescribeElasticLoadBalancersResult.ElasticLoadBalancerDescriptions[]) > `0`",
+          "argument": "length(ElasticLoadBalancerDescriptions[]) > `0`",
           "state": "retry"
         }
       ]
