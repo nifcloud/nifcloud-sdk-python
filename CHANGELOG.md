@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## v0.10.0
+
+* fix: Fix computing model for use result wrapper at load balancer api (#59 by fuku2014)
+
 ## v0.9.0
 
 * feature: Update rdb hatoba waiter (#58 by fuku2014)
