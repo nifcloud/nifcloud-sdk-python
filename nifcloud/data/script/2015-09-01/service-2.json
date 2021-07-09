@@ -78,6 +78,10 @@
       "name": "Integer",
       "type": "integer"
     },
+    "Long": {
+      "name": "Long",
+      "type": "long"
+    },
     "RequestBody": {
       "name": "RequestBody",
       "type": "string"
