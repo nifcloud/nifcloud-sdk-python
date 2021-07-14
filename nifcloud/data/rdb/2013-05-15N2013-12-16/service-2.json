@@ -158,7 +158,10 @@
       "input": {
         "shape": "DeleteDBParameterGroupRequest"
       },
-      "name": "DeleteDBParameterGroup"
+      "name": "DeleteDBParameterGroup",
+      "output": {
+        "shape": "DeleteDBParameterGroupResult"
+      }
     },
     "DeleteDBSecurityGroup": {
       "http": {
@@ -168,7 +171,10 @@
       "input": {
         "shape": "DeleteDBSecurityGroupRequest"
       },
-      "name": "DeleteDBSecurityGroup"
+      "name": "DeleteDBSecurityGroup",
+      "output": {
+        "shape": "DeleteDBSecurityGroupResult"
+      }
     },
     "DeleteDBSnapshot": {
       "http": {
@@ -641,7 +647,12 @@
     "AddSourceIdentifierToSubscriptionResult": {
       "members": {
         "EventSubscription": {
+          "locationName": "EventSubscription",
           "shape": "EventSubscription"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "AddSourceIdentifierToSubscriptionResult",
@@ -657,8 +668,16 @@
           "locationName": "DBSecurityGroupName",
           "shape": "String"
         },
+        "EC2SecurityGroupId": {
+          "locationName": "EC2SecurityGroupId",
+          "shape": "String"
+        },
         "EC2SecurityGroupName": {
           "locationName": "EC2SecurityGroupName",
+          "shape": "String"
+        },
+        "EC2SecurityGroupOwnerId": {
+          "locationName": "EC2SecurityGroupOwnerId",
           "shape": "String"
         }
       },
@@ -671,67 +690,64 @@
     "AuthorizeDBSecurityGroupIngressResult": {
       "members": {
         "DBSecurityGroup": {
+          "locationName": "DBSecurityGroup",
           "shape": "DBSecurityGroup"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "AuthorizeDBSecurityGroupIngressResult",
       "type": "structure"
     },
-    "AvailabilityZone": {
+    "AvailabilityZones": {
       "members": {
         "Name": {
+          "locationName": "Name",
           "shape": "String"
         },
         "NiftyStorageTypes": {
-          "shape": "NiftyStorageTypes"
+          "locationName": "NiftyStorageTypes",
+          "shape": "ListOfNiftyStorageTypes"
         },
         "ProvisionedIopsCapable": {
+          "locationName": "ProvisionedIopsCapable",
           "shape": "Boolean"
         }
       },
-      "name": "AvailabilityZone",
-      "type": "structure"
-    },
-    "AvailabilityZones": {
-      "member": {
-        "locationName": "AvailabilityZone",
-        "shape": "AvailabilityZone"
-      },
       "name": "AvailabilityZones",
-      "type": "list"
+      "type": "structure"
     },
     "Boolean": {
       "name": "Boolean",
       "type": "boolean"
     },
-    "Certificate": {
+    "Certificates": {
       "members": {
         "CertificateIdentifier": {
+          "locationName": "CertificateIdentifier",
           "shape": "String"
         },
         "CertificateType": {
+          "locationName": "CertificateType",
           "shape": "String"
         },
         "Thumbprint": {
+          "locationName": "Thumbprint",
           "shape": "String"
         },
         "ValidFrom": {
-          "shape": "String"
+          "locationName": "ValidFrom",
+          "shape": "TStamp"
         },
         "ValidTill": {
-          "shape": "String"
+          "locationName": "ValidTill",
+          "shape": "TStamp"
         }
       },
-      "name": "Certificate",
-      "type": "structure"
-    },
-    "Certificates": {
-      "member": {
-        "locationName": "Certificate",
-        "shape": "Certificate"
-      },
       "name": "Certificates",
-      "type": "list"
+      "type": "structure"
     },
     "CopyDBSnapshotRequest": {
       "members": {
@@ -754,7 +770,12 @@
     "CopyDBSnapshotResult": {
       "members": {
         "DBSnapshot": {
+          "locationName": "DBSnapshot",
           "shape": "DBSnapshot"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "CopyDBSnapshotResult",
@@ -766,6 +787,14 @@
           "locationName": "AccountingType",
           "shape": "String"
         },
+        "AutoMinorVersionUpgrade": {
+          "locationName": "AutoMinorVersionUpgrade",
+          "shape": "Boolean"
+        },
+        "AvailabilityZone": {
+          "locationName": "AvailabilityZone",
+          "shape": "String"
+        },
         "DBInstanceClass": {
           "locationName": "DBInstanceClass",
           "shape": "String"
@@ -774,6 +803,10 @@
           "locationName": "DBInstanceIdentifier",
           "shape": "String"
         },
+        "Iops": {
+          "locationName": "Iops",
+          "shape": "Integer"
+        },
         "NiftyReadReplicaPrivateAddress": {
           "locationName": "NiftyReadReplicaPrivateAddress",
           "shape": "String"
@@ -781,6 +814,18 @@
         "NiftyStorageType": {
           "locationName": "NiftyStorageType",
           "shape": "Integer"
+        },
+        "OptionGroupName": {
+          "locationName": "OptionGroupName",
+          "shape": "String"
+        },
+        "Port": {
+          "locationName": "Port",
+          "shape": "Integer"
+        },
+        "PubliclyAccessible": {
+          "locationName": "PubliclyAccessible",
+          "shape": "Boolean"
         },
         "SourceDBInstanceIdentifier": {
           "locationName": "SourceDBInstanceIdentifier",
@@ -797,7 +842,12 @@
     "CreateDBInstanceReadReplicaResult": {
       "members": {
         "DBInstance": {
+          "locationName": "DBInstance",
           "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "CreateDBInstanceReadReplicaResult",
@@ -813,6 +863,10 @@
           "locationName": "AllocatedStorage",
           "shape": "Integer"
         },
+        "AutoMinorVersionUpgrade": {
+          "locationName": "AutoMinorVersionUpgrade",
+          "shape": "Boolean"
+        },
         "AvailabilityZone": {
           "locationName": "AvailabilityZone",
           "shape": "String"
@@ -820,6 +874,10 @@
         "BackupRetentionPeriod": {
           "locationName": "BackupRetentionPeriod",
           "shape": "Integer"
+        },
+        "CharacterSetName": {
+          "locationName": "CharacterSetName",
+          "shape": "String"
         },
         "DBInstanceClass": {
           "locationName": "DBInstanceClass",
@@ -841,6 +899,10 @@
           "locationName": "DBSecurityGroups",
           "shape": "ListOfRequestDBSecurityGroups"
         },
+        "DBSubnetGroupName": {
+          "locationName": "DBSubnetGroupName",
+          "shape": "String"
+        },
         "Engine": {
           "locationName": "Engine",
           "shape": "String"
@@ -848,6 +910,10 @@
         "EngineVersion": {
           "locationName": "EngineVersion",
           "shape": "String"
+        },
+        "Iops": {
+          "locationName": "Iops",
+          "shape": "Integer"
         },
         "LicenseModel": {
           "locationName": "LicenseModel",
@@ -897,6 +963,10 @@
           "locationName": "NiftyVirtualPrivateAddress",
           "shape": "String"
         },
+        "OptionGroupName": {
+          "locationName": "OptionGroupName",
+          "shape": "String"
+        },
         "Port": {
           "locationName": "Port",
           "shape": "Integer"
@@ -916,6 +986,10 @@
         "ReadReplicaAccountingType": {
           "locationName": "ReadReplicaAccountingType",
           "shape": "String"
+        },
+        "VpcSecurityGroupIds": {
+          "locationName": "VpcSecurityGroupIds",
+          "shape": "ListOfRequestVpcSecurityGroupIds"
         }
       },
       "name": "CreateDBInstanceRequest",
@@ -932,7 +1006,12 @@
     "CreateDBInstanceResult": {
       "members": {
         "DBInstance": {
+          "locationName": "DBInstance",
           "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "CreateDBInstanceResult",
@@ -964,7 +1043,12 @@
     "CreateDBParameterGroupResult": {
       "members": {
         "DBParameterGroup": {
+          "locationName": "DBParameterGroup",
           "shape": "DBParameterGroup"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "CreateDBParameterGroupResult",
@@ -996,7 +1080,12 @@
     "CreateDBSecurityGroupResult": {
       "members": {
         "DBSecurityGroup": {
+          "locationName": "DBSecurityGroup",
           "shape": "DBSecurityGroup"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "CreateDBSecurityGroupResult",
@@ -1023,7 +1112,12 @@
     "CreateDBSnapshotResult": {
       "members": {
         "DBSnapshot": {
+          "locationName": "DBSnapshot",
           "shape": "DBSnapshot"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "CreateDBSnapshotResult",
@@ -1070,196 +1164,355 @@
     "CreateEventSubscriptionResult": {
       "members": {
         "EventSubscription": {
+          "locationName": "EventSubscription",
           "shape": "EventSubscription"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "CreateEventSubscriptionResult",
       "type": "structure"
     },
-    "DBEngineVersion": {
+    "DBEngineVersions": {
       "members": {
         "DBEngineDescription": {
+          "locationName": "DBEngineDescription",
           "shape": "String"
         },
         "DBEngineVersionDescription": {
+          "locationName": "DBEngineVersionDescription",
           "shape": "String"
         },
         "DBParameterGroupFamily": {
+          "locationName": "DBParameterGroupFamily",
           "shape": "String"
         },
         "Engine": {
+          "locationName": "Engine",
           "shape": "String"
         },
         "EngineVersion": {
+          "locationName": "EngineVersion",
           "shape": "String"
         }
       },
-      "name": "DBEngineVersion",
-      "type": "structure"
-    },
-    "DBEngineVersions": {
-      "member": {
-        "locationName": "DBEngineVersion",
-        "shape": "DBEngineVersion"
-      },
       "name": "DBEngineVersions",
-      "type": "list"
+      "type": "structure"
     },
     "DBInstance": {
       "members": {
         "AccountingType": {
-          "shape": "Integer"
-        },
-        "AllocatedStorage": {
+          "locationName": "AccountingType",
           "shape": "String"
         },
+        "AllocatedStorage": {
+          "locationName": "AllocatedStorage",
+          "shape": "Integer"
+        },
         "AutoMinorVersionUpgrade": {
+          "locationName": "AutoMinorVersionUpgrade",
           "shape": "Boolean"
         },
         "AvailabilityZone": {
+          "locationName": "AvailabilityZone",
           "shape": "String"
         },
         "BackupRetentionPeriod": {
-          "shape": "String"
+          "locationName": "BackupRetentionPeriod",
+          "shape": "Integer"
         },
         "BinlogRetentionPeriod": {
-          "shape": "String"
+          "locationName": "BinlogRetentionPeriod",
+          "shape": "Integer"
         },
         "CACertificateIdentifier": {
+          "locationName": "CACertificateIdentifier",
           "shape": "String"
         },
         "DBInstanceClass": {
+          "locationName": "DBInstanceClass",
           "shape": "String"
         },
         "DBInstanceIdentifier": {
+          "locationName": "DBInstanceIdentifier",
           "shape": "String"
         },
         "DBInstanceStatus": {
+          "locationName": "DBInstanceStatus",
           "shape": "String"
         },
         "DBName": {
+          "locationName": "DBName",
           "shape": "String"
         },
         "DBParameterGroups": {
-          "shape": "DBParameterGroups"
+          "locationName": "DBParameterGroups",
+          "shape": "ListOfDBParameterGroups"
         },
         "DBSecurityGroups": {
-          "shape": "DBSecurityGroups"
+          "locationName": "DBSecurityGroups",
+          "shape": "ListOfDBSecurityGroups"
         },
         "Endpoint": {
+          "locationName": "Endpoint",
           "shape": "Endpoint"
         },
         "Engine": {
+          "locationName": "Engine",
           "shape": "String"
         },
         "EngineVersion": {
+          "locationName": "EngineVersion",
           "shape": "String"
         },
         "ExternalReplicationInfo": {
+          "locationName": "ExternalReplicationInfo",
           "shape": "ExternalReplicationInfo"
         },
         "InstanceCreateTime": {
-          "shape": "String"
+          "locationName": "InstanceCreateTime",
+          "shape": "TStamp"
         },
         "LatestRestorableTime": {
-          "shape": "String"
+          "locationName": "LatestRestorableTime",
+          "shape": "TStamp"
         },
         "LicenseModel": {
+          "locationName": "LicenseModel",
           "shape": "String"
         },
         "MasterUsername": {
+          "locationName": "MasterUsername",
           "shape": "String"
         },
         "MultiAZ": {
-          "shape": "String"
+          "locationName": "MultiAZ",
+          "shape": "Boolean"
         },
         "NextMonthAccountingType": {
-          "shape": "Integer"
-        },
-        "NiftyMasterPrivateAddress": {
+          "locationName": "NextMonthAccountingType",
           "shape": "String"
         },
         "NiftyMultiAZType": {
+          "locationName": "NiftyMultiAZType",
           "shape": "String"
         },
         "NiftyNetworkId": {
-          "shape": "String"
-        },
-        "NiftySlavePrivateAddress": {
+          "locationName": "NiftyNetworkId",
           "shape": "String"
         },
         "NiftyStorageType": {
+          "locationName": "NiftyStorageType",
           "shape": "Integer"
         },
         "OptionGroupMemberships": {
-          "shape": "OptionGroupMemberships"
+          "locationName": "OptionGroupMemberships",
+          "shape": "ListOfOptionGroupMemberships"
         },
         "PendingModifiedValues": {
+          "locationName": "PendingModifiedValues",
           "shape": "PendingModifiedValues"
         },
         "PreferredBackupWindow": {
+          "locationName": "PreferredBackupWindow",
           "shape": "String"
         },
         "PreferredMaintenanceWindow": {
+          "locationName": "PreferredMaintenanceWindow",
           "shape": "String"
         },
         "PubliclyAccessible": {
+          "locationName": "PubliclyAccessible",
           "shape": "Boolean"
         },
         "ReadReplicaDBInstanceIdentifiers": {
-          "shape": "ReadReplicaDBInstanceIdentifiers"
+          "locationName": "ReadReplicaDBInstanceIdentifiers",
+          "shape": "String"
         },
         "ReadReplicaSourceDBInstanceIdentifier": {
+          "locationName": "ReadReplicaSourceDBInstanceIdentifier",
           "shape": "String"
         },
         "SecondaryAvailabilityZone": {
+          "locationName": "SecondaryAvailabilityZone",
           "shape": "String"
         },
         "StatusInfos": {
-          "shape": "StatusInfos"
+          "locationName": "StatusInfos",
+          "shape": "ListOfStatusInfos"
         },
         "VpcSecurityGroups": {
-          "shape": "VpcSecurityGroups"
+          "locationName": "VpcSecurityGroups",
+          "shape": "String"
         }
       },
       "name": "DBInstance",
       "type": "structure"
     },
-    "DBInstanceStatusInfo": {
+    "DBInstances": {
       "members": {
-        "Message": {
+        "AccountingType": {
+          "locationName": "AccountingType",
           "shape": "String"
         },
-        "Normal": {
+        "AllocatedStorage": {
+          "locationName": "AllocatedStorage",
+          "shape": "Integer"
+        },
+        "AutoMinorVersionUpgrade": {
+          "locationName": "AutoMinorVersionUpgrade",
           "shape": "Boolean"
         },
-        "Status": {
+        "AvailabilityZone": {
+          "locationName": "AvailabilityZone",
           "shape": "String"
         },
-        "StatusType": {
+        "BackupRetentionPeriod": {
+          "locationName": "BackupRetentionPeriod",
+          "shape": "Integer"
+        },
+        "BinlogRetentionPeriod": {
+          "locationName": "BinlogRetentionPeriod",
+          "shape": "Integer"
+        },
+        "CACertificateIdentifier": {
+          "locationName": "CACertificateIdentifier",
+          "shape": "String"
+        },
+        "DBInstanceClass": {
+          "locationName": "DBInstanceClass",
+          "shape": "String"
+        },
+        "DBInstanceIdentifier": {
+          "locationName": "DBInstanceIdentifier",
+          "shape": "String"
+        },
+        "DBInstanceStatus": {
+          "locationName": "DBInstanceStatus",
+          "shape": "String"
+        },
+        "DBName": {
+          "locationName": "DBName",
+          "shape": "String"
+        },
+        "DBParameterGroups": {
+          "locationName": "DBParameterGroups",
+          "shape": "ListOfDBParameterGroups"
+        },
+        "DBSecurityGroups": {
+          "locationName": "DBSecurityGroups",
+          "shape": "ListOfDBSecurityGroups"
+        },
+        "Endpoint": {
+          "locationName": "Endpoint",
+          "shape": "Endpoint"
+        },
+        "Engine": {
+          "locationName": "Engine",
+          "shape": "String"
+        },
+        "EngineVersion": {
+          "locationName": "EngineVersion",
+          "shape": "String"
+        },
+        "ExternalReplicationInfo": {
+          "locationName": "ExternalReplicationInfo",
+          "shape": "ExternalReplicationInfo"
+        },
+        "InstanceCreateTime": {
+          "locationName": "InstanceCreateTime",
+          "shape": "TStamp"
+        },
+        "LatestRestorableTime": {
+          "locationName": "LatestRestorableTime",
+          "shape": "TStamp"
+        },
+        "LicenseModel": {
+          "locationName": "LicenseModel",
+          "shape": "String"
+        },
+        "MasterUsername": {
+          "locationName": "MasterUsername",
+          "shape": "String"
+        },
+        "MultiAZ": {
+          "locationName": "MultiAZ",
+          "shape": "Boolean"
+        },
+        "NextMonthAccountingType": {
+          "locationName": "NextMonthAccountingType",
+          "shape": "String"
+        },
+        "NiftyMultiAZType": {
+          "locationName": "NiftyMultiAZType",
+          "shape": "String"
+        },
+        "NiftyNetworkId": {
+          "locationName": "NiftyNetworkId",
+          "shape": "String"
+        },
+        "NiftyStorageType": {
+          "locationName": "NiftyStorageType",
+          "shape": "Integer"
+        },
+        "OptionGroupMemberships": {
+          "locationName": "OptionGroupMemberships",
+          "shape": "ListOfOptionGroupMemberships"
+        },
+        "PendingModifiedValues": {
+          "locationName": "PendingModifiedValues",
+          "shape": "PendingModifiedValues"
+        },
+        "PreferredBackupWindow": {
+          "locationName": "PreferredBackupWindow",
+          "shape": "String"
+        },
+        "PreferredMaintenanceWindow": {
+          "locationName": "PreferredMaintenanceWindow",
+          "shape": "String"
+        },
+        "PubliclyAccessible": {
+          "locationName": "PubliclyAccessible",
+          "shape": "Boolean"
+        },
+        "ReadReplicaDBInstanceIdentifiers": {
+          "locationName": "ReadReplicaDBInstanceIdentifiers",
+          "shape": "String"
+        },
+        "ReadReplicaSourceDBInstanceIdentifier": {
+          "locationName": "ReadReplicaSourceDBInstanceIdentifier",
+          "shape": "String"
+        },
+        "SecondaryAvailabilityZone": {
+          "locationName": "SecondaryAvailabilityZone",
+          "shape": "String"
+        },
+        "StatusInfos": {
+          "locationName": "StatusInfos",
+          "shape": "ListOfStatusInfos"
+        },
+        "VpcSecurityGroups": {
+          "locationName": "VpcSecurityGroups",
           "shape": "String"
         }
       },
-      "name": "DBInstanceStatusInfo",
-      "type": "structure"
-    },
-    "DBInstances": {
-      "member": {
-        "locationName": "DBInstance",
-        "shape": "DBInstance"
-      },
       "name": "DBInstances",
-      "type": "list"
+      "type": "structure"
     },
     "DBParameterGroup": {
       "members": {
         "DBParameterGroupFamily": {
+          "locationName": "DBParameterGroupFamily",
           "shape": "String"
         },
         "DBParameterGroupName": {
+          "locationName": "DBParameterGroupName",
           "shape": "String"
         },
         "Description": {
+          "locationName": "Description",
           "shape": "String"
         }
       },
@@ -1267,31 +1520,61 @@
       "type": "structure"
     },
     "DBParameterGroups": {
-      "member": {
-        "locationName": "DBParameterGroup",
-        "shape": "DBParameterGroup"
+      "members": {
+        "DBParameterGroupName": {
+          "locationName": "DBParameterGroupName",
+          "shape": "String"
+        },
+        "ParameterApplyStatus": {
+          "locationName": "ParameterApplyStatus",
+          "shape": "String"
+        }
       },
       "name": "DBParameterGroups",
-      "type": "list"
+      "type": "structure"
+    },
+    "DBParameterGroupsOfDescribeDBParameterGroups": {
+      "members": {
+        "DBParameterGroupFamily": {
+          "locationName": "DBParameterGroupFamily",
+          "shape": "String"
+        },
+        "DBParameterGroupName": {
+          "locationName": "DBParameterGroupName",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "Description",
+          "shape": "String"
+        }
+      },
+      "name": "DBParameterGroupsOfDescribeDBParameterGroups",
+      "type": "structure"
     },
     "DBSecurityGroup": {
       "members": {
         "DBSecurityGroupDescription": {
+          "locationName": "DBSecurityGroupDescription",
           "shape": "String"
         },
         "DBSecurityGroupName": {
+          "locationName": "DBSecurityGroupName",
           "shape": "String"
         },
         "EC2SecurityGroups": {
-          "shape": "EC2SecurityGroups"
+          "locationName": "EC2SecurityGroups",
+          "shape": "ListOfEC2SecurityGroups"
         },
         "IPRanges": {
-          "shape": "IPRanges"
+          "locationName": "IPRanges",
+          "shape": "ListOfIPRanges"
         },
         "NiftyAvailabilityZone": {
+          "locationName": "NiftyAvailabilityZone",
           "shape": "String"
         },
         "OwnerId": {
+          "locationName": "OwnerId",
           "shape": "String"
         }
       },
@@ -1299,55 +1582,105 @@
       "type": "structure"
     },
     "DBSecurityGroups": {
-      "member": {
-        "locationName": "DBSecurityGroup",
-        "shape": "DBSecurityGroup"
+      "members": {
+        "DBSecurityGroupName": {
+          "locationName": "DBSecurityGroupName",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "Status",
+          "shape": "String"
+        }
       },
       "name": "DBSecurityGroups",
-      "type": "list"
+      "type": "structure"
+    },
+    "DBSecurityGroupsOfDescribeDBSecurityGroups": {
+      "members": {
+        "DBSecurityGroupDescription": {
+          "locationName": "DBSecurityGroupDescription",
+          "shape": "String"
+        },
+        "DBSecurityGroupName": {
+          "locationName": "DBSecurityGroupName",
+          "shape": "String"
+        },
+        "EC2SecurityGroups": {
+          "locationName": "EC2SecurityGroups",
+          "shape": "ListOfEC2SecurityGroups"
+        },
+        "IPRanges": {
+          "locationName": "IPRanges",
+          "shape": "ListOfIPRanges"
+        },
+        "NiftyAvailabilityZone": {
+          "locationName": "NiftyAvailabilityZone",
+          "shape": "String"
+        },
+        "OwnerId": {
+          "locationName": "OwnerId",
+          "shape": "String"
+        }
+      },
+      "name": "DBSecurityGroupsOfDescribeDBSecurityGroups",
+      "type": "structure"
     },
     "DBSnapshot": {
       "members": {
         "AllocatedStorage": {
-          "shape": "String"
+          "locationName": "AllocatedStorage",
+          "shape": "Integer"
         },
         "AvailabilityZone": {
+          "locationName": "AvailabilityZone",
           "shape": "String"
         },
         "DBInstanceIdentifier": {
+          "locationName": "DBInstanceIdentifier",
           "shape": "String"
         },
         "DBSnapshotIdentifier": {
+          "locationName": "DBSnapshotIdentifier",
           "shape": "String"
         },
         "Engine": {
+          "locationName": "Engine",
           "shape": "String"
         },
         "EngineVersion": {
+          "locationName": "EngineVersion",
           "shape": "String"
         },
         "InstanceCreateTime": {
-          "shape": "String"
+          "locationName": "InstanceCreateTime",
+          "shape": "TStamp"
         },
         "LicenseModel": {
+          "locationName": "LicenseModel",
           "shape": "String"
         },
         "MasterUsername": {
+          "locationName": "MasterUsername",
           "shape": "String"
         },
         "OptionGroupName": {
+          "locationName": "OptionGroupName",
           "shape": "String"
         },
         "Port": {
-          "shape": "String"
+          "locationName": "Port",
+          "shape": "Integer"
         },
         "SnapshotCreateTime": {
-          "shape": "String"
+          "locationName": "SnapshotCreateTime",
+          "shape": "TStamp"
         },
         "SnapshotType": {
+          "locationName": "SnapshotType",
           "shape": "String"
         },
         "Status": {
+          "locationName": "Status",
           "shape": "String"
         }
       },
@@ -1355,20 +1688,88 @@
       "type": "structure"
     },
     "DBSnapshots": {
-      "member": {
-        "locationName": "DBSnapshot",
-        "shape": "DBSnapshot"
+      "members": {
+        "AllocatedStorage": {
+          "locationName": "AllocatedStorage",
+          "shape": "Integer"
+        },
+        "AvailabilityZone": {
+          "locationName": "AvailabilityZone",
+          "shape": "String"
+        },
+        "DBInstanceIdentifier": {
+          "locationName": "DBInstanceIdentifier",
+          "shape": "String"
+        },
+        "DBSnapshotIdentifier": {
+          "locationName": "DBSnapshotIdentifier",
+          "shape": "String"
+        },
+        "Engine": {
+          "locationName": "Engine",
+          "shape": "String"
+        },
+        "EngineVersion": {
+          "locationName": "EngineVersion",
+          "shape": "String"
+        },
+        "InstanceCreateTime": {
+          "locationName": "InstanceCreateTime",
+          "shape": "TStamp"
+        },
+        "LicenseModel": {
+          "locationName": "LicenseModel",
+          "shape": "String"
+        },
+        "MasterUsername": {
+          "locationName": "MasterUsername",
+          "shape": "String"
+        },
+        "OptionGroupName": {
+          "locationName": "OptionGroupName",
+          "shape": "String"
+        },
+        "Port": {
+          "locationName": "Port",
+          "shape": "Integer"
+        },
+        "SnapshotCreateTime": {
+          "locationName": "SnapshotCreateTime",
+          "shape": "TStamp"
+        },
+        "SnapshotType": {
+          "locationName": "SnapshotType",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "Status",
+          "shape": "String"
+        }
       },
       "name": "DBSnapshots",
-      "type": "list"
+      "type": "structure"
     },
     "Datapoints": {
-      "member": {
-        "locationName": "member",
-        "shape": "Member"
+      "members": {
+        "NiftyTargetName": {
+          "locationName": "NiftyTargetName",
+          "shape": "String"
+        },
+        "SampleCount": {
+          "locationName": "SampleCount",
+          "shape": "Integer"
+        },
+        "Sum": {
+          "locationName": "Sum",
+          "shape": "Integer"
+        },
+        "Timestamp": {
+          "locationName": "Timestamp",
+          "shape": "TStamp"
+        }
       },
       "name": "Datapoints",
-      "type": "list"
+      "type": "structure"
     },
     "DeleteDBInstanceRequest": {
       "members": {
@@ -1394,7 +1795,12 @@
     "DeleteDBInstanceResult": {
       "members": {
         "DBInstance": {
+          "locationName": "DBInstance",
           "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DeleteDBInstanceResult",
@@ -1413,6 +1819,16 @@
       ],
       "type": "structure"
     },
+    "DeleteDBParameterGroupResult": {
+      "members": {
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        }
+      },
+      "name": "DeleteDBParameterGroupResult",
+      "type": "structure"
+    },
     "DeleteDBSecurityGroupRequest": {
       "members": {
         "DBSecurityGroupName": {
@@ -1424,6 +1840,16 @@
       "required": [
         "DBSecurityGroupName"
       ],
+      "type": "structure"
+    },
+    "DeleteDBSecurityGroupResult": {
+      "members": {
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        }
+      },
+      "name": "DeleteDBSecurityGroupResult",
       "type": "structure"
     },
     "DeleteDBSnapshotRequest": {
@@ -1442,7 +1868,12 @@
     "DeleteDBSnapshotResult": {
       "members": {
         "DBSnapshot": {
+          "locationName": "DBSnapshot",
           "shape": "DBSnapshot"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DeleteDBSnapshotResult",
@@ -1464,7 +1895,12 @@
     "DeleteEventSubscriptionResult": {
       "members": {
         "EventSubscription": {
+          "locationName": "EventSubscription",
           "shape": "EventSubscription"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DeleteEventSubscriptionResult",
@@ -1475,6 +1911,22 @@
         "CertificateIdentifier": {
           "locationName": "CertificateIdentifier",
           "shape": "String"
+        },
+        "Filter": {
+          "locationName": "Filter",
+          "shape": "String"
+        },
+        "FilterName": {
+          "locationName": "FilterName",
+          "shape": "String"
+        },
+        "FilterValue": {
+          "locationName": "FilterValue",
+          "shape": "String"
+        },
+        "Filters": {
+          "locationName": "Filters",
+          "shape": "ListOfRequestFilters"
         },
         "Marker": {
           "locationName": "Marker",
@@ -1491,10 +1943,16 @@
     "DescribeCertificatesResult": {
       "members": {
         "Certificates": {
-          "shape": "Certificates"
+          "locationName": "Certificates",
+          "shape": "ListOfCertificates"
         },
         "Marker": {
+          "locationName": "Marker",
           "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DescribeCertificatesResult",
@@ -1518,6 +1976,10 @@
           "locationName": "EngineVersion",
           "shape": "String"
         },
+        "ListSupportedCharacterSets": {
+          "locationName": "ListSupportedCharacterSets",
+          "shape": "Boolean"
+        },
         "Marker": {
           "locationName": "Marker",
           "shape": "String"
@@ -1533,10 +1995,16 @@
     "DescribeDBEngineVersionsResult": {
       "members": {
         "DBEngineVersions": {
-          "shape": "DBEngineVersions"
+          "locationName": "DBEngineVersions",
+          "shape": "ListOfDBEngineVersions"
         },
         "Marker": {
+          "locationName": "Marker",
           "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DescribeDBEngineVersionsResult",
@@ -1547,6 +2015,22 @@
         "DBInstanceIdentifier": {
           "locationName": "DBInstanceIdentifier",
           "shape": "String"
+        },
+        "Filter": {
+          "locationName": "Filter",
+          "shape": "String"
+        },
+        "FilterName": {
+          "locationName": "FilterName",
+          "shape": "String"
+        },
+        "FilterValue": {
+          "locationName": "FilterValue",
+          "shape": "String"
+        },
+        "Filters": {
+          "locationName": "Filters",
+          "shape": "ListOfRequestFilters"
         },
         "Marker": {
           "locationName": "Marker",
@@ -1563,36 +2047,37 @@
     "DescribeDBInstancesResult": {
       "members": {
         "DBInstances": {
-          "shape": "DBInstances"
+          "locationName": "DBInstances",
+          "shape": "ListOfDBInstances"
         },
         "Marker": {
+          "locationName": "Marker",
           "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DescribeDBInstancesResult",
       "type": "structure"
     },
     "DescribeDBLogFiles": {
-      "member": {
-        "locationName": "DescribeDBLogFilesDetails",
-        "shape": "DescribeDBLogFilesDetails"
-      },
-      "name": "DescribeDBLogFiles",
-      "type": "list"
-    },
-    "DescribeDBLogFilesDetails": {
       "members": {
         "LastWritten": {
-          "shape": "String"
+          "locationName": "LastWritten",
+          "shape": "Long"
         },
         "LogFileName": {
+          "locationName": "LogFileName",
           "shape": "String"
         },
         "Size": {
-          "shape": "String"
+          "locationName": "Size",
+          "shape": "Long"
         }
       },
-      "name": "DescribeDBLogFilesDetails",
+      "name": "DescribeDBLogFiles",
       "type": "structure"
     },
     "DescribeDBLogFilesRequest": {
@@ -1603,11 +2088,11 @@
         },
         "FileLastWritten": {
           "locationName": "FileLastWritten",
-          "shape": "Integer"
+          "shape": "Long"
         },
         "FileSize": {
           "locationName": "FileSize",
-          "shape": "Integer"
+          "shape": "Long"
         },
         "FilenameContains": {
           "locationName": "FilenameContains",
@@ -1631,10 +2116,16 @@
     "DescribeDBLogFilesResult": {
       "members": {
         "DescribeDBLogFiles": {
-          "shape": "DescribeDBLogFiles"
+          "locationName": "DescribeDBLogFiles",
+          "shape": "ListOfDescribeDBLogFiles"
         },
         "Marker": {
+          "locationName": "Marker",
           "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DescribeDBLogFilesResult",
@@ -1645,6 +2136,22 @@
         "DBParameterGroupName": {
           "locationName": "DBParameterGroupName",
           "shape": "String"
+        },
+        "Filter": {
+          "locationName": "Filter",
+          "shape": "String"
+        },
+        "FilterName": {
+          "locationName": "FilterName",
+          "shape": "String"
+        },
+        "FilterValue": {
+          "locationName": "FilterValue",
+          "shape": "String"
+        },
+        "Filters": {
+          "locationName": "Filters",
+          "shape": "ListOfRequestFilters"
         },
         "Marker": {
           "locationName": "Marker",
@@ -1661,10 +2168,16 @@
     "DescribeDBParameterGroupsResult": {
       "members": {
         "DBParameterGroups": {
-          "shape": "DBParameterGroups"
+          "locationName": "DBParameterGroups",
+          "shape": "ListOfDBParameterGroupsOfDescribeDBParameterGroups"
         },
         "Marker": {
+          "locationName": "Marker",
           "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DescribeDBParameterGroupsResult",
@@ -1698,10 +2211,16 @@
     "DescribeDBParametersResult": {
       "members": {
         "Marker": {
+          "locationName": "Marker",
           "shape": "String"
         },
         "Parameters": {
-          "shape": "Parameters"
+          "locationName": "Parameters",
+          "shape": "ListOfParameters"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DescribeDBParametersResult",
@@ -1712,6 +2231,22 @@
         "DBSecurityGroupName": {
           "locationName": "DBSecurityGroupName",
           "shape": "String"
+        },
+        "Filter": {
+          "locationName": "Filter",
+          "shape": "String"
+        },
+        "FilterName": {
+          "locationName": "FilterName",
+          "shape": "String"
+        },
+        "FilterValue": {
+          "locationName": "FilterValue",
+          "shape": "String"
+        },
+        "Filters": {
+          "locationName": "Filters",
+          "shape": "ListOfRequestFilters"
         },
         "Marker": {
           "locationName": "Marker",
@@ -1728,10 +2263,16 @@
     "DescribeDBSecurityGroupsResult": {
       "members": {
         "DBSecurityGroups": {
-          "shape": "DBSecurityGroups"
+          "locationName": "DBSecurityGroups",
+          "shape": "ListOfDBSecurityGroupsOfDescribeDBSecurityGroups"
         },
         "Marker": {
+          "locationName": "Marker",
           "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DescribeDBSecurityGroupsResult",
@@ -1746,6 +2287,22 @@
         "DBSnapshotIdentifier": {
           "locationName": "DBSnapshotIdentifier",
           "shape": "String"
+        },
+        "Filter": {
+          "locationName": "Filter",
+          "shape": "String"
+        },
+        "FilterName": {
+          "locationName": "FilterName",
+          "shape": "String"
+        },
+        "FilterValue": {
+          "locationName": "FilterValue",
+          "shape": "String"
+        },
+        "Filters": {
+          "locationName": "Filters",
+          "shape": "ListOfRequestFilters"
         },
         "Marker": {
           "locationName": "Marker",
@@ -1766,10 +2323,16 @@
     "DescribeDBSnapshotsResult": {
       "members": {
         "DBSnapshots": {
-          "shape": "DBSnapshots"
+          "locationName": "DBSnapshots",
+          "shape": "ListOfDBSnapshots"
         },
         "Marker": {
+          "locationName": "Marker",
           "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DescribeDBSnapshotsResult",
@@ -1799,7 +2362,12 @@
     "DescribeEngineDefaultParametersResult": {
       "members": {
         "EngineDefaults": {
+          "locationName": "EngineDefaults",
           "shape": "EngineDefaults"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DescribeEngineDefaultParametersResult",
@@ -1818,7 +2386,12 @@
     "DescribeEventCategoriesResult": {
       "members": {
         "EventCategoriesMapList": {
-          "shape": "EventCategoriesMapList"
+          "locationName": "EventCategoriesMapList",
+          "shape": "ListOfEventCategoriesMapList"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DescribeEventCategoriesResult",
@@ -1845,10 +2418,16 @@
     "DescribeEventSubscriptionsResult": {
       "members": {
         "EventSubscriptionsList": {
-          "shape": "EventSubscriptionsList"
+          "locationName": "EventSubscriptionsList",
+          "shape": "ListOfEventSubscriptionsList"
         },
         "Marker": {
+          "locationName": "Marker",
           "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DescribeEventSubscriptionsResult",
@@ -1895,10 +2474,16 @@
     "DescribeEventsResult": {
       "members": {
         "Events": {
-          "shape": "Events"
+          "locationName": "Events",
+          "shape": "ListOfEvents"
         },
         "Marker": {
+          "locationName": "Marker",
           "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DescribeEventsResult",
@@ -1929,6 +2514,10 @@
         "MaxRecords": {
           "locationName": "MaxRecords",
           "shape": "Integer"
+        },
+        "Vpc": {
+          "locationName": "Vpc",
+          "shape": "Boolean"
         }
       },
       "name": "DescribeOrderableDBInstanceOptionsRequest",
@@ -1937,10 +2526,16 @@
     "DescribeOrderableDBInstanceOptionsResult": {
       "members": {
         "Marker": {
+          "locationName": "Marker",
           "shape": "String"
         },
         "OrderableDBInstanceOptions": {
-          "shape": "OrderableDBInstanceOptions"
+          "locationName": "OrderableDBInstanceOptions",
+          "shape": "ListOfOrderableDBInstanceOptions"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DescribeOrderableDBInstanceOptionsResult",
@@ -1978,51 +2573,56 @@
     "DownloadDBLogFilePortionResult": {
       "members": {
         "AdditionalDataPending": {
+          "locationName": "AdditionalDataPending",
           "shape": "Boolean"
         },
         "LogFileData": {
+          "locationName": "LogFileData",
           "shape": "String"
         },
         "Marker": {
+          "locationName": "Marker",
           "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "DownloadDBLogFilePortionResult",
       "type": "structure"
     },
-    "EC2SecurityGroup": {
+    "EC2SecurityGroups": {
       "members": {
         "EC2SecurityGroupName": {
+          "locationName": "EC2SecurityGroupName",
           "shape": "String"
         },
         "EC2SecurityGroupOwnerId": {
+          "locationName": "EC2SecurityGroupOwnerId",
           "shape": "String"
         },
         "Status": {
+          "locationName": "Status",
           "shape": "String"
         }
       },
-      "name": "EC2SecurityGroup",
-      "type": "structure"
-    },
-    "EC2SecurityGroups": {
-      "member": {
-        "locationName": "EC2SecurityGroup",
-        "shape": "EC2SecurityGroup"
-      },
       "name": "EC2SecurityGroups",
-      "type": "list"
+      "type": "structure"
     },
     "Endpoint": {
       "members": {
         "Address": {
+          "locationName": "Address",
           "shape": "String"
         },
         "NiftyPrivateAddress": {
+          "locationName": "NiftyPrivateAddress",
           "shape": "String"
         },
         "Port": {
-          "shape": "String"
+          "locationName": "Port",
+          "shape": "Integer"
         }
       },
       "name": "Endpoint",
@@ -2031,100 +2631,71 @@
     "EngineDefaults": {
       "members": {
         "DBParameterGroupFamily": {
+          "locationName": "DBParameterGroupFamily",
           "shape": "String"
         },
         "Marker": {
+          "locationName": "Marker",
           "shape": "String"
         },
         "Parameters": {
-          "shape": "Parameters"
+          "locationName": "Parameters",
+          "shape": "ListOfParameters"
         }
       },
       "name": "EngineDefaults",
       "type": "structure"
     },
-    "Event": {
-      "members": {
-        "Date": {
-          "shape": "String"
-        },
-        "EventCategories": {
-          "shape": "EventCategories"
-        },
-        "Message": {
-          "shape": "String"
-        },
-        "SourceIdentifier": {
-          "shape": "String"
-        },
-        "SourceType": {
-          "shape": "String"
-        }
-      },
-      "name": "Event",
-      "type": "structure"
-    },
-    "EventCategories": {
-      "member": {
-        "shape": "String"
-      },
-      "name": "EventCategories",
-      "type": "list"
-    },
-    "EventCategoriesList": {
-      "member": {
-        "shape": "String"
-      },
-      "name": "EventCategoriesList",
-      "type": "list"
-    },
-    "EventCategoriesMap": {
-      "members": {
-        "EventCategories": {
-          "shape": "EventCategories"
-        },
-        "SourceType": {
-          "shape": "String"
-        }
-      },
-      "name": "EventCategoriesMap",
-      "type": "structure"
-    },
     "EventCategoriesMapList": {
-      "member": {
-        "locationName": "EventCategoriesMap",
-        "shape": "EventCategoriesMap"
+      "members": {
+        "EventCategories": {
+          "locationName": "EventCategories",
+          "shape": "ListOfEventCategories"
+        },
+        "SourceType": {
+          "locationName": "SourceType",
+          "shape": "String"
+        }
       },
       "name": "EventCategoriesMapList",
-      "type": "list"
+      "type": "structure"
     },
     "EventSubscription": {
       "members": {
         "CustSubscriptionId": {
+          "locationName": "CustSubscriptionId",
           "shape": "String"
         },
         "Enabled": {
-          "shape": "String"
+          "locationName": "Enabled",
+          "shape": "Boolean"
         },
         "EventCategoriesList": {
-          "shape": "EventCategoriesList"
+          "locationName": "EventCategoriesList",
+          "shape": "ListOfEventCategoriesList"
         },
         "NiftyDescription": {
+          "locationName": "NiftyDescription",
           "shape": "String"
         },
         "NiftyEmailAddressesList": {
-          "shape": "NiftyEmailAddressesList"
+          "locationName": "NiftyEmailAddressesList",
+          "shape": "ListOfNiftyEmailAddressesList"
         },
         "SourceIdsList": {
-          "shape": "SourceIdsList"
+          "locationName": "SourceIdsList",
+          "shape": "ListOfSourceIdsList"
         },
         "SourceType": {
+          "locationName": "SourceType",
           "shape": "String"
         },
         "Status": {
+          "locationName": "Status",
           "shape": "String"
         },
         "SubscriptionCreationTime": {
+          "locationName": "SubscriptionCreationTime",
           "shape": "String"
         }
       },
@@ -2132,65 +2703,316 @@
       "type": "structure"
     },
     "EventSubscriptionsList": {
-      "member": {
-        "locationName": "EventSubscription",
-        "shape": "EventSubscription"
+      "members": {
+        "CustSubscriptionId": {
+          "locationName": "CustSubscriptionId",
+          "shape": "String"
+        },
+        "Enabled": {
+          "locationName": "Enabled",
+          "shape": "Boolean"
+        },
+        "EventCategoriesList": {
+          "locationName": "EventCategoriesList",
+          "shape": "ListOfEventCategoriesList"
+        },
+        "NiftyDescription": {
+          "locationName": "NiftyDescription",
+          "shape": "String"
+        },
+        "NiftyEmailAddressesList": {
+          "locationName": "NiftyEmailAddressesList",
+          "shape": "ListOfNiftyEmailAddressesList"
+        },
+        "SourceIdsList": {
+          "locationName": "SourceIdsList",
+          "shape": "ListOfSourceIdsList"
+        },
+        "SourceType": {
+          "locationName": "SourceType",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "Status",
+          "shape": "String"
+        },
+        "SubscriptionCreationTime": {
+          "locationName": "SubscriptionCreationTime",
+          "shape": "String"
+        }
       },
       "name": "EventSubscriptionsList",
-      "type": "list"
+      "type": "structure"
     },
     "Events": {
-      "member": {
-        "locationName": "Event",
-        "shape": "Event"
+      "members": {
+        "Date": {
+          "locationName": "Date",
+          "shape": "TStamp"
+        },
+        "EventCategories": {
+          "locationName": "EventCategories",
+          "shape": "ListOfEventCategories"
+        },
+        "Message": {
+          "locationName": "Message",
+          "shape": "String"
+        },
+        "SourceIdentifier": {
+          "locationName": "SourceIdentifier",
+          "shape": "String"
+        },
+        "SourceType": {
+          "locationName": "SourceType",
+          "shape": "String"
+        }
       },
       "name": "Events",
-      "type": "list"
+      "type": "structure"
     },
     "ExternalReplicationInfo": {
       "members": {
         "ExternalMasterAddress": {
+          "locationName": "ExternalMasterAddress",
           "shape": "String"
         },
         "ExternalReplicationMessage": {
+          "locationName": "ExternalReplicationMessage",
           "shape": "String"
         },
         "ExternalReplicationStatus": {
+          "locationName": "ExternalReplicationStatus",
           "shape": "String"
         },
         "ReplicationAddresses": {
-          "shape": "ReplicationAddresses"
+          "locationName": "ReplicationAddresses",
+          "shape": "ListOfReplicationAddresses"
         },
         "ReplicationPrivateAddresses": {
-          "shape": "ReplicationPrivateAddresses"
+          "locationName": "ReplicationPrivateAddresses",
+          "shape": "ListOfReplicationPrivateAddresses"
         }
       },
       "name": "ExternalReplicationInfo",
       "type": "structure"
     },
-    "IPRange": {
+    "IPRanges": {
       "members": {
         "CIDRIP": {
+          "locationName": "CIDRIP",
           "shape": "String"
         },
         "Status": {
+          "locationName": "Status",
           "shape": "String"
         }
       },
-      "name": "IPRange",
-      "type": "structure"
-    },
-    "IPRanges": {
-      "member": {
-        "locationName": "IPRange",
-        "shape": "IPRange"
-      },
       "name": "IPRanges",
-      "type": "list"
+      "type": "structure"
     },
     "Integer": {
       "name": "Integer",
       "type": "integer"
+    },
+    "ListOfAvailabilityZones": {
+      "member": {
+        "locationName": "AvailabilityZone",
+        "shape": "AvailabilityZones"
+      },
+      "name": "ListOfAvailabilityZones",
+      "type": "list"
+    },
+    "ListOfCertificates": {
+      "member": {
+        "locationName": "Certificate",
+        "shape": "Certificates"
+      },
+      "name": "ListOfCertificates",
+      "type": "list"
+    },
+    "ListOfDBEngineVersions": {
+      "member": {
+        "locationName": "DBEngineVersion",
+        "shape": "DBEngineVersions"
+      },
+      "name": "ListOfDBEngineVersions",
+      "type": "list"
+    },
+    "ListOfDBInstances": {
+      "member": {
+        "locationName": "DBInstance",
+        "shape": "DBInstances"
+      },
+      "name": "ListOfDBInstances",
+      "type": "list"
+    },
+    "ListOfDBParameterGroups": {
+      "member": {
+        "locationName": "DBParameterGroup",
+        "shape": "DBParameterGroups"
+      },
+      "name": "ListOfDBParameterGroups",
+      "type": "list"
+    },
+    "ListOfDBParameterGroupsOfDescribeDBParameterGroups": {
+      "member": {
+        "locationName": "DBParameterGroup",
+        "shape": "DBParameterGroupsOfDescribeDBParameterGroups"
+      },
+      "name": "ListOfDBParameterGroupsOfDescribeDBParameterGroups",
+      "type": "list"
+    },
+    "ListOfDBSecurityGroups": {
+      "member": {
+        "locationName": "DBSecurityGroup",
+        "shape": "DBSecurityGroups"
+      },
+      "name": "ListOfDBSecurityGroups",
+      "type": "list"
+    },
+    "ListOfDBSecurityGroupsOfDescribeDBSecurityGroups": {
+      "member": {
+        "locationName": "DBSecurityGroup",
+        "shape": "DBSecurityGroupsOfDescribeDBSecurityGroups"
+      },
+      "name": "ListOfDBSecurityGroupsOfDescribeDBSecurityGroups",
+      "type": "list"
+    },
+    "ListOfDBSnapshots": {
+      "member": {
+        "locationName": "DBSnapshot",
+        "shape": "DBSnapshots"
+      },
+      "name": "ListOfDBSnapshots",
+      "type": "list"
+    },
+    "ListOfDatapoints": {
+      "member": {
+        "locationName": "member",
+        "shape": "Datapoints"
+      },
+      "name": "ListOfDatapoints",
+      "type": "list"
+    },
+    "ListOfDescribeDBLogFiles": {
+      "member": {
+        "locationName": "DescribeDBLogFilesDetails",
+        "shape": "DescribeDBLogFiles"
+      },
+      "name": "ListOfDescribeDBLogFiles",
+      "type": "list"
+    },
+    "ListOfEC2SecurityGroups": {
+      "member": {
+        "locationName": "EC2SecurityGroup",
+        "shape": "EC2SecurityGroups"
+      },
+      "name": "ListOfEC2SecurityGroups",
+      "type": "list"
+    },
+    "ListOfEventCategories": {
+      "member": {
+        "locationName": "EventCategory",
+        "shape": "String"
+      },
+      "name": "ListOfEventCategories",
+      "type": "list"
+    },
+    "ListOfEventCategoriesList": {
+      "member": {
+        "locationName": "EventCategory",
+        "shape": "String"
+      },
+      "name": "ListOfEventCategoriesList",
+      "type": "list"
+    },
+    "ListOfEventCategoriesMapList": {
+      "member": {
+        "locationName": "EventCategoriesMap",
+        "shape": "EventCategoriesMapList"
+      },
+      "name": "ListOfEventCategoriesMapList",
+      "type": "list"
+    },
+    "ListOfEventSubscriptionsList": {
+      "member": {
+        "locationName": "EventSubscription",
+        "shape": "EventSubscriptionsList"
+      },
+      "name": "ListOfEventSubscriptionsList",
+      "type": "list"
+    },
+    "ListOfEvents": {
+      "member": {
+        "locationName": "Event",
+        "shape": "Events"
+      },
+      "name": "ListOfEvents",
+      "type": "list"
+    },
+    "ListOfIPRanges": {
+      "member": {
+        "locationName": "IPRange",
+        "shape": "IPRanges"
+      },
+      "name": "ListOfIPRanges",
+      "type": "list"
+    },
+    "ListOfNiftyEmailAddressesList": {
+      "member": {
+        "locationName": "NiftyEmailAddress",
+        "shape": "String"
+      },
+      "name": "ListOfNiftyEmailAddressesList",
+      "type": "list"
+    },
+    "ListOfNiftyStorageTypes": {
+      "member": {
+        "locationName": "NiftyStorageType",
+        "shape": "Integer"
+      },
+      "name": "ListOfNiftyStorageTypes",
+      "type": "list"
+    },
+    "ListOfOptionGroupMemberships": {
+      "member": {
+        "locationName": "OptionGroupMembership",
+        "shape": "OptionGroupMemberships"
+      },
+      "name": "ListOfOptionGroupMemberships",
+      "type": "list"
+    },
+    "ListOfOrderableDBInstanceOptions": {
+      "member": {
+        "locationName": "OrderableDBInstanceOption",
+        "shape": "OrderableDBInstanceOptions"
+      },
+      "name": "ListOfOrderableDBInstanceOptions",
+      "type": "list"
+    },
+    "ListOfParameters": {
+      "member": {
+        "locationName": "Parameter",
+        "shape": "Parameters"
+      },
+      "name": "ListOfParameters",
+      "type": "list"
+    },
+    "ListOfReplicationAddresses": {
+      "member": {
+        "locationName": "ReplicationAddress",
+        "shape": "String"
+      },
+      "name": "ListOfReplicationAddresses",
+      "type": "list"
+    },
+    "ListOfReplicationPrivateAddresses": {
+      "member": {
+        "locationName": "ReplicationPrivateAddress",
+        "shape": "String"
+      },
+      "name": "ListOfReplicationPrivateAddresses",
+      "type": "list"
     },
     "ListOfRequestDBSecurityGroups": {
       "member": {
@@ -2214,6 +3036,14 @@
         "shape": "String"
       },
       "name": "ListOfRequestEventCategories",
+      "type": "list"
+    },
+    "ListOfRequestFilters": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfRequestFilters",
       "type": "list"
     },
     "ListOfRequestNiftyDBSecurityGroups": {
@@ -2256,23 +3086,33 @@
       "name": "ListOfRequestSourceIds",
       "type": "list"
     },
-    "Member": {
-      "members": {
-        "NiftyTargetName": {
-          "shape": "String"
-        },
-        "SampleCount": {
-          "shape": "String"
-        },
-        "Sum": {
-          "shape": "String"
-        },
-        "Timestamp": {
-          "shape": "String"
-        }
+    "ListOfRequestVpcSecurityGroupIds": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
       },
-      "name": "Member",
-      "type": "structure"
+      "name": "ListOfRequestVpcSecurityGroupIds",
+      "type": "list"
+    },
+    "ListOfSourceIdsList": {
+      "member": {
+        "locationName": "SourceId",
+        "shape": "String"
+      },
+      "name": "ListOfSourceIdsList",
+      "type": "list"
+    },
+    "ListOfStatusInfos": {
+      "member": {
+        "locationName": "DBInstanceStatusInfo",
+        "shape": "StatusInfos"
+      },
+      "name": "ListOfStatusInfos",
+      "type": "list"
+    },
+    "Long": {
+      "name": "Long",
+      "type": "long"
     },
     "ModifyDBInstanceNetworkRequest": {
       "members": {
@@ -2298,12 +3138,20 @@
         }
       },
       "name": "ModifyDBInstanceNetworkRequest",
+      "required": [
+        "DBInstanceIdentifier"
+      ],
       "type": "structure"
     },
     "ModifyDBInstanceNetworkResult": {
       "members": {
         "DBInstance": {
+          "locationName": "DBInstance",
           "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "ModifyDBInstanceNetworkResult",
@@ -2319,8 +3167,16 @@
           "locationName": "AllocatedStorage",
           "shape": "Integer"
         },
+        "AllowMajorVersionUpgrade": {
+          "locationName": "AllowMajorVersionUpgrade",
+          "shape": "Boolean"
+        },
         "ApplyImmediately": {
           "locationName": "ApplyImmediately",
+          "shape": "Boolean"
+        },
+        "AutoMinorVersionUpgrade": {
+          "locationName": "AutoMinorVersionUpgrade",
           "shape": "Boolean"
         },
         "BackupRetentionPeriod": {
@@ -2355,6 +3211,14 @@
           "locationName": "DBSecurityGroups",
           "shape": "ListOfRequestDBSecurityGroups"
         },
+        "EngineVersion": {
+          "locationName": "EngineVersion",
+          "shape": "String"
+        },
+        "Iops": {
+          "locationName": "Iops",
+          "shape": "Integer"
+        },
         "MasterUserPassword": {
           "locationName": "MasterUserPassword",
           "shape": "String"
@@ -2383,6 +3247,10 @@
           "locationName": "NiftySlavePrivateAddress",
           "shape": "String"
         },
+        "OptionGroupName": {
+          "locationName": "OptionGroupName",
+          "shape": "String"
+        },
         "PreferredBackupWindow": {
           "locationName": "PreferredBackupWindow",
           "shape": "String"
@@ -2394,6 +3262,10 @@
         "ReadReplicaAccountingType": {
           "locationName": "ReadReplicaAccountingType",
           "shape": "String"
+        },
+        "VpcSecurityGroupIds": {
+          "locationName": "VpcSecurityGroupIds",
+          "shape": "ListOfRequestVpcSecurityGroupIds"
         }
       },
       "name": "ModifyDBInstanceRequest",
@@ -2405,7 +3277,12 @@
     "ModifyDBInstanceResult": {
       "members": {
         "DBInstance": {
+          "locationName": "DBInstance",
           "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "ModifyDBInstanceResult",
@@ -2432,7 +3309,12 @@
     "ModifyDBParameterGroupResult": {
       "members": {
         "DBParameterGroupName": {
+          "locationName": "DBParameterGroupName",
           "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "ModifyDBParameterGroupResult",
@@ -2475,18 +3357,16 @@
     "ModifyEventSubscriptionResult": {
       "members": {
         "EventSubscription": {
+          "locationName": "EventSubscription",
           "shape": "EventSubscription"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "ModifyEventSubscriptionResult",
       "type": "structure"
-    },
-    "NiftyEmailAddressesList": {
-      "member": {
-        "shape": "String"
-      },
-      "name": "NiftyEmailAddressesList",
-      "type": "list"
     },
     "NiftyFailoverDBInstanceRequest": {
       "members": {
@@ -2504,7 +3384,12 @@
     "NiftyFailoverDBInstanceResult": {
       "members": {
         "DBInstance": {
+          "locationName": "DBInstance",
           "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "NiftyFailoverDBInstanceResult",
@@ -2539,173 +3424,156 @@
     "NiftyGetMetricStatisticsResult": {
       "members": {
         "Datapoints": {
-          "shape": "Datapoints"
+          "locationName": "Datapoints",
+          "shape": "ListOfDatapoints"
         },
         "Label": {
+          "locationName": "Label",
           "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "NiftyGetMetricStatisticsResult",
       "type": "structure"
     },
-    "NiftyStorageTypes": {
-      "member": {
-        "shape": "Integer"
-      },
-      "name": "NiftyStorageTypes",
-      "type": "list"
-    },
-    "OptionGroupMembership": {
+    "OptionGroupMemberships": {
       "members": {
         "OptionGroupName": {
+          "locationName": "OptionGroupName",
           "shape": "String"
         },
         "Status": {
+          "locationName": "Status",
           "shape": "String"
         }
-      },
-      "name": "OptionGroupMembership",
-      "type": "structure"
-    },
-    "OptionGroupMemberships": {
-      "member": {
-        "locationName": "OptionGroupMembership",
-        "shape": "OptionGroupMembership"
       },
       "name": "OptionGroupMemberships",
-      "type": "list"
-    },
-    "OrderableDBInstanceOption": {
-      "members": {
-        "AvailabilityZones": {
-          "shape": "AvailabilityZones"
-        },
-        "DBInstanceClass": {
-          "shape": "String"
-        },
-        "Engine": {
-          "shape": "String"
-        },
-        "EngineVersion": {
-          "shape": "String"
-        },
-        "LicenseModel": {
-          "shape": "String"
-        },
-        "MultiAZCapable": {
-          "shape": "Boolean"
-        },
-        "ReadReplicaCapable": {
-          "shape": "Boolean"
-        },
-        "Vpc": {
-          "shape": "Boolean"
-        }
-      },
-      "name": "OrderableDBInstanceOption",
       "type": "structure"
     },
     "OrderableDBInstanceOptions": {
-      "member": {
-        "locationName": "OrderableDBInstanceOption",
-        "shape": "OrderableDBInstanceOption"
-      },
-      "name": "OrderableDBInstanceOptions",
-      "type": "list"
-    },
-    "Parameter": {
       "members": {
-        "AllowedValues": {
+        "AvailabilityZones": {
+          "locationName": "AvailabilityZones",
+          "shape": "ListOfAvailabilityZones"
+        },
+        "DBInstanceClass": {
+          "locationName": "DBInstanceClass",
           "shape": "String"
         },
-        "ApplyMethod": {
+        "Engine": {
+          "locationName": "Engine",
           "shape": "String"
         },
-        "ApplyType": {
+        "EngineVersion": {
+          "locationName": "EngineVersion",
           "shape": "String"
         },
-        "DataType": {
+        "LicenseModel": {
+          "locationName": "LicenseModel",
           "shape": "String"
         },
-        "Description": {
-          "shape": "String"
+        "MultiAZCapable": {
+          "locationName": "MultiAZCapable",
+          "shape": "Boolean"
         },
-        "IsModifiable": {
-          "shape": "String"
+        "ReadReplicaCapable": {
+          "locationName": "ReadReplicaCapable",
+          "shape": "Boolean"
         },
-        "MinimumEngineVersion": {
-          "shape": "String"
-        },
-        "ParameterName": {
-          "shape": "String"
-        },
-        "ParameterValue": {
-          "shape": "String"
-        },
-        "Source": {
-          "shape": "String"
+        "Vpc": {
+          "locationName": "Vpc",
+          "shape": "Boolean"
         }
       },
-      "name": "Parameter",
+      "name": "OrderableDBInstanceOptions",
       "type": "structure"
     },
     "Parameters": {
-      "member": {
-        "locationName": "Parameter",
-        "shape": "Parameter"
+      "members": {
+        "AllowedValues": {
+          "locationName": "AllowedValues",
+          "shape": "String"
+        },
+        "ApplyMethod": {
+          "locationName": "ApplyMethod",
+          "shape": "String"
+        },
+        "ApplyType": {
+          "locationName": "ApplyType",
+          "shape": "String"
+        },
+        "DataType": {
+          "locationName": "DataType",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "Description",
+          "shape": "String"
+        },
+        "IsModifiable": {
+          "locationName": "IsModifiable",
+          "shape": "Boolean"
+        },
+        "MinimumEngineVersion": {
+          "locationName": "MinimumEngineVersion",
+          "shape": "String"
+        },
+        "ParameterName": {
+          "locationName": "ParameterName",
+          "shape": "String"
+        },
+        "ParameterValue": {
+          "locationName": "ParameterValue",
+          "shape": "String"
+        },
+        "Source": {
+          "locationName": "Source",
+          "shape": "String"
+        }
       },
       "name": "Parameters",
-      "type": "list"
+      "type": "structure"
     },
     "PendingModifiedValues": {
       "members": {
         "AllocatedStorage": {
-          "shape": "String"
+          "locationName": "AllocatedStorage",
+          "shape": "Integer"
         },
         "BackupRetentionPeriod": {
-          "shape": "String"
+          "locationName": "BackupRetentionPeriod",
+          "shape": "Integer"
         },
         "DBInstanceClass": {
+          "locationName": "DBInstanceClass",
           "shape": "String"
         },
         "DBInstanceIdentifier": {
+          "locationName": "DBInstanceIdentifier",
           "shape": "String"
         },
         "EngineVersion": {
+          "locationName": "EngineVersion",
           "shape": "String"
         },
         "MasterUserPassword": {
+          "locationName": "MasterUserPassword",
           "shape": "String"
         },
         "MultiAZ": {
-          "shape": "String"
-        },
-        "NiftyMultiAZType": {
-          "shape": "String"
+          "locationName": "MultiAZ",
+          "shape": "Boolean"
         },
         "Port": {
-          "shape": "String"
+          "locationName": "Port",
+          "shape": "Integer"
         }
       },
       "name": "PendingModifiedValues",
       "type": "structure"
-    },
-    "ReadReplicaDBInstanceIdentifier": {
-      "members": {
-        "ReadReplicaDBInstanceIdentifier": {
-          "shape": "String"
-        }
-      },
-      "name": "ReadReplicaDBInstanceIdentifier",
-      "type": "structure"
-    },
-    "ReadReplicaDBInstanceIdentifiers": {
-      "member": {
-        "locationName": "ReadReplicaDBInstanceIdentifier",
-        "shape": "ReadReplicaDBInstanceIdentifier"
-      },
-      "name": "ReadReplicaDBInstanceIdentifiers",
-      "type": "list"
     },
     "RebootDBInstanceRequest": {
       "members": {
@@ -2731,7 +3599,12 @@
     "RebootDBInstanceResult": {
       "members": {
         "DBInstance": {
+          "locationName": "DBInstance",
           "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "RebootDBInstanceResult",
@@ -2758,25 +3631,16 @@
     "RemoveSourceIdentifierFromSubscriptionResult": {
       "members": {
         "EventSubscription": {
+          "locationName": "EventSubscription",
           "shape": "EventSubscription"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "RemoveSourceIdentifierFromSubscriptionResult",
       "type": "structure"
-    },
-    "ReplicationAddresses": {
-      "member": {
-        "shape": "String"
-      },
-      "name": "ReplicationAddresses",
-      "type": "list"
-    },
-    "ReplicationPrivateAddresses": {
-      "member": {
-        "shape": "String"
-      },
-      "name": "ReplicationPrivateAddresses",
-      "type": "list"
     },
     "RequestDimensions": {
       "members": {
@@ -2857,7 +3721,12 @@
     "ResetDBParameterGroupResult": {
       "members": {
         "DBParameterGroupName": {
+          "locationName": "DBParameterGroupName",
           "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "ResetDBParameterGroupResult",
@@ -2879,10 +3748,25 @@
     "ResetExternalMasterResult": {
       "members": {
         "DBInstance": {
+          "locationName": "DBInstance",
           "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "ResetExternalMasterResult",
+      "type": "structure"
+    },
+    "ResponseMetadata": {
+      "members": {
+        "RequestId": {
+          "locationName": "RequestId",
+          "shape": "String"
+        }
+      },
+      "name": "ResponseMetadata",
       "type": "structure"
     },
     "RestoreDBInstanceFromDBSnapshotRequest": {
@@ -2890,6 +3774,10 @@
         "AccountingType": {
           "locationName": "AccountingType",
           "shape": "String"
+        },
+        "AutoMinorVersionUpgrade": {
+          "locationName": "AutoMinorVersionUpgrade",
+          "shape": "Boolean"
         },
         "AvailabilityZone": {
           "locationName": "AvailabilityZone",
@@ -2911,9 +3799,17 @@
           "locationName": "DBSnapshotIdentifier",
           "shape": "String"
         },
+        "DBSubnetGroupName": {
+          "locationName": "DBSubnetGroupName",
+          "shape": "String"
+        },
         "Engine": {
           "locationName": "Engine",
           "shape": "String"
+        },
+        "Iops": {
+          "locationName": "Iops",
+          "shape": "Integer"
         },
         "LicenseModel": {
           "locationName": "LicenseModel",
@@ -2961,6 +3857,10 @@
         },
         "NiftyVirtualPrivateAddress": {
           "locationName": "NiftyVirtualPrivateAddress",
+          "shape": "String"
+        },
+        "OptionGroupName": {
+          "locationName": "OptionGroupName",
           "shape": "String"
         },
         "Port": {
@@ -2987,7 +3887,12 @@
     "RestoreDBInstanceFromDBSnapshotResult": {
       "members": {
         "DBInstance": {
+          "locationName": "DBInstance",
           "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "RestoreDBInstanceFromDBSnapshotResult",
@@ -2998,6 +3903,10 @@
         "AccountingType": {
           "locationName": "AccountingType",
           "shape": "String"
+        },
+        "AutoMinorVersionUpgrade": {
+          "locationName": "AutoMinorVersionUpgrade",
+          "shape": "Boolean"
         },
         "AvailabilityZone": {
           "locationName": "AvailabilityZone",
@@ -3011,9 +3920,17 @@
           "locationName": "DBName",
           "shape": "String"
         },
+        "DBSubnetGroupName": {
+          "locationName": "DBSubnetGroupName",
+          "shape": "String"
+        },
         "Engine": {
           "locationName": "Engine",
           "shape": "String"
+        },
+        "Iops": {
+          "locationName": "Iops",
+          "shape": "Integer"
         },
         "LicenseModel": {
           "locationName": "LicenseModel",
@@ -3061,6 +3978,10 @@
         },
         "NiftyVirtualPrivateAddress": {
           "locationName": "NiftyVirtualPrivateAddress",
+          "shape": "String"
+        },
+        "OptionGroupName": {
+          "locationName": "OptionGroupName",
           "shape": "String"
         },
         "Port": {
@@ -3102,7 +4023,12 @@
     "RestoreDBInstanceToPointInTimeResult": {
       "members": {
         "DBInstance": {
+          "locationName": "DBInstance",
           "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "RestoreDBInstanceToPointInTimeResult",
@@ -3118,8 +4044,16 @@
           "locationName": "DBSecurityGroupName",
           "shape": "String"
         },
+        "EC2SecurityGroupId": {
+          "locationName": "EC2SecurityGroupId",
+          "shape": "String"
+        },
         "EC2SecurityGroupName": {
           "locationName": "EC2SecurityGroupName",
+          "shape": "String"
+        },
+        "EC2SecurityGroupOwnerId": {
+          "locationName": "EC2SecurityGroupOwnerId",
           "shape": "String"
         }
       },
@@ -3132,7 +4066,12 @@
     "RevokeDBSecurityGroupIngressResult": {
       "members": {
         "DBSecurityGroup": {
+          "locationName": "DBSecurityGroup",
           "shape": "DBSecurityGroup"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "RevokeDBSecurityGroupIngressResult",
@@ -3183,18 +4122,16 @@
     "SetExternalMasterResult": {
       "members": {
         "DBInstance": {
+          "locationName": "DBInstance",
           "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "SetExternalMasterResult",
       "type": "structure"
-    },
-    "SourceIdsList": {
-      "member": {
-        "shape": "String"
-      },
-      "name": "SourceIdsList",
-      "type": "list"
     },
     "StartReplicationRequest": {
       "members": {
@@ -3212,19 +4149,38 @@
     "StartReplicationResult": {
       "members": {
         "DBInstance": {
+          "locationName": "DBInstance",
           "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "StartReplicationResult",
       "type": "structure"
     },
     "StatusInfos": {
-      "member": {
-        "locationName": "DBInstanceStatusInfo",
-        "shape": "DBInstanceStatusInfo"
+      "members": {
+        "Message": {
+          "locationName": "Message",
+          "shape": "String"
+        },
+        "Normal": {
+          "locationName": "Normal",
+          "shape": "Boolean"
+        },
+        "Status": {
+          "locationName": "Status",
+          "shape": "String"
+        },
+        "StatusType": {
+          "locationName": "StatusType",
+          "shape": "String"
+        }
       },
       "name": "StatusInfos",
-      "type": "list"
+      "type": "structure"
     },
     "StopReplicationRequest": {
       "members": {
@@ -3242,7 +4198,12 @@
     "StopReplicationResult": {
       "members": {
         "DBInstance": {
+          "locationName": "DBInstance",
           "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
         }
       },
       "name": "StopReplicationResult",
@@ -3255,19 +4216,6 @@
     "TStamp": {
       "name": "TStamp",
       "type": "timestamp"
-    },
-    "VpcSecurityGroup": {
-      "members": {},
-      "name": "VpcSecurityGroup",
-      "type": "structure"
-    },
-    "VpcSecurityGroups": {
-      "member": {
-        "locationName": "VpcSecurityGroup",
-        "shape": "VpcSecurityGroup"
-      },
-      "name": "VpcSecurityGroups",
-      "type": "list"
     }
   },
   "version": "2.0"
