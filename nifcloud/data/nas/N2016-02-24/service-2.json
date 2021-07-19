@@ -462,7 +462,7 @@
       "members": {
         "NASInstances": {
           "locationName": "NASInstances",
-          "shape": "NASInstances"
+          "shape": "ListOfNASInstances"
         },
         "ResponseMetadata": {
           "locationName": "ResponseMetadata",
@@ -612,6 +612,14 @@
         "shape": "IPRanges"
       },
       "name": "ListOfIPRanges",
+      "type": "list"
+    },
+    "ListOfNASInstances": {
+      "member": {
+        "locationName": "NASInstance",
+        "shape": "NASInstances"
+      },
+      "name": "ListOfNASInstances",
       "type": "list"
     },
     "ListOfNASSecurityGroups": {
@@ -874,9 +882,77 @@
     },
     "NASInstances": {
       "members": {
-        "NASInstance": {
-          "locationName": "NASInstance",
-          "shape": "NASInstance"
+        "AllocatedStorage": {
+          "locationName": "AllocatedStorage",
+          "shape": "Integer"
+        },
+        "AuthenticationType": {
+          "locationName": "AuthenticationType",
+          "shape": "Integer"
+        },
+        "AvailabilityZone": {
+          "locationName": "AvailabilityZone",
+          "shape": "String"
+        },
+        "DirectoryServiceDomainName": {
+          "locationName": "DirectoryServiceDomainName",
+          "shape": "String"
+        },
+        "DomainControllers": {
+          "locationName": "DomainControllers",
+          "shape": "ListOfDomainControllers"
+        },
+        "Endpoint": {
+          "locationName": "Endpoint",
+          "shape": "Endpoint"
+        },
+        "MasterUsername": {
+          "locationName": "MasterUsername",
+          "shape": "String"
+        },
+        "NASInstanceDescription": {
+          "locationName": "NASInstanceDescription",
+          "shape": "String"
+        },
+        "NASInstanceErrorInfo": {
+          "locationName": "NASInstanceErrorInfo",
+          "shape": "NASInstanceErrorInfo"
+        },
+        "NASInstanceIdentifier": {
+          "locationName": "NASInstanceIdentifier",
+          "shape": "String"
+        },
+        "NASInstanceStatus": {
+          "locationName": "NASInstanceStatus",
+          "shape": "String"
+        },
+        "NASInstanceType": {
+          "locationName": "NASInstanceType",
+          "shape": "Integer"
+        },
+        "NASSecurityGroups": {
+          "locationName": "NASSecurityGroups",
+          "shape": "ListOfNASSecurityGroups"
+        },
+        "NetworkId": {
+          "locationName": "NetworkId",
+          "shape": "String"
+        },
+        "NoRootSquash": {
+          "locationName": "NoRootSquash",
+          "shape": "Boolean"
+        },
+        "Protocol": {
+          "locationName": "Protocol",
+          "shape": "String"
+        },
+        "StorageType": {
+          "locationName": "StorageType",
+          "shape": "Integer"
+        },
+        "UpgradeRequired": {
+          "locationName": "UpgradeRequired",
+          "shape": "Boolean"
         }
       },
       "name": "NASInstances",
