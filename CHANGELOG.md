@@ -1,6 +1,11 @@
 
 # CHANGELOG
 
+## v0.11.0
+
+* fix: Fix bug of nas model (#61 by fuku2014)
+* feature: Update model (#60 by fuku2014)
+
 ## v0.10.0
 
 * fix: Fix computing model for use result wrapper at load balancer api (#59 by fuku2014)
