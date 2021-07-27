@@ -1329,7 +1329,7 @@
         },
         "ReadReplicaDBInstanceIdentifiers": {
           "locationName": "ReadReplicaDBInstanceIdentifiers",
-          "shape": "String"
+          "shape": "ListOfReadReplicaDBInstanceIdentifiers"
         },
         "ReadReplicaSourceDBInstanceIdentifier": {
           "locationName": "ReadReplicaSourceDBInstanceIdentifier",
@@ -1479,7 +1479,7 @@
         },
         "ReadReplicaDBInstanceIdentifiers": {
           "locationName": "ReadReplicaDBInstanceIdentifiers",
-          "shape": "String"
+          "shape": "ListOfReadReplicaDBInstanceIdentifiers"
         },
         "ReadReplicaSourceDBInstanceIdentifier": {
           "locationName": "ReadReplicaSourceDBInstanceIdentifier",
@@ -2996,6 +2996,14 @@
         "shape": "Parameters"
       },
       "name": "ListOfParameters",
+      "type": "list"
+    },
+    "ListOfReadReplicaDBInstanceIdentifiers": {
+      "member": {
+        "locationName": "ReadReplicaDBInstanceIdentifier",
+        "shape": "String"
+      },
+      "name": "ListOfReadReplicaDBInstanceIdentifiers",
       "type": "list"
     },
     "ListOfReplicationAddresses": {
