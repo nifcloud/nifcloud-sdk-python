@@ -3,3 +3,4 @@ exclude =
     .git,
     __pycache__,
     docs/source/conf.py
+max-line-length=120
