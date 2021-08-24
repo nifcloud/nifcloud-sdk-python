@@ -1295,12 +1295,20 @@
           "locationName": "NextMonthAccountingType",
           "shape": "String"
         },
+        "NiftyMasterPrivateAddress": {
+          "locationName": "NiftyMasterPrivateAddress",
+          "shape": "String"
+        },
         "NiftyMultiAZType": {
           "locationName": "NiftyMultiAZType",
           "shape": "String"
         },
         "NiftyNetworkId": {
           "locationName": "NiftyNetworkId",
+          "shape": "String"
+        },
+        "NiftySlavePrivateAddress": {
+          "locationName": "NiftySlavePrivateAddress",
           "shape": "String"
         },
         "NiftyStorageType": {
@@ -1445,12 +1453,20 @@
           "locationName": "NextMonthAccountingType",
           "shape": "String"
         },
+        "NiftyMasterPrivateAddress": {
+          "locationName": "NiftyMasterPrivateAddress",
+          "shape": "String"
+        },
         "NiftyMultiAZType": {
           "locationName": "NiftyMultiAZType",
           "shape": "String"
         },
         "NiftyNetworkId": {
           "locationName": "NiftyNetworkId",
+          "shape": "String"
+        },
+        "NiftySlavePrivateAddress": {
+          "locationName": "NiftySlavePrivateAddress",
           "shape": "String"
         },
         "NiftyStorageType": {
