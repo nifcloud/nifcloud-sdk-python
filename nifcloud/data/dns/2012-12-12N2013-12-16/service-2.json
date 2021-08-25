@@ -1,0 +1,751 @@
+{
+  "metadata": {
+    "apiVersion": "2012-12-12N2013-12-16",
+    "endpointPrefix": "dns",
+    "protocol": "rest-xml",
+    "serviceAbbreviation": "dns",
+    "serviceFullName": "NIFCLOUD DNS",
+    "serviceId": "dns",
+    "signatureVersion": "v3",
+    "uid": "dns-2012-12-12N2013-12-16"
+  },
+  "operations": {
+    "ChangeResourceRecordSets": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/2012-12-12N2013-12-16/hostedzone/{ZoneID}/rrset"
+      },
+      "input": {
+        "locationName": "ChangeResourceRecordSetsRequest",
+        "shape": "ChangeResourceRecordSetsRequest",
+        "xmlNamespace": {
+          "uri": "https://route53.amazonaws.com/doc/2012-12-12/"
+        }
+      },
+      "name": "ChangeResourceRecordSets",
+      "output": {
+        "shape": "ChangeResourceRecordSetsResult"
+      }
+    },
+    "CreateHostedZone": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/2012-12-12N2013-12-16/hostedzone"
+      },
+      "input": {
+        "locationName": "CreateHostedZoneRequest",
+        "shape": "CreateHostedZoneRequest",
+        "xmlNamespace": {
+          "uri": "https://route53.amazonaws.com/doc/2012-12-12/"
+        }
+      },
+      "name": "CreateHostedZone",
+      "output": {
+        "shape": "CreateHostedZoneResult"
+      }
+    },
+    "DeleteHostedZone": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/2012-12-12N2013-12-16/hostedzone/{ZoneID}"
+      },
+      "input": {
+        "shape": "DeleteHostedZoneRequest"
+      },
+      "name": "DeleteHostedZone",
+      "output": {
+        "shape": "DeleteHostedZoneResult"
+      }
+    },
+    "GetChange": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/2012-12-12N2013-12-16/change/{ChangeID}"
+      },
+      "input": {
+        "shape": "GetChangeRequest"
+      },
+      "name": "GetChange",
+      "output": {
+        "shape": "GetChangeResult"
+      }
+    },
+    "GetHostedZone": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/2012-12-12N2013-12-16/hostedzone/{ZoneID}"
+      },
+      "input": {
+        "shape": "GetHostedZoneRequest"
+      },
+      "name": "GetHostedZone",
+      "output": {
+        "shape": "GetHostedZoneResult"
+      }
+    },
+    "ListHostedZones": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/2012-12-12N2013-12-16/hostedzone"
+      },
+      "input": {
+        "shape": "ListHostedZonesRequest"
+      },
+      "name": "ListHostedZones",
+      "output": {
+        "shape": "ListHostedZonesResult"
+      }
+    },
+    "ListResourceRecordSets": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/2012-12-12N2013-12-16/hostedzone/{ZoneID}/rrset"
+      },
+      "input": {
+        "shape": "ListResourceRecordSetsRequest"
+      },
+      "name": "ListResourceRecordSets",
+      "output": {
+        "shape": "ListResourceRecordSetsResult"
+      }
+    }
+  },
+  "shapes": {
+    "Boolean": {
+      "name": "Boolean",
+      "type": "boolean"
+    },
+    "ChangeInfo": {
+      "members": {
+        "Id": {
+          "locationName": "Id",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "Status",
+          "shape": "String"
+        },
+        "SubmittedAt": {
+          "locationName": "SubmittedAt",
+          "shape": "String"
+        }
+      },
+      "name": "ChangeInfo",
+      "type": "structure"
+    },
+    "ChangeResourceRecordSetsRequest": {
+      "members": {
+        "Comment": {
+          "locationName": "Comment",
+          "shape": "String"
+        },
+        "RequestChangeBatch": {
+          "locationName": "ChangeBatch",
+          "shape": "RequestChangeBatch"
+        },
+        "ZoneID": {
+          "location": "uri",
+          "locationName": "ZoneID",
+          "shape": "String"
+        }
+      },
+      "name": "ChangeResourceRecordSetsRequest",
+      "required": [
+        "RequestChangeBatch",
+        "ZoneID"
+      ],
+      "type": "structure"
+    },
+    "ChangeResourceRecordSetsResult": {
+      "members": {
+        "ChangeInfo": {
+          "locationName": "ChangeInfo",
+          "shape": "ChangeInfo"
+        }
+      },
+      "name": "ChangeResourceRecordSetsResult",
+      "type": "structure"
+    },
+    "Config": {
+      "members": {
+        "Comment": {
+          "locationName": "Comment",
+          "shape": "String"
+        }
+      },
+      "name": "Config",
+      "type": "structure"
+    },
+    "CreateHostedZoneRequest": {
+      "members": {
+        "CallerReference": {
+          "locationName": "CallerReference",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "Name",
+          "shape": "String"
+        },
+        "RequestHostedZoneConfig": {
+          "locationName": "HostedZoneConfig",
+          "shape": "RequestHostedZoneConfig"
+        }
+      },
+      "name": "CreateHostedZoneRequest",
+      "required": [
+        "Name"
+      ],
+      "type": "structure"
+    },
+    "CreateHostedZoneResult": {
+      "members": {
+        "ChangeInfo": {
+          "locationName": "ChangeInfo",
+          "shape": "ChangeInfo"
+        },
+        "DelegationSet": {
+          "locationName": "DelegationSet",
+          "shape": "DelegationSet"
+        },
+        "HostedZone": {
+          "locationName": "HostedZone",
+          "shape": "HostedZone"
+        }
+      },
+      "name": "CreateHostedZoneResult",
+      "type": "structure"
+    },
+    "DelegationSet": {
+      "members": {
+        "NameServers": {
+          "locationName": "NameServers",
+          "shape": "ListOfNameServers"
+        }
+      },
+      "name": "DelegationSet",
+      "type": "structure"
+    },
+    "DeleteHostedZoneRequest": {
+      "members": {
+        "ZoneID": {
+          "location": "uri",
+          "locationName": "ZoneID",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteHostedZoneRequest",
+      "required": [
+        "ZoneID"
+      ],
+      "type": "structure"
+    },
+    "DeleteHostedZoneResult": {
+      "members": {
+        "ChangeInfo": {
+          "locationName": "ChangeInfo",
+          "shape": "ChangeInfo"
+        }
+      },
+      "name": "DeleteHostedZoneResult",
+      "type": "structure"
+    },
+    "Double": {
+      "name": "Double",
+      "type": "double"
+    },
+    "GetChangeRequest": {
+      "members": {
+        "ChangeID": {
+          "location": "uri",
+          "locationName": "ChangeID",
+          "shape": "String"
+        }
+      },
+      "name": "GetChangeRequest",
+      "required": [
+        "ChangeID"
+      ],
+      "type": "structure"
+    },
+    "GetChangeResult": {
+      "members": {
+        "ChangeInfo": {
+          "locationName": "ChangeInfo",
+          "shape": "ChangeInfo"
+        }
+      },
+      "name": "GetChangeResult",
+      "type": "structure"
+    },
+    "GetHostedZoneRequest": {
+      "members": {
+        "ZoneID": {
+          "location": "uri",
+          "locationName": "ZoneID",
+          "shape": "String"
+        }
+      },
+      "name": "GetHostedZoneRequest",
+      "required": [
+        "ZoneID"
+      ],
+      "type": "structure"
+    },
+    "GetHostedZoneResult": {
+      "members": {
+        "DelegationSet": {
+          "locationName": "DelegationSet",
+          "shape": "DelegationSet"
+        },
+        "HostedZone": {
+          "locationName": "HostedZone",
+          "shape": "HostedZone"
+        }
+      },
+      "name": "GetHostedZoneResult",
+      "type": "structure"
+    },
+    "HostedZone": {
+      "members": {
+        "CallerReference": {
+          "locationName": "CallerReference",
+          "shape": "String"
+        },
+        "Config": {
+          "locationName": "Config",
+          "shape": "Config"
+        },
+        "Id": {
+          "locationName": "Id",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "Name",
+          "shape": "String"
+        },
+        "ResourceRecordSetCount": {
+          "locationName": "ResourceRecordSetCount",
+          "shape": "Integer"
+        }
+      },
+      "name": "HostedZone",
+      "type": "structure"
+    },
+    "HostedZones": {
+      "members": {
+        "CallerReference": {
+          "locationName": "CallerReference",
+          "shape": "String"
+        },
+        "Config": {
+          "locationName": "Config",
+          "shape": "Config"
+        },
+        "Id": {
+          "locationName": "Id",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "Name",
+          "shape": "String"
+        },
+        "ResourceRecordSetCount": {
+          "locationName": "ResourceRecordSetCount",
+          "shape": "Integer"
+        }
+      },
+      "name": "HostedZones",
+      "type": "structure"
+    },
+    "Integer": {
+      "name": "Integer",
+      "type": "integer"
+    },
+    "ListHostedZonesRequest": {
+      "members": {
+        "Marker": {
+          "location": "querystring",
+          "locationName": "marker",
+          "shape": "String"
+        },
+        "Maxitems": {
+          "location": "querystring",
+          "locationName": "maxitems",
+          "shape": "Integer"
+        }
+      },
+      "name": "ListHostedZonesRequest",
+      "type": "structure"
+    },
+    "ListHostedZonesResult": {
+      "members": {
+        "HostedZones": {
+          "locationName": "HostedZones",
+          "shape": "ListOfHostedZones"
+        },
+        "IsTruncated": {
+          "locationName": "IsTruncated",
+          "shape": "Boolean"
+        },
+        "Marker": {
+          "locationName": "Marker",
+          "shape": "String"
+        },
+        "MaxItems": {
+          "locationName": "MaxItems",
+          "shape": "Integer"
+        },
+        "NextMarker": {
+          "locationName": "NextMarker",
+          "shape": "String"
+        }
+      },
+      "name": "ListHostedZonesResult",
+      "type": "structure"
+    },
+    "ListOfHostedZones": {
+      "member": {
+        "locationName": "HostedZone",
+        "shape": "HostedZones"
+      },
+      "name": "ListOfHostedZones",
+      "type": "list"
+    },
+    "ListOfNameServers": {
+      "member": {
+        "locationName": "NameServer",
+        "shape": "String"
+      },
+      "name": "ListOfNameServers",
+      "type": "list"
+    },
+    "ListOfResourceRecordSets": {
+      "member": {
+        "locationName": "ResourceRecordSet",
+        "shape": "ResourceRecordSets"
+      },
+      "name": "ListOfResourceRecordSets",
+      "type": "list"
+    },
+    "ListOfResourceRecords": {
+      "member": {
+        "locationName": "ResourceRecord",
+        "shape": "ResourceRecords"
+      },
+      "name": "ListOfResourceRecords",
+      "type": "list"
+    },
+    "ListResourceRecordSetsRequest": {
+      "members": {
+        "Identifier": {
+          "location": "querystring",
+          "locationName": "identifier",
+          "shape": "String"
+        },
+        "Maxitems": {
+          "location": "querystring",
+          "locationName": "maxitems",
+          "shape": "Integer"
+        },
+        "Name": {
+          "location": "querystring",
+          "locationName": "name",
+          "shape": "String"
+        },
+        "Type": {
+          "location": "querystring",
+          "locationName": "type",
+          "shape": "String"
+        },
+        "ZoneID": {
+          "location": "uri",
+          "locationName": "ZoneID",
+          "shape": "String"
+        }
+      },
+      "name": "ListResourceRecordSetsRequest",
+      "required": [
+        "ZoneID"
+      ],
+      "type": "structure"
+    },
+    "ListResourceRecordSetsResult": {
+      "members": {
+        "IsTruncated": {
+          "locationName": "IsTruncated",
+          "shape": "Boolean"
+        },
+        "MaxItems": {
+          "locationName": "MaxItems",
+          "shape": "Integer"
+        },
+        "NextRecordIdentifier": {
+          "locationName": "NextRecordIdentifier",
+          "shape": "String"
+        },
+        "NextRecordName": {
+          "locationName": "NextRecordName",
+          "shape": "String"
+        },
+        "NextRecordType": {
+          "locationName": "NextRecordType",
+          "shape": "String"
+        },
+        "ResourceRecordSets": {
+          "locationName": "ResourceRecordSets",
+          "shape": "ListOfResourceRecordSets"
+        }
+      },
+      "name": "ListResourceRecordSetsResult",
+      "type": "structure"
+    },
+    "Long": {
+      "name": "Long",
+      "type": "long"
+    },
+    "RequestChange": {
+      "members": {
+        "Action": {
+          "locationName": "Action",
+          "shape": "String"
+        },
+        "RequestResourceRecordSet": {
+          "locationName": "ResourceRecordSet",
+          "shape": "RequestResourceRecordSet"
+        }
+      },
+      "name": "RequestChange",
+      "required": [
+        "Action"
+      ],
+      "type": "structure"
+    },
+    "RequestChangeBatch": {
+      "members": {
+        "RequestChanges": {
+          "locationName": "Changes",
+          "shape": "RequestChanges"
+        }
+      },
+      "name": "RequestChangeBatch",
+      "required": [
+        "RequestChanges"
+      ],
+      "type": "structure"
+    },
+    "RequestChanges": {
+      "members": {
+        "RequestChange": {
+          "locationName": "Change",
+          "shape": "RequestChange"
+        }
+      },
+      "name": "RequestChanges",
+      "required": [
+        "RequestChange"
+      ],
+      "type": "structure"
+    },
+    "RequestHostedZoneConfig": {
+      "members": {
+        "Comment": {
+          "locationName": "Comment",
+          "shape": "String"
+        }
+      },
+      "name": "RequestHostedZoneConfig",
+      "type": "structure"
+    },
+    "RequestResourceRecord": {
+      "members": {
+        "Value": {
+          "locationName": "Value",
+          "shape": "String"
+        }
+      },
+      "name": "RequestResourceRecord",
+      "type": "structure"
+    },
+    "RequestResourceRecordSet": {
+      "members": {
+        "Failover": {
+          "locationName": "Failover",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "Name",
+          "shape": "String"
+        },
+        "Region": {
+          "locationName": "Region",
+          "shape": "String"
+        },
+        "RequestResourceRecords": {
+          "locationName": "ResourceRecords",
+          "shape": "RequestResourceRecords"
+        },
+        "RequestXniftyHealthCheckConfig": {
+          "locationName": "XniftyHealthCheckConfig",
+          "shape": "RequestXniftyHealthCheckConfig"
+        },
+        "SetIdentifier": {
+          "locationName": "SetIdentifier",
+          "shape": "String"
+        },
+        "TTL": {
+          "locationName": "TTL",
+          "shape": "Integer"
+        },
+        "Type": {
+          "locationName": "Type",
+          "shape": "String"
+        },
+        "Weight": {
+          "locationName": "Weight",
+          "shape": "Integer"
+        },
+        "XniftyComment": {
+          "locationName": "XniftyComment",
+          "shape": "String"
+        },
+        "XniftyDefaultHost": {
+          "locationName": "XniftyDefaultHost",
+          "shape": "String"
+        }
+      },
+      "name": "RequestResourceRecordSet",
+      "type": "structure"
+    },
+    "RequestResourceRecords": {
+      "members": {
+        "RequestResourceRecord": {
+          "locationName": "ResourceRecord",
+          "shape": "RequestResourceRecord"
+        }
+      },
+      "name": "RequestResourceRecords",
+      "type": "structure"
+    },
+    "RequestXniftyHealthCheckConfig": {
+      "members": {
+        "FullyQualifiedDomainName": {
+          "locationName": "FullyQualifiedDomainName",
+          "shape": "String"
+        },
+        "IPAddress": {
+          "locationName": "IPAddress",
+          "shape": "String"
+        },
+        "Port": {
+          "locationName": "Port",
+          "shape": "Integer"
+        },
+        "Protocol": {
+          "locationName": "Protocol",
+          "shape": "String"
+        },
+        "ResourcePath": {
+          "locationName": "ResourcePath",
+          "shape": "String"
+        }
+      },
+      "name": "RequestXniftyHealthCheckConfig",
+      "type": "structure"
+    },
+    "ResourceRecordSets": {
+      "members": {
+        "Failover": {
+          "locationName": "Failover",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "Name",
+          "shape": "String"
+        },
+        "Region": {
+          "locationName": "Region",
+          "shape": "String"
+        },
+        "ResourceRecords": {
+          "locationName": "ResourceRecords",
+          "shape": "ListOfResourceRecords"
+        },
+        "SetIdentifier": {
+          "locationName": "SetIdentifier",
+          "shape": "String"
+        },
+        "TTL": {
+          "locationName": "TTL",
+          "shape": "Integer"
+        },
+        "Type": {
+          "locationName": "Type",
+          "shape": "String"
+        },
+        "Weight": {
+          "locationName": "Weight",
+          "shape": "Integer"
+        },
+        "XniftyComment": {
+          "locationName": "XniftyComment",
+          "shape": "String"
+        },
+        "XniftyDefaultHost": {
+          "locationName": "XniftyDefaultHost",
+          "shape": "String"
+        },
+        "XniftyHealthCheckConfig": {
+          "locationName": "XniftyHealthCheckConfig",
+          "shape": "XniftyHealthCheckConfig"
+        }
+      },
+      "name": "ResourceRecordSets",
+      "type": "structure"
+    },
+    "ResourceRecords": {
+      "members": {
+        "Value": {
+          "locationName": "Value",
+          "shape": "String"
+        }
+      },
+      "name": "ResourceRecords",
+      "type": "structure"
+    },
+    "String": {
+      "name": "String",
+      "type": "string"
+    },
+    "TStamp": {
+      "name": "TStamp",
+      "type": "timestamp"
+    },
+    "XniftyHealthCheckConfig": {
+      "members": {
+        "FullyQualifiedDomainName": {
+          "locationName": "FullyQualifiedDomainName",
+          "shape": "String"
+        },
+        "IPAddress": {
+          "locationName": "IPAddress",
+          "shape": "String"
+        },
+        "Port": {
+          "locationName": "Port",
+          "shape": "Integer"
+        },
+        "Protocol": {
+          "locationName": "Protocol",
+          "shape": "String"
+        },
+        "ResourcePath": {
+          "locationName": "ResourcePath",
+          "shape": "String"
+        }
+      },
+      "name": "XniftyHealthCheckConfig",
+      "type": "structure"
+    }
+  },
+  "version": "2.0"
+}

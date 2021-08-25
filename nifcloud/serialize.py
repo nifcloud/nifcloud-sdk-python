@@ -178,10 +178,21 @@ def _fix_get_delivery_log_params(
     return body
 
 
+class DnsSerializer(serialize.RestXMLSerializer):
+
+    def serialize_to_request(self, parameters, operation_model):
+        serialized = super(DnsSerializer, self).serialize_to_request(
+            parameters, operation_model
+        )
+        serialized['url_path'] = operation_model.http.get('requestUri', '/')
+        return serialized
+
+
 serialize.SERIALIZERS.update({
     'computing': ComputingSerializer,
     'script': ScriptSerializer,
     'rdb': RdbSerializer,
     'nas': NasSerializer,
-    'ess': EssSerializer
+    'ess': EssSerializer,
+    'dns': DnsSerializer
 })

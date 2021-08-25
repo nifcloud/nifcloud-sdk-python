@@ -98,7 +98,21 @@
             },
             "isRegionalized" : false,
             "partitionEndpoint" : "aws-global"
-          }
+        },
+        "dns" : {
+          "defaults": {
+            "signatureVersions": [
+              "v3"
+            ]
+          },
+          "endpoints" : {
+            "aws-global" : {
+              "hostname" : "dns.api.nifcloud.com"
+            }
+          },
+          "isRegionalized" : false,
+          "partitionEndpoint" : "aws-global"
+        }
       }
     }
   ],

@@ -26,5 +26,6 @@ parsers.PROTOCOL_PARSERS.update({
     'script': parsers.QueryParser,
     'rdb': parsers.QueryParser,
     'nas': parsers.QueryParser,
-    'ess': parsers.QueryParser
+    'ess': parsers.QueryParser,
+    'dns': parsers.RestXMLParser
 })
