@@ -376,7 +376,7 @@
         },
         "Sum": {
           "locationName": "Sum",
-          "shape": "Integer"
+          "shape": "Double"
         },
         "TargetName": {
           "locationName": "TargetName",
@@ -818,6 +818,10 @@
           "locationName": "MasterUsername",
           "shape": "String"
         },
+        "NASInstanceClass": {
+          "locationName": "NASInstanceClass",
+          "shape": "String"
+        },
         "NASInstanceDescription": {
           "locationName": "NASInstanceDescription",
           "shape": "String"
@@ -908,6 +912,10 @@
         },
         "MasterUsername": {
           "locationName": "MasterUsername",
+          "shape": "String"
+        },
+        "NASInstanceClass": {
+          "locationName": "NASInstanceClass",
           "shape": "String"
         },
         "NASInstanceDescription": {
