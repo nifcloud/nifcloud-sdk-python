@@ -1,6 +1,14 @@
 
 # CHANGELOG
 
+## v0.12.0
+
+ * fix: Fix sum type to double (#68 by fuku2014)
+ * feature: Update rdb model (#66 by fuku2014)
+ * feature: add github-ci for unittest (#65 by o108minmin)
+ * feature: Update Hatoba for add LoadBalancer API and change interface (#63 by fuku2014)
+ * fix: Fix bug of rdb model (#62 by fuku2014)
+
 ## v0.11.0
 
 * fix: Fix bug of nas model (#61 by fuku2014)
