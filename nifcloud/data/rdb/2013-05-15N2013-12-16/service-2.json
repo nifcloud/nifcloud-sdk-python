@@ -1777,7 +1777,7 @@
         },
         "Sum": {
           "locationName": "Sum",
-          "shape": "Integer"
+          "shape": "Double"
         },
         "Timestamp": {
           "locationName": "Timestamp",
