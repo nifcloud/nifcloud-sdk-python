@@ -497,7 +497,7 @@
         },
         "Locations": {
           "locationName": "locations",
-          "shape": "String"
+          "shape": "ListOfLocations"
         },
         "Name": {
           "locationName": "name",
@@ -663,7 +663,7 @@
         },
         "Locations": {
           "locationName": "locations",
-          "shape": "String"
+          "shape": "ListOfLocations"
         },
         "Name": {
           "locationName": "name",
@@ -1353,6 +1353,14 @@
       "name": "ListNodePoolsResult",
       "type": "structure"
     },
+    "ListOfAvailabilityZones": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfAvailabilityZones",
+      "type": "list"
+    },
     "ListOfClusters": {
       "member": {
         "shape": "Clusters"
@@ -1393,6 +1401,14 @@
         "shape": "LoadBalancersOfListLoadBalancers"
       },
       "name": "ListOfLoadBalancersOfListLoadBalancers",
+      "type": "list"
+    },
+    "ListOfLocations": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfLocations",
       "type": "list"
     },
     "ListOfNodePools": {
@@ -1479,6 +1495,13 @@
       "name": "ListOfNodesOfListLoadBalancers",
       "type": "list"
     },
+    "ListOfRequestLocations": {
+      "member": {
+        "shape": "String"
+      },
+      "name": "ListOfRequestLocations",
+      "type": "list"
+    },
     "ListOfRequestNodePools": {
       "member": {
         "shape": "RequestNodePools"
@@ -1512,6 +1535,14 @@
         "shape": "SnapshotsOfDeleteSnapshots"
       },
       "name": "ListOfSnapshotsOfDeleteSnapshots",
+      "type": "list"
+    },
+    "ListOfValidKubernetesVersions": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfValidKubernetesVersions",
       "type": "list"
     },
     "ListSnapshotsRequest": {
@@ -1573,7 +1604,7 @@
         },
         "AvailabilityZones": {
           "locationName": "availabilityZones",
-          "shape": "String"
+          "shape": "ListOfAvailabilityZones"
         },
         "Clusters": {
           "locationName": "clusters",
@@ -1635,7 +1666,7 @@
         },
         "AvailabilityZones": {
           "locationName": "availabilityZones",
-          "shape": "String"
+          "shape": "ListOfAvailabilityZones"
         },
         "Clusters": {
           "locationName": "clusters",
@@ -2015,13 +2046,13 @@
           "locationName": "kubernetesVersion",
           "shape": "String"
         },
+        "ListOfRequestLocations": {
+          "locationName": "locations",
+          "shape": "ListOfRequestLocations"
+        },
         "ListOfRequestNodePools": {
           "locationName": "nodePools",
           "shape": "ListOfRequestNodePools"
-        },
-        "Locations": {
-          "locationName": "locations",
-          "shape": "String"
         },
         "Name": {
           "locationName": "name",
@@ -2039,8 +2070,8 @@
       "name": "RequestCluster",
       "required": [
         "FirewallGroup",
+        "ListOfRequestLocations",
         "ListOfRequestNodePools",
-        "Locations",
         "Name"
       ],
       "type": "structure"
@@ -2068,9 +2099,9 @@
           "locationName": "firewallGroup",
           "shape": "String"
         },
-        "Locations": {
+        "ListOfRequestLocations": {
           "locationName": "locations",
-          "shape": "String"
+          "shape": "ListOfRequestLocations"
         },
         "Name": {
           "locationName": "name",
@@ -2088,7 +2119,7 @@
       "name": "RequestClusterOfRestoreClusterFromSnapshot",
       "required": [
         "FirewallGroup",
-        "Locations",
+        "ListOfRequestLocations",
         "Name"
       ],
       "type": "structure"
@@ -2377,7 +2408,7 @@
         },
         "ValidKubernetesVersions": {
           "locationName": "validKubernetesVersions",
-          "shape": "String"
+          "shape": "ListOfValidKubernetesVersions"
         }
       },
       "name": "ServerConfig",
