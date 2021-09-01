@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## v0.13.0
+
+ * fix: Fix bug of hatoba model has not array of string (#69 by fuku2014)
+
 ## v0.12.0
 
  * fix: Fix sum type to double (#68 by fuku2014)
