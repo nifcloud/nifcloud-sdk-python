@@ -1,0 +1,913 @@
+{
+  "metadata": {
+    "apiVersion": "2010-12-01",
+    "endpointPrefix": "ess",
+    "protocol": "ess",
+    "serviceAbbreviation": "ess",
+    "serviceFullName": "NIFCLOUD ESS",
+    "serviceId": "ess",
+    "signatureVersion": "v4",
+    "signingName": "email",
+    "uid": "ess-2010-12-01N2014-05-28"
+  },
+  "operations": {
+    "DeleteIdentity": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "DeleteIdentityRequest"
+      },
+      "name": "DeleteIdentity",
+      "output": {
+        "shape": "DeleteIdentityResult"
+      }
+    },
+    "GetDeliveryLog": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "GetDeliveryLogRequest"
+      },
+      "name": "GetDeliveryLog",
+      "output": {
+        "resultWrapper": "GetDeliveryLogResult",
+        "shape": "GetDeliveryLogResult"
+      }
+    },
+    "GetIdentityDkimAttributes": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "GetIdentityDkimAttributesRequest"
+      },
+      "name": "GetIdentityDkimAttributes",
+      "output": {
+        "resultWrapper": "GetIdentityDkimAttributesResult",
+        "shape": "GetIdentityDkimAttributesResult"
+      }
+    },
+    "GetIdentityVerificationAttributes": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "GetIdentityVerificationAttributesRequest"
+      },
+      "name": "GetIdentityVerificationAttributes",
+      "output": {
+        "resultWrapper": "GetIdentityVerificationAttributesResult",
+        "shape": "GetIdentityVerificationAttributesResult"
+      }
+    },
+    "GetSendQuota": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "GetSendQuotaRequest"
+      },
+      "name": "GetSendQuota",
+      "output": {
+        "resultWrapper": "GetSendQuotaResult",
+        "shape": "GetSendQuotaResult"
+      }
+    },
+    "GetSendStatistics": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "GetSendStatisticsRequest"
+      },
+      "name": "GetSendStatistics",
+      "output": {
+        "resultWrapper": "GetSendStatisticsResult",
+        "shape": "GetSendStatisticsResult"
+      }
+    },
+    "ListIdentities": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ListIdentitiesRequest"
+      },
+      "name": "ListIdentities",
+      "output": {
+        "resultWrapper": "ListIdentitiesResult",
+        "shape": "ListIdentitiesResult"
+      }
+    },
+    "SendEmail": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "SendEmailRequest"
+      },
+      "name": "SendEmail",
+      "output": {
+        "resultWrapper": "SendEmailResult",
+        "shape": "SendEmailResult"
+      }
+    },
+    "SendRawEmail": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "SendRawEmailRequest"
+      },
+      "name": "SendRawEmail",
+      "output": {
+        "resultWrapper": "SendRawEmailResult",
+        "shape": "SendRawEmailResult"
+      }
+    },
+    "SetIdentityDkimEnabled": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "SetIdentityDkimEnabledRequest"
+      },
+      "name": "SetIdentityDkimEnabled",
+      "output": {
+        "shape": "SetIdentityDkimEnabledResult"
+      }
+    },
+    "VerifyDomainDkim": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "VerifyDomainDkimRequest"
+      },
+      "name": "VerifyDomainDkim",
+      "output": {
+        "resultWrapper": "VerifyDomainDkimResult",
+        "shape": "VerifyDomainDkimResult"
+      }
+    },
+    "VerifyDomainIdentity": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "VerifyDomainIdentityRequest"
+      },
+      "name": "VerifyDomainIdentity",
+      "output": {
+        "resultWrapper": "VerifyDomainIdentityResult",
+        "shape": "VerifyDomainIdentityResult"
+      }
+    },
+    "VerifyEmailIdentity": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "VerifyEmailIdentityRequest"
+      },
+      "name": "VerifyEmailIdentity",
+      "output": {
+        "resultWrapper": "VerifyEmailIdentityResult",
+        "shape": "VerifyEmailIdentityResult"
+      }
+    }
+  },
+  "shapes": {
+    "Boolean": {
+      "name": "Boolean",
+      "type": "boolean"
+    },
+    "DeleteIdentityRequest": {
+      "members": {
+        "Identity": {
+          "locationName": "Identity",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteIdentityRequest",
+      "required": [
+        "Identity"
+      ],
+      "type": "structure"
+    },
+    "DeleteIdentityResult": {
+      "members": {
+        "DeleteIdentityResult": {
+          "locationName": "DeleteIdentityResult",
+          "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        }
+      },
+      "name": "DeleteIdentityResult",
+      "type": "structure"
+    },
+    "DkimAttributes": {
+      "members": {
+        "Key": {
+          "locationName": "key",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "ValueOfGetIdentityDkimAttributes"
+        }
+      },
+      "name": "DkimAttributes",
+      "type": "structure"
+    },
+    "Double": {
+      "name": "Double",
+      "type": "double"
+    },
+    "GetDeliveryLogRequest": {
+      "members": {
+        "EndDate": {
+          "locationName": "EndDate",
+          "shape": "TStamp"
+        },
+        "MaxItems": {
+          "locationName": "MaxItems",
+          "shape": "Integer"
+        },
+        "NextToken": {
+          "locationName": "NextToken",
+          "shape": "String"
+        },
+        "StartDate": {
+          "locationName": "StartDate",
+          "shape": "TStamp"
+        },
+        "Status": {
+          "locationName": "Status",
+          "shape": "Integer"
+        }
+      },
+      "name": "GetDeliveryLogRequest",
+      "required": [
+        "EndDate",
+        "StartDate"
+      ],
+      "type": "structure"
+    },
+    "GetDeliveryLogResult": {
+      "members": {
+        "Log": {
+          "locationName": "Log",
+          "shape": "String"
+        },
+        "LogCount": {
+          "locationName": "LogCount",
+          "shape": "String"
+        },
+        "NextToken": {
+          "locationName": "NextToken",
+          "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        }
+      },
+      "name": "GetDeliveryLogResult",
+      "type": "structure"
+    },
+    "GetIdentityDkimAttributesRequest": {
+      "members": {
+        "Identities": {
+          "locationName": "Identities",
+          "shape": "ListOfRequestIdentities"
+        }
+      },
+      "name": "GetIdentityDkimAttributesRequest",
+      "required": [
+        "Identities"
+      ],
+      "type": "structure"
+    },
+    "GetIdentityDkimAttributesResult": {
+      "members": {
+        "DkimAttributes": {
+          "locationName": "DkimAttributes",
+          "shape": "ListOfDkimAttributes"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        }
+      },
+      "name": "GetIdentityDkimAttributesResult",
+      "type": "structure"
+    },
+    "GetIdentityVerificationAttributesRequest": {
+      "members": {
+        "Identities": {
+          "locationName": "Identities",
+          "shape": "ListOfRequestIdentities"
+        }
+      },
+      "name": "GetIdentityVerificationAttributesRequest",
+      "required": [
+        "Identities"
+      ],
+      "type": "structure"
+    },
+    "GetIdentityVerificationAttributesResult": {
+      "members": {
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        },
+        "VerificationAttributes": {
+          "locationName": "VerificationAttributes",
+          "shape": "ListOfVerificationAttributes"
+        }
+      },
+      "name": "GetIdentityVerificationAttributesResult",
+      "type": "structure"
+    },
+    "GetSendQuotaRequest": {
+      "members": {},
+      "name": "GetSendQuotaRequest",
+      "type": "structure"
+    },
+    "GetSendQuotaResult": {
+      "members": {
+        "Max24HourSend": {
+          "locationName": "Max24HourSend",
+          "shape": "Double"
+        },
+        "MaxSendRate": {
+          "locationName": "MaxSendRate",
+          "shape": "Double"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        },
+        "SentLast24Hours": {
+          "locationName": "SentLast24Hours",
+          "shape": "Double"
+        }
+      },
+      "name": "GetSendQuotaResult",
+      "type": "structure"
+    },
+    "GetSendStatisticsRequest": {
+      "members": {},
+      "name": "GetSendStatisticsRequest",
+      "type": "structure"
+    },
+    "GetSendStatisticsResult": {
+      "members": {
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        },
+        "SendDataPoints": {
+          "locationName": "SendDataPoints",
+          "shape": "ListOfSendDataPoints"
+        }
+      },
+      "name": "GetSendStatisticsResult",
+      "type": "structure"
+    },
+    "Integer": {
+      "name": "Integer",
+      "type": "integer"
+    },
+    "ListIdentitiesRequest": {
+      "members": {
+        "IdentityType": {
+          "locationName": "IdentityType",
+          "shape": "String"
+        },
+        "MaxItems": {
+          "locationName": "MaxItems",
+          "shape": "Integer"
+        },
+        "NextToken": {
+          "locationName": "NextToken",
+          "shape": "String"
+        }
+      },
+      "name": "ListIdentitiesRequest",
+      "type": "structure"
+    },
+    "ListIdentitiesResult": {
+      "members": {
+        "Identities": {
+          "locationName": "Identities",
+          "shape": "ListOfIdentities"
+        },
+        "NextToken": {
+          "locationName": "NextToken",
+          "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        }
+      },
+      "name": "ListIdentitiesResult",
+      "type": "structure"
+    },
+    "ListOfDkimAttributes": {
+      "member": {
+        "locationName": "entry",
+        "shape": "DkimAttributes"
+      },
+      "name": "ListOfDkimAttributes",
+      "type": "list"
+    },
+    "ListOfDkimTokens": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfDkimTokens",
+      "type": "list"
+    },
+    "ListOfIdentities": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfIdentities",
+      "type": "list"
+    },
+    "ListOfRequestBccAddresses": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfRequestBccAddresses",
+      "type": "list"
+    },
+    "ListOfRequestCcAddresses": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfRequestCcAddresses",
+      "type": "list"
+    },
+    "ListOfRequestDestinations": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfRequestDestinations",
+      "type": "list"
+    },
+    "ListOfRequestIdentities": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfRequestIdentities",
+      "type": "list"
+    },
+    "ListOfRequestReplyToAddresses": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfRequestReplyToAddresses",
+      "type": "list"
+    },
+    "ListOfRequestToAddresses": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfRequestToAddresses",
+      "type": "list"
+    },
+    "ListOfSendDataPoints": {
+      "member": {
+        "locationName": "member",
+        "shape": "SendDataPoints"
+      },
+      "name": "ListOfSendDataPoints",
+      "type": "list"
+    },
+    "ListOfVerificationAttributes": {
+      "member": {
+        "locationName": "entry",
+        "shape": "VerificationAttributes"
+      },
+      "name": "ListOfVerificationAttributes",
+      "type": "list"
+    },
+    "Long": {
+      "name": "Long",
+      "type": "long"
+    },
+    "RequestBody": {
+      "members": {
+        "RequestHtml": {
+          "locationName": "Html",
+          "shape": "RequestHtml"
+        },
+        "RequestText": {
+          "locationName": "Text",
+          "shape": "RequestText"
+        }
+      },
+      "name": "RequestBody",
+      "type": "structure"
+    },
+    "RequestDestination": {
+      "members": {
+        "ListOfRequestBccAddresses": {
+          "locationName": "BccAddresses",
+          "shape": "ListOfRequestBccAddresses"
+        },
+        "ListOfRequestCcAddresses": {
+          "locationName": "CcAddresses",
+          "shape": "ListOfRequestCcAddresses"
+        },
+        "ListOfRequestToAddresses": {
+          "locationName": "ToAddresses",
+          "shape": "ListOfRequestToAddresses"
+        }
+      },
+      "name": "RequestDestination",
+      "type": "structure"
+    },
+    "RequestHtml": {
+      "members": {
+        "Charset": {
+          "locationName": "Charset",
+          "shape": "String"
+        },
+        "Data": {
+          "locationName": "Data",
+          "shape": "String"
+        }
+      },
+      "name": "RequestHtml",
+      "type": "structure"
+    },
+    "RequestMessage": {
+      "members": {
+        "RequestBody": {
+          "locationName": "Body",
+          "shape": "RequestBody"
+        },
+        "RequestSubject": {
+          "locationName": "Subject",
+          "shape": "RequestSubject"
+        }
+      },
+      "name": "RequestMessage",
+      "type": "structure"
+    },
+    "RequestRawMessage": {
+      "members": {
+        "Data": {
+          "locationName": "Data",
+          "shape": "String"
+        }
+      },
+      "name": "RequestRawMessage",
+      "required": [
+        "Data"
+      ],
+      "type": "structure"
+    },
+    "RequestSubject": {
+      "members": {
+        "Charset": {
+          "locationName": "Charset",
+          "shape": "String"
+        },
+        "Data": {
+          "locationName": "Data",
+          "shape": "String"
+        }
+      },
+      "name": "RequestSubject",
+      "type": "structure"
+    },
+    "RequestText": {
+      "members": {
+        "Charset": {
+          "locationName": "Charset",
+          "shape": "String"
+        },
+        "Data": {
+          "locationName": "Data",
+          "shape": "String"
+        }
+      },
+      "name": "RequestText",
+      "type": "structure"
+    },
+    "ResponseMetadata": {
+      "members": {
+        "RequestId": {
+          "locationName": "RequestId",
+          "shape": "String"
+        }
+      },
+      "name": "ResponseMetadata",
+      "type": "structure"
+    },
+    "SendDataPoints": {
+      "members": {
+        "Bounces": {
+          "locationName": "Bounces",
+          "shape": "Integer"
+        },
+        "Complaints": {
+          "locationName": "Complaints",
+          "shape": "Integer"
+        },
+        "DeliveryAttempts": {
+          "locationName": "DeliveryAttempts",
+          "shape": "Integer"
+        },
+        "Rejects": {
+          "locationName": "Rejects",
+          "shape": "Integer"
+        },
+        "Timestamp": {
+          "locationName": "Timestamp",
+          "shape": "TStamp"
+        }
+      },
+      "name": "SendDataPoints",
+      "type": "structure"
+    },
+    "SendEmailRequest": {
+      "members": {
+        "Destination": {
+          "locationName": "Destination",
+          "shape": "RequestDestination"
+        },
+        "Message": {
+          "locationName": "Message",
+          "shape": "RequestMessage"
+        },
+        "ReplyToAddresses": {
+          "locationName": "ReplyToAddresses",
+          "shape": "ListOfRequestReplyToAddresses"
+        },
+        "ReturnPath": {
+          "locationName": "ReturnPath",
+          "shape": "String"
+        },
+        "Source": {
+          "locationName": "Source",
+          "shape": "String"
+        }
+      },
+      "name": "SendEmailRequest",
+      "required": [
+        "Source"
+      ],
+      "type": "structure"
+    },
+    "SendEmailResult": {
+      "members": {
+        "MessageId": {
+          "locationName": "MessageId",
+          "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        }
+      },
+      "name": "SendEmailResult",
+      "type": "structure"
+    },
+    "SendRawEmailRequest": {
+      "members": {
+        "Destinations": {
+          "locationName": "Destinations",
+          "shape": "ListOfRequestDestinations"
+        },
+        "RawMessage": {
+          "locationName": "RawMessage",
+          "shape": "RequestRawMessage"
+        },
+        "Source": {
+          "locationName": "Source",
+          "shape": "String"
+        }
+      },
+      "name": "SendRawEmailRequest",
+      "required": [
+        "RawMessage"
+      ],
+      "type": "structure"
+    },
+    "SendRawEmailResult": {
+      "members": {
+        "MessageId": {
+          "locationName": "MessageId",
+          "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        }
+      },
+      "name": "SendRawEmailResult",
+      "type": "structure"
+    },
+    "SetIdentityDkimEnabledRequest": {
+      "members": {
+        "DkimEnabled": {
+          "locationName": "DkimEnabled",
+          "shape": "String"
+        },
+        "Identity": {
+          "locationName": "Identity",
+          "shape": "String"
+        }
+      },
+      "name": "SetIdentityDkimEnabledRequest",
+      "required": [
+        "DkimEnabled",
+        "Identity"
+      ],
+      "type": "structure"
+    },
+    "SetIdentityDkimEnabledResult": {
+      "members": {
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        },
+        "SetIdentityDkimEnabledResult": {
+          "locationName": "SetIdentityDkimEnabledResult",
+          "shape": "String"
+        }
+      },
+      "name": "SetIdentityDkimEnabledResult",
+      "type": "structure"
+    },
+    "String": {
+      "name": "String",
+      "type": "string"
+    },
+    "TStamp": {
+      "name": "TStamp",
+      "type": "timestamp"
+    },
+    "Value": {
+      "members": {
+        "VerificationStatus": {
+          "locationName": "VerificationStatus",
+          "shape": "String"
+        },
+        "VerificationToken": {
+          "locationName": "VerificationToken",
+          "shape": "String"
+        }
+      },
+      "name": "Value",
+      "type": "structure"
+    },
+    "ValueOfGetIdentityDkimAttributes": {
+      "members": {
+        "DkimEnabled": {
+          "locationName": "DkimEnabled",
+          "shape": "Boolean"
+        },
+        "DkimTokens": {
+          "locationName": "DkimTokens",
+          "shape": "ListOfDkimTokens"
+        },
+        "DkimVerificationStatus": {
+          "locationName": "DkimVerificationStatus",
+          "shape": "String"
+        }
+      },
+      "name": "ValueOfGetIdentityDkimAttributes",
+      "type": "structure"
+    },
+    "VerificationAttributes": {
+      "members": {
+        "Key": {
+          "locationName": "key",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "Value"
+        }
+      },
+      "name": "VerificationAttributes",
+      "type": "structure"
+    },
+    "VerifyDomainDkimRequest": {
+      "members": {
+        "Domain": {
+          "locationName": "Domain",
+          "shape": "String"
+        }
+      },
+      "name": "VerifyDomainDkimRequest",
+      "required": [
+        "Domain"
+      ],
+      "type": "structure"
+    },
+    "VerifyDomainDkimResult": {
+      "members": {
+        "DkimTokens": {
+          "locationName": "DkimTokens",
+          "shape": "ListOfDkimTokens"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        }
+      },
+      "name": "VerifyDomainDkimResult",
+      "type": "structure"
+    },
+    "VerifyDomainIdentityRequest": {
+      "members": {
+        "Domain": {
+          "locationName": "Domain",
+          "shape": "String"
+        }
+      },
+      "name": "VerifyDomainIdentityRequest",
+      "required": [
+        "Domain"
+      ],
+      "type": "structure"
+    },
+    "VerifyDomainIdentityResult": {
+      "members": {
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        },
+        "VerificationToken": {
+          "locationName": "VerificationToken",
+          "shape": "String"
+        }
+      },
+      "name": "VerifyDomainIdentityResult",
+      "type": "structure"
+    },
+    "VerifyEmailIdentityRequest": {
+      "members": {
+        "EmailAddress": {
+          "locationName": "EmailAddress",
+          "shape": "String"
+        }
+      },
+      "name": "VerifyEmailIdentityRequest",
+      "required": [
+        "EmailAddress"
+      ],
+      "type": "structure"
+    },
+    "VerifyEmailIdentityResult": {
+      "members": {
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        },
+        "VerifyEmailIdentityResult": {
+          "locationName": "VerifyEmailIdentityResult",
+          "shape": "String"
+        }
+      },
+      "name": "VerifyEmailIdentityResult",
+      "type": "structure"
+    }
+  },
+  "version": "2.0"
+}
