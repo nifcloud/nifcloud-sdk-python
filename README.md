@@ -9,7 +9,7 @@ It works by feeding AWS-SDK-compatible model JSONs to botocore module.
 
 ## Features
 
-* :heavy_check_mark: Full support for NIFCLOUD Computing / RDB / NAS / Script / Hatoba APIs
+* :heavy_check_mark: Full support for NIFCLOUD Computing / RDB / NAS / Script / Hatoba / ESS APIs
 * :heavy_check_mark: Useful CLI tool for debugging
 * :heavy_check_mark: AWS-SDK-compatible data-driven architecture
 

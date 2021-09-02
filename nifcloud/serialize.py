@@ -107,6 +107,24 @@ class NasSerializer(serialize.QuerySerializer):
         return serialized
 
 
+class EssSerializer(serialize.QuerySerializer):
+
+    def serialize_to_request(self, parameters, operation_model):
+        serialized = super(EssSerializer, self).serialize_to_request(
+            parameters, operation_model
+        )
+        serialized['url_path'] = operation_model.http.get('requestUri', '/')
+        # Fix request parameters of GetDeliveryLog for NIFCLOUD ESS
+        if operation_model.name == 'GetDeliveryLog':
+            serialized["body"] = _fix_get_delivery_log_params(
+                self,
+                parameters,
+                operation_model.metadata['apiVersion'],
+                operation_model.name
+            )
+        return serialized
+
+
 def _fix_get_metrics_statistics_params(
          self, params, api_version, operation_model_name):
     prefix = 'Dimensions'
@@ -134,9 +152,36 @@ def _fix_get_metrics_statistics_params(
     return body
 
 
+def _fix_get_delivery_log_params(
+         self, params, api_version, operation_model_name):
+    body = {
+        "Action": operation_model_name,
+        "Version": api_version
+    }
+    if params.get('Status'):
+        body['Status'] = params['Status']
+    if params.get('MaxItems'):
+        body['MaxItems'] = params['MaxItems']
+    if params.get('NextToken'):
+        body['NextToken'] = params['NextToken']
+    # Convert from %Y-%m-%dT%H:%M:%SZ to %Y-%m-%d %H:%M
+    if params.get('StartDate'):
+        if type(params.get('StartDate')) is str:
+            params['StartDate'] = dt.strptime(params['StartDate'],
+                                              '%Y-%m-%dT%H:%M:%SZ')
+        body['StartDate'] = params['StartDate'].strftime('%Y-%m-%dT%H:%M')
+    if params.get('EndDate'):
+        if type(params.get('EndDate')) is str:
+            params['EndDate'] = dt.strptime(params['EndDate'],
+                                            '%Y-%m-%dT%H:%M:%SZ')
+        body['EndDate'] = params['EndDate'].strftime('%Y-%m-%dT%H:%M')
+    return body
+
+
 serialize.SERIALIZERS.update({
     'computing': ComputingSerializer,
     'script': ScriptSerializer,
     'rdb': RdbSerializer,
-    'nas': NasSerializer
+    'nas': NasSerializer,
+    'ess': EssSerializer
 })
