@@ -6743,7 +6743,7 @@
         },
         "Instances": {
           "locationName": "Instances",
-          "shape": "ListOfRequestInstances"
+          "shape": "ListOfRequestInstancesOfDescribeInstanceHealth"
         },
         "LoadBalancerName": {
           "locationName": "LoadBalancerName",
@@ -12748,6 +12748,14 @@
         "shape": "RequestInstances"
       },
       "name": "ListOfRequestInstances",
+      "type": "list"
+    },
+    "ListOfRequestInstancesOfDescribeInstanceHealth": {
+      "member": {
+        "locationName": "member",
+        "shape": "RequestInstancesOfDescribeInstanceHealth"
+      },
+      "name": "ListOfRequestInstancesOfDescribeInstanceHealth",
       "type": "list"
     },
     "ListOfRequestInstancesOfNiftyCreateElasticLoadBalancer": {
@@ -22164,6 +22172,16 @@
       "required": [
         "InstanceId"
       ],
+      "type": "structure"
+    },
+    "RequestInstancesOfDescribeInstanceHealth": {
+      "members": {
+        "InstanceId": {
+          "locationName": "InstanceId",
+          "shape": "String"
+        }
+      },
+      "name": "RequestInstancesOfDescribeInstanceHealth",
       "type": "structure"
     },
     "RequestInstancesOfNiftyCreateElasticLoadBalancer": {
