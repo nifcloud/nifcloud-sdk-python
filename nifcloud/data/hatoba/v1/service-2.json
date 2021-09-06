@@ -2163,6 +2163,20 @@
       ],
       "type": "structure"
     },
+    "RequestFirewallGroupOfUpdateFirewallGroup": {
+      "members": {
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        }
+      },
+      "name": "RequestFirewallGroupOfUpdateFirewallGroup",
+      "type": "structure"
+    },
     "RequestHttpLoadBalancing": {
       "members": {
         "Disabled": {
@@ -2721,7 +2735,7 @@
       "members": {
         "FirewallGroup": {
           "locationName": "firewallGroup",
-          "shape": "RequestFirewallGroup"
+          "shape": "RequestFirewallGroupOfUpdateFirewallGroup"
         },
         "FirewallGroupName": {
           "location": "uri",
