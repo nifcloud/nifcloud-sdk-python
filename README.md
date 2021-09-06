@@ -33,8 +33,8 @@ from nifcloud import session
 client = session.get_session().create_client(
     "computing",
     region_name="jp-east-1",
-    aws_access_key_id="<Your NIFCLOUD Access Key ID>",
-    aws_secret_access_key="<Your NIFCLOUD Secret Access Key>"
+    nifcloud_access_key_id="<Your NIFCLOUD Access Key ID>",
+    nifcloud_secret_access_key="<Your NIFCLOUD Secret Access Key>"
 )
 
 print(client.describe_instances())
@@ -56,9 +56,9 @@ print(client.describe_instances())
 ```
 
 ```
-$ export AWS_ACCESS_KEY_ID=<Your NIFCLOUD Access Key ID>
-$ export AWS_SECRET_ACCESS_KEY=<Your NIFCLOUD Secret Access Key>
-$ export AWS_DEFAULT_REGION=jp-east-1
+$ export NIFCLOUD_ACCESS_KEY_ID=<Your NIFCLOUD Access Key ID>
+$ export NIFCLOUD_SECRET_ACCESS_KEY=<Your NIFCLOUD Secret Access Key>
+$ export NIFCLOUD_DEFAULT_REGION=jp-east-1
 $ python test.py
 ```
 
@@ -70,9 +70,9 @@ See [documentation](https://nifcloud-sdk-python.readthedocs.io/en/latest/) for d
 
 ```
 ## Set credentials and default region
-$ export AWS_ACCESS_KEY_ID=<Your NIFCLOUD Access Key ID>
-$ export AWS_SECRET_ACCESS_KEY=<Your NIFCLOUD Secret Access Key>
-$ export AWS_DEFAULT_REGION=jp-east-1
+$ export NIFCLOUD_ACCESS_KEY_ID=<Your NIFCLOUD Access Key ID>
+$ export NIFCLOUD_SECRET_ACCESS_KEY=<Your NIFCLOUD Secret Access Key>
+$ export NIFCLOUD_DEFAULT_REGION=jp-east-1
 
 ## Show available services
 $ nifcloud-debugcli help

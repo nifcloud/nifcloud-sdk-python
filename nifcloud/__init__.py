@@ -1,4 +1,4 @@
-from . import (auth, configprovider, loaders, parsers, serialize,  # noqa: F401
-               session)
+from . import (auth, configprovider, credentials, loaders,  # noqa: F401
+               parsers, serialize, session)
 
 __version__ = '0.13.0'
