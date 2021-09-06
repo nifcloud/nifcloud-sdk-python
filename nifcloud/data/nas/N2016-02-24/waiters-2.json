@@ -29,6 +29,12 @@
           "expected": "available",
           "state": "success",
           "argument": "NASInstances[].NASInstanceStatus"
+        },
+        {
+          "matcher": "pathAll",
+          "expected": "failed",
+          "state": "failure",
+          "argument": "NASInstances[].NASInstanceStatus"
         }
       ]
     },
