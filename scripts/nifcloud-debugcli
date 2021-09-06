@@ -178,12 +178,12 @@ clidriver.CLIDriver = CLIDriver
 
 # Delete awscli data path from botocore's search path
 _cli_data_path = []
-if 'AWS_DATA_PATH' in os.environ:
-    for path in os.environ['AWS_DATA_PATH'].split(os.pathsep)[:-1]:
+if 'NIFCLOUD_DATA_PATH' in os.environ:
+    for path in os.environ['NIFCLOUD_DATA_PATH'].split(os.pathsep)[:-1]:
         path = os.path.expandvars(path)
         path = os.path.expanduser(path)
         _cli_data_path.append(path)
-os.environ['AWS_DATA_PATH'] = os.pathsep.join(_cli_data_path)
+os.environ['NIFCLOUD_DATA_PATH'] = os.pathsep.join(_cli_data_path)
 
 
 def awscli_initialize(event_handlers):
