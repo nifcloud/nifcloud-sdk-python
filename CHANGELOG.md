@@ -1,6 +1,14 @@
 
 # CHANGELOG
 
+## v0.14.0
+
+ * feature: Changed the way pypi uploads to use CI (#75 by fuku2014)
+ * fix: Fix to stop the NASInstanceAvailable waiter when target instance state is failed (#74 by aokumasan)
+ * feature: Replace 'AWS\_' with 'NIFCLOUD\_' (#73 by aokumasan)
+ * fix: Fix bug of model (#72 by fuku2014)
+ * feature: Add ess model json (#71 by tunakyonn)
+
 ## v0.13.0
 
  * fix: Fix bug of hatoba model has not array of string (#69 by fuku2014)
