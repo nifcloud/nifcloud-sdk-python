@@ -38,8 +38,8 @@ class TestComputingSerializer(object):
             "shapes": {
                 "ComputingOperationRequest": {
                     "members": {
-                        "Parametor": {
-                            "locationName": "Parametor",
+                        "Parameter": {
+                            "locationName": "Parameter",
                             "shape": "String"
                         }
                     },
@@ -65,12 +65,12 @@ class TestComputingSerializer(object):
 
         computing_service_model = ServiceModel(computing_model)
         params = {
-            "Parametor": "test"
+            "Parameter": "test"
         }
         computing_serializer = serialize.ComputingSerializer()
         res = computing_serializer.serialize_to_request(
             params, computing_service_model.operation_model("ComputingOperation"))
-        assert res["body"] == {"Action": "ComputingOperation", "Parametor": "test", "Version": "3.0"}
+        assert res["body"] == {"Action": "ComputingOperation", "Parameter": "test", "Version": "3.0"}
         assert res["headers"] == {"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"}
         assert res["method"] == "POST"
         assert res["query_string"] == ""

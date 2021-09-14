@@ -40,15 +40,12 @@ class TestDnsSerializer(object):
             "shapes": {
                 "DnsOperationRequest": {
                     "members": {
-                        "Parametor": {
-                            "locationName": "Parametor",
+                        "Parameter": {
+                            "locationName": "Parameter",
                             "shape": "String"
                         },
                     },
                     "name": "DnsOperationRequest",
-                    "required": [
-                        "Name"
-                    ],
                     "type": "structure"
                 },
                 "DnsOperationResult": {
@@ -70,12 +67,12 @@ class TestDnsSerializer(object):
 
         dns_service_model = ServiceModel(dns_model)
         params = {
-            "Parametor": "test"
+            "Parameter": "test"
         }
         dns_serializer = serialize.DnsSerializer()
         res = dns_serializer.serialize_to_request(
             params, dns_service_model.operation_model("DnsOperation"))
-        assert res["body"] == b'<DnsOperationRequest xmlns="https://route53.amazonaws.com/doc/2012-12-12/"><Parametor>test</Parametor></DnsOperationRequest>'  # noqa: E501
+        assert res["body"] == b'<DnsOperationRequest xmlns="https://route53.amazonaws.com/doc/2012-12-12/"><Parameter>test</Parameter></DnsOperationRequest>'  # noqa: E501
         assert res["headers"] == {}
         assert res["method"] == "POST"
         assert res["query_string"] == {}
