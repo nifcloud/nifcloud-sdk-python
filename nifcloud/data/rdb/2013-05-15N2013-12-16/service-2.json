@@ -2423,6 +2423,18 @@
           "locationName": "MaxRecords",
           "shape": "Integer"
         },
+        "NIftySortKey": {
+          "locationName": "NIftySortKey",
+          "shape": "String"
+        },
+        "NiftyFilters": {
+          "locationName": "NiftyFilters",
+          "shape": "RequestNiftyFilters"
+        },
+        "NiftySortDesc": {
+          "locationName": "NiftySortDesc",
+          "shape": "Integer"
+        },
         "SubscriptionName": {
           "locationName": "SubscriptionName",
           "shape": "String"
@@ -3062,6 +3074,13 @@
       "name": "ListOfRequestEventCategories",
       "type": "list"
     },
+    "ListOfRequestFilter": {
+      "member": {
+        "shape": "RequestFilter"
+      },
+      "name": "ListOfRequestFilter",
+      "type": "list"
+    },
     "ListOfRequestFilters": {
       "member": {
         "locationName": "member",
@@ -3084,6 +3103,14 @@
         "shape": "String"
       },
       "name": "ListOfRequestNiftyEmailAddresses",
+      "type": "list"
+    },
+    "ListOfRequestNiftySourceIds": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfRequestNiftySourceIds",
       "type": "list"
     },
     "ListOfRequestParameters": {
@@ -3362,6 +3389,10 @@
           "locationName": "NiftyEmailAddresses",
           "shape": "ListOfRequestNiftyEmailAddresses"
         },
+        "NiftySourceIds": {
+          "locationName": "NiftySourceIds",
+          "shape": "ListOfRequestNiftySourceIds"
+        },
         "SourceType": {
           "locationName": "SourceType",
           "shape": "String"
@@ -3373,7 +3404,6 @@
       },
       "name": "ModifyEventSubscriptionRequest",
       "required": [
-        "NiftyEmailAddresses",
         "SubscriptionName"
       ],
       "type": "structure"
@@ -3682,6 +3712,30 @@
         "Name",
         "Value"
       ],
+      "type": "structure"
+    },
+    "RequestFilter": {
+      "members": {
+        "FilterName": {
+          "locationName": "FilterName",
+          "shape": "String"
+        },
+        "FilterValue": {
+          "locationName": "FilterValue",
+          "shape": "String"
+        }
+      },
+      "name": "RequestFilter",
+      "type": "structure"
+    },
+    "RequestNiftyFilters": {
+      "members": {
+        "ListOfRequestFilter": {
+          "locationName": "Filter",
+          "shape": "ListOfRequestFilter"
+        }
+      },
+      "name": "RequestNiftyFilters",
       "type": "structure"
     },
     "RequestParameters": {
