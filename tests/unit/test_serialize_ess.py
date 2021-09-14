@@ -5,7 +5,7 @@ from nifcloud import serialize
 
 class TestEssSerializer(object):
     ess_model_metadata = {
-        "apiVersion": "2010-12-01",
+        "apiVersion": "2010-12-01N2014-05-28",
         "endpointPrefix": "ess",
         "protocol": "ess",
         "serviceAbbreviation": "ess",
@@ -69,7 +69,7 @@ class TestEssSerializer(object):
         ess_serializer = serialize.EssSerializer()
         res = ess_serializer.serialize_to_request(
             params, ess_service_model.operation_model("EssOperation"))
-        assert res["body"] == {"Action": "EssOperation", "Parametor": "test", "Version": "2010-12-01"}
+        assert res["body"] == {"Action": "EssOperation", "Parametor": "test", "Version": "2010-12-01N2014-05-28"}
         assert res["headers"] == {"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"}
         assert res["method"] == "POST"
         assert res["query_string"] == ""
@@ -154,7 +154,7 @@ class TestEssSerializer(object):
         ess_serializer = serialize.EssSerializer()
         res = ess_serializer.serialize_to_request(
             params, ess_service_model.operation_model("GetDeliveryLog"))
-        assert res["body"] == {"Action": "GetDeliveryLog", "Version": "2010-12-01"}
+        assert res["body"] == {"Action": "GetDeliveryLog", "Version": "2010-12-01N2014-05-28"}
         assert res["headers"] == {"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"}
         assert res["method"] == "POST"
         assert res["query_string"] == ""
@@ -247,7 +247,7 @@ class TestEssSerializer(object):
             params, ess_service_model.operation_model("GetDeliveryLog"))
         assert res["body"] == {
             "Action": "GetDeliveryLog",
-            "Version": "2010-12-01",
+            "Version": "2010-12-01N2014-05-28",
             "Status": "test_status",
             "MaxItems": 1,
             "NextToken": "test_token",
