@@ -19,39 +19,39 @@ class TestNasSerializer(object):
         nas_model = {
             "metadata": self.nas_model_metadata,
             "operations": {
-                "NaSOperation": {
+                "NasOperation": {
                     "http": {
                         "method": "POST",
                         "requestUri": "/"
                     },
                     "input": {
-                        "shape": "NaSOperationRequest"
+                        "shape": "NasOperationRequest"
                     },
-                    "name": "NaSOperation",
+                    "name": "NasOperation",
                     "output": {
-                        "shape": "NaSOperationResult"
+                        "shape": "NasOperationResult"
                     }
                 }
             },
             "shapes": {
-                "NaSOperationRequest": {
+                "NasOperationRequest": {
                     "members": {
                         "Parametor": {
                             "locationName": "Parametor",
                             "shape": "String"
                         }
                     },
-                    "name": "NaSOperationRequest",
+                    "name": "NasOperationRequest",
                     "type": "structure"
                 },
-                "NaSOperationResult": {
+                "NasOperationResult": {
                     "members": {
                         "Response": {
                             "locationName": "Response",
                             "shape": "String"
                         }
                     },
-                    "name": "NaSOperationResult",
+                    "name": "NasOperationResult",
                     "type": "structure"
                 },
                 "String": {
@@ -67,8 +67,8 @@ class TestNasSerializer(object):
         }
         nas_serializer = serialize.NasSerializer()
         res = nas_serializer.serialize_to_request(
-            params, nas_service_model.operation_model("NaSOperation"))
-        assert res["body"] == {"Action": "NaSOperation", "Parametor": "test", "Version": "N2016-02-24"}
+            params, nas_service_model.operation_model("NasOperation"))
+        assert res["body"] == {"Action": "NasOperation", "Parametor": "test", "Version": "N2016-02-24"}
         assert res["headers"] == {"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"}
         assert res["method"] == "POST"
         assert res["query_string"] == ""
@@ -88,8 +88,8 @@ class TestNasSerializer(object):
                     },
                     "name": "GetMetricStatistics",
                     "output": {
-                        "resultWrapper": "NaSOperationResult",
-                        "shape": "NaSOperationResult"
+                        "resultWrapper": "NasOperationResult",
+                        "shape": "NasOperationResult"
                     }
                 },
             },
@@ -142,14 +142,14 @@ class TestNasSerializer(object):
                     ],
                     "type": "structure"
                 },
-                "NaSOperationResult": {
+                "NasOperationResult": {
                     "members": {
                         "Response": {
                             "locationName": "Response",
                             "shape": "String"
                         }
                     },
-                    "name": "NaSOperationResult",
+                    "name": "NasOperationResult",
                     "type": "structure"
                 },
                 "String": {
@@ -191,8 +191,8 @@ class TestNasSerializer(object):
                     },
                     "name": "GetMetricStatistics",
                     "output": {
-                        "resultWrapper": "NaSOperationResult",
-                        "shape": "NaSOperationResult"
+                        "resultWrapper": "NasOperationResult",
+                        "shape": "NasOperationResult"
                     }
                 },
             },
@@ -249,14 +249,14 @@ class TestNasSerializer(object):
                     ],
                     "type": "structure"
                 },
-                "NaSOperationResult": {
+                "NasOperationResult": {
                     "members": {
                         "Response": {
                             "locationName": "Response",
                             "shape": "String"
                         }
                     },
-                    "name": "NaSOperationResult",
+                    "name": "NasOperationResult",
                     "type": "structure"
                 },
                 "String": {
