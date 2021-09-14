@@ -50,8 +50,8 @@ class TestDnsSerializer(object):
                 },
                 "DnsOperationResult": {
                     "members": {
-                        "HostedZone": {
-                            "locationName": "HostedZone",
+                        "Parameter": {
+                            "locationName": "Parameter",
                             "shape": "String"
                         }
                     },
