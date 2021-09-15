@@ -1,6 +1,6 @@
 import re
 
-from botocore.docs import generate_docs  # noqa: F401
+from botocore import docs
 from botocore.docs import client, service
 
 NIFCLOUD_DOC_BASE = 'https://pfs.nifcloud.com/api'
@@ -30,4 +30,25 @@ class ClientDocumenter(client.ClientDocumenter):
         method_intro.push_write(replaced_text)
 
 
+class ServiceDocumenter(service.ServiceDocumenter):
+
+    def __init__(self, service_name, session):
+        self._session = session
+        self._service_name = service_name
+
+        self._client = self._session.create_client(
+            service_name, region_name='jp-east-1', nifcloud_access_key_id='foo',
+            nifcloud_secret_access_key='bar')
+        self._event_emitter = self._client.meta.events
+
+        self.sections = [
+            'title',
+            'table-of-contents',
+            'client-api',
+            'paginator-api',
+            'waiter-api'
+        ]
+
+
+docs.ServiceDocumenter = ServiceDocumenter
 service.ClientDocumenter = ClientDocumenter

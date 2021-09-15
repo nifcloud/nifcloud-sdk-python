@@ -16,10 +16,10 @@
 import os
 
 from nifcloud import __version__
-from nifcloud.docs import generate_docs
+from nifcloud.docs import docs
 from nifcloud.session import get_session
 
-generate_docs(os.path.dirname(os.path.abspath(__file__)), get_session())
+docs.generate_docs(os.path.dirname(os.path.abspath(__file__)), get_session())
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
