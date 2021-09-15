@@ -1,0 +1,33 @@
+name: Acceptance
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+env:
+  NIFCLOUD_DEFAULT_REGION: "jp-east-1"
+  NIFCLOUD_ACCESS_KEY_ID: ${{ secrets.NIFCLOUD_ACCESS_KEY_ID }}
+  NIFCLOUD_SECRET_ACCESS_KEY: ${{ secrets.NIFCLOUD_SECRET_ACCESS_KEY }}
+jobs:
+  acceptancetest:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install pipenv
+        run: pip install pipenv==2018.11.26
+
+      - name: Install dependencies
+        run: pipenv install --skip-lock -d
+
+      - name: Run acceptance minimal 
+        run: pipenv run test
