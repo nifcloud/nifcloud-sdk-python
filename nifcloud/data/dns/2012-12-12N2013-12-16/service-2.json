@@ -420,6 +420,7 @@
       "type": "list"
     },
     "ListOfRequestChanges": {
+      "flattened": true,
       "member": {
         "shape": "RequestChanges"
       },
@@ -427,6 +428,7 @@
       "type": "list"
     },
     "ListOfRequestResourceRecords": {
+      "flattened": true,
       "member": {
         "shape": "RequestResourceRecords"
       },
