@@ -36,8 +36,8 @@ class TestRdbSerializer(object):
             "shapes": {
                 "RdbOperationRequest": {
                     "members": {
-                        "Parametor": {
-                            "locationName": "Parametor",
+                        "Parameter": {
+                            "locationName": "Parameter",
                             "shape": "String"
                         }
                     },
@@ -63,12 +63,12 @@ class TestRdbSerializer(object):
 
         rdb_service_model = ServiceModel(rdb_model)
         params = {
-            "Parametor": "test"
+            "Parameter": "test"
         }
         rdb_serializer = serialize.RdbSerializer()
         res = rdb_serializer.serialize_to_request(
             params, rdb_service_model.operation_model("RdbOperation"))
-        assert res["body"] == {"Action": "RdbOperation", "Parametor": "test", "Version": "2013-05-15N2013-12-16"}
+        assert res["body"] == {"Action": "RdbOperation", "Parameter": "test", "Version": "2013-05-15N2013-12-16"}
         assert res["headers"] == {"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"}
         assert res["method"] == "POST"
         assert res["query_string"] == ""

@@ -37,8 +37,8 @@ class TestEssSerializer(object):
             "shapes": {
                 "EssOperationRequest": {
                     "members": {
-                        "Parametor": {
-                            "locationName": "Parametor",
+                        "Parameter": {
+                            "locationName": "Parameter",
                             "shape": "String"
                         }
                     },
@@ -64,12 +64,12 @@ class TestEssSerializer(object):
 
         ess_service_model = ServiceModel(ess_model)
         params = {
-            "Parametor": "test"
+            "Parameter": "test"
         }
         ess_serializer = serialize.EssSerializer()
         res = ess_serializer.serialize_to_request(
             params, ess_service_model.operation_model("EssOperation"))
-        assert res["body"] == {"Action": "EssOperation", "Parametor": "test", "Version": "2010-12-01N2014-05-28"}
+        assert res["body"] == {"Action": "EssOperation", "Parameter": "test", "Version": "2010-12-01N2014-05-28"}
         assert res["headers"] == {"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"}
         assert res["method"] == "POST"
         assert res["query_string"] == ""
