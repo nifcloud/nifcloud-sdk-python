@@ -419,6 +419,22 @@
       "name": "ListOfNameServers",
       "type": "list"
     },
+    "ListOfRequestChanges": {
+      "flattened": true,
+      "member": {
+        "shape": "RequestChanges"
+      },
+      "name": "ListOfRequestChanges",
+      "type": "list"
+    },
+    "ListOfRequestResourceRecords": {
+      "flattened": true,
+      "member": {
+        "shape": "RequestResourceRecords"
+      },
+      "name": "ListOfRequestResourceRecords",
+      "type": "list"
+    },
     "ListOfResourceRecordSets": {
       "member": {
         "locationName": "ResourceRecordSet",
@@ -522,14 +538,14 @@
     },
     "RequestChangeBatch": {
       "members": {
-        "RequestChanges": {
+        "ListOfRequestChanges": {
           "locationName": "Changes",
-          "shape": "RequestChanges"
+          "shape": "ListOfRequestChanges"
         }
       },
       "name": "RequestChangeBatch",
       "required": [
-        "RequestChanges"
+        "ListOfRequestChanges"
       ],
       "type": "structure"
     },
@@ -572,6 +588,10 @@
           "locationName": "Failover",
           "shape": "String"
         },
+        "ListOfRequestResourceRecords": {
+          "locationName": "ResourceRecords",
+          "shape": "ListOfRequestResourceRecords"
+        },
         "Name": {
           "locationName": "Name",
           "shape": "String"
@@ -579,10 +599,6 @@
         "Region": {
           "locationName": "Region",
           "shape": "String"
-        },
-        "RequestResourceRecords": {
-          "locationName": "ResourceRecords",
-          "shape": "RequestResourceRecords"
         },
         "RequestXniftyHealthCheckConfig": {
           "locationName": "XniftyHealthCheckConfig",
