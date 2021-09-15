@@ -36,8 +36,8 @@ class TestNasSerializer(object):
             "shapes": {
                 "NasOperationRequest": {
                     "members": {
-                        "Parametor": {
-                            "locationName": "Parametor",
+                        "Parameter": {
+                            "locationName": "Parameter",
                             "shape": "String"
                         }
                     },
@@ -63,12 +63,12 @@ class TestNasSerializer(object):
 
         nas_service_model = ServiceModel(nas_model)
         params = {
-            "Parametor": "test"
+            "Parameter": "test"
         }
         nas_serializer = serialize.NasSerializer()
         res = nas_serializer.serialize_to_request(
             params, nas_service_model.operation_model("NasOperation"))
-        assert res["body"] == {"Action": "NasOperation", "Parametor": "test", "Version": "N2016-02-24"}
+        assert res["body"] == {"Action": "NasOperation", "Parameter": "test", "Version": "N2016-02-24"}
         assert res["headers"] == {"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"}
         assert res["method"] == "POST"
         assert res["query_string"] == ""
