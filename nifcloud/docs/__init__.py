@@ -45,6 +45,7 @@ class ServiceDocumenter(service.ServiceDocumenter):
             'title',
             'table-of-contents',
             'client-api',
+            'client-exceptions',
             'paginator-api',
             'waiter-api'
         ]
