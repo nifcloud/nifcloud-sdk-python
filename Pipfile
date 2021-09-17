@@ -4,19 +4,18 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-botocore = "==1.12.134"
+botocore = "==1.21.39"
 
 [dev-packages]
 isort = "*"
 "flake8" = "*"
 pytest = "*"
 requests = "*"
-awscli = "==1.19.14"
 sphinx = "==1.8.1"
 sphinx-rtd-theme = "*"
 
 [scripts]
 isort = "isort"
-lint = "/bin/bash -c 'flake8 scripts/* .'"
+lint = "/bin/bash -c 'flake8 .'"
 test = "pytest --capture=sys"
 unittest = "pytest tests/unit --capture=sys"

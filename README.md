@@ -1,16 +1,16 @@
-# NIFCLOUD SDK for Python (Developer Preview)
+# NIFCLOUD SDK for Python
 
 [![Test](https://github.com/nifcloud/nifcloud-sdk-python/workflows/Test/badge.svg)](https://github.com/nifcloud/nifcloud-sdk-python/actions?query=workflow%3ATest)
 [![Documentation](https://readthedocs.org/projects/nifcloud-sdk-python/badge)](https://nifcloud-sdk-python.readthedocs.io/en/latest/)
 [![PyPI](https://badge.fury.io/py/nifcloud.svg)](https://pypi.python.org/pypi/nifcloud)
 
-The **NIFCLOUD SDK for Python (Develper Preview)** is data-driven SDK.
+The **NIFCLOUD SDK for Python** is data-driven SDK.
 It works by feeding AWS-SDK-compatible model JSONs to botocore module.
 
 ## Features
 
 * :heavy_check_mark: Full support for NIFCLOUD Computing / RDB / NAS / Script / Hatoba / ESS / DNS APIs
-* :heavy_check_mark: Useful CLI tool for debugging
+* :heavy_check_mark: The nifcloud package is the foundation for the [NIFCLOUD CLI](https://github.com/nifcloud/nifcloud-cli).
 * :heavy_check_mark: AWS-SDK-compatible data-driven architecture
 
 ## Requirements
@@ -63,35 +63,6 @@ $ python test.py
 ```
 
 See [documentation](https://nifcloud-sdk-python.readthedocs.io/en/latest/) for detail.
-
-## Debug with CLI
-
-`nifcloud` module comes with `nifcloud-debugcli` command. You can use it like below:
-
-```
-## Set credentials and default region
-$ export NIFCLOUD_ACCESS_KEY_ID=<Your NIFCLOUD Access Key ID>
-$ export NIFCLOUD_SECRET_ACCESS_KEY=<Your NIFCLOUD Secret Access Key>
-$ export NIFCLOUD_DEFAULT_REGION=jp-east-1
-
-## Show available services
-$ nifcloud-debugcli help
-
-## Show available actions for the service
-$ nifcloud-debugcli computing help
-
-## Show available parameters for the action
-$ nifcloud-debugcli computing create-key-pair help
-
-## Run the command actually
-$ nifcloud-debugcli computing create-key-pair --key-name foobar123 --password foobar123 
-```
-
-## Notes for Developer Preview
-
-* It is not recommended to integrate this module into production systems.
-* There will be some request parameters which can not be specified, and response items which can not be retrieved.
-* Significant change of the specification will be made without any notice.
 
 ## License
 
