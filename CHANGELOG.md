@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.0.3](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.0.3) (2021-10-28)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.0.2...v1.0.3)
+
+**Merged pull requests:**
+
+- Replace 'aws \_' with 'nifcloud \_' in profile [\#86](https://github.com/nifcloud/nifcloud-sdk-python/pull/86) ([fuku2014](https://github.com/fuku2014))
+
+## [v1.0.2](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.0.2) (2021-09-17)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.0.0...v1.0.2)
+
 ## [v1.0.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.0.0) (2021-09-17)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v0.14.0...v1.0.0)
