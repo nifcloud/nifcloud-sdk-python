@@ -307,7 +307,7 @@
         },
         "Protocol": {
           "locationName": "Protocol",
-          "shape": "String"
+          "shape": "ProtocolOfCreateNASInstanceRequest"
         }
       },
       "name": "CreateNASInstanceRequest",
@@ -540,7 +540,7 @@
         },
         "MetricName": {
           "locationName": "MetricName",
-          "shape": "String"
+          "shape": "MetricNameOfGetMetricStatisticsRequest"
         },
         "StartTime": {
           "locationName": "StartTime",
@@ -673,6 +673,23 @@
     "Long": {
       "name": "Long",
       "type": "long"
+    },
+    "MetricNameOfGetMetricStatisticsRequest": {
+      "enum": [
+        "FreeStorageSpace",
+        "UsedStorageSpace",
+        "ReadIOPS",
+        "WriteIOPS",
+        "ReadThroughput",
+        "WriteThroughput",
+        "ActiveConnections",
+        "GlobalReadTraffic",
+        "PrivateReadTraffic",
+        "GlobalWriteTraffic",
+        "PrivateWriteTraffic"
+      ],
+      "name": "MetricNameOfGetMetricStatisticsRequest",
+      "type": "string"
     },
     "ModifyNASInstanceRequest": {
       "members": {
@@ -1039,6 +1056,14 @@
       },
       "name": "NASSecurityGroupsOfDescribeNASSecurityGroups",
       "type": "structure"
+    },
+    "ProtocolOfCreateNASInstanceRequest": {
+      "enum": [
+        "nfs",
+        "cifs"
+      ],
+      "name": "ProtocolOfCreateNASInstanceRequest",
+      "type": "string"
     },
     "RequestDimensions": {
       "members": {

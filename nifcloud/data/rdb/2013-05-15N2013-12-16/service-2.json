@@ -626,6 +626,46 @@
     }
   },
   "shapes": {
+    "AccountingTypeOfCreateDBInstanceReadReplicaRequest": {
+      "enum": [
+        "1",
+        "2"
+      ],
+      "name": "AccountingTypeOfCreateDBInstanceReadReplicaRequest",
+      "type": "string"
+    },
+    "AccountingTypeOfCreateDBInstanceRequest": {
+      "enum": [
+        "1",
+        "2"
+      ],
+      "name": "AccountingTypeOfCreateDBInstanceRequest",
+      "type": "string"
+    },
+    "AccountingTypeOfModifyDBInstanceRequest": {
+      "enum": [
+        "1",
+        "2"
+      ],
+      "name": "AccountingTypeOfModifyDBInstanceRequest",
+      "type": "string"
+    },
+    "AccountingTypeOfRestoreDBInstanceFromDBSnapshotRequest": {
+      "enum": [
+        "1",
+        "2"
+      ],
+      "name": "AccountingTypeOfRestoreDBInstanceFromDBSnapshotRequest",
+      "type": "string"
+    },
+    "AccountingTypeOfRestoreDBInstanceToPointInTimeRequest": {
+      "enum": [
+        "1",
+        "2"
+      ],
+      "name": "AccountingTypeOfRestoreDBInstanceToPointInTimeRequest",
+      "type": "string"
+    },
     "AddSourceIdentifierToSubscriptionRequest": {
       "members": {
         "SourceIdentifier": {
@@ -657,6 +697,22 @@
       },
       "name": "AddSourceIdentifierToSubscriptionResult",
       "type": "structure"
+    },
+    "ApplyMethodOfParametersForModifyDBParameterGroup": {
+      "enum": [
+        "immediate",
+        "pending-reboot"
+      ],
+      "name": "ApplyMethodOfParametersForModifyDBParameterGroup",
+      "type": "string"
+    },
+    "ApplyMethodOfParametersForResetDBParameterGroup": {
+      "enum": [
+        "immediate",
+        "pending-reboot"
+      ],
+      "name": "ApplyMethodOfParametersForResetDBParameterGroup",
+      "type": "string"
     },
     "AuthorizeDBSecurityGroupIngressRequest": {
       "members": {
@@ -785,7 +841,7 @@
       "members": {
         "AccountingType": {
           "locationName": "AccountingType",
-          "shape": "String"
+          "shape": "AccountingTypeOfCreateDBInstanceReadReplicaRequest"
         },
         "AutoMinorVersionUpgrade": {
           "locationName": "AutoMinorVersionUpgrade",
@@ -797,7 +853,7 @@
         },
         "DBInstanceClass": {
           "locationName": "DBInstanceClass",
-          "shape": "String"
+          "shape": "DBInstanceClassOfCreateDBInstanceReadReplicaRequest"
         },
         "DBInstanceIdentifier": {
           "locationName": "DBInstanceIdentifier",
@@ -857,7 +913,7 @@
       "members": {
         "AccountingType": {
           "locationName": "AccountingType",
-          "shape": "String"
+          "shape": "AccountingTypeOfCreateDBInstanceRequest"
         },
         "AllocatedStorage": {
           "locationName": "AllocatedStorage",
@@ -881,7 +937,7 @@
         },
         "DBInstanceClass": {
           "locationName": "DBInstanceClass",
-          "shape": "String"
+          "shape": "DBInstanceClassOfCreateDBInstanceRequest"
         },
         "DBInstanceIdentifier": {
           "locationName": "DBInstanceIdentifier",
@@ -905,7 +961,7 @@
         },
         "Engine": {
           "locationName": "Engine",
-          "shape": "String"
+          "shape": "EngineOfCreateDBInstanceRequest"
         },
         "EngineVersion": {
           "locationName": "EngineVersion",
@@ -985,7 +1041,7 @@
         },
         "ReadReplicaAccountingType": {
           "locationName": "ReadReplicaAccountingType",
-          "shape": "String"
+          "shape": "ReadReplicaAccountingTypeOfCreateDBInstanceRequest"
         },
         "VpcSecurityGroupIds": {
           "locationName": "VpcSecurityGroupIds",
@@ -1147,7 +1203,7 @@
         },
         "SourceType": {
           "locationName": "SourceType",
-          "shape": "String"
+          "shape": "SourceTypeOfCreateEventSubscriptionRequest"
         },
         "SubscriptionName": {
           "locationName": "SubscriptionName",
@@ -1359,6 +1415,414 @@
       "name": "DBInstance",
       "type": "structure"
     },
+    "DBInstanceClassOfCreateDBInstanceReadReplicaRequest": {
+      "enum": [
+        "db.mini",
+        "db.e-small",
+        "db.small",
+        "db.e-small2",
+        "db.small2",
+        "db.e-small4",
+        "db.small4",
+        "db.e-small8",
+        "db.small8",
+        "db.e-small16",
+        "db.small16",
+        "db.e-medium",
+        "db.medium",
+        "db.e-medium4",
+        "db.medium4",
+        "db.e-medium8",
+        "db.medium8",
+        "db.e-medium16",
+        "db.medium16",
+        "db.e-medium24",
+        "db.medium24",
+        "db.e-large",
+        "db.large",
+        "db.e-large8",
+        "db.large8",
+        "db.e-large16",
+        "db.large16",
+        "db.e-large24",
+        "db.large24",
+        "db.e-large32",
+        "db.large32",
+        "db.e-extra-large8",
+        "db.extra-large8",
+        "db.e-extra-large16",
+        "db.extra-large16",
+        "db.e-extra-large24",
+        "db.extra-large24",
+        "db.e-extra-large32",
+        "db.extra-large32",
+        "db.e-extra-large48",
+        "db.extra-large48",
+        "db.e-double-large16",
+        "db.double-large16",
+        "db.e-double-large24",
+        "db.double-large24",
+        "db.e-double-large32",
+        "db.double-large32",
+        "db.e-double-large48",
+        "db.double-large48",
+        "db.e-double-large64",
+        "db.double-large64",
+        "db.e-double-large96",
+        "db.double-large96",
+        "db.triple-large32",
+        "db.triple-large48",
+        "db.triple-large64",
+        "db.triple-large96",
+        "db.triple-large128",
+        "db.quad-large64",
+        "db.quad-large96",
+        "db.quad-large128",
+        "db.septa-large128"
+      ],
+      "name": "DBInstanceClassOfCreateDBInstanceReadReplicaRequest",
+      "type": "string"
+    },
+    "DBInstanceClassOfCreateDBInstanceRequest": {
+      "enum": [
+        "db.mini",
+        "db.e-small",
+        "db.small",
+        "db.e-small2",
+        "db.small2",
+        "db.e-small4",
+        "db.small4",
+        "db.e-small8",
+        "db.small8",
+        "db.e-small16",
+        "db.small16",
+        "db.e-medium",
+        "db.medium",
+        "db.e-medium4",
+        "db.medium4",
+        "db.e-medium8",
+        "db.medium8",
+        "db.e-medium16",
+        "db.medium16",
+        "db.e-medium24",
+        "db.medium24",
+        "db.e-large",
+        "db.large",
+        "db.e-large8",
+        "db.large8",
+        "db.e-large16",
+        "db.large16",
+        "db.e-large24",
+        "db.large24",
+        "db.e-large32",
+        "db.large32",
+        "db.e-extra-large8",
+        "db.extra-large8",
+        "db.e-extra-large16",
+        "db.extra-large16",
+        "db.e-extra-large24",
+        "db.extra-large24",
+        "db.e-extra-large32",
+        "db.extra-large32",
+        "db.e-extra-large48",
+        "db.extra-large48",
+        "db.e-double-large16",
+        "db.double-large16",
+        "db.e-double-large24",
+        "db.double-large24",
+        "db.e-double-large32",
+        "db.double-large32",
+        "db.e-double-large48",
+        "db.double-large48",
+        "db.e-double-large64",
+        "db.double-large64",
+        "db.e-double-large96",
+        "db.double-large96",
+        "db.triple-large32",
+        "db.triple-large48",
+        "db.triple-large64",
+        "db.triple-large96",
+        "db.triple-large128",
+        "db.quad-large64",
+        "db.quad-large96",
+        "db.quad-large128",
+        "db.septa-large128"
+      ],
+      "name": "DBInstanceClassOfCreateDBInstanceRequest",
+      "type": "string"
+    },
+    "DBInstanceClassOfDescribeOrderableDBInstanceOptionsRequest": {
+      "enum": [
+        "db.mini",
+        "db.e-small",
+        "db.small",
+        "db.e-small2",
+        "db.small2",
+        "db.e-small4",
+        "db.small4",
+        "db.e-small8",
+        "db.small8",
+        "db.e-small16",
+        "db.small16",
+        "db.e-medium",
+        "db.medium",
+        "db.e-medium4",
+        "db.medium4",
+        "db.e-medium8",
+        "db.medium8",
+        "db.e-medium16",
+        "db.medium16",
+        "db.e-medium24",
+        "db.medium24",
+        "db.e-large",
+        "db.large",
+        "db.e-large8",
+        "db.large8",
+        "db.e-large16",
+        "db.large16",
+        "db.e-large24",
+        "db.large24",
+        "db.e-large32",
+        "db.large32",
+        "db.e-extra-large8",
+        "db.extra-large8",
+        "db.e-extra-large16",
+        "db.extra-large16",
+        "db.e-extra-large24",
+        "db.extra-large24",
+        "db.e-extra-large32",
+        "db.extra-large32",
+        "db.e-extra-large48",
+        "db.extra-large48",
+        "db.e-double-large16",
+        "db.double-large16",
+        "db.e-double-large24",
+        "db.double-large24",
+        "db.e-double-large32",
+        "db.double-large32",
+        "db.e-double-large48",
+        "db.double-large48",
+        "db.e-double-large64",
+        "db.double-large64",
+        "db.e-double-large96",
+        "db.double-large96",
+        "db.triple-large32",
+        "db.triple-large48",
+        "db.triple-large64",
+        "db.triple-large96",
+        "db.triple-large128",
+        "db.quad-large64",
+        "db.quad-large96",
+        "db.quad-large128",
+        "db.septa-large128"
+      ],
+      "name": "DBInstanceClassOfDescribeOrderableDBInstanceOptionsRequest",
+      "type": "string"
+    },
+    "DBInstanceClassOfModifyDBInstanceRequest": {
+      "enum": [
+        "db.mini",
+        "db.e-small",
+        "db.small",
+        "db.e-small2",
+        "db.small2",
+        "db.e-small4",
+        "db.small4",
+        "db.e-small8",
+        "db.small8",
+        "db.e-small16",
+        "db.small16",
+        "db.e-medium",
+        "db.medium",
+        "db.e-medium4",
+        "db.medium4",
+        "db.e-medium8",
+        "db.medium8",
+        "db.e-medium16",
+        "db.medium16",
+        "db.e-medium24",
+        "db.medium24",
+        "db.e-large",
+        "db.large",
+        "db.e-large8",
+        "db.large8",
+        "db.e-large16",
+        "db.large16",
+        "db.e-large24",
+        "db.large24",
+        "db.e-large32",
+        "db.large32",
+        "db.e-extra-large8",
+        "db.extra-large8",
+        "db.e-extra-large16",
+        "db.extra-large16",
+        "db.e-extra-large24",
+        "db.extra-large24",
+        "db.e-extra-large32",
+        "db.extra-large32",
+        "db.e-extra-large48",
+        "db.extra-large48",
+        "db.e-double-large16",
+        "db.double-large16",
+        "db.e-double-large24",
+        "db.double-large24",
+        "db.e-double-large32",
+        "db.double-large32",
+        "db.e-double-large48",
+        "db.double-large48",
+        "db.e-double-large64",
+        "db.double-large64",
+        "db.e-double-large96",
+        "db.double-large96",
+        "db.triple-large32",
+        "db.triple-large48",
+        "db.triple-large64",
+        "db.triple-large96",
+        "db.triple-large128",
+        "db.quad-large64",
+        "db.quad-large96",
+        "db.quad-large128",
+        "db.septa-large128"
+      ],
+      "name": "DBInstanceClassOfModifyDBInstanceRequest",
+      "type": "string"
+    },
+    "DBInstanceClassOfRestoreDBInstanceFromDBSnapshotRequest": {
+      "enum": [
+        "db.mini",
+        "db.e-small",
+        "db.small",
+        "db.e-small2",
+        "db.small2",
+        "db.e-small4",
+        "db.small4",
+        "db.e-small8",
+        "db.small8",
+        "db.e-small16",
+        "db.small16",
+        "db.e-medium",
+        "db.medium",
+        "db.e-medium4",
+        "db.medium4",
+        "db.e-medium8",
+        "db.medium8",
+        "db.e-medium16",
+        "db.medium16",
+        "db.e-medium24",
+        "db.medium24",
+        "db.e-large",
+        "db.large",
+        "db.e-large8",
+        "db.large8",
+        "db.e-large16",
+        "db.large16",
+        "db.e-large24",
+        "db.large24",
+        "db.e-large32",
+        "db.large32",
+        "db.e-extra-large8",
+        "db.extra-large8",
+        "db.e-extra-large16",
+        "db.extra-large16",
+        "db.e-extra-large24",
+        "db.extra-large24",
+        "db.e-extra-large32",
+        "db.extra-large32",
+        "db.e-extra-large48",
+        "db.extra-large48",
+        "db.e-double-large16",
+        "db.double-large16",
+        "db.e-double-large24",
+        "db.double-large24",
+        "db.e-double-large32",
+        "db.double-large32",
+        "db.e-double-large48",
+        "db.double-large48",
+        "db.e-double-large64",
+        "db.double-large64",
+        "db.e-double-large96",
+        "db.double-large96",
+        "db.triple-large32",
+        "db.triple-large48",
+        "db.triple-large64",
+        "db.triple-large96",
+        "db.triple-large128",
+        "db.quad-large64",
+        "db.quad-large96",
+        "db.quad-large128",
+        "db.septa-large128"
+      ],
+      "name": "DBInstanceClassOfRestoreDBInstanceFromDBSnapshotRequest",
+      "type": "string"
+    },
+    "DBInstanceClassOfRestoreDBInstanceToPointInTimeRequest": {
+      "enum": [
+        "db.mini",
+        "db.e-small",
+        "db.small",
+        "db.e-small2",
+        "db.small2",
+        "db.e-small4",
+        "db.small4",
+        "db.e-small8",
+        "db.small8",
+        "db.e-small16",
+        "db.small16",
+        "db.e-medium",
+        "db.medium",
+        "db.e-medium4",
+        "db.medium4",
+        "db.e-medium8",
+        "db.medium8",
+        "db.e-medium16",
+        "db.medium16",
+        "db.e-medium24",
+        "db.medium24",
+        "db.e-large",
+        "db.large",
+        "db.e-large8",
+        "db.large8",
+        "db.e-large16",
+        "db.large16",
+        "db.e-large24",
+        "db.large24",
+        "db.e-large32",
+        "db.large32",
+        "db.e-extra-large8",
+        "db.extra-large8",
+        "db.e-extra-large16",
+        "db.extra-large16",
+        "db.e-extra-large24",
+        "db.extra-large24",
+        "db.e-extra-large32",
+        "db.extra-large32",
+        "db.e-extra-large48",
+        "db.extra-large48",
+        "db.e-double-large16",
+        "db.double-large16",
+        "db.e-double-large24",
+        "db.double-large24",
+        "db.e-double-large32",
+        "db.double-large32",
+        "db.e-double-large48",
+        "db.double-large48",
+        "db.e-double-large64",
+        "db.double-large64",
+        "db.e-double-large96",
+        "db.double-large96",
+        "db.triple-large32",
+        "db.triple-large48",
+        "db.triple-large64",
+        "db.triple-large96",
+        "db.triple-large128",
+        "db.quad-large64",
+        "db.quad-large96",
+        "db.quad-large128",
+        "db.septa-large128"
+      ],
+      "name": "DBInstanceClassOfRestoreDBInstanceToPointInTimeRequest",
+      "type": "string"
+    },
     "DBInstances": {
       "members": {
         "AccountingType": {
@@ -1534,6 +1998,18 @@
       },
       "name": "DBParameterGroup",
       "type": "structure"
+    },
+    "DBParameterGroupFamilyOfDescribeDBEngineVersionsRequest": {
+      "enum": [
+        "mysql5.6",
+        "mysql5.7",
+        "postgres9.3",
+        "postgres9.6",
+        "postgres11",
+        "mariadb10.1"
+      ],
+      "name": "DBParameterGroupFamilyOfDescribeDBEngineVersionsRequest",
+      "type": "string"
     },
     "DBParameterGroups": {
       "members": {
@@ -1978,7 +2454,7 @@
       "members": {
         "DBParameterGroupFamily": {
           "locationName": "DBParameterGroupFamily",
-          "shape": "String"
+          "shape": "DBParameterGroupFamilyOfDescribeDBEngineVersionsRequest"
         },
         "DefaultOnly": {
           "locationName": "DefaultOnly",
@@ -1986,7 +2462,7 @@
         },
         "Engine": {
           "locationName": "Engine",
-          "shape": "String"
+          "shape": "EngineOfDescribeDBEngineVersionsRequest"
         },
         "EngineVersion": {
           "locationName": "EngineVersion",
@@ -2215,7 +2691,7 @@
         },
         "Source": {
           "locationName": "Source",
-          "shape": "String"
+          "shape": "SourceOfDescribeDBParametersRequest"
         }
       },
       "name": "DescribeDBParametersRequest",
@@ -2330,7 +2806,7 @@
         },
         "SnapshotType": {
           "locationName": "SnapshotType",
-          "shape": "String"
+          "shape": "SnapshotTypeOfDescribeDBSnapshotsRequest"
         }
       },
       "name": "DescribeDBSnapshotsRequest",
@@ -2393,7 +2869,7 @@
       "members": {
         "SourceType": {
           "locationName": "SourceType",
-          "shape": "String"
+          "shape": "SourceTypeOfDescribeEventCategoriesRequest"
         }
       },
       "name": "DescribeEventCategoriesRequest",
@@ -2425,7 +2901,7 @@
         },
         "NIftySortKey": {
           "locationName": "NIftySortKey",
-          "shape": "String"
+          "shape": "NIftySortKeyOfDescribeEventSubscriptionsRequest"
         },
         "NiftyFilters": {
           "locationName": "NiftyFilters",
@@ -2489,7 +2965,7 @@
         },
         "SourceType": {
           "locationName": "SourceType",
-          "shape": "String"
+          "shape": "SourceTypeOfDescribeEventsRequest"
         },
         "StartTime": {
           "locationName": "StartTime",
@@ -2521,11 +2997,11 @@
       "members": {
         "DBInstanceClass": {
           "locationName": "DBInstanceClass",
-          "shape": "String"
+          "shape": "DBInstanceClassOfDescribeOrderableDBInstanceOptionsRequest"
         },
         "Engine": {
           "locationName": "Engine",
-          "shape": "String"
+          "shape": "EngineOfDescribeOrderableDBInstanceOptionsRequest"
         },
         "EngineVersion": {
           "locationName": "EngineVersion",
@@ -2673,6 +3149,33 @@
       },
       "name": "EngineDefaults",
       "type": "structure"
+    },
+    "EngineOfCreateDBInstanceRequest": {
+      "enum": [
+        "MySQL",
+        "postgres",
+        "MariaDB"
+      ],
+      "name": "EngineOfCreateDBInstanceRequest",
+      "type": "string"
+    },
+    "EngineOfDescribeDBEngineVersionsRequest": {
+      "enum": [
+        "MySQL",
+        "postgres",
+        "MariaDB"
+      ],
+      "name": "EngineOfDescribeDBEngineVersionsRequest",
+      "type": "string"
+    },
+    "EngineOfDescribeOrderableDBInstanceOptionsRequest": {
+      "enum": [
+        "MySQL",
+        "postgres",
+        "MariaDB"
+      ],
+      "name": "EngineOfDescribeOrderableDBInstanceOptionsRequest",
+      "type": "string"
     },
     "EventCategoriesMapList": {
       "members": {
@@ -2823,6 +3326,16 @@
       },
       "name": "ExternalReplicationInfo",
       "type": "structure"
+    },
+    "FilterNameOfNiftyFiltersForDescribeEventSubscriptions": {
+      "enum": [
+        "SubscriptionName",
+        "SourceType",
+        "Enabled",
+        "NiftyDescription"
+      ],
+      "name": "FilterNameOfNiftyFiltersForDescribeEventSubscriptions",
+      "type": "string"
     },
     "IPRanges": {
       "members": {
@@ -3165,6 +3678,24 @@
       "name": "Long",
       "type": "long"
     },
+    "MetricNameOfNiftyGetMetricStatisticsRequest": {
+      "enum": [
+        "BinLogDiskUsage",
+        "CPUUtilization",
+        "DatabaseConnections",
+        "DiskQueueDepth",
+        "FreeableMemory",
+        "FreeStorageSpace",
+        "ReplicaLag",
+        "SwapUsage",
+        "ReadIOPS",
+        "WriteIOPS",
+        "ReadThroughput",
+        "WriteThroughput"
+      ],
+      "name": "MetricNameOfNiftyGetMetricStatisticsRequest",
+      "type": "string"
+    },
     "ModifyDBInstanceNetworkRequest": {
       "members": {
         "DBInstanceIdentifier": {
@@ -3212,7 +3743,7 @@
       "members": {
         "AccountingType": {
           "locationName": "AccountingType",
-          "shape": "String"
+          "shape": "AccountingTypeOfModifyDBInstanceRequest"
         },
         "AllocatedStorage": {
           "locationName": "AllocatedStorage",
@@ -3248,7 +3779,7 @@
         },
         "DBInstanceClass": {
           "locationName": "DBInstanceClass",
-          "shape": "String"
+          "shape": "DBInstanceClassOfModifyDBInstanceRequest"
         },
         "DBInstanceIdentifier": {
           "locationName": "DBInstanceIdentifier",
@@ -3422,6 +3953,16 @@
       "name": "ModifyEventSubscriptionResult",
       "type": "structure"
     },
+    "NIftySortKeyOfDescribeEventSubscriptionsRequest": {
+      "enum": [
+        "SubscriptionName",
+        "SourceType",
+        "Enabled",
+        "SubscriptionCreationTime"
+      ],
+      "name": "NIftySortKeyOfDescribeEventSubscriptionsRequest",
+      "type": "string"
+    },
     "NiftyFailoverDBInstanceRequest": {
       "members": {
         "DBInstanceIdentifier": {
@@ -3461,7 +4002,7 @@
         },
         "MetricName": {
           "locationName": "MetricName",
-          "shape": "String"
+          "shape": "MetricNameOfNiftyGetMetricStatisticsRequest"
         },
         "StartTime": {
           "locationName": "StartTime",
@@ -3492,6 +4033,16 @@
       },
       "name": "NiftyGetMetricStatisticsResult",
       "type": "structure"
+    },
+    "NiftyRebootTypeOfRebootDBInstanceRequest": {
+      "enum": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "name": "NiftyRebootTypeOfRebootDBInstanceRequest",
+      "type": "string"
     },
     "OptionGroupMemberships": {
       "members": {
@@ -3629,6 +4180,30 @@
       "name": "PendingModifiedValues",
       "type": "structure"
     },
+    "ReadReplicaAccountingTypeOfCreateDBInstanceRequest": {
+      "enum": [
+        "1",
+        "2"
+      ],
+      "name": "ReadReplicaAccountingTypeOfCreateDBInstanceRequest",
+      "type": "string"
+    },
+    "ReadReplicaAccountingTypeOfRestoreDBInstanceFromDBSnapshotRequest": {
+      "enum": [
+        "1",
+        "2"
+      ],
+      "name": "ReadReplicaAccountingTypeOfRestoreDBInstanceFromDBSnapshotRequest",
+      "type": "string"
+    },
+    "ReadReplicaAccountingTypeOfRestoreDBInstanceToPointInTimeRequest": {
+      "enum": [
+        "1",
+        "2"
+      ],
+      "name": "ReadReplicaAccountingTypeOfRestoreDBInstanceToPointInTimeRequest",
+      "type": "string"
+    },
     "RebootDBInstanceRequest": {
       "members": {
         "DBInstanceIdentifier": {
@@ -3641,7 +4216,7 @@
         },
         "NiftyRebootType": {
           "locationName": "NiftyRebootType",
-          "shape": "String"
+          "shape": "NiftyRebootTypeOfRebootDBInstanceRequest"
         }
       },
       "name": "RebootDBInstanceRequest",
@@ -3718,7 +4293,7 @@
       "members": {
         "FilterName": {
           "locationName": "FilterName",
-          "shape": "String"
+          "shape": "FilterNameOfNiftyFiltersForDescribeEventSubscriptions"
         },
         "FilterValue": {
           "locationName": "FilterValue",
@@ -3742,7 +4317,7 @@
       "members": {
         "ApplyMethod": {
           "locationName": "ApplyMethod",
-          "shape": "String"
+          "shape": "ApplyMethodOfParametersForModifyDBParameterGroup"
         },
         "ParameterName": {
           "locationName": "ParameterName",
@@ -3765,7 +4340,7 @@
       "members": {
         "ApplyMethod": {
           "locationName": "ApplyMethod",
-          "shape": "String"
+          "shape": "ApplyMethodOfParametersForResetDBParameterGroup"
         },
         "ParameterName": {
           "locationName": "ParameterName",
@@ -3851,7 +4426,7 @@
       "members": {
         "AccountingType": {
           "locationName": "AccountingType",
-          "shape": "String"
+          "shape": "AccountingTypeOfRestoreDBInstanceFromDBSnapshotRequest"
         },
         "AutoMinorVersionUpgrade": {
           "locationName": "AutoMinorVersionUpgrade",
@@ -3863,7 +4438,7 @@
         },
         "DBInstanceClass": {
           "locationName": "DBInstanceClass",
-          "shape": "String"
+          "shape": "DBInstanceClassOfRestoreDBInstanceFromDBSnapshotRequest"
         },
         "DBInstanceIdentifier": {
           "locationName": "DBInstanceIdentifier",
@@ -3951,7 +4526,7 @@
         },
         "ReadReplicaAccountingType": {
           "locationName": "ReadReplicaAccountingType",
-          "shape": "String"
+          "shape": "ReadReplicaAccountingTypeOfRestoreDBInstanceFromDBSnapshotRequest"
         }
       },
       "name": "RestoreDBInstanceFromDBSnapshotRequest",
@@ -3980,7 +4555,7 @@
       "members": {
         "AccountingType": {
           "locationName": "AccountingType",
-          "shape": "String"
+          "shape": "AccountingTypeOfRestoreDBInstanceToPointInTimeRequest"
         },
         "AutoMinorVersionUpgrade": {
           "locationName": "AutoMinorVersionUpgrade",
@@ -3992,7 +4567,7 @@
         },
         "DBInstanceClass": {
           "locationName": "DBInstanceClass",
-          "shape": "String"
+          "shape": "DBInstanceClassOfRestoreDBInstanceToPointInTimeRequest"
         },
         "DBName": {
           "locationName": "DBName",
@@ -4072,7 +4647,7 @@
         },
         "ReadReplicaAccountingType": {
           "locationName": "ReadReplicaAccountingType",
-          "shape": "String"
+          "shape": "ReadReplicaAccountingTypeOfRestoreDBInstanceToPointInTimeRequest"
         },
         "RestoreTime": {
           "locationName": "RestoreTime",
@@ -4210,6 +4785,53 @@
       },
       "name": "SetExternalMasterResult",
       "type": "structure"
+    },
+    "SnapshotTypeOfDescribeDBSnapshotsRequest": {
+      "enum": [
+        "automated",
+        "manual"
+      ],
+      "name": "SnapshotTypeOfDescribeDBSnapshotsRequest",
+      "type": "string"
+    },
+    "SourceOfDescribeDBParametersRequest": {
+      "enum": [
+        "user",
+        "system",
+        "engine-default"
+      ],
+      "name": "SourceOfDescribeDBParametersRequest",
+      "type": "string"
+    },
+    "SourceTypeOfCreateEventSubscriptionRequest": {
+      "enum": [
+        "db-instance",
+        "db-parameter-group",
+        "db-security-group",
+        "db-snapshot"
+      ],
+      "name": "SourceTypeOfCreateEventSubscriptionRequest",
+      "type": "string"
+    },
+    "SourceTypeOfDescribeEventCategoriesRequest": {
+      "enum": [
+        "db-instance",
+        "db-parameter-group",
+        "db-security-group",
+        "db-snapshot"
+      ],
+      "name": "SourceTypeOfDescribeEventCategoriesRequest",
+      "type": "string"
+    },
+    "SourceTypeOfDescribeEventsRequest": {
+      "enum": [
+        "db-instance",
+        "db-parameter-group",
+        "db-security-group",
+        "db-snapshot"
+      ],
+      "name": "SourceTypeOfDescribeEventsRequest",
+      "type": "string"
     },
     "StartReplicationRequest": {
       "members": {

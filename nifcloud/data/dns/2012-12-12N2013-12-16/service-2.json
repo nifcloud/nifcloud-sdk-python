@@ -111,6 +111,14 @@
     }
   },
   "shapes": {
+    "ActionOfChangeResourceRecordSetsRequestForChangeResourceRecordSets": {
+      "enum": [
+        "CREATE",
+        "DELETE"
+      ],
+      "name": "ActionOfChangeResourceRecordSetsRequestForChangeResourceRecordSets",
+      "type": "string"
+    },
     "Boolean": {
       "name": "Boolean",
       "type": "boolean"
@@ -252,6 +260,14 @@
     "Double": {
       "name": "Double",
       "type": "double"
+    },
+    "FailoverOfChangeResourceRecordSetsRequestForChangeResourceRecordSets": {
+      "enum": [
+        "PRIMARY",
+        "SECONDARY"
+      ],
+      "name": "FailoverOfChangeResourceRecordSetsRequestForChangeResourceRecordSets",
+      "type": "string"
     },
     "GetChangeRequest": {
       "members": {
@@ -471,7 +487,7 @@
         "Type": {
           "location": "querystring",
           "locationName": "type",
-          "shape": "String"
+          "shape": "TypeOfListResourceRecordSetsRequest"
         },
         "ZoneID": {
           "location": "uri",
@@ -519,11 +535,20 @@
       "name": "Long",
       "type": "long"
     },
+    "ProtocolOfChangeResourceRecordSetsRequestForChangeResourceRecordSets": {
+      "enum": [
+        "HTTP",
+        "HTTPS",
+        "TCP"
+      ],
+      "name": "ProtocolOfChangeResourceRecordSetsRequestForChangeResourceRecordSets",
+      "type": "string"
+    },
     "RequestChange": {
       "members": {
         "Action": {
           "locationName": "Action",
-          "shape": "String"
+          "shape": "ActionOfChangeResourceRecordSetsRequestForChangeResourceRecordSets"
         },
         "RequestResourceRecordSet": {
           "locationName": "ResourceRecordSet",
@@ -586,7 +611,7 @@
       "members": {
         "Failover": {
           "locationName": "Failover",
-          "shape": "String"
+          "shape": "FailoverOfChangeResourceRecordSetsRequestForChangeResourceRecordSets"
         },
         "ListOfRequestResourceRecords": {
           "locationName": "ResourceRecords",
@@ -614,7 +639,7 @@
         },
         "Type": {
           "locationName": "Type",
-          "shape": "String"
+          "shape": "TypeOfChangeResourceRecordSetsRequestForChangeResourceRecordSets"
         },
         "Weight": {
           "locationName": "Weight",
@@ -658,7 +683,7 @@
         },
         "Protocol": {
           "locationName": "Protocol",
-          "shape": "String"
+          "shape": "ProtocolOfChangeResourceRecordSetsRequestForChangeResourceRecordSets"
         },
         "ResourcePath": {
           "locationName": "ResourcePath",
@@ -735,6 +760,34 @@
     "TStamp": {
       "name": "TStamp",
       "type": "timestamp"
+    },
+    "TypeOfChangeResourceRecordSetsRequestForChangeResourceRecordSets": {
+      "enum": [
+        "NS",
+        "A",
+        "AAAA",
+        "CNAME",
+        "MX",
+        "TXT",
+        "PTR",
+        "LBR"
+      ],
+      "name": "TypeOfChangeResourceRecordSetsRequestForChangeResourceRecordSets",
+      "type": "string"
+    },
+    "TypeOfListResourceRecordSetsRequest": {
+      "enum": [
+        "NS",
+        "A",
+        "AAAA",
+        "CNAME",
+        "MX",
+        "TXT",
+        "PTR",
+        "LBR"
+      ],
+      "name": "TypeOfListResourceRecordSetsRequest",
+      "type": "string"
     },
     "XniftyHealthCheckConfig": {
       "members": {

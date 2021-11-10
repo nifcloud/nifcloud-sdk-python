@@ -1013,9 +1013,24 @@
       "name": "DeleteSnapshotsResult",
       "type": "structure"
     },
+    "DirectionOfrulesForAuthorizeFirewallGroup": {
+      "enum": [
+        "IN",
+        "OUT"
+      ],
+      "name": "DirectionOfrulesForAuthorizeFirewallGroup",
+      "type": "string"
+    },
     "Double": {
       "name": "Double",
       "type": "double"
+    },
+    "ExpirationTimeOfsnapshotForCreateSnapshot": {
+      "enum": [
+        "unlimited"
+      ],
+      "name": "ExpirationTimeOfsnapshotForCreateSnapshot",
+      "type": "string"
     },
     "Filter": {
       "members": {
@@ -1280,9 +1295,137 @@
       "name": "HttpLoadBalancing",
       "type": "structure"
     },
+    "InstanceTypeOfclusterForCreateCluster": {
+      "enum": [
+        "c-medium",
+        "e-medium",
+        "medium",
+        "c-medium4",
+        "e-medium4",
+        "medium4",
+        "c-medium8",
+        "e-medium8",
+        "medium8",
+        "e-medium16",
+        "medium16",
+        "e-medium24",
+        "medium24",
+        "c-large",
+        "e-large",
+        "large",
+        "c-large8",
+        "e-large8",
+        "large8",
+        "e-large16",
+        "large16",
+        "e-large24",
+        "large24",
+        "e-large32",
+        "large32",
+        "e-extra-large8",
+        "extra-large8",
+        "e-extra-large16",
+        "extra-large16",
+        "e-extra-large24",
+        "extra-large24",
+        "e-extra-large32",
+        "extra-large32",
+        "e-extra-large48",
+        "extra-large48",
+        "e-double-large16",
+        "double-large16",
+        "e-double-large24",
+        "double-large24",
+        "e-double-large32",
+        "double-large32",
+        "e-double-large48",
+        "double-large48",
+        "e-double-large64",
+        "double-large64",
+        "e-double-large96",
+        "double-large96"
+      ],
+      "name": "InstanceTypeOfclusterForCreateCluster",
+      "type": "string"
+    },
+    "InstanceTypeOfnodePoolForCreateNodePool": {
+      "enum": [
+        "c-medium",
+        "e-medium",
+        "medium",
+        "c-medium4",
+        "e-medium4",
+        "medium4",
+        "c-medium8",
+        "e-medium8",
+        "medium8",
+        "e-medium16",
+        "medium16",
+        "e-medium24",
+        "medium24",
+        "c-large",
+        "e-large",
+        "large",
+        "c-large8",
+        "e-large8",
+        "large8",
+        "e-large16",
+        "large16",
+        "e-large24",
+        "large24",
+        "e-large32",
+        "large32",
+        "e-extra-large8",
+        "extra-large8",
+        "e-extra-large16",
+        "extra-large16",
+        "e-extra-large24",
+        "extra-large24",
+        "e-extra-large32",
+        "extra-large32",
+        "e-extra-large48",
+        "extra-large48",
+        "e-double-large16",
+        "double-large16",
+        "e-double-large24",
+        "double-large24",
+        "e-double-large32",
+        "double-large32",
+        "e-double-large48",
+        "double-large48",
+        "e-double-large64",
+        "double-large64",
+        "e-double-large96",
+        "double-large96"
+      ],
+      "name": "InstanceTypeOfnodePoolForCreateNodePool",
+      "type": "string"
+    },
     "Integer": {
       "name": "Integer",
       "type": "integer"
+    },
+    "KubernetesVersionOfclusterForCreateCluster": {
+      "enum": [
+        "v1.19.6",
+        "v1.19.11",
+        "v1.20.1",
+        "v1.20.7",
+        "v1.21.1"
+      ],
+      "name": "KubernetesVersionOfclusterForCreateCluster",
+      "type": "string"
+    },
+    "KubernetesVersionOfclusterForUpdateCluster": {
+      "enum": [
+        "v1.19.6",
+        "v1.19.11",
+        "v1.20.1",
+        "v1.20.7",
+        "v1.21.1"
+      ],
+      "name": "KubernetesVersionOfclusterForUpdateCluster",
+      "type": "string"
     },
     "ListClustersRequest": {
       "members": {},
@@ -1734,6 +1877,20 @@
       "name": "NetworkConfig",
       "type": "structure"
     },
+    "NetworkIdOfclusterForCreateCluster": {
+      "enum": [
+        "net-COMMON_PRIVATE"
+      ],
+      "name": "NetworkIdOfclusterForCreateCluster",
+      "type": "string"
+    },
+    "NetworkIdOfclusterForRestoreClusterFromSnapshot": {
+      "enum": [
+        "net-COMMON_PRIVATE"
+      ],
+      "name": "NetworkIdOfclusterForRestoreClusterFromSnapshot",
+      "type": "string"
+    },
     "NodePool": {
       "members": {
         "InitialNodeCount": {
@@ -2022,6 +2179,25 @@
       "name": "Option",
       "type": "structure"
     },
+    "ProtocolOfrulesForAuthorizeFirewallGroup": {
+      "enum": [
+        "ANY",
+        "TCP",
+        "UDP",
+        "ICMP",
+        "SSH",
+        "HTTP",
+        "HTTPS",
+        "RDP",
+        "GRE",
+        "ESP",
+        "AH",
+        "VRRP",
+        "L2TP"
+      ],
+      "name": "ProtocolOfrulesForAuthorizeFirewallGroup",
+      "type": "string"
+    },
     "RequestAddonsConfig": {
       "members": {
         "RequestHttpLoadBalancing": {
@@ -2044,7 +2220,7 @@
         },
         "KubernetesVersion": {
           "locationName": "kubernetesVersion",
-          "shape": "String"
+          "shape": "KubernetesVersionOfclusterForCreateCluster"
         },
         "ListOfRequestLocations": {
           "locationName": "locations",
@@ -2113,7 +2289,7 @@
         },
         "RequestNetworkConfig": {
           "locationName": "networkConfig",
-          "shape": "RequestNetworkConfig"
+          "shape": "RequestNetworkConfigOfRestoreClusterFromSnapshot"
         }
       },
       "name": "RequestClusterOfRestoreClusterFromSnapshot",
@@ -2132,7 +2308,7 @@
         },
         "KubernetesVersion": {
           "locationName": "kubernetesVersion",
-          "shape": "String"
+          "shape": "KubernetesVersionOfclusterForUpdateCluster"
         },
         "Name": {
           "locationName": "name",
@@ -2191,17 +2367,27 @@
       "members": {
         "NetworkId": {
           "locationName": "networkId",
-          "shape": "String"
+          "shape": "NetworkIdOfclusterForCreateCluster"
         }
       },
       "name": "RequestNetworkConfig",
+      "type": "structure"
+    },
+    "RequestNetworkConfigOfRestoreClusterFromSnapshot": {
+      "members": {
+        "NetworkId": {
+          "locationName": "networkId",
+          "shape": "NetworkIdOfclusterForRestoreClusterFromSnapshot"
+        }
+      },
+      "name": "RequestNetworkConfigOfRestoreClusterFromSnapshot",
       "type": "structure"
     },
     "RequestNodePool": {
       "members": {
         "InstanceType": {
           "locationName": "instanceType",
-          "shape": "String"
+          "shape": "InstanceTypeOfnodePoolForCreateNodePool"
         },
         "Name": {
           "locationName": "name",
@@ -2223,7 +2409,7 @@
       "members": {
         "InstanceType": {
           "locationName": "instanceType",
-          "shape": "String"
+          "shape": "InstanceTypeOfclusterForCreateCluster"
         },
         "Name": {
           "locationName": "name",
@@ -2253,7 +2439,7 @@
         },
         "Direction": {
           "locationName": "direction",
-          "shape": "String"
+          "shape": "DirectionOfrulesForAuthorizeFirewallGroup"
         },
         "FromPort": {
           "locationName": "fromPort",
@@ -2261,7 +2447,7 @@
         },
         "Protocol": {
           "locationName": "protocol",
-          "shape": "String"
+          "shape": "ProtocolOfrulesForAuthorizeFirewallGroup"
         },
         "ToPort": {
           "locationName": "toPort",
@@ -2282,7 +2468,7 @@
         },
         "ExpirationTime": {
           "locationName": "expirationTime",
-          "shape": "String"
+          "shape": "ExpirationTimeOfsnapshotForCreateSnapshot"
         },
         "Name": {
           "locationName": "name",

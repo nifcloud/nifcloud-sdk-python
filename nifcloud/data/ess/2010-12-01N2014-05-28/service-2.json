@@ -394,6 +394,14 @@
       "name": "GetSendStatisticsResult",
       "type": "structure"
     },
+    "IdentityTypeOfListIdentitiesRequest": {
+      "enum": [
+        "EmailAddress",
+        "Domain"
+      ],
+      "name": "IdentityTypeOfListIdentitiesRequest",
+      "type": "string"
+    },
     "Integer": {
       "name": "Integer",
       "type": "integer"
@@ -402,7 +410,7 @@
       "members": {
         "IdentityType": {
           "locationName": "IdentityType",
-          "shape": "String"
+          "shape": "IdentityTypeOfListIdentitiesRequest"
         },
         "MaxItems": {
           "locationName": "MaxItems",
