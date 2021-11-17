@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.0.4](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.0.4) (2021-11-17)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.0.3...v1.0.4)
+
+**Merged pull requests:**
+
+- Update model jsons [\#87](https://github.com/nifcloud/nifcloud-sdk-python/pull/87) ([aokumasan](https://github.com/aokumasan))
+
 ## [v1.0.3](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.0.3) (2021-10-28)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.0.2...v1.0.3)
