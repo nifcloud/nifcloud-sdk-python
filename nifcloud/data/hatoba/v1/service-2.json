@@ -13,7 +13,7 @@
     "AuthorizeFirewallGroup": {
       "http": {
         "method": "POST",
-        "requestUri": "/v1/firewallGroups/{firewall_group_name}/rules",
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}/rules",
         "responseCode": 201
       },
       "input": {
@@ -55,7 +55,7 @@
     "CreateNodePool": {
       "http": {
         "method": "POST",
-        "requestUri": "/v1/clusters/{cluster_name}/nodePools",
+        "requestUri": "/v1/clusters/{ClusterName}/nodePools",
         "responseCode": 201
       },
       "input": {
@@ -83,7 +83,7 @@
     "DeleteCluster": {
       "http": {
         "method": "DELETE",
-        "requestUri": "/v1/clusters/{cluster_name}"
+        "requestUri": "/v1/clusters/{ClusterName}"
       },
       "input": {
         "shape": "DeleteClusterRequest"
@@ -109,7 +109,7 @@
     "DeleteFirewallGroup": {
       "http": {
         "method": "DELETE",
-        "requestUri": "/v1/firewallGroups/{firewall_group_name}"
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}"
       },
       "input": {
         "shape": "DeleteFirewallGroupRequest"
@@ -135,7 +135,7 @@
     "DeleteNodePool": {
       "http": {
         "method": "DELETE",
-        "requestUri": "/v1/clusters/{cluster_name}/nodePools/{node_pool_name}"
+        "requestUri": "/v1/clusters/{ClusterName}/nodePools/{NodePoolName}"
       },
       "input": {
         "shape": "DeleteNodePoolRequest"
@@ -148,7 +148,7 @@
     "DeleteNodePools": {
       "http": {
         "method": "DELETE",
-        "requestUri": "/v1/clusters/{cluster_name}/nodePools"
+        "requestUri": "/v1/clusters/{ClusterName}/nodePools"
       },
       "input": {
         "shape": "DeleteNodePoolsRequest"
@@ -161,7 +161,7 @@
     "DeleteSnapshot": {
       "http": {
         "method": "DELETE",
-        "requestUri": "/v1/snapshots/{snapshot_name}"
+        "requestUri": "/v1/snapshots/{SnapshotName}"
       },
       "input": {
         "shape": "DeleteSnapshotRequest"
@@ -187,7 +187,7 @@
     "GetCluster": {
       "http": {
         "method": "GET",
-        "requestUri": "/v1/clusters/{cluster_name}"
+        "requestUri": "/v1/clusters/{ClusterName}"
       },
       "input": {
         "shape": "GetClusterRequest"
@@ -200,7 +200,7 @@
     "GetClusterCredentials": {
       "http": {
         "method": "GET",
-        "requestUri": "/v1/clusters/{cluster_name}/credentials"
+        "requestUri": "/v1/clusters/{ClusterName}/credentials"
       },
       "input": {
         "shape": "GetClusterCredentialsRequest"
@@ -213,7 +213,7 @@
     "GetFirewallGroup": {
       "http": {
         "method": "GET",
-        "requestUri": "/v1/firewallGroups/{firewall_group_name}"
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}"
       },
       "input": {
         "shape": "GetFirewallGroupRequest"
@@ -226,7 +226,7 @@
     "GetLoadBalancer": {
       "http": {
         "method": "GET",
-        "requestUri": "/v1/loadBalancers/{load_balancer_name}"
+        "requestUri": "/v1/loadBalancers/{LoadBalancerName}"
       },
       "input": {
         "shape": "GetLoadBalancerRequest"
@@ -239,7 +239,7 @@
     "GetNodePool": {
       "http": {
         "method": "GET",
-        "requestUri": "/v1/clusters/{cluster_name}/nodePools/{node_pool_name}"
+        "requestUri": "/v1/clusters/{ClusterName}/nodePools/{NodePoolName}"
       },
       "input": {
         "shape": "GetNodePoolRequest"
@@ -265,7 +265,7 @@
     "GetSnapshot": {
       "http": {
         "method": "GET",
-        "requestUri": "/v1/snapshots/{snapshot_name}"
+        "requestUri": "/v1/snapshots/{SnapshotName}"
       },
       "input": {
         "shape": "GetSnapshotRequest"
@@ -317,7 +317,7 @@
     "ListNodePools": {
       "http": {
         "method": "GET",
-        "requestUri": "/v1/clusters/{cluster_name}/nodePools"
+        "requestUri": "/v1/clusters/{ClusterName}/nodePools"
       },
       "input": {
         "shape": "ListNodePoolsRequest"
@@ -343,7 +343,7 @@
     "RestoreClusterFromSnapshot": {
       "http": {
         "method": "POST",
-        "requestUri": "/v1/snapshots/{snapshot_name}:restore",
+        "requestUri": "/v1/snapshots/{SnapshotName}:restore",
         "responseCode": 201
       },
       "input": {
@@ -357,7 +357,7 @@
     "RevokeFirewallGroup": {
       "http": {
         "method": "DELETE",
-        "requestUri": "/v1/firewallGroups/{firewall_group_name}/rules"
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}/rules"
       },
       "input": {
         "shape": "RevokeFirewallGroupRequest"
@@ -370,7 +370,7 @@
     "SetNodePoolSize": {
       "http": {
         "method": "POST",
-        "requestUri": "/v1/clusters/{cluster_name}/nodePools/{node_pool_name}:setSize",
+        "requestUri": "/v1/clusters/{ClusterName}/nodePools/{NodePoolName}:setSize",
         "responseCode": 201
       },
       "input": {
@@ -384,7 +384,7 @@
     "UpdateCluster": {
       "http": {
         "method": "PUT",
-        "requestUri": "/v1/clusters/{cluster_name}"
+        "requestUri": "/v1/clusters/{ClusterName}"
       },
       "input": {
         "shape": "UpdateClusterRequest"
@@ -397,7 +397,7 @@
     "UpdateFirewallGroup": {
       "http": {
         "method": "PUT",
-        "requestUri": "/v1/firewallGroups/{firewall_group_name}"
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}"
       },
       "input": {
         "shape": "UpdateFirewallGroupRequest"
@@ -410,7 +410,7 @@
     "UpdateSnapshot": {
       "http": {
         "method": "PUT",
-        "requestUri": "/v1/snapshots/{snapshot_name}"
+        "requestUri": "/v1/snapshots/{SnapshotName}"
       },
       "input": {
         "shape": "UpdateSnapshotRequest"
@@ -436,7 +436,7 @@
       "members": {
         "FirewallGroupName": {
           "location": "uri",
-          "locationName": "firewall_group_name",
+          "locationName": "FirewallGroupName",
           "shape": "String"
         },
         "Rules": {
@@ -767,7 +767,7 @@
       "members": {
         "ClusterName": {
           "location": "uri",
-          "locationName": "cluster_name",
+          "locationName": "ClusterName",
           "shape": "String"
         },
         "NodePool": {
@@ -819,7 +819,7 @@
       "members": {
         "ClusterName": {
           "location": "uri",
-          "locationName": "cluster_name",
+          "locationName": "ClusterName",
           "shape": "String"
         }
       },
@@ -867,7 +867,7 @@
       "members": {
         "FirewallGroupName": {
           "location": "uri",
-          "locationName": "firewall_group_name",
+          "locationName": "FirewallGroupName",
           "shape": "String"
         }
       },
@@ -912,12 +912,12 @@
       "members": {
         "ClusterName": {
           "location": "uri",
-          "locationName": "cluster_name",
+          "locationName": "ClusterName",
           "shape": "String"
         },
         "NodePoolName": {
           "location": "uri",
-          "locationName": "node_pool_name",
+          "locationName": "NodePoolName",
           "shape": "String"
         }
       },
@@ -942,7 +942,7 @@
       "members": {
         "ClusterName": {
           "location": "uri",
-          "locationName": "cluster_name",
+          "locationName": "ClusterName",
           "shape": "String"
         },
         "Names": {
@@ -972,7 +972,7 @@
       "members": {
         "SnapshotName": {
           "location": "uri",
-          "locationName": "snapshot_name",
+          "locationName": "SnapshotName",
           "shape": "String"
         }
       },
@@ -1086,7 +1086,7 @@
       "members": {
         "ClusterName": {
           "location": "uri",
-          "locationName": "cluster_name",
+          "locationName": "ClusterName",
           "shape": "String"
         }
       },
@@ -1110,7 +1110,7 @@
       "members": {
         "ClusterName": {
           "location": "uri",
-          "locationName": "cluster_name",
+          "locationName": "ClusterName",
           "shape": "String"
         }
       },
@@ -1134,7 +1134,7 @@
       "members": {
         "FirewallGroupName": {
           "location": "uri",
-          "locationName": "firewall_group_name",
+          "locationName": "FirewallGroupName",
           "shape": "String"
         }
       },
@@ -1163,7 +1163,7 @@
         },
         "LoadBalancerName": {
           "location": "uri",
-          "locationName": "load_balancer_name",
+          "locationName": "LoadBalancerName",
           "shape": "String"
         },
         "LoadBalancerPort": {
@@ -1194,12 +1194,12 @@
       "members": {
         "ClusterName": {
           "location": "uri",
-          "locationName": "cluster_name",
+          "locationName": "ClusterName",
           "shape": "String"
         },
         "NodePoolName": {
           "location": "uri",
-          "locationName": "node_pool_name",
+          "locationName": "NodePoolName",
           "shape": "String"
         }
       },
@@ -1239,7 +1239,7 @@
       "members": {
         "SnapshotName": {
           "location": "uri",
-          "locationName": "snapshot_name",
+          "locationName": "SnapshotName",
           "shape": "String"
         }
       },
@@ -1476,7 +1476,7 @@
       "members": {
         "ClusterName": {
           "location": "uri",
-          "locationName": "cluster_name",
+          "locationName": "ClusterName",
           "shape": "String"
         }
       },
@@ -2512,7 +2512,7 @@
         },
         "SnapshotName": {
           "location": "uri",
-          "locationName": "snapshot_name",
+          "locationName": "SnapshotName",
           "shape": "String"
         }
       },
@@ -2537,7 +2537,7 @@
       "members": {
         "FirewallGroupName": {
           "location": "uri",
-          "locationName": "firewall_group_name",
+          "locationName": "FirewallGroupName",
           "shape": "String"
         },
         "Ids": {
@@ -2632,7 +2632,7 @@
       "members": {
         "ClusterName": {
           "location": "uri",
-          "locationName": "cluster_name",
+          "locationName": "ClusterName",
           "shape": "String"
         },
         "NodeCount": {
@@ -2641,7 +2641,7 @@
         },
         "NodePoolName": {
           "location": "uri",
-          "locationName": "node_pool_name",
+          "locationName": "NodePoolName",
           "shape": "String"
         }
       },
@@ -2655,9 +2655,9 @@
     },
     "SetNodePoolSizeResult": {
       "members": {
-        "NodePools": {
-          "locationName": "nodePools",
-          "shape": "ListOfNodePools"
+        "NodePool": {
+          "locationName": "nodePool",
+          "shape": "NodePool"
         }
       },
       "name": "SetNodePoolSizeResult",
@@ -2897,7 +2897,7 @@
         },
         "ClusterName": {
           "location": "uri",
-          "locationName": "cluster_name",
+          "locationName": "ClusterName",
           "shape": "String"
         }
       },
@@ -2925,7 +2925,7 @@
         },
         "FirewallGroupName": {
           "location": "uri",
-          "locationName": "firewall_group_name",
+          "locationName": "FirewallGroupName",
           "shape": "String"
         }
       },
@@ -2953,7 +2953,7 @@
         },
         "SnapshotName": {
           "location": "uri",
-          "locationName": "snapshot_name",
+          "locationName": "SnapshotName",
           "shape": "String"
         }
       },
