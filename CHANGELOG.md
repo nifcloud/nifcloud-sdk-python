@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.0.5](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.0.5) (2021-12-01)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.0.4...v1.0.5)
+
+**Merged pull requests:**
+
+- Update Hatoba model [\#88](https://github.com/nifcloud/nifcloud-sdk-python/pull/88) ([aokumasan](https://github.com/aokumasan))
+
 ## [v1.0.4](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.0.4) (2021-11-17)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.0.3...v1.0.4)
