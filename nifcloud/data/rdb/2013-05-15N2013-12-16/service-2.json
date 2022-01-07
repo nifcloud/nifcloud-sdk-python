@@ -3843,7 +3843,7 @@
         },
         "ReadReplicaAccountingType": {
           "locationName": "ReadReplicaAccountingType",
-          "shape": "String"
+          "shape": "ReadReplicaAccountingTypeOfModifyDBInstanceRequest"
         },
         "VpcSecurityGroupIds": {
           "locationName": "VpcSecurityGroupIds",
@@ -4186,6 +4186,14 @@
         "2"
       ],
       "name": "ReadReplicaAccountingTypeOfCreateDBInstanceRequest",
+      "type": "string"
+    },
+    "ReadReplicaAccountingTypeOfModifyDBInstanceRequest": {
+      "enum": [
+        "1",
+        "2"
+      ],
+      "name": "ReadReplicaAccountingTypeOfModifyDBInstanceRequest",
       "type": "string"
     },
     "ReadReplicaAccountingTypeOfRestoreDBInstanceFromDBSnapshotRequest": {

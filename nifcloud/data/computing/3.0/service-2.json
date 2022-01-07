@@ -5077,7 +5077,7 @@
         },
         "TimeSlotId": {
           "locationName": "TimeSlotId",
-          "shape": "String"
+          "shape": "TimeSlotIdOfCreateInstanceBackupRuleRequest"
         }
       },
       "name": "CreateInstanceBackupRuleRequest",
@@ -14383,7 +14383,7 @@
         },
         "TimeSlotId": {
           "locationName": "TimeSlotId",
-          "shape": "String"
+          "shape": "TimeSlotIdOfModifyInstanceBackupRuleAttributeRequest"
         }
       },
       "name": "ModifyInstanceBackupRuleAttributeRequest",
@@ -25419,6 +25419,42 @@
       },
       "name": "TerminateInstancesResult",
       "type": "structure"
+    },
+    "TimeSlotIdOfCreateInstanceBackupRuleRequest": {
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "name": "TimeSlotIdOfCreateInstanceBackupRuleRequest",
+      "type": "string"
+    },
+    "TimeSlotIdOfModifyInstanceBackupRuleAttributeRequest": {
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "name": "TimeSlotIdOfModifyInstanceBackupRuleAttributeRequest",
+      "type": "string"
     },
     "TimeZone": {
       "members": {

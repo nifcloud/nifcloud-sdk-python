@@ -240,7 +240,7 @@
         },
         "SessionClearType": {
           "locationName": "SessionClearType",
-          "shape": "String"
+          "shape": "SessionClearTypeOfClearNASSessionRequest"
         }
       },
       "name": "ClearNASSessionRequest",
@@ -1159,6 +1159,14 @@
       },
       "name": "SecurityGroups",
       "type": "structure"
+    },
+    "SessionClearTypeOfClearNASSessionRequest": {
+      "enum": [
+        "0",
+        "1"
+      ],
+      "name": "SessionClearTypeOfClearNASSessionRequest",
+      "type": "string"
     },
     "String": {
       "name": "String",

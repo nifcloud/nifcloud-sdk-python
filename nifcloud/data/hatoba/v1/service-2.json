@@ -1025,13 +1025,6 @@
       "name": "Double",
       "type": "double"
     },
-    "ExpirationTimeOfsnapshotForCreateSnapshot": {
-      "enum": [
-        "unlimited"
-      ],
-      "name": "ExpirationTimeOfsnapshotForCreateSnapshot",
-      "type": "string"
-    },
     "Filter": {
       "members": {
         "FilterType": {
@@ -1409,9 +1402,13 @@
       "enum": [
         "v1.19.6",
         "v1.19.11",
+        "v1.19.15",
         "v1.20.1",
         "v1.20.7",
-        "v1.21.1"
+        "v1.20.11",
+        "v1.21.1",
+        "v1.21.5",
+        "v1.22.2"
       ],
       "name": "KubernetesVersionOfclusterForCreateCluster",
       "type": "string"
@@ -1420,9 +1417,13 @@
       "enum": [
         "v1.19.6",
         "v1.19.11",
+        "v1.19.15",
         "v1.20.1",
         "v1.20.7",
-        "v1.21.1"
+        "v1.20.11",
+        "v1.21.1",
+        "v1.21.5",
+        "v1.22.2"
       ],
       "name": "KubernetesVersionOfclusterForUpdateCluster",
       "type": "string"
@@ -1877,20 +1878,6 @@
       "name": "NetworkConfig",
       "type": "structure"
     },
-    "NetworkIdOfclusterForCreateCluster": {
-      "enum": [
-        "net-COMMON_PRIVATE"
-      ],
-      "name": "NetworkIdOfclusterForCreateCluster",
-      "type": "string"
-    },
-    "NetworkIdOfclusterForRestoreClusterFromSnapshot": {
-      "enum": [
-        "net-COMMON_PRIVATE"
-      ],
-      "name": "NetworkIdOfclusterForRestoreClusterFromSnapshot",
-      "type": "string"
-    },
     "NodePool": {
       "members": {
         "InitialNodeCount": {
@@ -2289,7 +2276,7 @@
         },
         "RequestNetworkConfig": {
           "locationName": "networkConfig",
-          "shape": "RequestNetworkConfigOfRestoreClusterFromSnapshot"
+          "shape": "RequestNetworkConfig"
         }
       },
       "name": "RequestClusterOfRestoreClusterFromSnapshot",
@@ -2367,20 +2354,10 @@
       "members": {
         "NetworkId": {
           "locationName": "networkId",
-          "shape": "NetworkIdOfclusterForCreateCluster"
+          "shape": "String"
         }
       },
       "name": "RequestNetworkConfig",
-      "type": "structure"
-    },
-    "RequestNetworkConfigOfRestoreClusterFromSnapshot": {
-      "members": {
-        "NetworkId": {
-          "locationName": "networkId",
-          "shape": "NetworkIdOfclusterForRestoreClusterFromSnapshot"
-        }
-      },
-      "name": "RequestNetworkConfigOfRestoreClusterFromSnapshot",
       "type": "structure"
     },
     "RequestNodePool": {
@@ -2468,7 +2445,7 @@
         },
         "ExpirationTime": {
           "locationName": "expirationTime",
-          "shape": "ExpirationTimeOfsnapshotForCreateSnapshot"
+          "shape": "String"
         },
         "Name": {
           "locationName": "name",
