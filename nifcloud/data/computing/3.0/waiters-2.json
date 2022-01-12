@@ -258,7 +258,7 @@
           "matcher": "pathAll",
           "expected": "InService",
           "state": "success",
-          "argument": "LoadBalancerDescriptions[].State"
+          "argument": "LoadBalancerDescriptions[].HealthCheck.InstanceStates[].State"
         }
       ]
     },

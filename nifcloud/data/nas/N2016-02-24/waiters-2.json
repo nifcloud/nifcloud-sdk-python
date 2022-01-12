@@ -60,7 +60,7 @@
           "matcher": "pathAll",
           "expected": "storage-full",
           "state": "success",
-          "argument": "NASInstances[].DNASInstanceStatus"
+          "argument": "NASInstances[].NASInstanceStatus"
         }
       ]
     },
