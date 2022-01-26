@@ -3775,7 +3775,7 @@
       "members": {
         "AttachTime": {
           "locationName": "attachTime",
-          "shape": "TStamp"
+          "shape": "String"
         },
         "AttachmentId": {
           "locationName": "attachmentId",
@@ -4430,7 +4430,7 @@
       "members": {
         "Value": {
           "locationName": "value",
-          "shape": "String"
+          "shape": "Boolean"
         }
       },
       "name": "CaState",
@@ -4868,7 +4868,7 @@
       "members": {
         "Value": {
           "locationName": "value",
-          "shape": "String"
+          "shape": "Integer"
         }
       },
       "name": "Count",
@@ -7802,7 +7802,7 @@
       "members": {
         "Value": {
           "locationName": "value",
-          "shape": "String"
+          "shape": "Boolean"
         }
       },
       "name": "DisableApiTermination",
@@ -11307,7 +11307,7 @@
       "members": {
         "Value": {
           "locationName": "value",
-          "shape": "String"
+          "shape": "Integer"
         }
       },
       "name": "KeyLength",
@@ -15339,7 +15339,7 @@
         },
         "Description": {
           "locationName": "description",
-          "shape": "Description"
+          "shape": "String"
         },
         "GroupSet": {
           "locationName": "groupSet",
@@ -25791,7 +25791,7 @@
       "members": {
         "Value": {
           "locationName": "value",
-          "shape": "String"
+          "shape": "Boolean"
         }
       },
       "name": "UploadState",
