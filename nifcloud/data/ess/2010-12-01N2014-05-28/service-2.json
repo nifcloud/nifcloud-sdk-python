@@ -8,7 +8,8 @@
     "serviceId": "ess",
     "signatureVersion": "v4",
     "signingName": "email",
-    "uid": "ess-2010-12-01N2014-05-28"
+    "uid": "ess-2010-12-01N2014-05-28",
+    "xmlNamespace": "https://ess.api.nifcloud.com/"
   },
   "operations": {
     "DeleteIdentity": {
