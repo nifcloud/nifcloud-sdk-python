@@ -3708,7 +3708,7 @@
       "members": {
         "AttachTime": {
           "locationName": "attachTime",
-          "shape": "TStamp"
+          "shape": "String"
         },
         "Device": {
           "locationName": "device",
@@ -3742,7 +3742,7 @@
       "members": {
         "AttachTime": {
           "locationName": "attachTime",
-          "shape": "TStamp"
+          "shape": "String"
         },
         "AttachmentId": {
           "locationName": "attachmentId",
@@ -3750,11 +3750,11 @@
         },
         "DeleteOnTermination": {
           "locationName": "deleteOnTermination",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "Status": {
           "locationName": "status",
@@ -3776,11 +3776,11 @@
         },
         "DeleteOnTermination": {
           "locationName": "deleteOnTermination",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "InstanceId": {
           "locationName": "instanceId",
@@ -3802,7 +3802,7 @@
       "members": {
         "AttachTime": {
           "locationName": "attachTime",
-          "shape": "TStamp"
+          "shape": "String"
         },
         "AttachmentId": {
           "locationName": "attachmentId",
@@ -3810,11 +3810,11 @@
         },
         "DeleteOnTermination": {
           "locationName": "deleteOnTermination",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "InstanceId": {
           "locationName": "instanceId",
@@ -3836,7 +3836,7 @@
       "members": {
         "AttachTime": {
           "locationName": "attachTime",
-          "shape": "TStamp"
+          "shape": "String"
         },
         "AttachmentId": {
           "locationName": "attachmentId",
@@ -3844,11 +3844,11 @@
         },
         "DeleteOnTermination": {
           "locationName": "deleteOnTermination",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "InstanceId": {
           "locationName": "instanceId",
@@ -3870,7 +3870,7 @@
       "members": {
         "AttachTime": {
           "locationName": "attachTime",
-          "shape": "TStamp"
+          "shape": "String"
         },
         "AttachmentID": {
           "locationName": "attachmentID",
@@ -3878,11 +3878,11 @@
         },
         "DeleteOnTermination": {
           "locationName": "deleteOnTermination",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "Status": {
           "locationName": "status",
@@ -3896,7 +3896,7 @@
       "members": {
         "AttachTime": {
           "locationName": "attachTime",
-          "shape": "TStamp"
+          "shape": "String"
         },
         "AttachmentID": {
           "locationName": "attachmentID",
@@ -3904,11 +3904,11 @@
         },
         "DeleteOnTermination": {
           "locationName": "deleteOnTermination",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "Status": {
           "locationName": "status",
@@ -3922,11 +3922,11 @@
       "members": {
         "AttachTime": {
           "locationName": "attachTime",
-          "shape": "TStamp"
+          "shape": "String"
         },
         "DeleteOnTermination": {
           "locationName": "deleteOnTermination",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "Device": {
           "locationName": "device",
@@ -7663,7 +7663,7 @@
       "members": {
         "AttachTime": {
           "locationName": "attachTime",
-          "shape": "TStamp"
+          "shape": "String"
         },
         "Device": {
           "locationName": "device",
@@ -8112,11 +8112,11 @@
       "members": {
         "AttachTime": {
           "locationName": "attachTime",
-          "shape": "TStamp"
+          "shape": "String"
         },
         "DeleteOnTermination": {
           "locationName": "deleteOnTermination",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "Status": {
           "locationName": "status",
@@ -8134,7 +8134,7 @@
       "members": {
         "DeleteOnTermination": {
           "locationName": "deleteOnTermination",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "DiskType": {
           "locationName": "diskType",
@@ -8156,7 +8156,7 @@
       "members": {
         "DeleteOnTermination": {
           "locationName": "deleteOnTermination",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "Status": {
           "locationName": "status",
@@ -8833,7 +8833,7 @@
         },
         "NiftyImageSize": {
           "locationName": "niftyImageSize",
-          "shape": "Integer"
+          "shape": "String"
         },
         "NiftyIsAllowedDistribution": {
           "locationName": "niftyIsAllowedDistribution",
@@ -10710,7 +10710,7 @@
       "members": {
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "InstanceId": {
           "locationName": "instanceId",
@@ -10776,7 +10776,7 @@
       "members": {
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "InstanceId": {
           "locationName": "instanceId",
@@ -15318,7 +15318,7 @@
         },
         "RequesterManaged": {
           "locationName": "requesterManaged",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "SourceDestCheck": {
           "locationName": "sourceDestCheck",
@@ -15706,7 +15706,7 @@
         },
         "RequesterManaged": {
           "locationName": "requesterManaged",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "SourceDestCheck": {
           "locationName": "sourceDestCheck",
@@ -15744,7 +15744,7 @@
         },
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "IpAddress": {
           "locationName": "ipAddress",
@@ -15894,7 +15894,7 @@
         },
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "Dhcp": {
           "locationName": "dhcp",
@@ -15994,7 +15994,7 @@
         },
         "DeviceIndex": {
           "locationName": "DeviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "IpAddress": {
           "locationName": "IpAddress",
@@ -20641,7 +20641,7 @@
         },
         "Primary": {
           "locationName": "primary",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "PrivateDnsName": {
           "locationName": "privateDnsName",
@@ -20663,7 +20663,7 @@
         },
         "Primary": {
           "locationName": "primary",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "PrivateDnsName": {
           "locationName": "privateDnsName",
@@ -20685,7 +20685,7 @@
         },
         "Primary": {
           "locationName": "primary",
-          "shape": "Boolean"
+          "shape": "String"
         },
         "PrivateDnsName": {
           "locationName": "privateDnsName",
@@ -21662,7 +21662,7 @@
       "members": {
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "IpAddress": {
           "locationName": "ipAddress",
@@ -21684,7 +21684,7 @@
       "members": {
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "IpAddress": {
           "locationName": "ipAddress",
@@ -24386,7 +24386,7 @@
       "members": {
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "IpAddress": {
           "locationName": "ipAddress",
@@ -24408,7 +24408,7 @@
       "members": {
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "IpAddress": {
           "locationName": "ipAddress",
@@ -25387,7 +25387,7 @@
       "members": {
         "Code": {
           "locationName": "code",
-          "shape": "Integer"
+          "shape": "String"
         },
         "Message": {
           "locationName": "message",
@@ -26732,7 +26732,7 @@
       "members": {
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "IpAddress": {
           "locationName": "ipAddress",
@@ -26754,7 +26754,7 @@
       "members": {
         "DeviceIndex": {
           "locationName": "deviceIndex",
-          "shape": "Integer"
+          "shape": "String"
         },
         "IpAddress": {
           "locationName": "ipAddress",

@@ -7,7 +7,8 @@
     "serviceFullName": "NIFCLOUD DNS",
     "serviceId": "dns",
     "signatureVersion": "v3",
-    "uid": "dns-2012-12-12N2013-12-16"
+    "uid": "dns-2012-12-12N2013-12-16",
+    "xmlNamespace": "https://route53.amazonaws.com/doc/2012-12-12/"
   },
   "operations": {
     "ChangeResourceRecordSets": {
