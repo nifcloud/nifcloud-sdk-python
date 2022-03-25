@@ -1,5 +1,16 @@
 # Changelog
 
+## [v1.1.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.1.0) (2022-03-25)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.0.5...v1.1.0)
+
+**Merged pull requests:**
+
+- Update model [\#92](https://github.com/nifcloud/nifcloud-sdk-python/pull/92) ([fuku2014](https://github.com/fuku2014))
+- Fix type of result [\#91](https://github.com/nifcloud/nifcloud-sdk-python/pull/91) ([fuku2014](https://github.com/fuku2014))
+- Fix LoadBalancer Result structure [\#90](https://github.com/nifcloud/nifcloud-sdk-python/pull/90) ([fuku2014](https://github.com/fuku2014))
+- Fix/enum [\#89](https://github.com/nifcloud/nifcloud-sdk-python/pull/89) ([fuku2014](https://github.com/fuku2014))
+
 ## [v1.0.5](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.0.5) (2021-12-01)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.0.4...v1.0.5)
