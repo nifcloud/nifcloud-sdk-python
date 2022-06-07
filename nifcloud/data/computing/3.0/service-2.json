@@ -12241,7 +12241,7 @@
     "ListOfMessageSet": {
       "member": {
         "locationName": "item",
-        "shape": "String"
+        "shape": "MessageSet"
       },
       "name": "ListOfMessageSet",
       "type": "list"
@@ -14295,6 +14295,16 @@
     "Long": {
       "name": "Long",
       "type": "long"
+    },
+    "MessageSet": {
+      "members": {
+        "Message": {
+          "locationName": "message",
+          "shape": "String"
+        }
+      },
+      "name": "MessageSet",
+      "type": "structure"
     },
     "MethodOfListenersForNiftyCreateElasticLoadBalancer": {
       "enum": [

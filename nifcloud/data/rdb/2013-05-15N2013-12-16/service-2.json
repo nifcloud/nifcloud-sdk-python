@@ -624,6 +624,20 @@
         "resultWrapper": "StopReplicationResult",
         "shape": "StopReplicationResult"
       }
+    },
+    "UpgradeDBEngineVersion": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "UpgradeDBEngineVersionRequest"
+      },
+      "name": "UpgradeDBEngineVersion",
+      "output": {
+        "resultWrapper": "UpgradeDBEngineVersionResult",
+        "shape": "UpgradeDBEngineVersionResult"
+      }
     }
   },
   "shapes": {
@@ -1253,6 +1267,14 @@
         "EngineVersion": {
           "locationName": "EngineVersion",
           "shape": "String"
+        },
+        "Status": {
+          "locationName": "Status",
+          "shape": "String"
+        },
+        "ValidUpgradeTarget": {
+          "locationName": "ValidUpgradeTarget",
+          "shape": "ListOfValidUpgradeTarget"
         }
       },
       "name": "DBEngineVersions",
@@ -2469,6 +2491,10 @@
           "locationName": "EngineVersion",
           "shape": "String"
         },
+        "IncludeAll": {
+          "locationName": "IncludeAll",
+          "shape": "Boolean"
+        },
         "ListSupportedCharacterSets": {
           "locationName": "ListSupportedCharacterSets",
           "shape": "Boolean"
@@ -3673,6 +3699,14 @@
         "shape": "StatusInfos"
       },
       "name": "ListOfStatusInfos",
+      "type": "list"
+    },
+    "ListOfValidUpgradeTarget": {
+      "member": {
+        "locationName": "UpgradeTarget",
+        "shape": "ValidUpgradeTarget"
+      },
+      "name": "ListOfValidUpgradeTarget",
       "type": "list"
     },
     "Long": {
@@ -4925,6 +4959,88 @@
     "TStamp": {
       "name": "TStamp",
       "type": "timestamp"
+    },
+    "UpgradeDBEngineVersionRequest": {
+      "members": {
+        "AllowMajorVersionUpgrade": {
+          "locationName": "AllowMajorVersionUpgrade",
+          "shape": "Boolean"
+        },
+        "DBInstanceIdentifier": {
+          "locationName": "DBInstanceIdentifier",
+          "shape": "String"
+        },
+        "DBParameterGroupName": {
+          "locationName": "DBParameterGroupName",
+          "shape": "String"
+        },
+        "EngineVersion": {
+          "locationName": "EngineVersion",
+          "shape": "String"
+        },
+        "PreUpgradeDBSnapshotIdentifier": {
+          "locationName": "PreUpgradeDBSnapshotIdentifier",
+          "shape": "String"
+        },
+        "SkipPreUpgradeSnapshot": {
+          "locationName": "SkipPreUpgradeSnapshot",
+          "shape": "Boolean"
+        }
+      },
+      "name": "UpgradeDBEngineVersionRequest",
+      "required": [
+        "DBInstanceIdentifier",
+        "EngineVersion"
+      ],
+      "type": "structure"
+    },
+    "UpgradeDBEngineVersionResult": {
+      "members": {
+        "DBInstance": {
+          "locationName": "DBInstance",
+          "shape": "DBInstance"
+        },
+        "Marker": {
+          "locationName": "Marker",
+          "shape": "String"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        }
+      },
+      "name": "UpgradeDBEngineVersionResult",
+      "type": "structure"
+    },
+    "ValidUpgradeTarget": {
+      "members": {
+        "AutoUpgrade": {
+          "locationName": "AutoUpgrade",
+          "shape": "Boolean"
+        },
+        "DBParameterGroupFamily": {
+          "locationName": "DBParameterGroupFamily",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "Description",
+          "shape": "String"
+        },
+        "Engine": {
+          "locationName": "Engine",
+          "shape": "String"
+        },
+        "EngineVersion": {
+          "locationName": "EngineVersion",
+          "shape": "String"
+        },
+        "IsMajorVersionUpgrade": {
+          "locationName": "IsMajorVersionUpgrade",
+          "shape": "Boolean"
+        }
+      },
+      "name": "ValidUpgradeTarget",
+      "type": "structure"
     }
   },
   "version": "2.0"
