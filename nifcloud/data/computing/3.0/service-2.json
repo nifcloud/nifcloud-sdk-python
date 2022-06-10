@@ -4359,6 +4359,10 @@
       "name": "BackupInstancesSet",
       "type": "structure"
     },
+    "Blob": {
+      "name": "Blob",
+      "type": "blob"
+    },
     "BlockDeviceMapping": {
       "members": {
         "DeviceName": {

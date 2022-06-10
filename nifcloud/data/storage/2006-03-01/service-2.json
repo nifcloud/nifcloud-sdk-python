@@ -1,0 +1,3530 @@
+{
+  "metadata": {
+    "apiVersion": "2006-03-01",
+    "endpointPrefix": "storage",
+    "protocol": "rest-xml",
+    "serviceAbbreviation": "storage",
+    "serviceFullName": "NIFCLOUD Object Storage Service",
+    "serviceId": "storage",
+    "signatureVersion": "s3v4",
+    "signingName": "s3",
+    "uid": "storage-2006-03-01",
+    "xmlNamespace": "http://s3.amazonaws.com/doc/2006-03-01/"
+  },
+  "operations": {
+    "AbortMultipartUpload": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/{Bucket}/{Object}?x-id=AbortMultipartUpload"
+      },
+      "input": {
+        "shape": "AbortMultipartUploadRequest"
+      },
+      "name": "AbortMultipartUpload"
+    },
+    "CompleteMultipartUpload": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/{Bucket}/{Object}?x-id=CompleteMultipartUpload"
+      },
+      "input": {
+        "locationName": "CompleteMultipartUploadRequest",
+        "shape": "CompleteMultipartUploadRequest",
+        "xmlNamespace": {
+          "uri": "http://s3.amazonaws.com/doc/2006-03-01/"
+        }
+      },
+      "name": "CompleteMultipartUpload",
+      "output": {
+        "shape": "CompleteMultipartUploadResult"
+      }
+    },
+    "DeleteBucket": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/{Bucket}?x-id=DeleteBucket"
+      },
+      "input": {
+        "shape": "DeleteBucketRequest"
+      },
+      "name": "DeleteBucket"
+    },
+    "DeleteBucketCors": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/{Bucket}?cors&x-id=DeleteBucketCors"
+      },
+      "input": {
+        "shape": "DeleteBucketCorsRequest"
+      },
+      "name": "DeleteBucketCors"
+    },
+    "DeleteBucketLifecycle": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/{Bucket}?lifecycle&x-id=DeleteBucketLifecycle"
+      },
+      "input": {
+        "shape": "DeleteBucketLifecycleRequest"
+      },
+      "name": "DeleteBucketLifecycle"
+    },
+    "DeleteBucketPolicy": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/{Bucket}?policy&x-id=DeleteBucketPolicy"
+      },
+      "input": {
+        "shape": "DeleteBucketPolicyRequest"
+      },
+      "name": "DeleteBucketPolicy"
+    },
+    "DeleteBucketTagging": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/{Bucket}?tagging&x-id=DeleteBucketTagging"
+      },
+      "input": {
+        "shape": "DeleteBucketTaggingRequest"
+      },
+      "name": "DeleteBucketTagging"
+    },
+    "DeleteMultipleObjects": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/{Bucket}?delete&x-id=DeleteMultipleObjects"
+      },
+      "input": {
+        "locationName": "DeleteMultipleObjectsRequest",
+        "shape": "DeleteMultipleObjectsRequest",
+        "xmlNamespace": {
+          "uri": "http://s3.amazonaws.com/doc/2006-03-01/"
+        }
+      },
+      "name": "DeleteMultipleObjects",
+      "output": {
+        "shape": "DeleteMultipleObjectsResult"
+      }
+    },
+    "DeleteObject": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/{Bucket}/{Object}?x-id=DeleteObject"
+      },
+      "input": {
+        "shape": "DeleteObjectRequest"
+      },
+      "name": "DeleteObject",
+      "output": {
+        "shape": "DeleteObjectResult"
+      }
+    },
+    "DeleteObjectTagging": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/{Bucket}/{Object}?tagging&x-id=DeleteObjectTagging"
+      },
+      "input": {
+        "shape": "DeleteObjectTaggingRequest"
+      },
+      "name": "DeleteObjectTagging",
+      "output": {
+        "shape": "DeleteObjectTaggingResult"
+      }
+    },
+    "GetBucket": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}?x-id=GetBucket"
+      },
+      "input": {
+        "shape": "GetBucketRequest"
+      },
+      "name": "GetBucket",
+      "output": {
+        "shape": "GetBucketResult"
+      }
+    },
+    "GetBucketACL": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}?acl&x-id=GetBucketACL"
+      },
+      "input": {
+        "shape": "GetBucketACLRequest"
+      },
+      "name": "GetBucketACL",
+      "output": {
+        "shape": "GetBucketACLResult"
+      }
+    },
+    "GetBucketConsistency": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}?x-ntap-sg-consistency&x-id=GetBucketConsistency"
+      },
+      "input": {
+        "shape": "GetBucketConsistencyRequest"
+      },
+      "name": "GetBucketConsistency",
+      "output": {
+        "shape": "GetBucketConsistencyResult"
+      }
+    },
+    "GetBucketCors": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}?cors&x-id=GetBucketCors"
+      },
+      "input": {
+        "shape": "GetBucketCorsRequest"
+      },
+      "name": "GetBucketCors",
+      "output": {
+        "shape": "GetBucketCorsResult"
+      }
+    },
+    "GetBucketLifecycleConfiguration": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}?lifecycle&x-id=GetBucketLifecycleConfiguration"
+      },
+      "input": {
+        "shape": "GetBucketLifecycleConfigurationRequest"
+      },
+      "name": "GetBucketLifecycleConfiguration",
+      "output": {
+        "shape": "GetBucketLifecycleConfigurationResult"
+      }
+    },
+    "GetBucketObjectVersions": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}?versions&x-id=GetBucketObjectVersions"
+      },
+      "input": {
+        "shape": "GetBucketObjectVersionsRequest"
+      },
+      "name": "GetBucketObjectVersions",
+      "output": {
+        "shape": "GetBucketObjectVersionsResult"
+      }
+    },
+    "GetBucketPolicy": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}?policy&x-id=GetBucketPolicy"
+      },
+      "input": {
+        "shape": "GetBucketPolicyRequest"
+      },
+      "name": "GetBucketPolicy",
+      "output": {
+        "shape": "GetBucketPolicyResult"
+      }
+    },
+    "GetBucketTagging": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}?tagging&x-id=GetBucketTagging"
+      },
+      "input": {
+        "shape": "GetBucketTaggingRequest"
+      },
+      "name": "GetBucketTagging",
+      "output": {
+        "shape": "GetBucketTaggingResult"
+      }
+    },
+    "GetBucketVersion2": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}?x-id=GetBucketVersion2"
+      },
+      "input": {
+        "shape": "GetBucketVersion2Request"
+      },
+      "name": "GetBucketVersion2",
+      "output": {
+        "shape": "GetBucketVersion2Result"
+      }
+    },
+    "GetBucketVersioning": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}?versioning&x-id=GetBucketVersioning"
+      },
+      "input": {
+        "shape": "GetBucketVersioningRequest"
+      },
+      "name": "GetBucketVersioning",
+      "output": {
+        "shape": "GetBucketVersioningResult"
+      }
+    },
+    "GetObject": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}/{Object}?x-id=GetObject"
+      },
+      "input": {
+        "shape": "GetObjectRequest"
+      },
+      "name": "GetObject",
+      "output": {
+        "shape": "GetObjectResult"
+      }
+    },
+    "GetObjectACL": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}/{Object}?acl&x-id=GetObjectACL"
+      },
+      "input": {
+        "shape": "GetObjectACLRequest"
+      },
+      "name": "GetObjectACL",
+      "output": {
+        "shape": "GetObjectACLResult"
+      }
+    },
+    "GetObjectTagging": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}/{Object}?tagging&x-id=GetObjectTagging"
+      },
+      "input": {
+        "shape": "GetObjectTaggingRequest"
+      },
+      "name": "GetObjectTagging",
+      "output": {
+        "shape": "GetObjectTaggingResult"
+      }
+    },
+    "GetService": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/?x-id=GetService"
+      },
+      "input": {
+        "shape": "GetServiceRequest"
+      },
+      "name": "GetService",
+      "output": {
+        "shape": "GetServiceResult"
+      }
+    },
+    "HeadBucket": {
+      "http": {
+        "method": "HEAD",
+        "requestUri": "/{Bucket}?x-id=HeadBucket"
+      },
+      "input": {
+        "shape": "HeadBucketRequest"
+      },
+      "name": "HeadBucket"
+    },
+    "HeadObject": {
+      "http": {
+        "method": "HEAD",
+        "requestUri": "/{Bucket}/{Object}?x-id=HeadObject"
+      },
+      "input": {
+        "shape": "HeadObjectRequest"
+      },
+      "name": "HeadObject",
+      "output": {
+        "shape": "HeadObjectResult"
+      }
+    },
+    "InitiateMultipartUpload": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/{Bucket}/{Object}?uploads&x-id=InitiateMultipartUpload"
+      },
+      "input": {
+        "locationName": "InitiateMultipartUploadRequest",
+        "shape": "InitiateMultipartUploadRequest",
+        "xmlNamespace": {
+          "uri": "http://s3.amazonaws.com/doc/2006-03-01/"
+        }
+      },
+      "name": "InitiateMultipartUpload",
+      "output": {
+        "shape": "InitiateMultipartUploadResult"
+      }
+    },
+    "ListMultipartUploads": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}?uploads&x-id=ListMultipartUploads"
+      },
+      "input": {
+        "shape": "ListMultipartUploadsRequest"
+      },
+      "name": "ListMultipartUploads",
+      "output": {
+        "shape": "ListMultipartUploadsResult"
+      }
+    },
+    "ListParts": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/{Bucket}/{Object}?x-id=ListParts"
+      },
+      "input": {
+        "shape": "ListPartsRequest"
+      },
+      "name": "ListParts",
+      "output": {
+        "shape": "ListPartsResult"
+      }
+    },
+    "PutBucket": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/{Bucket}?x-id=PutBucket"
+      },
+      "input": {
+        "shape": "PutBucketRequest"
+      },
+      "name": "PutBucket",
+      "output": {
+        "shape": "PutBucketResult"
+      }
+    },
+    "PutBucketConsistency": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/{Bucket}?x-id=PutBucketConsistency"
+      },
+      "input": {
+        "shape": "PutBucketConsistencyRequest"
+      },
+      "name": "PutBucketConsistency",
+      "output": {
+        "shape": "PutBucketConsistencyResult"
+      }
+    },
+    "PutBucketCors": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/{Bucket}?cors&x-id=PutBucketCors"
+      },
+      "input": {
+        "shape": "PutBucketCorsRequest"
+      },
+      "name": "PutBucketCors"
+    },
+    "PutBucketLifecycleConfiguration": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/{Bucket}?lifecycle&x-id=PutBucketLifecycleConfiguration"
+      },
+      "input": {
+        "shape": "PutBucketLifecycleConfigurationRequest"
+      },
+      "name": "PutBucketLifecycleConfiguration"
+    },
+    "PutBucketPolicy": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/{Bucket}?policy&x-id=PutBucketPolicy"
+      },
+      "input": {
+        "shape": "PutBucketPolicyRequest"
+      },
+      "name": "PutBucketPolicy"
+    },
+    "PutBucketTagging": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/{Bucket}?tagging&x-id=PutBucketTagging"
+      },
+      "input": {
+        "shape": "PutBucketTaggingRequest"
+      },
+      "name": "PutBucketTagging"
+    },
+    "PutBucketVersioning": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/{Bucket}?versioning&x-id=PutBucketVersioning"
+      },
+      "input": {
+        "shape": "PutBucketVersioningRequest"
+      },
+      "name": "PutBucketVersioning"
+    },
+    "PutObject": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/{Bucket}/{Object}?x-id=PutObject"
+      },
+      "input": {
+        "shape": "PutObjectRequest"
+      },
+      "name": "PutObject",
+      "output": {
+        "shape": "PutObjectResult"
+      }
+    },
+    "PutObjectCopy": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/{Bucket}/{Object}?x-id=PutObjectCopy"
+      },
+      "input": {
+        "shape": "PutObjectCopyRequest"
+      },
+      "name": "PutObjectCopy",
+      "output": {
+        "shape": "PutObjectCopyResult"
+      }
+    },
+    "PutObjectTagging": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/{Bucket}/{Object}?tagging&x-id=PutObjectTagging"
+      },
+      "input": {
+        "shape": "PutObjectTaggingRequest"
+      },
+      "name": "PutObjectTagging",
+      "output": {
+        "shape": "PutObjectTaggingResult"
+      }
+    },
+    "UploadPart": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/{Bucket}/{Object}?x-id=UploadPart"
+      },
+      "input": {
+        "shape": "UploadPartRequest"
+      },
+      "name": "UploadPart",
+      "output": {
+        "shape": "UploadPartResult"
+      }
+    },
+    "UploadPartCopy": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/{Bucket}/{Object}?x-id=UploadPartCopy"
+      },
+      "input": {
+        "shape": "UploadPartCopyRequest"
+      },
+      "name": "UploadPartCopy",
+      "output": {
+        "shape": "UploadPartCopyResult"
+      }
+    }
+  },
+  "shapes": {
+    "AbortMultipartUploadRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "UploadId": {
+          "location": "querystring",
+          "locationName": "uploadId",
+          "shape": "String"
+        }
+      },
+      "name": "AbortMultipartUploadRequest",
+      "required": [
+        "Bucket",
+        "Object",
+        "UploadId"
+      ],
+      "type": "structure"
+    },
+    "AccessControlList": {
+      "members": {
+        "Grant": {
+          "locationName": "Grant",
+          "shape": "Grant"
+        }
+      },
+      "name": "AccessControlList",
+      "type": "structure"
+    },
+    "AccessControlListOfGetBucketACL": {
+      "members": {
+        "Grantee": {
+          "locationName": "Grantee",
+          "shape": "Grantee"
+        },
+        "Permission": {
+          "locationName": "Permission",
+          "shape": "String"
+        }
+      },
+      "name": "AccessControlListOfGetBucketACL",
+      "type": "structure"
+    },
+    "And": {
+      "members": {
+        "Tag": {
+          "locationName": "Tag",
+          "shape": "Tag"
+        }
+      },
+      "name": "And",
+      "type": "structure"
+    },
+    "Blob": {
+      "name": "Blob",
+      "type": "blob"
+    },
+    "Boolean": {
+      "name": "Boolean",
+      "type": "boolean"
+    },
+    "Buckets": {
+      "members": {
+        "CreationDate": {
+          "locationName": "CreationDate",
+          "shape": "TStamp"
+        },
+        "Name": {
+          "locationName": "Name",
+          "shape": "String"
+        }
+      },
+      "name": "Buckets",
+      "type": "structure"
+    },
+    "CORSRule": {
+      "members": {
+        "AllowedHeader": {
+          "locationName": "AllowedHeader",
+          "shape": "String"
+        },
+        "AllowedMethod": {
+          "locationName": "AllowedMethod",
+          "shape": "ListOfAllowedMethod"
+        },
+        "AllowedOrigin": {
+          "locationName": "AllowedOrigin",
+          "shape": "String"
+        },
+        "ExposeHeader": {
+          "locationName": "ExposeHeader",
+          "shape": "String"
+        },
+        "MaxAgeSeconds": {
+          "locationName": "MaxAgeSeconds",
+          "shape": "Integer"
+        }
+      },
+      "name": "CORSRule",
+      "type": "structure"
+    },
+    "CompleteMultipartUploadRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "CompleteMultipartUpload": {
+          "locationName": "CompleteMultipartUpload",
+          "shape": "RequestCompleteMultipartUpload"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "UploadId": {
+          "location": "querystring",
+          "locationName": "uploadId",
+          "shape": "String"
+        }
+      },
+      "name": "CompleteMultipartUploadRequest",
+      "payload": "CompleteMultipartUpload",
+      "required": [
+        "Bucket",
+        "CompleteMultipartUpload",
+        "Object",
+        "UploadId"
+      ],
+      "type": "structure"
+    },
+    "CompleteMultipartUploadResult": {
+      "members": {
+        "Bucket": {
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "ETag": {
+          "locationName": "ETag",
+          "shape": "String"
+        },
+        "Key": {
+          "locationName": "Key",
+          "shape": "String"
+        },
+        "Location": {
+          "locationName": "Location",
+          "shape": "String"
+        },
+        "XAmzExpiration": {
+          "location": "header",
+          "locationName": "x-amz-expiration",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryption": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionAwsKmsKeyId": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-aws-kms-key-id",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionCustomerAlgorithm": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-algorithm",
+          "shape": "String"
+        },
+        "XAmzVersionId": {
+          "location": "header",
+          "locationName": "x-amz-version-id",
+          "shape": "String"
+        }
+      },
+      "name": "CompleteMultipartUploadResult",
+      "type": "structure"
+    },
+    "ContentEncodingOfPutObjectRequest": {
+      "enum": [
+        "aws-chunked"
+      ],
+      "name": "ContentEncodingOfPutObjectRequest",
+      "type": "string"
+    },
+    "Contents": {
+      "members": {
+        "DisplayName": {
+          "locationName": "DisplayName",
+          "shape": "String"
+        },
+        "ETag": {
+          "locationName": "ETag",
+          "shape": "String"
+        },
+        "ID": {
+          "locationName": "ID",
+          "shape": "String"
+        },
+        "Key": {
+          "locationName": "Key",
+          "shape": "String"
+        },
+        "LastModified": {
+          "locationName": "LastModified",
+          "shape": "TStamp"
+        },
+        "Owner": {
+          "locationName": "Owner",
+          "shape": "Owner"
+        },
+        "Size": {
+          "locationName": "Size",
+          "shape": "String"
+        },
+        "StorageClass": {
+          "locationName": "StorageClass",
+          "shape": "String"
+        }
+      },
+      "name": "Contents",
+      "type": "structure"
+    },
+    "ContentsOfGetBucketVersion2": {
+      "members": {
+        "DisplayName": {
+          "locationName": "DisplayName",
+          "shape": "String"
+        },
+        "ETag": {
+          "locationName": "ETag",
+          "shape": "String"
+        },
+        "ID": {
+          "locationName": "ID",
+          "shape": "String"
+        },
+        "Key": {
+          "locationName": "Key",
+          "shape": "String"
+        },
+        "LastModified": {
+          "locationName": "LastModified",
+          "shape": "TStamp"
+        },
+        "Owner": {
+          "locationName": "Owner",
+          "shape": "String"
+        },
+        "Size": {
+          "locationName": "Size",
+          "shape": "String"
+        },
+        "StorageClass": {
+          "locationName": "StorageClass",
+          "shape": "String"
+        }
+      },
+      "name": "ContentsOfGetBucketVersion2",
+      "type": "structure"
+    },
+    "DeleteBucketCorsRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteBucketCorsRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "DeleteBucketLifecycleRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteBucketLifecycleRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "DeleteBucketPolicyRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteBucketPolicyRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "DeleteBucketRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteBucketRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "DeleteBucketTaggingRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteBucketTaggingRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "DeleteMultipleObjectsRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "ContentMd5": {
+          "location": "header",
+          "locationName": "Content-MD5",
+          "shape": "String"
+        },
+        "Delete": {
+          "locationName": "Delete",
+          "shape": "RequestDelete"
+        }
+      },
+      "name": "DeleteMultipleObjectsRequest",
+      "payload": "Delete",
+      "required": [
+        "Bucket",
+        "ContentMd5",
+        "Delete"
+      ],
+      "type": "structure"
+    },
+    "DeleteMultipleObjectsResult": {
+      "members": {
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "Deleted": {
+          "locationName": "Deleted",
+          "shape": "ListOfDeleted"
+        }
+      },
+      "name": "DeleteMultipleObjectsResult",
+      "type": "structure"
+    },
+    "DeleteObjectRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "VersionId": {
+          "location": "querystring",
+          "locationName": "versionId",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteObjectRequest",
+      "required": [
+        "Bucket",
+        "Object"
+      ],
+      "type": "structure"
+    },
+    "DeleteObjectResult": {
+      "members": {
+        "XAmzVersionId": {
+          "location": "header",
+          "locationName": "x-amz-version-id",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteObjectResult",
+      "type": "structure"
+    },
+    "DeleteObjectTaggingRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "VersionId": {
+          "location": "querystring",
+          "locationName": "versionId",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteObjectTaggingRequest",
+      "required": [
+        "Bucket",
+        "Object"
+      ],
+      "type": "structure"
+    },
+    "DeleteObjectTaggingResult": {
+      "members": {
+        "XAmzVersionId": {
+          "location": "header",
+          "locationName": "x-amz-version-id",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteObjectTaggingResult",
+      "type": "structure"
+    },
+    "Deleted": {
+      "members": {
+        "Key": {
+          "locationName": "Key",
+          "shape": "String"
+        },
+        "VersionId": {
+          "locationName": "VersionId",
+          "shape": "String"
+        }
+      },
+      "name": "Deleted",
+      "type": "structure"
+    },
+    "Double": {
+      "name": "Double",
+      "type": "double"
+    },
+    "Expiration": {
+      "members": {
+        "Date": {
+          "locationName": "Date",
+          "shape": "TStamp"
+        },
+        "Days": {
+          "locationName": "Days",
+          "shape": "Integer"
+        }
+      },
+      "name": "Expiration",
+      "type": "structure"
+    },
+    "Filter": {
+      "members": {
+        "And": {
+          "locationName": "And",
+          "shape": "And"
+        }
+      },
+      "name": "Filter",
+      "type": "structure"
+    },
+    "GetBucketACLRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketACLRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "GetBucketACLResult": {
+      "members": {
+        "AccessControlList": {
+          "locationName": "AccessControlList",
+          "shape": "ListOfAccessControlListOfGetBucketACL"
+        },
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "Owner": {
+          "locationName": "Owner",
+          "shape": "Owner"
+        }
+      },
+      "name": "GetBucketACLResult",
+      "type": "structure"
+    },
+    "GetBucketConsistencyRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketConsistencyRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "GetBucketConsistencyResult": {
+      "members": {
+        "Consistency": {
+          "locationName": "Consistency",
+          "shape": "String"
+        },
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketConsistencyResult",
+      "payload": "Consistency",
+      "type": "structure"
+    },
+    "GetBucketCorsRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketCorsRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "GetBucketCorsResult": {
+      "members": {
+        "CORSRule": {
+          "locationName": "CORSRule",
+          "shape": "ListOfCORSRule"
+        },
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketCorsResult",
+      "type": "structure"
+    },
+    "GetBucketLifecycleConfigurationRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketLifecycleConfigurationRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "GetBucketLifecycleConfigurationResult": {
+      "members": {
+        "Rule": {
+          "locationName": "Rule",
+          "shape": "Rule"
+        }
+      },
+      "name": "GetBucketLifecycleConfigurationResult",
+      "type": "structure"
+    },
+    "GetBucketObjectVersionsRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "Delimiter": {
+          "location": "querystring",
+          "locationName": "delimiter",
+          "shape": "String"
+        },
+        "EncodingType": {
+          "location": "querystring",
+          "locationName": "encoding-type",
+          "shape": "String"
+        },
+        "KeyMarker": {
+          "location": "querystring",
+          "locationName": "key-marker",
+          "shape": "String"
+        },
+        "MaxKeys": {
+          "location": "querystring",
+          "locationName": "max-keys",
+          "shape": "String"
+        },
+        "Prefix": {
+          "location": "querystring",
+          "locationName": "prefix",
+          "shape": "String"
+        },
+        "VersionIdMarker": {
+          "location": "querystring",
+          "locationName": "version-id-marker",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketObjectVersionsRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "GetBucketObjectVersionsResult": {
+      "members": {
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "IsTruncated": {
+          "locationName": "IsTruncated",
+          "shape": "Boolean"
+        },
+        "KeyMarker": {
+          "locationName": "KeyMarker",
+          "shape": "String"
+        },
+        "MaxKeys": {
+          "locationName": "MaxKeys",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "Name",
+          "shape": "String"
+        },
+        "Prefix": {
+          "locationName": "Prefix",
+          "shape": "String"
+        },
+        "Version": {
+          "locationName": "Version",
+          "shape": "ListOfVersion"
+        },
+        "VersionIdMarker": {
+          "locationName": "VersionIdMarker",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketObjectVersionsResult",
+      "type": "structure"
+    },
+    "GetBucketPolicyRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketPolicyRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "GetBucketPolicyResult": {
+      "members": {
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "Policy": {
+          "locationName": "Policy",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketPolicyResult",
+      "payload": "Policy",
+      "type": "structure"
+    },
+    "GetBucketRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "Delimiter": {
+          "location": "querystring",
+          "locationName": "delimiter",
+          "shape": "String"
+        },
+        "EncodingType": {
+          "location": "querystring",
+          "locationName": "encoding-type",
+          "shape": "String"
+        },
+        "Marker": {
+          "location": "querystring",
+          "locationName": "marker",
+          "shape": "String"
+        },
+        "MaxKeys": {
+          "location": "querystring",
+          "locationName": "max-keys",
+          "shape": "String"
+        },
+        "Prefix": {
+          "location": "querystring",
+          "locationName": "prefix",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "GetBucketResult": {
+      "members": {
+        "CommonPrefixes": {
+          "locationName": "CommonPrefixes",
+          "shape": "String"
+        },
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "Contents": {
+          "locationName": "Contents",
+          "shape": "ListOfContents"
+        },
+        "Delimiter": {
+          "locationName": "Delimiter",
+          "shape": "String"
+        },
+        "EncodingType": {
+          "locationName": "Encoding-Type",
+          "shape": "String"
+        },
+        "IsTruncated": {
+          "locationName": "IsTruncated",
+          "shape": "Boolean"
+        },
+        "Marker": {
+          "locationName": "Marker",
+          "shape": "String"
+        },
+        "MaxKeys": {
+          "locationName": "MaxKeys",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "Name",
+          "shape": "String"
+        },
+        "NextMarker": {
+          "locationName": "NextMarker",
+          "shape": "String"
+        },
+        "Prefix": {
+          "locationName": "Prefix",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketResult",
+      "type": "structure"
+    },
+    "GetBucketTaggingRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketTaggingRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "GetBucketTaggingResult": {
+      "members": {
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "TagSet": {
+          "locationName": "TagSet",
+          "shape": "ListOfTagSetOfGetBucketTagging"
+        }
+      },
+      "name": "GetBucketTaggingResult",
+      "type": "structure"
+    },
+    "GetBucketVersion2Request": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "ContinuationToken": {
+          "location": "querystring",
+          "locationName": "continuation-token",
+          "shape": "String"
+        },
+        "Delimiter": {
+          "location": "querystring",
+          "locationName": "delimiter",
+          "shape": "String"
+        },
+        "EncodingType": {
+          "location": "querystring",
+          "locationName": "encoding-type",
+          "shape": "String"
+        },
+        "FetchOwner": {
+          "location": "querystring",
+          "locationName": "fetch-owner",
+          "shape": "String"
+        },
+        "ListType": {
+          "location": "querystring",
+          "locationName": "list-type",
+          "shape": "String"
+        },
+        "Marker": {
+          "location": "querystring",
+          "locationName": "marker",
+          "shape": "String"
+        },
+        "MaxKeys": {
+          "location": "querystring",
+          "locationName": "max-keys",
+          "shape": "String"
+        },
+        "Prefix": {
+          "location": "querystring",
+          "locationName": "prefix",
+          "shape": "String"
+        },
+        "StartAfter": {
+          "location": "querystring",
+          "locationName": "start-after",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketVersion2Request",
+      "required": [
+        "Bucket",
+        "ListType"
+      ],
+      "type": "structure"
+    },
+    "GetBucketVersion2Result": {
+      "members": {
+        "CommonPrefixes": {
+          "locationName": "CommonPrefixes",
+          "shape": "String"
+        },
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "Contents": {
+          "locationName": "Contents",
+          "shape": "ListOfContentsOfGetBucketVersion2"
+        },
+        "ContinuationToken": {
+          "locationName": "ContinuationToken",
+          "shape": "String"
+        },
+        "Delimiter": {
+          "locationName": "Delimiter",
+          "shape": "String"
+        },
+        "EncodingType": {
+          "locationName": "Encoding-Type",
+          "shape": "String"
+        },
+        "IsTruncated": {
+          "locationName": "IsTruncated",
+          "shape": "Boolean"
+        },
+        "KeyCount": {
+          "locationName": "KeyCount",
+          "shape": "String"
+        },
+        "MaxKeys": {
+          "locationName": "MaxKeys",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "Name",
+          "shape": "String"
+        },
+        "NextContinuationToken": {
+          "locationName": "NextContinuationToken",
+          "shape": "String"
+        },
+        "Prefix": {
+          "locationName": "Prefix",
+          "shape": "String"
+        },
+        "StartAfter": {
+          "locationName": "StartAfter",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketVersion2Result",
+      "type": "structure"
+    },
+    "GetBucketVersioningRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketVersioningRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "GetBucketVersioningResult": {
+      "members": {
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "MfaDelete": {
+          "locationName": "MfaDelete",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "Status",
+          "shape": "String"
+        }
+      },
+      "name": "GetBucketVersioningResult",
+      "type": "structure"
+    },
+    "GetObjectACLRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "VersionId": {
+          "location": "querystring",
+          "locationName": "versionId",
+          "shape": "String"
+        }
+      },
+      "name": "GetObjectACLRequest",
+      "required": [
+        "Bucket",
+        "Object"
+      ],
+      "type": "structure"
+    },
+    "GetObjectACLResult": {
+      "members": {
+        "AccessControlList": {
+          "locationName": "AccessControlList",
+          "shape": "AccessControlList"
+        },
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "Owner": {
+          "locationName": "Owner",
+          "shape": "Owner"
+        }
+      },
+      "name": "GetObjectACLResult",
+      "type": "structure"
+    },
+    "GetObjectRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "Range": {
+          "location": "header",
+          "locationName": "Range",
+          "shape": "String"
+        },
+        "ResponseContentDisposition": {
+          "location": "querystring",
+          "locationName": "response-content-disposition",
+          "shape": "String"
+        },
+        "ResponseContentEncoding": {
+          "location": "querystring",
+          "locationName": "response-content-encoding",
+          "shape": "String"
+        },
+        "ResponseContentType": {
+          "location": "querystring",
+          "locationName": "response-content-type",
+          "shape": "String"
+        },
+        "VersionId": {
+          "location": "querystring",
+          "locationName": "versionId",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionCustomerAlgorithm": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-algorithm",
+          "shape": "XAmzServerSideEncryptionCustomerAlgorithmOfGetObjectRequest"
+        },
+        "XAmzServerSideEncryptionCustomerKey": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-key",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionCustomerKeyMd5": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-key-MD5",
+          "shape": "String"
+        }
+      },
+      "name": "GetObjectRequest",
+      "required": [
+        "Bucket",
+        "Object"
+      ],
+      "type": "structure"
+    },
+    "GetObjectResult": {
+      "members": {
+        "AcceptRanges": {
+          "location": "header",
+          "locationName": "Accept-Ranges",
+          "shape": "String"
+        },
+        "Body": {
+          "locationName": "Body",
+          "shape": "Blob",
+          "streaming": true
+        },
+        "ContentRange": {
+          "location": "header",
+          "locationName": "Content-Range",
+          "shape": "String"
+        },
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "ETag": {
+          "location": "header",
+          "locationName": "ETag",
+          "shape": "String"
+        },
+        "LastModified": {
+          "location": "header",
+          "locationName": "Last-Modified",
+          "shape": "String"
+        },
+        "XAmzExpiration": {
+          "location": "header",
+          "locationName": "x-amz-expiration",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryption": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption",
+          "shape": "String"
+        }
+      },
+      "name": "GetObjectResult",
+      "payload": "Body",
+      "type": "structure"
+    },
+    "GetObjectTaggingRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "VersionId": {
+          "location": "querystring",
+          "locationName": "versionId",
+          "shape": "String"
+        }
+      },
+      "name": "GetObjectTaggingRequest",
+      "required": [
+        "Bucket",
+        "Object"
+      ],
+      "type": "structure"
+    },
+    "GetObjectTaggingResult": {
+      "members": {
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "TagSet": {
+          "locationName": "TagSet",
+          "shape": "TagSet"
+        },
+        "XAmzVersionId": {
+          "location": "header",
+          "locationName": "x-amz-version-id",
+          "shape": "String"
+        }
+      },
+      "name": "GetObjectTaggingResult",
+      "type": "structure"
+    },
+    "GetServiceRequest": {
+      "members": {},
+      "name": "GetServiceRequest",
+      "type": "structure"
+    },
+    "GetServiceResult": {
+      "members": {
+        "Buckets": {
+          "locationName": "Buckets",
+          "shape": "ListOfBuckets"
+        },
+        "Owner": {
+          "locationName": "Owner",
+          "shape": "Owner"
+        }
+      },
+      "name": "GetServiceResult",
+      "type": "structure"
+    },
+    "Grant": {
+      "members": {
+        "Grantee": {
+          "locationName": "Grantee",
+          "shape": "Grantee"
+        },
+        "Permission": {
+          "locationName": "Permission",
+          "shape": "String"
+        }
+      },
+      "name": "Grant",
+      "type": "structure"
+    },
+    "Grantee": {
+      "members": {
+        "DisplayName": {
+          "locationName": "DisplayName",
+          "shape": "String"
+        },
+        "ID": {
+          "locationName": "ID",
+          "shape": "String"
+        }
+      },
+      "name": "Grantee",
+      "type": "structure"
+    },
+    "HeadBucketRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        }
+      },
+      "name": "HeadBucketRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "HeadObjectRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "ConsistencyControl": {
+          "location": "header",
+          "locationName": "Consistency-Control",
+          "shape": "String"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "VersionId": {
+          "location": "querystring",
+          "locationName": "versionId",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionCustomerAlgorithm": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-algorithm",
+          "shape": "XAmzServerSideEncryptionCustomerAlgorithmOfHeadObjectRequest"
+        },
+        "XAmzServerSideEncryptionCustomerKey": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-key",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionCustomerKeyMd5": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-key-MD5",
+          "shape": "String"
+        }
+      },
+      "name": "HeadObjectRequest",
+      "required": [
+        "Bucket",
+        "Object"
+      ],
+      "type": "structure"
+    },
+    "HeadObjectResult": {
+      "members": {
+        "AcceptRanges": {
+          "location": "header",
+          "locationName": "Accept-Ranges",
+          "shape": "String"
+        },
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "ETag": {
+          "location": "header",
+          "locationName": "ETag",
+          "shape": "String"
+        },
+        "LastModified": {
+          "location": "header",
+          "locationName": "Last-Modified",
+          "shape": "String"
+        },
+        "XAmzExpiration": {
+          "location": "header",
+          "locationName": "x-amz-expiration",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryption": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption",
+          "shape": "String"
+        },
+        "XAmzVersionId": {
+          "location": "header",
+          "locationName": "x-amz-version-id",
+          "shape": "String"
+        }
+      },
+      "name": "HeadObjectResult",
+      "type": "structure"
+    },
+    "InitiateMultipartUploadRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "ContentDisposition": {
+          "location": "header",
+          "locationName": "Content-Disposition",
+          "shape": "String"
+        },
+        "ContentEncoding": {
+          "location": "header",
+          "locationName": "Content-Encoding",
+          "shape": "String"
+        },
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "XAmzMeta": {
+          "location": "header",
+          "locationName": "x-amz-meta-",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryption": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionCustomerAlgorithm": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-algorithm",
+          "shape": "XAmzServerSideEncryptionCustomerAlgorithmOfInitiateMultipartUploadRequest"
+        },
+        "XAmzServerSideEncryptionCustomerKey": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-key",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionCustomerKeyMd5": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-key-MD5",
+          "shape": "String"
+        },
+        "XAmzStorageClass": {
+          "location": "header",
+          "locationName": "x-amz-storage-class",
+          "shape": "XAmzStorageClassOfInitiateMultipartUploadRequest"
+        },
+        "XAmzTagging": {
+          "location": "header",
+          "locationName": "x-amz-tagging",
+          "shape": "XAmzTaggingOfInitiateMultipartUploadRequest"
+        }
+      },
+      "name": "InitiateMultipartUploadRequest",
+      "required": [
+        "Bucket",
+        "Object"
+      ],
+      "type": "structure"
+    },
+    "InitiateMultipartUploadResult": {
+      "members": {
+        "Bucket": {
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "Key": {
+          "locationName": "Key",
+          "shape": "String"
+        },
+        "UploadId": {
+          "locationName": "UploadId",
+          "shape": "String"
+        }
+      },
+      "name": "InitiateMultipartUploadResult",
+      "type": "structure"
+    },
+    "Initiator": {
+      "members": {
+        "DisplayName": {
+          "locationName": "DisplayName",
+          "shape": "String"
+        },
+        "ID": {
+          "locationName": "ID",
+          "shape": "String"
+        }
+      },
+      "name": "Initiator",
+      "type": "structure"
+    },
+    "Integer": {
+      "name": "Integer",
+      "type": "integer"
+    },
+    "ListMultipartUploadsRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "EncodingType": {
+          "location": "header",
+          "locationName": "encoding-type",
+          "shape": "String"
+        },
+        "KeyMarker": {
+          "location": "header",
+          "locationName": "key-marker",
+          "shape": "String"
+        },
+        "MaxUploads": {
+          "location": "header",
+          "locationName": "max-uploads",
+          "shape": "Integer"
+        },
+        "Prefix": {
+          "location": "header",
+          "locationName": "prefix",
+          "shape": "String"
+        },
+        "UploadIdMarker": {
+          "location": "header",
+          "locationName": "upload-id-marker",
+          "shape": "String"
+        }
+      },
+      "name": "ListMultipartUploadsRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "ListMultipartUploadsResult": {
+      "members": {
+        "Bucket": {
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "IsTruncated": {
+          "locationName": "IsTruncated",
+          "shape": "Boolean"
+        },
+        "KeyMarker": {
+          "locationName": "KeyMarker",
+          "shape": "String"
+        },
+        "MaxUploads": {
+          "locationName": "MaxUploads",
+          "shape": "Integer"
+        },
+        "NextKeyMarker": {
+          "locationName": "NextKeyMarker",
+          "shape": "String"
+        },
+        "NextUploadIdMarker": {
+          "locationName": "NextUploadIdMarker",
+          "shape": "String"
+        },
+        "Upload": {
+          "locationName": "Upload",
+          "shape": "ListOfUpload"
+        },
+        "UploadIdMarker": {
+          "locationName": "UploadIdMarker",
+          "shape": "String"
+        }
+      },
+      "name": "ListMultipartUploadsResult",
+      "type": "structure"
+    },
+    "ListOfAccessControlListOfGetBucketACL": {
+      "member": {
+        "locationName": "Grant",
+        "shape": "AccessControlListOfGetBucketACL"
+      },
+      "name": "ListOfAccessControlListOfGetBucketACL",
+      "type": "list"
+    },
+    "ListOfAllowedMethod": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfAllowedMethod",
+      "type": "list"
+    },
+    "ListOfBuckets": {
+      "member": {
+        "locationName": "Bucket",
+        "shape": "Buckets"
+      },
+      "name": "ListOfBuckets",
+      "type": "list"
+    },
+    "ListOfCORSRule": {
+      "flattened": true,
+      "member": {
+        "shape": "CORSRule"
+      },
+      "name": "ListOfCORSRule",
+      "type": "list"
+    },
+    "ListOfContents": {
+      "flattened": true,
+      "member": {
+        "shape": "Contents"
+      },
+      "name": "ListOfContents",
+      "type": "list"
+    },
+    "ListOfContentsOfGetBucketVersion2": {
+      "flattened": true,
+      "member": {
+        "shape": "ContentsOfGetBucketVersion2"
+      },
+      "name": "ListOfContentsOfGetBucketVersion2",
+      "type": "list"
+    },
+    "ListOfDeleted": {
+      "flattened": true,
+      "member": {
+        "shape": "Deleted"
+      },
+      "name": "ListOfDeleted",
+      "type": "list"
+    },
+    "ListOfPart": {
+      "flattened": true,
+      "member": {
+        "shape": "Part"
+      },
+      "name": "ListOfPart",
+      "type": "list"
+    },
+    "ListOfRequestAllowedMethod": {
+      "flattened": true,
+      "member": {
+        "shape": "String"
+      },
+      "name": "ListOfRequestAllowedMethod",
+      "type": "list"
+    },
+    "ListOfRequestCORSRule": {
+      "flattened": true,
+      "member": {
+        "shape": "RequestCORSRule"
+      },
+      "name": "ListOfRequestCORSRule",
+      "type": "list"
+    },
+    "ListOfRequestObject": {
+      "flattened": true,
+      "member": {
+        "shape": "RequestObject"
+      },
+      "name": "ListOfRequestObject",
+      "type": "list"
+    },
+    "ListOfRequestPart": {
+      "flattened": true,
+      "member": {
+        "shape": "RequestPart"
+      },
+      "name": "ListOfRequestPart",
+      "type": "list"
+    },
+    "ListOfRequestRule": {
+      "flattened": true,
+      "member": {
+        "shape": "RequestRule"
+      },
+      "name": "ListOfRequestRule",
+      "type": "list"
+    },
+    "ListOfRequestTagSet": {
+      "flattened": true,
+      "member": {
+        "shape": "RequestTagSet"
+      },
+      "name": "ListOfRequestTagSet",
+      "type": "list"
+    },
+    "ListOfTagSetOfGetBucketTagging": {
+      "member": {
+        "locationName": "Tag",
+        "shape": "TagSetOfGetBucketTagging"
+      },
+      "name": "ListOfTagSetOfGetBucketTagging",
+      "type": "list"
+    },
+    "ListOfUpload": {
+      "flattened": true,
+      "member": {
+        "shape": "Upload"
+      },
+      "name": "ListOfUpload",
+      "type": "list"
+    },
+    "ListOfVersion": {
+      "flattened": true,
+      "member": {
+        "shape": "Version"
+      },
+      "name": "ListOfVersion",
+      "type": "list"
+    },
+    "ListPartsRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "EncodingType": {
+          "location": "querystring",
+          "locationName": "encoding-type",
+          "shape": "String"
+        },
+        "MaxParts": {
+          "location": "querystring",
+          "locationName": "max-parts",
+          "shape": "String"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "PartNumberMarker": {
+          "location": "querystring",
+          "locationName": "part-number-marker",
+          "shape": "String"
+        },
+        "UploadId": {
+          "location": "querystring",
+          "locationName": "uploadId",
+          "shape": "String"
+        }
+      },
+      "name": "ListPartsRequest",
+      "required": [
+        "Bucket",
+        "Object",
+        "UploadId"
+      ],
+      "type": "structure"
+    },
+    "ListPartsResult": {
+      "members": {
+        "Bucket": {
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "EncodingType": {
+          "locationName": "Encoding-Type",
+          "shape": "String"
+        },
+        "Initiator": {
+          "locationName": "Initiator",
+          "shape": "Initiator"
+        },
+        "IsTruncated": {
+          "locationName": "IsTruncated",
+          "shape": "Boolean"
+        },
+        "Key": {
+          "locationName": "Key",
+          "shape": "String"
+        },
+        "MaxParts": {
+          "locationName": "MaxParts",
+          "shape": "Integer"
+        },
+        "NextPartNumberMarker": {
+          "locationName": "NextPartNumberMarker",
+          "shape": "Integer"
+        },
+        "Owner": {
+          "locationName": "Owner",
+          "shape": "Owner"
+        },
+        "Part": {
+          "locationName": "Part",
+          "shape": "ListOfPart"
+        },
+        "PartNumberMarker": {
+          "locationName": "PartNumberMarker",
+          "shape": "Integer"
+        },
+        "StorageClass": {
+          "locationName": "StorageClass",
+          "shape": "String"
+        },
+        "UploadId": {
+          "locationName": "UploadId",
+          "shape": "String"
+        }
+      },
+      "name": "ListPartsResult",
+      "type": "structure"
+    },
+    "Long": {
+      "name": "Long",
+      "type": "long"
+    },
+    "NoncurrentVersionExpiration": {
+      "members": {
+        "NoncurrentDays": {
+          "locationName": "NoncurrentDays",
+          "shape": "Integer"
+        }
+      },
+      "name": "NoncurrentVersionExpiration",
+      "type": "structure"
+    },
+    "Owner": {
+      "members": {
+        "DisplayName": {
+          "locationName": "DisplayName",
+          "shape": "String"
+        },
+        "ID": {
+          "locationName": "ID",
+          "shape": "String"
+        }
+      },
+      "name": "Owner",
+      "type": "structure"
+    },
+    "Part": {
+      "members": {
+        "ETag": {
+          "locationName": "ETag",
+          "shape": "String"
+        },
+        "LastModified": {
+          "locationName": "LastModified",
+          "shape": "TStamp"
+        },
+        "PartNumber": {
+          "locationName": "PartNumber",
+          "shape": "Integer"
+        },
+        "Size": {
+          "locationName": "Size",
+          "shape": "Integer"
+        }
+      },
+      "name": "Part",
+      "type": "structure"
+    },
+    "PutBucketConsistencyRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "XNtapSgConsistency": {
+          "location": "querystring",
+          "locationName": "x-ntap-sg-consistency",
+          "shape": "XNtapSgConsistencyOfPutBucketConsistencyRequest"
+        }
+      },
+      "name": "PutBucketConsistencyRequest",
+      "required": [
+        "Bucket",
+        "XNtapSgConsistency"
+      ],
+      "type": "structure"
+    },
+    "PutBucketConsistencyResult": {
+      "members": {
+        "ComtentType": {
+          "location": "header",
+          "locationName": "Comtent-Type",
+          "shape": "String"
+        }
+      },
+      "name": "PutBucketConsistencyResult",
+      "type": "structure"
+    },
+    "PutBucketCorsRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "CORSConfiguration": {
+          "locationName": "CORSConfiguration",
+          "shape": "RequestCORSConfiguration"
+        }
+      },
+      "name": "PutBucketCorsRequest",
+      "payload": "CORSConfiguration",
+      "required": [
+        "Bucket",
+        "CORSConfiguration"
+      ],
+      "type": "structure"
+    },
+    "PutBucketLifecycleConfigurationRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "LifecycleConfiguration": {
+          "locationName": "LifecycleConfiguration",
+          "shape": "RequestLifecycleConfiguration"
+        }
+      },
+      "name": "PutBucketLifecycleConfigurationRequest",
+      "payload": "LifecycleConfiguration",
+      "required": [
+        "Bucket",
+        "LifecycleConfiguration"
+      ],
+      "type": "structure"
+    },
+    "PutBucketPolicyRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "ContentMd5": {
+          "location": "header",
+          "locationName": "Content-MD5",
+          "shape": "String"
+        },
+        "Policy": {
+          "locationName": "Id",
+          "shape": "String"
+        }
+      },
+      "name": "PutBucketPolicyRequest",
+      "payload": "Policy",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "PutBucketRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        }
+      },
+      "name": "PutBucketRequest",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "PutBucketResult": {
+      "members": {
+        "Location": {
+          "location": "header",
+          "locationName": "Location",
+          "shape": "String"
+        }
+      },
+      "name": "PutBucketResult",
+      "type": "structure"
+    },
+    "PutBucketTaggingRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "ContentMd5": {
+          "location": "header",
+          "locationName": "Content-MD5",
+          "shape": "String"
+        },
+        "Tagging": {
+          "locationName": "Tagging",
+          "shape": "RequestTaggingOfPutBucketTagging"
+        }
+      },
+      "name": "PutBucketTaggingRequest",
+      "payload": "Tagging",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "PutBucketVersioningRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "ContentMd5": {
+          "location": "header",
+          "locationName": "Content-MD5",
+          "shape": "String"
+        },
+        "VersioningConfiguration": {
+          "locationName": "VersioningConfiguration",
+          "shape": "RequestVersioningConfiguration"
+        }
+      },
+      "name": "PutBucketVersioningRequest",
+      "payload": "VersioningConfiguration",
+      "required": [
+        "Bucket"
+      ],
+      "type": "structure"
+    },
+    "PutObjectCopyRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "XAmzCopySource": {
+          "location": "header",
+          "locationName": "x-amz-copy-source",
+          "shape": "String"
+        },
+        "XAmzCopySourceIfMatch": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-if-match",
+          "shape": "String"
+        },
+        "XAmzCopySourceIfModifiedSince": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-if-modified-since",
+          "shape": "String"
+        },
+        "XAmzCopySourceIfNoneMatch": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-if-none-match",
+          "shape": "String"
+        },
+        "XAmzCopySourceIfUnmodifiedSince": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-if-unmodified-since",
+          "shape": "String"
+        },
+        "XAmzCopySourceServerSideEncryptionCustomerAlgorithm": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-server-side-encryption-customer-algorithm",
+          "shape": "XAmzCopySourceServerSideEncryptionCustomerAlgorithmOfPutObjectCopyRequest"
+        },
+        "XAmzCopySourceServerSideEncryptionCustomerKey": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-server-side-encryption-customer-key",
+          "shape": "String"
+        },
+        "XAmzCopySourceServerSideEncryptionCustomerKeyMd5": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-server-side-encryption-customer-key-MD5",
+          "shape": "String"
+        },
+        "XAmzMetadataDirective": {
+          "location": "header",
+          "locationName": "x-amz-metadata-directive",
+          "shape": "XAmzMetadataDirectiveOfPutObjectCopyRequest"
+        },
+        "XAmzServerSideEncryption": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionCustomerAlgorithm": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-algorithm",
+          "shape": "XAmzServerSideEncryptionCustomerAlgorithmOfPutObjectCopyRequest"
+        },
+        "XAmzServerSideEncryptionCustomerKey": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-key",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionCustomerKeyMd5": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-key-MD5",
+          "shape": "String"
+        },
+        "XAmzStorageClass": {
+          "location": "header",
+          "locationName": "x-amz-storage-class",
+          "shape": "XAmzStorageClassOfPutObjectCopyRequest"
+        },
+        "XAmzTagging": {
+          "location": "header",
+          "locationName": "x-amz-tagging",
+          "shape": "String"
+        },
+        "XAmzTaggingDirective": {
+          "location": "header",
+          "locationName": "x-amz-tagging-directive",
+          "shape": "XAmzTaggingDirectiveOfPutObjectCopyRequest"
+        }
+      },
+      "name": "PutObjectCopyRequest",
+      "required": [
+        "Bucket",
+        "Object",
+        "XAmzCopySource"
+      ],
+      "type": "structure"
+    },
+    "PutObjectCopyResult": {
+      "members": {
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "ETag": {
+          "locationName": "ETag",
+          "shape": "String"
+        },
+        "LastModified": {
+          "locationName": "LastModified",
+          "shape": "TStamp"
+        }
+      },
+      "name": "PutObjectCopyResult",
+      "type": "structure"
+    },
+    "PutObjectRequest": {
+      "members": {
+        "Body": {
+          "locationName": "Body",
+          "shape": "Blob",
+          "streaming": true
+        },
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "ContentDisposition": {
+          "location": "header",
+          "locationName": "Content-Disposition",
+          "shape": "String"
+        },
+        "ContentEncoding": {
+          "location": "header",
+          "locationName": "Content-Encoding",
+          "shape": "ContentEncodingOfPutObjectRequest"
+        },
+        "ContentMd5": {
+          "location": "header",
+          "locationName": "Content-MD5",
+          "shape": "String"
+        },
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "XAmzMeta": {
+          "location": "header",
+          "locationName": "x-amz-meta-",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryption": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption",
+          "shape": "XAmzServerSideEncryptionOfPutObjectRequest"
+        },
+        "XAmzServerSideEncryptionCustomerAlgorithm": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-algorithm",
+          "shape": "XAmzServerSideEncryptionCustomerAlgorithmOfPutObjectRequest"
+        },
+        "XAmzServerSideEncryptionCustomerKey": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-key",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionCustomerKeyMd5": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-key-MD5",
+          "shape": "String"
+        },
+        "XAmzStorageClass": {
+          "location": "header",
+          "locationName": "x-amz-storage-class",
+          "shape": "XAmzStorageClassOfPutObjectRequest"
+        },
+        "XAmzTagging": {
+          "location": "header",
+          "locationName": "x-amz-tagging",
+          "shape": "String"
+        }
+      },
+      "name": "PutObjectRequest",
+      "payload": "Body",
+      "required": [
+        "Bucket",
+        "Object"
+      ],
+      "type": "structure"
+    },
+    "PutObjectResult": {
+      "members": {
+        "ETag": {
+          "location": "header",
+          "locationName": "ETag",
+          "shape": "String"
+        },
+        "XAmzVersionId": {
+          "location": "header",
+          "locationName": "x-amz-version-id",
+          "shape": "String"
+        }
+      },
+      "name": "PutObjectResult",
+      "type": "structure"
+    },
+    "PutObjectTaggingRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "ContentMd5": {
+          "location": "header",
+          "locationName": "Content-MD5",
+          "shape": "String"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "Tagging": {
+          "locationName": "Tagging",
+          "shape": "RequestTagging"
+        },
+        "VersionId": {
+          "location": "querystring",
+          "locationName": "versionId",
+          "shape": "String"
+        }
+      },
+      "name": "PutObjectTaggingRequest",
+      "payload": "Tagging",
+      "required": [
+        "Bucket",
+        "Object"
+      ],
+      "type": "structure"
+    },
+    "PutObjectTaggingResult": {
+      "members": {
+        "XAmzVersionId": {
+          "location": "header",
+          "locationName": "x-amz-version-id",
+          "shape": "String"
+        }
+      },
+      "name": "PutObjectTaggingResult",
+      "type": "structure"
+    },
+    "RequestAnd": {
+      "members": {
+        "RequestTag": {
+          "locationName": "Tag",
+          "shape": "RequestTag"
+        }
+      },
+      "name": "RequestAnd",
+      "type": "structure"
+    },
+    "RequestCORSConfiguration": {
+      "members": {
+        "ListOfRequestCORSRule": {
+          "locationName": "CORSRule",
+          "shape": "ListOfRequestCORSRule"
+        }
+      },
+      "name": "RequestCORSConfiguration",
+      "required": [
+        "ListOfRequestCORSRule"
+      ],
+      "type": "structure"
+    },
+    "RequestCORSRule": {
+      "members": {
+        "AllowedHeader": {
+          "locationName": "AllowedHeader",
+          "shape": "String"
+        },
+        "AllowedOrigin": {
+          "locationName": "AllowedOrigin",
+          "shape": "String"
+        },
+        "ExposeHeader": {
+          "locationName": "ExposeHeader",
+          "shape": "String"
+        },
+        "ID": {
+          "locationName": "ID",
+          "shape": "String"
+        },
+        "ListOfRequestAllowedMethod": {
+          "locationName": "AllowedMethod",
+          "shape": "ListOfRequestAllowedMethod"
+        },
+        "MaxAgeSeconds": {
+          "locationName": "MaxAgeSeconds",
+          "shape": "Integer"
+        }
+      },
+      "name": "RequestCORSRule",
+      "required": [
+        "AllowedOrigin",
+        "ListOfRequestAllowedMethod"
+      ],
+      "type": "structure"
+    },
+    "RequestCompleteMultipartUpload": {
+      "members": {
+        "ListOfRequestPart": {
+          "locationName": "Part",
+          "shape": "ListOfRequestPart"
+        }
+      },
+      "name": "RequestCompleteMultipartUpload",
+      "required": [
+        "ListOfRequestPart"
+      ],
+      "type": "structure"
+    },
+    "RequestDelete": {
+      "members": {
+        "ListOfRequestObject": {
+          "locationName": "Object",
+          "shape": "ListOfRequestObject"
+        }
+      },
+      "name": "RequestDelete",
+      "required": [
+        "ListOfRequestObject"
+      ],
+      "type": "structure"
+    },
+    "RequestExpiration": {
+      "members": {
+        "Date": {
+          "locationName": "Date",
+          "shape": "TStamp"
+        },
+        "Days": {
+          "locationName": "Days",
+          "shape": "Integer"
+        }
+      },
+      "name": "RequestExpiration",
+      "type": "structure"
+    },
+    "RequestFilter": {
+      "members": {
+        "RequestAnd": {
+          "locationName": "And",
+          "shape": "RequestAnd"
+        }
+      },
+      "name": "RequestFilter",
+      "type": "structure"
+    },
+    "RequestLifecycleConfiguration": {
+      "members": {
+        "ListOfRequestRule": {
+          "locationName": "Rule",
+          "shape": "ListOfRequestRule"
+        }
+      },
+      "name": "RequestLifecycleConfiguration",
+      "required": [
+        "ListOfRequestRule"
+      ],
+      "type": "structure"
+    },
+    "RequestNoncurrentVersionExpiration": {
+      "members": {
+        "NoncurrentDays": {
+          "locationName": "NoncurrentDays",
+          "shape": "Integer"
+        }
+      },
+      "name": "RequestNoncurrentVersionExpiration",
+      "type": "structure"
+    },
+    "RequestObject": {
+      "members": {
+        "Key": {
+          "locationName": "Key",
+          "shape": "String"
+        },
+        "Quiet": {
+          "locationName": "Quiet",
+          "shape": "Boolean"
+        },
+        "VersionId": {
+          "locationName": "VersionId",
+          "shape": "String"
+        }
+      },
+      "name": "RequestObject",
+      "required": [
+        "Key"
+      ],
+      "type": "structure"
+    },
+    "RequestPart": {
+      "members": {
+        "ETag": {
+          "locationName": "ETag",
+          "shape": "String"
+        },
+        "PartNumber": {
+          "locationName": "PartNumber",
+          "shape": "Integer"
+        }
+      },
+      "name": "RequestPart",
+      "required": [
+        "ETag",
+        "PartNumber"
+      ],
+      "type": "structure"
+    },
+    "RequestRule": {
+      "members": {
+        "ID": {
+          "locationName": "ID",
+          "shape": "String"
+        },
+        "Prefix": {
+          "locationName": "Prefix",
+          "shape": "String"
+        },
+        "RequestExpiration": {
+          "locationName": "Expiration",
+          "shape": "RequestExpiration"
+        },
+        "RequestFilter": {
+          "locationName": "Filter",
+          "shape": "RequestFilter"
+        },
+        "RequestNoncurrentVersionExpiration": {
+          "locationName": "NoncurrentVersionExpiration",
+          "shape": "RequestNoncurrentVersionExpiration"
+        },
+        "Status": {
+          "locationName": "Status",
+          "shape": "StatusOfLifecycleConfigurationForPutBucketLifecycleConfiguration"
+        }
+      },
+      "name": "RequestRule",
+      "required": [
+        "ID"
+      ],
+      "type": "structure"
+    },
+    "RequestTag": {
+      "members": {
+        "Key": {
+          "locationName": "Key",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "Value",
+          "shape": "String"
+        }
+      },
+      "name": "RequestTag",
+      "type": "structure"
+    },
+    "RequestTagSet": {
+      "members": {
+        "RequestTag": {
+          "locationName": "Tag",
+          "shape": "RequestTag"
+        }
+      },
+      "name": "RequestTagSet",
+      "type": "structure"
+    },
+    "RequestTagging": {
+      "members": {
+        "RequestTagSet": {
+          "locationName": "TagSet",
+          "shape": "RequestTagSet"
+        }
+      },
+      "name": "RequestTagging",
+      "type": "structure"
+    },
+    "RequestTaggingOfPutBucketTagging": {
+      "members": {
+        "ListOfRequestTagSet": {
+          "locationName": "TagSet",
+          "shape": "ListOfRequestTagSet"
+        }
+      },
+      "name": "RequestTaggingOfPutBucketTagging",
+      "type": "structure"
+    },
+    "RequestVersioningConfiguration": {
+      "members": {
+        "Status": {
+          "locationName": "Status",
+          "shape": "StatusOfVersioningConfigurationForPutBucketVersioning"
+        }
+      },
+      "name": "RequestVersioningConfiguration",
+      "type": "structure"
+    },
+    "Rule": {
+      "members": {
+        "Expiration": {
+          "locationName": "Expiration",
+          "shape": "Expiration"
+        },
+        "Filter": {
+          "locationName": "Filter",
+          "shape": "Filter"
+        },
+        "ID": {
+          "locationName": "ID",
+          "shape": "String"
+        },
+        "NoncurrentVersionExpiration": {
+          "locationName": "NoncurrentVersionExpiration",
+          "shape": "NoncurrentVersionExpiration"
+        },
+        "Prefix": {
+          "locationName": "Prefix",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "Status",
+          "shape": "String"
+        }
+      },
+      "name": "Rule",
+      "type": "structure"
+    },
+    "StatusOfLifecycleConfigurationForPutBucketLifecycleConfiguration": {
+      "enum": [
+        "Enabled",
+        "Disabled"
+      ],
+      "name": "StatusOfLifecycleConfigurationForPutBucketLifecycleConfiguration",
+      "type": "string"
+    },
+    "StatusOfVersioningConfigurationForPutBucketVersioning": {
+      "enum": [
+        "Suspended",
+        "Enabled"
+      ],
+      "name": "StatusOfVersioningConfigurationForPutBucketVersioning",
+      "type": "string"
+    },
+    "String": {
+      "name": "String",
+      "type": "string"
+    },
+    "TStamp": {
+      "name": "TStamp",
+      "type": "timestamp"
+    },
+    "Tag": {
+      "members": {
+        "Key": {
+          "locationName": "Key",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "Value",
+          "shape": "String"
+        }
+      },
+      "name": "Tag",
+      "type": "structure"
+    },
+    "TagSet": {
+      "members": {
+        "Tag": {
+          "locationName": "Tag",
+          "shape": "Tag"
+        }
+      },
+      "name": "TagSet",
+      "type": "structure"
+    },
+    "TagSetOfGetBucketTagging": {
+      "members": {
+        "Key": {
+          "locationName": "Key",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "Value",
+          "shape": "String"
+        }
+      },
+      "name": "TagSetOfGetBucketTagging",
+      "type": "structure"
+    },
+    "Upload": {
+      "members": {
+        "DisplayName": {
+          "locationName": "DisplayName",
+          "shape": "String"
+        },
+        "ID": {
+          "locationName": "ID",
+          "shape": "String"
+        },
+        "Initiated": {
+          "locationName": "Initiated",
+          "shape": "TStamp"
+        },
+        "Initiator": {
+          "locationName": "Initiator",
+          "shape": "Initiator"
+        },
+        "Key": {
+          "locationName": "Key",
+          "shape": "String"
+        },
+        "Owner": {
+          "locationName": "Owner",
+          "shape": "Owner"
+        },
+        "StorageClass": {
+          "locationName": "StorageClass",
+          "shape": "String"
+        },
+        "UploadId": {
+          "locationName": "UploadId",
+          "shape": "String"
+        }
+      },
+      "name": "Upload",
+      "type": "structure"
+    },
+    "UploadPartCopyRequest": {
+      "members": {
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "PartNumber": {
+          "location": "querystring",
+          "locationName": "partNumber",
+          "shape": "String"
+        },
+        "UploadId": {
+          "location": "querystring",
+          "locationName": "uploadId",
+          "shape": "String"
+        },
+        "XAmzCopySource": {
+          "location": "header",
+          "locationName": "x-amz-copy-source",
+          "shape": "String"
+        },
+        "XAmzCopySourceIfMatch": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-if-match",
+          "shape": "String"
+        },
+        "XAmzCopySourceIfModifiedSince": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-if-modified-since",
+          "shape": "String"
+        },
+        "XAmzCopySourceIfNoneMatch": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-if-none-match",
+          "shape": "String"
+        },
+        "XAmzCopySourceIfUnmodifiedSince": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-if-unmodified-since",
+          "shape": "String"
+        },
+        "XAmzCopySourceRange": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-range",
+          "shape": "String"
+        },
+        "XAmzCopySourceServerSideEncryptionCustomerAlgorithm": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-server-side-encryption-customer-algorithm",
+          "shape": "XAmzCopySourceServerSideEncryptionCustomerAlgorithmOfUploadPartCopyRequest"
+        },
+        "XAmzCopySourceServerSideEncryptionCustomerKey": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-server-side-encryption-customer-key",
+          "shape": "String"
+        },
+        "XAmzCopySourceServerSideEncryptionCustomerKeyMd5": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-server-side-encryption-customer-key-MD5",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionCustomerAlgorithm": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-algorithm",
+          "shape": "XAmzServerSideEncryptionCustomerAlgorithmOfUploadPartCopyRequest"
+        },
+        "XAmzServerSideEncryptionCustomerKey": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-key",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionCustomerKeyMd5": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-key-MD5",
+          "shape": "String"
+        }
+      },
+      "name": "UploadPartCopyRequest",
+      "required": [
+        "Bucket",
+        "Object",
+        "PartNumber",
+        "UploadId",
+        "XAmzCopySource"
+      ],
+      "type": "structure"
+    },
+    "UploadPartCopyResult": {
+      "members": {
+        "ContentType": {
+          "location": "header",
+          "locationName": "Content-Type",
+          "shape": "String"
+        },
+        "ETag": {
+          "locationName": "ETag",
+          "shape": "String"
+        },
+        "LastModified": {
+          "locationName": "LastModified",
+          "shape": "TStamp"
+        },
+        "XAmzCopySourceVersionId": {
+          "location": "header",
+          "locationName": "x-amz-copy-source-version-id",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryption": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption",
+          "shape": "String"
+        }
+      },
+      "name": "UploadPartCopyResult",
+      "type": "structure"
+    },
+    "UploadPartRequest": {
+      "members": {
+        "Body": {
+          "locationName": "Body",
+          "shape": "Blob",
+          "streaming": true
+        },
+        "Bucket": {
+          "location": "uri",
+          "locationName": "Bucket",
+          "shape": "String"
+        },
+        "ContentMd5": {
+          "location": "header",
+          "locationName": "Content-MD5",
+          "shape": "String"
+        },
+        "Object": {
+          "location": "uri",
+          "locationName": "Object",
+          "shape": "String"
+        },
+        "PartNumber": {
+          "location": "querystring",
+          "locationName": "partNumber",
+          "shape": "String"
+        },
+        "UploadId": {
+          "location": "querystring",
+          "locationName": "uploadId",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionCustomerAlgorithm": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-algorithm",
+          "shape": "XAmzServerSideEncryptionCustomerAlgorithmOfUploadPartRequest"
+        },
+        "XAmzServerSideEncryptionCustomerKey": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-key",
+          "shape": "String"
+        },
+        "XAmzServerSideEncryptionCustomerKeyMd5": {
+          "location": "header",
+          "locationName": "x-amz-server-side-encryption-customer-key-MD5",
+          "shape": "String"
+        }
+      },
+      "name": "UploadPartRequest",
+      "payload": "Body",
+      "required": [
+        "Bucket",
+        "Object",
+        "PartNumber",
+        "UploadId"
+      ],
+      "type": "structure"
+    },
+    "UploadPartResult": {
+      "members": {
+        "ETag": {
+          "location": "header",
+          "locationName": "ETag",
+          "shape": "String"
+        }
+      },
+      "name": "UploadPartResult",
+      "type": "structure"
+    },
+    "Version": {
+      "members": {
+        "DisplayName": {
+          "locationName": "DisplayName",
+          "shape": "String"
+        },
+        "ETag": {
+          "locationName": "ETag",
+          "shape": "String"
+        },
+        "ID": {
+          "locationName": "ID",
+          "shape": "String"
+        },
+        "IsLatest": {
+          "locationName": "IsLatest",
+          "shape": "Boolean"
+        },
+        "Key": {
+          "locationName": "Key",
+          "shape": "String"
+        },
+        "LastModified": {
+          "locationName": "LastModified",
+          "shape": "TStamp"
+        },
+        "Owner": {
+          "locationName": "Owner",
+          "shape": "Owner"
+        },
+        "Size": {
+          "locationName": "Size",
+          "shape": "String"
+        },
+        "StorageClass": {
+          "locationName": "StorageClass",
+          "shape": "String"
+        },
+        "VersionId": {
+          "locationName": "VersionId",
+          "shape": "String"
+        }
+      },
+      "name": "Version",
+      "type": "structure"
+    },
+    "XAmzCopySourceServerSideEncryptionCustomerAlgorithmOfPutObjectCopyRequest": {
+      "enum": [
+        "AES256"
+      ],
+      "name": "XAmzCopySourceServerSideEncryptionCustomerAlgorithmOfPutObjectCopyRequest",
+      "type": "string"
+    },
+    "XAmzCopySourceServerSideEncryptionCustomerAlgorithmOfUploadPartCopyRequest": {
+      "enum": [
+        "AES256"
+      ],
+      "name": "XAmzCopySourceServerSideEncryptionCustomerAlgorithmOfUploadPartCopyRequest",
+      "type": "string"
+    },
+    "XAmzMetadataDirectiveOfPutObjectCopyRequest": {
+      "enum": [
+        "COPY",
+        "REPLACE"
+      ],
+      "name": "XAmzMetadataDirectiveOfPutObjectCopyRequest",
+      "type": "string"
+    },
+    "XAmzServerSideEncryptionCustomerAlgorithmOfGetObjectRequest": {
+      "enum": [
+        "AES256"
+      ],
+      "name": "XAmzServerSideEncryptionCustomerAlgorithmOfGetObjectRequest",
+      "type": "string"
+    },
+    "XAmzServerSideEncryptionCustomerAlgorithmOfHeadObjectRequest": {
+      "enum": [
+        "AES256"
+      ],
+      "name": "XAmzServerSideEncryptionCustomerAlgorithmOfHeadObjectRequest",
+      "type": "string"
+    },
+    "XAmzServerSideEncryptionCustomerAlgorithmOfInitiateMultipartUploadRequest": {
+      "enum": [
+        "AES256"
+      ],
+      "name": "XAmzServerSideEncryptionCustomerAlgorithmOfInitiateMultipartUploadRequest",
+      "type": "string"
+    },
+    "XAmzServerSideEncryptionCustomerAlgorithmOfPutObjectCopyRequest": {
+      "enum": [
+        "AES256"
+      ],
+      "name": "XAmzServerSideEncryptionCustomerAlgorithmOfPutObjectCopyRequest",
+      "type": "string"
+    },
+    "XAmzServerSideEncryptionCustomerAlgorithmOfPutObjectRequest": {
+      "enum": [
+        "AES256"
+      ],
+      "name": "XAmzServerSideEncryptionCustomerAlgorithmOfPutObjectRequest",
+      "type": "string"
+    },
+    "XAmzServerSideEncryptionCustomerAlgorithmOfUploadPartCopyRequest": {
+      "enum": [
+        "AES256"
+      ],
+      "name": "XAmzServerSideEncryptionCustomerAlgorithmOfUploadPartCopyRequest",
+      "type": "string"
+    },
+    "XAmzServerSideEncryptionCustomerAlgorithmOfUploadPartRequest": {
+      "enum": [
+        "AES256"
+      ],
+      "name": "XAmzServerSideEncryptionCustomerAlgorithmOfUploadPartRequest",
+      "type": "string"
+    },
+    "XAmzServerSideEncryptionOfPutObjectRequest": {
+      "enum": [
+        "AES256"
+      ],
+      "name": "XAmzServerSideEncryptionOfPutObjectRequest",
+      "type": "string"
+    },
+    "XAmzStorageClassOfInitiateMultipartUploadRequest": {
+      "enum": [
+        "STANDARD",
+        "REDUCED_REDUNDANCY"
+      ],
+      "name": "XAmzStorageClassOfInitiateMultipartUploadRequest",
+      "type": "string"
+    },
+    "XAmzStorageClassOfPutObjectCopyRequest": {
+      "enum": [
+        "STANDARD",
+        "REDUCED_REDUNDANCY"
+      ],
+      "name": "XAmzStorageClassOfPutObjectCopyRequest",
+      "type": "string"
+    },
+    "XAmzStorageClassOfPutObjectRequest": {
+      "enum": [
+        "STANDARD",
+        "REDUCED_REDUNDANCY"
+      ],
+      "name": "XAmzStorageClassOfPutObjectRequest",
+      "type": "string"
+    },
+    "XAmzTaggingDirectiveOfPutObjectCopyRequest": {
+      "enum": [
+        "COPY",
+        "REPLACE"
+      ],
+      "name": "XAmzTaggingDirectiveOfPutObjectCopyRequest",
+      "type": "string"
+    },
+    "XAmzTaggingOfInitiateMultipartUploadRequest": {
+      "enum": [
+        "COPY",
+        "REPLACE"
+      ],
+      "name": "XAmzTaggingOfInitiateMultipartUploadRequest",
+      "type": "string"
+    },
+    "XNtapSgConsistencyOfPutBucketConsistencyRequest": {
+      "enum": [
+        "read-after-new-write",
+        "available"
+      ],
+      "name": "XNtapSgConsistencyOfPutBucketConsistencyRequest",
+      "type": "string"
+    }
+  },
+  "version": "2.0"
+}
