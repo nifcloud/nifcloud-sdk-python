@@ -790,6 +790,10 @@
       "name": "AvailabilityZones",
       "type": "structure"
     },
+    "Blob": {
+      "name": "Blob",
+      "type": "blob"
+    },
     "Boolean": {
       "name": "Boolean",
       "type": "boolean"
