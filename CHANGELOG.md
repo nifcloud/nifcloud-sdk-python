@@ -1,5 +1,15 @@
 # Changelog
 
+## [v1.2.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.2.0) (2022-07-15)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.1.0...v1.2.0)
+
+**Merged pull requests:**
+
+- Add storage integration test [\#95](https://github.com/nifcloud/nifcloud-sdk-python/pull/95) ([fuku2014](https://github.com/fuku2014))
+- Add ObjectStorageService [\#94](https://github.com/nifcloud/nifcloud-sdk-python/pull/94) ([fuku2014](https://github.com/fuku2014))
+- Update sdk\(for UpgradeDBEngineVersion etc.\) [\#93](https://github.com/nifcloud/nifcloud-sdk-python/pull/93) ([fuku2014](https://github.com/fuku2014))
+
 ## [v1.1.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.1.0) (2022-03-25)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.0.5...v1.1.0)
