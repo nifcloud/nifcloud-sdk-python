@@ -15,7 +15,7 @@
     "AbortMultipartUpload": {
       "http": {
         "method": "DELETE",
-        "requestUri": "/{Bucket}/{Object}?x-id=AbortMultipartUpload"
+        "requestUri": "/{Bucket}/{Object+}?x-id=AbortMultipartUpload"
       },
       "input": {
         "shape": "AbortMultipartUploadRequest"
@@ -25,7 +25,7 @@
     "CompleteMultipartUpload": {
       "http": {
         "method": "POST",
-        "requestUri": "/{Bucket}/{Object}?x-id=CompleteMultipartUpload"
+        "requestUri": "/{Bucket}/{Object+}?x-id=CompleteMultipartUpload"
       },
       "input": {
         "locationName": "CompleteMultipartUploadRequest",
@@ -109,7 +109,7 @@
     "DeleteObject": {
       "http": {
         "method": "DELETE",
-        "requestUri": "/{Bucket}/{Object}?x-id=DeleteObject"
+        "requestUri": "/{Bucket}/{Object+}?x-id=DeleteObject"
       },
       "input": {
         "shape": "DeleteObjectRequest"
@@ -122,7 +122,7 @@
     "DeleteObjectTagging": {
       "http": {
         "method": "DELETE",
-        "requestUri": "/{Bucket}/{Object}?tagging&x-id=DeleteObjectTagging"
+        "requestUri": "/{Bucket}/{Object+}?tagging&x-id=DeleteObjectTagging"
       },
       "input": {
         "shape": "DeleteObjectTaggingRequest"
@@ -265,7 +265,7 @@
     "GetObject": {
       "http": {
         "method": "GET",
-        "requestUri": "/{Bucket}/{Object}?x-id=GetObject"
+        "requestUri": "/{Bucket}/{Object+}?x-id=GetObject"
       },
       "input": {
         "shape": "GetObjectRequest"
@@ -278,7 +278,7 @@
     "GetObjectACL": {
       "http": {
         "method": "GET",
-        "requestUri": "/{Bucket}/{Object}?acl&x-id=GetObjectACL"
+        "requestUri": "/{Bucket}/{Object+}?acl&x-id=GetObjectACL"
       },
       "input": {
         "shape": "GetObjectACLRequest"
@@ -291,7 +291,7 @@
     "GetObjectTagging": {
       "http": {
         "method": "GET",
-        "requestUri": "/{Bucket}/{Object}?tagging&x-id=GetObjectTagging"
+        "requestUri": "/{Bucket}/{Object+}?tagging&x-id=GetObjectTagging"
       },
       "input": {
         "shape": "GetObjectTaggingRequest"
@@ -327,7 +327,7 @@
     "HeadObject": {
       "http": {
         "method": "HEAD",
-        "requestUri": "/{Bucket}/{Object}?x-id=HeadObject"
+        "requestUri": "/{Bucket}/{Object+}?x-id=HeadObject"
       },
       "input": {
         "shape": "HeadObjectRequest"
@@ -340,7 +340,7 @@
     "InitiateMultipartUpload": {
       "http": {
         "method": "POST",
-        "requestUri": "/{Bucket}/{Object}?uploads&x-id=InitiateMultipartUpload"
+        "requestUri": "/{Bucket}/{Object+}?uploads&x-id=InitiateMultipartUpload"
       },
       "input": {
         "locationName": "InitiateMultipartUploadRequest",
@@ -370,7 +370,7 @@
     "ListParts": {
       "http": {
         "method": "GET",
-        "requestUri": "/{Bucket}/{Object}?x-id=ListParts"
+        "requestUri": "/{Bucket}/{Object+}?x-id=ListParts"
       },
       "input": {
         "shape": "ListPartsRequest"
@@ -459,7 +459,7 @@
     "PutObject": {
       "http": {
         "method": "PUT",
-        "requestUri": "/{Bucket}/{Object}?x-id=PutObject"
+        "requestUri": "/{Bucket}/{Object+}?x-id=PutObject"
       },
       "input": {
         "shape": "PutObjectRequest"
@@ -472,7 +472,7 @@
     "PutObjectCopy": {
       "http": {
         "method": "PUT",
-        "requestUri": "/{Bucket}/{Object}?x-id=PutObjectCopy"
+        "requestUri": "/{Bucket}/{Object+}?x-id=PutObjectCopy"
       },
       "input": {
         "shape": "PutObjectCopyRequest"
@@ -485,7 +485,7 @@
     "PutObjectTagging": {
       "http": {
         "method": "PUT",
-        "requestUri": "/{Bucket}/{Object}?tagging&x-id=PutObjectTagging"
+        "requestUri": "/{Bucket}/{Object+}?tagging&x-id=PutObjectTagging"
       },
       "input": {
         "shape": "PutObjectTaggingRequest"
@@ -498,7 +498,7 @@
     "UploadPart": {
       "http": {
         "method": "PUT",
-        "requestUri": "/{Bucket}/{Object}?x-id=UploadPart"
+        "requestUri": "/{Bucket}/{Object+}?x-id=UploadPart"
       },
       "input": {
         "shape": "UploadPartRequest"
@@ -511,7 +511,7 @@
     "UploadPartCopy": {
       "http": {
         "method": "PUT",
-        "requestUri": "/{Bucket}/{Object}?x-id=UploadPartCopy"
+        "requestUri": "/{Bucket}/{Object+}?x-id=UploadPartCopy"
       },
       "input": {
         "shape": "UploadPartCopyRequest"
