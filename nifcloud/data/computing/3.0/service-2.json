@@ -3733,6 +3733,10 @@
         "VolumeId": {
           "locationName": "volumeId",
           "shape": "String"
+        },
+        "VolumeUniqueId": {
+          "locationName": "volumeUniqueId",
+          "shape": "String"
         }
       },
       "name": "AttachVolumeResult",
@@ -3946,6 +3950,10 @@
         },
         "VolumeId": {
           "locationName": "volumeId",
+          "shape": "String"
+        },
+        "VolumeUniqueId": {
+          "locationName": "volumeUniqueId",
           "shape": "String"
         }
       },
@@ -5600,6 +5608,10 @@
         },
         "VolumeId": {
           "locationName": "volumeId",
+          "shape": "String"
+        },
+        "VolumeUniqueId": {
+          "locationName": "volumeUniqueId",
           "shape": "String"
         }
       },
@@ -7692,6 +7704,10 @@
         "VolumeId": {
           "locationName": "volumeId",
           "shape": "String"
+        },
+        "VolumeUniqueId": {
+          "locationName": "volumeUniqueId",
+          "shape": "String"
         }
       },
       "name": "DetachVolumeResult",
@@ -8129,6 +8145,10 @@
         "VolumeId": {
           "locationName": "volumeId",
           "shape": "String"
+        },
+        "VolumeUniqueId": {
+          "locationName": "volumeUniqueId",
+          "shape": "String"
         }
       },
       "name": "Ebs",
@@ -8168,6 +8188,10 @@
         },
         "VolumeId": {
           "locationName": "volumeId",
+          "shape": "String"
+        },
+        "VolumeUniqueId": {
+          "locationName": "volumeUniqueId",
           "shape": "String"
         }
       },
@@ -26350,6 +26374,10 @@
         },
         "VolumeId": {
           "locationName": "volumeId",
+          "shape": "String"
+        },
+        "VolumeUniqueId": {
+          "locationName": "volumeUniqueId",
           "shape": "String"
         }
       },
