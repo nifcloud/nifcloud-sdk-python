@@ -1,5 +1,19 @@
 # Changelog
 
+## [v1.3.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.3.0) (2022-08-30)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.2.0...v1.3.0)
+
+**Closed issues:**
+
+- オブストの put\_object でディレクトリを指定すると SignatureDoesNotMatch [\#96](https://github.com/nifcloud/nifcloud-sdk-python/issues/96)
+
+**Merged pull requests:**
+
+- Update computing model [\#99](https://github.com/nifcloud/nifcloud-sdk-python/pull/99) ([aokumasan](https://github.com/aokumasan))
+- Update model for storage service [\#98](https://github.com/nifcloud/nifcloud-sdk-python/pull/98) ([aokumasan](https://github.com/aokumasan))
+- Fix object storage service document link [\#97](https://github.com/nifcloud/nifcloud-sdk-python/pull/97) ([aokumasan](https://github.com/aokumasan))
+
 ## [v1.2.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.2.0) (2022-07-15)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.1.0...v1.2.0)
