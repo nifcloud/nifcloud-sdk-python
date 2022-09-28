@@ -80,6 +80,20 @@
         "shape": "CreateSnapshotResult"
       }
     },
+    "CreateTags": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/tags",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "CreateTagsRequest"
+      },
+      "name": "CreateTags",
+      "output": {
+        "shape": "CreateTagsResult"
+      }
+    },
     "DeleteCluster": {
       "http": {
         "method": "DELETE",
@@ -182,6 +196,19 @@
       "name": "DeleteSnapshots",
       "output": {
         "shape": "DeleteSnapshotsResult"
+      }
+    },
+    "DeleteTags": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/tags"
+      },
+      "input": {
+        "shape": "DeleteTagsRequest"
+      },
+      "name": "DeleteTags",
+      "output": {
+        "shape": "DeleteTagsResult"
       }
     },
     "GetCluster": {
@@ -340,6 +367,19 @@
         "shape": "ListSnapshotsResult"
       }
     },
+    "ListTags": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/tags"
+      },
+      "input": {
+        "shape": "ListTagsRequest"
+      },
+      "name": "ListTags",
+      "output": {
+        "shape": "ListTagsResult"
+      }
+    },
     "RestoreClusterFromSnapshot": {
       "http": {
         "method": "POST",
@@ -407,6 +447,19 @@
         "shape": "UpdateFirewallGroupResult"
       }
     },
+    "UpdateNodePool": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/clusters/{ClusterName}/nodePools/{NodePoolName}"
+      },
+      "input": {
+        "shape": "UpdateNodePoolRequest"
+      },
+      "name": "UpdateNodePool",
+      "output": {
+        "shape": "UpdateNodePoolResult"
+      }
+    },
     "UpdateSnapshot": {
       "http": {
         "method": "PUT",
@@ -418,6 +471,19 @@
       "name": "UpdateSnapshot",
       "output": {
         "shape": "UpdateSnapshotResult"
+      }
+    },
+    "UpdateTags": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/tags"
+      },
+      "input": {
+        "shape": "UpdateTagsRequest"
+      },
+      "name": "UpdateTags",
+      "output": {
+        "shape": "UpdateTagsResult"
       }
     }
   },
@@ -519,9 +585,17 @@
           "locationName": "nodePools",
           "shape": "ListOfNodePools"
         },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
         "Status": {
           "locationName": "status",
           "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
         }
       },
       "name": "Cluster",
@@ -685,9 +759,17 @@
           "locationName": "nodePools",
           "shape": "ListOfNodePools"
         },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
         "Status": {
           "locationName": "status",
           "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
         }
       },
       "name": "Clusters",
@@ -817,6 +899,29 @@
         }
       },
       "name": "CreateSnapshotResult",
+      "type": "structure"
+    },
+    "CreateTagsRequest": {
+      "members": {
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTagsOfCreateTags"
+        }
+      },
+      "name": "CreateTagsRequest",
+      "required": [
+        "Tags"
+      ],
+      "type": "structure"
+    },
+    "CreateTagsResult": {
+      "members": {
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTagsOfCreateTags"
+        }
+      },
+      "name": "CreateTagsResult",
       "type": "structure"
     },
     "DeleteClusterRequest": {
@@ -1017,6 +1122,30 @@
       "name": "DeleteSnapshotsResult",
       "type": "structure"
     },
+    "DeleteTagsRequest": {
+      "members": {
+        "Ids": {
+          "location": "querystring",
+          "locationName": "ids",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteTagsRequest",
+      "required": [
+        "Ids"
+      ],
+      "type": "structure"
+    },
+    "DeleteTagsResult": {
+      "members": {
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTagsOfDeleteTags"
+        }
+      },
+      "name": "DeleteTagsResult",
+      "type": "structure"
+    },
     "DirectionOfrulesForAuthorizeFirewallGroup": {
       "enum": [
         "IN",
@@ -1053,9 +1182,17 @@
           "locationName": "name",
           "shape": "String"
         },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
         "Rules": {
           "locationName": "rules",
           "shape": "ListOfRules"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
         }
       },
       "name": "FirewallGroup",
@@ -1071,9 +1208,17 @@
           "locationName": "name",
           "shape": "String"
         },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
         "Rules": {
           "locationName": "rules",
           "shape": "ListOfRules"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
         }
       },
       "name": "FirewallGroups",
@@ -1404,30 +1549,36 @@
     },
     "KubernetesVersionOfclusterForCreateCluster": {
       "enum": [
-        "v1.21.1",
-        "v1.21.5",
-        "v1.21.9",
         "v1.22.2",
         "v1.22.6",
-        "v1.23.3"
+        "v1.22.12",
+        "v1.23.3",
+        "v1.23.9",
+        "v1.24.3"
       ],
       "name": "KubernetesVersionOfclusterForCreateCluster",
       "type": "string"
     },
     "KubernetesVersionOfclusterForUpdateCluster": {
       "enum": [
-        "v1.21.1",
-        "v1.21.5",
-        "v1.21.9",
         "v1.22.2",
         "v1.22.6",
-        "v1.23.3"
+        "v1.22.12",
+        "v1.23.3",
+        "v1.23.9",
+        "v1.24.3"
       ],
       "name": "KubernetesVersionOfclusterForUpdateCluster",
       "type": "string"
     },
     "ListClustersRequest": {
-      "members": {},
+      "members": {
+        "Filters": {
+          "location": "querystring",
+          "locationName": "filters",
+          "shape": "String"
+        }
+      },
       "name": "ListClustersRequest",
       "type": "structure"
     },
@@ -1442,7 +1593,13 @@
       "type": "structure"
     },
     "ListFirewallGroupsRequest": {
-      "members": {},
+      "members": {
+        "Filters": {
+          "location": "querystring",
+          "locationName": "filters",
+          "shape": "String"
+        }
+      },
       "name": "ListFirewallGroupsRequest",
       "type": "structure"
     },
@@ -1476,6 +1633,11 @@
         "ClusterName": {
           "location": "uri",
           "locationName": "ClusterName",
+          "shape": "String"
+        },
+        "Filters": {
+          "location": "querystring",
+          "locationName": "filters",
           "shape": "String"
         }
       },
@@ -1658,6 +1820,27 @@
       "name": "ListOfRequestRules",
       "type": "list"
     },
+    "ListOfRequestTags": {
+      "member": {
+        "shape": "RequestTags"
+      },
+      "name": "ListOfRequestTags",
+      "type": "list"
+    },
+    "ListOfRequestTagsOfCreateTags": {
+      "member": {
+        "shape": "RequestTagsOfCreateTags"
+      },
+      "name": "ListOfRequestTagsOfCreateTags",
+      "type": "list"
+    },
+    "ListOfRequestTagsOfUpdateTags": {
+      "member": {
+        "shape": "RequestTagsOfUpdateTags"
+      },
+      "name": "ListOfRequestTagsOfUpdateTags",
+      "type": "list"
+    },
     "ListOfRules": {
       "member": {
         "shape": "Rules"
@@ -1679,6 +1862,41 @@
       "name": "ListOfSnapshotsOfDeleteSnapshots",
       "type": "list"
     },
+    "ListOfTags": {
+      "member": {
+        "shape": "Tags"
+      },
+      "name": "ListOfTags",
+      "type": "list"
+    },
+    "ListOfTagsOfCreateTags": {
+      "member": {
+        "shape": "TagsOfCreateTags"
+      },
+      "name": "ListOfTagsOfCreateTags",
+      "type": "list"
+    },
+    "ListOfTagsOfDeleteTags": {
+      "member": {
+        "shape": "TagsOfDeleteTags"
+      },
+      "name": "ListOfTagsOfDeleteTags",
+      "type": "list"
+    },
+    "ListOfTagsOfListTags": {
+      "member": {
+        "shape": "TagsOfListTags"
+      },
+      "name": "ListOfTagsOfListTags",
+      "type": "list"
+    },
+    "ListOfTagsOfUpdateTags": {
+      "member": {
+        "shape": "TagsOfUpdateTags"
+      },
+      "name": "ListOfTagsOfUpdateTags",
+      "type": "list"
+    },
     "ListOfValidKubernetesVersions": {
       "member": {
         "locationName": "member",
@@ -1688,7 +1906,13 @@
       "type": "list"
     },
     "ListSnapshotsRequest": {
-      "members": {},
+      "members": {
+        "Filters": {
+          "location": "querystring",
+          "locationName": "filters",
+          "shape": "String"
+        }
+      },
       "name": "ListSnapshotsRequest",
       "type": "structure"
     },
@@ -1700,6 +1924,27 @@
         }
       },
       "name": "ListSnapshotsResult",
+      "type": "structure"
+    },
+    "ListTagsRequest": {
+      "members": {
+        "Nrn": {
+          "location": "querystring",
+          "locationName": "nrn",
+          "shape": "String"
+        }
+      },
+      "name": "ListTagsRequest",
+      "type": "structure"
+    },
+    "ListTagsResult": {
+      "members": {
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTagsOfListTags"
+        }
+      },
+      "name": "ListTagsResult",
       "type": "structure"
     },
     "Listener": {
@@ -1898,9 +2143,17 @@
           "locationName": "nodes",
           "shape": "ListOfNodes"
         },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
         "Status": {
           "locationName": "status",
           "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
         }
       },
       "name": "NodePool",
@@ -1928,9 +2181,17 @@
           "locationName": "nodes",
           "shape": "ListOfNodes"
         },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
         "Status": {
           "locationName": "status",
           "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
         }
       },
       "name": "NodePools",
@@ -2215,6 +2476,10 @@
           "locationName": "nodePools",
           "shape": "ListOfRequestNodePools"
         },
+        "ListOfRequestTags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTags"
+        },
         "Name": {
           "locationName": "name",
           "shape": "String"
@@ -2264,6 +2529,10 @@
           "locationName": "locations",
           "shape": "ListOfRequestLocations"
         },
+        "ListOfRequestTags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTags"
+        },
         "Name": {
           "locationName": "name",
           "shape": "String"
@@ -2295,6 +2564,10 @@
           "locationName": "kubernetesVersion",
           "shape": "KubernetesVersionOfclusterForUpdateCluster"
         },
+        "ListOfRequestTags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTags"
+        },
         "Name": {
           "locationName": "name",
           "shape": "String"
@@ -2313,6 +2586,10 @@
           "locationName": "description",
           "shape": "String"
         },
+        "ListOfRequestTags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTags"
+        },
         "Name": {
           "locationName": "name",
           "shape": "String"
@@ -2329,6 +2606,10 @@
         "Description": {
           "locationName": "description",
           "shape": "String"
+        },
+        "ListOfRequestTags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTags"
         },
         "Name": {
           "locationName": "name",
@@ -2364,6 +2645,10 @@
           "locationName": "instanceType",
           "shape": "InstanceTypeOfnodePoolForCreateNodePool"
         },
+        "ListOfRequestTags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTags"
+        },
         "Name": {
           "locationName": "name",
           "shape": "String"
@@ -2380,11 +2665,25 @@
       ],
       "type": "structure"
     },
+    "RequestNodePoolOfUpdateNodePool": {
+      "members": {
+        "ListOfRequestTags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTags"
+        }
+      },
+      "name": "RequestNodePoolOfUpdateNodePool",
+      "type": "structure"
+    },
     "RequestNodePools": {
       "members": {
         "InstanceType": {
           "locationName": "instanceType",
           "shape": "InstanceTypeOfclusterForCreateCluster"
+        },
+        "ListOfRequestTags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTags"
         },
         "Name": {
           "locationName": "name",
@@ -2445,6 +2744,10 @@
           "locationName": "expirationTime",
           "shape": "String"
         },
+        "ListOfRequestTags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTags"
+        },
         "Name": {
           "locationName": "name",
           "shape": "String"
@@ -2471,12 +2774,76 @@
           "locationName": "expirationTime",
           "shape": "String"
         },
+        "ListOfRequestTags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTags"
+        },
         "Name": {
           "locationName": "name",
           "shape": "String"
         }
       },
       "name": "RequestSnapshotOfUpdateSnapshot",
+      "type": "structure"
+    },
+    "RequestTags": {
+      "members": {
+        "Key": {
+          "locationName": "key",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "String"
+        }
+      },
+      "name": "RequestTags",
+      "type": "structure"
+    },
+    "RequestTagsOfCreateTags": {
+      "members": {
+        "Key": {
+          "locationName": "key",
+          "shape": "String"
+        },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "String"
+        }
+      },
+      "name": "RequestTagsOfCreateTags",
+      "required": [
+        "Key",
+        "Nrn",
+        "Value"
+      ],
+      "type": "structure"
+    },
+    "RequestTagsOfUpdateTags": {
+      "members": {
+        "Key": {
+          "locationName": "key",
+          "shape": "String"
+        },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "String"
+        }
+      },
+      "name": "RequestTagsOfUpdateTags",
+      "required": [
+        "Key",
+        "Nrn",
+        "Value"
+      ],
       "type": "structure"
     },
     "RestoreClusterFromSnapshotRequest": {
@@ -2660,6 +3027,10 @@
           "locationName": "name",
           "shape": "String"
         },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
         "ResourceVersion": {
           "locationName": "resourceVersion",
           "shape": "String"
@@ -2667,6 +3038,10 @@
         "Status": {
           "locationName": "status",
           "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
         }
       },
       "name": "Snapshot",
@@ -2694,6 +3069,10 @@
           "locationName": "name",
           "shape": "String"
         },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
         "ResourceVersion": {
           "locationName": "resourceVersion",
           "shape": "String"
@@ -2701,6 +3080,10 @@
         "Status": {
           "locationName": "status",
           "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
         }
       },
       "name": "SnapshotOfCreateSnapshot",
@@ -2728,6 +3111,10 @@
           "locationName": "name",
           "shape": "String"
         },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
         "ResourceVersion": {
           "locationName": "resourceVersion",
           "shape": "String"
@@ -2735,6 +3122,10 @@
         "Status": {
           "locationName": "status",
           "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
         }
       },
       "name": "SnapshotOfDeleteSnapshot",
@@ -2762,6 +3153,10 @@
           "locationName": "name",
           "shape": "String"
         },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
         "ResourceVersion": {
           "locationName": "resourceVersion",
           "shape": "String"
@@ -2769,6 +3164,10 @@
         "Status": {
           "locationName": "status",
           "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
         }
       },
       "name": "SnapshotOfUpdateSnapshot",
@@ -2796,6 +3195,10 @@
           "locationName": "name",
           "shape": "String"
         },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
         "ResourceVersion": {
           "locationName": "resourceVersion",
           "shape": "String"
@@ -2803,6 +3206,10 @@
         "Status": {
           "locationName": "status",
           "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
         }
       },
       "name": "Snapshots",
@@ -2830,6 +3237,10 @@
           "locationName": "name",
           "shape": "String"
         },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
         "ResourceVersion": {
           "locationName": "resourceVersion",
           "shape": "String"
@@ -2837,6 +3248,10 @@
         "Status": {
           "locationName": "status",
           "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
         }
       },
       "name": "SnapshotsOfDeleteSnapshots",
@@ -2863,6 +3278,112 @@
     "TStamp": {
       "name": "TStamp",
       "type": "timestamp"
+    },
+    "Tags": {
+      "members": {
+        "Id": {
+          "locationName": "id",
+          "shape": "String"
+        },
+        "Key": {
+          "locationName": "key",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "String"
+        }
+      },
+      "name": "Tags",
+      "type": "structure"
+    },
+    "TagsOfCreateTags": {
+      "members": {
+        "Id": {
+          "locationName": "id",
+          "shape": "String"
+        },
+        "Key": {
+          "locationName": "key",
+          "shape": "String"
+        },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "String"
+        }
+      },
+      "name": "TagsOfCreateTags",
+      "type": "structure"
+    },
+    "TagsOfDeleteTags": {
+      "members": {
+        "Id": {
+          "locationName": "id",
+          "shape": "String"
+        },
+        "Key": {
+          "locationName": "key",
+          "shape": "String"
+        },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "String"
+        }
+      },
+      "name": "TagsOfDeleteTags",
+      "type": "structure"
+    },
+    "TagsOfListTags": {
+      "members": {
+        "Id": {
+          "locationName": "id",
+          "shape": "String"
+        },
+        "Key": {
+          "locationName": "key",
+          "shape": "String"
+        },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "String"
+        }
+      },
+      "name": "TagsOfListTags",
+      "type": "structure"
+    },
+    "TagsOfUpdateTags": {
+      "members": {
+        "Id": {
+          "locationName": "id",
+          "shape": "String"
+        },
+        "Key": {
+          "locationName": "key",
+          "shape": "String"
+        },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "String"
+        }
+      },
+      "name": "TagsOfUpdateTags",
+      "type": "structure"
     },
     "UpdateClusterRequest": {
       "members": {
@@ -2920,6 +3441,40 @@
       "name": "UpdateFirewallGroupResult",
       "type": "structure"
     },
+    "UpdateNodePoolRequest": {
+      "members": {
+        "ClusterName": {
+          "location": "uri",
+          "locationName": "ClusterName",
+          "shape": "String"
+        },
+        "NodePool": {
+          "locationName": "nodePool",
+          "shape": "RequestNodePoolOfUpdateNodePool"
+        },
+        "NodePoolName": {
+          "location": "uri",
+          "locationName": "NodePoolName",
+          "shape": "String"
+        }
+      },
+      "name": "UpdateNodePoolRequest",
+      "required": [
+        "ClusterName",
+        "NodePoolName"
+      ],
+      "type": "structure"
+    },
+    "UpdateNodePoolResult": {
+      "members": {
+        "NodePool": {
+          "locationName": "nodePool",
+          "shape": "NodePool"
+        }
+      },
+      "name": "UpdateNodePoolResult",
+      "type": "structure"
+    },
     "UpdateSnapshotRequest": {
       "members": {
         "Snapshot": {
@@ -2946,6 +3501,29 @@
         }
       },
       "name": "UpdateSnapshotResult",
+      "type": "structure"
+    },
+    "UpdateTagsRequest": {
+      "members": {
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTagsOfUpdateTags"
+        }
+      },
+      "name": "UpdateTagsRequest",
+      "required": [
+        "Tags"
+      ],
+      "type": "structure"
+    },
+    "UpdateTagsResult": {
+      "members": {
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTagsOfUpdateTags"
+        }
+      },
+      "name": "UpdateTagsResult",
       "type": "structure"
     }
   },
