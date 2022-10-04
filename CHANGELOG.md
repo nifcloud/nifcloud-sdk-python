@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.4.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.4.0) (2022-10-04)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.3.0...v1.4.0)
+
+**Closed issues:**
+
+- get\_bucket\_version2をコールするとParamValidationErrorになる [\#100](https://github.com/nifcloud/nifcloud-sdk-python/issues/100)
+
+**Merged pull requests:**
+
+- Update Hatoba model [\#101](https://github.com/nifcloud/nifcloud-sdk-python/pull/101) ([aokumasan](https://github.com/aokumasan))
+
 ## [v1.3.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.3.0) (2022-08-30)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.2.0...v1.3.0)
