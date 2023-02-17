@@ -10,6 +10,20 @@
     "uid": "hatoba-2019-03-27"
   },
   "operations": {
+    "AttachDisk": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/disks/{DiskName}:attach",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "AttachDiskRequest"
+      },
+      "name": "AttachDisk",
+      "output": {
+        "shape": "AttachDiskResult"
+      }
+    },
     "AuthorizeFirewallGroup": {
       "http": {
         "method": "POST",
@@ -36,6 +50,20 @@
       "name": "CreateCluster",
       "output": {
         "shape": "CreateClusterResult"
+      }
+    },
+    "CreateDisk": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/disks",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "CreateDiskRequest"
+      },
+      "name": "CreateDisk",
+      "output": {
+        "shape": "CreateDiskResult"
       }
     },
     "CreateFirewallGroup": {
@@ -118,6 +146,32 @@
       "name": "DeleteClusters",
       "output": {
         "shape": "DeleteClustersResult"
+      }
+    },
+    "DeleteDisk": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/disks/{DiskName}"
+      },
+      "input": {
+        "shape": "DeleteDiskRequest"
+      },
+      "name": "DeleteDisk",
+      "output": {
+        "shape": "DeleteDiskResult"
+      }
+    },
+    "DeleteDisks": {
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/disks"
+      },
+      "input": {
+        "shape": "DeleteDisksRequest"
+      },
+      "name": "DeleteDisks",
+      "output": {
+        "shape": "DeleteDisksResult"
       }
     },
     "DeleteFirewallGroup": {
@@ -211,6 +265,20 @@
         "shape": "DeleteTagsResult"
       }
     },
+    "DetachDisk": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/disks/{DiskName}:detach",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "DetachDiskRequest"
+      },
+      "name": "DetachDisk",
+      "output": {
+        "shape": "DetachDiskResult"
+      }
+    },
     "GetCluster": {
       "http": {
         "method": "GET",
@@ -235,6 +303,19 @@
       "name": "GetClusterCredentials",
       "output": {
         "shape": "GetClusterCredentialsResult"
+      }
+    },
+    "GetDisk": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/disks/{DiskName}"
+      },
+      "input": {
+        "shape": "GetDiskRequest"
+      },
+      "name": "GetDisk",
+      "output": {
+        "shape": "GetDiskResult"
       }
     },
     "GetFirewallGroup": {
@@ -315,6 +396,19 @@
         "shape": "ListClustersResult"
       }
     },
+    "ListDisks": {
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/disks"
+      },
+      "input": {
+        "shape": "ListDisksRequest"
+      },
+      "name": "ListDisks",
+      "output": {
+        "shape": "ListDisksResult"
+      }
+    },
     "ListFirewallGroups": {
       "http": {
         "method": "GET",
@@ -380,6 +474,20 @@
         "shape": "ListTagsResult"
       }
     },
+    "RebootNode": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/clusters/{ClusterName}/nodePools/{NodePoolName}/nodes/{NodeName}:reboot",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "RebootNodeRequest"
+      },
+      "name": "RebootNode",
+      "output": {
+        "shape": "RebootNodeResult"
+      }
+    },
     "RestoreClusterFromSnapshot": {
       "http": {
         "method": "POST",
@@ -432,6 +540,19 @@
       "name": "UpdateCluster",
       "output": {
         "shape": "UpdateClusterResult"
+      }
+    },
+    "UpdateDisk": {
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/disks/{DiskName}"
+      },
+      "input": {
+        "shape": "UpdateDiskRequest"
+      },
+      "name": "UpdateDisk",
+      "output": {
+        "shape": "UpdateDiskResult"
       }
     },
     "UpdateFirewallGroup": {
@@ -496,6 +617,57 @@
         }
       },
       "name": "AddonsConfig",
+      "type": "structure"
+    },
+    "AttachDiskRequest": {
+      "members": {
+        "DiskName": {
+          "location": "uri",
+          "locationName": "DiskName",
+          "shape": "String"
+        },
+        "NodeName": {
+          "locationName": "nodeName",
+          "shape": "String"
+        }
+      },
+      "name": "AttachDiskRequest",
+      "required": [
+        "DiskName",
+        "NodeName"
+      ],
+      "type": "structure"
+    },
+    "AttachDiskResult": {
+      "members": {
+        "Disk": {
+          "locationName": "disk",
+          "shape": "DiskOfAttachDisk"
+        }
+      },
+      "name": "AttachDiskResult",
+      "type": "structure"
+    },
+    "Attachments": {
+      "members": {
+        "AttachTime": {
+          "locationName": "attachTime",
+          "shape": "String"
+        },
+        "DevicePath": {
+          "locationName": "devicePath",
+          "shape": "String"
+        },
+        "NodeName": {
+          "locationName": "nodeName",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        }
+      },
+      "name": "Attachments",
       "type": "structure"
     },
     "AuthorizeFirewallGroupRequest": {
@@ -601,6 +773,26 @@
       "name": "Cluster",
       "type": "structure"
     },
+    "ClusterOfAttachDisk": {
+      "members": {
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        }
+      },
+      "name": "ClusterOfAttachDisk",
+      "type": "structure"
+    },
+    "ClusterOfCreateDisk": {
+      "members": {
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        }
+      },
+      "name": "ClusterOfCreateDisk",
+      "type": "structure"
+    },
     "ClusterOfCreateSnapshot": {
       "members": {
         "KubernetesVersion": {
@@ -617,6 +809,26 @@
         }
       },
       "name": "ClusterOfCreateSnapshot",
+      "type": "structure"
+    },
+    "ClusterOfDeleteDisk": {
+      "members": {
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        }
+      },
+      "name": "ClusterOfDeleteDisk",
+      "type": "structure"
+    },
+    "ClusterOfDeleteDisks": {
+      "members": {
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        }
+      },
+      "name": "ClusterOfDeleteDisks",
       "type": "structure"
     },
     "ClusterOfDeleteSnapshot": {
@@ -655,6 +867,26 @@
       "name": "ClusterOfDeleteSnapshots",
       "type": "structure"
     },
+    "ClusterOfDetachDisk": {
+      "members": {
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        }
+      },
+      "name": "ClusterOfDetachDisk",
+      "type": "structure"
+    },
+    "ClusterOfGetDisk": {
+      "members": {
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        }
+      },
+      "name": "ClusterOfGetDisk",
+      "type": "structure"
+    },
     "ClusterOfGetSnapshot": {
       "members": {
         "KubernetesVersion": {
@@ -673,6 +905,16 @@
       "name": "ClusterOfGetSnapshot",
       "type": "structure"
     },
+    "ClusterOfListDisks": {
+      "members": {
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        }
+      },
+      "name": "ClusterOfListDisks",
+      "type": "structure"
+    },
     "ClusterOfListSnapshots": {
       "members": {
         "KubernetesVersion": {
@@ -689,6 +931,16 @@
         }
       },
       "name": "ClusterOfListSnapshots",
+      "type": "structure"
+    },
+    "ClusterOfUpdateDisk": {
+      "members": {
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        }
+      },
+      "name": "ClusterOfUpdateDisk",
       "type": "structure"
     },
     "ClusterOfUpdateSnapshot": {
@@ -824,6 +1076,29 @@
         }
       },
       "name": "CreateClusterResult",
+      "type": "structure"
+    },
+    "CreateDiskRequest": {
+      "members": {
+        "Disk": {
+          "locationName": "disk",
+          "shape": "RequestDisk"
+        }
+      },
+      "name": "CreateDiskRequest",
+      "required": [
+        "Disk"
+      ],
+      "type": "structure"
+    },
+    "CreateDiskResult": {
+      "members": {
+        "Disk": {
+          "locationName": "disk",
+          "shape": "DiskOfCreateDisk"
+        }
+      },
+      "name": "CreateDiskResult",
       "type": "structure"
     },
     "CreateFirewallGroupRequest": {
@@ -970,6 +1245,54 @@
         }
       },
       "name": "DeleteClustersResult",
+      "type": "structure"
+    },
+    "DeleteDiskRequest": {
+      "members": {
+        "DiskName": {
+          "location": "uri",
+          "locationName": "DiskName",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteDiskRequest",
+      "required": [
+        "DiskName"
+      ],
+      "type": "structure"
+    },
+    "DeleteDiskResult": {
+      "members": {
+        "Disk": {
+          "locationName": "disk",
+          "shape": "DiskOfDeleteDisk"
+        }
+      },
+      "name": "DeleteDiskResult",
+      "type": "structure"
+    },
+    "DeleteDisksRequest": {
+      "members": {
+        "Names": {
+          "location": "querystring",
+          "locationName": "names",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteDisksRequest",
+      "required": [
+        "Names"
+      ],
+      "type": "structure"
+    },
+    "DeleteDisksResult": {
+      "members": {
+        "Disks": {
+          "locationName": "disks",
+          "shape": "ListOfDisksOfDeleteDisks"
+        }
+      },
+      "name": "DeleteDisksResult",
       "type": "structure"
     },
     "DeleteFirewallGroupRequest": {
@@ -1146,6 +1469,35 @@
       "name": "DeleteTagsResult",
       "type": "structure"
     },
+    "DetachDiskRequest": {
+      "members": {
+        "DiskName": {
+          "location": "uri",
+          "locationName": "DiskName",
+          "shape": "String"
+        },
+        "NodeName": {
+          "locationName": "nodeName",
+          "shape": "String"
+        }
+      },
+      "name": "DetachDiskRequest",
+      "required": [
+        "DiskName",
+        "NodeName"
+      ],
+      "type": "structure"
+    },
+    "DetachDiskResult": {
+      "members": {
+        "Disk": {
+          "locationName": "disk",
+          "shape": "DiskOfDetachDisk"
+        }
+      },
+      "name": "DetachDiskResult",
+      "type": "structure"
+    },
     "DirectionOfrulesForAuthorizeFirewallGroup": {
       "enum": [
         "IN",
@@ -1153,6 +1505,406 @@
       ],
       "name": "DirectionOfrulesForAuthorizeFirewallGroup",
       "type": "string"
+    },
+    "Disk": {
+      "members": {
+        "Attachments": {
+          "locationName": "attachments",
+          "shape": "ListOfAttachments"
+        },
+        "AvailabilityZone": {
+          "locationName": "availability_zone",
+          "shape": "String"
+        },
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "ClusterOfGetDisk"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
+        "Size": {
+          "locationName": "size",
+          "shape": "Integer"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "String"
+        }
+      },
+      "name": "Disk",
+      "type": "structure"
+    },
+    "DiskOfAttachDisk": {
+      "members": {
+        "Attachments": {
+          "locationName": "attachments",
+          "shape": "ListOfAttachments"
+        },
+        "AvailabilityZone": {
+          "locationName": "availability_zone",
+          "shape": "String"
+        },
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "ClusterOfAttachDisk"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
+        "Size": {
+          "locationName": "size",
+          "shape": "Integer"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "String"
+        }
+      },
+      "name": "DiskOfAttachDisk",
+      "type": "structure"
+    },
+    "DiskOfCreateDisk": {
+      "members": {
+        "Attachments": {
+          "locationName": "attachments",
+          "shape": "ListOfAttachments"
+        },
+        "AvailabilityZone": {
+          "locationName": "availability_zone",
+          "shape": "String"
+        },
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "ClusterOfCreateDisk"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
+        "Size": {
+          "locationName": "size",
+          "shape": "Integer"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "String"
+        }
+      },
+      "name": "DiskOfCreateDisk",
+      "type": "structure"
+    },
+    "DiskOfDeleteDisk": {
+      "members": {
+        "Attachments": {
+          "locationName": "attachments",
+          "shape": "ListOfAttachments"
+        },
+        "AvailabilityZone": {
+          "locationName": "availability_zone",
+          "shape": "String"
+        },
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "ClusterOfDeleteDisk"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
+        "Size": {
+          "locationName": "size",
+          "shape": "Integer"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "String"
+        }
+      },
+      "name": "DiskOfDeleteDisk",
+      "type": "structure"
+    },
+    "DiskOfDetachDisk": {
+      "members": {
+        "Attachments": {
+          "locationName": "attachments",
+          "shape": "ListOfAttachments"
+        },
+        "AvailabilityZone": {
+          "locationName": "availability_zone",
+          "shape": "String"
+        },
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "ClusterOfDetachDisk"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
+        "Size": {
+          "locationName": "size",
+          "shape": "Integer"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "String"
+        }
+      },
+      "name": "DiskOfDetachDisk",
+      "type": "structure"
+    },
+    "DiskOfUpdateDisk": {
+      "members": {
+        "Attachments": {
+          "locationName": "attachments",
+          "shape": "ListOfAttachments"
+        },
+        "AvailabilityZone": {
+          "locationName": "availability_zone",
+          "shape": "String"
+        },
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "ClusterOfUpdateDisk"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
+        "Size": {
+          "locationName": "size",
+          "shape": "Integer"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "String"
+        }
+      },
+      "name": "DiskOfUpdateDisk",
+      "type": "structure"
+    },
+    "Disks": {
+      "members": {
+        "Attachments": {
+          "locationName": "attachments",
+          "shape": "ListOfAttachments"
+        },
+        "AvailabilityZone": {
+          "locationName": "availability_zone",
+          "shape": "String"
+        },
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "ClusterOfListDisks"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
+        "Size": {
+          "locationName": "size",
+          "shape": "Integer"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "String"
+        }
+      },
+      "name": "Disks",
+      "type": "structure"
+    },
+    "DisksOfDeleteDisks": {
+      "members": {
+        "Attachments": {
+          "locationName": "attachments",
+          "shape": "ListOfAttachments"
+        },
+        "AvailabilityZone": {
+          "locationName": "availability_zone",
+          "shape": "String"
+        },
+        "Cluster": {
+          "locationName": "cluster",
+          "shape": "ClusterOfDeleteDisks"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        },
+        "Nrn": {
+          "locationName": "nrn",
+          "shape": "String"
+        },
+        "Size": {
+          "locationName": "size",
+          "shape": "Integer"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfTags"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "String"
+        }
+      },
+      "name": "DisksOfDeleteDisks",
+      "type": "structure"
     },
     "Double": {
       "name": "Double",
@@ -1270,6 +2022,30 @@
         }
       },
       "name": "GetClusterResult",
+      "type": "structure"
+    },
+    "GetDiskRequest": {
+      "members": {
+        "DiskName": {
+          "location": "uri",
+          "locationName": "DiskName",
+          "shape": "String"
+        }
+      },
+      "name": "GetDiskRequest",
+      "required": [
+        "DiskName"
+      ],
+      "type": "structure"
+    },
+    "GetDiskResult": {
+      "members": {
+        "Disk": {
+          "locationName": "disk",
+          "shape": "Disk"
+        }
+      },
+      "name": "GetDiskResult",
       "type": "structure"
     },
     "GetFirewallGroupRequest": {
@@ -1549,9 +2325,6 @@
     },
     "KubernetesVersionOfclusterForCreateCluster": {
       "enum": [
-        "v1.22.2",
-        "v1.22.6",
-        "v1.22.12",
         "v1.23.3",
         "v1.23.9",
         "v1.24.3"
@@ -1561,9 +2334,6 @@
     },
     "KubernetesVersionOfclusterForUpdateCluster": {
       "enum": [
-        "v1.22.2",
-        "v1.22.6",
-        "v1.22.12",
         "v1.23.3",
         "v1.23.9",
         "v1.24.3"
@@ -1590,6 +2360,27 @@
         }
       },
       "name": "ListClustersResult",
+      "type": "structure"
+    },
+    "ListDisksRequest": {
+      "members": {
+        "Filters": {
+          "location": "querystring",
+          "locationName": "filters",
+          "shape": "String"
+        }
+      },
+      "name": "ListDisksRequest",
+      "type": "structure"
+    },
+    "ListDisksResult": {
+      "members": {
+        "Disks": {
+          "locationName": "disks",
+          "shape": "ListOfDisks"
+        }
+      },
+      "name": "ListDisksResult",
       "type": "structure"
     },
     "ListFirewallGroupsRequest": {
@@ -1657,6 +2448,13 @@
       "name": "ListNodePoolsResult",
       "type": "structure"
     },
+    "ListOfAttachments": {
+      "member": {
+        "shape": "Attachments"
+      },
+      "name": "ListOfAttachments",
+      "type": "list"
+    },
     "ListOfAvailabilityZones": {
       "member": {
         "locationName": "member",
@@ -1684,6 +2482,20 @@
         "shape": "ClustersOfListLoadBalancers"
       },
       "name": "ListOfClustersOfListLoadBalancers",
+      "type": "list"
+    },
+    "ListOfDisks": {
+      "member": {
+        "shape": "Disks"
+      },
+      "name": "ListOfDisks",
+      "type": "list"
+    },
+    "ListOfDisksOfDeleteDisks": {
+      "member": {
+        "shape": "DisksOfDeleteDisks"
+      },
+      "name": "ListOfDisksOfDeleteDisks",
       "type": "list"
     },
     "ListOfFirewallGroups": {
@@ -2121,6 +2933,32 @@
       "name": "NetworkConfig",
       "type": "structure"
     },
+    "Node": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        },
+        "PrivateIpAddress": {
+          "locationName": "privateIpAddress",
+          "shape": "String"
+        },
+        "PublicIpAddress": {
+          "locationName": "publicIpAddress",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        }
+      },
+      "name": "Node",
+      "type": "structure"
+    },
     "NodePool": {
       "members": {
         "InitialNodeCount": {
@@ -2444,6 +3282,46 @@
       "name": "ProtocolOfrulesForAuthorizeFirewallGroup",
       "type": "string"
     },
+    "RebootNodeRequest": {
+      "members": {
+        "ClusterName": {
+          "location": "uri",
+          "locationName": "ClusterName",
+          "shape": "String"
+        },
+        "Force": {
+          "locationName": "force",
+          "shape": "Boolean"
+        },
+        "NodeName": {
+          "location": "uri",
+          "locationName": "NodeName",
+          "shape": "String"
+        },
+        "NodePoolName": {
+          "location": "uri",
+          "locationName": "NodePoolName",
+          "shape": "String"
+        }
+      },
+      "name": "RebootNodeRequest",
+      "required": [
+        "ClusterName",
+        "NodeName",
+        "NodePoolName"
+      ],
+      "type": "structure"
+    },
+    "RebootNodeResult": {
+      "members": {
+        "Node": {
+          "locationName": "node",
+          "shape": "Node"
+        }
+      },
+      "name": "RebootNodeResult",
+      "type": "structure"
+    },
     "RequestAddonsConfig": {
       "members": {
         "RequestHttpLoadBalancing": {
@@ -2578,6 +3456,63 @@
         }
       },
       "name": "RequestClusterOfUpdateCluster",
+      "type": "structure"
+    },
+    "RequestDisk": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "ListOfRequestTags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTags"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        },
+        "Size": {
+          "locationName": "size",
+          "shape": "Integer"
+        },
+        "Type": {
+          "locationName": "type",
+          "shape": "TypeOfdiskForCreateDisk"
+        }
+      },
+      "name": "RequestDisk",
+      "required": [
+        "Name",
+        "Size",
+        "Type"
+      ],
+      "type": "structure"
+    },
+    "RequestDiskOfUpdateDisk": {
+      "members": {
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "ListOfRequestTags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTags"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        },
+        "Size": {
+          "locationName": "size",
+          "shape": "Integer"
+        }
+      },
+      "name": "RequestDiskOfUpdateDisk",
       "type": "structure"
     },
     "RequestFirewallGroup": {
@@ -3385,6 +4320,16 @@
       "name": "TagsOfUpdateTags",
       "type": "structure"
     },
+    "TypeOfdiskForCreateDisk": {
+      "enum": [
+        "standard-flash-a",
+        "standard-flash-b",
+        "high-speed-flash-a",
+        "high-speed-flash-b"
+      ],
+      "name": "TypeOfdiskForCreateDisk",
+      "type": "string"
+    },
     "UpdateClusterRequest": {
       "members": {
         "Cluster": {
@@ -3411,6 +4356,34 @@
         }
       },
       "name": "UpdateClusterResult",
+      "type": "structure"
+    },
+    "UpdateDiskRequest": {
+      "members": {
+        "Disk": {
+          "locationName": "disk",
+          "shape": "RequestDiskOfUpdateDisk"
+        },
+        "DiskName": {
+          "location": "uri",
+          "locationName": "DiskName",
+          "shape": "String"
+        }
+      },
+      "name": "UpdateDiskRequest",
+      "required": [
+        "DiskName"
+      ],
+      "type": "structure"
+    },
+    "UpdateDiskResult": {
+      "members": {
+        "Disk": {
+          "locationName": "disk",
+          "shape": "DiskOfUpdateDisk"
+        }
+      },
+      "name": "UpdateDiskResult",
       "type": "structure"
     },
     "UpdateFirewallGroupRequest": {
