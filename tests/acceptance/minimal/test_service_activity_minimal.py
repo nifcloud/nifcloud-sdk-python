@@ -10,6 +10,6 @@ def client():
 
 def test_list_service_menu(client):
     result = client.describe_service_statuses()
-    result_data=result["Data"]
-    result_service_menu=result_data["ServiceMenu"]
+    result_data = result["Data"]
+    result_service_menu = result_data["ServiceMenu"]
     assert len(result_service_menu) == 29
