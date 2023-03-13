@@ -1,5 +1,14 @@
 # Changelog
 
+## [v1.5.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.5.0) (2023-03-13)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.4.0...v1.5.0)
+
+**Merged pull requests:**
+
+- Add Service Activity Model & Update Hatoba Model [\#103](https://github.com/nifcloud/nifcloud-sdk-python/pull/103) ([fujita-hiroki1115](https://github.com/fujita-hiroki1115))
+- Update README.md [\#102](https://github.com/nifcloud/nifcloud-sdk-python/pull/102) ([fuku2014](https://github.com/fuku2014))
+
 ## [v1.4.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.4.0) (2022-10-04)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.3.0...v1.4.0)
