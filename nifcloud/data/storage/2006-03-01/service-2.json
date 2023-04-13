@@ -760,44 +760,6 @@
       "name": "Contents",
       "type": "structure"
     },
-    "ContentsOfGetBucketVersion2": {
-      "members": {
-        "DisplayName": {
-          "locationName": "DisplayName",
-          "shape": "String"
-        },
-        "ETag": {
-          "locationName": "ETag",
-          "shape": "String"
-        },
-        "ID": {
-          "locationName": "ID",
-          "shape": "String"
-        },
-        "Key": {
-          "locationName": "Key",
-          "shape": "String"
-        },
-        "LastModified": {
-          "locationName": "LastModified",
-          "shape": "TStamp"
-        },
-        "Owner": {
-          "locationName": "Owner",
-          "shape": "String"
-        },
-        "Size": {
-          "locationName": "Size",
-          "shape": "String"
-        },
-        "StorageClass": {
-          "locationName": "StorageClass",
-          "shape": "String"
-        }
-      },
-      "name": "ContentsOfGetBucketVersion2",
-      "type": "structure"
-    },
     "DeleteBucketCorsRequest": {
       "members": {
         "Bucket": {
@@ -1444,7 +1406,7 @@
         },
         "Contents": {
           "locationName": "Contents",
-          "shape": "ListOfContentsOfGetBucketVersion2"
+          "shape": "ListOfContents"
         },
         "ContinuationToken": {
           "locationName": "ContinuationToken",
@@ -1511,10 +1473,6 @@
           "locationName": "Content-Type",
           "shape": "String"
         },
-        "MfaDelete": {
-          "locationName": "MfaDelete",
-          "shape": "String"
-        },
         "Status": {
           "locationName": "Status",
           "shape": "String"
@@ -1577,6 +1535,11 @@
         "Object": {
           "location": "uri",
           "locationName": "Object",
+          "shape": "String"
+        },
+        "PartNumber": {
+          "location": "querystring",
+          "locationName": "partNumber",
           "shape": "String"
         },
         "Range": {
@@ -1662,6 +1625,11 @@
         "XAmzExpiration": {
           "location": "header",
           "locationName": "x-amz-expiration",
+          "shape": "String"
+        },
+        "XAmzMpPartsCount": {
+          "location": "header",
+          "locationName": "x-amz-mp-parts-count",
           "shape": "String"
         },
         "XAmzServerSideEncryption": {
@@ -1797,6 +1765,11 @@
           "locationName": "Object",
           "shape": "String"
         },
+        "PartNumber": {
+          "location": "querystring",
+          "locationName": "partNumber",
+          "shape": "String"
+        },
         "VersionId": {
           "location": "querystring",
           "locationName": "versionId",
@@ -1850,6 +1823,11 @@
         "XAmzExpiration": {
           "location": "header",
           "locationName": "x-amz-expiration",
+          "shape": "String"
+        },
+        "XAmzMpPartsCount": {
+          "location": "header",
+          "locationName": "x-amz-mp-parts-count",
           "shape": "String"
         },
         "XAmzServerSideEncryption": {
@@ -2097,14 +2075,6 @@
         "shape": "Contents"
       },
       "name": "ListOfContents",
-      "type": "list"
-    },
-    "ListOfContentsOfGetBucketVersion2": {
-      "flattened": true,
-      "member": {
-        "shape": "ContentsOfGetBucketVersion2"
-      },
-      "name": "ListOfContentsOfGetBucketVersion2",
       "type": "list"
     },
     "ListOfDeleted": {

@@ -1018,14 +1018,6 @@
           "locationName": "NiftyNetworkId",
           "shape": "String"
         },
-        "NiftyReadReplicaDBInstanceIdentifier": {
-          "locationName": "NiftyReadReplicaDBInstanceIdentifier",
-          "shape": "String"
-        },
-        "NiftyReadReplicaPrivateAddress": {
-          "locationName": "NiftyReadReplicaPrivateAddress",
-          "shape": "String"
-        },
         "NiftySlavePrivateAddress": {
           "locationName": "NiftySlavePrivateAddress",
           "shape": "String"
@@ -1057,10 +1049,6 @@
         "PubliclyAccessible": {
           "locationName": "PubliclyAccessible",
           "shape": "Boolean"
-        },
-        "ReadReplicaAccountingType": {
-          "locationName": "ReadReplicaAccountingType",
-          "shape": "ReadReplicaAccountingTypeOfCreateDBInstanceRequest"
         },
         "VpcSecurityGroupIds": {
           "locationName": "VpcSecurityGroupIds",
@@ -3184,8 +3172,7 @@
     "EngineOfCreateDBInstanceRequest": {
       "enum": [
         "MySQL",
-        "postgres",
-        "MariaDB"
+        "postgres"
       ],
       "name": "EngineOfCreateDBInstanceRequest",
       "type": "string"
@@ -3856,14 +3843,6 @@
           "locationName": "NiftyMultiAZType",
           "shape": "Integer"
         },
-        "NiftyReadReplicaDBInstanceIdentifier": {
-          "locationName": "NiftyReadReplicaDBInstanceIdentifier",
-          "shape": "String"
-        },
-        "NiftyReadReplicaPrivateAddress": {
-          "locationName": "NiftyReadReplicaPrivateAddress",
-          "shape": "String"
-        },
         "NiftySlavePrivateAddress": {
           "locationName": "NiftySlavePrivateAddress",
           "shape": "String"
@@ -3879,10 +3858,6 @@
         "PreferredMaintenanceWindow": {
           "locationName": "PreferredMaintenanceWindow",
           "shape": "String"
-        },
-        "ReadReplicaAccountingType": {
-          "locationName": "ReadReplicaAccountingType",
-          "shape": "ReadReplicaAccountingTypeOfModifyDBInstanceRequest"
         },
         "VpcSecurityGroupIds": {
           "locationName": "VpcSecurityGroupIds",
@@ -4219,38 +4194,6 @@
       "name": "PendingModifiedValues",
       "type": "structure"
     },
-    "ReadReplicaAccountingTypeOfCreateDBInstanceRequest": {
-      "enum": [
-        "1",
-        "2"
-      ],
-      "name": "ReadReplicaAccountingTypeOfCreateDBInstanceRequest",
-      "type": "string"
-    },
-    "ReadReplicaAccountingTypeOfModifyDBInstanceRequest": {
-      "enum": [
-        "1",
-        "2"
-      ],
-      "name": "ReadReplicaAccountingTypeOfModifyDBInstanceRequest",
-      "type": "string"
-    },
-    "ReadReplicaAccountingTypeOfRestoreDBInstanceFromDBSnapshotRequest": {
-      "enum": [
-        "1",
-        "2"
-      ],
-      "name": "ReadReplicaAccountingTypeOfRestoreDBInstanceFromDBSnapshotRequest",
-      "type": "string"
-    },
-    "ReadReplicaAccountingTypeOfRestoreDBInstanceToPointInTimeRequest": {
-      "enum": [
-        "1",
-        "2"
-      ],
-      "name": "ReadReplicaAccountingTypeOfRestoreDBInstanceToPointInTimeRequest",
-      "type": "string"
-    },
     "RebootDBInstanceRequest": {
       "members": {
         "DBInstanceIdentifier": {
@@ -4539,14 +4482,6 @@
           "locationName": "NiftyNetworkId",
           "shape": "String"
         },
-        "NiftyReadReplicaDBInstanceIdentifier": {
-          "locationName": "NiftyReadReplicaDBInstanceIdentifier",
-          "shape": "String"
-        },
-        "NiftyReadReplicaPrivateAddress": {
-          "locationName": "NiftyReadReplicaPrivateAddress",
-          "shape": "String"
-        },
         "NiftySlavePrivateAddress": {
           "locationName": "NiftySlavePrivateAddress",
           "shape": "String"
@@ -4570,10 +4505,6 @@
         "PubliclyAccessible": {
           "locationName": "PubliclyAccessible",
           "shape": "Boolean"
-        },
-        "ReadReplicaAccountingType": {
-          "locationName": "ReadReplicaAccountingType",
-          "shape": "ReadReplicaAccountingTypeOfRestoreDBInstanceFromDBSnapshotRequest"
         }
       },
       "name": "RestoreDBInstanceFromDBSnapshotRequest",
@@ -4660,14 +4591,6 @@
           "locationName": "NiftyNetworkId",
           "shape": "String"
         },
-        "NiftyReadReplicaDBInstanceIdentifier": {
-          "locationName": "NiftyReadReplicaDBInstanceIdentifier",
-          "shape": "String"
-        },
-        "NiftyReadReplicaPrivateAddress": {
-          "locationName": "NiftyReadReplicaPrivateAddress",
-          "shape": "String"
-        },
         "NiftySlavePrivateAddress": {
           "locationName": "NiftySlavePrivateAddress",
           "shape": "String"
@@ -4691,10 +4614,6 @@
         "PubliclyAccessible": {
           "locationName": "PubliclyAccessible",
           "shape": "Boolean"
-        },
-        "ReadReplicaAccountingType": {
-          "locationName": "ReadReplicaAccountingType",
-          "shape": "ReadReplicaAccountingTypeOfRestoreDBInstanceToPointInTimeRequest"
         },
         "RestoreTime": {
           "locationName": "RestoreTime",
