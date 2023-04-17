@@ -653,10 +653,6 @@
         "XniftyComment": {
           "locationName": "XniftyComment",
           "shape": "String"
-        },
-        "XniftyDefaultHost": {
-          "locationName": "XniftyDefaultHost",
-          "shape": "String"
         }
       },
       "name": "RequestResourceRecordSet",
@@ -736,10 +732,6 @@
           "locationName": "XniftyComment",
           "shape": "String"
         },
-        "XniftyDefaultHost": {
-          "locationName": "XniftyDefaultHost",
-          "shape": "String"
-        },
         "XniftyHealthCheckConfig": {
           "locationName": "XniftyHealthCheckConfig",
           "shape": "XniftyHealthCheckConfig"
@@ -774,8 +766,7 @@
         "CNAME",
         "MX",
         "TXT",
-        "PTR",
-        "LBR"
+        "PTR"
       ],
       "name": "TypeOfChangeResourceRecordSetsRequestForChangeResourceRecordSets",
       "type": "string"
@@ -788,8 +779,7 @@
         "CNAME",
         "MX",
         "TXT",
-        "PTR",
-        "LBR"
+        "PTR"
       ],
       "name": "TypeOfListResourceRecordSetsRequest",
       "type": "string"

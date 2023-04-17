@@ -323,6 +323,32 @@
         "shape": "CreateNetworkInterfaceResult"
       }
     },
+    "CreateRemoteAccessVpnGateway": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "CreateRemoteAccessVpnGatewayRequest"
+      },
+      "name": "CreateRemoteAccessVpnGateway",
+      "output": {
+        "shape": "CreateRemoteAccessVpnGatewayResult"
+      }
+    },
+    "CreateRemoteAccessVpnGatewayUsers": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "CreateRemoteAccessVpnGatewayUsersRequest"
+      },
+      "name": "CreateRemoteAccessVpnGatewayUsers",
+      "output": {
+        "shape": "CreateRemoteAccessVpnGatewayUsersResult"
+      }
+    },
     "CreateRoute": {
       "http": {
         "method": "POST",
@@ -529,6 +555,45 @@
       "name": "DeleteNetworkInterface",
       "output": {
         "shape": "DeleteNetworkInterfaceResult"
+      }
+    },
+    "DeleteRemoteAccessVpnGateway": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "DeleteRemoteAccessVpnGatewayRequest"
+      },
+      "name": "DeleteRemoteAccessVpnGateway",
+      "output": {
+        "shape": "DeleteRemoteAccessVpnGatewayResult"
+      }
+    },
+    "DeleteRemoteAccessVpnGatewayConnections": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "DeleteRemoteAccessVpnGatewayConnectionsRequest"
+      },
+      "name": "DeleteRemoteAccessVpnGatewayConnections",
+      "output": {
+        "shape": "DeleteRemoteAccessVpnGatewayConnectionsResult"
+      }
+    },
+    "DeleteRemoteAccessVpnGatewayUsers": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "DeleteRemoteAccessVpnGatewayUsersRequest"
+      },
+      "name": "DeleteRemoteAccessVpnGatewayUsers",
+      "output": {
+        "shape": "DeleteRemoteAccessVpnGatewayUsersResult"
       }
     },
     "DeleteRoute": {
@@ -867,6 +932,58 @@
       "name": "DescribeRegions",
       "output": {
         "shape": "DescribeRegionsResult"
+      }
+    },
+    "DescribeRemoteAccessVpnGatewayActivities": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "DescribeRemoteAccessVpnGatewayActivitiesRequest"
+      },
+      "name": "DescribeRemoteAccessVpnGatewayActivities",
+      "output": {
+        "shape": "DescribeRemoteAccessVpnGatewayActivitiesResult"
+      }
+    },
+    "DescribeRemoteAccessVpnGatewayClientConfig": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "DescribeRemoteAccessVpnGatewayClientConfigRequest"
+      },
+      "name": "DescribeRemoteAccessVpnGatewayClientConfig",
+      "output": {
+        "shape": "DescribeRemoteAccessVpnGatewayClientConfigResult"
+      }
+    },
+    "DescribeRemoteAccessVpnGatewayConnections": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "DescribeRemoteAccessVpnGatewayConnectionsRequest"
+      },
+      "name": "DescribeRemoteAccessVpnGatewayConnections",
+      "output": {
+        "shape": "DescribeRemoteAccessVpnGatewayConnectionsResult"
+      }
+    },
+    "DescribeRemoteAccessVpnGateways": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "DescribeRemoteAccessVpnGatewaysRequest"
+      },
+      "name": "DescribeRemoteAccessVpnGateways",
+      "output": {
+        "shape": "DescribeRemoteAccessVpnGatewaysResult"
       }
     },
     "DescribeResources": {
@@ -1257,6 +1374,32 @@
       "name": "ModifyNetworkInterfaceAttribute",
       "output": {
         "shape": "ModifyNetworkInterfaceAttributeResult"
+      }
+    },
+    "ModifyRemoteAccessVpnGatewayAttribute": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "ModifyRemoteAccessVpnGatewayAttributeRequest"
+      },
+      "name": "ModifyRemoteAccessVpnGatewayAttribute",
+      "output": {
+        "shape": "ModifyRemoteAccessVpnGatewayAttributeResult"
+      }
+    },
+    "ModifyRemoteAccessVpnGatewayUserAttribute": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "ModifyRemoteAccessVpnGatewayUserAttributeRequest"
+      },
+      "name": "ModifyRemoteAccessVpnGatewayUserAttribute",
+      "output": {
+        "shape": "ModifyRemoteAccessVpnGatewayUserAttributeResult"
       }
     },
     "ModifySslCertificateAttribute": {
@@ -2611,6 +2754,19 @@
         "shape": "RebootInstancesResult"
       }
     },
+    "RebootRemoteAccessVpnGateway": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "RebootRemoteAccessVpnGatewayRequest"
+      },
+      "name": "RebootRemoteAccessVpnGateway",
+      "output": {
+        "shape": "RebootRemoteAccessVpnGatewayResult"
+      }
+    },
     "RefreshInstanceBackupRule": {
       "http": {
         "method": "POST",
@@ -2702,6 +2858,19 @@
         "shape": "ReleaseMultiIpAddressesResult"
       }
     },
+    "ReplaceRemoteAccessVpnGatewayLatestVersion": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "ReplaceRemoteAccessVpnGatewayLatestVersionRequest"
+      },
+      "name": "ReplaceRemoteAccessVpnGatewayLatestVersion",
+      "output": {
+        "shape": "ReplaceRemoteAccessVpnGatewayLatestVersionResult"
+      }
+    },
     "ReplaceRoute": {
       "http": {
         "method": "POST",
@@ -2780,6 +2949,32 @@
         "shape": "SetLoadBalancerListenerSSLCertificateResultWrapper"
       }
     },
+    "SetRemoteAccessVpnGatewayCACertificate": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "SetRemoteAccessVpnGatewayCACertificateRequest"
+      },
+      "name": "SetRemoteAccessVpnGatewayCACertificate",
+      "output": {
+        "shape": "SetRemoteAccessVpnGatewayCACertificateResult"
+      }
+    },
+    "SetRemoteAccessVpnGatewaySSLCertificate": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "SetRemoteAccessVpnGatewaySSLCertificateRequest"
+      },
+      "name": "SetRemoteAccessVpnGatewaySSLCertificate",
+      "output": {
+        "shape": "SetRemoteAccessVpnGatewaySSLCertificateResult"
+      }
+    },
     "StartInstances": {
       "http": {
         "method": "POST",
@@ -2830,6 +3025,32 @@
       "name": "UnsetLoadBalancerListenerSSLCertificate",
       "output": {
         "shape": "UnsetLoadBalancerListenerSSLCertificateResultWrapper"
+      }
+    },
+    "UnsetRemoteAccessVpnGatewayCACertificate": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "UnsetRemoteAccessVpnGatewayCACertificateRequest"
+      },
+      "name": "UnsetRemoteAccessVpnGatewayCACertificate",
+      "output": {
+        "shape": "UnsetRemoteAccessVpnGatewayCACertificateResult"
+      }
+    },
+    "UnsetRemoteAccessVpnGatewaySSLCertificate": {
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/"
+      },
+      "input": {
+        "shape": "UnsetRemoteAccessVpnGatewaySSLCertificateRequest"
+      },
+      "name": "UnsetRemoteAccessVpnGatewaySSLCertificate",
+      "output": {
+        "shape": "UnsetRemoteAccessVpnGatewaySSLCertificateResult"
       }
     },
     "UpdateLoadBalancer": {
@@ -2955,6 +3176,14 @@
         "2"
       ],
       "name": "AccountingTypeOfImportInstanceRequest",
+      "type": "string"
+    },
+    "AccountingTypeOfModifyRemoteAccessVpnGatewayAttributeRequest": {
+      "enum": [
+        "1",
+        "2"
+      ],
+      "name": "AccountingTypeOfModifyRemoteAccessVpnGatewayAttributeRequest",
       "type": "string"
     },
     "AccountingTypeOfNiftyCreateElasticLoadBalancerRequest": {
@@ -3497,6 +3726,36 @@
       "name": "AssociationOfCreateNetworkInterface",
       "type": "structure"
     },
+    "AssociationOfCreateRemoteAccessVpnGateway": {
+      "members": {
+        "AllocationId": {
+          "locationName": "allocationId",
+          "shape": "String"
+        },
+        "AssociationId": {
+          "locationName": "associationId",
+          "shape": "String"
+        },
+        "IpOwnerId": {
+          "locationName": "ipOwnerId",
+          "shape": "String"
+        },
+        "PublicDnsName": {
+          "locationName": "publicDnsName",
+          "shape": "String"
+        },
+        "PublicIp": {
+          "locationName": "publicIp",
+          "shape": "String"
+        },
+        "PublicIpV6": {
+          "locationName": "publicIpV6",
+          "shape": "String"
+        }
+      },
+      "name": "AssociationOfCreateRemoteAccessVpnGateway",
+      "type": "structure"
+    },
     "AssociationOfDescribeNetworkInterfaces": {
       "members": {
         "AllocationId": {
@@ -3525,6 +3784,36 @@
         }
       },
       "name": "AssociationOfDescribeNetworkInterfaces",
+      "type": "structure"
+    },
+    "AssociationOfDescribeRemoteAccessVpnGateways": {
+      "members": {
+        "AllocationId": {
+          "locationName": "allocationId",
+          "shape": "String"
+        },
+        "AssociationId": {
+          "locationName": "associationId",
+          "shape": "String"
+        },
+        "IpOwnerId": {
+          "locationName": "ipOwnerId",
+          "shape": "String"
+        },
+        "PublicDnsName": {
+          "locationName": "publicDnsName",
+          "shape": "String"
+        },
+        "PublicIp": {
+          "locationName": "publicIp",
+          "shape": "String"
+        },
+        "PublicIpV6": {
+          "locationName": "publicIpV6",
+          "shape": "String"
+        }
+      },
+      "name": "AssociationOfDescribeRemoteAccessVpnGateways",
       "type": "structure"
     },
     "AssociationOfImportInstance": {
@@ -3836,6 +4125,40 @@
       "name": "AttachmentOfCreateNetworkInterface",
       "type": "structure"
     },
+    "AttachmentOfCreateRemoteAccessVpnGateway": {
+      "members": {
+        "AttachTime": {
+          "locationName": "attachTime",
+          "shape": "String"
+        },
+        "AttachmentId": {
+          "locationName": "attachmentId",
+          "shape": "String"
+        },
+        "DeleteOnTermination": {
+          "locationName": "deleteOnTermination",
+          "shape": "String"
+        },
+        "DeviceIndex": {
+          "locationName": "deviceIndex",
+          "shape": "String"
+        },
+        "InstanceId": {
+          "locationName": "instanceId",
+          "shape": "String"
+        },
+        "InstanceOwnerId": {
+          "locationName": "instanceOwnerId",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        }
+      },
+      "name": "AttachmentOfCreateRemoteAccessVpnGateway",
+      "type": "structure"
+    },
     "AttachmentOfDescribeNetworkInterfaces": {
       "members": {
         "AttachTime": {
@@ -3868,6 +4191,40 @@
         }
       },
       "name": "AttachmentOfDescribeNetworkInterfaces",
+      "type": "structure"
+    },
+    "AttachmentOfDescribeRemoteAccessVpnGateways": {
+      "members": {
+        "AttachTime": {
+          "locationName": "attachTime",
+          "shape": "String"
+        },
+        "AttachmentId": {
+          "locationName": "attachmentId",
+          "shape": "String"
+        },
+        "DeleteOnTermination": {
+          "locationName": "deleteOnTermination",
+          "shape": "String"
+        },
+        "DeviceIndex": {
+          "locationName": "deviceIndex",
+          "shape": "String"
+        },
+        "InstanceId": {
+          "locationName": "instanceId",
+          "shape": "String"
+        },
+        "InstanceOwnerId": {
+          "locationName": "instanceOwnerId",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        }
+      },
+      "name": "AttachmentOfDescribeRemoteAccessVpnGateways",
       "type": "structure"
     },
     "AttachmentOfImportInstance": {
@@ -4101,6 +4458,16 @@
       ],
       "name": "AttributeOfNiftyModifyWebProxyAttributeRequest",
       "type": "string"
+    },
+    "AuthTypeSet": {
+      "members": {
+        "AuthType": {
+          "locationName": "authType",
+          "shape": "String"
+        }
+      },
+      "name": "AuthTypeSet",
+      "type": "structure"
     },
     "AuthorizeSecurityGroupIngressRequest": {
       "members": {
@@ -4615,6 +4982,16 @@
       "name": "ChargeDetailInfo",
       "type": "structure"
     },
+    "CipherSuiteSet": {
+      "members": {
+        "CipherSuite": {
+          "locationName": "cipherSuite",
+          "shape": "String"
+        }
+      },
+      "name": "CipherSuiteSet",
+      "type": "structure"
+    },
     "ClearLoadBalancerSessionRequest": {
       "members": {
         "InstancePort": {
@@ -4651,6 +5028,14 @@
       },
       "name": "ClearLoadBalancerSessionResultWrapper",
       "type": "structure"
+    },
+    "ClientTunnelModeOfModifyRemoteAccessVpnGatewayAttributeRequest": {
+      "enum": [
+        "split",
+        "full"
+      ],
+      "name": "ClientTunnelModeOfModifyRemoteAccessVpnGatewayAttributeRequest",
+      "type": "string"
     },
     "ConfigureHealthCheckRequest": {
       "members": {
@@ -4702,6 +5087,32 @@
         }
       },
       "name": "ConfigureHealthCheckResultWrapper",
+      "type": "structure"
+    },
+    "ConnectionSet": {
+      "members": {
+        "AssignedIpAddress": {
+          "locationName": "assignedIpAddress",
+          "shape": "String"
+        },
+        "ClientIpAddress": {
+          "locationName": "clientIpAddress",
+          "shape": "String"
+        },
+        "ConnectionId": {
+          "locationName": "connectionId",
+          "shape": "String"
+        },
+        "RemoteUserName": {
+          "locationName": "remoteUserName",
+          "shape": "String"
+        },
+        "StartTime": {
+          "locationName": "startTime",
+          "shape": "String"
+        }
+      },
+      "name": "ConnectionSet",
       "type": "structure"
     },
     "ConversionTask": {
@@ -5316,6 +5727,120 @@
         }
       },
       "name": "CreateNetworkInterfaceResult",
+      "type": "structure"
+    },
+    "CreateRemoteAccessVpnGatewayRequest": {
+      "members": {
+        "AccountingType": {
+          "locationName": "AccountingType",
+          "shape": "Integer"
+        },
+        "CACertificateId": {
+          "locationName": "CACertificateId",
+          "shape": "String"
+        },
+        "CipherSuite": {
+          "locationName": "CipherSuite",
+          "shape": "ListOfRequestCipherSuite"
+        },
+        "Description": {
+          "locationName": "Description",
+          "shape": "String"
+        },
+        "NetworkInterface": {
+          "locationName": "NetworkInterface",
+          "shape": "ListOfRequestNetworkInterfaceOfCreateRemoteAccessVpnGateway"
+        },
+        "Placement": {
+          "locationName": "Placement",
+          "shape": "RequestPlacementOfCreateRemoteAccessVpnGateway"
+        },
+        "PoolNetworkCidr": {
+          "locationName": "PoolNetworkCidr",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayName": {
+          "locationName": "RemoteAccessVpnGatewayName",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayType": {
+          "locationName": "RemoteAccessVpnGatewayType",
+          "shape": "RemoteAccessVpnGatewayTypeOfCreateRemoteAccessVpnGatewayRequest"
+        },
+        "SSLCertificateId": {
+          "locationName": "SSLCertificateId",
+          "shape": "String"
+        }
+      },
+      "name": "CreateRemoteAccessVpnGatewayRequest",
+      "required": [
+        "CipherSuite",
+        "NetworkInterface",
+        "PoolNetworkCidr",
+        "SSLCertificateId"
+      ],
+      "type": "structure"
+    },
+    "CreateRemoteAccessVpnGatewayResult": {
+      "members": {
+        "RemoteAccessVpnGateway": {
+          "locationName": "remoteAccessVpnGateway",
+          "shape": "RemoteAccessVpnGateway"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "CreateRemoteAccessVpnGatewayResult",
+      "type": "structure"
+    },
+    "CreateRemoteAccessVpnGatewayUsersRequest": {
+      "members": {
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        },
+        "RemoteUser": {
+          "locationName": "RemoteUser",
+          "shape": "ListOfRequestRemoteUser"
+        }
+      },
+      "name": "CreateRemoteAccessVpnGatewayUsersRequest",
+      "required": [
+        "RemoteAccessVpnGatewayId",
+        "RemoteUser"
+      ],
+      "type": "structure"
+    },
+    "CreateRemoteAccessVpnGatewayUsersResult": {
+      "members": {
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "remoteAccessVpnGatewayId",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayName": {
+          "locationName": "remoteAccessVpnGatewayName",
+          "shape": "String"
+        },
+        "RemoteUserSet": {
+          "locationName": "remoteUserSet",
+          "shape": "ListOfRemoteUserSet"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "CreateRemoteAccessVpnGatewayUsersResult",
       "type": "structure"
     },
     "CreateRouteRequest": {
@@ -6145,6 +6670,97 @@
         }
       },
       "name": "DeleteNetworkInterfaceResult",
+      "type": "structure"
+    },
+    "DeleteRemoteAccessVpnGatewayConnectionsRequest": {
+      "members": {
+        "Connection": {
+          "locationName": "Connection",
+          "shape": "ListOfRequestConnection"
+        },
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteRemoteAccessVpnGatewayConnectionsRequest",
+      "required": [
+        "Connection",
+        "RemoteAccessVpnGatewayId"
+      ],
+      "type": "structure"
+    },
+    "DeleteRemoteAccessVpnGatewayConnectionsResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "DeleteRemoteAccessVpnGatewayConnectionsResult",
+      "type": "structure"
+    },
+    "DeleteRemoteAccessVpnGatewayRequest": {
+      "members": {
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteRemoteAccessVpnGatewayRequest",
+      "required": [
+        "RemoteAccessVpnGatewayId"
+      ],
+      "type": "structure"
+    },
+    "DeleteRemoteAccessVpnGatewayResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "DeleteRemoteAccessVpnGatewayResult",
+      "type": "structure"
+    },
+    "DeleteRemoteAccessVpnGatewayUsersRequest": {
+      "members": {
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        },
+        "RemoteUser": {
+          "locationName": "RemoteUser",
+          "shape": "ListOfRequestRemoteUserOfDeleteRemoteAccessVpnGatewayUsers"
+        }
+      },
+      "name": "DeleteRemoteAccessVpnGatewayUsersRequest",
+      "required": [
+        "RemoteAccessVpnGatewayId",
+        "RemoteUser"
+      ],
+      "type": "structure"
+    },
+    "DeleteRemoteAccessVpnGatewayUsersResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "DeleteRemoteAccessVpnGatewayUsersResult",
       "type": "structure"
     },
     "DeleteRouteRequest": {
@@ -7032,6 +7648,131 @@
         }
       },
       "name": "DescribeRegionsResult",
+      "type": "structure"
+    },
+    "DescribeRemoteAccessVpnGatewayActivitiesRequest": {
+      "members": {
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        }
+      },
+      "name": "DescribeRemoteAccessVpnGatewayActivitiesRequest",
+      "required": [
+        "RemoteAccessVpnGatewayId"
+      ],
+      "type": "structure"
+    },
+    "DescribeRemoteAccessVpnGatewayActivitiesResult": {
+      "members": {
+        "Log": {
+          "locationName": "log",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "remoteAccessVpnGatewayId",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayName": {
+          "locationName": "remoteAccessVpnGatewayName",
+          "shape": "String"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        }
+      },
+      "name": "DescribeRemoteAccessVpnGatewayActivitiesResult",
+      "type": "structure"
+    },
+    "DescribeRemoteAccessVpnGatewayClientConfigRequest": {
+      "members": {
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        }
+      },
+      "name": "DescribeRemoteAccessVpnGatewayClientConfigRequest",
+      "required": [
+        "RemoteAccessVpnGatewayId"
+      ],
+      "type": "structure"
+    },
+    "DescribeRemoteAccessVpnGatewayClientConfigResult": {
+      "members": {
+        "Encoding": {
+          "locationName": "encoding",
+          "shape": "String"
+        },
+        "FileData": {
+          "locationName": "fileData",
+          "shape": "String"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        }
+      },
+      "name": "DescribeRemoteAccessVpnGatewayClientConfigResult",
+      "type": "structure"
+    },
+    "DescribeRemoteAccessVpnGatewayConnectionsRequest": {
+      "members": {
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        }
+      },
+      "name": "DescribeRemoteAccessVpnGatewayConnectionsRequest",
+      "required": [
+        "RemoteAccessVpnGatewayId"
+      ],
+      "type": "structure"
+    },
+    "DescribeRemoteAccessVpnGatewayConnectionsResult": {
+      "members": {
+        "RemoteAccessVpnGatewayConnection": {
+          "locationName": "remoteAccessVpnGatewayConnection",
+          "shape": "RemoteAccessVpnGatewayConnection"
+        },
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "remoteAccessVpnGatewayId",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayName": {
+          "locationName": "remoteAccessVpnGatewayName",
+          "shape": "String"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        }
+      },
+      "name": "DescribeRemoteAccessVpnGatewayConnectionsResult",
+      "type": "structure"
+    },
+    "DescribeRemoteAccessVpnGatewaysRequest": {
+      "members": {
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "ListOfRequestRemoteAccessVpnGatewayId"
+        }
+      },
+      "name": "DescribeRemoteAccessVpnGatewaysRequest",
+      "type": "structure"
+    },
+    "DescribeRemoteAccessVpnGatewaysResult": {
+      "members": {
+        "RemoteAccessVpnGatewaySet": {
+          "locationName": "remoteAccessVpnGatewaySet",
+          "shape": "ListOfRemoteAccessVpnGatewaySetOfDescribeRemoteAccessVpnGateways"
+        },
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        }
+      },
+      "name": "DescribeRemoteAccessVpnGatewaysResult",
       "type": "structure"
     },
     "DescribeResourcesRequest": {
@@ -11618,6 +12359,14 @@
       "name": "ListOfAttachmentSet",
       "type": "list"
     },
+    "ListOfAuthTypeSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "AuthTypeSet"
+      },
+      "name": "ListOfAuthTypeSet",
+      "type": "list"
+    },
     "ListOfAutoScalingReservationSet": {
       "member": {
         "locationName": "item",
@@ -11680,6 +12429,22 @@
         "shape": "CertsSet"
       },
       "name": "ListOfCertsSet",
+      "type": "list"
+    },
+    "ListOfCipherSuiteSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "CipherSuiteSet"
+      },
+      "name": "ListOfCipherSuiteSet",
+      "type": "list"
+    },
+    "ListOfConnectionSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "ConnectionSet"
+      },
+      "name": "ListOfConnectionSet",
       "type": "list"
     },
     "ListOfCopyInstanceSet": {
@@ -12370,6 +13135,14 @@
       "name": "ListOfNetworkInterfaceSetOfCopyFromBackupInstance",
       "type": "list"
     },
+    "ListOfNetworkInterfaceSetOfCreateRemoteAccessVpnGateway": {
+      "member": {
+        "locationName": "item",
+        "shape": "NetworkInterfaceSetOfCreateRemoteAccessVpnGateway"
+      },
+      "name": "ListOfNetworkInterfaceSetOfCreateRemoteAccessVpnGateway",
+      "type": "list"
+    },
     "ListOfNetworkInterfaceSetOfCreateVpnGateway": {
       "member": {
         "locationName": "item",
@@ -12392,6 +13165,14 @@
         "shape": "NetworkInterfaceSetOfDescribeNetworkInterfaces"
       },
       "name": "ListOfNetworkInterfaceSetOfDescribeNetworkInterfaces",
+      "type": "list"
+    },
+    "ListOfNetworkInterfaceSetOfDescribeRemoteAccessVpnGateways": {
+      "member": {
+        "locationName": "item",
+        "shape": "NetworkInterfaceSetOfDescribeRemoteAccessVpnGateways"
+      },
+      "name": "ListOfNetworkInterfaceSetOfDescribeRemoteAccessVpnGateways",
       "type": "list"
     },
     "ListOfNetworkInterfaceSetOfDescribeVpnGateways": {
@@ -12666,6 +13447,14 @@
       "name": "ListOfRemoteAccessVpnGatewaySet",
       "type": "list"
     },
+    "ListOfRemoteAccessVpnGatewaySetOfDescribeRemoteAccessVpnGateways": {
+      "member": {
+        "locationName": "item",
+        "shape": "RemoteAccessVpnGatewaySetOfDescribeRemoteAccessVpnGateways"
+      },
+      "name": "ListOfRemoteAccessVpnGatewaySetOfDescribeRemoteAccessVpnGateways",
+      "type": "list"
+    },
     "ListOfRemoteAccessVpnGatewaySetOfNiftyCreatePrivateLan": {
       "member": {
         "locationName": "item",
@@ -12680,6 +13469,14 @@
         "shape": "RemoteAccessVpnGatewaySetOfNiftyDescribePrivateLans"
       },
       "name": "ListOfRemoteAccessVpnGatewaySetOfNiftyDescribePrivateLans",
+      "type": "list"
+    },
+    "ListOfRemoteUserSet": {
+      "member": {
+        "locationName": "item",
+        "shape": "RemoteUserSet"
+      },
+      "name": "ListOfRemoteUserSet",
       "type": "list"
     },
     "ListOfRequestAccountingType": {
@@ -12731,6 +13528,20 @@
         "shape": "RequestBlockDeviceMapping"
       },
       "name": "ListOfRequestBlockDeviceMapping",
+      "type": "list"
+    },
+    "ListOfRequestCipherSuite": {
+      "member": {
+        "shape": "String"
+      },
+      "name": "ListOfRequestCipherSuite",
+      "type": "list"
+    },
+    "ListOfRequestConnection": {
+      "member": {
+        "shape": "RequestConnection"
+      },
+      "name": "ListOfRequestConnection",
       "type": "list"
     },
     "ListOfRequestConversionTaskId": {
@@ -13257,6 +14068,13 @@
       "name": "ListOfRequestNetworkInterfaceOfCopyFromBackupInstance",
       "type": "list"
     },
+    "ListOfRequestNetworkInterfaceOfCreateRemoteAccessVpnGateway": {
+      "member": {
+        "shape": "RequestNetworkInterfaceOfCreateRemoteAccessVpnGateway"
+      },
+      "name": "ListOfRequestNetworkInterfaceOfCreateRemoteAccessVpnGateway",
+      "type": "list"
+    },
     "ListOfRequestNetworkInterfaceOfNiftyCreateElasticLoadBalancer": {
       "member": {
         "shape": "RequestNetworkInterfaceOfNiftyCreateElasticLoadBalancer"
@@ -13346,6 +14164,27 @@
         "shape": "String"
       },
       "name": "ListOfRequestRegionName",
+      "type": "list"
+    },
+    "ListOfRequestRemoteAccessVpnGatewayId": {
+      "member": {
+        "shape": "String"
+      },
+      "name": "ListOfRequestRemoteAccessVpnGatewayId",
+      "type": "list"
+    },
+    "ListOfRequestRemoteUser": {
+      "member": {
+        "shape": "RequestRemoteUser"
+      },
+      "name": "ListOfRequestRemoteUser",
+      "type": "list"
+    },
+    "ListOfRequestRemoteUserOfDeleteRemoteAccessVpnGatewayUsers": {
+      "member": {
+        "shape": "RequestRemoteUserOfDeleteRemoteAccessVpnGatewayUsers"
+      },
+      "name": "ListOfRequestRemoteUserOfDeleteRemoteAccessVpnGatewayUsers",
       "type": "list"
     },
     "ListOfRequestRemove": {
@@ -14577,6 +15416,93 @@
       "name": "ModifyNetworkInterfaceAttributeResult",
       "type": "structure"
     },
+    "ModifyRemoteAccessVpnGatewayAttributeRequest": {
+      "members": {
+        "AccountingType": {
+          "locationName": "AccountingType",
+          "shape": "AccountingTypeOfModifyRemoteAccessVpnGatewayAttributeRequest"
+        },
+        "ClientTunnelMode": {
+          "locationName": "ClientTunnelMode",
+          "shape": "ClientTunnelModeOfModifyRemoteAccessVpnGatewayAttributeRequest"
+        },
+        "Description": {
+          "locationName": "Description",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayName": {
+          "locationName": "RemoteAccessVpnGatewayName",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayType": {
+          "locationName": "RemoteAccessVpnGatewayType",
+          "shape": "RemoteAccessVpnGatewayTypeOfModifyRemoteAccessVpnGatewayAttributeRequest"
+        }
+      },
+      "name": "ModifyRemoteAccessVpnGatewayAttributeRequest",
+      "required": [
+        "RemoteAccessVpnGatewayId"
+      ],
+      "type": "structure"
+    },
+    "ModifyRemoteAccessVpnGatewayAttributeResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "ModifyRemoteAccessVpnGatewayAttributeResult",
+      "type": "structure"
+    },
+    "ModifyRemoteAccessVpnGatewayUserAttributeRequest": {
+      "members": {
+        "Description": {
+          "locationName": "Description",
+          "shape": "String"
+        },
+        "Password": {
+          "locationName": "Password",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        },
+        "UserName": {
+          "locationName": "UserName",
+          "shape": "String"
+        }
+      },
+      "name": "ModifyRemoteAccessVpnGatewayUserAttributeRequest",
+      "required": [
+        "RemoteAccessVpnGatewayId",
+        "UserName"
+      ],
+      "type": "structure"
+    },
+    "ModifyRemoteAccessVpnGatewayUserAttributeResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "ModifyRemoteAccessVpnGatewayUserAttributeResult",
+      "type": "structure"
+    },
     "ModifySslCertificateAttributeRequest": {
       "members": {
         "Description": {
@@ -15576,6 +16502,104 @@
       "name": "NetworkInterfaceSetOfCopyFromBackupInstance",
       "type": "structure"
     },
+    "NetworkInterfaceSetOfCreateRemoteAccessVpnGateway": {
+      "members": {
+        "Association": {
+          "locationName": "association",
+          "shape": "AssociationOfCreateRemoteAccessVpnGateway"
+        },
+        "Attachment": {
+          "locationName": "attachment",
+          "shape": "AttachmentOfCreateRemoteAccessVpnGateway"
+        },
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "GroupSet": {
+          "locationName": "groupSet",
+          "shape": "String"
+        },
+        "InterfaceType": {
+          "locationName": "interfaceType",
+          "shape": "String"
+        },
+        "Ipv6AddressesSet": {
+          "locationName": "ipv6AddressesSet",
+          "shape": "String"
+        },
+        "MacAddress": {
+          "locationName": "macAddress",
+          "shape": "String"
+        },
+        "NetworkInterfaceId": {
+          "locationName": "networkInterfaceId",
+          "shape": "String"
+        },
+        "NiftyNetworkId": {
+          "locationName": "niftyNetworkId",
+          "shape": "String"
+        },
+        "NiftyNetworkName": {
+          "locationName": "niftyNetworkName",
+          "shape": "String"
+        },
+        "OwnerId": {
+          "locationName": "ownerId",
+          "shape": "String"
+        },
+        "PrivateDnsName": {
+          "locationName": "privateDnsName",
+          "shape": "String"
+        },
+        "PrivateIpAddress": {
+          "locationName": "privateIpAddress",
+          "shape": "String"
+        },
+        "PrivateIpAddressV6": {
+          "locationName": "privateIpAddressV6",
+          "shape": "String"
+        },
+        "PrivateIpAddressesSet": {
+          "locationName": "privateIpAddressesSet",
+          "shape": "String"
+        },
+        "RequesterId": {
+          "locationName": "requesterId",
+          "shape": "String"
+        },
+        "RequesterManaged": {
+          "locationName": "requesterManaged",
+          "shape": "String"
+        },
+        "SourceDestCheck": {
+          "locationName": "sourceDestCheck",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        },
+        "SubnetId": {
+          "locationName": "subnetId",
+          "shape": "String"
+        },
+        "TagSet": {
+          "locationName": "tagSet",
+          "shape": "String"
+        },
+        "VpcId": {
+          "locationName": "vpcId",
+          "shape": "String"
+        }
+      },
+      "name": "NetworkInterfaceSetOfCreateRemoteAccessVpnGateway",
+      "type": "structure"
+    },
     "NetworkInterfaceSetOfCreateVpnGateway": {
       "members": {
         "IpAddress": {
@@ -15768,6 +16792,104 @@
         }
       },
       "name": "NetworkInterfaceSetOfDescribeNetworkInterfaces",
+      "type": "structure"
+    },
+    "NetworkInterfaceSetOfDescribeRemoteAccessVpnGateways": {
+      "members": {
+        "Association": {
+          "locationName": "association",
+          "shape": "AssociationOfDescribeRemoteAccessVpnGateways"
+        },
+        "Attachment": {
+          "locationName": "attachment",
+          "shape": "AttachmentOfDescribeRemoteAccessVpnGateways"
+        },
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "GroupSet": {
+          "locationName": "groupSet",
+          "shape": "String"
+        },
+        "InterfaceType": {
+          "locationName": "interfaceType",
+          "shape": "String"
+        },
+        "Ipv6AddressesSet": {
+          "locationName": "ipv6AddressesSet",
+          "shape": "String"
+        },
+        "MacAddress": {
+          "locationName": "macAddress",
+          "shape": "String"
+        },
+        "NetworkInterfaceId": {
+          "locationName": "networkInterfaceId",
+          "shape": "String"
+        },
+        "NiftyNetworkId": {
+          "locationName": "niftyNetworkId",
+          "shape": "String"
+        },
+        "NiftyNetworkName": {
+          "locationName": "niftyNetworkName",
+          "shape": "String"
+        },
+        "OwnerId": {
+          "locationName": "ownerId",
+          "shape": "String"
+        },
+        "PrivateDnsName": {
+          "locationName": "privateDnsName",
+          "shape": "String"
+        },
+        "PrivateIpAddress": {
+          "locationName": "privateIpAddress",
+          "shape": "String"
+        },
+        "PrivateIpAddressV6": {
+          "locationName": "privateIpAddressV6",
+          "shape": "String"
+        },
+        "PrivateIpAddressesSet": {
+          "locationName": "privateIpAddressesSet",
+          "shape": "String"
+        },
+        "RequesterId": {
+          "locationName": "requesterId",
+          "shape": "String"
+        },
+        "RequesterManaged": {
+          "locationName": "requesterManaged",
+          "shape": "String"
+        },
+        "SourceDestCheck": {
+          "locationName": "sourceDestCheck",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        },
+        "SubnetId": {
+          "locationName": "subnetId",
+          "shape": "String"
+        },
+        "TagSet": {
+          "locationName": "tagSet",
+          "shape": "String"
+        },
+        "VpcId": {
+          "locationName": "vpcId",
+          "shape": "String"
+        }
+      },
+      "name": "NetworkInterfaceSetOfDescribeRemoteAccessVpnGateways",
       "type": "structure"
     },
     "NetworkInterfaceSetOfDescribeVpnGateways": {
@@ -18951,6 +20073,14 @@
       "name": "NiftyRebootOfNiftyUpdateVpnGatewayNetworkInterfacesRequest",
       "type": "string"
     },
+    "NiftyRebootOfRebootRemoteAccessVpnGatewayRequest": {
+      "enum": [
+        "force",
+        "true"
+      ],
+      "name": "NiftyRebootOfRebootRemoteAccessVpnGatewayRequest",
+      "type": "string"
+    },
     "NiftyRebootOfRouterForNiftyRebootRouters": {
       "enum": [
         "force",
@@ -21193,6 +22323,37 @@
       "name": "RebootInstancesResult",
       "type": "structure"
     },
+    "RebootRemoteAccessVpnGatewayRequest": {
+      "members": {
+        "NiftyReboot": {
+          "locationName": "NiftyReboot",
+          "shape": "NiftyRebootOfRebootRemoteAccessVpnGatewayRequest"
+        },
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        }
+      },
+      "name": "RebootRemoteAccessVpnGatewayRequest",
+      "required": [
+        "RemoteAccessVpnGatewayId"
+      ],
+      "type": "structure"
+    },
+    "RebootRemoteAccessVpnGatewayResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "RebootRemoteAccessVpnGatewayResult",
+      "type": "structure"
+    },
     "RefreshInstanceBackupRuleRequest": {
       "members": {
         "InstanceBackupRuleId": {
@@ -21624,6 +22785,122 @@
       "name": "ReleaseMultiIpAddressesResult",
       "type": "structure"
     },
+    "RemoteAccessVpnGateway": {
+      "members": {
+        "AccountingType": {
+          "locationName": "accountingType",
+          "shape": "String"
+        },
+        "AuthTypeSet": {
+          "locationName": "authTypeSet",
+          "shape": "ListOfAuthTypeSet"
+        },
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "CaCertificateId": {
+          "locationName": "caCertificateId",
+          "shape": "String"
+        },
+        "CipherSuiteSet": {
+          "locationName": "cipherSuiteSet",
+          "shape": "ListOfCipherSuiteSet"
+        },
+        "ClientDownloadEndpoint": {
+          "locationName": "clientDownloadEndpoint",
+          "shape": "String"
+        },
+        "ClientTunnelMode": {
+          "locationName": "clientTunnelMode",
+          "shape": "String"
+        },
+        "CreatedTime": {
+          "locationName": "createdTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "GroupSet": {
+          "locationName": "groupSet",
+          "shape": "String"
+        },
+        "IsConfiguredNat": {
+          "locationName": "isConfiguredNat",
+          "shape": "String"
+        },
+        "NetworkInterfaceSet": {
+          "locationName": "networkInterfaceSet",
+          "shape": "ListOfNetworkInterfaceSetOfCreateRemoteAccessVpnGateway"
+        },
+        "NextMonthAccountingType": {
+          "locationName": "nextMonthAccountingType",
+          "shape": "String"
+        },
+        "PoolNetworkCidr": {
+          "locationName": "poolNetworkCidr",
+          "shape": "String"
+        },
+        "PoolNetworkGatewayIpAddress": {
+          "locationName": "poolNetworkGatewayIpAddress",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "remoteAccessVpnGatewayId",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayName": {
+          "locationName": "remoteAccessVpnGatewayName",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayType": {
+          "locationName": "remoteAccessVpnGatewayType",
+          "shape": "String"
+        },
+        "RemoteUserSet": {
+          "locationName": "remoteUserSet",
+          "shape": "String"
+        },
+        "RouteTableAssociationId": {
+          "locationName": "routeTableAssociationId",
+          "shape": "String"
+        },
+        "RouteTableId": {
+          "locationName": "routeTableId",
+          "shape": "String"
+        },
+        "SslCertificateId": {
+          "locationName": "sslCertificateId",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        },
+        "VersionInformation": {
+          "locationName": "versionInformation",
+          "shape": "VersionInformationOfCreateRemoteAccessVpnGateway"
+        }
+      },
+      "name": "RemoteAccessVpnGateway",
+      "type": "structure"
+    },
+    "RemoteAccessVpnGatewayConnection": {
+      "members": {
+        "ConnectionCount": {
+          "locationName": "connectionCount",
+          "shape": "Integer"
+        },
+        "ConnectionSet": {
+          "locationName": "connectionSet",
+          "shape": "ListOfConnectionSet"
+        }
+      },
+      "name": "RemoteAccessVpnGatewayConnection",
+      "type": "structure"
+    },
     "RemoteAccessVpnGatewayInfo": {
       "members": {
         "RemoteAccessVpnGatewayMeasuredRateSet": {
@@ -21696,6 +22973,108 @@
       "name": "RemoteAccessVpnGatewaySet",
       "type": "structure"
     },
+    "RemoteAccessVpnGatewaySetOfDescribeRemoteAccessVpnGateways": {
+      "members": {
+        "AccountingType": {
+          "locationName": "accountingType",
+          "shape": "String"
+        },
+        "AuthTypeSet": {
+          "locationName": "authTypeSet",
+          "shape": "ListOfAuthTypeSet"
+        },
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "CaCertificateId": {
+          "locationName": "caCertificateId",
+          "shape": "String"
+        },
+        "CipherSuiteSet": {
+          "locationName": "cipherSuiteSet",
+          "shape": "ListOfCipherSuiteSet"
+        },
+        "ClientDownloadEndpoint": {
+          "locationName": "clientDownloadEndpoint",
+          "shape": "String"
+        },
+        "ClientTunnelMode": {
+          "locationName": "clientTunnelMode",
+          "shape": "String"
+        },
+        "CreatedTime": {
+          "locationName": "createdTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "GroupSet": {
+          "locationName": "groupSet",
+          "shape": "String"
+        },
+        "IsConfiguredNat": {
+          "locationName": "isConfiguredNat",
+          "shape": "String"
+        },
+        "NetworkInterfaceSet": {
+          "locationName": "networkInterfaceSet",
+          "shape": "ListOfNetworkInterfaceSetOfDescribeRemoteAccessVpnGateways"
+        },
+        "NextMonthAccountingType": {
+          "locationName": "nextMonthAccountingType",
+          "shape": "String"
+        },
+        "PoolNetworkCidr": {
+          "locationName": "poolNetworkCidr",
+          "shape": "String"
+        },
+        "PoolNetworkGatewayIpAddress": {
+          "locationName": "poolNetworkGatewayIpAddress",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "remoteAccessVpnGatewayId",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayName": {
+          "locationName": "remoteAccessVpnGatewayName",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayType": {
+          "locationName": "remoteAccessVpnGatewayType",
+          "shape": "String"
+        },
+        "RemoteUserSet": {
+          "locationName": "remoteUserSet",
+          "shape": "ListOfRemoteUserSet"
+        },
+        "RouteTableAssociationId": {
+          "locationName": "routeTableAssociationId",
+          "shape": "String"
+        },
+        "RouteTableId": {
+          "locationName": "routeTableId",
+          "shape": "String"
+        },
+        "SslCertificateId": {
+          "locationName": "sslCertificateId",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "String"
+        },
+        "VersionInformation": {
+          "locationName": "versionInformation",
+          "shape": "VersionInformationOfDescribeRemoteAccessVpnGateways"
+        }
+      },
+      "name": "RemoteAccessVpnGatewaySetOfDescribeRemoteAccessVpnGateways",
+      "type": "structure"
+    },
     "RemoteAccessVpnGatewaySetOfNiftyCreatePrivateLan": {
       "members": {
         "DeviceIndex": {
@@ -21738,6 +23117,65 @@
         }
       },
       "name": "RemoteAccessVpnGatewaySetOfNiftyDescribePrivateLans",
+      "type": "structure"
+    },
+    "RemoteAccessVpnGatewayTypeOfCreateRemoteAccessVpnGatewayRequest": {
+      "enum": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "name": "RemoteAccessVpnGatewayTypeOfCreateRemoteAccessVpnGatewayRequest",
+      "type": "string"
+    },
+    "RemoteAccessVpnGatewayTypeOfModifyRemoteAccessVpnGatewayAttributeRequest": {
+      "enum": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "name": "RemoteAccessVpnGatewayTypeOfModifyRemoteAccessVpnGatewayAttributeRequest",
+      "type": "string"
+    },
+    "RemoteUserSet": {
+      "members": {
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "UserName": {
+          "locationName": "userName",
+          "shape": "String"
+        }
+      },
+      "name": "RemoteUserSet",
+      "type": "structure"
+    },
+    "ReplaceRemoteAccessVpnGatewayLatestVersionRequest": {
+      "members": {
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        }
+      },
+      "name": "ReplaceRemoteAccessVpnGatewayLatestVersionRequest",
+      "required": [
+        "RemoteAccessVpnGatewayId"
+      ],
+      "type": "structure"
+    },
+    "ReplaceRemoteAccessVpnGatewayLatestVersionResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "ReplaceRemoteAccessVpnGatewayLatestVersionResult",
       "type": "structure"
     },
     "ReplaceRouteRequest": {
@@ -21924,6 +23362,19 @@
         }
       },
       "name": "RequestCertInfo",
+      "type": "structure"
+    },
+    "RequestConnection": {
+      "members": {
+        "ConnectionId": {
+          "locationName": "ConnectionId",
+          "shape": "String"
+        }
+      },
+      "name": "RequestConnection",
+      "required": [
+        "ConnectionId"
+      ],
       "type": "structure"
     },
     "RequestCopyInstance": {
@@ -23077,6 +24528,24 @@
       "name": "RequestNetworkInterfaceOfCopyFromBackupInstance",
       "type": "structure"
     },
+    "RequestNetworkInterfaceOfCreateRemoteAccessVpnGateway": {
+      "members": {
+        "IpAddress": {
+          "locationName": "IpAddress",
+          "shape": "String"
+        },
+        "NetworkId": {
+          "locationName": "NetworkId",
+          "shape": "String"
+        }
+      },
+      "name": "RequestNetworkInterfaceOfCreateRemoteAccessVpnGateway",
+      "required": [
+        "IpAddress",
+        "NetworkId"
+      ],
+      "type": "structure"
+    },
     "RequestNetworkInterfaceOfNiftyCreateElasticLoadBalancer": {
       "members": {
         "IpAddress": {
@@ -23378,6 +24847,16 @@
       "name": "RequestPlacementOfCreateNetworkInterface",
       "type": "structure"
     },
+    "RequestPlacementOfCreateRemoteAccessVpnGateway": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "AvailabilityZone",
+          "shape": "String"
+        }
+      },
+      "name": "RequestPlacementOfCreateRemoteAccessVpnGateway",
+      "type": "structure"
+    },
     "RequestPlacementOfCreateSecurityGroup": {
       "members": {
         "AvailabilityZone": {
@@ -23451,6 +24930,41 @@
         }
       },
       "name": "RequestRangeOfDescribeUserActivities",
+      "type": "structure"
+    },
+    "RequestRemoteUser": {
+      "members": {
+        "Description": {
+          "locationName": "Description",
+          "shape": "String"
+        },
+        "Password": {
+          "locationName": "Password",
+          "shape": "String"
+        },
+        "UserName": {
+          "locationName": "UserName",
+          "shape": "String"
+        }
+      },
+      "name": "RequestRemoteUser",
+      "required": [
+        "Password",
+        "UserName"
+      ],
+      "type": "structure"
+    },
+    "RequestRemoteUserOfDeleteRemoteAccessVpnGatewayUsers": {
+      "members": {
+        "UserName": {
+          "locationName": "UserName",
+          "shape": "String"
+        }
+      },
+      "name": "RequestRemoteUserOfDeleteRemoteAccessVpnGatewayUsers",
+      "required": [
+        "UserName"
+      ],
       "type": "structure"
     },
     "RequestRemove": {
@@ -25168,6 +26682,70 @@
       "name": "SetMondayOfScalingScheduleForNiftyUpdateAutoScalingGroup",
       "type": "string"
     },
+    "SetRemoteAccessVpnGatewayCACertificateRequest": {
+      "members": {
+        "CACertificateId": {
+          "locationName": "CACertificateId",
+          "shape": "String"
+        },
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        }
+      },
+      "name": "SetRemoteAccessVpnGatewayCACertificateRequest",
+      "required": [
+        "CACertificateId",
+        "RemoteAccessVpnGatewayId"
+      ],
+      "type": "structure"
+    },
+    "SetRemoteAccessVpnGatewayCACertificateResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "SetRemoteAccessVpnGatewayCACertificateResult",
+      "type": "structure"
+    },
+    "SetRemoteAccessVpnGatewaySSLCertificateRequest": {
+      "members": {
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        },
+        "SSLCertificateId": {
+          "locationName": "SSLCertificateId",
+          "shape": "String"
+        }
+      },
+      "name": "SetRemoteAccessVpnGatewaySSLCertificateRequest",
+      "required": [
+        "RemoteAccessVpnGatewayId",
+        "SSLCertificateId"
+      ],
+      "type": "structure"
+    },
+    "SetRemoteAccessVpnGatewaySSLCertificateResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "SetRemoteAccessVpnGatewaySSLCertificateResult",
+      "type": "structure"
+    },
     "SetSaturdayOfScalingScheduleForNiftyCreateAutoScalingGroup": {
       "enum": [
         "0",
@@ -25764,6 +27342,60 @@
       "name": "UnsetLoadBalancerListenerSSLCertificateResultWrapper",
       "type": "structure"
     },
+    "UnsetRemoteAccessVpnGatewayCACertificateRequest": {
+      "members": {
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        }
+      },
+      "name": "UnsetRemoteAccessVpnGatewayCACertificateRequest",
+      "required": [
+        "RemoteAccessVpnGatewayId"
+      ],
+      "type": "structure"
+    },
+    "UnsetRemoteAccessVpnGatewayCACertificateResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "UnsetRemoteAccessVpnGatewayCACertificateResult",
+      "type": "structure"
+    },
+    "UnsetRemoteAccessVpnGatewaySSLCertificateRequest": {
+      "members": {
+        "RemoteAccessVpnGatewayId": {
+          "locationName": "RemoteAccessVpnGatewayId",
+          "shape": "String"
+        }
+      },
+      "name": "UnsetRemoteAccessVpnGatewaySSLCertificateRequest",
+      "required": [
+        "RemoteAccessVpnGatewayId"
+      ],
+      "type": "structure"
+    },
+    "UnsetRemoteAccessVpnGatewaySSLCertificateResult": {
+      "members": {
+        "RequestId": {
+          "locationName": "requestId",
+          "shape": "String"
+        },
+        "Return": {
+          "locationName": "return",
+          "shape": "Boolean"
+        }
+      },
+      "name": "UnsetRemoteAccessVpnGatewaySSLCertificateResult",
+      "type": "structure"
+    },
     "UpdateLoadBalancerOptionRequest": {
       "members": {
         "InstancePort": {
@@ -26102,6 +27734,20 @@
       "name": "VersionInformation",
       "type": "structure"
     },
+    "VersionInformationOfCreateRemoteAccessVpnGateway": {
+      "members": {
+        "IsLatest": {
+          "locationName": "isLatest",
+          "shape": "String"
+        },
+        "Version": {
+          "locationName": "version",
+          "shape": "String"
+        }
+      },
+      "name": "VersionInformationOfCreateRemoteAccessVpnGateway",
+      "type": "structure"
+    },
     "VersionInformationOfCreateVpnGateway": {
       "members": {
         "IsLatest": {
@@ -26114,6 +27760,20 @@
         }
       },
       "name": "VersionInformationOfCreateVpnGateway",
+      "type": "structure"
+    },
+    "VersionInformationOfDescribeRemoteAccessVpnGateways": {
+      "members": {
+        "IsLatest": {
+          "locationName": "isLatest",
+          "shape": "String"
+        },
+        "Version": {
+          "locationName": "version",
+          "shape": "String"
+        }
+      },
+      "name": "VersionInformationOfDescribeRemoteAccessVpnGateways",
       "type": "structure"
     },
     "VersionInformationOfDescribeVpnGateways": {
