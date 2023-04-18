@@ -741,7 +741,55 @@
           "state": "retry"
         }
       ]
+    },
+    "RemoteAccessVpnGatewayExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "DescribeRemoteAccessVpnGateways",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(RemoteAccessVpnGatewaySet[]) > `0`",
+          "state": "success"
+        },
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.RemoteAccessVpnGatewayId",
+          "state": "retry"
+        }
+      ]
+    },
+    "RemoteAccessVpnGatewayAvailable": {
+      "delay": 20,
+      "operation": "DescribeRemoteAccessVpnGateways",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "available",
+          "state": "success",
+          "argument": "RemoteAccessVpnGatewaySet[].Status"
+        }
+      ]
+    },
+    "RemoteAccessVpnGatewayDeleted": {
+      "delay": 20,
+      "operation": "DescribeRemoteAccessVpnGateways",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "error",
+          "expected": "Client.InvalidParameterNotFound.RemoteAccessVpnGatewayId",
+          "state": "success"
+        },
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(RemoteAccessVpnGatewaySet[]) == `0`",
+          "state": "success"
+        }
+      ]
     }
   }
 }
-
