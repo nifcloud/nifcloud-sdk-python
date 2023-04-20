@@ -1,5 +1,14 @@
 # Changelog
 
+## [v1.6.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.6.0) (2023-04-20)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.5.0...v1.6.0)
+
+**Merged pull requests:**
+
+- Add waiter for remote access vpn gateway [\#105](https://github.com/nifcloud/nifcloud-sdk-python/pull/105) ([aokumasan](https://github.com/aokumasan))
+- Update model [\#104](https://github.com/nifcloud/nifcloud-sdk-python/pull/104) ([aokumasan](https://github.com/aokumasan))
+
 ## [v1.5.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.5.0) (2023-03-13)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.4.0...v1.5.0)
