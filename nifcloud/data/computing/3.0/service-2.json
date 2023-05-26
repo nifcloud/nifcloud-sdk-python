@@ -9150,7 +9150,7 @@
       "members": {
         "HttpCode": {
           "locationName": "HttpCode",
-          "shape": "Integer"
+          "shape": "String"
         }
       },
       "name": "Expectation",
@@ -9495,6 +9495,17 @@
       },
       "name": "HealthCheckOfNiftyDescribeElasticLoadBalancers",
       "type": "structure"
+    },
+    "HttpCodeOfListenersForNiftyCreateElasticLoadBalancer": {
+      "enum": [
+        "1xx",
+        "2xx",
+        "3xx",
+        "4xx",
+        "5xx"
+      ],
+      "name": "HttpCodeOfListenersForNiftyCreateElasticLoadBalancer",
+      "type": "string"
     },
     "IPAddresses": {
       "members": {
@@ -13650,6 +13661,14 @@
       "name": "ListOfRequestExpectation",
       "type": "list"
     },
+    "ListOfRequestExpectationOfNiftyCreateElasticLoadBalancer": {
+      "member": {
+        "locationName": "member",
+        "shape": "RequestExpectationOfNiftyCreateElasticLoadBalancer"
+      },
+      "name": "ListOfRequestExpectationOfNiftyCreateElasticLoadBalancer",
+      "type": "list"
+    },
     "ListOfRequestFilter": {
       "member": {
         "shape": "RequestFilter"
@@ -14089,6 +14108,13 @@
       "name": "ListOfRequestNetworkInterfaceOfNiftyCreateRouter",
       "type": "list"
     },
+    "ListOfRequestNetworkInterfaceOfNiftyReplaceElasticLoadBalancerLatestVersion": {
+      "member": {
+        "shape": "RequestNetworkInterfaceOfNiftyReplaceElasticLoadBalancerLatestVersion"
+      },
+      "name": "ListOfRequestNetworkInterfaceOfNiftyReplaceElasticLoadBalancerLatestVersion",
+      "type": "list"
+    },
     "ListOfRequestNetworkInterfaceOfNiftyUpdateRouterNetworkInterfaces": {
       "member": {
         "shape": "RequestNetworkInterfaceOfNiftyUpdateRouterNetworkInterfaces"
@@ -14325,6 +14351,13 @@
         "shape": "String"
       },
       "name": "ListOfRequestSnapshotName",
+      "type": "list"
+    },
+    "ListOfRequestSystemIpAddresses": {
+      "member": {
+        "shape": "RequestSystemIpAddresses"
+      },
+      "name": "ListOfRequestSystemIpAddresses",
       "type": "list"
     },
     "ListOfRequestTenancy": {
@@ -14613,6 +14646,14 @@
         "shape": "StoppedScaleOutOsSet"
       },
       "name": "ListOfStoppedScaleOutOsSet",
+      "type": "list"
+    },
+    "ListOfSystemIpAddresses": {
+      "member": {
+        "locationName": "member",
+        "shape": "SystemIpAddresses"
+      },
+      "name": "ListOfSystemIpAddresses",
       "type": "list"
     },
     "ListOfTagSet": {
@@ -17171,6 +17212,10 @@
         "NetworkName": {
           "locationName": "NetworkName",
           "shape": "String"
+        },
+        "SystemIpAddresses": {
+          "locationName": "SystemIpAddresses",
+          "shape": "ListOfSystemIpAddresses"
         }
       },
       "name": "NetworkInterfaces",
@@ -20495,6 +20540,10 @@
         "ElasticLoadBalancerName": {
           "locationName": "ElasticLoadBalancerName",
           "shape": "String"
+        },
+        "NetworkInterface": {
+          "locationName": "NetworkInterface",
+          "shape": "ListOfRequestNetworkInterfaceOfNiftyReplaceElasticLoadBalancerLatestVersion"
         }
       },
       "name": "NiftyReplaceElasticLoadBalancerLatestVersionRequest",
@@ -23604,10 +23653,20 @@
       "members": {
         "HttpCode": {
           "locationName": "HttpCode",
-          "shape": "Integer"
+          "shape": "String"
         }
       },
       "name": "RequestExpectation",
+      "type": "structure"
+    },
+    "RequestExpectationOfNiftyCreateElasticLoadBalancer": {
+      "members": {
+        "HttpCode": {
+          "locationName": "HttpCode",
+          "shape": "HttpCodeOfListenersForNiftyCreateElasticLoadBalancer"
+        }
+      },
+      "name": "RequestExpectationOfNiftyCreateElasticLoadBalancer",
       "type": "structure"
     },
     "RequestFilter": {
@@ -23932,7 +23991,7 @@
         },
         "ListOfRequestExpectation": {
           "locationName": "Expectation",
-          "shape": "ListOfRequestExpectation"
+          "shape": "ListOfRequestExpectationOfNiftyCreateElasticLoadBalancer"
         },
         "Path": {
           "locationName": "Path",
@@ -24556,6 +24615,10 @@
           "locationName": "IsVipNetwork",
           "shape": "Boolean"
         },
+        "ListOfRequestSystemIpAddresses": {
+          "locationName": "SystemIpAddresses",
+          "shape": "ListOfRequestSystemIpAddresses"
+        },
         "NetworkId": {
           "locationName": "NetworkId",
           "shape": "String"
@@ -24604,6 +24667,20 @@
         }
       },
       "name": "RequestNetworkInterfaceOfNiftyCreateRouter",
+      "type": "structure"
+    },
+    "RequestNetworkInterfaceOfNiftyReplaceElasticLoadBalancerLatestVersion": {
+      "members": {
+        "ListOfRequestSystemIpAddresses": {
+          "locationName": "SystemIpAddresses",
+          "shape": "ListOfRequestSystemIpAddresses"
+        },
+        "NetworkId": {
+          "locationName": "NetworkId",
+          "shape": "String"
+        }
+      },
+      "name": "RequestNetworkInterfaceOfNiftyReplaceElasticLoadBalancerLatestVersion",
       "type": "structure"
     },
     "RequestNetworkInterfaceOfNiftyUpdateRouterNetworkInterfaces": {
@@ -25324,6 +25401,16 @@
         }
       },
       "name": "RequestStickinessPolicyOfNiftyModifyElasticLoadBalancerAttributes",
+      "type": "structure"
+    },
+    "RequestSystemIpAddresses": {
+      "members": {
+        "SystemIpAddress": {
+          "locationName": "SystemIpAddress",
+          "shape": "String"
+        }
+      },
+      "name": "RequestSystemIpAddresses",
       "type": "structure"
     },
     "RequestTimeZone": {
@@ -27135,6 +27222,16 @@
     "String": {
       "name": "String",
       "type": "string"
+    },
+    "SystemIpAddresses": {
+      "members": {
+        "SystemIpAddress": {
+          "locationName": "SystemIpAddress",
+          "shape": "String"
+        }
+      },
+      "name": "SystemIpAddresses",
+      "type": "structure"
     },
     "TStamp": {
       "name": "TStamp",
