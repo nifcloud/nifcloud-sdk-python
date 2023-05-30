@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [2.7, 3.9]
+        python-version: [3.11]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -16,7 +16,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install pipenv
-        run: pip install pipenv==2021.05.29
+        run: pip install pipenv==2023.5.19
 
       - name: Install dependencies
         run: pipenv install --skip-lock -d
@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.9]
+        python-version: [3.11]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -41,7 +41,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install pipenv
-        run: pip install pipenv==2021.05.29
+        run: pip install pipenv==2023.5.19
 
       - name: Install dependencies
         run: pipenv install --skip-lock -d
