@@ -35,9 +35,10 @@ class ClientDocumenter(client.ClientDocumenter):
 
 class ServiceDocumenter(service.ServiceDocumenter):
 
-    def __init__(self, service_name, session):
+    def __init__(self, service_name, session, root_docs_path):
         self._session = session
         self._service_name = service_name
+        self._root_docs_path = root_docs_path
 
         self._client = self._session.create_client(
             service_name, region_name='jp-east-1', nifcloud_access_key_id='foo',

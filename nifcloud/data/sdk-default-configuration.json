@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "base": {
+    "retryMode": "standard",
+    "connectTimeoutInMillis": 1100,
+    "tlsNegotiationTimeoutInMillis": 1100
+  },
+  "modes": {
+    "standard": {
+      "connectTimeoutInMillis": {
+        "override": 3100
+      },
+      "tlsNegotiationTimeoutInMillis": {
+        "override": 3100
+      }
+    },
+    "in-region": {},
+    "cross-region": {
+      "connectTimeoutInMillis": {
+        "override": 3100
+      },
+      "tlsNegotiationTimeoutInMillis": {
+        "override": 3100
+      }
+    },
+    "mobile": {
+      "connectTimeoutInMillis": {
+        "override": 30000
+      },
+      "tlsNegotiationTimeoutInMillis": {
+        "override": 30000
+      }
+    }
+  }
+}
