@@ -35,7 +35,7 @@ setup(
     package_data={'nifcloud': ['data/*.json',
                                'data/*/*/*.json']},
     include_package_data=True,
-    install_requires=['botocore==1.21.43'],
+    install_requires=['botocore==1.31.1'],
     license='Apache License 2.0',
     classifiers=(
         'Development Status :: 5 - Production/Stable',
