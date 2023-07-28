@@ -1,5 +1,14 @@
 # Changelog
 
+## [v1.7.1](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.7.1) (2023-07-28)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.7.0...v1.7.1)
+
+**Merged pull requests:**
+
+- Update supported python versions [\#109](https://github.com/nifcloud/nifcloud-sdk-python/pull/109) ([aokumasan](https://github.com/aokumasan))
+- Bump botocore to 1.31.1 [\#108](https://github.com/nifcloud/nifcloud-sdk-python/pull/108) ([aokumasan](https://github.com/aokumasan))
+
 ## [v1.7.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.7.0) (2023-06-30)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.6.0...v1.7.0)
