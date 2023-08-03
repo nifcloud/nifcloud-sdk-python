@@ -457,20 +457,6 @@
         "shape": "ModifyEventSubscriptionResult"
       }
     },
-    "NiftyFailoverDBInstance": {
-      "http": {
-        "method": "POST",
-        "requestUri": "/"
-      },
-      "input": {
-        "shape": "NiftyFailoverDBInstanceRequest"
-      },
-      "name": "NiftyFailoverDBInstance",
-      "output": {
-        "resultWrapper": "NiftyFailoverDBInstanceResult",
-        "shape": "NiftyFailoverDBInstanceResult"
-      }
-    },
     "NiftyGetMetricStatistics": {
       "http": {
         "method": "POST",
@@ -2021,7 +2007,7 @@
         "postgres9.3",
         "postgres9.6",
         "postgres11",
-        "mariadb10.1"
+        "postgres13"
       ],
       "name": "DBParameterGroupFamilyOfDescribeDBEngineVersionsRequest",
       "type": "string"
@@ -3180,8 +3166,7 @@
     "EngineOfDescribeDBEngineVersionsRequest": {
       "enum": [
         "MySQL",
-        "postgres",
-        "MariaDB"
+        "postgres"
       ],
       "name": "EngineOfDescribeDBEngineVersionsRequest",
       "type": "string"
@@ -3189,8 +3174,7 @@
     "EngineOfDescribeOrderableDBInstanceOptionsRequest": {
       "enum": [
         "MySQL",
-        "postgres",
-        "MariaDB"
+        "postgres"
       ],
       "name": "EngineOfDescribeOrderableDBInstanceOptionsRequest",
       "type": "string"
@@ -3976,33 +3960,6 @@
       ],
       "name": "NIftySortKeyOfDescribeEventSubscriptionsRequest",
       "type": "string"
-    },
-    "NiftyFailoverDBInstanceRequest": {
-      "members": {
-        "DBInstanceIdentifier": {
-          "locationName": "DBInstanceIdentifier",
-          "shape": "String"
-        }
-      },
-      "name": "NiftyFailoverDBInstanceRequest",
-      "required": [
-        "DBInstanceIdentifier"
-      ],
-      "type": "structure"
-    },
-    "NiftyFailoverDBInstanceResult": {
-      "members": {
-        "DBInstance": {
-          "locationName": "DBInstance",
-          "shape": "DBInstance"
-        },
-        "ResponseMetadata": {
-          "locationName": "ResponseMetadata",
-          "shape": "ResponseMetadata"
-        }
-      },
-      "name": "NiftyFailoverDBInstanceResult",
-      "type": "structure"
     },
     "NiftyGetMetricStatisticsRequest": {
       "members": {

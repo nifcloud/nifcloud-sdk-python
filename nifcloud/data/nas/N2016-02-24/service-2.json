@@ -397,14 +397,6 @@
     },
     "DeleteNASInstanceRequest": {
       "members": {
-        "DirectoryServiceAdministratorName": {
-          "locationName": "DirectoryServiceAdministratorName",
-          "shape": "String"
-        },
-        "DirectoryServiceAdministratorPassword": {
-          "locationName": "DirectoryServiceAdministratorPassword",
-          "shape": "String"
-        },
         "NASInstanceIdentifier": {
           "locationName": "NASInstanceIdentifier",
           "shape": "String"
@@ -501,20 +493,6 @@
       "name": "DescribeNASSecurityGroupsResult",
       "type": "structure"
     },
-    "DomainControllers": {
-      "members": {
-        "Hostname": {
-          "locationName": "Hostname",
-          "shape": "String"
-        },
-        "IPAddress": {
-          "locationName": "IPAddress",
-          "shape": "String"
-        }
-      },
-      "name": "DomainControllers",
-      "type": "structure"
-    },
     "Double": {
       "name": "Double",
       "type": "double"
@@ -603,14 +581,6 @@
       "name": "ListOfDatapoints",
       "type": "list"
     },
-    "ListOfDomainControllers": {
-      "member": {
-        "locationName": "DomainController",
-        "shape": "DomainControllers"
-      },
-      "name": "ListOfDomainControllers",
-      "type": "list"
-    },
     "ListOfIPRanges": {
       "member": {
         "locationName": "IPRange",
@@ -649,14 +619,6 @@
         "shape": "RequestDimensions"
       },
       "name": "ListOfRequestDimensions",
-      "type": "list"
-    },
-    "ListOfRequestDomainControllers": {
-      "member": {
-        "locationName": "member",
-        "shape": "RequestDomainControllers"
-      },
-      "name": "ListOfRequestDomainControllers",
       "type": "list"
     },
     "ListOfRequestNASSecurityGroups": {
@@ -705,22 +667,6 @@
         "AuthenticationType": {
           "locationName": "AuthenticationType",
           "shape": "Integer"
-        },
-        "DirectoryServiceAdministratorName": {
-          "locationName": "DirectoryServiceAdministratorName",
-          "shape": "String"
-        },
-        "DirectoryServiceAdministratorPassword": {
-          "locationName": "DirectoryServiceAdministratorPassword",
-          "shape": "String"
-        },
-        "DirectoryServiceDomainName": {
-          "locationName": "DirectoryServiceDomainName",
-          "shape": "String"
-        },
-        "DomainControllers": {
-          "locationName": "DomainControllers",
-          "shape": "ListOfRequestDomainControllers"
         },
         "MasterPrivateAddress": {
           "locationName": "MasterPrivateAddress",
@@ -824,14 +770,6 @@
           "locationName": "AvailabilityZone",
           "shape": "String"
         },
-        "DirectoryServiceDomainName": {
-          "locationName": "DirectoryServiceDomainName",
-          "shape": "String"
-        },
-        "DomainControllers": {
-          "locationName": "DomainControllers",
-          "shape": "ListOfDomainControllers"
-        },
         "Endpoint": {
           "locationName": "Endpoint",
           "shape": "Endpoint"
@@ -919,14 +857,6 @@
         "AvailabilityZone": {
           "locationName": "AvailabilityZone",
           "shape": "String"
-        },
-        "DirectoryServiceDomainName": {
-          "locationName": "DirectoryServiceDomainName",
-          "shape": "String"
-        },
-        "DomainControllers": {
-          "locationName": "DomainControllers",
-          "shape": "ListOfDomainControllers"
         },
         "Endpoint": {
           "locationName": "Endpoint",
@@ -1086,20 +1016,6 @@
         "Name",
         "Value"
       ],
-      "type": "structure"
-    },
-    "RequestDomainControllers": {
-      "members": {
-        "Hostname": {
-          "locationName": "Hostname",
-          "shape": "String"
-        },
-        "IPAddress": {
-          "locationName": "IPAddress",
-          "shape": "String"
-        }
-      },
-      "name": "RequestDomainControllers",
       "type": "structure"
     },
     "ResponseMetadata": {
