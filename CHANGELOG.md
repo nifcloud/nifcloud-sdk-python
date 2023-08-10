@@ -1,5 +1,15 @@
 # Changelog
 
+## [v1.8.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.8.0) (2023-08-10)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.7.1...v1.8.0)
+
+**Merged pull requests:**
+
+- Downgrade Sphinx to 5.3.0 [\#112](https://github.com/nifcloud/nifcloud-sdk-python/pull/112) ([aokumasan](https://github.com/aokumasan))
+- update model [\#111](https://github.com/nifcloud/nifcloud-sdk-python/pull/111) ([fujita-hiroki1115](https://github.com/fujita-hiroki1115))
+- Bump sphinx version to 6.2.1 [\#110](https://github.com/nifcloud/nifcloud-sdk-python/pull/110) ([aokumasan](https://github.com/aokumasan))
+
 ## [v1.7.1](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.7.1) (2023-07-28)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.7.0...v1.7.1)
