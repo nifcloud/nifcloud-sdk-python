@@ -11,6 +11,7 @@
   },
   "operations": {
     "AttachDisk": {
+      "documentation": "<p>ディスクをノードに接続します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/v1/disks/{DiskName}:attach",
@@ -25,6 +26,7 @@
       }
     },
     "AuthorizeFirewallGroup": {
+      "documentation": "<p>指定したファイアウォールグループへ許可ルールを追加します。</p><p>許可プロトコルがTCPかUDPの場合、許可ポートの指定が必要です。</p><p>ポートを単一指定する際は、許可開始ポートのみを指定します。</p><p>ポートを範囲指定する際は、許可終了ポートには許可開始ポートの値以上を指定します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/v1/firewallGroups/{FirewallGroupName}/rules",
@@ -39,6 +41,7 @@
       }
     },
     "CreateCluster": {
+      "documentation": "<p>クラスターを新規作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/v1/clusters",
@@ -53,6 +56,7 @@
       }
     },
     "CreateDisk": {
+      "documentation": "<p>ディスクを新規作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/v1/disks",
@@ -67,6 +71,7 @@
       }
     },
     "CreateFirewallGroup": {
+      "documentation": "<p>ファイアウォールグループを作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/v1/firewallGroups",
@@ -81,6 +86,7 @@
       }
     },
     "CreateNodePool": {
+      "documentation": "<p>ノードプールを作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/v1/clusters/{ClusterName}/nodePools",
@@ -95,6 +101,7 @@
       }
     },
     "CreateSnapshot": {
+      "documentation": "<p>スナップショットを作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/v1/snapshots",
@@ -109,6 +116,7 @@
       }
     },
     "CreateTags": {
+      "documentation": "<p>タグを作成します。 1回のリクエストで複数のタグを作成可能です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/v1/tags",
@@ -123,6 +131,7 @@
       }
     },
     "DeleteCluster": {
+      "documentation": "<p>クラスターを削除します。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/v1/clusters/{ClusterName}"
@@ -136,6 +145,7 @@
       }
     },
     "DeleteClusters": {
+      "documentation": "<p>クラスターを削除します。</p><p>1回のリクエストで複数のクラスターを削除可能です。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/v1/clusters"
@@ -149,6 +159,7 @@
       }
     },
     "DeleteDisk": {
+      "documentation": "<p>ディスクを削除します。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/v1/disks/{DiskName}"
@@ -162,6 +173,7 @@
       }
     },
     "DeleteDisks": {
+      "documentation": "<p>ディスクを削除します。 1回のリクエストで複数のディスクを削除可能です。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/v1/disks"
@@ -175,6 +187,7 @@
       }
     },
     "DeleteFirewallGroup": {
+      "documentation": "<p>ファイアウォールグループを削除します。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/v1/firewallGroups/{FirewallGroupName}"
@@ -188,6 +201,7 @@
       }
     },
     "DeleteFirewallGroups": {
+      "documentation": "<p>ファイアウォールグループを削除します。</p><p>1回のリクエストで複数のファイアウォールグループを削除可能です。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/v1/firewallGroups"
@@ -201,6 +215,7 @@
       }
     },
     "DeleteNodePool": {
+      "documentation": "<p>ノードプールを削除します。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/v1/clusters/{ClusterName}/nodePools/{NodePoolName}"
@@ -214,6 +229,7 @@
       }
     },
     "DeleteNodePools": {
+      "documentation": "<p>ノードプールを削除します。</p><p>1回のリクエストで複数のノードプールを削除できます。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/v1/clusters/{ClusterName}/nodePools"
@@ -227,6 +243,7 @@
       }
     },
     "DeleteSnapshot": {
+      "documentation": "<p>スナップショットを削除します。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/v1/snapshots/{SnapshotName}"
@@ -240,6 +257,7 @@
       }
     },
     "DeleteSnapshots": {
+      "documentation": "<p>スナップショットを削除します。 1回のリクエストで複数のスナップショットを削除可能です。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/v1/snapshots"
@@ -253,6 +271,7 @@
       }
     },
     "DeleteTags": {
+      "documentation": "<p>タグを削除します。</p><p>1回のリクエストで複数のタグを削除可能です。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/v1/tags"
@@ -266,6 +285,7 @@
       }
     },
     "DetachDisk": {
+      "documentation": "<p>ディスクをノードから切断します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/v1/disks/{DiskName}:detach",
@@ -280,6 +300,7 @@
       }
     },
     "GetCluster": {
+      "documentation": "<p>クラスターの情報を取得します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/clusters/{ClusterName}"
@@ -293,6 +314,7 @@
       }
     },
     "GetClusterCredentials": {
+      "documentation": "<p>クラスターのkubeconfigを取得します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/clusters/{ClusterName}/credentials"
@@ -306,6 +328,7 @@
       }
     },
     "GetDisk": {
+      "documentation": "<p>ディスクの情報を取得します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/disks/{DiskName}"
@@ -319,6 +342,7 @@
       }
     },
     "GetFirewallGroup": {
+      "documentation": "<p>ファイアウォールグループの情報を取得します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/firewallGroups/{FirewallGroupName}"
@@ -332,6 +356,7 @@
       }
     },
     "GetLoadBalancer": {
+      "documentation": "<p>ロードバランサーの情報を取得します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/loadBalancers/{LoadBalancerName}"
@@ -345,6 +370,7 @@
       }
     },
     "GetNodePool": {
+      "documentation": "<p>ノードプールの情報を取得します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/clusters/{ClusterName}/nodePools/{NodePoolName}"
@@ -358,6 +384,7 @@
       }
     },
     "GetServerConfig": {
+      "documentation": "<p>利用可能なKubernetesのバージョンを返却します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/serverConfig"
@@ -371,6 +398,7 @@
       }
     },
     "GetSnapshot": {
+      "documentation": "<p>スナップショット情報を取得します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/snapshots/{SnapshotName}"
@@ -384,6 +412,7 @@
       }
     },
     "ListClusters": {
+      "documentation": "<p>クラスターの情報一覧を取得します。 1回のリクエストで、複数のクラスター情報を取得できます。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/clusters"
@@ -397,6 +426,7 @@
       }
     },
     "ListDisks": {
+      "documentation": "<p>ディスクの情報一覧を取得します。 1回のリクエストで、複数のディスク情報を取得できます。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/disks"
@@ -410,6 +440,7 @@
       }
     },
     "ListFirewallGroups": {
+      "documentation": "<p>ファイアウォールグループの情報一覧を取得します。</p><p>1回のリクエストで複数のファイアウォールグループ情報を取得できます。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/firewallGroups"
@@ -423,6 +454,7 @@
       }
     },
     "ListLoadBalancers": {
+      "documentation": "<p>ロードバランサーの情報一覧を取得します。 1回のリクエストで、複数のロードバランサー情報を取得できます。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/loadBalancers"
@@ -436,6 +468,7 @@
       }
     },
     "ListNodePools": {
+      "documentation": "<p>クラスターのノードプール情報一覧を取得します。 1回のリクエストで複数のノードプール情報を取得できます。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/clusters/{ClusterName}/nodePools"
@@ -449,6 +482,7 @@
       }
     },
     "ListSnapshots": {
+      "documentation": "<p>スナップショット情報の一覧を取得します。 1回のリクエストで複数のスナップショット情報を取得できます。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/snapshots"
@@ -462,6 +496,7 @@
       }
     },
     "ListTags": {
+      "documentation": "<p>タグの情報一覧を取得します。</p><p>1回のリクエストで複数のタグ情報を取得できます。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/v1/tags"
@@ -475,6 +510,7 @@
       }
     },
     "RebootNode": {
+      "documentation": "<p>ノードを再起動します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/v1/clusters/{ClusterName}/nodePools/{NodePoolName}/nodes/{NodeName}:reboot",
@@ -489,6 +525,7 @@
       }
     },
     "RestoreClusterFromSnapshot": {
+      "documentation": "<p>スナップショットから新しいクラスタを作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/v1/snapshots/{SnapshotName}:restore",
@@ -503,6 +540,7 @@
       }
     },
     "RevokeFirewallGroup": {
+      "documentation": "<p>指定したファイアウォールグループから許可ルールを削除します。 1回のリクエストで複数の許可ルールを削除可能です。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/v1/firewallGroups/{FirewallGroupName}/rules"
@@ -516,6 +554,7 @@
       }
     },
     "SetNodePoolSize": {
+      "documentation": "<p>ノードプールのノード数を変更します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/v1/clusters/{ClusterName}/nodePools/{NodePoolName}:setSize",
@@ -530,6 +569,7 @@
       }
     },
     "UpdateCluster": {
+      "documentation": "<p>クラスターの設定を変更します。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/v1/clusters/{ClusterName}"
@@ -543,6 +583,7 @@
       }
     },
     "UpdateDisk": {
+      "documentation": "<p>ディスクの設定を変更します。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/v1/disks/{DiskName}"
@@ -556,6 +597,7 @@
       }
     },
     "UpdateFirewallGroup": {
+      "documentation": "<p>ファイアウォールグループの設定を変更します。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/v1/firewallGroups/{FirewallGroupName}"
@@ -569,6 +611,7 @@
       }
     },
     "UpdateNodePool": {
+      "documentation": "<p>ノードプールの設定を変更します。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/v1/clusters/{ClusterName}/nodePools/{NodePoolName}"
@@ -582,6 +625,7 @@
       }
     },
     "UpdateSnapshot": {
+      "documentation": "<p>スナップショットの設定を変更します。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/v1/snapshots/{SnapshotName}"
@@ -595,6 +639,7 @@
       }
     },
     "UpdateTags": {
+      "documentation": "<p>タグの値を更新します。 1回のリクエストで複数タグの値を更新可能です。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/v1/tags"
