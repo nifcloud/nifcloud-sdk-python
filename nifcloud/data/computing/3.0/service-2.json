@@ -12,6 +12,7 @@
   },
   "operations": {
     "AllocateAddress": {
+      "documentation": "<p>付替IPアドレスを割り当てます。1回のリクエストで、１つのグローバルIPアドレスまたはプライベートIPアドレスが割り当てられます。</p><p>割り当てられるIPアドレスは、ニフクラにより決定されます。</p><p>サーバーを指定した場合、共通グローバル/共通プライベートの固定IPアドレスが付替IPアドレスに変更されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -25,6 +26,7 @@
       }
     },
     "AssociateAddress": {
+      "documentation": "<p>指定したサーバーへ付替IPアドレスを追加します。</p><p>元々サーバーに割り当てられていたIPアドレスは、付替IPアドレス設定中は確保された状態となり、付替IPアドレス解除時に再設定されます。</p><p>また付替IPアドレスの反映には、サーバーの再起動が必要になります。</p><p>再起動オプションをfalseで指定する場合はサーバー停止時のみ選択可能です。</p><p>付替IPアドレスをサーバーへ追加するには、サーバーの再起動もあり時間がかかることがあります。</p><p>サーバーのステータスは、API「DescribeInstances」のレスポンス値「instanceState」で確認できます。</p><p>また、付替IPアドレスが正しくサーバーに反映されているかの確認が必要です。</p><p>同じくAPI「DescribeInstances」のレスポンス値「ipType」もしくはAPI「DescribeAddresses」のレスポンス値「instanceId」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -38,6 +40,7 @@
       }
     },
     "AssociateMultiIpAddressGroup": {
+      "documentation": "<p>指定したサーバーへマルチIPアドレスグループを割り当てます。</p><p>サーバーへの反映には、再起動が必要になります。</p><p>再起動オプションをfalseで指定する場合はサーバー停止時のみ選択可能です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -51,6 +54,7 @@
       }
     },
     "AssociateRouteTable": {
+      "documentation": "<p>指定したルーターへルートテーブルを設定する。</p><p>ルートテーブルを指定するためには、ルートテーブルIDが必要です。</p><p>また、ルーターを指定するためには、ルーターユニークIDまたはルーター名が必要です。</p><p>ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -64,6 +68,7 @@
       }
     },
     "AssociateUsers": {
+      "documentation": "<p>指定した機能を指定したユーザーに共有します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -77,6 +82,7 @@
       }
     },
     "AttachIsoImage": {
+      "documentation": "<p>ISOイメージをサーバーに設定します。</p><p>ISOイメージ・サーバーを指定するためには、それぞれISOイメージID・サーバーユニークIDが必要です。</p><p>設定するサーバーは、ISOイメージと同一ゾーンである必要があります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -90,6 +96,7 @@
       }
     },
     "AttachNetworkInterface": {
+      "documentation": "<p>指定したサーバーに追加NICを接続します。</p><p>追加NICを指定するためには、追加NICのネットワークインターフェースIDが必要です。</p><p>また追加NICの接続の反映には、サーバーの再起動が必要になります。再起動オプションをfalseで指定する場合はサーバー停止時のみ選択可能です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -103,6 +110,7 @@
       }
     },
     "AttachVolume": {
+      "documentation": "<p>指定したディスクをサーバーへ接続します。</p><p>ディスクを指定するためには、ディスク名が必要です。</p><p>また、サーバーを指定するためにはサーバー名が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -116,6 +124,7 @@
       }
     },
     "AuthorizeSecurityGroupIngress": {
+      "documentation": "<p>指定したファイアウォールグループへ許可ルールを追加します。</p><p>ファイアウォールグループを指定するためには、ファイアウォールグループ名が必要です。</p><p>許可ルールの許可プロトコルがTCPかUDPの場合、許可ポートの指定が必要です。ポートを単一指定する際は、許可開始ポートのみを指定します。ポートを範囲指定する際は、許可終了ポートには許可開始ポートの値以上を指定します。</p><p>許可ルールの追加には、時間がかかることがあります。API「DescribeSecurityGroups」のレスポンス値「groupStatus」でファイアウォールグループのステータスを確認できます。</p><p>また、ファイアウォールグループのステータスが「適用済み」の場合、追加した許可ルールが正しくファイアウォールグループに反映されているかの確認が必要です。</p><p>同じくAPI「DescribeSecurityGroups」のレスポンス値「ipPermissions」または「groups」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -129,6 +138,7 @@
       }
     },
     "CancelCopyInstances": {
+      "documentation": "<p>指定したサーバーの作成（コピーによる作成）をキャンセルします。</p><p>作成待ちのサーバーのみ指定ができます。</p><p>サーバーを指定するためには、サーバー名が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -142,6 +152,7 @@
       }
     },
     "CancelUpload": {
+      "documentation": "<p>サーバーインポートの処理をキャンセルします。</p><p>アップロード済みのVMDKファイルは削除されます。</p><p>アップロードタスクを指定するためには、タスクIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -155,6 +166,7 @@
       }
     },
     "ClearLoadBalancerSession": {
+      "documentation": "<p>セッション固定オプションが設定されているロードバランサーのセッション情報を削除します。</p><p>ロードバランサーを指定するためには、ロードバランサー名・ポート番号が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -168,6 +180,7 @@
       }
     },
     "ConfigureHealthCheck": {
+      "documentation": "<p>指定したロードバランサーのヘルスチェックの設定を変更します。</p><p>ロードバランサーを指定するためには、ロードバランサー名・ポート番号が必要です。</p><p>ヘルスチェックの実行結果は、API「DescribeInstanceHealth」で確認できます。</p> <h5 id=\"ヘルスチェックの際のサーバー切り離し時間について\">ヘルスチェックの際のサーバー切り離し時間について</h5> <ul> <li>サーバーからの応答時間がタイムアウトを超えた場合にサーバーをロードバランサーから切り離します。</li> <li>設定されるヘルスチェックのタイムアウト時間については、<a href=\"https://pfs.nifcloud.com/service/lb_l4.htm\">ロードバランサー（L4）のヘルスチェックについて</a>をご確認ください。</li> <li>設定されたヘルスチェックのタイムアウト時間は、「DescribeLoadBalancers」の Timeout で確認ができます。</li> </ul>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -181,6 +194,7 @@
       }
     },
     "CopyFromBackupInstance": {
+      "documentation": "<p>増分バックアップで作成されたバックアップサーバーからコピーを作成します。</p><p>コピーを行うためには、バックアップサーバーユニークIDが必要です。</p><p>コピーで作成されたサーバーは、停止状態で作成されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -194,6 +208,7 @@
       }
     },
     "CopyInstances": {
+      "documentation": "<p>指定したサーバーのコピーを作成します。</p><p>停止中もしくは起動中のサーバーのみ指定ができます。コピー後のサーバー名は、指定したコピー後のサーバー名の後ろに「-連番」が付加された名称になります。</p><p>サーバーを指定するためには、サーバー名が必要です。</p><p>ディスクが接続しているサーバーのコピーは、指定したサーバーと同一ゾーンでのみ実行可能です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -207,6 +222,7 @@
       }
     },
     "CreateBackupInstances": {
+      "documentation": "<p>バックアップルールに設定されているサーバーの、増分バックアップを作成します。</p><p>増分バックアップを作成するためには、バックアップルールIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -220,6 +236,7 @@
       }
     },
     "CreateCustomerGateway": {
+      "documentation": "<p>カスタマーゲートウェイを新規作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -233,6 +250,7 @@
       }
     },
     "CreateDhcpOptions": {
+      "documentation": "<p>DHCPオプションの設定情報を新規作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -246,6 +264,7 @@
       }
     },
     "CreateImage": {
+      "documentation": "<p>指定したサーバーをイメージ化し、カスタマイズイメージとして保存します。</p><p>サーバーをイメージ化するためには、サーバーが停止中もしくは起動中である必要があります。</p><p>カスタマイズイメージの作成には、時間がかかることがあります。このAPIのレスポンス「imageState」を確認し「pending」が返ってきた、またはタイムアウトした場合は、API「DescribeImages」のレスポンス値「imageState」でカスタマイズイメージのステータスを確認できます。</p><p>ディスクが接続しているサーバーのイメージ化は、指定したサーバーと同一ゾーンでのみ実行可能です。 イメージ化元サーバーを残さない場合は、関連する付替IPアドレス設定もあわせて解除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -259,6 +278,7 @@
       }
     },
     "CreateInstanceBackupRule": {
+      "documentation": "<p>バックアップルールを新規作成します。</p><p>バックアップルールを作成するためには、サーバーユニークIDが必要です。</p><p>バックアップルール作成時に1つの増分バックアップが作成されます。2つ目以降の増分バックアップは「TimeSlotId」で指定した実行時間帯に作成されます。</p><p>手動で増分バックアップを作成する場合は、<a href=\"https://docs.nifcloud.com/cp/api/CreateBackupInstances.htm\">CreateBackupInstances</a>を実施することで作成できます。</p><p>2回目以降の増分バックアップの作成は、初回バックアップの作成完了後に可能となります。</p><p>「BackupInstanceMaxCount」で指定した保持する最大世代数を超えた増分バックアップが作成された場合、最も古い増分バックアップは削除されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -272,6 +292,7 @@
       }
     },
     "CreateKeyPair": {
+      "documentation": "<p>SSHキーを新規作成します。</p><p>SSHキーには、SSHキー名およびパスワードを設定します。SSHキー名には、同じユーザーが作るキーのうち、一意となる文字列を指定します。</p><p>作成したSSHキーペアのフィンガープリントが一致しているかどうかの確認方法は、<a href=\"https://docs.nifcloud.com/cp/api/DescribeKeyPairs.htm\">DescribeKeyPairs</a>の処理概要をご確認ください。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -285,6 +306,7 @@
       }
     },
     "CreateLoadBalancer": {
+      "documentation": "<p>ロードバランサーの定義を作成します。1回のリクエストで、1つのポート定義を作成できます。</p><p>ロードバランサーの定義の作成に成功した場合は、以下のAPIを実行する必要があります。</p> <ul> <li>API「RegisterInstancesWithLoadBalancer」（サーバー設定）</li> <li>API「ConfigureHealthCheck」（ヘルスチェック設定）</li> </ul> <p>フィルターの設定は、「すべてのアクセスを許可する」になっています。変更を行う場合は以下のAPIを実行する必要があります。</p> <ul> <li>API「SetFilterForLoadBalancer」（フィルター設定）</li> </ul> <p>Listeners.member.n.ProtocolとListeners.member.n.LoadBalancerPortを両方指定した場合は、Listeners.member.n.LoadBalancerPortの指定が優先されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -298,6 +320,7 @@
       }
     },
     "CreateMultiIpAddressGroup": {
+      "documentation": "<p>マルチIPアドレスグループを作成します。</p><p>マルチIPアドレスグループ作成後、サーバーに割り当てる場合は、以下のAPIを実行する必要があります。</p> <ul> <li>API「<a href=\"https://docs.nifcloud.com/cp/api/AssociateMultiIpAddressGroup.htm\">AssociateMultiIpAddressGroup</a>」</li> </ul>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -311,6 +334,7 @@
       }
     },
     "CreateNetworkInterface": {
+      "documentation": "<p>追加NICを新規作成します。1回のリクエストで、1つの追加NICを作成できます。</p><p>追加NICの作成には時間がかかることがあります。このAPIのレスポンス「status」を確認し「processing」が返ってきた、またはタイムアウトした場合はAPI「DescribeNetworkInterfaces」のレスポンス値「status」で追加NICのステータスを確認できます。</p><p>APIのパラメーター「NiftyNetworkId」の指定できるのは、プライベートLANのネットワークユニークIDです。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -324,6 +348,7 @@
       }
     },
     "CreateRemoteAccessVpnGateway": {
+      "documentation": "<p>リモートアクセスVPNゲートウェイを新規作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -337,6 +362,7 @@
       }
     },
     "CreateRemoteAccessVpnGatewayUsers": {
+      "documentation": "<p>リモートアクセスVPNゲートウェイにユーザーを作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -350,6 +376,7 @@
       }
     },
     "CreateRoute": {
+      "documentation": "<p>ルートテーブルに適用するルート情報を作成します。</p><p>ルートテーブルを指定するためには、ルートテーブルIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -363,6 +390,7 @@
       }
     },
     "CreateRouteTable": {
+      "documentation": "<p>ルーターに設定するルートテーブルを新規作成をします。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -376,6 +404,7 @@
       }
     },
     "CreateSecurityGroup": {
+      "documentation": "<p>ファイアウォールグループを新規作成します。</p><p>ファイアウォールグループの作成には、時間がかかることがあります。</p><p>API「DescribeSecurityGroups」のレスポンス値「groupStatus」でファイアウォールグループのステータスを確認できます。</p><p>ブロードキャスト通信ログの抑止状態は、true（抑止）で作成されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -389,6 +418,7 @@
       }
     },
     "CreateSslCertificate": {
+      "documentation": "<p>SSL証明書の新規作成または更新を行います。</p><p>パラメーター「fqdnId」を指定した場合、指定したSSL証明書を更新します。</p><p>パラメーター「fqdnId」を指定しない場合、SSL証明書を新規作成します。</p><p>また申請法人情報を登録するには、API「RegisterCorporateInfoForCertificate」を実行します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -402,6 +432,7 @@
       }
     },
     "CreateVolume": {
+      "documentation": "<p>ディスクを新規作成します。</p><p>サーバーを指定するためには、サーバー名が必要です。</p><p>削除済みのサーバーを指定した、管理外のサーバーを指定した、起動中･停止中以外のサーバーを指定したなど、無効なサーバーを指定した場合は、エラーが返されます。 同様に、ディスクサイズおよびディスクタイプに規定外の値を指定した、すでに存在するディスク名を指定した、利用料金タイプに無効な値を指定したなどの場合は、エラーが返されます。</p><p>作成したディスクのゾーンは指定したサーバーと同一のゾーンになります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -415,6 +446,7 @@
       }
     },
     "CreateVpnConnection": {
+      "documentation": "<p>VPNコネクションを新規作成します。</p><p>拠点間VPN設定（拠点間VPNゲートウェイとカスタマーゲートウェイ間）を行います。</p><p>トンネルモードを「Managed」に指定した場合、以下の項目は指定ができません。</p> <ul> <li>NiftyTunnel.TunnelId、NiftyTunnel.PeerTunnelId、NiftyTunnel.SessionId、NiftyTunnel.PeerSessionId、NiftyTunnel.SourcePort、NiftyTunnel.DestinationPort</li> </ul> <p>またトンネルモードが「Unmanaged」でかつカプセル化が「IP」の場合は、以下の項目は指定ができません。</p> <ul> <li>NiftyTunnel.SourcePort、NiftyTunnel.DestinationPort</li> </ul> <p>またトンネルタイプが設定されていない場合は、MTUサイズは指定ができません。</p><p>指定した拠点間VPNゲートウェイがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「DescribeVpnGateways」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -428,6 +460,7 @@
       }
     },
     "CreateVpnGateway": {
+      "documentation": "<p>拠点間VPNゲートウェイを新規作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -441,6 +474,7 @@
       }
     },
     "DeleteCustomerGateway": {
+      "documentation": "<p>指定されたカスタマーゲートウェイを削除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -454,6 +488,7 @@
       }
     },
     "DeleteDhcpOptions": {
+      "documentation": "<p>DHCPオプションの設定情報を削除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -467,6 +502,7 @@
       }
     },
     "DeleteImage": {
+      "documentation": "<p>指定したカスタマイズイメージを削除します。</p><p>カスタマイズイメージを選択して作成されたサーバーのOSイメージ名は、カスタマイズイメージの削除が完了すると、イメージ化したサーバーのOS名が返されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -480,6 +516,7 @@
       }
     },
     "DeleteInstanceBackupRule": {
+      "documentation": "<p>指定したバックアップルールを削除します。</p><p>バックアップルールを指定するためには、バックアップルールIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -493,6 +530,7 @@
       }
     },
     "DeleteIsoImage": {
+      "documentation": "<p>ISOイメージを削除します。</p><p>サーバーに設定している場合は、削除できないためサーバーから解除したのち削除してください。</p><p>ISOイメージを指定するためには、ISOイメージIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -506,6 +544,7 @@
       }
     },
     "DeleteKeyPair": {
+      "documentation": "<p>SSHキーの情報を削除します。</p><p>SSHキーを指定するためには、SSHキー名が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -519,6 +558,7 @@
       }
     },
     "DeleteLoadBalancer": {
+      "documentation": "<p>指定したロードバランサーのポート定義を削除します。</p><p>関連するフィルター設定・サーバー設定・ヘルスチェック設定もあわせて削除します。</p><p>ロードバランサーを指定するためには、ロードバランサー名が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -532,6 +572,7 @@
       }
     },
     "DeleteMultiIpAddressGroup": {
+      "documentation": "<p>マルチIPアドレスグループを削除します。</p><p>マルチIPアドレスグループを指定するためには、マルチIPアドレスグループユニークIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -545,6 +586,7 @@
       }
     },
     "DeleteNetworkInterface": {
+      "documentation": "<p>追加NICの削除を行います。</p><p>追加NICを指定するためには、追加NICのネットワークインターフェースIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -558,6 +600,7 @@
       }
     },
     "DeleteRemoteAccessVpnGateway": {
+      "documentation": "<p>指定したリモートアクセスVPNゲートウェイを削除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -571,6 +614,7 @@
       }
     },
     "DeleteRemoteAccessVpnGatewayConnections": {
+      "documentation": "<p>リモートアクセスVPNゲートウェイのコネクションを削除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -584,6 +628,7 @@
       }
     },
     "DeleteRemoteAccessVpnGatewayUsers": {
+      "documentation": "<p>リモートアクセスVPNゲートウェイからユーザーを削除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -597,6 +642,7 @@
       }
     },
     "DeleteRoute": {
+      "documentation": "<p>ルートテーブルに適用されたルート情報を削除します。</p><p>ルートテーブルを指定するためには、ルートテーブルIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -610,6 +656,7 @@
       }
     },
     "DeleteRouteTable": {
+      "documentation": "<p>ルーターに設定するルートテーブルの削除を行います。</p><p>ルートテーブルを指定するためには、ルートテーブルIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -623,6 +670,7 @@
       }
     },
     "DeleteSecurityGroup": {
+      "documentation": "<p>指定したファイアウォールグループを削除します。</p><p>ファイアウォールグループを指定するためには、ファイアウォールグループ名が必要です。</p><p>ファイアウォールグループの削除には、時間がかかることがあります。API「DescribeSecurityGroups」のレスポンス値「groupStatus」でファイアウォールグループのステータスを確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -636,6 +684,7 @@
       }
     },
     "DeleteSslCertificate": {
+      "documentation": "<p>指定したSSL証明書を削除します。</p><p>SSL証明書を指定するためには、SSL証明書の発行識別子（fqdnId）が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -649,6 +698,7 @@
       }
     },
     "DeleteVolume": {
+      "documentation": "<p>指定したディスクを削除します。</p><p>ディスクを指定するためには、ディスク名が必要です。</p><p>削除には、時間がかかることがあります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -662,6 +712,7 @@
       }
     },
     "DeleteVpnConnection": {
+      "documentation": "<p>指定されたVPNコネクションを削除します。</p><p>接続されている拠点間VPNゲートウェイがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「DescribeVpnGateways」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -675,6 +726,7 @@
       }
     },
     "DeleteVpnGateway": {
+      "documentation": "<p>指定された拠点間VPNゲートウェイを削除します。</p><p>拠点間VPNゲートウェイを指定するためには、拠点間VPNゲートウェイユニークIDまたは拠点間VPNゲートウェイ名が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -688,6 +740,7 @@
       }
     },
     "DeregisterInstancesFromLoadBalancer": {
+      "documentation": "<p>指定したロードバランサーから、指定したサーバーを解除します。</p><p>ロードバランサーを指定するためには、ロードバランサー名・ポート番号が必要です。自分が所有していないロードバランサーを指定する場合は、「ニフクラID.ロードバランサー名」の形式で指定する必要があります。</p><p>またサーバーを指定するためには、サーバー名が必要です。自分が所有していないサーバーを指定する場合は、「ニフクラID.サーバー名」の形式で指定する必要があります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -701,6 +754,7 @@
       }
     },
     "DeregisterInstancesFromSecurityGroup": {
+      "documentation": "<p>指定したファイアウォールグループから、指定したサーバーをはずします。</p><p>ファイアウォールグループを指定するためには、ファイアウォールグループ名が必要です。</p><p>またサーバーを指定するためには、サーバー名が必要です。</p><p>ファイアウォールグループからサーバーをはずすには、時間がかかることがあります。</p><p>API「DescribeSecurityGroups」のレスポンス値「groupStatus」でファイアウォールグループのステータスを確認できます。</p><p>また、ファイアウォールグループのステータスが「適用済み」の場合、はずしたサーバーが正しくファイアウォールグループに反映されているかの確認が必要です。</p><p>同じくAPI「DescribeSecurityGroups」のレスポンス値「instancesSet」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -714,6 +768,7 @@
       }
     },
     "DescribeAddresses": {
+      "documentation": "<p>付替IPアドレスの情報を取得します。</p><p>付替IPアドレスを指定しない場合は、取得可能なすべての付替グローバルIPアドレス・プライベートIPアドレス情報を取得します。</p><p>また付替IPアドレスを指定する際、ワイルドカード文字（曖昧検索）指定可能です。「*」は0個以上任意文字、 「?」は1個任意文字となります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -727,6 +782,7 @@
       }
     },
     "DescribeAssociatedUsers": {
+      "documentation": "<p>指定した機能の共有ユーザー情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -740,6 +796,7 @@
       }
     },
     "DescribeAvailabilityZones": {
+      "documentation": "<p>利用可能なゾーンの情報を取得します。</p><p>ファイアウォールが利用可能なゾーンでは、securityGroupSupportedタグにtrueが返ります。</p><p>サーバー、ロードバランサー、ファイアウォール作成時にゾーンを省略した場合、isDefaultタグがtrueのゾーンに作成されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -753,6 +810,7 @@
       }
     },
     "DescribeCustomerGateways": {
+      "documentation": "<p>指定したカスタマーゲートウェイの情報を取得します。</p><p>カスタマーゲートウェイを指定するためには、カスタマーゲートウェイユニークIDまたはカスタマーゲートウェイ名が必要です。</p><p>カスタマーゲートウェイを指定しない場合、取得できるすべてのカスタマーゲートウェイ情報を取得します。</p><p>絞り込み条件の項目の値「Filter.n.Value.m」を指定する際、ワイルドカード文字（曖昧検索）指定可能です。「∗」は0個以上任意文字、「?」は1個任意文字、「¥」はエスケープ変換文字（「∗niftycloud¥?¥¥」は「∗niftycloud?¥」を検索）となります。</p><p>曖昧検索が指定可能な絞り込み条件の項目名は、下記の通りです。</p> <ul> <li>ip-address</li> <li>nifty-customer-gateway-name</li> <li>nifty-customer-gateway-description</li> </ul>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -766,6 +824,7 @@
       }
     },
     "DescribeDhcpOptions": {
+      "documentation": "<p>DHCPオプションの設定情報を取得します。</p><p>DHCPオプションを指定するためには、DHCPオプションが必要です。</p><p>DHCPオプションを指定しない場合は、取得可能なすべてのDHCPオプション情報を取得します。</p><p>絞り込み条件の項目の値「Filter.n.Value.m」を指定する際、ワイルドカード文字（曖昧検索）指定可能です。「∗」は0個以上任意文字、 「?」は1個任意文字、「¥」はエスケープ変換文字（「∗niftycloud¥?¥¥」は「∗niftycloud?¥」を検索）となります。</p><p>曖昧検索が指定可能な絞り込み条件の項目名は、key、valueになります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -779,6 +838,7 @@
       }
     },
     "DescribeImages": {
+      "documentation": "<p>OSイメージの情報を取得します。</p><p>特定のOSイメージを指定するためには、OSイメージIDまたはOSイメージ名が必要です。OSイメージを指定しない場合は、取得可能なすべてのOSイメージ情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -792,6 +852,7 @@
       }
     },
     "DescribeInstanceAttribute": {
+      "documentation": "<p>指定したサーバーの詳細情報を取得します。1回のリクエストで、1つのサーバーの1つの詳細情報を取得できます。</p><p>サーバーを指定するためには、サーバー名が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -805,6 +866,7 @@
       }
     },
     "DescribeInstanceBackupRuleActivities": {
+      "documentation": "<p>指定したバックアップルールのイベントログ情報を取得します。</p><p>バックアップルールを指定するためには、バックアップルールIDが必要です。</p><p>取得するイベントログ情報は、イベント開始日時の降順となります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -818,6 +880,7 @@
       }
     },
     "DescribeInstanceBackupRules": {
+      "documentation": "<p>バックアップルールの情報を取得します。1回のリクエストで複数のバックアップルールの情報を取得できます。</p><p>バックアップルールの情報を指定するためには、バックアップルールIDが必要です。指定しない場合は、取得可能なすべてのバックアップルールの情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -831,6 +894,7 @@
       }
     },
     "DescribeInstanceHealth": {
+      "documentation": "<p>指定したロードバランサーに設定されている、サーバーのヘルスチェック結果を取得します。ヘルスチェックは、API「ConfigureHealthCheck」で設定します。</p><p>ロードバランサーを指定するためには、ロードバランサー名が必要です。</p><p>またサーバーを指定するためには、サーバー名が必要です。自分が所有していないサーバーを指定する場合は、「ニフクラID.サーバー名」の形式で指定する必要があります。サーバーを指定しない場合は、指定したロードバランサーに設定されているすべてのサーバーを対象として、ヘルスチェック結果を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -844,6 +908,7 @@
       }
     },
     "DescribeInstances": {
+      "documentation": "<p>指定したサーバーの情報を取得します。1回のリクエストで、複数のサーバー情報を取得できます。</p><p>サーバーを指定するためには、サーバー名が必要です。サーバーを指定しない場合は、取得可能なすべてのサーバー情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -857,6 +922,7 @@
       }
     },
     "DescribeIsoImages": {
+      "documentation": "<p>ISOイメージの情報を取得します。</p><p>ISOイメージIDを指定しない場合は、取得可能なすべてのISOイメージ情報を取得します。</p><p>絞り込み条件の項目の値「Filter.n.Value.m」を指定する際、ワイルドカード文字（曖昧検索）指定可能です。「∗」は0 個以上任意文字、「?」は1 個任意文字、「¥」はエスケープ変換文字（「¥∗niftycloud¥?¥¥ 」は「∗niftycloud?¥」を検索）となります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -870,6 +936,7 @@
       }
     },
     "DescribeKeyPairs": {
+      "documentation": "<p>指定したSSHキーの情報を取得します。</p><p>SSHキーを指定するためには、SSHキー名が必要です。SSHキーを指定しない場合は、取得できるすべてのSSHキー情報を取得します。</p><p>キーペアのフィンガープリントが一致しているかどうかはレスポンス値「keyFingerprint」で確認できます。</p><p>秘密鍵に対し、以下のコマンドを実行した場合に取得するfingerprintの値とDescribeKeyPairsで返却されるKeyFingerprintの値が同一であれば、キーペアのフィンガープリントが一致していることが確認できます。</p><p>CreateKeyPairで作成した場合：</p><p>「openssl rsa -in <span class=\"math inline\"><em>秘</em><em>密</em><em>鍵</em><em>フ</em><em>ァ</em><em>イ</em><em>ル</em> − <em>p</em><em>u</em><em>b</em><em>o</em><em>u</em><em>t</em> − <em>o</em><em>u</em><em>t</em><em>f</em><em>o</em><em>r</em><em>m</em><em>D</em><em>E</em><em>R</em> − <em>p</em><em>a</em><em>s</em><em>s</em><em>i</em><em>n</em><em>p</em><em>a</em><em>s</em><em>s</em>:</span>{パスフレーズ} | openssl md5 -c」</p><p>ImportKeyPairを利用した際は、鍵形式にあわせて確認できます。</p><p>SSH-RSAの場合：「openssl rsa -in <span class=\"math inline\"><em>秘</em><em>密</em><em>鍵</em><em>フ</em><em>ァ</em><em>イ</em><em>ル</em> − <em>p</em><em>u</em><em>b</em><em>o</em><em>u</em><em>t</em> − <em>o</em><em>u</em><em>t</em><em>f</em><em>o</em><em>r</em><em>m</em><em>D</em><em>E</em><em>R</em> − <em>p</em><em>a</em><em>s</em><em>s</em><em>i</em><em>n</em><em>p</em><em>a</em><em>s</em><em>s</em>:</span>{パスフレーズ} | openssl md5 ?c」</p><p>SSH-DSAの場合：「openssl dsa -in <span class=\"math inline\"><em>秘</em><em>密</em><em>鍵</em><em>フ</em><em>ァ</em><em>イ</em><em>ル</em> − <em>p</em><em>u</em><em>b</em><em>o</em><em>u</em><em>t</em> − <em>o</em><em>u</em><em>t</em><em>f</em><em>o</em><em>r</em><em>m</em><em>D</em><em>E</em><em>R</em> − <em>p</em><em>a</em><em>s</em><em>s</em><em>i</em><em>n</em><em>p</em><em>a</em><em>s</em><em>s</em>:</span>{パスフレーズ} | openssl md5 ?c」</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -883,6 +950,7 @@
       }
     },
     "DescribeLoadBalancers": {
+      "documentation": "<p>指定したロードバランサーの情報を取得します。</p><p>ロードバランサーを指定するためには、ロードバランサー名が必要です。ロードバランサーを指定しない場合は、取得可能なすべてのロードバランサー情報を取得します。</p> <h5 id=\"ヘルスチェックの際のサーバー切り離し時間について\">ヘルスチェックの際のサーバー切り離し時間について</h5> <ul> <li>サーバーからの応答時間がタイムアウトを超えた場合にサーバーをロードバランサーから切り離します。</li> <li>設定されるヘルスチェックのタイムアウト時間については、<a href=\"https://pfs.nifcloud.com/service/lb_l4.htm\">ロードバランサー（L4）のヘルスチェックについて</a>をご確認ください。</li> </ul>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -896,6 +964,7 @@
       }
     },
     "DescribeMultiIpAddressGroups": {
+      "documentation": "<p>マルチIPアドレスグループの情報を取得します。1回のリクエストで、複数のマルチIPアドレスグループ情報を取得できます。</p><p>マルチIPアドレスグループの情報を指定するためには、マルチIPアドレスグループユニークIDが必要です。指定しない場合は、取得可能なすべてのマルチIPアドレスグループの情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -909,6 +978,7 @@
       }
     },
     "DescribeNetworkInterfaces": {
+      "documentation": "<p>追加NICの情報を取得します。1回のリクエストで複数の追加NICの情報を取得できます。</p><p>追加NICの情報を指定するためには、追加NICのネットワークインターフェースIDが必要です。指定しない場合は、取得可能なすべての追加NICの情報を取得します。</p><p>絞り込み条件の項目の値「Filter.n.Value.m」を指定する際、ワイルドカード文字（曖昧検索）指定可能です。「∗」は0個以上任意文字、「?」は1個任意文字、「\\」はエスケープ変換文字（「¥∗niftycloud¥?¥¥ 」は「∗niftycloud?¥」を検索）となります。</p><p>曖昧検索が指定可能な絞り込み条件の項目名は、attachment.instance-id、description、nifty-network-nameになります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -922,6 +992,7 @@
       }
     },
     "DescribeRegions": {
+      "documentation": "<p>利用可能なリージョンの情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -935,6 +1006,7 @@
       }
     },
     "DescribeRemoteAccessVpnGatewayActivities": {
+      "documentation": "<p>リモートアクセスVPNゲートウェイのログ情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -948,6 +1020,7 @@
       }
     },
     "DescribeRemoteAccessVpnGatewayClientConfig": {
+      "documentation": "<p>指定したリモートアクセスVPNゲートウェイのクライアント設定ファイルを取得します。<br> リモートアクセスVPNゲートウェイのバージョンが v2.0.0 未満の場合、利用できません</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -961,6 +1034,7 @@
       }
     },
     "DescribeRemoteAccessVpnGatewayConnections": {
+      "documentation": "<p>リモートアクセスVPNゲートウェイのコネクション情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -974,6 +1048,7 @@
       }
     },
     "DescribeRemoteAccessVpnGateways": {
+      "documentation": "<p>リモートアクセスVPNゲートウェイの情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -987,6 +1062,7 @@
       }
     },
     "DescribeResources": {
+      "documentation": "<p>リソースの利用状況を返却します。</p><p>コントロールパネル画面のダッシュボードに当たります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1000,6 +1076,7 @@
       }
     },
     "DescribeRouteTables": {
+      "documentation": "<p>指定したルートテーブルの情報を取得します。</p><p>ルートテーブルを指定するためには、ルートテーブルID が必要です。</p><p>ルートテーブルを指定しない場合は、取得可能なすべてのルートテーブル情報を取得します。</p><p>絞り込み条件の項目の値「Filter.n.Value.m」を指定する際、ワイルドカード文字（曖昧検索）指定可能です。「∗」は0 個以上任意文字、「?」は1 個任意文字、「¥」はエスケープ変換文字（「¥∗niftycloud¥?¥¥ 」は「∗niftycloud?¥」を検索）となります。 曖昧検索が指定可能な絞り込み条件の項目名は、association.router-name、route.destination-cidr-block、route.ip-address になります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1013,6 +1090,7 @@
       }
     },
     "DescribeSecurityActivities": {
+      "documentation": "<p>指定したファイアウォールグループのログ情報を取得します。</p><p>ファイアウォールグループを指定するためには、ファイアウォールグループ名が必要です。</p><p>ActivityDateに”all”を指定した場合は、Range設定を無視し保存されているログを全件取得します。</p><p>(この場合に返却されるログの件数については <a href=\"https://docs.nifcloud.com/cp/spec/fw/log.htm#%E3%83%AD%E3%82%B0%E4%BF%9D%E5%AD%98%E6%9C%9F%E9%96%93%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6\">技術仕様/制限値 ファイアウォール：ログ</a> をご参照ください。)</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1026,6 +1104,7 @@
       }
     },
     "DescribeSecurityGroups": {
+      "documentation": "<p>指定したファイアウォールグループの設定情報を取得します。</p><p>ファイアウォールグループを指定するためには、ファイアウォールグループ名が必要です。指定しない場合は、取得可能なすべてのファイアウォールグループの設定情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1039,6 +1118,7 @@
       }
     },
     "DescribeServiceStatus": {
+      "documentation": "<p>サービスの稼働情報を返却します。</p><p>コントロールパネル画面のダッシュボードに当たります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1052,6 +1132,7 @@
       }
     },
     "DescribeSslCertificateAttribute": {
+      "documentation": "<p>指定したSSL証明書の詳細情報を取得します。1回のリクエストで、1つのSSL証明書の1つの詳細情報を取得できます。</p><p>SSL証明書を指定するためには、SSL証明書の発行識別子（fqdnId）が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1065,6 +1146,7 @@
       }
     },
     "DescribeSslCertificates": {
+      "documentation": "<p>指定したSSL証明書の情報を取得します。</p><p>SSL証明書を指定するためには、SSL証明書の発行識別子（fqdnId）またはFQDNが必要です。指定しない場合は、取得可能なすべてのSSL証明書の情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1078,6 +1160,7 @@
       }
     },
     "DescribeUploads": {
+      "documentation": "<p>アップロード中のタスク情報を返却します。</p><p>アップロードタスクを指定するためには、タスクIDが必要です。</p><p>タスクIDを指定した場合、指定したIDのアップロードタスクの情報が返されます。</p><p>タスクIDを指定しなかった場合は、現在アップロード・インポート中のすべてのタスクが返されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1091,6 +1174,7 @@
       }
     },
     "DescribeUsage": {
+      "documentation": "<p>リソースの利用状況を返却します。</p><p>存在する情報のみ、レスポンス内にタグが生成されます。</p><p>取得対象リージョンを設定した場合はサーバー利用情報などそのリージョンに属する個別情報を、指定しなかった場合はSSL証明書利用情報などリージョン共通情報と東日本リージョンの個別情報を返却します。</p><p>IsCharge=trueを指定した場合、レスポンスの各リソースに対して利用料金が返却されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1104,6 +1188,7 @@
       }
     },
     "DescribeUserActivities": {
+      "documentation": "<p>APIおよびコントロールパネルの利用履歴を返却します。コントロールパネル画面のログ取得に当たります。</p><p>マルチアカウントの子アカウントでは、自身の利用履歴のみ返却されます。</p><p>取得開始位置は1が最新レコードとなります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1117,6 +1202,7 @@
       }
     },
     "DescribeVolumes": {
+      "documentation": "<p>指定したディスクの情報を取得します。</p><p>ディスクを指定するためには、ディスク名が必要です。<br> 削除済みのディスクを指定した、管理外のディスクを指定したなど、無効なディスクを指定した場合は、エラーが返されます。</p><p>ディスクを指定しない場合、取得できるすべてのディスク情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1130,6 +1216,7 @@
       }
     },
     "DescribeVpnConnections": {
+      "documentation": "<p>指定されたVPNコネクションの情報を取得します。</p><p>VPNコネクションを指定するためには、VPNコネクションユニークIDが必要です。</p><p>VPNコネクションを指定しない場合、取得できるすべてのVPNコネクション情報を取得します。</p><p>絞り込み条件の項目の値「Filter.n.Value.m」を指定する際、ワイルドカード文字（曖昧検索）指定可能です。</p><p>「*」は0個以上任意文字、 「?」は1個任意文字、「」はエスケープ変換文字（「∗niftycloud¥?¥¥」は「∗niftycloud?¥」を検索）となります。</p><p>曖昧検索が指定可能な絞り込み条件の項目名は、下記の通りです。</p> <ul> <li>customer-gateway-configuration</li> <li>nifty-customer-gateway-name</li> <li>route.destination-cidr-block</li> <li>nifty-vpn-gateway-name</li> <li>nifty-vpn-connection-description</li> </ul>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1143,6 +1230,7 @@
       }
     },
     "DescribeVpnGateways": {
+      "documentation": "<p>指定した拠点間VPNゲートウェイの情報を取得します。</p><p>拠点間VPNゲートウェイを指定するためには、拠点間VPNゲートウェイユニークIDまたは拠点間VPNゲートウェイ名が必要です。</p><p>拠点間VPNゲートウェイを指定しない場合、取得できるすべての拠点間VPNゲートウェイ情報を取得します。</p><p>絞り込み条件の項目の値「Filter.n.Value.m」を指定する際、ワイルドカード文字（曖昧検索）指定可能です。「∗」は0個以上任意文字、「?」は1個任意文字、「¥」はエスケープ変換文字（「∗niftycloud¥?¥¥」は「∗niftycloud?¥」を検索）となります。</p><p>曖昧検索が指定可能な絞り込み条件の項目名は、下記の通りです。</p> <ul> <li>nifty-vpn-gateway-name</li> <li>nifty-vpn-gateway-description</li> </ul>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1156,6 +1244,7 @@
       }
     },
     "DetachIsoImage": {
+      "documentation": "<p>ISOイメージをサーバーから解除します。</p><p>ISOイメージ・サーバーを指定するためには、それぞれISOイメージID・サーバーユニークIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1169,6 +1258,7 @@
       }
     },
     "DetachNetworkInterface": {
+      "documentation": "<p>サーバーに接続した追加NICを解除します。</p><p>追加NICの解除の反映には、サーバーの再起動が必要になります。再起動オプションをfalseで指定する場合はサーバー停止時のみ選択可能です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1182,6 +1272,7 @@
       }
     },
     "DetachVolume": {
+      "documentation": "<p>指定したディスクとサーバーの接続を解除します。</p><p>ディスクを指定するためには、ディスク名が必要です。</p><p>また、サーバーを指定するためにはサーバー名が必要です。サーバー名を指定せずに解除すると、指定したディスクのすべての接続情報を解除します。</p><p>起動中のサーバーからディスクを解除する場合、OS上で必ず対象ディスクの認識を外してから実行してください。</p><p>OSが対象ディスクを認識したまま解除すると、サーバーが異常な状態になります。</p><p>ディスクの認識を外すには、下記ページの手順をご確認ください。</p><p><a href=\"https://docs.nifcloud.com/cp/guide/index.htm#mount\">ユーザーガイド：ディスクの認識を外す設定方法（アンマウント手順）：Linux系OSの場合</a></p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1195,6 +1286,7 @@
       }
     },
     "DisassociateAddress": {
+      "documentation": "<p>サーバーから付替IPアドレスを解除します。</p><p>サーバーから付替IPアドレスを解除するには、サーバーの再起動もあり時間がかかることがあります。</p><p>付替IPアドレスの解除には、サーバーの再起動が必要になります。再起動オプションをfalseで指定する場合はサーバー停止時のみ選択可能です。</p><p>サーバーのステータスは、API「DescribeInstances」のレスポンス値「instanceState」で確認できます。また、付替IPアドレスが正しくサーバーから解除されているかの確認が必要です。</p><p>同じくAPI「DescribeInstances」のレスポンス値「ipType」もしくはAPI「DescribeAddresses」のレスポンス値「instanceId」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1208,6 +1300,7 @@
       }
     },
     "DisassociateMultiIpAddressGroup": {
+      "documentation": "<p>指定したサーバーからマルチIPアドレスグループの割り当てを解除します。</p><p>サーバーへの反映には、再起動が必要になります。</p><p>再起動オプションをfalseで指定する場合はサーバー停止時のみ選択可能です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1221,6 +1314,7 @@
       }
     },
     "DisassociateRouteTable": {
+      "documentation": "<p>ルーターに設定されたルートテーブルを解除します。</p><p>ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1234,6 +1328,7 @@
       }
     },
     "DissociateUsers": {
+      "documentation": "<p>指定した機能から、指定したユーザーの共有を解除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1247,6 +1342,7 @@
       }
     },
     "DownloadSslCertificate": {
+      "documentation": "<p>指定したSSL証明書をダウンロードします。1回のリクエストで、SSL証明書のキー・CA・証明書のいずれかを取得できます。</p><p>SSL証明書を指定するためには、SSL証明書の発行識別子（FqdnId）が必要です。</p><p>またSSL証明書の発行状況により、指定したファイルがダウンロードできない場合があります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1260,6 +1356,7 @@
       }
     },
     "ExtendVolumeSize": {
+      "documentation": "<p>指定したディスクのサイズを100GB拡張します。</p><p>ディスクはサーバーに接続している必要があります。</p><p>このAPIを実行した後、ゲストOS側でファイルシステムの拡張を行う必要があります。</p><p>ディスクのサイズを縮小することはできません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1273,6 +1370,7 @@
       }
     },
     "ImportInstance": {
+      "documentation": "<p>指定したOVFファイルの情報に基づいて、サーバーインポートを予約します。</p><p>1回のリクエストで1台のサーバーが予約可能です。</p><p>イメージ（VMDKファイル）は、別途アップロード領域へアップロードしてください（このAPIのレスポンスに含まれるタスクIDを指定します）。</p><p>サーバーの作成には、時間がかかることがあります。</p><p>API「DescribeInstances」のレスポンス値「instanceState」でサーバーのステータスを確認できます。</p><p>インポートしたサーバーは通常ほかのサーバー作成と同様に課金されますが、ニフクラの基本ディスク容量（Linux:30GB、Windows:80GB）を超えるディスクを持つ場合は100GB単位で追加料金が発生します。</p><p>インポートしたサーバーは、APIからの削除が可能です。</p><p>APIからの削除を禁止したい場合は、インポート完了後にAPI「ModifyInstanceAttribute」を実行してください。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1286,6 +1384,7 @@
       }
     },
     "ImportKeyPair": {
+      "documentation": "<p>指定したSSH公開鍵をアップロードして登録します。SSHキー名には、同じユーザーが作るキーのうち、一意となる文字列を指定します。</p><p>SSH-RSAおよびSSH-DSAの公開鍵形式に対応しています。</p><p>推奨する公開鍵方式は　SSH-RSA 2048bit鍵です。</p><p>アップロードしたSSHキーペアのフィンガープリントが一致しているかどうかの確認方法は、<a href=\"https://docs.nifcloud.com/cp/api/DescribeKeyPairs.htm\">DescribeKeyPairs</a>の処理概要をご確認ください。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1299,6 +1398,7 @@
       }
     },
     "IncreaseMultiIpAddressCount": {
+      "documentation": "<p>マルチIPアドレスグループで利用できるIPアドレスを追加します。</p><p>以下の場合、エラーが返されます。</p> <ul> <li>処理中のマルチIPアドレスグループを指定した、管理外のマルチIPアドレスグループを指定したなど、無効なマルチIPアドレスグループを指定した場合</li> </ul>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1312,6 +1412,7 @@
       }
     },
     "ModifyImageAttribute": {
+      "documentation": "<p>指定したカスタマイズイメージの詳細情報を更新します。1回のリクエストで、1つのカスタマイズイメージの情報を更新できます。</p><p>カスタマイズイメージを指定するためには、イメージIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1325,6 +1426,7 @@
       }
     },
     "ModifyInstanceAttribute": {
+      "documentation": "<p>指定したサーバーの詳細情報を更新します。1回のリクエストで、1つのサーバーの情報を更新できます。</p><p>サーバーを指定するためには、サーバー名が必要です。</p><p>サーバータイプの更新について、ホットスケールアップが可能なサーバーであれば、リクエスト「NiftyReboot=false、Force=true」を指定することで、起動中の状態のまま、更新が可能です。ホットスケールアップが可能なサーバーかどうかはAPI「DescribeInstances」のレスポンス値「hotAdd」で確認できます。ただしサーバータイプの値によっては、「hotAdd」が可能となっていても更新できないサーバータイプがあります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1338,6 +1440,7 @@
       }
     },
     "ModifyInstanceBackupRuleAttribute": {
+      "documentation": "<p>バックアップルールの属性情報の更新を行います。1回のリクエストで1つの属性情報を更新できます。</p><p>バックアップルールを指定するためには、バックアップルールIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1351,6 +1454,7 @@
       }
     },
     "ModifyMultiIpAddressGroupAttribute": {
+      "documentation": "<p>マルチIPアドレスグループの情報更新を行います。1回のリクエストで1つの属性情報を更新できます。</p><p>マルチIPアドレスグループを指定するためには、マルチIPアドレスグループユニークIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1364,6 +1468,7 @@
       }
     },
     "ModifyNetworkInterfaceAttribute": {
+      "documentation": "<p>追加NICの属性情報の更新を行います。1回のリクエストで、追加NICの1つの属性情報を更新できます。</p><p>追加NICを指定するためには、追加NICのネットワークインターフェースIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1377,6 +1482,7 @@
       }
     },
     "ModifyRemoteAccessVpnGatewayAttribute": {
+      "documentation": "<p>リモートアクセスVPNゲートウェイの情報を更新します。1回のリクエストで、1つのリモートアクセスVPNゲートウェイの1つの属性情報を更新できます。</p><p>リモートアクセスVPNゲートウェイを指定するためには、リモートアクセスVPNゲートウェイユニークIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1390,6 +1496,7 @@
       }
     },
     "ModifyRemoteAccessVpnGatewayUserAttribute": {
+      "documentation": "<p>リモートアクセスVPNゲートウェイにユーザー情報を更新します。 リモートアクセスVPNゲートウェイのバージョンが v1.0.0 の場合、利用できません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1403,6 +1510,7 @@
       }
     },
     "ModifySslCertificateAttribute": {
+      "documentation": "<p>指定したSSL証明書の詳細情報を更新します。1回のリクエストで、1つのSSL証明書の1つの詳細情報を更新できます。</p><p>SSL証明書を指定するためには、SSL証明書の発行識別子（fqdnId）が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1416,6 +1524,7 @@
       }
     },
     "ModifyVolumeAttribute": {
+      "documentation": "<p>指定したディスクの詳細情報を更新します。1回のリクエストで、1つのディスクの情報を更新できます。</p><p>利用料金タイプの更新は次月から適用されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1429,6 +1538,7 @@
       }
     },
     "NiftyAssociateImage": {
+      "documentation": "<p>指定したカスタマイズイメージに対して配布先設定を行います。</p><p>指定した配布先の内容は上書き更新されますので、適用したいすべての「ニフクラID」を設定してください。</p><p>カスタマイズイメージを指定するためには、イメージIDが必要です。</p><p>IsRedistributeはisPublicをfalseで指定したときのみ指定可能です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1442,6 +1552,7 @@
       }
     },
     "NiftyAssociateNatTable": {
+      "documentation": "<p>指定したルーターへNATテーブルを設定する。</p><p>NATテーブルを指定するためには、NATテーブルIDが必要です。</p><p>またルーターを指定するためには、ルーターユニークIDまたはルーター名が必要です。</p><p>ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1455,6 +1566,7 @@
       }
     },
     "NiftyAssociateRouteTableWithElasticLoadBalancer": {
+      "documentation": "<p>マルチロードバランサーにルートテーブルを設定します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1468,6 +1580,7 @@
       }
     },
     "NiftyAssociateRouteTableWithVpnGateway": {
+      "documentation": "<p>指定した拠点間VPNゲートウェイへルートテーブル設定する。</p><p>ルートテーブルを指定するためには、ルートテーブルIDが必要です。また拠点間VPNゲートウェイを指定するためには、拠点間VPNゲートウェイユニークIDまたは拠点間VPNゲートウェイ名が必要です。</p><p>拠点間VPNゲートウェイがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「DescribeVpnGateways」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1481,6 +1594,7 @@
       }
     },
     "NiftyConfigureElasticLoadBalancerHealthCheck": {
+      "documentation": "<p>指定したマルチロードバランサーのヘルスチェックの設定を変更します。</p><p>マルチロードバランサーを指定するためには、マルチロードバランサー名または、マルチロードバランサーユニークID・プロトコル・待ち受けポート番号・宛先ポート番号が必要です。</p><p>ヘルスチェックパス、およびヘルスチェック期待値を指定するためには、ヘルスチェックプロトコルが「HTTP」もしくは「HTTPS」である必要があります。</p><p>設定したマルチロードバランサーのヘルスチェックの内容は、API「<a href=\"https://docs.nifcloud.com/cp/api/NiftyDescribeElasticLoadBalancers.htm\">NiftyDescribeElasticLoadBalancers</a>」で確認できます。</p><p>ヘルスチェックの実行結果は、API「<a href=\"https://docs.nifcloud.com/cp/api/NiftyDescribeInstanceElasticLoadBalancerHealth.htm\">NiftyDescribeInstanceElasticLoadBalancerHealth</a>」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1494,6 +1608,7 @@
       }
     },
     "NiftyCreateAlarm": {
+      "documentation": "<p>基本監視ルールを新規作成します。</p><p>FunctionNameに機能名を指定することでサーバー、ロードバランサー、ディスクパーティション、マルチロードバランサーに対して監視するルールを作成されます。ロードバランサー以外の監視ルールはゾーン毎の作成になります。作成されたルールの設定からアラートが上がった場合、EmailAddressのメールアドレスにアラートメールが送信されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1507,6 +1622,7 @@
       }
     },
     "NiftyCreateAutoScalingGroup": {
+      "documentation": "<p>オートスケール定義を新規作成します。</p><p>オートスケール定義を新規作成するには、自身で作成したイメージ（追加ディスクなし）が必要です。</p><p>指定したイメージが存在するゾーンに対してオートスケール定義が作成されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1520,6 +1636,7 @@
       }
     },
     "NiftyCreateDhcpConfig": {
+      "documentation": "<p>DHCPコンフィグを新規作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1533,6 +1650,7 @@
       }
     },
     "NiftyCreateDhcpIpAddressPool": {
+      "documentation": "<p>指定したDHCPコンフィグに、自動割り当てIPアドレスの設定を追加します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1546,6 +1664,7 @@
       }
     },
     "NiftyCreateDhcpStaticMapping": {
+      "documentation": "<p>指定したDHCPコンフィグに、手動割り当てIPアドレスの設定を追加します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1559,6 +1678,7 @@
       }
     },
     "NiftyCreateElasticLoadBalancer": {
+      "documentation": "<p>マルチロードバランサーを作成します。</p><p>1回のリクエストで、1つのポート定義を作成できます。</p><p>マルチロードバランサーの作成後、サーバーを追加する場合は、以下のAPIを実行する必要があります。</p> <ul> <li>API「<a href=\"https://docs.nifcloud.com/cp/api/NiftyRegisterInstancesWithElasticLoadBalancer.htm\">NiftyRegisterInstancesWithElasticLoadBalancer</a>」（サーバー設定）</li> </ul> <p>マルチロードバランサーでSSLアクセラレーター設定をする場合は、プロトコル「HTTPS」とSSL証明書の発行識別子を指定して作成してください。SSLアクセラレーター設定しない場合は、プロトコル「TCP」で必要ポートを指定して作成していただく必要があります。</p><p>ヘルスチェックの設定でヘルスチェックパス、およびヘルスチェック期待値を指定するためには、ヘルスチェックプロトコルが「HTTP」もしくは「HTTPS」である必要があります。</p><p>作成したマルチロードバランサーの内容は、API「<a href=\"https://docs.nifcloud.com/cp/api/NiftyDescribeElasticLoadBalancers.htm\">NiftyDescribeElasticLoadBalancers</a>」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1572,6 +1692,7 @@
       }
     },
     "NiftyCreateInstanceSnapshot": {
+      "documentation": "<p>指定したサーバーに対して、ワンデイスナップショットを作成します。</p><p>ワンデイスナップショット作成には時間がかかる場合があります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1585,6 +1706,7 @@
       }
     },
     "NiftyCreateNatRule": {
+      "documentation": "<p>NATテーブルに適用するNATルール情報を作成する。</p><p>NATテーブルを指定するためには、NATテーブルIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1598,6 +1720,7 @@
       }
     },
     "NiftyCreateNatTable": {
+      "documentation": "<p>ルーターに設定するNATテーブルを新規作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1611,6 +1734,7 @@
       }
     },
     "NiftyCreatePrivateLan": {
+      "documentation": "<p>プライベートLANを新規作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1624,6 +1748,7 @@
       }
     },
     "NiftyCreateRouter": {
+      "documentation": "<p>ルーターを新規作成します。</p><p>ルーターに割り当てるネットワークを指定するためには、ネットワークIDまたはネットワーク名が必要です。</p><p>作成したルーターのゾーンは指定したネットワークと同一のゾーンになります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1637,6 +1762,7 @@
       }
     },
     "NiftyCreateSeparateInstanceRule": {
+      "documentation": "<p>サーバーセパレートを新規作成します。サーバーセパレートを作成する際には、ゾーンの指定が必要です。</p><p>また、1つのサーバーセパレートに適用可能なサーバーの上限数は、2台となります。サーバーセパレートの作成には、時間がかかることがあります。<br> API「NiftyDescribeSeparateInstanceRules」のレスポンス値「separateInstanceRuleStatus」でサーバーセパレートのステータスを確認できます。</p><p>サーバー名とサーバーユニークIDが両方指定された場合は、サーバーユニークIDが優先されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1650,6 +1776,7 @@
       }
     },
     "NiftyCreateWebProxy": {
+      "documentation": "<p>指定したルーターに対してWebプロキシを新規作成します。</p><p>受け側／迂回先ネットワークは、ルーターと紐付きのあるネットワークを指定する必要があります。</p><p>ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1663,6 +1790,7 @@
       }
     },
     "NiftyDeleteAlarm": {
+      "documentation": "<p>基本監視ルールを削除します。</p><p>監視ルールを指定するには、監視ルール名および機能名が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1676,6 +1804,7 @@
       }
     },
     "NiftyDeleteAutoScalingGroup": {
+      "documentation": "<p>指定したオートスケールの定義を削除します。</p><p>オートスケールを指定するには、オートスケール名が必要です。</p><p>オートスケール定義を削除すると、作成されたスケールアウトサーバーも削除されます。スケールアウトサーバーが存在するオートスケールを削除する場合、オートスケール削除が完了するまで時間がかかることがあります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1689,6 +1818,7 @@
       }
     },
     "NiftyDeleteDhcpConfig": {
+      "documentation": "<p>指定したDHCPコンフィグを削除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1702,6 +1832,7 @@
       }
     },
     "NiftyDeleteDhcpIpAddressPool": {
+      "documentation": "<p>指定したDHCPコンフィグから、自動割り当てIPアドレスの設定を削除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1715,6 +1846,7 @@
       }
     },
     "NiftyDeleteDhcpStaticMapping": {
+      "documentation": "<p>指定したDHCPコンフィグから、手動割り当てIPアドレスの設定を削除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1728,6 +1860,7 @@
       }
     },
     "NiftyDeleteElasticLoadBalancer": {
+      "documentation": "<p>指定したマルチロードバランサーのポートを削除します。</p><p>関連するサーバー設定・ヘルスチェック設定などもあわせて削除します。</p><p>マルチロードバランサーを指定するためには、マルチロードバランサー名または、マルチロードバランサーユニークID・プロトコル・待ち受けポート番号・宛先ポート番号が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1741,6 +1874,7 @@
       }
     },
     "NiftyDeleteInstanceSnapshot": {
+      "documentation": "<p>作成済ワンデイスナップショットを削除します。</p><p>削除するワンデイスナップショットを指定するには、スナップショットIDもしくはスナップショット名の指定が必要です。</p><p>スナップショット取得後に発生した差分をマージするため、スナップショットの削除には時間がかかる場合があります。</p><p>スナップショット削除処理状況は、API「NiftyDescribeInstanceSnapshots」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1754,6 +1888,7 @@
       }
     },
     "NiftyDeleteNatRule": {
+      "documentation": "<p>NATテーブルに適用されたNATルール情報を削除する。</p><p>NATテーブルを指定するためには、NATテーブルIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1767,6 +1902,7 @@
       }
     },
     "NiftyDeleteNatTable": {
+      "documentation": "<p>ルーターに設定するNATテーブルの削除を行います。</p><p>NATテーブルを指定するためには、NATテーブルIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1780,6 +1916,7 @@
       }
     },
     "NiftyDeletePrivateLan": {
+      "documentation": "<p>プライベートLANの削除を行います。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1793,6 +1930,7 @@
       }
     },
     "NiftyDeleteRouter": {
+      "documentation": "<p>指定したルーターを削除します。</p><p>ルーターを指定するためには、ルーターユニークIDまたはルーター名が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1806,6 +1944,7 @@
       }
     },
     "NiftyDeleteSeparateInstanceRule": {
+      "documentation": "<p>指定したサーバーセパレートを削除します。</p><p>サーバーセパレートを指定するためには、サーバーセパレート名が必要です。</p><p>サーバーセパレートの削除には、時間がかかることがあります。API「<a href=\"https://docs.nifcloud.com/cp/api/NiftyDescribeSeparateInstanceRules.htm\">NiftyDescribeSeparateInstanceRules</a>」のレスポンス値「separateInstanceRuleStatus」でサーバーセパレートのステータスを確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1819,6 +1958,7 @@
       }
     },
     "NiftyDeleteWebProxy": {
+      "documentation": "<p>ルーターに設定されたWebプロキシを削除します。</p><p>ルーターを指定するためには、ルーターユニークIDまたはルーター名が必要です。</p><p>ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1832,6 +1972,7 @@
       }
     },
     "NiftyDeregisterInstancesFromElasticLoadBalancer": {
+      "documentation": "<p>指定したマルチロードバランサーから、指定したサーバーを解除します。</p><p>マルチロードバランサーを指定するためには、マルチロードバランサー名または、マルチロードバランサーユニークID・プロトコル・待ち受けポート番号・宛先ポート番号が必要です。また、サーバーを指定するためには、サーバー名または、サーバーユニークIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1845,6 +1986,7 @@
       }
     },
     "NiftyDeregisterInstancesFromSeparateInstanceRule": {
+      "documentation": "<p>指定したサーバーセパレートから、指定したサーバーをはずします。</p><p>サーバーセパレートを指定するためには、サーバーセパレート名が必要です。</p><p>またサーバーを指定するためには、サーバー名またはサーバーユニークIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1858,6 +2000,7 @@
       }
     },
     "NiftyDeregisterRoutersFromSecurityGroup": {
+      "documentation": "<p>指定したファイアウォールグループからルーターをはずします。</p><p>ファイアウォールグループからはずすためには、ルーター名またはルーターユニークIDを指定します。</p><p>ファイアウォールグループからルーターをはずす処理には、時間がかかる場合があります。</p><p>「DescribeSecurityGroups」のレスポンス「groupStatus」でファイアウォールグループのステータスを確認することができます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1871,6 +2014,7 @@
       }
     },
     "NiftyDeregisterVpnGatewaysFromSecurityGroup": {
+      "documentation": "<p>指定したファイアウォールグループから拠点間VPNゲートウェイをはずします。</p><p>ファイアウォールからはずすためには、拠点間VPNゲートウェイ名または拠点間VPNゲートウェイIDを指定します。</p><p>ファイアウォールグループから拠点間VPNゲートウェイをはずす処理には、時間がかかる場合があります。</p><p>「DescribeSecurityGroups」のレスポンス「groupStatus」でファイアウォールグループのステータスを確認することができます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1884,6 +2028,7 @@
       }
     },
     "NiftyDescribeAlarmHistory": {
+      "documentation": "<p>アラート履歴一覧を取得します。</p><p>リージョン/ゾーン/セルに利用制限がかかっている監視ルールのアラーム履歴は返却されません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1897,6 +2042,7 @@
       }
     },
     "NiftyDescribeAlarmRulesActivities": {
+      "documentation": "<p>監視ルールの監視項目毎に、リソース異常発生と解除のログ情報を取得します。</p><p>リージョン/ゾーン/セルに利用制限がかかっている監視ルールログ情報は返却しません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1910,6 +2056,7 @@
       }
     },
     "NiftyDescribeAlarms": {
+      "documentation": "<p>指定した基本監視ルールの情報を取得します。</p><p>監視ルールを指定するには、監視ルール名および機能名が必要です。</p><p>監視ルールを指定しない場合、取得できるすべての監視ルールの情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1923,6 +2070,7 @@
       }
     },
     "NiftyDescribeAlarmsPartitions": {
+      "documentation": "<p>監視ルールに設定されているパーティション情報を取得します。</p><p>サーバーが指定された場合は、指定されたサーバーが割り当てられている監視ルールに設定されているパーティション情報のみを取得します。</p><p>すべてのパーティションを監視対象にした場合、当APIでパーティション情報が取得されるようになるまで、最大で10分かかります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1936,6 +2084,7 @@
       }
     },
     "NiftyDescribeAutoScalingGroups": {
+      "documentation": "<p>指定したオートスケールの定義情報を取得します。</p><p>オートスケールを指定するためには、オートスケール名が必要です。</p><p>オートスケールを指定しない場合、取得できるすべてのオートスケールの定義情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1949,6 +2098,7 @@
       }
     },
     "NiftyDescribeCorporateInfoForCertificate": {
+      "documentation": "<p>登録されている申請法人情報を取得します。</p><p>申請法人情報が未登録の場合は、空の情報が返却されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1962,6 +2112,7 @@
       }
     },
     "NiftyDescribeDhcpConfigs": {
+      "documentation": "<p>DHCPコンフィグ情報を取得します。</p><p>DHCPコンフィグを指定するためには、DHCPコンフィグIDが必要です。DHCPコンフィグを指定しない場合は、取得可能なすべてのDHCPコンフィグ情報を取得します。</p><p>絞り込み条件の項目の値「Filter.n.Value.m」を指定する際、ワイルドカード文字（曖昧検索）指定可能です。</p><p>「∗」は0個以上任意文字、「?」は1個任意文字、「\\」はエスケープ変換文字（「∗niftycloud¥?¥¥」は「∗niftycloud?¥」を検索）となります。</p><p>曖昧検索が指定可能な絞り込み条件の項目名は、ipaddress-pool-start, ipaddress-pool-stop, ipaddress-pool-description, static-mapping-ipaddress, static-mapping-macaddress, static-mapping-descriptionになります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1975,6 +2126,7 @@
       }
     },
     "NiftyDescribeDhcpStatus": {
+      "documentation": "<p>DHCPでのIP払い出し状態を表示します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1988,6 +2140,7 @@
       }
     },
     "NiftyDescribeElasticLoadBalancers": {
+      "documentation": "<p>指定したマルチロードバランサーの情報を取得します。</p><p>マルチロードバランサーを指定するためには、マルチロードバランサー名または、マルチロードバランサーユニークID・プロトコル・待ち受けポート番号・宛先ポート番号が必要です。マルチロードバランサーを指定しない場合は、取得可能なすべてのマルチロードバランサー情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2001,6 +2154,7 @@
       }
     },
     "NiftyDescribeInstanceElasticLoadBalancerHealth": {
+      "documentation": "<p>指定したマルチロードバランサーに設定されている、サーバーのヘルスチェック結果を取得します。ヘルスチェックは、API 「<a href=\"https://docs.nifcloud.com/cp/api/NiftyConfigureElasticLoadBalancerHealthCheck.htm\">NiftyConfigureElasticLoadBalancerHealthCheck</a>」で設定します。</p><p>マルチロードバランサーを指定するためには、マルチロードバランサー名または、マルチロードバランサーユニークID・プロトコル・待ち受けポート番号・宛先ポート番号が必要です。</p><p>また、サーバーを指定するためには、サーバー名または、サーバーユニークIDが必要です。サーバーを指定しない場合は、指定したマルチロードバランサーに設定されているすべてのサーバーを対象として、ヘルスチェック結果を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2014,6 +2168,7 @@
       }
     },
     "NiftyDescribeInstanceSnapshots": {
+      "documentation": "<p>作成済ワンデイスナップショットの情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2027,6 +2182,7 @@
       }
     },
     "NiftyDescribeLoadBalancerSSLPolicies": {
+      "documentation": "<p>指定したロードバランサーに対して適用可能なSSLセキュリティポリシーのテンプレート一覧を返却します。</p><p>ロードバランサーを指定するためには、ロードバランサー名が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2040,6 +2196,7 @@
       }
     },
     "NiftyDescribeNatTables": {
+      "documentation": "<p>指定したNATテーブルの情報を取得します。</p><p>NATテーブルを指定するためには、NATテーブルIDが必要です。NATテーブルを指定しない場合は、取得可能なすべてのNATテーブル情報を取得します。</p><p>絞り込み条件の項目の値「Filter.n.Value.m」を指定する際、ワイルドカード文字（曖昧検索）指定可能です。</p><p>「∗」は0個以上任意文字、 「?」は1個任意文字、「¥」はエスケープ変換文字（「¥∗niftycloud¥?¥¥」は「∗niftycloud?¥」を検索）となります。</p><p>曖昧検索が指定可能な絞り込み条件の項目名は、下記の通りです。</p> <ul> <li>nat-rule.description</li> <li>nat-rule.destination.address</li> <li>nat-rule.source.address</li> <li>nat-rule.translation.address</li> <li>nt-rule.outbound-interface.network-name</li> <li>nat-rule.inbound-interface.network-name</li> </ul>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2053,6 +2210,7 @@
       }
     },
     "NiftyDescribePerformanceChart": {
+      "documentation": "<p>サーバー、ディスクパーティション、ロードバランサー、マルチロードバランサーの稼働状況を表示したチャートのデータを取得します。</p><p>対象サーバーが停止されている場合は、以下の情報を取得されません。<br> ・CPU使用率<br> ・メモリ使用率<br> ・ディスク使用率<br> ・ディスクパーティション使用率</p><p>チャート出力を期間指定しない場合、最新24時間の10分間隔のデータが返されます。</p><p>チャート出力を期間指定する場合、期間が7日間までなら30分間隔のデータ、それ以降は1日間隔のデータが返されます。</p><p>指定可能な開始日は、当月から５カ月前の月初日まで指定可能となります。</p><p>例. 2020/08/11 の場合、 2020/03/01 を開始日として指定できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2066,6 +2224,7 @@
       }
     },
     "NiftyDescribePrivateLans": {
+      "documentation": "<p>指定されたプライベートLANの情報を取得します。</p><p>プライベートLANを指定するためには、ネットワークユニークIDまたはプライベートLAN名が必要です。</p><p>プライベートLANを指定しない場合、取得できるすべてのプライベートLAN情報を取得します。</p><p>絞り込み条件の項目の値「Filter.n.Value.m」を指定する際、ワイルドカード文字（曖昧検索）指定可能です。「∗」は0個以上任意文字、「?」は1個任意文字、「¥」はエスケープ変換文字（「¥∗nifty¥?¥¥」は「∗nifty?¥」を検索）となります。</p><p>曖昧検索が指定可能な絞り込み条件の項目名は、private-lan-name、descriptionになります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2079,6 +2238,7 @@
       }
     },
     "NiftyDescribeRouters": {
+      "documentation": "<p>指定したルーターの情報の取得をします。</p><p>ルーターを指定するためには、ルーターユニークIDまたはルーター名が必要です。</p><p>ルーターを指定しない場合、取得できるすべてのルーター情報を取得します。</p><p>絞り込み条件の項目の値「Filter.n.Value.m」を指定する際、ワイルドカード文字（曖昧検索）指定可能です。「∗」は0 個以上任意文字、「?」は1 個任意文字、「¥」はエスケープ変換文字（「¥∗niftycloud¥?¥¥ 」は「∗niftycloud?¥」を検索）となります。曖昧検索が指定可能な絞り込み条件の項目名、router-name、description になります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2092,6 +2252,7 @@
       }
     },
     "NiftyDescribeScalingActivities": {
+      "documentation": "<p>指定したオートスケール定義のログを取得します。</p><p>オートスケールを指定するためには、オートスケール名が必要です。</p><p>オートスケールを指定しない場合、取得できるすべてのオートスケール定義のログ情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2105,6 +2266,7 @@
       }
     },
     "NiftyDescribeSeparateInstanceRules": {
+      "documentation": "<p>指定したサーバーセパレートの設定情報を取得します。</p><p>サーバーセパレートを指定するためには、サーバーセパレート名が必要です。指定しない場合は、取得可能なサーバーセパレートの設定情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2118,6 +2280,7 @@
       }
     },
     "NiftyDescribeVpnGatewayActivities": {
+      "documentation": "<p>拠点間VPNゲートウェイの接続ログ情報を取得します。</p><p>接続ログのエラーについては、該当箇所の行数とエラーコードが返却されます。</p><p>拠点間VPNゲートウェイを指定するためには、拠点間VPNゲートウェイIDまたは拠点間VPNゲートウェイ名が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2131,6 +2294,7 @@
       }
     },
     "NiftyDescribeWebProxies": {
+      "documentation": "<p>ルーターに設定されているWebプロキシの設定情報を取得します。</p><p>ルーターを指定するためには、ルーターユニークIDまたはルーター名が必要です。</p><p>ルーターを指定しない場合、取得できるすべてのルーター情報を取得します。</p><p>絞り込み条件の項目の値「Filter.n.Value.m」を指定する際、ワイルドカード文字（曖昧検索）指定可能です。「∗」は0個以上任意文字、 「?」は1個任意文字、「¥」はエスケープ変換文字（「∗niftycloud¥?¥¥」は「∗niftycloud?¥」を検索）となります。</p><p>曖昧検索が指定可能な絞り込み条件の項目名は、下記の通りです。</p> <ul> <li>router-name</li> <li>listen-network-name</li> <li>listen-port</li> <li>proxy-bypass-network-name</li> <li>option-name-server</li> </ul>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2144,6 +2308,7 @@
       }
     },
     "NiftyDisableDhcp": {
+      "documentation": "<p>ルーターに設定されたプライベートLANに対してDHCP機能を無効化します。</p><p>ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2157,6 +2322,7 @@
       }
     },
     "NiftyDisassociateNatTable": {
+      "documentation": "<p>ルーターに設定されたNATテーブルを解除します。</p><p>ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2170,6 +2336,7 @@
       }
     },
     "NiftyDisassociateRouteTableFromElasticLoadBalancer": {
+      "documentation": "<p>マルチロードバランサーからルートテーブル設定を解除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2183,6 +2350,7 @@
       }
     },
     "NiftyDisassociateRouteTableFromVpnGateway": {
+      "documentation": "<p>拠点間VPNゲートウェイに設定されたルートテーブルを解除します。</p><p>拠点間VPNゲートウェイがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「DescribeVpnGateways」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2196,6 +2364,7 @@
       }
     },
     "NiftyEnableDhcp": {
+      "documentation": "<p>ルーターに設定されたプライベートLANに対して、DHCP機能を有効化します。</p><p>ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2209,6 +2378,7 @@
       }
     },
     "NiftyModifyAddressAttribute": {
+      "documentation": "<p>付替IPアドレスの基本情報を更新します。</p><p>1回のリクエストで、1つの付替IPアドレスの情報を更新できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2222,6 +2392,7 @@
       }
     },
     "NiftyModifyCustomerGatewayAttribute": {
+      "documentation": "<p>指定されたカスタマーゲートウェイの詳細情報を更新します。1回のリクエストで1つのカスタマーゲートウェイの情報を更新できます。</p><p>カスタマーゲートウェイを指定するためには、カスタマーゲートウェイユニークIDまたはカスタマーゲートウェイ名が必要です。</p><p>メモの変更において、更新値に何も指定しない場合、空の情報で更新されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2235,6 +2406,7 @@
       }
     },
     "NiftyModifyElasticLoadBalancerAttributes": {
+      "documentation": "<p>指定したマルチロードバランサーの詳細情報を更新します。1回のリクエストで、1つのマルチロードバランサーの情報を更新できます。</p><p>マルチロードバランサーを指定するためには、マルチロードバランサー名または、マルチロードバランサーユニークID・プロトコル・待ち受けポート番号・宛先ポート番号が必要です。</p><p>Sorryページオプションは、プロトコル「HTTP」または「HTTPS」の場合に利用が可能です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2248,6 +2420,7 @@
       }
     },
     "NiftyModifyInstanceSnapshotAttribute": {
+      "documentation": "<p>作成済ワンデイスナップショットに対するメモを更新します。</p><p>メモを更新するワンデイスナップショットを指定するには、スナップショットIDまたはスナップショット名の指定が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2261,6 +2434,7 @@
       }
     },
     "NiftyModifyKeyPairAttribute": {
+      "documentation": "<p>指定したSSHキーの情報を更新します。</p><p>SSHキーを指定するためには、SSHキー名が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2274,6 +2448,7 @@
       }
     },
     "NiftyModifyPrivateLanAttribute": {
+      "documentation": "<p>プライベートLANの基本情報の変更を行います。1回のリクエストで、1つのプライベートLANの情報を更新できます。</p><p>プライベートLANを指定するためには、ネットワークユニークIDまたはプライベートLAN名が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2287,6 +2462,7 @@
       }
     },
     "NiftyModifyRouterAttribute": {
+      "documentation": "<p>指定したルーターの詳細情報を更新します。1回のリクエストで、1つのルーターサーバーの情報を更新できます。ルーターを指定するためには、ルーターユニークIDまたはルーター名が必要です。</p><p>ルーター名もしくはルータータイプを更新時、ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2300,6 +2476,7 @@
       }
     },
     "NiftyModifyVpnGatewayAttribute": {
+      "documentation": "<p>指定された拠点間VPNゲートウェイの詳細情報を更新します。1回のリクエストで、1つの拠点間VPNゲートウェイの情報を更新できます。</p><p>拠点間VPNゲートウェイを指定するためには、拠点間VPNゲートウェイIDまたは拠点間VPNゲートウェイ名が必要です。</p><p>拠点間VPNゲートウェイ名、拠点間VPNゲートウェイタイプの更新時、拠点間VPNゲートウェイがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「DescribeVpnGateways」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2313,6 +2490,7 @@
       }
     },
     "NiftyModifyWebProxyAttribute": {
+      "documentation": "<p>ルーターに設定されたWebプロキシの詳細情報を更新します。1回のリクエストで、1つのWebプロキシの情報を更新できます。</p><p>ルーターを指定するためには、ルーターユニークIDまたはルーター名が必要です。</p><p>受け側／迂回先ネットワークは、ルーターと紐付きのあるネットワークを指定する必要があります。</p><p>受け側／迂回先ネットワーク、受け側ポート、DNSサーバーのアドレスの更新時、ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2326,6 +2504,7 @@
       }
     },
     "NiftyRebootRouters": {
+      "documentation": "<p>指定したルーターを再起動をします。</p><p>ルーターを指定するためには、ルーターユニークID またはルーター名が必要です。</p><p>ルーターの再起動には、時間がかかることがあります。ルーターのステータスは、API「NiftyDescribeRouters」のレスポンス値「state」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2339,6 +2518,7 @@
       }
     },
     "NiftyRebootVpnGateways": {
+      "documentation": "<p>指定した拠点間VPNゲートウェイを再起動します。</p><p>拠点間VPNゲートウェイを指定するためには、拠点間VPNゲートウェイユニークIDまたは拠点間VPNゲートウェイ名が必要です。</p><p>拠点間VPNゲートウェイの再起動には、時間がかかることがあります。拠点間VPNゲートウェイのステータスは、API「DescribeVpnGateways」のレスポンス値「state」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2352,6 +2532,7 @@
       }
     },
     "NiftyRegisterInstancesWithElasticLoadBalancer": {
+      "documentation": "<p>指定したマルチロードバランサーにサーバーを追加します。</p><p>マルチロードバランサーを指定するためには、マルチロードバランサー名または、マルチロードバランサーユニークID・プロトコル・待ち受けポート番号・宛先ポート番号が必要です。</p><p>また、サーバーを指定するためには、サーバー名または、サーバーユニークIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2365,6 +2546,7 @@
       }
     },
     "NiftyRegisterInstancesWithSeparateInstanceRule": {
+      "documentation": "<p>指定したサーバーセパレートを、指定したサーバーへ適用します。1つのサーバーセパレートに適用可能なサーバーの上限数は、2台となります。</p><p>サーバーセパレートを指定するためには、サーバーセパレート名が必要です。</p><p>またサーバーを指定するためには、サーバー名またはサーバーユニークIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2378,6 +2560,7 @@
       }
     },
     "NiftyRegisterPortWithElasticLoadBalancer": {
+      "documentation": "<p>指定したマルチロードバランサーにポートを追加します。</p><p>マルチロードバランサーを指定するためには、マルチロードバランサー名または、マルチロードバランサーユニークID・プロトコル・待ち受けポート番号・宛先ポート番号が必要です。</p><p>ポートの追加に成功した場合は、以下のAPI を実行する必要があります。</p> <ul> <li>API「<a href=\"https://docs.nifcloud.com/cp/api/NiftyRegisterInstancesWithElasticLoadBalancer.htm\">NiftyRegisterInstancesWithElasticLoadBalancer</a>」（サーバー設定）</li> <li>API「<a href=\"https://docs.nifcloud.com/cp/api/NiftyConfigureElasticLoadBalancerHealthCheck.htm\">NiftyConfigureElasticLoadBalancerHealthCheck</a>」（ヘルスチェック設定）</li> </ul>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2391,6 +2574,7 @@
       }
     },
     "NiftyRegisterRoutersWithSecurityGroup": {
+      "documentation": "<p>指定したファイアウォールグループを、ルーターへ適用します。</p><p>ルーターへ適用するには、ルーター名またはルーターユニークIDを指定します。</p><p>ファイアウォールグループのルーター適用には、時間がかかることがあります。</p><p>「DescribeSecurityGroups」のレスポンス「groupStatus」にて適用ステータスを確認することができます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2404,6 +2588,7 @@
       }
     },
     "NiftyRegisterVpnGatewaysWithSecurityGroup": {
+      "documentation": "<p>指定したファイアウォールグループを拠点間VPNゲートウェイへ適用します。</p><p>拠点間VPNゲートウェイへ適用するには、拠点間VPNゲートウェイ名または拠点間VPNゲートウェイユニークIDを指定します。</p><p>ファイアウォールグループの拠点間VPNゲートウェイ適用には、時間がかかる場合があります。</p><p>「DescribeSecurityGroups」のレスポンス「groupStatus」にて適用ステータスを確認することができます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2417,6 +2602,7 @@
       }
     },
     "NiftyReleaseRouterBackupState": {
+      "documentation": "<p>ルーターのバックアップ状態を解除します。</p><p>ルーターを指定するためには、ルーターユニークIDまたはルーター名が必要です。</p><p>バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2430,6 +2616,7 @@
       }
     },
     "NiftyReleaseVpnGatewayBackupState": {
+      "documentation": "<p>指定した拠点間VPNゲートウェイのバックアップ状態を解除します。</p><p>拠点間VPNゲートウェイを指定するためには、拠点間VPNゲートウェイユニークIDまたは拠点間VPNゲートウェイ名が必要です。</p><p>バックアップを保持しているかどうかはAPI「DescribeVpnGateways」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2443,6 +2630,7 @@
       }
     },
     "NiftyReplaceDhcpConfig": {
+      "documentation": "<p>DHCPコンフィグの入れ替えを行います。</p><p>入れ替え前と同一のコンフィグIDを指定した場合は、更新せずに正常終了します。</p><p>ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2456,6 +2644,7 @@
       }
     },
     "NiftyReplaceDhcpOption": {
+      "documentation": "<p>ルーターに登録されたDHCPオプションを解除し、指定したDHCPオプションに入れ替えます。</p><p>ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2469,6 +2658,7 @@
       }
     },
     "NiftyReplaceElasticLoadBalancerLatestVersion": {
+      "documentation": "<p>指定したマルチロードバランサーを最新バージョンに入れ替えます。</p><p>最新バージョンに入れ替わる対象マルチロードバランサーについては、対象マルチロードバランサーの設定してある全てのプロトコル・待ち受けポート・宛先ポートが対象となります。</p><p>マルチロードバランサーを最新バージョンに入れ替える際は、通信断を伴います。通信断となる時間については、サービス仕様ページをご参照ください。</p><p>マルチロードバランサーを指定するためには、マルチロードバランサーユニークIDまたはマルチロードバランサー名が必要です。</p><p>マルチロードバランサーが最新バージョンかどうかは、API「<a href=\"https://docs.nifcloud.com/cp/api/NiftyDescribeElasticLoadBalancers.htm\">NiftyDescribeElasticLoadBalancers</a>」のレスポンス値「<a href=\"https://docs.nifcloud.com/cp/api/NiftyDescribeElasticLoadBalancers.htm#IsLatest\">IsLatest</a>」で確認できます。</p><p>マルチロードバランサー名とマルチロードバランサーユニークIDが両方指定された場合は、マルチロードバランサーユニークIDが優先されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2482,6 +2672,7 @@
       }
     },
     "NiftyReplaceElasticLoadBalancerListenerSSLCertificate": {
+      "documentation": "<p>指定したマルチロードバランサーに対してSSL証明書を入れ替えます。</p><p>マルチロードバランサーを指定するためには、マルチロードバランサー名または、マルチロードバランサーユニークID・プロトコル・待ち受けポート番号・宛先ポート番号が必要です。</p><p>SSL証明書を指定するためには、SSL証明書の発行識別子が必要です。</p><p>指定したSSL証明書のステータスが「有効」かつ、数量無制限の証明書のみ設定することができます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2495,6 +2686,7 @@
       }
     },
     "NiftyReplaceNatRule": {
+      "documentation": "<p>NATテーブルに登録されたNATルールを指定したNATルールに入れ替える。</p><p>NATテーブルを指定するためには、NATテーブルIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2508,6 +2700,7 @@
       }
     },
     "NiftyReplaceNatTableAssociation": {
+      "documentation": "<p>ルーターに設定されたルートNATテーブルを解除し、指定したNATテーブルに入れ替えます。</p><p>NATテーブルを指定するためには、NATテーブルIDが必要です。</p><p>ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2521,6 +2714,7 @@
       }
     },
     "NiftyReplaceRouteTableAssociationWithElasticLoadBalancer": {
+      "documentation": "<p>マルチロードバランサーに設定するルートテーブルを変更します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2534,6 +2728,7 @@
       }
     },
     "NiftyReplaceRouteTableAssociationWithVpnGateway": {
+      "documentation": "<p>拠点間VPNゲートウェイへのルートテーブル設定入れ替えを行う。</p><p>拠点間VPNゲートウェイに設定されたルートテーブルを解除し、指定したルートテーブルに入れ替える。ルートテーブルを指定するためには、ルートテーブルIDが必要です。</p><p>拠点間VPNゲートウェイがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「DescribeVpnGateways」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2547,6 +2742,7 @@
       }
     },
     "NiftyReplaceRouterLatestVersion": {
+      "documentation": "<p>指定したルーターをの最新バージョンのに入れ替えします。入替前のルーターは、バックアップとして一定期間保持されます。</p><p>ルーターを指定するためには、ルーターユニークIDまたはルーター名が必要です。</p><p>ルーターが既にバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2560,6 +2756,7 @@
       }
     },
     "NiftyReplaceVpnGatewayLatestVersion": {
+      "documentation": "<p>指定した拠点間VPNゲートウェイを最新バージョンに入れ替えます。</p><p>入替前の拠点間VPNゲートウェイは、バックアップとして一定期間保持されます。拠点間VPNゲートウェイを指定するためには、拠点間VPNゲートウェイユニークIDまたは拠点間VPNゲートウェイ名が必要です。</p><p>拠点間VPNゲートウェイが既にバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「DescribeVpnGateways」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2573,6 +2770,7 @@
       }
     },
     "NiftyRestoreInstanceSnapshot": {
+      "documentation": "<p>作成済ワンデイスナップショットからのリストアを行います。</p><p>リストアするスナップショットを指定するには、スナップショットIDまたはスナップショット名の指定が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2586,6 +2784,7 @@
       }
     },
     "NiftyRestoreRouterPreviousVersion": {
+      "documentation": "<p>指定したルーターを、以前の旧バージョン（バックアップ状態）に差し戻します。 ルーターを指定するためには、ルーターユニークIDまたはルーター名が必要です。</p><p>バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2599,6 +2798,7 @@
       }
     },
     "NiftyRestoreVpnGatewayPreviousVersion": {
+      "documentation": "<p>指定した拠点間VPNゲートウェイを、旧バージョン（バックアップ状態）に差し戻します。</p><p>拠点間VPNゲートウェイを指定するためには、拠点間VPNゲートウェイユニークIDまたは拠点間VPNゲートウェイ名が必要です。</p><p>バックアップを保持しているかどうかはAPI「DescribeVpnGateways」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2612,6 +2812,7 @@
       }
     },
     "NiftyRetryImportInstance": {
+      "documentation": "<p>VMインポートエラーとなったVMに対して、再インポート処理を実行します。</p><p>VMインポートエラーのサーバーのみ指定ができます。</p><p>サーバーを指定するためには、サーバー名またはサーバーユニークIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2625,6 +2826,7 @@
       }
     },
     "NiftySetLoadBalancerSSLPoliciesOfListener": {
+      "documentation": "<p>指定したロードバランサーのリスナーに対してSSLセキュリティポリシーの設定を行います。<br> ロードバランサーを指定するためには、ロードバランサー名・ポート番号が必要です。<br> また、SSLセキュリティポリシーを指定するためには、SSLセキュリティポリシーのテンプレートID、もしくはテンプレート名が必要です。<br> 対象ロードバランサーに適用可能なSSLセキュリティポリシーについては、「NiftyDescribeLoadBalancerSSLPolicies」で確認可能です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2638,6 +2840,7 @@
       }
     },
     "NiftyUnsetLoadBalancerSSLPoliciesOfListener": {
+      "documentation": "<p>指定したロードバランサーのリスナーに対してSSLセキュリティポリシー設定の解除を行います。<br> ロードバランサーを指定するためには、ロードバランサー名・ポート番号が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2651,6 +2854,7 @@
       }
     },
     "NiftyUpdateAlarm": {
+      "documentation": "<p>基本監視ルールを更新します。</p><p>監視ルールを指定する場合は、監視ルール名および機能名が必要です。</p><p>対象リソース、監視ルール、通知先メールアドレスの更新が指定された場合は、既存の内容を破棄し、指定した内容で再設定されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2664,6 +2868,7 @@
       }
     },
     "NiftyUpdateAutoScalingGroup": {
+      "documentation": "<p>指定したオートスケールの定義を変更します。</p><p>オートスケールを指定するためには、オートスケール名が必要です。</p><p>既存のオートスケール定義情報に対し、指定された値でオートスケール定義が更新されるため、更新しない値も設定する必要があります。ただしイメージIDは例外的に省略可能とし、省略時は変更しない動作となります。</p><p>イメージを変更する場合、増設ディスク付きのイメージは使用できません。また、変更前のイメージと異なるゾーンのイメージも使用できません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2677,6 +2882,7 @@
       }
     },
     "NiftyUpdateElasticLoadBalancer": {
+      "documentation": "<p>指定したマルチロードバランサーの設定を変更します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2690,6 +2896,7 @@
       }
     },
     "NiftyUpdateInstanceNetworkInterfaces": {
+      "documentation": "<p>サーバーのネットワーク設定を指定した状態に変更します。</p><p>マルチIPアドレスが設定されているサーバーについて</p><p>・グローバルネットワーク設定の変更は行うことができません</p><p>・プライベートネットワーク設定の変更は行うことができます</p><p>サーバーに設定されているマルチIPアドレスのネットワークを他のネットワークに変更したい、または取り外したい場合はAPI「DisassociateMultiIpAddressGroup」を実行する必要があります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2703,6 +2910,7 @@
       }
     },
     "NiftyUpdateRouterNetworkInterfaces": {
+      "documentation": "<p>指定したルーターのネットワークの割り当てを変更します。</p><p>ルーターを指定するためには、ルーターユニークIDまたはルーター名が必要です。</p><p>また、ルーターに割り当てるネットワークを指定するためには、ネットワークIDまたはネットワーク名が必要です。</p><p>ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2716,6 +2924,7 @@
       }
     },
     "NiftyUpdateSeparateInstanceRule": {
+      "documentation": "<p>指定したサーバーセパレートの設定情報を更新します。</p><p>サーバーセパレートを指定するためには、サーバーセパレート名が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2729,6 +2938,7 @@
       }
     },
     "NiftyUpdateVpnGatewayNetworkInterfaces": {
+      "documentation": "<p>拠点間VPNゲートウェイのネットワーク設定変更をします。</p><p>拠点間VPNゲートウェイのユーザ所有ネットワークはIPアドレスが指定できます。</p><p>拠点間VPNゲートウェイを指定するためには、拠点間VPNゲートウェイIDまたは拠点間VPNゲートウェイ名が必要です。</p><p>拠点間VPNゲートウェイがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「DescribeVpnGateways」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2742,6 +2952,7 @@
       }
     },
     "RebootInstances": {
+      "documentation": "<p>指定したサーバーを再起動します。</p><p>サーバーを指定するためには、サーバー名が必要です。</p><p>サーバーの再起動には、時間がかかることがあります。サーバーのステータスは、API「DescribeInstances」のレスポンス値「instanceState」で確認できます。</p><p>NiftyIsBiosにtrueを指定すると、BIOS起動画面で停止した状態となります。コンソールからBIOS設定操作を行ってください。</p><p>UserDataを指定してリクエストする場合は、POSTのみの対応となりますので、ご注意ください。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2755,6 +2966,7 @@
       }
     },
     "RebootRemoteAccessVpnGateway": {
+      "documentation": "<p>指定したリモートアクセスVPNゲートウェイを再起動します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2768,6 +2980,7 @@
       }
     },
     "RefreshInstanceBackupRule": {
+      "documentation": "<p>指定したバックアップルールに対して、初回バックアップを再作成します。<br> 対象バックアップルールのステータスが「need_refresh（バックアップ取得不可）」の場合のみ実行可能となります。</p><p>バックアップルールのステータスを確認する場合は、API「<a href=\"https://docs.nifcloud.com/cp/api/DescribeInstanceBackupRules.htm\">DescribeInstanceBackupRules</a>」のレスポンス値「status（バックアップルールのステータス）」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2781,6 +2994,7 @@
       }
     },
     "RegisterCorporateInfoForCertificate": {
+      "documentation": "<p>SSL証明書を管理する申請法人情報を登録または更新します。</p><p>以下の利用規約をご確認の上、パラメーター「Agreement」を指定します。</p><p><a href=\"https://www.geotrust.co.jp/resources/repository/legal.html\">GeoTrust SSL証明書利用規約</a></p><p><a href=\"https://www.cybertrust.ne.jp/ssl/repository/index.html\">CyberTrust SureServer証明書利用規約</a></p><p>「Agreement」を指定しない場合、申請法人情報登録、更新はできません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2794,6 +3008,7 @@
       }
     },
     "RegisterInstancesWithLoadBalancer": {
+      "documentation": "<p>指定したロードバランサーにサーバーを追加します。</p><p>ロードバランサーを指定するためには、ロードバランサー名・ポート番号が必要です。自分が所有していないロードバランサーを指定する場合は、「ニフクラID.ロードバランサー名」の形式で指定する必要があります。</p><p>またサーバーを指定するためには、サーバー名が必要です。IPアドレスを固定化しているサーバーを指定できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2807,6 +3022,7 @@
       }
     },
     "RegisterInstancesWithSecurityGroup": {
+      "documentation": "<p>指定したファイアウォールグループを、指定したサーバーへ適用します。</p><p>ファイアウォールグループを指定するためには、ファイアウォールグループ名が必要です。</p><p>またサーバーを指定するためには、サーバー名が必要です。</p><p>ファイアウォールグループへサーバーを適用するには、時間がかかることがあります。</p><p>API「DescribeSecurityGroups」のレスポンス値「groupStatus」でファイアウォールグループのステータスを確認できます。</p><p>また、ファイアウォールグループのステータスが「適用済み」の場合、適用したサーバーが正しくファイアウォールグループに反映されているかの確認が必要です。</p><p>同じくAPI「DescribeSecurityGroups」のレスポンス値「instancesSet」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2820,6 +3036,7 @@
       }
     },
     "RegisterPortWithLoadBalancer": {
+      "documentation": "<p>指定したロードバランサーにポートを追加します。</p><p>ロードバランサーを指定するためには、ロードバランサー名が必要です。</p><p>ポートの追加に成功した場合は、以下のAPIを実行する必要があります。</p> <ul> <li>API「RegisterInstancesWithLoadBalancer」（サーバー設定）</li> <li>API「ConfigureHealthCheck」（ヘルスチェック設定）</li> </ul> <p>フィルターの設定は、「すべてのアクセスを許可する」になっています。変更を行う場合は以下のAPIを実行する必要があります。</p> <ul> <li>API「SetFilterForLoadBalancer」（フィルター設定）</li> </ul> <p>Listeners.member.n.ProtocolとListeners.member.n.LoadBalancerPortを両方指定した場合は、Listeners.member.n.LoadBalancerPortの指定が優先されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2833,6 +3050,7 @@
       }
     },
     "ReleaseAddress": {
+      "documentation": "<p>付替IPアドレスの解放を行います。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2846,6 +3064,7 @@
       }
     },
     "ReleaseMultiIpAddresses": {
+      "documentation": "<p>マルチIPアドレスグループで確保しているIPアドレスを解放します。</p><p>マルチIPアドレスグループで確保している全てのIPアドレスを解放することはできません。</p><p>マルチIPアドレスグループで確保しているIPアドレスを全て解放したい場合は、以下のAPIを実行する必要があります。</p> <ul> <li>API「<a href=\"https://docs.nifcloud.com/cp/api/DeleteMultiIpAddressGroup.htm\">DeleteMultiIpAddressGroup</a>」</li> </ul>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2859,6 +3078,7 @@
       }
     },
     "ReplaceRemoteAccessVpnGatewayLatestVersion": {
+      "documentation": "<p>指定したリモートアクセスVPNゲートウェイをアップグレードします。<br> リモートアクセスVPNゲートウェイをアップグレードする場合には、リモートアクセスVPNゲートウェイが再起動されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2872,6 +3092,7 @@
       }
     },
     "ReplaceRoute": {
+      "documentation": "<p>ルートテーブルに登録されたルート情報を指定したルート情報に入れ替える。</p><p>ルートテーブルを指定するためには、ルートテーブルIDが必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2885,6 +3106,7 @@
       }
     },
     "ReplaceRouteTableAssociation": {
+      "documentation": "<p>ルーターに設定されたルートテーブルを解除し、指定したルートテーブルに入れ替える。</p><p>ルートテーブルを指定するためには、ルートテーブルIDが必要です。</p><p>ルーターがバックアップを保持している場合は、パラメーター「Agreement」に「true」を設定し、バックアップを解除する必要があります。バックアップを保持しているかどうかはAPI「NiftyDescribeRouters」のレスポンス値「isBackup」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2898,6 +3120,7 @@
       }
     },
     "RevokeSecurityGroupIngress": {
+      "documentation": "<p>指定したファイアウォールグループから許可ルールを削除します。</p><p>ファイアウォールグループを指定するためには、ファイアウォールグループ名が必要です。</p><p>また許可ルールを指定するためには、設定されている 許可プロトコル名・許可ポート・許可するファイアウォールグループまたは許可するIPアドレス が必要です。</p><p>許可ルールの許可プロトコルがTCPかUDPの場合、許可ポートの指定が必要です。ポートを単一指定する際は、許可開始ポートのみを指定します。ポートを範囲指定する際は、許可終了ポートには許可開始ポートの値以上を指定します。</p><p>許可ルールの削除には、時間がかかることがあります。API「DescribeSecurityGroups」のレスポンス値「groupStatus」でファイアウォールグループのステータスを確認できます。</p><p>また、ファイアウォールグループのステータスが「適用済み」の場合、削除した許可ルールが正しくファイアウォールグループに反映されているかの確認が必要です。</p><p>同じくAPI「DescribeSecurityGroups」のレスポンス値「ipPermissions」または「groups」で確認できます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2911,6 +3134,7 @@
       }
     },
     "RunInstances": {
+      "documentation": "<p>サーバーを新規作成します。1回のリクエストで、1つのサーバーを作成できます。</p><p>サーバーの作成には、時間がかかることがあります。このAPIのレスポンス「instanceState」を確認し「pending」が返ってきた、またはタイムアウトした場合は、API「DescribeInstances」のレスポンス値「instanceState」でサーバーのステータスを確認できます。</p><p>APIのパラメーターに「IpType」、「NetworkInterface.n.NetworkId」両方を指定しなかった場合、「IpType」パラメーターのdefault値が適用されます。</p><p>UserDataを指定してリクエストする場合は、POSTのみの対応となりますので、ご注意ください。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2924,6 +3148,7 @@
       }
     },
     "SetFilterForLoadBalancer": {
+      "documentation": "<p>指定したロードバランサーにアクセスフィルターを設定します。</p><p>ロードバランサーを指定するためには、ロードバランサー名・ポート番号が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2937,6 +3162,7 @@
       }
     },
     "SetLoadBalancerListenerSSLCertificate": {
+      "documentation": "<p>指定したロードバランサーに対してSSL証明書を取り付けます。</p><p>ロードバランサーを指定するためには、ロードバランサー名・ポート番号が必要です。</p><p>SSL証明書を指定するためには、SSL証明書の発行識別子が必要です。</p><p>指定したSSL証明書のステータスが「有効」かつ、数量無制限の証明書のみ設定することができます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2950,6 +3176,7 @@
       }
     },
     "SetRemoteAccessVpnGatewayCACertificate": {
+      "documentation": "<p>リモートアクセスVPNゲートウェイに、CA証明書を設定します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2963,6 +3190,7 @@
       }
     },
     "SetRemoteAccessVpnGatewaySSLCertificate": {
+      "documentation": "<p>リモートアクセスVPNゲートウェイに、SSL証明書を設定します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2976,6 +3204,7 @@
       }
     },
     "StartInstances": {
+      "documentation": "<p>指定したサーバーを起動します。</p><p>サーバーを指定するためには、サーバー名が必要です。</p><p>サーバーの起動には、時間がかかることがあります。このAPIのレスポンス「currentState.name」を確認して「pending」が返ってきた場合は、API「DescribeInstances」のレスポンス値「instanceState」でサーバーのステータスを確認できます。</p><p>NiftyIsBiosをtrueに指定すると、BIOS起動画面で停止した状態となります。コンソールからBIOS設定操作を行ってください。</p><p>UserDataを指定してリクエストする場合は、POSTのみの対応となりますので、ご注意ください。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -2989,6 +3218,7 @@
       }
     },
     "StopInstances": {
+      "documentation": "<p>指定したサーバーを停止します。</p><p>サーバーを指定するためには、サーバー名が必要です。</p><p>サーバーの停止には、時間がかかることがあります。このAPIのレスポンス「currentState.name」を確認して「pending」が返ってきた場合は、API「DescribeInstances」のレスポンス値「instanceState」でサーバーのステータスを確認できます。</p><p>なお、強制オプションに「true」を指定して実行した際に、サーバーが停止できない状態などのエラーが返されることがあります。強制オプションに「true」を指定して実行した場合には、システムチェックや修復を行うことをおすすめします。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -3002,6 +3232,7 @@
       }
     },
     "TerminateInstances": {
+      "documentation": "<p>指定したサーバーを削除します。</p><p>サーバーを指定するためには、サーバー名が必要です。</p><p>サーバーの削除には、時間がかかることがあります。このAPIのレスポンス「currentState.name」を確認して「pending」が返ってきた場合は、API「DescribeInstances」のレスポンス値「instanceState」でサーバーのステータスを確認できます。また、API「DescribeInstances」のレスポンスに該当情報がない場合は、削除処理は成功しています。</p><p>アップロード中またはインポート中のサーバーを、このAPIで削除することはできません。API「CancelUpload」を使用してください。</p><p>関連する付替IPアドレス設定もあわせて解除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -3015,6 +3246,7 @@
       }
     },
     "UnsetLoadBalancerListenerSSLCertificate": {
+      "documentation": "<p>指定したロードバランサーに設定されているSSL証明書をはずします。</p><p>ロードバランサーを指定するためには、ロードバランサー名・ポート番号が必要です。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -3028,6 +3260,7 @@
       }
     },
     "UnsetRemoteAccessVpnGatewayCACertificate": {
+      "documentation": "<p>リモートアクセスVPNゲートウェイから、CA証明書を解除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -3041,6 +3274,7 @@
       }
     },
     "UnsetRemoteAccessVpnGatewaySSLCertificate": {
+      "documentation": "<p>リモートアクセスVPNゲートウェイから、SSL証明書を解除します。</p><p>リモートアクセスVPNゲートウェイのバージョンが v2.0.0 以上の場合、利用できません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -3054,6 +3288,7 @@
       }
     },
     "UpdateLoadBalancer": {
+      "documentation": "<p>指定したロードバランサーの定義を変更します。</p><p>ポート定義を更新する場合は、ポート番号もあわせて指定します。</p><p>ListenerUpdate.Listener.Protocolは、指定したListenerUpdate.Listener.LoadBalancerPortの値によって、設定値と異なる場合があります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -3067,6 +3302,7 @@
       }
     },
     "UpdateLoadBalancerOption": {
+      "documentation": "<p>指定したロードバランサーのオプション設定を更新します。</p><p>各オプションの利用設定がtrueの場合は有効、falseの場合は無効へ更新します。</p><p>Sorryページオプションを有効にするためには指定するロードバランサーの待ち受けポートが80番である必要があります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -3080,6 +3316,7 @@
       }
     },
     "UpdateSecurityGroup": {
+      "documentation": "<p>ファイアウォールグループの設定情報を更新します。1回のリクエストで、1つのファイアウォールグループの情報を更新できます。</p><p>ファイアウォールグループを指定するためには、ファイアウォールグループ名が必要です。</p><p>ファイアウォールグループの設定情報の更新には、時間がかかることがあります。API「DescribeSecurityGroups」のレスポンス値「groupStatus」でファイアウォールグループのステータスを確認できます。</p><p>また、ファイアウォールグループのステータスが「適用済み」の場合、更新した情報が正しくファイアウォールグループに反映されているかの確認が必要です。同じくAPI「DescribeSecurityGroups」のレスポンス値で確認できます。</p><p>なお、パラメーター「GroupLogFilterNetBios」と「GroupLogFilterBroadcast」については、指定した場合でもDefaultの値が適用されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -3093,6 +3330,7 @@
       }
     },
     "UploadIsoImage": {
+      "documentation": "<p>ISOイメージをアップロードします。</p><p>アップロードするISOイメージのURLは、ニフクラからアクセス可能なURLである必要があります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -3106,6 +3344,7 @@
       }
     },
     "UploadSslCertificate": {
+      "documentation": "<p>指定したSSL証明書をアップロードします。1回のリクエストで、SSL証明書のキー・CA・証明書の1セットをアップロードできます。 鍵長が4096bitを超える場合、アップロードできません。 </p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"

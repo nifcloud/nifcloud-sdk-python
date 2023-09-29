@@ -12,6 +12,7 @@
   },
   "operations": {
     "AddSourceIdentifierToSubscription": {
+      "documentation": "<p>イベントサブスクリプションにリソースIDを追加します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -26,6 +27,7 @@
       }
     },
     "AuthorizeDBSecurityGroupIngress": {
+      "documentation": "<p>下記どちらかの方法でDBファイアウォールグループへの接続を許可します。</p> <ul> <li><p>ニフクラのサーバーからのプライベートネットワーク経由でDBサーバーへアクセスしたい場合、ニフクラのファイアウォールグループからの接続を許可できます。</p></li> <li><p>インターネット経由でDBサーバーへアクセスしたい場合、特定のIP帯からの接続を許可できます。</p></li> </ul> <p>DBファイアウォールグループに対して、同一ゾーンのニフクラのファイアウォールグループからの接続許可は可能ですが、別ゾーンのニフクラのファイアウォールグループからの接続許可はできません。</p><p>このAPIアクションではCIDRIP（IP範囲）またはEC2SecurityGroupName（ニフクラのファイアウォールグループ名）を必ず指定する必要があります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -40,6 +42,7 @@
       }
     },
     "CopyDBSnapshot": {
+      "documentation": "<p>DBスナップショットをコピーします。</p><p>コピー元のDBスナップショットはステータスが”available”でなければなりません。</p><p>自動バックアップ機能で作成されたDBスナップショットのみコピーすることができます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -54,6 +57,7 @@
       }
     },
     "CreateDBInstance": {
+      "documentation": "<p>DBサーバーを新規作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -68,6 +72,7 @@
       }
     },
     "CreateDBInstanceReadReplica": {
+      "documentation": "<p>DBサーバーからリードレプリカを作成します。</p><p>すべてのリードレプリカは冗長化機能無効・自動バックアップ無効で作成されます。</p><p>リクエストパラメーターで指定したもの以外の属性は、作成元のDBサーバーから継承されます。</p><p>[重要]</p><p>作成元のDBサーバーは自動バックアップが有効でなければなりません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -82,6 +87,7 @@
       }
     },
     "CreateDBParameterGroup": {
+      "documentation": "<p>DBパラメーターグループを作成します。</p><p>パラメーターの値をカスタマイズしたい場合には、ModifyDBParameterGroupを使います。</p><p>起動しているDBサーバーへ新しいDBパラメーターグループを適用したい場合には、DBサーバーの再起動が必要になります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -96,6 +102,7 @@
       }
     },
     "CreateDBSecurityGroup": {
+      "documentation": "<p>DBファイアウォールグループを作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -110,6 +117,7 @@
       }
     },
     "CreateDBSnapshot": {
+      "documentation": "<p>DBスナップショットを作成します。</p><p>作成元となるDBサーバーのステータスは”available”でなければなりません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -124,6 +132,7 @@
       }
     },
     "CreateEventSubscription": {
+      "documentation": "<p>イベントサブスクリプションを新規作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -138,6 +147,7 @@
       }
     },
     "DeleteDBInstance": {
+      "documentation": "<p>DBサーバーを削除します。</p><p>成功したレスポンスはリクエストが正しく受け取られたことを表します。</p><p>DBサーバーを削除すると、自動バックアップ機能で作成されたバックアップも削除され復元することができなくなります。</p><p>手動で作成したDBスナップショットは削除されません。</p><p>削除前に最後のDBスナップショットを作成することを指定した場合、DBスナップショットが作成されるまでDBサーバーのステータスはdeleting(削除中)になります。</p><p>この操作の進捗状況を確認するにはDescribeDBInstanceアクションを利用してください。</p><p>このアクションは一度送信するとキャンセル・取り消しを行うことはできません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -152,6 +162,7 @@
       }
     },
     "DeleteDBParameterGroup": {
+      "documentation": "<p>DBパラメーターグループを削除します。</p><p>DBサーバーに紐づいているDBパラメーターグループを削除することはできません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -165,6 +176,7 @@
       }
     },
     "DeleteDBSecurityGroup": {
+      "documentation": "<p>DBファイアウォールグループを削除します。</p><p>DBサーバーに適用された状態のDBファイアウォールグループを削除することはできません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -178,6 +190,7 @@
       }
     },
     "DeleteDBSnapshot": {
+      "documentation": "<p>DBスナップショットを削除します。</p><p>手動作成したDBスナップショットのみ削除することができます。</p><p>さらに、DBスナップショットのステータスは”available”または”failed”でなければなりません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -192,6 +205,7 @@
       }
     },
     "DeleteEventSubscription": {
+      "documentation": "<p>イベントサブスクリプションを削除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -206,6 +220,7 @@
       }
     },
     "DescribeCertificates": {
+      "documentation": "<p>DBサーバーに適用できるCA証明書情報を取得します。</p><p>このAPIアクションはページネートをサポートしています。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -220,6 +235,7 @@
       }
     },
     "DescribeDBEngineVersions": {
+      "documentation": "<p>データベースエンジンのバージョン情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -234,6 +250,7 @@
       }
     },
     "DescribeDBInstances": {
+      "documentation": "<p>DBサーバーの情報を取得します。</p><p>このAPIアクションはページネートをサポートしています。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -248,6 +265,7 @@
       }
     },
     "DescribeDBLogFiles": {
+      "documentation": "<p>DBサーバー内のログファイルの一覧を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -262,6 +280,7 @@
       }
     },
     "DescribeDBParameterGroups": {
+      "documentation": "<p>DBパラメーターグループの情報を取得します。</p><p>DBParameterGroupName(DBパラメーターグループ名)を指定した場合には、該当するDBパラメーターグループの情報のみが返却されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -276,6 +295,7 @@
       }
     },
     "DescribeDBParameters": {
+      "documentation": "<p>DBパラメーターグループからパラメーターの情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -290,6 +310,7 @@
       }
     },
     "DescribeDBSecurityGroups": {
+      "documentation": "<p>DBファイアウォールグループの情報を取得します。</p><p>DBSecurityGroupName(DBファイアウォールグループ名)が指定された場合は該当するDBファイアウォールグループの情報のみが返却されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -304,6 +325,7 @@
       }
     },
     "DescribeDBSnapshots": {
+      "documentation": "<p>DBスナップショットの情報を取得します。</p><p>このAPIアクションはページネートをサポートしています。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -318,6 +340,7 @@
       }
     },
     "DescribeEngineDefaultParameters": {
+      "documentation": "<p>指定したDBエンジンのデフォルトパラメーターの情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -332,6 +355,7 @@
       }
     },
     "DescribeEventCategories": {
+      "documentation": "<p>各リソースタイプに対するイベントカテゴリの一覧を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -346,6 +370,7 @@
       }
     },
     "DescribeEventSubscriptions": {
+      "documentation": "<p>イベントサブスクリプションの情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -360,6 +385,7 @@
       }
     },
     "DescribeEvents": {
+      "documentation": "<p>過去14日のDBサーバー・DBファイアウォールグループ・DBスナップショット・DBパラメーターグループに関するイベントの情報を取得します。</p><p>特定のリソースについてのイベント情報を取得するには対象のSourceIdentifier(リソース名)とSourceType(リソースタイプ)を指定してください。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -374,6 +400,7 @@
       }
     },
     "DescribeOrderableDBInstanceOptions": {
+      "documentation": "<p>特定のエンジンに紐づくDBサーバーオプションの情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -388,6 +415,7 @@
       }
     },
     "DownloadDBLogFilePortion": {
+      "documentation": "<p>特定のログファイルの最新行を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -402,6 +430,7 @@
       }
     },
     "ModifyDBInstance": {
+      "documentation": "<p>DBサーバーの設定を変更します。</p><p>一度に複数のDB設定を変更することができます。</p><p>一部のパラメーターは、ApplyImmediatelyをfalseに指定しても「今すぐ」適用されることにご注意ください。</p><p>また、設定変更内容によってはIO性能低下・DBサーバー停止・DBサービス停止を伴うことがあります。</p><p>詳しくはユーザガイドとRDB技術仕様/制限値を参照してください。</p> <ul> <li><a href=\"https://docs.nifcloud.com/rdb/guide/server_change.htm\">DBサーバーの設定変更</a></li> <li><a href=\"https://docs.nifcloud.com/rdb/spec/server_maintenance.htm\">メンテナンス</a></li> </ul>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -416,6 +445,7 @@
       }
     },
     "ModifyDBInstanceNetwork": {
+      "documentation": "<p>DBサーバーのプライベートLAN・プライベートIPアドレスを変更します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -430,6 +460,7 @@
       }
     },
     "ModifyDBParameterGroup": {
+      "documentation": "<p>DBパラメーターグループのパラメーターを更新します。</p><p>最大20個のDBパラメーターを1回のリクエストで変更できます。</p><p>適用方法にはapply-immediate(今すぐ)とpending-reboot(再起動待ち)の2種類があります。</p><p>apply-immediateはdynamicパラメーターにのみ利用できます。</p><p>pending-rebootはMySQL、PostgreSQLエンジンの場合はdynamic・static両方のパラメーターに利用できます。</p><p>PostgreSQL エンジンの場合、pending-rebootを指定しても、dynamicパラメーターは即時反映（apply-immediateと同じ動作）になります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -444,6 +475,7 @@
       }
     },
     "ModifyEventSubscription": {
+      "documentation": "<p>イベントサブスクリプションを更新します。</p><p>このAPIでは、リソースIDの変更はできません。</p><p>リソースIDの変更を行うには AddSourceIdentifierToSubscription、RemoveSourceIdentifierFromSubscriptionを使用してください。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -458,6 +490,7 @@
       }
     },
     "NiftyGetMetricStatistics": {
+      "documentation": "<p>RDBサービスのモニタリング情報を取得します。</p><p>モニタリング要素について、詳しくは下記ヘルプページをご確認ください。</p><p><a href=\"https://docs.nifcloud.com/rdb/help/monitoring.htm\">ヘルプ：RDB : モニタリング</a></p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -472,6 +505,7 @@
       }
     },
     "RebootDBInstance": {
+      "documentation": "<p>DBサーバーを再起動します。</p><p>このAPIアクションはDBサーバーに適用されているDBパラメーターグループの中で、ApplyStatus(適用状況)がpending-reboot(再起動待ち)となっているパラメーターを更新します。</p><p>DBサーバーを再起動すると少しの間DBサーバーは機能停止し、その間ステータスはrebooting(再起動中)となります。</p><p>DBサーバーの冗長化機能が有効の場合には、強制的にフェイルオーバーさせることができます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -486,6 +520,7 @@
       }
     },
     "RemoveSourceIdentifierFromSubscription": {
+      "documentation": "<p>イベントサブスクリプションからリソースIDを削除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -500,6 +535,7 @@
       }
     },
     "ResetDBParameterGroup": {
+      "documentation": "<p>DBパラメーターグループのパラメーターをデフォルト値にリセットします。</p><p>特定のパラメーターをリセットするにはParameterName(パラメーター名)とApplyMethod(適用方法)を指定します。</p><p>すべてのパラメーターをリセットするには、DBParameterGroupName(DBパラメーターグループ名)とResetAllParameters(すべてのパラメータをリセットするフラグ)を指定します。</p><p>すべてのパラメーターをリセットする場合、dynamicパラメーターはただちに適用されますが、staticパラメーターはステータスがpending-reboot(再起動待ち)に変わり、DBサーバーが再起動されるかRebootInstanceアクションが呼び出されたときに適用が行われます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -514,6 +550,7 @@
       }
     },
     "ResetExternalMaster": {
+      "documentation": "<p>外部レプリケーションを解除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -528,6 +565,7 @@
       }
     },
     "RestoreDBInstanceFromDBSnapshot": {
+      "documentation": "<p>DBスナップショットから新しいDBサーバーを作成します。</p><p>元のDBサーバーとほぼ同じ設定でDBサーバーが作成されますが、異なる設定を適用することもできます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -542,6 +580,7 @@
       }
     },
     "RestoreDBInstanceToPointInTime": {
+      "documentation": "<p>既存のDBサーバーのある日時の状態から新しいDBサーバーを作成します。</p><p>最新のリストア可能時間からバックアップ保持期間までの状態にリストアすることができます。</p><p>元のDBサーバーとほぼ同じ設定でDBサーバーが作成されますが、異なる設定を適用することもできます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -556,6 +595,7 @@
       }
     },
     "RevokeDBSecurityGroupIngress": {
+      "documentation": "<p>接続を許可したIP範囲またはニフクラのファイアウォールグループ名の設定を取り消します。</p><p>このAPIアクションではCIDRIP（IP帯）またはEC2SecurityGroupName（ニフクラのファイアウォールグループ名）を必ず指定する必要があります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -570,6 +610,7 @@
       }
     },
     "SetExternalMaster": {
+      "documentation": "<p>外部レプリケーションの設定を行います。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -584,6 +625,7 @@
       }
     },
     "StartReplication": {
+      "documentation": "<p>外部レプリケーションを開始します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -598,6 +640,7 @@
       }
     },
     "StopReplication": {
+      "documentation": "<p>外部レプリケーションを停止します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -612,6 +655,7 @@
       }
     },
     "UpgradeDBEngineVersion": {
+      "documentation": "<p>DBサーバーのデータベースエンジンのバージョンをアップグレードします。</p><p>アップグレード可能なバージョンはDescribeDBEngineVersions APIから取得できます。</p><p>リードレプリカが存在する場合は、マスターより先に全てのリードレプリカをアップグレードする必要があります。</p><p>アップグレードが成功した場合、元のバージョンに戻すことはできません。</p><p>必要に応じてPreUpgradeDBSnapshotIdentifierを指定し、アップグレード前のDBスナップショットを作成してください。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"

@@ -13,6 +13,7 @@
   },
   "operations": {
     "AbortMultipartUpload": {
+      "documentation": "<p>マルチパートアップロードを中止します。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/{Bucket}/{Object+}?x-id=AbortMultipartUpload"
@@ -23,6 +24,7 @@
       "name": "AbortMultipartUpload"
     },
     "CompleteMultipartUpload": {
+      "documentation": "<p>分割データを結合し、マルチパートアップロードを完了します。</p><p>注意事項: まれにAPIエラーコード400 (InvalidPart)が返却されることがあります。その際は数秒おいてから再実行をお願いします。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/{Bucket}/{Object+}?x-id=CompleteMultipartUpload"
@@ -40,6 +42,7 @@
       }
     },
     "DeleteBucket": {
+      "documentation": "<p>空のバケットを削除します。</p><p>注意事項: バケット内にオブジェクトが存在する場合、本操作は失敗します。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/{Bucket}?x-id=DeleteBucket"
@@ -50,6 +53,7 @@
       "name": "DeleteBucket"
     },
     "DeleteBucketCors": {
+      "documentation": "<p>バケットに設定されているCors (Cross-Origin Resource Sharing)構成情報を削除します。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/{Bucket}?cors&x-id=DeleteBucketCors"
@@ -60,6 +64,7 @@
       "name": "DeleteBucketCors"
     },
     "DeleteBucketLifecycle": {
+      "documentation": "<p>バケットに設定されているライフサイクル構成情報を削除します。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/{Bucket}?lifecycle&x-id=DeleteBucketLifecycle"
@@ -70,6 +75,7 @@
       "name": "DeleteBucketLifecycle"
     },
     "DeleteBucketPolicy": {
+      "documentation": "<p>バケットに設定されたポリシーを削除します。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/{Bucket}?policy&x-id=DeleteBucketPolicy"
@@ -80,6 +86,7 @@
       "name": "DeleteBucketPolicy"
     },
     "DeleteBucketTagging": {
+      "documentation": "<p>バケットのタグ情報を削除します。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/{Bucket}?tagging&x-id=DeleteBucketTagging"
@@ -90,6 +97,7 @@
       "name": "DeleteBucketTagging"
     },
     "DeleteMultipleObjects": {
+      "documentation": "<p>複数のオブジェクトを削除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/{Bucket}?delete&x-id=DeleteMultipleObjects"
@@ -107,6 +115,7 @@
       }
     },
     "DeleteObject": {
+      "documentation": "<p>オブジェクトを削除します。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/{Bucket}/{Object+}?x-id=DeleteObject"
@@ -120,6 +129,7 @@
       }
     },
     "DeleteObjectTagging": {
+      "documentation": "<p>オブジェクトのタグ情報を削除します。</p>",
       "http": {
         "method": "DELETE",
         "requestUri": "/{Bucket}/{Object+}?tagging&x-id=DeleteObjectTagging"
@@ -133,6 +143,7 @@
       }
     },
     "GetBucket": {
+      "documentation": "<p>バケット内のオブジェクトの一部または全部(最大1000)を一覧表示します。</p><p>注意事項: 本APIは旧バージョンAPIです。「<a href=\"https://docs.nifcloud.com/object-storage-service/api/GetBucketVersion2.htm\">GetBucketVersion2</a>」をご利用ください。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}?x-id=GetBucket"
@@ -146,6 +157,7 @@
       }
     },
     "GetBucketACL": {
+      "documentation": "<p>バケットのアクセス制御リストを表示します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}?acl&x-id=GetBucketACL"
@@ -159,6 +171,7 @@
       }
     },
     "GetBucketConsistency": {
+      "documentation": "<p>バケットの整合性レベルを問い合わせます。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}?x-ntap-sg-consistency&x-id=GetBucketConsistency"
@@ -172,6 +185,7 @@
       }
     },
     "GetBucketCors": {
+      "documentation": "<p>バケットに設定されているCors(Cross-Origin Resource Sharing)構成情報を表示します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}?cors&x-id=GetBucketCors"
@@ -185,6 +199,7 @@
       }
     },
     "GetBucketLifecycleConfiguration": {
+      "documentation": "<p>バケットに設定されているライフサイクル構成情報を表示します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}?lifecycle&x-id=GetBucketLifecycleConfiguration"
@@ -198,6 +213,7 @@
       }
     },
     "GetBucketObjectVersions": {
+      "documentation": "<p>バケット内のオブジェクトのすべてのバージョンに関するメタデータを一覧表示します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}?versions&x-id=GetBucketObjectVersions"
@@ -211,6 +227,7 @@
       }
     },
     "GetBucketPolicy": {
+      "documentation": "<p>バケットに設定されたポリシーを表示します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}?policy&x-id=GetBucketPolicy"
@@ -224,6 +241,7 @@
       }
     },
     "GetBucketTagging": {
+      "documentation": "<p>バケットのタグ情報を表示します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}?tagging&x-id=GetBucketTagging"
@@ -237,6 +255,7 @@
       }
     },
     "GetBucketVersion2": {
+      "documentation": "<p>バケット内のオブジェクトの一部または全部(最大1000)を一覧表示します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}?x-id=GetBucketVersion2"
@@ -250,6 +269,7 @@
       }
     },
     "GetBucketVersioning": {
+      "documentation": "<p>バケットのバージョニング状態を表示します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}?versioning&x-id=GetBucketVersioning"
@@ -263,6 +283,7 @@
       }
     },
     "GetObject": {
+      "documentation": "<p>オブジェクトの内容とメタデータをダウンロードします。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}/{Object+}?x-id=GetObject"
@@ -276,6 +297,7 @@
       }
     },
     "GetObjectACL": {
+      "documentation": "<p>オブジェクトのACLを表示します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}/{Object+}?acl&x-id=GetObjectACL"
@@ -289,6 +311,7 @@
       }
     },
     "GetObjectTagging": {
+      "documentation": "<p>オブジェクトのタグ情報を表示します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}/{Object+}?tagging&x-id=GetObjectTagging"
@@ -302,6 +325,7 @@
       }
     },
     "GetService": {
+      "documentation": "<p>所有しているすべてのバケットを一覧表示します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/?x-id=GetService"
@@ -315,6 +339,7 @@
       }
     },
     "HeadBucket": {
+      "documentation": "<p>指定するバケットにアクセス権があるかどうかを表示します。</p>",
       "http": {
         "method": "HEAD",
         "requestUri": "/{Bucket}?x-id=HeadBucket"
@@ -325,6 +350,7 @@
       "name": "HeadBucket"
     },
     "HeadObject": {
+      "documentation": "<p>オブジェクトのメタデータを表示します。</p>",
       "http": {
         "method": "HEAD",
         "requestUri": "/{Bucket}/{Object+}?x-id=HeadObject"
@@ -338,6 +364,7 @@
       }
     },
     "InitiateMultipartUpload": {
+      "documentation": "<p>オブジェクトのマルチパートアップロードが開始され、アップロードIDが返されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/{Bucket}/{Object+}?uploads&x-id=InitiateMultipartUpload"
@@ -355,6 +382,7 @@
       }
     },
     "ListMultipartUploads": {
+      "documentation": "<p>進行中のマルチパートアップロードが表示されます。</p><p><a href=\"https://docs.nifcloud.com/object-storage-service/api/CompleteMultipartUpload.htm\">CompleteMultipartUpload</a>で完了したパートは表示されません。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}?uploads&x-id=ListMultipartUploads"
@@ -368,6 +396,7 @@
       }
     },
     "ListParts": {
+      "documentation": "<p>アップロードIDに紐付いている、マルチパートアップロード用にアップロードされたパートを一覧表示します。</p><p>分割ファイルのアップロード状況を確認できます。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/{Bucket}/{Object+}?x-id=ListParts"
@@ -381,6 +410,7 @@
       }
     },
     "PutBucket": {
+      "documentation": "<p>バケットを作成します。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/{Bucket}?x-id=PutBucket"
@@ -394,6 +424,7 @@
       }
     },
     "PutBucketConsistency": {
+      "documentation": "<p>バケットの整合性レベルを設定します。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/{Bucket}?x-id=PutBucketConsistency"
@@ -407,6 +438,7 @@
       }
     },
     "PutBucketCors": {
+      "documentation": "<p>バケットにCors(Cross-Origin Resource Sharing)構成情報を設定します。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/{Bucket}?cors&x-id=PutBucketCors"
@@ -417,6 +449,7 @@
       "name": "PutBucketCors"
     },
     "PutBucketLifecycleConfiguration": {
+      "documentation": "<p>バケットにライフサイクル構成情報を設定します。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/{Bucket}?lifecycle&x-id=PutBucketLifecycleConfiguration"
@@ -427,6 +460,7 @@
       "name": "PutBucketLifecycleConfiguration"
     },
     "PutBucketPolicy": {
+      "documentation": "<p>バケットにポリシーを設定します。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/{Bucket}?policy&x-id=PutBucketPolicy"
@@ -437,6 +471,7 @@
       "name": "PutBucketPolicy"
     },
     "PutBucketTagging": {
+      "documentation": "<p>バケットにタグ情報を付与します。タグ情報は上書きされます。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/{Bucket}?tagging&x-id=PutBucketTagging"
@@ -447,6 +482,7 @@
       "name": "PutBucketTagging"
     },
     "PutBucketVersioning": {
+      "documentation": "<p>バケットにバージョニング設定を行います。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/{Bucket}?versioning&x-id=PutBucketVersioning"
@@ -457,6 +493,7 @@
       "name": "PutBucketVersioning"
     },
     "PutObject": {
+      "documentation": "<p>新しいオブジェクトを作成します。または、既存のオブジェクトを置き換えます。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/{Bucket}/{Object+}?x-id=PutObject"
@@ -470,6 +507,7 @@
       }
     },
     "PutObjectCopy": {
+      "documentation": "<p>オブジェクトのコピーを作成します。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/{Bucket}/{Object+}?x-id=PutObjectCopy"
@@ -483,6 +521,7 @@
       }
     },
     "PutObjectTagging": {
+      "documentation": "<p>オブジェクトにタグ情報を付与します。タグ情報は上書きされます。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/{Bucket}/{Object+}?tagging&x-id=PutObjectTagging"
@@ -496,6 +535,7 @@
       }
     },
     "UploadPart": {
+      "documentation": "<p>オブジェクトのマルチパートアップロード内のパートがアップロードされます。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/{Bucket}/{Object+}?x-id=UploadPart"
@@ -509,6 +549,7 @@
       }
     },
     "UploadPartCopy": {
+      "documentation": "<p>パート(分割データ)のデータソースとして、既存のオブジェクトからデータをコピーすることで、オブジェクトのパートをアップロードします。</p>",
       "http": {
         "method": "PUT",
         "requestUri": "/{Bucket}/{Object+}?x-id=UploadPartCopy"

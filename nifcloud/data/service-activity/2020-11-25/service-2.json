@@ -11,6 +11,7 @@
   },
   "operations": {
     "DescribeEventAttributes": {
+      "documentation": "<p>ニフクラのサービス稼働に関するイベントをリストで取得します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/events/attributes/{YearMonth}"
@@ -24,6 +25,7 @@
       }
     },
     "DescribeEventCalendar": {
+      "documentation": "<p>ニフクラのサービス稼働に関するイベントをカレンダー形式で取得します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/events/calendars/{YearMonth}"
@@ -37,6 +39,7 @@
       }
     },
     "DescribeServiceStatuses": {
+      "documentation": "<p>ニフクラのサービス稼働状況を取得します。</p>",
       "http": {
         "method": "GET",
         "requestUri": "/services/statuses"

@@ -12,6 +12,7 @@
   },
   "operations": {
     "AuthorizeNASSecurityGroupIngress": {
+      "documentation": "<p>下記どちらかの方法でNASファイアウォールグループへの接続を許可します。</p> <ul> <li><p>ニフクラのサーバーからのプライベートネットワーク経由でNASへアクセスしたい場合、ニフクラのファイアウォールグループからの接続を許可できます。</p></li> <li><p>インターネット経由でNASへアクセスしたい場合、特定のIP帯からの接続を許可できます。</p></li> </ul> <p>NASファイアウォールグループに対して、同一ゾーンのニフクラのファイアウォールグループからの接続許可は可能ですが、別ゾーンのニフクラのファイアウォールグループからの接続許可はできません。</p><p>このAPIアクションではCIDRIP（IP範囲）またはSecurityGroupName（ニフクラのファイアウォールグループ名）を必ず指定する必要があります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -26,6 +27,7 @@
       }
     },
     "ClearNASSession": {
+      "documentation": "<p>NASのセッションクリアを行います。</p><p>NASのセッションクリアを行うと通信断（目安：5分程度）が発生し、その間NASのステータスはclearing-session（セッションクリア中）となります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -40,6 +42,7 @@
       }
     },
     "CreateNASInstance": {
+      "documentation": "<p>NASを新規作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -54,6 +57,7 @@
       }
     },
     "CreateNASSecurityGroup": {
+      "documentation": "<p>NASファイアウォールグループを作成します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -68,6 +72,7 @@
       }
     },
     "DeleteNASInstance": {
+      "documentation": "<p>NASを削除します。</p><p>この操作の進捗状況を確認するにはDescribeNASInstancesアクションを利用してください。</p><p>このアクションは一度送信するとキャンセル・取り消しを行うことはできません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -82,6 +87,7 @@
       }
     },
     "DeleteNASSecurityGroup": {
+      "documentation": "<p>NASファイアウォールグループを削除します。</p><p>NASに適用された状態のNASファイアウォールグループを削除することはできません。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -95,6 +101,7 @@
       }
     },
     "DescribeNASInstances": {
+      "documentation": "<p>NASの情報を取得します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -109,6 +116,7 @@
       }
     },
     "DescribeNASSecurityGroups": {
+      "documentation": "<p>NASファイアウォールグループの情報を取得します。</p><p>NASSecurityGroupName（NASファイアウォールグループ名）が指定された場合は該当するNASファイアウォールグループの情報のみが返却されます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -123,6 +131,7 @@
       }
     },
     "GetMetricStatistics": {
+      "documentation": "<p>NASサービスのモニタリング情報を取得します。</p><p>モニタリング要素について、詳しくは下記ヘルプページをご確認ください。</p><p><a href=\"https://docs.nifcloud.com/nas/help/monitoring.htm\">ヘルプ：NAS：モニタリング</a></p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -137,6 +146,7 @@
       }
     },
     "ModifyNASInstance": {
+      "documentation": "<p>NASの設定を変更します。</p><p>一度に複数のNAS設定を変更することができます。</p><p>NASに接続した状態でプライベートIPアドレスを変更すると、NASにアクセスできなくなる場合があります。</p><p>NASのプライベートIPアドレスを変更する場合は、NASへの接続がないことをご確認ください。</p><p>NASにアクセスできなくなった場合は、クライアント側のOS強制再起動を行ってください。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -151,6 +161,7 @@
       }
     },
     "ModifyNASSecurityGroup": {
+      "documentation": "<p>NASファイアウォールグループの設定を変更します。</p><p>一度に複数のNASファイアウォールグループの設定を変更することができます。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -165,6 +176,7 @@
       }
     },
     "RevokeNASSecurityGroupIngress": {
+      "documentation": "<p>接続を許可したIP範囲またはニフクラのファイアウォールグループ名の設定を取り消します。</p><p>このAPIアクションではCIDRIP（IP帯）またはSecurityGroupName（ニフクラのファイアウォールグループ名）を必ず指定する必要があります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -179,6 +191,7 @@
       }
     },
     "UpgradeNASInstance": {
+      "documentation": "<p>NASの基盤アップグレードを行います。</p><p>NASの基盤アップグレード中はNASに接続できない状態となり、その間のNASのステータスはupgrading（アップグレード中）となります。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
