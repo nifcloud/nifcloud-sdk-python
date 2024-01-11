@@ -677,10 +677,6 @@
           "locationName": "AllocatedStorage",
           "shape": "Integer"
         },
-        "AuthenticationType": {
-          "locationName": "AuthenticationType",
-          "shape": "Integer"
-        },
         "MasterPrivateAddress": {
           "locationName": "MasterPrivateAddress",
           "shape": "String"

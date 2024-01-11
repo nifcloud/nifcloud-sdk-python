@@ -655,7 +655,7 @@
       }
     },
     "UpgradeDBEngineVersion": {
-      "documentation": "<p>DBサーバーのデータベースエンジンのバージョンをアップグレードします。</p><p>アップグレード可能なバージョンはDescribeDBEngineVersions APIから取得できます。</p><p>リードレプリカが存在する場合は、マスターより先に全てのリードレプリカをアップグレードする必要があります。</p><p>アップグレードが成功した場合、元のバージョンに戻すことはできません。</p><p>必要に応じてPreUpgradeDBSnapshotIdentifierを指定し、アップグレード前のDBスナップショットを作成してください。</p>",
+      "documentation": "<p>DBサーバーのデータベースエンジンのバージョンをアップグレードします。</p><p>アップグレード可能なバージョンはDescribeDBEngineVersions APIから取得できます。</p><p>MySQLの場合、かつ、リードレプリカが存在する場合は、マスターより先に全てのリードレプリカをアップグレードする必要があります。</p><p>アップグレードが成功した場合、元のバージョンに戻すことはできません。</p><p>必要に応じてPreUpgradeDBSnapshotIdentifierを指定し、アップグレード前のDBスナップショットを作成してください。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/"
@@ -1039,10 +1039,6 @@
         "NiftyMasterPrivateAddress": {
           "locationName": "NiftyMasterPrivateAddress",
           "shape": "String"
-        },
-        "NiftyMultiAZType": {
-          "locationName": "NiftyMultiAZType",
-          "shape": "Integer"
         },
         "NiftyNetworkId": {
           "locationName": "NiftyNetworkId",
@@ -3867,10 +3863,6 @@
           "locationName": "NewDBInstanceIdentifier",
           "shape": "String"
         },
-        "NiftyMultiAZType": {
-          "locationName": "NiftyMultiAZType",
-          "shape": "Integer"
-        },
         "NiftySlavePrivateAddress": {
           "locationName": "NiftySlavePrivateAddress",
           "shape": "String"
@@ -4475,10 +4467,6 @@
           "locationName": "NiftyMasterPrivateAddress",
           "shape": "String"
         },
-        "NiftyMultiAZType": {
-          "locationName": "NiftyMultiAZType",
-          "shape": "Integer"
-        },
         "NiftyNetworkId": {
           "locationName": "NiftyNetworkId",
           "shape": "String"
@@ -4583,10 +4571,6 @@
         "NiftyMasterPrivateAddress": {
           "locationName": "NiftyMasterPrivateAddress",
           "shape": "String"
-        },
-        "NiftyMultiAZType": {
-          "locationName": "NiftyMultiAZType",
-          "shape": "Integer"
         },
         "NiftyNetworkId": {
           "locationName": "NiftyNetworkId",
