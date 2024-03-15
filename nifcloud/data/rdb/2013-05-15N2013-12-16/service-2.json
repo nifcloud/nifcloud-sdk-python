@@ -41,6 +41,21 @@
         "shape": "AuthorizeDBSecurityGroupIngressResult"
       }
     },
+    "CancelDBInstanceForUpgrade": {
+      "documentation": "<p>DBサーバーの基盤アップグレードをキャンセルします。</p><p>基盤アップグレードステータスが「アップグレード可能」または「アップグレード不可」の場合のみ実行可能です。</p><p>マスターDBサーバーのみ指定可能でリードレプリカを持つ場合は、同時にリードレプリカの基盤アップグレードキャンセルを行います。</p><p>キャンセル完了後、基盤アップグレードステータスは「アップグレードが必要」になります。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "CancelDBInstanceForUpgradeRequest"
+      },
+      "name": "CancelDBInstanceForUpgrade",
+      "output": {
+        "resultWrapper": "CancelDBInstanceForUpgradeResult",
+        "shape": "CancelDBInstanceForUpgradeResult"
+      }
+    },
     "CopyDBSnapshot": {
       "documentation": "<p>DBスナップショットをコピーします。</p><p>コピー元のDBスナップショットはステータスが”available”でなければなりません。</p><p>自動バックアップ機能で作成されたDBスナップショットのみコピーすることができます。</p>",
       "http": {
@@ -504,6 +519,21 @@
         "shape": "NiftyGetMetricStatisticsResult"
       }
     },
+    "PrepareDBInstanceForUpgrade": {
+      "documentation": "<p>DBサーバーの基盤アップグレードを準備します。</p><p>基盤アップグレードステータスが「アップグレードが必要」な場合のみ実行可能です。</p><p>マスターDBサーバーのみ指定可能でリードレプリカを持つ場合は、同時にリードレプリカの基盤アップグレード準備を行います。</p><p>準備完了後、基盤アップグレードステータスは「アップグレード可能」になります。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "PrepareDBInstanceForUpgradeRequest"
+      },
+      "name": "PrepareDBInstanceForUpgrade",
+      "output": {
+        "resultWrapper": "PrepareDBInstanceForUpgradeResult",
+        "shape": "PrepareDBInstanceForUpgradeResult"
+      }
+    },
     "RebootDBInstance": {
       "documentation": "<p>DBサーバーを再起動します。</p><p>このAPIアクションはDBサーバーに適用されているDBパラメーターグループの中で、ApplyStatus(適用状況)がpending-reboot(再起動待ち)となっているパラメーターを更新します。</p><p>DBサーバーを再起動すると少しの間DBサーバーは機能停止し、その間ステータスはrebooting(再起動中)となります。</p><p>DBサーバーの冗長化機能が有効の場合には、強制的にフェイルオーバーさせることができます。</p>",
       "http": {
@@ -668,6 +698,21 @@
         "resultWrapper": "UpgradeDBEngineVersionResult",
         "shape": "UpgradeDBEngineVersionResult"
       }
+    },
+    "UpgradeDBInstance": {
+      "documentation": "<p>DBサーバーの基盤アップグレードを実行します。</p><p>基盤アップグレードステータスが「アップグレード可能」な場合のみ実行可能です。</p><p>マスターDBサーバーのみ指定可能でリードレプリカを持つ場合は、同時にリードレプリカの基盤アップグレードを行います。</p><p>基盤アップグレード完了後、基盤アップグレードステータスは「最新」になります。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "UpgradeDBInstanceRequest"
+      },
+      "name": "UpgradeDBInstance",
+      "output": {
+        "resultWrapper": "UpgradeDBInstanceResult",
+        "shape": "UpgradeDBInstanceResult"
+      }
     }
   },
   "shapes": {
@@ -827,6 +872,33 @@
     "Boolean": {
       "name": "Boolean",
       "type": "boolean"
+    },
+    "CancelDBInstanceForUpgradeRequest": {
+      "members": {
+        "DBInstanceIdentifier": {
+          "locationName": "DBInstanceIdentifier",
+          "shape": "String"
+        }
+      },
+      "name": "CancelDBInstanceForUpgradeRequest",
+      "required": [
+        "DBInstanceIdentifier"
+      ],
+      "type": "structure"
+    },
+    "CancelDBInstanceForUpgradeResult": {
+      "members": {
+        "DBInstance": {
+          "locationName": "DBInstance",
+          "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        }
+      },
+      "name": "CancelDBInstanceForUpgradeResult",
+      "type": "structure"
     },
     "Certificates": {
       "members": {
@@ -1338,6 +1410,10 @@
         },
         "DBInstanceStatus": {
           "locationName": "DBInstanceStatus",
+          "shape": "String"
+        },
+        "DBInstanceUpgradeStatus": {
+          "locationName": "DBInstanceUpgradeStatus",
           "shape": "String"
         },
         "DBName": {
@@ -1904,6 +1980,10 @@
         },
         "DBInstanceStatus": {
           "locationName": "DBInstanceStatus",
+          "shape": "String"
+        },
+        "DBInstanceUpgradeStatus": {
+          "locationName": "DBInstanceUpgradeStatus",
           "shape": "String"
         },
         "DBName": {
@@ -3644,6 +3724,13 @@
       "name": "ListOfRequestFilters",
       "type": "list"
     },
+    "ListOfRequestMenber": {
+      "member": {
+        "shape": "String"
+      },
+      "name": "ListOfRequestMenber",
+      "type": "list"
+    },
     "ListOfRequestNiftyDBSecurityGroups": {
       "member": {
         "locationName": "member",
@@ -4187,6 +4274,49 @@
       "name": "PendingModifiedValues",
       "type": "structure"
     },
+    "PrepareDBInstanceForUpgradeRequest": {
+      "members": {
+        "DBInstanceIdentifier": {
+          "locationName": "DBInstanceIdentifier",
+          "shape": "String"
+        },
+        "TemporaryNiftyMasterPrivateAddress": {
+          "locationName": "TemporaryNiftyMasterPrivateAddress",
+          "shape": "String"
+        },
+        "TemporaryNiftyReadReplicaPrivateAddresses": {
+          "locationName": "TemporaryNiftyReadReplicaPrivateAddresses",
+          "shape": "RequestTemporaryNiftyReadReplicaPrivateAddresses"
+        },
+        "TemporaryNiftySlavePrivateAddress": {
+          "locationName": "TemporaryNiftySlavePrivateAddress",
+          "shape": "String"
+        },
+        "TemporaryNiftyVirtualPrivateAddress": {
+          "locationName": "TemporaryNiftyVirtualPrivateAddress",
+          "shape": "String"
+        }
+      },
+      "name": "PrepareDBInstanceForUpgradeRequest",
+      "required": [
+        "DBInstanceIdentifier"
+      ],
+      "type": "structure"
+    },
+    "PrepareDBInstanceForUpgradeResult": {
+      "members": {
+        "DBInstance": {
+          "locationName": "DBInstance",
+          "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        }
+      },
+      "name": "PrepareDBInstanceForUpgradeResult",
+      "type": "structure"
+    },
     "RebootDBInstanceRequest": {
       "members": {
         "DBInstanceIdentifier": {
@@ -4333,6 +4463,16 @@
       "name": "RequestParametersOfResetDBParameterGroup",
       "type": "structure"
     },
+    "RequestTemporaryNiftyReadReplicaPrivateAddresses": {
+      "members": {
+        "ListOfRequestMenber": {
+          "locationName": "menber",
+          "shape": "ListOfRequestMenber"
+        }
+      },
+      "name": "RequestTemporaryNiftyReadReplicaPrivateAddresses",
+      "type": "structure"
+    },
     "ResetDBParameterGroupRequest": {
       "members": {
         "DBParameterGroupName": {
@@ -4439,6 +4579,10 @@
           "locationName": "DBSubnetGroupName",
           "shape": "String"
         },
+        "DowngradeRestore": {
+          "locationName": "DowngradeRestore",
+          "shape": "Boolean"
+        },
         "Engine": {
           "locationName": "Engine",
           "shape": "String"
@@ -4543,6 +4687,10 @@
         "DBSubnetGroupName": {
           "locationName": "DBSubnetGroupName",
           "shape": "String"
+        },
+        "DowngradeRestore": {
+          "locationName": "DowngradeRestore",
+          "shape": "Boolean"
         },
         "Engine": {
           "locationName": "Engine",
@@ -4918,6 +5066,41 @@
         }
       },
       "name": "UpgradeDBEngineVersionResult",
+      "type": "structure"
+    },
+    "UpgradeDBInstanceRequest": {
+      "members": {
+        "DBInstanceIdentifier": {
+          "locationName": "DBInstanceIdentifier",
+          "shape": "String"
+        },
+        "PreUpgradeDBSnapshotIdentifier": {
+          "locationName": "PreUpgradeDBSnapshotIdentifier",
+          "shape": "String"
+        },
+        "SkipPreUpgradeSnapshot": {
+          "locationName": "SkipPreUpgradeSnapshot",
+          "shape": "Boolean"
+        }
+      },
+      "name": "UpgradeDBInstanceRequest",
+      "required": [
+        "DBInstanceIdentifier"
+      ],
+      "type": "structure"
+    },
+    "UpgradeDBInstanceResult": {
+      "members": {
+        "DBInstance": {
+          "locationName": "DBInstance",
+          "shape": "DBInstance"
+        },
+        "ResponseMetadata": {
+          "locationName": "ResponseMetadata",
+          "shape": "ResponseMetadata"
+        }
+      },
+      "name": "UpgradeDBInstanceResult",
       "type": "structure"
     },
     "ValidUpgradeTarget": {
