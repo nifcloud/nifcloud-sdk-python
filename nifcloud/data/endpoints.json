@@ -70,23 +70,6 @@
             "jp-west-1": {}
           }
         },
-        "hatoba": {
-          "endpoints": {
-            "jp-east-1": {}
-          }
-        },
-        "script" : {
-          "endpoints" : {
-            "aws-global" : {
-              "credentialScope" : {
-                "region" : "jp-east-1"
-              },
-              "hostname" : "script.api.nifcloud.com"
-            }
-          },
-          "isRegionalized" : false,
-          "partitionEndpoint" : "aws-global"
-        },
         "ess" : {
           "endpoints" : {
             "aws-global" : {

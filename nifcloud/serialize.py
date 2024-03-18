@@ -57,20 +57,6 @@ class ComputingSerializer(serialize.EC2Serializer):
         serializer._serialize_type_list(serialized, value, shape, prefix)
 
 
-class ScriptSerializer(serialize.QuerySerializer):
-    def serialize_to_request(self, parameters, operation_model):
-        serialized = super(ScriptSerializer, self).serialize_to_request(
-            parameters, operation_model
-        )
-        target = '%s.%s' % (operation_model.metadata['targetPrefix'],
-                            operation_model.name)
-        serialized['headers']['X-Amz-Target'] = target
-        serialized['url_path'] = operation_model.http.get('requestUri', '/')
-        del serialized['body']['Action']
-        del serialized['body']['Version']
-        return serialized
-
-
 class RdbSerializer(serialize.QuerySerializer):
 
     def serialize_to_request(self, parameters, operation_model):
@@ -190,7 +176,6 @@ class DnsSerializer(serialize.RestXMLSerializer):
 
 serialize.SERIALIZERS.update({
     'computing': ComputingSerializer,
-    'script': ScriptSerializer,
     'rdb': RdbSerializer,
     'nas': NasSerializer,
     'ess': EssSerializer,

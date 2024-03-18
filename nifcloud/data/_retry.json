@@ -84,20 +84,6 @@
           "general_server_error": {"$ref": "general_server_error"}
         }
       }
-    },
-    "hatoba": {
-      "__default__": {
-        "policies": {
-          "general_server_error": {"$ref": "general_server_error"}
-        }
-      }
-    },
-    "script": {
-      "__default__": {
-        "policies": {
-          "general_server_error": {"$ref": "general_server_error"}
-        }
-      }
     }
   }
 }
