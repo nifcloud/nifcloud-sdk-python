@@ -14,8 +14,6 @@ class ClientDocumenter(client.ClientDocumenter):
         if self._service_name == "computing":
             replace = r"\1<%s/rest/%s.htm>\2" % (NIFCLOUD_DOC_BASE,
                                                  operation_name)
-        elif self._service_name == "script":
-            replace = r"\1<%s/script/start.htm>\2" % (NIFCLOUD_DOC_BASE)
         elif self._service_name == "storage":
             replace = r"\1<%s/object-storage-service/%s.htm>\2" % (NIFCLOUD_DOC_BASE,
                                                                    operation_name)
