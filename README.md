@@ -9,7 +9,7 @@ It works by feeding AWS-SDK-compatible model JSONs to botocore module.
 
 ## Features
 
-* :heavy_check_mark: Full support for NIFCLOUD Computing / RDB / NAS / ESS / DNS / ObjectStorageService / ServiceActivity APIs
+* :heavy_check_mark: Full support for NIFCLOUD Computing / RDB / NAS / ESS / DNS / ObjectStorageService / ServiceActivity / DevOps with GitLab APIs
 * :heavy_check_mark: The nifcloud package is the foundation for the [NIFCLOUD CLI](https://github.com/nifcloud/nifcloud-cli).
 * :heavy_check_mark: AWS-SDK-compatible data-driven architecture
 

@@ -1,0 +1,1285 @@
+{
+  "metadata": {
+    "apiVersion": "v1",
+    "endpointPrefix": "runner.devops",
+    "protocol": "rest-json",
+    "serviceAbbreviation": "devops-runner",
+    "serviceFullName": "NIFCLOUD DevOps with GitLab Runner",
+    "serviceId": "devops-runner",
+    "signatureVersion": "v4",
+    "signingName": "devops",
+    "uid": "devops-runner-v1"
+  },
+  "operations": {
+    "CreateRunner": {
+      "documentation": "<p>Runnerを新規作成します。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/runners"
+      },
+      "input": {
+        "shape": "CreateRunnerRequest"
+      },
+      "name": "CreateRunner",
+      "output": {
+        "shape": "CreateRunnerResult"
+      }
+    },
+    "CreateRunnerParameterGroup": {
+      "documentation": "<p>Runnerパラメーターグループを新規作成します。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/parameterGroups"
+      },
+      "input": {
+        "shape": "CreateRunnerParameterGroupRequest"
+      },
+      "name": "CreateRunnerParameterGroup",
+      "output": {
+        "shape": "CreateRunnerParameterGroupResult"
+      }
+    },
+    "DeleteRunner": {
+      "documentation": "<p>指定したRunnerを削除します。</p>",
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/runners/{RunnerName}"
+      },
+      "input": {
+        "shape": "DeleteRunnerRequest"
+      },
+      "name": "DeleteRunner",
+      "output": {
+        "shape": "DeleteRunnerResult"
+      }
+    },
+    "DeleteRunnerParameterGroup": {
+      "documentation": "<p>指定したRunnerパラメーターグループを削除します。</p>",
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/parameterGroups/{ParameterGroupName}"
+      },
+      "input": {
+        "shape": "DeleteRunnerParameterGroupRequest"
+      },
+      "name": "DeleteRunnerParameterGroup"
+    },
+    "GetRunner": {
+      "documentation": "<p>Runnerの情報を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/runners/{RunnerName}"
+      },
+      "input": {
+        "shape": "GetRunnerRequest"
+      },
+      "name": "GetRunner",
+      "output": {
+        "shape": "GetRunnerResult"
+      }
+    },
+    "GetRunnerParameterGroup": {
+      "documentation": "<p>Runnerパラメーターグループの情報を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/parameterGroups/{ParameterGroupName}"
+      },
+      "input": {
+        "shape": "GetRunnerParameterGroupRequest"
+      },
+      "name": "GetRunnerParameterGroup",
+      "output": {
+        "shape": "GetRunnerParameterGroupResult"
+      }
+    },
+    "ListRunnerParameterGroups": {
+      "documentation": "<p>Runnerパラメーターグループの情報一覧を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/parameterGroups"
+      },
+      "input": {
+        "shape": "ListRunnerParameterGroupsRequest"
+      },
+      "name": "ListRunnerParameterGroups",
+      "output": {
+        "shape": "ListRunnerParameterGroupsResult"
+      }
+    },
+    "ListRunnerRegistrations": {
+      "documentation": "<p>指定したRunnerが登録されているGitLabの情報を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/runners/{RunnerName}/registrations"
+      },
+      "input": {
+        "shape": "ListRunnerRegistrationsRequest"
+      },
+      "name": "ListRunnerRegistrations",
+      "output": {
+        "shape": "ListRunnerRegistrationsResult"
+      }
+    },
+    "ListRunners": {
+      "documentation": "<p>Runnerの情報一覧を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/runners"
+      },
+      "input": {
+        "shape": "ListRunnersRequest"
+      },
+      "name": "ListRunners",
+      "output": {
+        "shape": "ListRunnersResult"
+      }
+    },
+    "ModifyRunnerInstanceType": {
+      "documentation": "<p>指定したRunnerのスペックを変更します。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/runners/{RunnerName}:modifyInstanceType"
+      },
+      "input": {
+        "shape": "ModifyRunnerInstanceTypeRequest"
+      },
+      "name": "ModifyRunnerInstanceType",
+      "output": {
+        "shape": "ModifyRunnerInstanceTypeResult"
+      }
+    },
+    "RegisterRunner": {
+      "documentation": "<p>指定したRunnerをGitLabに登録します。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/runners/{RunnerName}/registrations"
+      },
+      "input": {
+        "shape": "RegisterRunnerRequest"
+      },
+      "name": "RegisterRunner",
+      "output": {
+        "shape": "RegisterRunnerResult"
+      }
+    },
+    "UnregisterRunner": {
+      "documentation": "<p>指定したRunnerをGitLabから登録解除します。</p>",
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/runners/{RunnerName}/registrations/{RegistrationId}"
+      },
+      "input": {
+        "shape": "UnregisterRunnerRequest"
+      },
+      "name": "UnregisterRunner",
+      "output": {
+        "shape": "UnregisterRunnerResult"
+      }
+    },
+    "UpdateRunner": {
+      "documentation": "<p>指定したRunnerの設定を更新します。<br/>リクエストボディパラメーターのいずれか(changedRunnerName,concurrent,description)は指定必須です。</p>",
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/runners/{RunnerName}"
+      },
+      "input": {
+        "shape": "UpdateRunnerRequest"
+      },
+      "name": "UpdateRunner",
+      "output": {
+        "shape": "UpdateRunnerResult"
+      }
+    },
+    "UpdateRunnerParameter": {
+      "documentation": "<p>指定したRunnerパラメーターグループのパラメーターを更新します。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/parameterGroups/{ParameterGroupName}:updateParameter"
+      },
+      "input": {
+        "shape": "UpdateRunnerParameterRequest"
+      },
+      "name": "UpdateRunnerParameter",
+      "output": {
+        "shape": "UpdateRunnerParameterResult"
+      }
+    },
+    "UpdateRunnerParameterGroup": {
+      "documentation": "<p>指定したRunnerパラメーターグループの設定を更新します。</p>",
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/parameterGroups/{ParameterGroupName}"
+      },
+      "input": {
+        "shape": "UpdateRunnerParameterGroupRequest"
+      },
+      "name": "UpdateRunnerParameterGroup",
+      "output": {
+        "shape": "UpdateRunnerParameterGroupResult"
+      }
+    },
+    "UpdateRunnerRegistration": {
+      "documentation": "<p>指定したRunnerが登録されているGitLabに紐づく設定を更新します。</p>",
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/runners/{RunnerName}/registrations/{RegistrationId}"
+      },
+      "input": {
+        "shape": "UpdateRunnerRegistrationRequest"
+      },
+      "name": "UpdateRunnerRegistration",
+      "output": {
+        "shape": "UpdateRunnerRegistrationResult"
+      }
+    }
+  },
+  "shapes": {
+    "AccessLevelOfRegisterRunnerRequest": {
+      "enum": [
+        "not_protected",
+        "ref_protected"
+      ],
+      "name": "AccessLevelOfRegisterRunnerRequest",
+      "type": "string"
+    },
+    "AvailabilityZoneOfCreateRunnerRequest": {
+      "enum": [
+        "east-11",
+        "east-12",
+        "east-13",
+        "east-14",
+        "east-31",
+        "west-11",
+        "west-12",
+        "west-13",
+        "jp-west-21"
+      ],
+      "name": "AvailabilityZoneOfCreateRunnerRequest",
+      "type": "string"
+    },
+    "Blob": {
+      "name": "Blob",
+      "type": "blob"
+    },
+    "Boolean": {
+      "name": "Boolean",
+      "type": "boolean"
+    },
+    "CreateRunnerParameterGroupRequest": {
+      "members": {
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "ParameterGroupName": {
+          "locationName": "parameterGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "CreateRunnerParameterGroupRequest",
+      "required": [
+        "ParameterGroupName"
+      ],
+      "type": "structure"
+    },
+    "CreateRunnerParameterGroupResult": {
+      "members": {
+        "ParameterGroup": {
+          "locationName": "parameterGroup",
+          "shape": "ParameterGroup"
+        }
+      },
+      "name": "CreateRunnerParameterGroupResult",
+      "type": "structure"
+    },
+    "CreateRunnerRequest": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "AvailabilityZoneOfCreateRunnerRequest"
+        },
+        "Concurrent": {
+          "locationName": "concurrent",
+          "shape": "Integer"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "InstanceType": {
+          "locationName": "instanceType",
+          "shape": "InstanceTypeOfCreateRunnerRequest"
+        },
+        "NetworkConfig": {
+          "locationName": "networkConfig",
+          "shape": "RequestNetworkConfig"
+        },
+        "RunnerName": {
+          "locationName": "runnerName",
+          "shape": "String"
+        }
+      },
+      "name": "CreateRunnerRequest",
+      "required": [
+        "InstanceType",
+        "RunnerName"
+      ],
+      "type": "structure"
+    },
+    "CreateRunnerResult": {
+      "members": {
+        "Runner": {
+          "locationName": "runner",
+          "shape": "Runner"
+        }
+      },
+      "name": "CreateRunnerResult",
+      "type": "structure"
+    },
+    "DeleteRunnerParameterGroupRequest": {
+      "members": {
+        "ParameterGroupName": {
+          "location": "uri",
+          "locationName": "ParameterGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteRunnerParameterGroupRequest",
+      "required": [
+        "ParameterGroupName"
+      ],
+      "type": "structure"
+    },
+    "DeleteRunnerRequest": {
+      "members": {
+        "RunnerName": {
+          "location": "uri",
+          "locationName": "RunnerName",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteRunnerRequest",
+      "required": [
+        "RunnerName"
+      ],
+      "type": "structure"
+    },
+    "DeleteRunnerResult": {
+      "members": {
+        "Runner": {
+          "locationName": "runner",
+          "shape": "Runner"
+        }
+      },
+      "name": "DeleteRunnerResult",
+      "type": "structure"
+    },
+    "DockerParameters": {
+      "members": {
+        "DisableCache": {
+          "locationName": "disableCache",
+          "shape": "Boolean"
+        },
+        "DisableEntrypointOverwrite": {
+          "locationName": "disableEntrypointOverwrite",
+          "shape": "Boolean"
+        },
+        "ExtraHosts": {
+          "locationName": "extraHosts",
+          "shape": "ListOfExtraHosts"
+        },
+        "Image": {
+          "locationName": "image",
+          "shape": "String"
+        },
+        "OomKillDisable": {
+          "locationName": "oomKillDisable",
+          "shape": "Boolean"
+        },
+        "Privileged": {
+          "locationName": "privileged",
+          "shape": "Boolean"
+        },
+        "ShmSize": {
+          "locationName": "shmSize",
+          "shape": "Integer"
+        },
+        "TlsVerify": {
+          "locationName": "tlsVerify",
+          "shape": "Boolean"
+        },
+        "Volumes": {
+          "locationName": "volumes",
+          "shape": "ListOfVolumes"
+        }
+      },
+      "name": "DockerParameters",
+      "type": "structure"
+    },
+    "Double": {
+      "name": "Double",
+      "type": "double"
+    },
+    "ExtraHosts": {
+      "members": {
+        "HostName": {
+          "locationName": "hostName",
+          "shape": "String"
+        },
+        "IpAddress": {
+          "locationName": "ipAddress",
+          "shape": "String"
+        }
+      },
+      "name": "ExtraHosts",
+      "type": "structure"
+    },
+    "GetRunnerParameterGroupRequest": {
+      "members": {
+        "ParameterGroupName": {
+          "location": "uri",
+          "locationName": "ParameterGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "GetRunnerParameterGroupRequest",
+      "required": [
+        "ParameterGroupName"
+      ],
+      "type": "structure"
+    },
+    "GetRunnerParameterGroupResult": {
+      "members": {
+        "ParameterGroup": {
+          "locationName": "parameterGroup",
+          "shape": "ParameterGroup"
+        }
+      },
+      "name": "GetRunnerParameterGroupResult",
+      "type": "structure"
+    },
+    "GetRunnerRequest": {
+      "members": {
+        "RunnerName": {
+          "location": "uri",
+          "locationName": "RunnerName",
+          "shape": "String"
+        }
+      },
+      "name": "GetRunnerRequest",
+      "required": [
+        "RunnerName"
+      ],
+      "type": "structure"
+    },
+    "GetRunnerResult": {
+      "members": {
+        "Runner": {
+          "locationName": "runner",
+          "shape": "Runner"
+        }
+      },
+      "name": "GetRunnerResult",
+      "type": "structure"
+    },
+    "InstanceTypeOfCreateRunnerRequest": {
+      "enum": [
+        "c-small",
+        "c-small2",
+        "c-small4",
+        "c-medium",
+        "c-medium4",
+        "c-medium8",
+        "c-large",
+        "c-large8",
+        "e-small",
+        "e-small2",
+        "e-small4",
+        "e-small8",
+        "e-small16",
+        "e-medium",
+        "e-medium4",
+        "e-medium8",
+        "e-medium16",
+        "e-medium24",
+        "e-large",
+        "e-large8",
+        "e-large16",
+        "e-large24",
+        "e-extra-large8",
+        "e-extra-large16",
+        "e-extra-large24",
+        "e-double-large16",
+        "e-double-large24",
+        "h2-small",
+        "h2-small2",
+        "h2-small4",
+        "h2-small8",
+        "h2-small16",
+        "h2-medium",
+        "h2-medium4",
+        "h2-medium8",
+        "h2-medium16",
+        "h2-medium24",
+        "h2-large",
+        "h2-large8",
+        "h2-large16",
+        "h2-large24",
+        "h2-extra-large8",
+        "h2-extra-large16",
+        "h2-extra-large24",
+        "h2-double-large16",
+        "h2-double-large24"
+      ],
+      "name": "InstanceTypeOfCreateRunnerRequest",
+      "type": "string"
+    },
+    "InstanceTypeOfModifyRunnerInstanceTypeRequest": {
+      "enum": [
+        "c-small",
+        "c-small2",
+        "c-small4",
+        "c-medium",
+        "c-medium4",
+        "c-medium8",
+        "c-large",
+        "c-large8",
+        "e-small",
+        "e-small2",
+        "e-small4",
+        "e-small8",
+        "e-small16",
+        "e-medium",
+        "e-medium4",
+        "e-medium8",
+        "e-medium16",
+        "e-medium24",
+        "e-large",
+        "e-large8",
+        "e-large16",
+        "e-large24",
+        "e-extra-large8",
+        "e-extra-large16",
+        "e-extra-large24",
+        "e-double-large16",
+        "e-double-large24",
+        "h2-small",
+        "h2-small2",
+        "h2-small4",
+        "h2-small8",
+        "h2-small16",
+        "h2-medium",
+        "h2-medium4",
+        "h2-medium8",
+        "h2-medium16",
+        "h2-medium24",
+        "h2-large",
+        "h2-large8",
+        "h2-large16",
+        "h2-large24",
+        "h2-extra-large8",
+        "h2-extra-large16",
+        "h2-extra-large24",
+        "h2-double-large16",
+        "h2-double-large24"
+      ],
+      "name": "InstanceTypeOfModifyRunnerInstanceTypeRequest",
+      "type": "string"
+    },
+    "Integer": {
+      "name": "Integer",
+      "type": "integer"
+    },
+    "ListOfExtraHosts": {
+      "member": {
+        "shape": "ExtraHosts"
+      },
+      "name": "ListOfExtraHosts",
+      "type": "list"
+    },
+    "ListOfParameterGroups": {
+      "member": {
+        "shape": "ParameterGroups"
+      },
+      "name": "ListOfParameterGroups",
+      "type": "list"
+    },
+    "ListOfRegistrations": {
+      "member": {
+        "shape": "Registrations"
+      },
+      "name": "ListOfRegistrations",
+      "type": "list"
+    },
+    "ListOfRequestExtraHosts": {
+      "member": {
+        "shape": "RequestExtraHosts"
+      },
+      "name": "ListOfRequestExtraHosts",
+      "type": "list"
+    },
+    "ListOfRequestTags": {
+      "member": {
+        "shape": "String"
+      },
+      "name": "ListOfRequestTags",
+      "type": "list"
+    },
+    "ListOfRequestVolumes": {
+      "member": {
+        "shape": "String"
+      },
+      "name": "ListOfRequestVolumes",
+      "type": "list"
+    },
+    "ListOfRunnerNames": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfRunnerNames",
+      "type": "list"
+    },
+    "ListOfRunners": {
+      "member": {
+        "shape": "Runners"
+      },
+      "name": "ListOfRunners",
+      "type": "list"
+    },
+    "ListOfVolumes": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfVolumes",
+      "type": "list"
+    },
+    "ListRunnerParameterGroupsRequest": {
+      "members": {},
+      "name": "ListRunnerParameterGroupsRequest",
+      "type": "structure"
+    },
+    "ListRunnerParameterGroupsResult": {
+      "members": {
+        "ParameterGroups": {
+          "locationName": "parameterGroups",
+          "shape": "ListOfParameterGroups"
+        }
+      },
+      "name": "ListRunnerParameterGroupsResult",
+      "type": "structure"
+    },
+    "ListRunnerRegistrationsRequest": {
+      "members": {
+        "RunnerName": {
+          "location": "uri",
+          "locationName": "RunnerName",
+          "shape": "String"
+        }
+      },
+      "name": "ListRunnerRegistrationsRequest",
+      "required": [
+        "RunnerName"
+      ],
+      "type": "structure"
+    },
+    "ListRunnerRegistrationsResult": {
+      "members": {
+        "Registrations": {
+          "locationName": "registrations",
+          "shape": "ListOfRegistrations"
+        }
+      },
+      "name": "ListRunnerRegistrationsResult",
+      "type": "structure"
+    },
+    "ListRunnersRequest": {
+      "members": {},
+      "name": "ListRunnersRequest",
+      "type": "structure"
+    },
+    "ListRunnersResult": {
+      "members": {
+        "Runners": {
+          "locationName": "runners",
+          "shape": "ListOfRunners"
+        }
+      },
+      "name": "ListRunnersResult",
+      "type": "structure"
+    },
+    "Long": {
+      "name": "Long",
+      "type": "long"
+    },
+    "ModifyRunnerInstanceTypeRequest": {
+      "members": {
+        "InstanceType": {
+          "locationName": "instanceType",
+          "shape": "InstanceTypeOfModifyRunnerInstanceTypeRequest"
+        },
+        "RunnerName": {
+          "location": "uri",
+          "locationName": "RunnerName",
+          "shape": "String"
+        }
+      },
+      "name": "ModifyRunnerInstanceTypeRequest",
+      "required": [
+        "InstanceType",
+        "RunnerName"
+      ],
+      "type": "structure"
+    },
+    "ModifyRunnerInstanceTypeResult": {
+      "members": {
+        "Runner": {
+          "locationName": "runner",
+          "shape": "Runner"
+        }
+      },
+      "name": "ModifyRunnerInstanceTypeResult",
+      "type": "structure"
+    },
+    "NetworkConfig": {
+      "members": {
+        "NetworkId": {
+          "locationName": "networkId",
+          "shape": "String"
+        },
+        "PrivateAddress": {
+          "locationName": "privateAddress",
+          "shape": "String"
+        }
+      },
+      "name": "NetworkConfig",
+      "type": "structure"
+    },
+    "ParameterGroup": {
+      "members": {
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "DockerParameters": {
+          "locationName": "dockerParameters",
+          "shape": "DockerParameters"
+        },
+        "ParameterGroupName": {
+          "locationName": "parameterGroupName",
+          "shape": "String"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "String"
+        },
+        "RunnerNames": {
+          "locationName": "runnerNames",
+          "shape": "ListOfRunnerNames"
+        }
+      },
+      "name": "ParameterGroup",
+      "type": "structure"
+    },
+    "ParameterGroups": {
+      "members": {
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "DockerParameters": {
+          "locationName": "dockerParameters",
+          "shape": "DockerParameters"
+        },
+        "ParameterGroupName": {
+          "locationName": "parameterGroupName",
+          "shape": "String"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "String"
+        },
+        "RunnerNames": {
+          "locationName": "runnerNames",
+          "shape": "ListOfRunnerNames"
+        }
+      },
+      "name": "ParameterGroups",
+      "type": "structure"
+    },
+    "RegisterRunnerRequest": {
+      "members": {
+        "AccessLevel": {
+          "locationName": "accessLevel",
+          "shape": "AccessLevelOfRegisterRunnerRequest"
+        },
+        "AuthenticationToken": {
+          "locationName": "authenticationToken",
+          "shape": "String"
+        },
+        "DefaultDockerImage": {
+          "locationName": "defaultDockerImage",
+          "shape": "String"
+        },
+        "ExtraHosts": {
+          "locationName": "extraHosts",
+          "shape": "ListOfRequestExtraHosts"
+        },
+        "GitlabUrl": {
+          "locationName": "gitlabUrl",
+          "shape": "String"
+        },
+        "Locked": {
+          "locationName": "locked",
+          "shape": "Boolean"
+        },
+        "MaximumTimeout": {
+          "locationName": "maximumTimeout",
+          "shape": "Integer"
+        },
+        "ParameterGroupName": {
+          "locationName": "parameterGroupName",
+          "shape": "String"
+        },
+        "Paused": {
+          "locationName": "paused",
+          "shape": "Boolean"
+        },
+        "Privileged": {
+          "locationName": "privileged",
+          "shape": "Boolean"
+        },
+        "RegistrationToken": {
+          "locationName": "registrationToken",
+          "shape": "String"
+        },
+        "RunUntagged": {
+          "locationName": "runUntagged",
+          "shape": "Boolean"
+        },
+        "RunnerName": {
+          "location": "uri",
+          "locationName": "RunnerName",
+          "shape": "String"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "ListOfRequestTags"
+        }
+      },
+      "name": "RegisterRunnerRequest",
+      "required": [
+        "GitlabUrl",
+        "RunnerName"
+      ],
+      "type": "structure"
+    },
+    "RegisterRunnerResult": {
+      "members": {
+        "Runner": {
+          "locationName": "runner",
+          "shape": "Runner"
+        }
+      },
+      "name": "RegisterRunnerResult",
+      "type": "structure"
+    },
+    "Registrations": {
+      "members": {
+        "GitlabUrl": {
+          "locationName": "gitlabUrl",
+          "shape": "String"
+        },
+        "ParameterGroupName": {
+          "locationName": "parameterGroupName",
+          "shape": "String"
+        },
+        "RegistrationId": {
+          "locationName": "registrationId",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "Status"
+        },
+        "Token": {
+          "locationName": "token",
+          "shape": "String"
+        }
+      },
+      "name": "Registrations",
+      "type": "structure"
+    },
+    "RequestDockerParameters": {
+      "members": {
+        "DisableCache": {
+          "locationName": "disableCache",
+          "shape": "Boolean"
+        },
+        "DisableEntrypointOverwrite": {
+          "locationName": "disableEntrypointOverwrite",
+          "shape": "Boolean"
+        },
+        "Image": {
+          "locationName": "image",
+          "shape": "String"
+        },
+        "ListOfRequestExtraHosts": {
+          "locationName": "extraHosts",
+          "shape": "ListOfRequestExtraHosts"
+        },
+        "ListOfRequestVolumes": {
+          "locationName": "volumes",
+          "shape": "ListOfRequestVolumes"
+        },
+        "OomKillDisable": {
+          "locationName": "oomKillDisable",
+          "shape": "Boolean"
+        },
+        "Privileged": {
+          "locationName": "privileged",
+          "shape": "Boolean"
+        },
+        "ShmSize": {
+          "locationName": "shmSize",
+          "shape": "Integer"
+        },
+        "TlsVerify": {
+          "locationName": "tlsVerify",
+          "shape": "Boolean"
+        }
+      },
+      "name": "RequestDockerParameters",
+      "type": "structure"
+    },
+    "RequestExtraHosts": {
+      "members": {
+        "HostName": {
+          "locationName": "hostName",
+          "shape": "String"
+        },
+        "IpAddress": {
+          "locationName": "ipAddress",
+          "shape": "String"
+        }
+      },
+      "name": "RequestExtraHosts",
+      "type": "structure"
+    },
+    "RequestNetworkConfig": {
+      "members": {
+        "NetworkId": {
+          "locationName": "networkId",
+          "shape": "String"
+        },
+        "PrivateAddress": {
+          "locationName": "privateAddress",
+          "shape": "String"
+        }
+      },
+      "name": "RequestNetworkConfig",
+      "type": "structure"
+    },
+    "Runner": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "Concurrent": {
+          "locationName": "concurrent",
+          "shape": "Integer"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "InstanceType": {
+          "locationName": "instanceType",
+          "shape": "String"
+        },
+        "NetworkConfig": {
+          "locationName": "networkConfig",
+          "shape": "NetworkConfig"
+        },
+        "PublicIpAddress": {
+          "locationName": "publicIpAddress",
+          "shape": "String"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "String"
+        },
+        "RunnerName": {
+          "locationName": "runnerName",
+          "shape": "String"
+        },
+        "RunnerVersion": {
+          "locationName": "runnerVersion",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "Status"
+        },
+        "SystemId": {
+          "locationName": "systemId",
+          "shape": "String"
+        }
+      },
+      "name": "Runner",
+      "type": "structure"
+    },
+    "Runners": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "Concurrent": {
+          "locationName": "concurrent",
+          "shape": "Integer"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "InstanceType": {
+          "locationName": "instanceType",
+          "shape": "String"
+        },
+        "NetworkConfig": {
+          "locationName": "networkConfig",
+          "shape": "NetworkConfig"
+        },
+        "PublicIpAddress": {
+          "locationName": "publicIpAddress",
+          "shape": "String"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "String"
+        },
+        "RunnerName": {
+          "locationName": "runnerName",
+          "shape": "String"
+        },
+        "RunnerVersion": {
+          "locationName": "runnerVersion",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "Status"
+        },
+        "SystemId": {
+          "locationName": "systemId",
+          "shape": "String"
+        }
+      },
+      "name": "Runners",
+      "type": "structure"
+    },
+    "Status": {
+      "members": {
+        "Code": {
+          "locationName": "code",
+          "shape": "Integer"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        }
+      },
+      "name": "Status",
+      "type": "structure"
+    },
+    "String": {
+      "name": "String",
+      "type": "string"
+    },
+    "TStamp": {
+      "name": "TStamp",
+      "type": "timestamp"
+    },
+    "UnregisterRunnerRequest": {
+      "members": {
+        "RegistrationId": {
+          "location": "uri",
+          "locationName": "RegistrationId",
+          "shape": "String"
+        },
+        "RunnerName": {
+          "location": "uri",
+          "locationName": "RunnerName",
+          "shape": "String"
+        }
+      },
+      "name": "UnregisterRunnerRequest",
+      "required": [
+        "RegistrationId",
+        "RunnerName"
+      ],
+      "type": "structure"
+    },
+    "UnregisterRunnerResult": {
+      "members": {
+        "Runner": {
+          "locationName": "runner",
+          "shape": "Runner"
+        }
+      },
+      "name": "UnregisterRunnerResult",
+      "type": "structure"
+    },
+    "UpdateRunnerParameterGroupRequest": {
+      "members": {
+        "ChangedParameterGroupName": {
+          "locationName": "changedParameterGroupName",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "ParameterGroupName": {
+          "location": "uri",
+          "locationName": "ParameterGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "UpdateRunnerParameterGroupRequest",
+      "required": [
+        "ParameterGroupName"
+      ],
+      "type": "structure"
+    },
+    "UpdateRunnerParameterGroupResult": {
+      "members": {
+        "ParameterGroup": {
+          "locationName": "parameterGroup",
+          "shape": "ParameterGroup"
+        }
+      },
+      "name": "UpdateRunnerParameterGroupResult",
+      "type": "structure"
+    },
+    "UpdateRunnerParameterRequest": {
+      "members": {
+        "DockerParameters": {
+          "locationName": "dockerParameters",
+          "shape": "RequestDockerParameters"
+        },
+        "ParameterGroupName": {
+          "location": "uri",
+          "locationName": "ParameterGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "UpdateRunnerParameterRequest",
+      "required": [
+        "ParameterGroupName"
+      ],
+      "type": "structure"
+    },
+    "UpdateRunnerParameterResult": {
+      "members": {
+        "ParameterGroup": {
+          "locationName": "parameterGroup",
+          "shape": "ParameterGroup"
+        }
+      },
+      "name": "UpdateRunnerParameterResult",
+      "type": "structure"
+    },
+    "UpdateRunnerRegistrationRequest": {
+      "members": {
+        "ParameterGroupName": {
+          "locationName": "parameterGroupName",
+          "shape": "String"
+        },
+        "RegistrationId": {
+          "location": "uri",
+          "locationName": "RegistrationId",
+          "shape": "String"
+        },
+        "RunnerName": {
+          "location": "uri",
+          "locationName": "RunnerName",
+          "shape": "String"
+        }
+      },
+      "name": "UpdateRunnerRegistrationRequest",
+      "required": [
+        "ParameterGroupName",
+        "RegistrationId",
+        "RunnerName"
+      ],
+      "type": "structure"
+    },
+    "UpdateRunnerRegistrationResult": {
+      "members": {
+        "Runner": {
+          "locationName": "runner",
+          "shape": "Runner"
+        }
+      },
+      "name": "UpdateRunnerRegistrationResult",
+      "type": "structure"
+    },
+    "UpdateRunnerRequest": {
+      "members": {
+        "ChangedRunnerName": {
+          "locationName": "changedRunnerName",
+          "shape": "String"
+        },
+        "Concurrent": {
+          "locationName": "concurrent",
+          "shape": "Integer"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "RunnerName": {
+          "location": "uri",
+          "locationName": "RunnerName",
+          "shape": "String"
+        }
+      },
+      "name": "UpdateRunnerRequest",
+      "required": [
+        "RunnerName"
+      ],
+      "type": "structure"
+    },
+    "UpdateRunnerResult": {
+      "members": {
+        "Runner": {
+          "locationName": "runner",
+          "shape": "Runner"
+        }
+      },
+      "name": "UpdateRunnerResult",
+      "type": "structure"
+    }
+  },
+  "version": "2.0"
+}

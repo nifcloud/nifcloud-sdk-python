@@ -1,0 +1,2178 @@
+{
+  "metadata": {
+    "apiVersion": "v1",
+    "endpointPrefix": "devops",
+    "protocol": "rest-json",
+    "serviceAbbreviation": "devops",
+    "serviceFullName": "NIFCLOUD DevOps with GitLab",
+    "serviceId": "devops",
+    "signatureVersion": "v4",
+    "uid": "devops-v1"
+  },
+  "operations": {
+    "AuthorizeFirewallRules": {
+      "documentation": "<p>指定したファイアウォールグループにルールを追加します。<br/>許可するプロトコルがTCPの場合、許可ポートの指定が必要です。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}/rules"
+      },
+      "input": {
+        "shape": "AuthorizeFirewallRulesRequest"
+      },
+      "name": "AuthorizeFirewallRules",
+      "output": {
+        "shape": "AuthorizeFirewallRulesResult"
+      }
+    },
+    "CreateBackupRule": {
+      "documentation": "<p>バックアップルールを新規作成します。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/backupRules"
+      },
+      "input": {
+        "shape": "CreateBackupRuleRequest"
+      },
+      "name": "CreateBackupRule",
+      "output": {
+        "shape": "CreateBackupRuleResult"
+      }
+    },
+    "CreateFirewallGroup": {
+      "documentation": "<p>ファイアウォールグループを新規作成します。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/firewallGroups"
+      },
+      "input": {
+        "shape": "CreateFirewallGroupRequest"
+      },
+      "name": "CreateFirewallGroup",
+      "output": {
+        "shape": "CreateFirewallGroupResult"
+      }
+    },
+    "CreateInstance": {
+      "documentation": "<p>DevOpsサーバーを新規作成します。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/instances"
+      },
+      "input": {
+        "shape": "CreateInstanceRequest"
+      },
+      "name": "CreateInstance",
+      "output": {
+        "shape": "CreateInstanceResult"
+      }
+    },
+    "CreateParameterGroup": {
+      "documentation": "<p>パラメーターグループを新規作成します。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/parameterGroups"
+      },
+      "input": {
+        "shape": "CreateParameterGroupRequest"
+      },
+      "name": "CreateParameterGroup",
+      "output": {
+        "shape": "CreateParameterGroupResult"
+      }
+    },
+    "DeleteBackup": {
+      "documentation": "<p>指定したバックアップファイルを削除します。</p>",
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/backups/{BackupId}"
+      },
+      "input": {
+        "shape": "DeleteBackupRequest"
+      },
+      "name": "DeleteBackup"
+    },
+    "DeleteBackupRule": {
+      "documentation": "<p>指定したバックアップルールを削除します。</p>",
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/backupRules/{BackupRuleName}"
+      },
+      "input": {
+        "shape": "DeleteBackupRuleRequest"
+      },
+      "name": "DeleteBackupRule"
+    },
+    "DeleteFirewallGroup": {
+      "documentation": "<p>指定したファイアウォールグループを削除します。</p>",
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}"
+      },
+      "input": {
+        "shape": "DeleteFirewallGroupRequest"
+      },
+      "name": "DeleteFirewallGroup",
+      "output": {
+        "shape": "DeleteFirewallGroupResult"
+      }
+    },
+    "DeleteInstance": {
+      "documentation": "<p>指定したDevOpsサーバーを削除します。</p>",
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/instances/{InstanceId}"
+      },
+      "input": {
+        "shape": "DeleteInstanceRequest"
+      },
+      "name": "DeleteInstance",
+      "output": {
+        "shape": "DeleteInstanceResult"
+      }
+    },
+    "DeleteParameterGroup": {
+      "documentation": "<p>指定したパラメーターグループを削除します。</p>",
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/parameterGroups/{ParameterGroupName}"
+      },
+      "input": {
+        "shape": "DeleteParameterGroupRequest"
+      },
+      "name": "DeleteParameterGroup"
+    },
+    "ExtendDisk": {
+      "documentation": "<p>指定したDevOpsサーバーのディスクを拡張します。<br/>実行するごとに100GBの拡張を行います。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/instances/{InstanceId}:extendDisk"
+      },
+      "input": {
+        "shape": "ExtendDiskRequest"
+      },
+      "name": "ExtendDisk",
+      "output": {
+        "shape": "ExtendDiskResult"
+      }
+    },
+    "GetBackup": {
+      "documentation": "<p>バックアップファイルの情報を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/backups/{BackupId}"
+      },
+      "input": {
+        "shape": "GetBackupRequest"
+      },
+      "name": "GetBackup",
+      "output": {
+        "shape": "GetBackupResult"
+      }
+    },
+    "GetBackupRule": {
+      "documentation": "<p>バックアップルールの情報を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/backupRules/{BackupRuleName}"
+      },
+      "input": {
+        "shape": "GetBackupRuleRequest"
+      },
+      "name": "GetBackupRule",
+      "output": {
+        "shape": "GetBackupRuleResult"
+      }
+    },
+    "GetFirewallGroup": {
+      "documentation": "<p>ファイアウォールグループの情報を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}"
+      },
+      "input": {
+        "shape": "GetFirewallGroupRequest"
+      },
+      "name": "GetFirewallGroup",
+      "output": {
+        "shape": "GetFirewallGroupResult"
+      }
+    },
+    "GetInstance": {
+      "documentation": "<p>DevOpsサーバーの情報を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/instances/{InstanceId}"
+      },
+      "input": {
+        "shape": "GetInstanceRequest"
+      },
+      "name": "GetInstance",
+      "output": {
+        "shape": "GetInstanceResult"
+      }
+    },
+    "GetParameterGroup": {
+      "documentation": "<p>パラメーターグループの情報を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/parameterGroups/{ParameterGroupName}"
+      },
+      "input": {
+        "shape": "GetParameterGroupRequest"
+      },
+      "name": "GetParameterGroup",
+      "output": {
+        "shape": "GetParameterGroupResult"
+      }
+    },
+    "ListBackupRules": {
+      "documentation": "<p>バックアップルールの情報一覧を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/backupRules"
+      },
+      "input": {
+        "shape": "ListBackupRulesRequest"
+      },
+      "name": "ListBackupRules",
+      "output": {
+        "shape": "ListBackupRulesResult"
+      }
+    },
+    "ListBackups": {
+      "documentation": "<p>バックアップファイルの情報一覧を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/backups"
+      },
+      "input": {
+        "shape": "ListBackupsRequest"
+      },
+      "name": "ListBackups",
+      "output": {
+        "shape": "ListBackupsResult"
+      }
+    },
+    "ListFirewallGroups": {
+      "documentation": "<p>ファイアウォールグループの情報一覧を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/firewallGroups"
+      },
+      "input": {
+        "shape": "ListFirewallGroupsRequest"
+      },
+      "name": "ListFirewallGroups",
+      "output": {
+        "shape": "ListFirewallGroupsResult"
+      }
+    },
+    "ListInstances": {
+      "documentation": "<p>DevOpsサーバーの情報一覧を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/instances"
+      },
+      "input": {
+        "shape": "ListInstancesRequest"
+      },
+      "name": "ListInstances",
+      "output": {
+        "shape": "ListInstancesResult"
+      }
+    },
+    "ListParameterGroups": {
+      "documentation": "<p>パラメーターグループの情報一覧を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/parameterGroups"
+      },
+      "input": {
+        "shape": "ListParameterGroupsRequest"
+      },
+      "name": "ListParameterGroups",
+      "output": {
+        "shape": "ListParameterGroupsResult"
+      }
+    },
+    "RebootInstance": {
+      "documentation": "<p>指定したDevOpsサーバーを再起動します。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/instances/{InstanceId}:reboot"
+      },
+      "input": {
+        "shape": "RebootInstanceRequest"
+      },
+      "name": "RebootInstance",
+      "output": {
+        "shape": "RebootInstanceResult"
+      }
+    },
+    "RestoreInstance": {
+      "documentation": "<p>DevOpsサーバーをバックアップファイルから作成します。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/instances:restore"
+      },
+      "input": {
+        "shape": "RestoreInstanceRequest"
+      },
+      "name": "RestoreInstance",
+      "output": {
+        "shape": "RestoreInstanceResult"
+      }
+    },
+    "RevokeFirewallRules": {
+      "documentation": "<p>指定したファイアウォールグループのルールを削除します。</p>",
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}/rules"
+      },
+      "input": {
+        "shape": "RevokeFirewallRulesRequest"
+      },
+      "name": "RevokeFirewallRules",
+      "output": {
+        "shape": "RevokeFirewallRulesResult"
+      }
+    },
+    "UpdateBackupRule": {
+      "documentation": "<p>指定したバックアップルールの設定を更新します。<br/>リクエストボディパラメーターのいずれか(changedBackupRuleName,description)は指定必須です。</p>",
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/backupRules/{BackupRuleName}"
+      },
+      "input": {
+        "shape": "UpdateBackupRuleRequest"
+      },
+      "name": "UpdateBackupRule",
+      "output": {
+        "shape": "UpdateBackupRuleResult"
+      }
+    },
+    "UpdateFirewallGroup": {
+      "documentation": "<p>指定したファイアウォールグループの設定を更新します。<br/>リクエストボディパラメーターのいずれか(changedFirewallGroupName,description)は指定必須です。</p>",
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/firewallGroups/{FirewallGroupName}"
+      },
+      "input": {
+        "shape": "UpdateFirewallGroupRequest"
+      },
+      "name": "UpdateFirewallGroup",
+      "output": {
+        "shape": "UpdateFirewallGroupResult"
+      }
+    },
+    "UpdateInstance": {
+      "documentation": "<p>指定したDevOpsサーバーの設定を更新します。<br/>リクエストボディパラメーターのいずれか(instanceType,description,firewallGroupName)は指定必須です。</p>",
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/instances/{InstanceId}"
+      },
+      "input": {
+        "shape": "UpdateInstanceRequest"
+      },
+      "name": "UpdateInstance",
+      "output": {
+        "shape": "UpdateInstanceResult"
+      }
+    },
+    "UpdateNetworkInterface": {
+      "documentation": "<p>指定したDevOpsサーバーのネットワーク設定を変更します。<br/>nullまたは空のオブジェクトを指定したときはプライベートLANの設定を解除します。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/instances/{InstanceId}:updateNetworkInterface"
+      },
+      "input": {
+        "shape": "UpdateNetworkInterfaceRequest"
+      },
+      "name": "UpdateNetworkInterface",
+      "output": {
+        "shape": "UpdateNetworkInterfaceResult"
+      }
+    },
+    "UpdateParameterGroup": {
+      "documentation": "<p>指定したパラメーターグループの設定を更新します。<br/>リクエストボディパラメーターのいずれか(changedParameterGroupName,description,parameters)は指定必須です。<br/>更新後はインスタンスが再起動します。</p>",
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/parameterGroups/{ParameterGroupName}"
+      },
+      "input": {
+        "shape": "UpdateParameterGroupRequest"
+      },
+      "name": "UpdateParameterGroup",
+      "output": {
+        "shape": "UpdateParameterGroupResult"
+      }
+    },
+    "UpgradeInstance": {
+      "documentation": "<p>指定したDevOpsサーバーをアップグレードします。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/instances/{InstanceId}:upgrade"
+      },
+      "input": {
+        "shape": "UpgradeInstanceRequest"
+      },
+      "name": "UpgradeInstance",
+      "output": {
+        "shape": "UpgradeInstanceResult"
+      }
+    }
+  },
+  "shapes": {
+    "AuthorizeFirewallRulesRequest": {
+      "members": {
+        "FirewallGroupName": {
+          "location": "uri",
+          "locationName": "FirewallGroupName",
+          "shape": "String"
+        },
+        "Rules": {
+          "locationName": "rules",
+          "shape": "ListOfRequestRules"
+        }
+      },
+      "name": "AuthorizeFirewallRulesRequest",
+      "required": [
+        "FirewallGroupName",
+        "Rules"
+      ],
+      "type": "structure"
+    },
+    "AuthorizeFirewallRulesResult": {
+      "members": {
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroup"
+        }
+      },
+      "name": "AuthorizeFirewallRulesResult",
+      "type": "structure"
+    },
+    "AvailabilityZoneOfCreateFirewallGroupRequest": {
+      "enum": [
+        "east-11",
+        "east-12",
+        "east-13",
+        "east-14",
+        "east-31",
+        "west-12",
+        "west-13",
+        "jp-west-21"
+      ],
+      "name": "AvailabilityZoneOfCreateFirewallGroupRequest",
+      "type": "string"
+    },
+    "AvailabilityZoneOfCreateInstanceRequest": {
+      "enum": [
+        "east-11",
+        "east-12",
+        "east-13",
+        "east-14",
+        "east-31",
+        "west-12",
+        "west-13",
+        "jp-west-21"
+      ],
+      "name": "AvailabilityZoneOfCreateInstanceRequest",
+      "type": "string"
+    },
+    "AvailabilityZoneOfRestoreInstanceRequest": {
+      "enum": [
+        "east-11",
+        "east-12",
+        "east-13",
+        "east-14",
+        "east-31",
+        "west-12",
+        "west-13",
+        "jp-west-21"
+      ],
+      "name": "AvailabilityZoneOfRestoreInstanceRequest",
+      "type": "string"
+    },
+    "Backup": {
+      "members": {
+        "BackupId": {
+          "locationName": "backupId",
+          "shape": "String"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "FileName": {
+          "locationName": "fileName",
+          "shape": "String"
+        },
+        "FileSize": {
+          "locationName": "fileSize",
+          "shape": "Integer"
+        },
+        "InstanceId": {
+          "locationName": "instanceId",
+          "shape": "String"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "String"
+        }
+      },
+      "name": "Backup",
+      "type": "structure"
+    },
+    "BackupRule": {
+      "members": {
+        "BackupRuleName": {
+          "locationName": "backupRuleName",
+          "shape": "String"
+        },
+        "BackupTime": {
+          "locationName": "backupTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "Generation": {
+          "locationName": "generation",
+          "shape": "Integer"
+        },
+        "InstanceId": {
+          "locationName": "instanceId",
+          "shape": "String"
+        }
+      },
+      "name": "BackupRule",
+      "type": "structure"
+    },
+    "BackupRules": {
+      "members": {
+        "BackupRuleName": {
+          "locationName": "backupRuleName",
+          "shape": "String"
+        },
+        "BackupTime": {
+          "locationName": "backupTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "Generation": {
+          "locationName": "generation",
+          "shape": "Integer"
+        },
+        "InstanceId": {
+          "locationName": "instanceId",
+          "shape": "String"
+        }
+      },
+      "name": "BackupRules",
+      "type": "structure"
+    },
+    "Backups": {
+      "members": {
+        "BackupId": {
+          "locationName": "backupId",
+          "shape": "String"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "FileName": {
+          "locationName": "fileName",
+          "shape": "String"
+        },
+        "FileSize": {
+          "locationName": "fileSize",
+          "shape": "Integer"
+        },
+        "InstanceId": {
+          "locationName": "instanceId",
+          "shape": "String"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "String"
+        }
+      },
+      "name": "Backups",
+      "type": "structure"
+    },
+    "Blob": {
+      "name": "Blob",
+      "type": "blob"
+    },
+    "Boolean": {
+      "name": "Boolean",
+      "type": "boolean"
+    },
+    "CidrIpOfrulesForAuthorizeFirewallRules": {
+      "enum": [
+        "IPv4IP",
+        "CIDR"
+      ],
+      "name": "CidrIpOfrulesForAuthorizeFirewallRules",
+      "type": "string"
+    },
+    "CreateBackupRuleRequest": {
+      "members": {
+        "BackupRuleName": {
+          "locationName": "backupRuleName",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "InstanceId": {
+          "locationName": "instanceId",
+          "shape": "String"
+        }
+      },
+      "name": "CreateBackupRuleRequest",
+      "required": [
+        "BackupRuleName",
+        "InstanceId"
+      ],
+      "type": "structure"
+    },
+    "CreateBackupRuleResult": {
+      "members": {
+        "BackupRule": {
+          "locationName": "backupRule",
+          "shape": "BackupRule"
+        }
+      },
+      "name": "CreateBackupRuleResult",
+      "type": "structure"
+    },
+    "CreateFirewallGroupRequest": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "AvailabilityZoneOfCreateFirewallGroupRequest"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "FirewallGroupName": {
+          "locationName": "firewallGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "CreateFirewallGroupRequest",
+      "required": [
+        "FirewallGroupName"
+      ],
+      "type": "structure"
+    },
+    "CreateFirewallGroupResult": {
+      "members": {
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroup"
+        }
+      },
+      "name": "CreateFirewallGroupResult",
+      "type": "structure"
+    },
+    "CreateInstanceRequest": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "AvailabilityZoneOfCreateInstanceRequest"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "DiskSize": {
+          "locationName": "diskSize",
+          "shape": "Integer"
+        },
+        "FirewallGroupName": {
+          "locationName": "firewallGroupName",
+          "shape": "String"
+        },
+        "InitialRootPassword": {
+          "locationName": "initialRootPassword",
+          "shape": "String"
+        },
+        "InstanceId": {
+          "locationName": "instanceId",
+          "shape": "String"
+        },
+        "InstanceType": {
+          "locationName": "instanceType",
+          "shape": "InstanceTypeOfCreateInstanceRequest"
+        },
+        "NetworkConfig": {
+          "locationName": "networkConfig",
+          "shape": "RequestNetworkConfig"
+        },
+        "ParameterGroupName": {
+          "locationName": "parameterGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "CreateInstanceRequest",
+      "required": [
+        "DiskSize",
+        "FirewallGroupName",
+        "InitialRootPassword",
+        "InstanceId",
+        "InstanceType",
+        "ParameterGroupName"
+      ],
+      "type": "structure"
+    },
+    "CreateInstanceResult": {
+      "members": {
+        "Instance": {
+          "locationName": "instance",
+          "shape": "Instance"
+        }
+      },
+      "name": "CreateInstanceResult",
+      "type": "structure"
+    },
+    "CreateParameterGroupRequest": {
+      "members": {
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "ParameterGroupName": {
+          "locationName": "parameterGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "CreateParameterGroupRequest",
+      "required": [
+        "ParameterGroupName"
+      ],
+      "type": "structure"
+    },
+    "CreateParameterGroupResult": {
+      "members": {
+        "ParameterGroup": {
+          "locationName": "parameterGroup",
+          "shape": "ParameterGroup"
+        }
+      },
+      "name": "CreateParameterGroupResult",
+      "type": "structure"
+    },
+    "DeleteBackupRequest": {
+      "members": {
+        "BackupId": {
+          "location": "uri",
+          "locationName": "BackupId",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteBackupRequest",
+      "required": [
+        "BackupId"
+      ],
+      "type": "structure"
+    },
+    "DeleteBackupRuleRequest": {
+      "members": {
+        "BackupRuleName": {
+          "location": "uri",
+          "locationName": "BackupRuleName",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteBackupRuleRequest",
+      "required": [
+        "BackupRuleName"
+      ],
+      "type": "structure"
+    },
+    "DeleteFirewallGroupRequest": {
+      "members": {
+        "FirewallGroupName": {
+          "location": "uri",
+          "locationName": "FirewallGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteFirewallGroupRequest",
+      "required": [
+        "FirewallGroupName"
+      ],
+      "type": "structure"
+    },
+    "DeleteFirewallGroupResult": {
+      "members": {
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroup"
+        }
+      },
+      "name": "DeleteFirewallGroupResult",
+      "type": "structure"
+    },
+    "DeleteInstanceRequest": {
+      "members": {
+        "InstanceId": {
+          "location": "uri",
+          "locationName": "InstanceId",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteInstanceRequest",
+      "required": [
+        "InstanceId"
+      ],
+      "type": "structure"
+    },
+    "DeleteInstanceResult": {
+      "members": {
+        "Instance": {
+          "locationName": "instance",
+          "shape": "Instance"
+        }
+      },
+      "name": "DeleteInstanceResult",
+      "type": "structure"
+    },
+    "DeleteParameterGroupRequest": {
+      "members": {
+        "ParameterGroupName": {
+          "location": "uri",
+          "locationName": "ParameterGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "DeleteParameterGroupRequest",
+      "required": [
+        "ParameterGroupName"
+      ],
+      "type": "structure"
+    },
+    "Double": {
+      "name": "Double",
+      "type": "double"
+    },
+    "ExtendDiskRequest": {
+      "members": {
+        "InstanceId": {
+          "location": "uri",
+          "locationName": "InstanceId",
+          "shape": "String"
+        }
+      },
+      "name": "ExtendDiskRequest",
+      "required": [
+        "InstanceId"
+      ],
+      "type": "structure"
+    },
+    "ExtendDiskResult": {
+      "members": {
+        "Instance": {
+          "locationName": "instance",
+          "shape": "Instance"
+        }
+      },
+      "name": "ExtendDiskResult",
+      "type": "structure"
+    },
+    "FirewallGroup": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "FirewallGroupName": {
+          "locationName": "firewallGroupName",
+          "shape": "String"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "String"
+        },
+        "Rules": {
+          "locationName": "rules",
+          "shape": "ListOfRules"
+        },
+        "State": {
+          "locationName": "state",
+          "shape": "String"
+        }
+      },
+      "name": "FirewallGroup",
+      "type": "structure"
+    },
+    "FirewallGroups": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "FirewallGroupName": {
+          "locationName": "firewallGroupName",
+          "shape": "String"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "String"
+        },
+        "Rules": {
+          "locationName": "rules",
+          "shape": "ListOfRules"
+        },
+        "State": {
+          "locationName": "state",
+          "shape": "String"
+        }
+      },
+      "name": "FirewallGroups",
+      "type": "structure"
+    },
+    "GetBackupRequest": {
+      "members": {
+        "BackupId": {
+          "location": "uri",
+          "locationName": "BackupId",
+          "shape": "String"
+        }
+      },
+      "name": "GetBackupRequest",
+      "required": [
+        "BackupId"
+      ],
+      "type": "structure"
+    },
+    "GetBackupResult": {
+      "members": {
+        "Backup": {
+          "locationName": "backup",
+          "shape": "Backup"
+        }
+      },
+      "name": "GetBackupResult",
+      "type": "structure"
+    },
+    "GetBackupRuleRequest": {
+      "members": {
+        "BackupRuleName": {
+          "location": "uri",
+          "locationName": "BackupRuleName",
+          "shape": "String"
+        }
+      },
+      "name": "GetBackupRuleRequest",
+      "required": [
+        "BackupRuleName"
+      ],
+      "type": "structure"
+    },
+    "GetBackupRuleResult": {
+      "members": {
+        "BackupRule": {
+          "locationName": "backupRule",
+          "shape": "BackupRule"
+        }
+      },
+      "name": "GetBackupRuleResult",
+      "type": "structure"
+    },
+    "GetFirewallGroupRequest": {
+      "members": {
+        "FirewallGroupName": {
+          "location": "uri",
+          "locationName": "FirewallGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "GetFirewallGroupRequest",
+      "required": [
+        "FirewallGroupName"
+      ],
+      "type": "structure"
+    },
+    "GetFirewallGroupResult": {
+      "members": {
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroup"
+        }
+      },
+      "name": "GetFirewallGroupResult",
+      "type": "structure"
+    },
+    "GetInstanceRequest": {
+      "members": {
+        "InstanceId": {
+          "location": "uri",
+          "locationName": "InstanceId",
+          "shape": "String"
+        }
+      },
+      "name": "GetInstanceRequest",
+      "required": [
+        "InstanceId"
+      ],
+      "type": "structure"
+    },
+    "GetInstanceResult": {
+      "members": {
+        "Instance": {
+          "locationName": "instance",
+          "shape": "Instance"
+        }
+      },
+      "name": "GetInstanceResult",
+      "type": "structure"
+    },
+    "GetParameterGroupRequest": {
+      "members": {
+        "ParameterGroupName": {
+          "location": "uri",
+          "locationName": "ParameterGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "GetParameterGroupRequest",
+      "required": [
+        "ParameterGroupName"
+      ],
+      "type": "structure"
+    },
+    "GetParameterGroupResult": {
+      "members": {
+        "ParameterGroup": {
+          "locationName": "parameterGroup",
+          "shape": "ParameterGroup"
+        }
+      },
+      "name": "GetParameterGroupResult",
+      "type": "structure"
+    },
+    "Instance": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "DiskSize": {
+          "locationName": "diskSize",
+          "shape": "Integer"
+        },
+        "FirewallGroupName": {
+          "locationName": "firewallGroupName",
+          "shape": "String"
+        },
+        "GitlabUrl": {
+          "locationName": "gitlabUrl",
+          "shape": "String"
+        },
+        "GitlabVersion": {
+          "locationName": "gitlabVersion",
+          "shape": "String"
+        },
+        "InstanceId": {
+          "locationName": "instanceId",
+          "shape": "String"
+        },
+        "InstanceType": {
+          "locationName": "instanceType",
+          "shape": "String"
+        },
+        "NetworkConfig": {
+          "locationName": "networkConfig",
+          "shape": "NetworkConfig"
+        },
+        "ParameterGroupName": {
+          "locationName": "parameterGroupName",
+          "shape": "String"
+        },
+        "PublicIpAddress": {
+          "locationName": "publicIpAddress",
+          "shape": "String"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "String"
+        },
+        "RegistryUrl": {
+          "locationName": "registryUrl",
+          "shape": "String"
+        },
+        "State": {
+          "locationName": "state",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "Status"
+        },
+        "UpgradableGitlabVersions": {
+          "locationName": "upgradableGitlabVersions",
+          "shape": "ListOfUpgradableGitlabVersions"
+        }
+      },
+      "name": "Instance",
+      "type": "structure"
+    },
+    "InstanceTypeOfCreateInstanceRequest": {
+      "enum": [
+        "c-large",
+        "c-large8",
+        "e-large",
+        "e-large8",
+        "e-large16",
+        "e-large24",
+        "e-large32",
+        "e-extra-large8",
+        "e-extra-large16",
+        "e-extra-large24",
+        "e-extra-large32",
+        "e-extra-large48",
+        "e-double-large16",
+        "e-double-large24",
+        "e-double-large32",
+        "e-double-large48",
+        "e-double-large64",
+        "e-double-large96",
+        "h2-large",
+        "h2-large8",
+        "h2-large16",
+        "h2-large24",
+        "h2-large32",
+        "h2-extra-large8",
+        "h2-extra-large16",
+        "h2-extra-large24",
+        "h2-extra-large32",
+        "h2-extra-large48",
+        "h2-double-large16",
+        "h2-double-large24",
+        "h2-double-large32",
+        "h2-double-large48",
+        "h2-double-large64",
+        "h2-double-large96"
+      ],
+      "name": "InstanceTypeOfCreateInstanceRequest",
+      "type": "string"
+    },
+    "InstanceTypeOfRestoreInstanceRequest": {
+      "enum": [
+        "c-large",
+        "c-large8",
+        "e-large",
+        "e-large8",
+        "e-large16",
+        "e-large24",
+        "e-large32",
+        "e-extra-large8",
+        "e-extra-large16",
+        "e-extra-large24",
+        "e-extra-large32",
+        "e-extra-large48",
+        "e-double-large16",
+        "e-double-large24",
+        "e-double-large32",
+        "e-double-large48",
+        "e-double-large64",
+        "e-double-large96",
+        "h2-large",
+        "h2-large8",
+        "h2-large16",
+        "h2-large24",
+        "h2-large32",
+        "h2-extra-large8",
+        "h2-extra-large16",
+        "h2-extra-large24",
+        "h2-extra-large32",
+        "h2-extra-large48",
+        "h2-double-large16",
+        "h2-double-large24",
+        "h2-double-large32",
+        "h2-double-large48",
+        "h2-double-large64",
+        "h2-double-large96"
+      ],
+      "name": "InstanceTypeOfRestoreInstanceRequest",
+      "type": "string"
+    },
+    "InstanceTypeOfUpdateInstanceRequest": {
+      "enum": [
+        "c-large",
+        "c-large8",
+        "e-large",
+        "e-large8",
+        "e-large16",
+        "e-large24",
+        "e-large32",
+        "e-extra-large8",
+        "e-extra-large16",
+        "e-extra-large24",
+        "e-extra-large32",
+        "e-extra-large48",
+        "e-double-large16",
+        "e-double-large24",
+        "e-double-large32",
+        "e-double-large48",
+        "e-double-large64",
+        "e-double-large96",
+        "h2-large",
+        "h2-large8",
+        "h2-large16",
+        "h2-large24",
+        "h2-large32",
+        "h2-extra-large8",
+        "h2-extra-large16",
+        "h2-extra-large24",
+        "h2-extra-large32",
+        "h2-extra-large48",
+        "h2-double-large16",
+        "h2-double-large24",
+        "h2-double-large32",
+        "h2-double-large48",
+        "h2-double-large64",
+        "h2-double-large96"
+      ],
+      "name": "InstanceTypeOfUpdateInstanceRequest",
+      "type": "string"
+    },
+    "Instances": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "String"
+        },
+        "CreateTime": {
+          "locationName": "createTime",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "DiskSize": {
+          "locationName": "diskSize",
+          "shape": "Integer"
+        },
+        "FirewallGroupName": {
+          "locationName": "firewallGroupName",
+          "shape": "String"
+        },
+        "GitlabUrl": {
+          "locationName": "gitlabUrl",
+          "shape": "String"
+        },
+        "GitlabVersion": {
+          "locationName": "gitlabVersion",
+          "shape": "String"
+        },
+        "InstanceId": {
+          "locationName": "instanceId",
+          "shape": "String"
+        },
+        "InstanceType": {
+          "locationName": "instanceType",
+          "shape": "String"
+        },
+        "NetworkConfig": {
+          "locationName": "networkConfig",
+          "shape": "NetworkConfig"
+        },
+        "ParameterGroupName": {
+          "locationName": "parameterGroupName",
+          "shape": "String"
+        },
+        "PublicIpAddress": {
+          "locationName": "publicIpAddress",
+          "shape": "String"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "String"
+        },
+        "RegistryUrl": {
+          "locationName": "registryUrl",
+          "shape": "String"
+        },
+        "State": {
+          "locationName": "state",
+          "shape": "String"
+        },
+        "Status": {
+          "locationName": "status",
+          "shape": "Status"
+        },
+        "UpgradableGitlabVersions": {
+          "locationName": "upgradableGitlabVersions",
+          "shape": "ListOfUpgradableGitlabVersions"
+        }
+      },
+      "name": "Instances",
+      "type": "structure"
+    },
+    "Integer": {
+      "name": "Integer",
+      "type": "integer"
+    },
+    "ListBackupRulesRequest": {
+      "members": {},
+      "name": "ListBackupRulesRequest",
+      "type": "structure"
+    },
+    "ListBackupRulesResult": {
+      "members": {
+        "BackupRules": {
+          "locationName": "backupRules",
+          "shape": "ListOfBackupRules"
+        }
+      },
+      "name": "ListBackupRulesResult",
+      "type": "structure"
+    },
+    "ListBackupsRequest": {
+      "members": {},
+      "name": "ListBackupsRequest",
+      "type": "structure"
+    },
+    "ListBackupsResult": {
+      "members": {
+        "Backups": {
+          "locationName": "backups",
+          "shape": "ListOfBackups"
+        }
+      },
+      "name": "ListBackupsResult",
+      "type": "structure"
+    },
+    "ListFirewallGroupsRequest": {
+      "members": {},
+      "name": "ListFirewallGroupsRequest",
+      "type": "structure"
+    },
+    "ListFirewallGroupsResult": {
+      "members": {
+        "FirewallGroups": {
+          "locationName": "firewallGroups",
+          "shape": "ListOfFirewallGroups"
+        }
+      },
+      "name": "ListFirewallGroupsResult",
+      "type": "structure"
+    },
+    "ListInstancesRequest": {
+      "members": {},
+      "name": "ListInstancesRequest",
+      "type": "structure"
+    },
+    "ListInstancesResult": {
+      "members": {
+        "Instances": {
+          "locationName": "instances",
+          "shape": "ListOfInstances"
+        }
+      },
+      "name": "ListInstancesResult",
+      "type": "structure"
+    },
+    "ListOfAllowedValues": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfAllowedValues",
+      "type": "list"
+    },
+    "ListOfBackupRules": {
+      "member": {
+        "shape": "BackupRules"
+      },
+      "name": "ListOfBackupRules",
+      "type": "list"
+    },
+    "ListOfBackups": {
+      "member": {
+        "shape": "Backups"
+      },
+      "name": "ListOfBackups",
+      "type": "list"
+    },
+    "ListOfFirewallGroups": {
+      "member": {
+        "shape": "FirewallGroups"
+      },
+      "name": "ListOfFirewallGroups",
+      "type": "list"
+    },
+    "ListOfInstances": {
+      "member": {
+        "shape": "Instances"
+      },
+      "name": "ListOfInstances",
+      "type": "list"
+    },
+    "ListOfParameterGroups": {
+      "member": {
+        "shape": "ParameterGroups"
+      },
+      "name": "ListOfParameterGroups",
+      "type": "list"
+    },
+    "ListOfParameters": {
+      "member": {
+        "shape": "Parameters"
+      },
+      "name": "ListOfParameters",
+      "type": "list"
+    },
+    "ListOfRequestRules": {
+      "member": {
+        "shape": "RequestRules"
+      },
+      "name": "ListOfRequestRules",
+      "type": "list"
+    },
+    "ListOfRules": {
+      "member": {
+        "shape": "Rules"
+      },
+      "name": "ListOfRules",
+      "type": "list"
+    },
+    "ListOfUpgradableGitlabVersions": {
+      "member": {
+        "locationName": "member",
+        "shape": "String"
+      },
+      "name": "ListOfUpgradableGitlabVersions",
+      "type": "list"
+    },
+    "ListParameterGroupsRequest": {
+      "members": {},
+      "name": "ListParameterGroupsRequest",
+      "type": "structure"
+    },
+    "ListParameterGroupsResult": {
+      "members": {
+        "ParameterGroups": {
+          "locationName": "parameterGroups",
+          "shape": "ListOfParameterGroups"
+        }
+      },
+      "name": "ListParameterGroupsResult",
+      "type": "structure"
+    },
+    "Long": {
+      "name": "Long",
+      "type": "long"
+    },
+    "NetworkConfig": {
+      "members": {
+        "NetworkId": {
+          "locationName": "networkId",
+          "shape": "String"
+        },
+        "PrivateAddress": {
+          "locationName": "privateAddress",
+          "shape": "String"
+        }
+      },
+      "name": "NetworkConfig",
+      "type": "structure"
+    },
+    "ParameterGroup": {
+      "members": {
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "InstanceId": {
+          "locationName": "instanceId",
+          "shape": "String"
+        },
+        "ParameterGroupName": {
+          "locationName": "parameterGroupName",
+          "shape": "String"
+        },
+        "Parameters": {
+          "locationName": "parameters",
+          "shape": "ListOfParameters"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "String"
+        }
+      },
+      "name": "ParameterGroup",
+      "type": "structure"
+    },
+    "ParameterGroups": {
+      "members": {
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "InstanceId": {
+          "locationName": "instanceId",
+          "shape": "String"
+        },
+        "ParameterGroupName": {
+          "locationName": "parameterGroupName",
+          "shape": "String"
+        },
+        "Parameters": {
+          "locationName": "parameters",
+          "shape": "ListOfParameters"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "String"
+        }
+      },
+      "name": "ParameterGroups",
+      "type": "structure"
+    },
+    "Parameters": {
+      "members": {
+        "AllowedValues": {
+          "locationName": "allowed_values",
+          "shape": "ListOfAllowedValues"
+        },
+        "DataType": {
+          "locationName": "data_type",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "IsModifiable": {
+          "locationName": "is_modifiable",
+          "shape": "Boolean"
+        },
+        "IsSecret": {
+          "locationName": "is_secret",
+          "shape": "Boolean"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "String"
+        }
+      },
+      "name": "Parameters",
+      "type": "structure"
+    },
+    "ProtocolOfrulesForAuthorizeFirewallRules": {
+      "enum": [
+        "TCP",
+        "ICMP"
+      ],
+      "name": "ProtocolOfrulesForAuthorizeFirewallRules",
+      "type": "string"
+    },
+    "RebootInstanceRequest": {
+      "members": {
+        "InstanceId": {
+          "location": "uri",
+          "locationName": "InstanceId",
+          "shape": "String"
+        }
+      },
+      "name": "RebootInstanceRequest",
+      "required": [
+        "InstanceId"
+      ],
+      "type": "structure"
+    },
+    "RebootInstanceResult": {
+      "members": {
+        "Instance": {
+          "locationName": "instance",
+          "shape": "Instance"
+        }
+      },
+      "name": "RebootInstanceResult",
+      "type": "structure"
+    },
+    "RequestNetworkConfig": {
+      "members": {
+        "NetworkId": {
+          "locationName": "networkId",
+          "shape": "String"
+        },
+        "PrivateAddress": {
+          "locationName": "privateAddress",
+          "shape": "String"
+        }
+      },
+      "name": "RequestNetworkConfig",
+      "type": "structure"
+    },
+    "RequestParameters": {
+      "members": {
+        "GitlabEmailFrom": {
+          "locationName": "gitlab_email_from",
+          "shape": "String"
+        },
+        "GitlabEmailReplyTo": {
+          "locationName": "gitlab_email_reply_to",
+          "shape": "String"
+        },
+        "LdapEnabled": {
+          "locationName": "ldap_enabled",
+          "shape": "String"
+        },
+        "LdapServersActiveDirectory": {
+          "locationName": "ldap_servers_active_directory",
+          "shape": "String"
+        },
+        "LdapServersAllowUsernameOrEmailLogin": {
+          "locationName": "ldap_servers_allow_username_or_email_login",
+          "shape": "String"
+        },
+        "LdapServersAttributesEmail": {
+          "locationName": "ldap_servers_attributes_email",
+          "shape": "String"
+        },
+        "LdapServersAttributesFirstName": {
+          "locationName": "ldap_servers_attributes_first_name",
+          "shape": "String"
+        },
+        "LdapServersAttributesLastName": {
+          "locationName": "ldap_servers_attributes_last_name",
+          "shape": "String"
+        },
+        "LdapServersAttributesName": {
+          "locationName": "ldap_servers_attributes_name",
+          "shape": "String"
+        },
+        "LdapServersAttributesUsername": {
+          "locationName": "ldap_servers_attributes_username",
+          "shape": "String"
+        },
+        "LdapServersBase": {
+          "locationName": "ldap_servers_base",
+          "shape": "String"
+        },
+        "LdapServersBindDn": {
+          "locationName": "ldap_servers_bind_dn",
+          "shape": "String"
+        },
+        "LdapServersBlockAutoCreatedUsers": {
+          "locationName": "ldap_servers_block_auto_created_users",
+          "shape": "String"
+        },
+        "LdapServersEncryption": {
+          "locationName": "ldap_servers_encryption",
+          "shape": "String"
+        },
+        "LdapServersHost": {
+          "locationName": "ldap_servers_host",
+          "shape": "String"
+        },
+        "LdapServersLabel": {
+          "locationName": "ldap_servers_label",
+          "shape": "String"
+        },
+        "LdapServersLowercaseUsernames": {
+          "locationName": "ldap_servers_lowercase_usernames",
+          "shape": "String"
+        },
+        "LdapServersName": {
+          "locationName": "ldap_servers_name",
+          "shape": "String"
+        },
+        "LdapServersPassword": {
+          "locationName": "ldap_servers_password",
+          "shape": "String"
+        },
+        "LdapServersPort": {
+          "locationName": "ldap_servers_port",
+          "shape": "String"
+        },
+        "LdapServersTimeout": {
+          "locationName": "ldap_servers_timeout",
+          "shape": "String"
+        },
+        "LdapServersUid": {
+          "locationName": "ldap_servers_uid",
+          "shape": "String"
+        },
+        "LdapServersUserFilter": {
+          "locationName": "ldap_servers_user_filter",
+          "shape": "String"
+        },
+        "LdapServersVerifyCertificates": {
+          "locationName": "ldap_servers_verify_certificates",
+          "shape": "String"
+        },
+        "OmniauthAllowSingleSignOn": {
+          "locationName": "omniauth_allow_single_sign_on",
+          "shape": "String"
+        },
+        "OmniauthAutoLinkSamlUser": {
+          "locationName": "omniauth_auto_link_saml_user",
+          "shape": "String"
+        },
+        "OmniauthAutoSignInWithProvider": {
+          "locationName": "omniauth_auto_sign_in_with_provider",
+          "shape": "String"
+        },
+        "OmniauthBlockAutoCreatedUsers": {
+          "locationName": "omniauth_block_auto_created_users",
+          "shape": "String"
+        },
+        "OmniauthProvidersSamlAdminGroups": {
+          "locationName": "omniauth_providers_saml_admin_groups",
+          "shape": "String"
+        },
+        "OmniauthProvidersSamlAssertionConsumerServiceUrl": {
+          "locationName": "omniauth_providers_saml_assertion_consumer_service_url",
+          "shape": "String"
+        },
+        "OmniauthProvidersSamlAuditorGroups": {
+          "locationName": "omniauth_providers_saml_auditor_groups",
+          "shape": "String"
+        },
+        "OmniauthProvidersSamlExternalGroups": {
+          "locationName": "omniauth_providers_saml_external_groups",
+          "shape": "String"
+        },
+        "OmniauthProvidersSamlGroupsAttribute": {
+          "locationName": "omniauth_providers_saml_groups_attribute",
+          "shape": "String"
+        },
+        "OmniauthProvidersSamlIdpCertFingerprint": {
+          "locationName": "omniauth_providers_saml_idp_cert_fingerprint",
+          "shape": "String"
+        },
+        "OmniauthProvidersSamlIdpSsoTargetUrl": {
+          "locationName": "omniauth_providers_saml_idp_sso_target_url",
+          "shape": "String"
+        },
+        "OmniauthProvidersSamlIssuer": {
+          "locationName": "omniauth_providers_saml_issuer",
+          "shape": "String"
+        },
+        "OmniauthProvidersSamlLabel": {
+          "locationName": "omniauth_providers_saml_label",
+          "shape": "String"
+        },
+        "OmniauthProvidersSamlName": {
+          "locationName": "omniauth_providers_saml_name",
+          "shape": "String"
+        },
+        "OmniauthProvidersSamlNameIdentifierFormat": {
+          "locationName": "omniauth_providers_saml_name_identifier_format",
+          "shape": "String"
+        },
+        "OmniauthProvidersSamlRequiredGroups": {
+          "locationName": "omniauth_providers_saml_required_groups",
+          "shape": "String"
+        },
+        "SmtpPassword": {
+          "locationName": "smtp_password",
+          "shape": "String"
+        },
+        "SmtpUserName": {
+          "locationName": "smtp_user_name",
+          "shape": "String"
+        }
+      },
+      "name": "RequestParameters",
+      "type": "structure"
+    },
+    "RequestRules": {
+      "members": {
+        "CidrIp": {
+          "locationName": "cidrIp",
+          "shape": "CidrIpOfrulesForAuthorizeFirewallRules"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "Port": {
+          "locationName": "port",
+          "shape": "Integer"
+        },
+        "Protocol": {
+          "locationName": "protocol",
+          "shape": "ProtocolOfrulesForAuthorizeFirewallRules"
+        }
+      },
+      "name": "RequestRules",
+      "required": [
+        "CidrIp",
+        "Protocol"
+      ],
+      "type": "structure"
+    },
+    "RestoreInstanceRequest": {
+      "members": {
+        "AvailabilityZone": {
+          "locationName": "availabilityZone",
+          "shape": "AvailabilityZoneOfRestoreInstanceRequest"
+        },
+        "BackupId": {
+          "locationName": "backupId",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "DiskSize": {
+          "locationName": "diskSize",
+          "shape": "Integer"
+        },
+        "FirewallGroupName": {
+          "locationName": "firewallGroupName",
+          "shape": "String"
+        },
+        "InstanceId": {
+          "locationName": "instanceId",
+          "shape": "String"
+        },
+        "InstanceType": {
+          "locationName": "instanceType",
+          "shape": "InstanceTypeOfRestoreInstanceRequest"
+        },
+        "NetworkConfig": {
+          "locationName": "networkConfig",
+          "shape": "RequestNetworkConfig"
+        },
+        "ParameterGroupName": {
+          "locationName": "parameterGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "RestoreInstanceRequest",
+      "required": [
+        "BackupId",
+        "DiskSize",
+        "FirewallGroupName",
+        "InstanceId",
+        "InstanceType",
+        "ParameterGroupName"
+      ],
+      "type": "structure"
+    },
+    "RestoreInstanceResult": {
+      "members": {
+        "Instance": {
+          "locationName": "instance",
+          "shape": "Instance"
+        }
+      },
+      "name": "RestoreInstanceResult",
+      "type": "structure"
+    },
+    "RevokeFirewallRulesRequest": {
+      "members": {
+        "FirewallGroupName": {
+          "location": "uri",
+          "locationName": "FirewallGroupName",
+          "shape": "String"
+        },
+        "Ids": {
+          "location": "querystring",
+          "locationName": "ids",
+          "shape": "String"
+        }
+      },
+      "name": "RevokeFirewallRulesRequest",
+      "required": [
+        "FirewallGroupName",
+        "Ids"
+      ],
+      "type": "structure"
+    },
+    "RevokeFirewallRulesResult": {
+      "members": {
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroup"
+        }
+      },
+      "name": "RevokeFirewallRulesResult",
+      "type": "structure"
+    },
+    "Rules": {
+      "members": {
+        "CidrIp": {
+          "locationName": "cidrIp",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "Id": {
+          "locationName": "id",
+          "shape": "String"
+        },
+        "Port": {
+          "locationName": "port",
+          "shape": "Integer"
+        },
+        "Protocol": {
+          "locationName": "protocol",
+          "shape": "String"
+        },
+        "State": {
+          "locationName": "state",
+          "shape": "String"
+        }
+      },
+      "name": "Rules",
+      "type": "structure"
+    },
+    "Status": {
+      "members": {
+        "Code": {
+          "locationName": "code",
+          "shape": "Integer"
+        },
+        "Name": {
+          "locationName": "name",
+          "shape": "String"
+        }
+      },
+      "name": "Status",
+      "type": "structure"
+    },
+    "String": {
+      "name": "String",
+      "type": "string"
+    },
+    "TStamp": {
+      "name": "TStamp",
+      "type": "timestamp"
+    },
+    "UpdateBackupRuleRequest": {
+      "members": {
+        "BackupRuleName": {
+          "location": "uri",
+          "locationName": "BackupRuleName",
+          "shape": "String"
+        },
+        "ChangedBackupRuleName": {
+          "locationName": "changedBackupRuleName",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        }
+      },
+      "name": "UpdateBackupRuleRequest",
+      "required": [
+        "BackupRuleName"
+      ],
+      "type": "structure"
+    },
+    "UpdateBackupRuleResult": {
+      "members": {
+        "BackupRule": {
+          "locationName": "backupRule",
+          "shape": "BackupRule"
+        }
+      },
+      "name": "UpdateBackupRuleResult",
+      "type": "structure"
+    },
+    "UpdateFirewallGroupRequest": {
+      "members": {
+        "ChangedFirewallGroupName": {
+          "locationName": "changedFirewallGroupName",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "FirewallGroupName": {
+          "location": "uri",
+          "locationName": "FirewallGroupName",
+          "shape": "String"
+        }
+      },
+      "name": "UpdateFirewallGroupRequest",
+      "required": [
+        "FirewallGroupName"
+      ],
+      "type": "structure"
+    },
+    "UpdateFirewallGroupResult": {
+      "members": {
+        "FirewallGroup": {
+          "locationName": "firewallGroup",
+          "shape": "FirewallGroup"
+        }
+      },
+      "name": "UpdateFirewallGroupResult",
+      "type": "structure"
+    },
+    "UpdateInstanceRequest": {
+      "members": {
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "FirewallGroupName": {
+          "locationName": "firewallGroupName",
+          "shape": "String"
+        },
+        "InstanceId": {
+          "location": "uri",
+          "locationName": "InstanceId",
+          "shape": "String"
+        },
+        "InstanceType": {
+          "locationName": "instanceType",
+          "shape": "InstanceTypeOfUpdateInstanceRequest"
+        }
+      },
+      "name": "UpdateInstanceRequest",
+      "required": [
+        "InstanceId"
+      ],
+      "type": "structure"
+    },
+    "UpdateInstanceResult": {
+      "members": {
+        "Instance": {
+          "locationName": "instance",
+          "shape": "Instance"
+        }
+      },
+      "name": "UpdateInstanceResult",
+      "type": "structure"
+    },
+    "UpdateNetworkInterfaceRequest": {
+      "members": {
+        "InstanceId": {
+          "location": "uri",
+          "locationName": "InstanceId",
+          "shape": "String"
+        },
+        "NetworkConfig": {
+          "locationName": "networkConfig",
+          "shape": "RequestNetworkConfig"
+        }
+      },
+      "name": "UpdateNetworkInterfaceRequest",
+      "required": [
+        "InstanceId"
+      ],
+      "type": "structure"
+    },
+    "UpdateNetworkInterfaceResult": {
+      "members": {
+        "Instance": {
+          "locationName": "instance",
+          "shape": "Instance"
+        }
+      },
+      "name": "UpdateNetworkInterfaceResult",
+      "type": "structure"
+    },
+    "UpdateParameterGroupRequest": {
+      "members": {
+        "ChangedParameterGroupName": {
+          "locationName": "changedParameterGroupName",
+          "shape": "String"
+        },
+        "Description": {
+          "locationName": "description",
+          "shape": "String"
+        },
+        "ParameterGroupName": {
+          "location": "uri",
+          "locationName": "ParameterGroupName",
+          "shape": "String"
+        },
+        "Parameters": {
+          "locationName": "parameters",
+          "shape": "RequestParameters"
+        }
+      },
+      "name": "UpdateParameterGroupRequest",
+      "required": [
+        "ParameterGroupName"
+      ],
+      "type": "structure"
+    },
+    "UpdateParameterGroupResult": {
+      "members": {
+        "ParameterGroup": {
+          "locationName": "parameterGroup",
+          "shape": "ParameterGroup"
+        }
+      },
+      "name": "UpdateParameterGroupResult",
+      "type": "structure"
+    },
+    "UpgradeInstanceRequest": {
+      "members": {
+        "GitlabVersion": {
+          "locationName": "gitlabVersion",
+          "shape": "String"
+        },
+        "InstanceId": {
+          "location": "uri",
+          "locationName": "InstanceId",
+          "shape": "String"
+        }
+      },
+      "name": "UpgradeInstanceRequest",
+      "required": [
+        "InstanceId"
+      ],
+      "type": "structure"
+    },
+    "UpgradeInstanceResult": {
+      "members": {
+        "Instance": {
+          "locationName": "instance",
+          "shape": "Instance"
+        }
+      },
+      "name": "UpgradeInstanceResult",
+      "type": "structure"
+    }
+  },
+  "version": "2.0"
+}
