@@ -1534,7 +1534,6 @@
     },
     "DBInstanceClassOfCreateDBInstanceReadReplicaRequest": {
       "enum": [
-        "db.mini",
         "db.e-small",
         "db.small",
         "db.e-small2",
@@ -1602,7 +1601,6 @@
     },
     "DBInstanceClassOfCreateDBInstanceRequest": {
       "enum": [
-        "db.mini",
         "db.e-small",
         "db.small",
         "db.e-small2",
@@ -1738,7 +1736,6 @@
     },
     "DBInstanceClassOfModifyDBInstanceRequest": {
       "enum": [
-        "db.mini",
         "db.e-small",
         "db.small",
         "db.e-small2",
@@ -1806,7 +1803,6 @@
     },
     "DBInstanceClassOfRestoreDBInstanceFromDBSnapshotRequest": {
       "enum": [
-        "db.mini",
         "db.e-small",
         "db.small",
         "db.e-small2",
@@ -1874,7 +1870,6 @@
     },
     "DBInstanceClassOfRestoreDBInstanceToPointInTimeRequest": {
       "enum": [
-        "db.mini",
         "db.e-small",
         "db.small",
         "db.e-small2",
