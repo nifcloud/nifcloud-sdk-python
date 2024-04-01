@@ -1,5 +1,16 @@
 # Changelog
 
+## [v1.11.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.11.0) (2024-04-01)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.10.0...v1.11.0)
+
+**Merged pull requests:**
+
+- Remove db.mini from rdb service [\#121](https://github.com/nifcloud/nifcloud-sdk-python/pull/121) ([SogoKato](https://github.com/SogoKato))
+- Remove hatoba and script [\#119](https://github.com/nifcloud/nifcloud-sdk-python/pull/119) ([SogoKato](https://github.com/SogoKato))
+- Feature/close hatoba and script [\#117](https://github.com/nifcloud/nifcloud-sdk-python/pull/117) ([SogoKato](https://github.com/SogoKato))
+- Update copyright [\#116](https://github.com/nifcloud/nifcloud-sdk-python/pull/116) ([tily](https://github.com/tily))
+
 ## [v1.10.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.10.0) (2024-01-31)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.9.0...v1.10.0)
