@@ -29,7 +29,7 @@ setup(
     description='Data-driven NIFCLOUD SDK for Python',
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
-    author='FUJITSU CLOUD TECHNOLOGIES',
+    author='Fujitsu',
     url='https://github.com/nifcloud/nifcloud-sdk-python',
     packages=find_packages(exclude=['tests*']),
     package_data={'nifcloud': ['data/*.json',
