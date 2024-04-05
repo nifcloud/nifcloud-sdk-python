@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.12.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.12.0) (2024-04-05)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.11.0...v1.12.0)
+
+**Merged pull requests:**
+
+- Add devops and devops-runner APIs [\#120](https://github.com/nifcloud/nifcloud-sdk-python/pull/120) ([SogoKato](https://github.com/SogoKato))
+
 ## [v1.11.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.11.0) (2024-04-01)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.10.0...v1.11.0)
