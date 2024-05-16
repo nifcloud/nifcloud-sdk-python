@@ -17582,8 +17582,8 @@
           "locationName": "cidrBlock",
           "shape": "String"
         },
-        "Descriprion": {
-          "locationName": "descriprion",
+        "Description": {
+          "locationName": "description",
           "shape": "String"
         },
         "DeviceIndex": {

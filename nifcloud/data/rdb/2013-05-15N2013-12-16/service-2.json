@@ -1668,7 +1668,6 @@
     },
     "DBInstanceClassOfDescribeOrderableDBInstanceOptionsRequest": {
       "enum": [
-        "db.mini",
         "db.e-small",
         "db.small",
         "db.e-small2",
