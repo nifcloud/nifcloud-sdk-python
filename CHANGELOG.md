@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.13.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.13.0) (2024-05-31)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.12.0...v1.13.0)
+
+**Merged pull requests:**
+
+- fix typo [\#122](https://github.com/nifcloud/nifcloud-sdk-python/pull/122) ([fuku2014](https://github.com/fuku2014))
+
 ## [v1.12.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.12.0) (2024-04-05)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.11.0...v1.12.0)
