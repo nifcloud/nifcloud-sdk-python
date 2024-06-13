@@ -12,7 +12,7 @@ class ClientDocumenter(client.ClientDocumenter):
         super()._add_model_driven_method(section, method_name)
         operation_name = self._client.meta.method_to_api_mapping[method_name]
         if self._service_name == "computing":
-            replace = r"\1<%s/rest/%s.htm>\2" % (NIFCLOUD_DOC_BASE,
+            replace = r"\1<%s/cp/%s.htm>\2" % (NIFCLOUD_DOC_BASE,
                                                  operation_name)
         elif self._service_name == "storage":
             replace = r"\1<%s/object-storage-service/%s.htm>\2" % (NIFCLOUD_DOC_BASE,
