@@ -211,6 +211,20 @@
         "shape": "GetInstanceResult"
       }
     },
+    "GetInstanceMetrics": {
+      "documentation": "<p>DevOpsサーバーのメトリックス情報を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/instances/{InstanceId}/metrics/{MetricsName}"
+      },
+      "input": {
+        "shape": "GetInstanceMetricsRequest"
+      },
+      "name": "GetInstanceMetrics",
+      "output": {
+        "shape": "GetInstanceMetricsResult"
+      }
+    },
     "GetParameterGroup": {
       "documentation": "<p>パラメーターグループの情報を取得します。</p>",
       "http": {
@@ -335,6 +349,20 @@
       "name": "RevokeFirewallRules",
       "output": {
         "shape": "RevokeFirewallRulesResult"
+      }
+    },
+    "SetupAlert": {
+      "documentation": "<p>指定したDevOpsサーバーのアラート設定を変更します。<br/>空文字を設定した場合はアラート設定を解除します。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/instances/{InstanceId}:setupAlert"
+      },
+      "input": {
+        "shape": "SetupAlertRequest"
+      },
+      "name": "SetupAlert",
+      "output": {
+        "shape": "SetupAlertResult"
       }
     },
     "UpdateBackupRule": {
@@ -614,6 +642,24 @@
       "name": "Boolean",
       "type": "boolean"
     },
+    "BucketUseObjects": {
+      "members": {
+        "ContainerRegistry": {
+          "locationName": "containerRegistry",
+          "shape": "String"
+        },
+        "Lfs": {
+          "locationName": "lfs",
+          "shape": "String"
+        },
+        "Packages": {
+          "locationName": "packages",
+          "shape": "String"
+        }
+      },
+      "name": "BucketUseObjects",
+      "type": "structure"
+    },
     "CidrIpOfrulesForAuthorizeFirewallRules": {
       "enum": [
         "IPv4IP",
@@ -718,6 +764,10 @@
         "NetworkConfig": {
           "locationName": "networkConfig",
           "shape": "RequestNetworkConfig"
+        },
+        "ObjectStorageConfig": {
+          "locationName": "objectStorageConfig",
+          "shape": "RequestObjectStorageConfig"
         },
         "ParameterGroupName": {
           "locationName": "parameterGroupName",
@@ -1022,6 +1072,48 @@
       "name": "GetFirewallGroupResult",
       "type": "structure"
     },
+    "GetInstanceMetricsRequest": {
+      "members": {
+        "EndTime": {
+          "location": "querystring",
+          "locationName": "endTime",
+          "shape": "String"
+        },
+        "InstanceId": {
+          "location": "uri",
+          "locationName": "InstanceId",
+          "shape": "String"
+        },
+        "MetricsName": {
+          "location": "uri",
+          "locationName": "MetricsName",
+          "shape": "String"
+        },
+        "StartTime": {
+          "location": "querystring",
+          "locationName": "startTime",
+          "shape": "String"
+        }
+      },
+      "name": "GetInstanceMetricsRequest",
+      "required": [
+        "EndTime",
+        "InstanceId",
+        "MetricsName",
+        "StartTime"
+      ],
+      "type": "structure"
+    },
+    "GetInstanceMetricsResult": {
+      "members": {
+        "Metrics": {
+          "locationName": "metrics",
+          "shape": "ListOfMetrics"
+        }
+      },
+      "name": "GetInstanceMetricsResult",
+      "type": "structure"
+    },
     "GetInstanceRequest": {
       "members": {
         "InstanceId": {
@@ -1112,6 +1204,10 @@
           "locationName": "networkConfig",
           "shape": "NetworkConfig"
         },
+        "ObjectStorageConfig": {
+          "locationName": "objectStorageConfig",
+          "shape": "ObjectStorageConfig"
+        },
         "ParameterGroupName": {
           "locationName": "parameterGroupName",
           "shape": "String"
@@ -1135,6 +1231,10 @@
         "Status": {
           "locationName": "status",
           "shape": "Status"
+        },
+        "To": {
+          "locationName": "to",
+          "shape": "String"
         },
         "UpgradableGitlabVersions": {
           "locationName": "upgradableGitlabVersions",
@@ -1306,6 +1406,10 @@
           "locationName": "networkConfig",
           "shape": "NetworkConfig"
         },
+        "ObjectStorageConfig": {
+          "locationName": "objectStorageConfig",
+          "shape": "ObjectStorageConfig"
+        },
         "ParameterGroupName": {
           "locationName": "parameterGroupName",
           "shape": "String"
@@ -1329,6 +1433,10 @@
         "Status": {
           "locationName": "status",
           "shape": "Status"
+        },
+        "To": {
+          "locationName": "to",
+          "shape": "String"
         },
         "UpgradableGitlabVersions": {
           "locationName": "upgradableGitlabVersions",
@@ -1438,6 +1546,13 @@
       "name": "ListOfInstances",
       "type": "list"
     },
+    "ListOfMetrics": {
+      "member": {
+        "shape": "Metrics"
+      },
+      "name": "ListOfMetrics",
+      "type": "list"
+    },
     "ListOfParameterGroups": {
       "member": {
         "shape": "ParameterGroups"
@@ -1493,6 +1608,32 @@
       "name": "Long",
       "type": "long"
     },
+    "Metrics": {
+      "members": {
+        "MaxValue": {
+          "locationName": "maxValue",
+          "shape": "Double"
+        },
+        "MinValue": {
+          "locationName": "minValue",
+          "shape": "Double"
+        },
+        "Timestamp": {
+          "locationName": "timestamp",
+          "shape": "String"
+        },
+        "Timezone": {
+          "locationName": "timezone",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "Double"
+        }
+      },
+      "name": "Metrics",
+      "type": "structure"
+    },
     "NetworkConfig": {
       "members": {
         "NetworkId": {
@@ -1505,6 +1646,24 @@
         }
       },
       "name": "NetworkConfig",
+      "type": "structure"
+    },
+    "ObjectStorageConfig": {
+      "members": {
+        "Account": {
+          "locationName": "account",
+          "shape": "String"
+        },
+        "BucketUseObjects": {
+          "locationName": "bucketUseObjects",
+          "shape": "BucketUseObjects"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "String"
+        }
+      },
+      "name": "ObjectStorageConfig",
       "type": "structure"
     },
     "ParameterGroup": {
@@ -1625,6 +1784,40 @@
       "name": "RebootInstanceResult",
       "type": "structure"
     },
+    "RegionOfobjectStorageConfigForCreateInstance": {
+      "enum": [
+        "jp-east-1",
+        "jp-west-2"
+      ],
+      "name": "RegionOfobjectStorageConfigForCreateInstance",
+      "type": "string"
+    },
+    "RegionOfobjectStorageConfigForRestoreInstance": {
+      "enum": [
+        "jp-east-1",
+        "jp-west-2"
+      ],
+      "name": "RegionOfobjectStorageConfigForRestoreInstance",
+      "type": "string"
+    },
+    "RequestBucketUseObjects": {
+      "members": {
+        "ContainerRegistry": {
+          "locationName": "containerRegistry",
+          "shape": "String"
+        },
+        "Lfs": {
+          "locationName": "lfs",
+          "shape": "String"
+        },
+        "Packages": {
+          "locationName": "packages",
+          "shape": "String"
+        }
+      },
+      "name": "RequestBucketUseObjects",
+      "type": "structure"
+    },
     "RequestNetworkConfig": {
       "members": {
         "NetworkId": {
@@ -1637,6 +1830,42 @@
         }
       },
       "name": "RequestNetworkConfig",
+      "type": "structure"
+    },
+    "RequestObjectStorageConfig": {
+      "members": {
+        "Account": {
+          "locationName": "account",
+          "shape": "String"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "RegionOfobjectStorageConfigForCreateInstance"
+        },
+        "RequestBucketUseObjects": {
+          "locationName": "bucketUseObjects",
+          "shape": "RequestBucketUseObjects"
+        }
+      },
+      "name": "RequestObjectStorageConfig",
+      "type": "structure"
+    },
+    "RequestObjectStorageConfigOfRestoreInstance": {
+      "members": {
+        "Account": {
+          "locationName": "account",
+          "shape": "String"
+        },
+        "Region": {
+          "locationName": "region",
+          "shape": "RegionOfobjectStorageConfigForRestoreInstance"
+        },
+        "RequestBucketUseObjects": {
+          "locationName": "bucketUseObjects",
+          "shape": "RequestBucketUseObjects"
+        }
+      },
+      "name": "RequestObjectStorageConfigOfRestoreInstance",
       "type": "structure"
     },
     "RequestParameters": {
@@ -1873,6 +2102,10 @@
           "locationName": "networkConfig",
           "shape": "RequestNetworkConfig"
         },
+        "ObjectStorageConfig": {
+          "locationName": "objectStorageConfig",
+          "shape": "RequestObjectStorageConfigOfRestoreInstance"
+        },
         "ParameterGroupName": {
           "locationName": "parameterGroupName",
           "shape": "String"
@@ -1957,6 +2190,35 @@
         }
       },
       "name": "Rules",
+      "type": "structure"
+    },
+    "SetupAlertRequest": {
+      "members": {
+        "InstanceId": {
+          "location": "uri",
+          "locationName": "InstanceId",
+          "shape": "String"
+        },
+        "To": {
+          "locationName": "to",
+          "shape": "String"
+        }
+      },
+      "name": "SetupAlertRequest",
+      "required": [
+        "InstanceId",
+        "To"
+      ],
+      "type": "structure"
+    },
+    "SetupAlertResult": {
+      "members": {
+        "Instance": {
+          "locationName": "instance",
+          "shape": "Instance"
+        }
+      },
+      "name": "SetupAlertResult",
       "type": "structure"
     },
     "Status": {
