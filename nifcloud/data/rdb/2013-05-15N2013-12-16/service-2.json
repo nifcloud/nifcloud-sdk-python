@@ -2118,6 +2118,7 @@
       "enum": [
         "mysql5.6",
         "mysql5.7",
+        "mysql8.0",
         "postgres9.3",
         "postgres9.6",
         "postgres11",
