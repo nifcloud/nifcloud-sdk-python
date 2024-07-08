@@ -234,14 +234,6 @@
     }
   },
   "shapes": {
-    "AccessLevelOfRegisterRunnerRequest": {
-      "enum": [
-        "not_protected",
-        "ref_protected"
-      ],
-      "name": "AccessLevelOfRegisterRunnerRequest",
-      "type": "string"
-    },
     "AvailabilityZoneOfCreateRunnerRequest": {
       "enum": [
         "east-11",
@@ -618,13 +610,6 @@
       "name": "ListOfRequestExtraHosts",
       "type": "list"
     },
-    "ListOfRequestTags": {
-      "member": {
-        "shape": "String"
-      },
-      "name": "ListOfRequestTags",
-      "type": "list"
-    },
     "ListOfRequestVolumes": {
       "member": {
         "shape": "String"
@@ -818,10 +803,6 @@
     },
     "RegisterRunnerRequest": {
       "members": {
-        "AccessLevel": {
-          "locationName": "accessLevel",
-          "shape": "AccessLevelOfRegisterRunnerRequest"
-        },
         "AuthenticationToken": {
           "locationName": "authenticationToken",
           "shape": "String"
@@ -838,46 +819,23 @@
           "locationName": "gitlabUrl",
           "shape": "String"
         },
-        "Locked": {
-          "locationName": "locked",
-          "shape": "Boolean"
-        },
-        "MaximumTimeout": {
-          "locationName": "maximumTimeout",
-          "shape": "Integer"
-        },
         "ParameterGroupName": {
           "locationName": "parameterGroupName",
           "shape": "String"
         },
-        "Paused": {
-          "locationName": "paused",
-          "shape": "Boolean"
-        },
         "Privileged": {
           "locationName": "privileged",
-          "shape": "Boolean"
-        },
-        "RegistrationToken": {
-          "locationName": "registrationToken",
-          "shape": "String"
-        },
-        "RunUntagged": {
-          "locationName": "runUntagged",
           "shape": "Boolean"
         },
         "RunnerName": {
           "location": "uri",
           "locationName": "RunnerName",
           "shape": "String"
-        },
-        "Tags": {
-          "locationName": "tags",
-          "shape": "ListOfRequestTags"
         }
       },
       "name": "RegisterRunnerRequest",
       "required": [
+        "AuthenticationToken",
         "GitlabUrl",
         "RunnerName"
       ],
