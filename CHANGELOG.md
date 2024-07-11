@@ -1,5 +1,14 @@
 # Changelog
 
+## [v1.14.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.14.0) (2024-07-11)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.13.0...v1.14.0)
+
+**Merged pull requests:**
+
+- update models [\#124](https://github.com/nifcloud/nifcloud-sdk-python/pull/124) ([fuku2014](https://github.com/fuku2014))
+- fix: NIFCLOUD API Documentation link [\#123](https://github.com/nifcloud/nifcloud-sdk-python/pull/123) ([norikmb](https://github.com/norikmb))
+
 ## [v1.13.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.13.0) (2024-05-31)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.12.0...v1.13.0)
