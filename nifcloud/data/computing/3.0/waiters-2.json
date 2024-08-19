@@ -790,6 +790,45 @@
           "state": "success"
         }
       ]
+    },
+    "MultiIpAddressGroupExists": {
+      "delay": 20,
+      "maxAttempts": 40,
+      "operation": "DescribeMultiIpAddressGroups",
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(MultiIpAddressGroupsSet[]) > `0`",
+          "state": "success"
+        }
+      ]
+    },
+    "MultiIpAddressGroupAvailable": {
+      "delay": 20,
+      "operation": "DescribeMultiIpAddressGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "pathAll",
+          "expected": "available",
+          "state": "success",
+          "argument": "MultiIpAddressGroupsSet[].Status"
+        }
+      ]
+    },
+    "MultiIpAddressGroupDeleted": {
+      "delay": 20,
+      "operation": "DescribeMultiIpAddressGroups",
+      "maxAttempts": 40,
+      "acceptors": [
+        {
+          "matcher": "path",
+          "expected": true,
+          "argument": "length(MultiIpAddressGroupsSet[]) == `0`",
+          "state": "success"
+        }
+      ]
     }
   }
 }
