@@ -1079,6 +1079,11 @@
     },
     "UnregisterRunnerRequest": {
       "members": {
+        "DisableTokenRevocation": {
+          "location": "querystring",
+          "locationName": "disableTokenRevocation",
+          "shape": "Boolean"
+        },
         "RegistrationId": {
           "location": "uri",
           "locationName": "RegistrationId",
