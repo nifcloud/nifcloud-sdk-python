@@ -35,7 +35,7 @@ setup(
     package_data={'nifcloud': ['data/*.json',
                                'data/*/*/*.json']},
     include_package_data=True,
-    install_requires=['botocore==1.31.1'],
+    install_requires=['botocore==1.37.10'],
     license='Apache License 2.0',
     classifiers=(
         'Development Status :: 5 - Production/Stable',
@@ -45,10 +45,11 @@ setup(
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
     ),
 )
