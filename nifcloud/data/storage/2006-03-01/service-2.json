@@ -618,7 +618,7 @@
       "members": {
         "Tag": {
           "locationName": "Tag",
-          "shape": "Tag"
+          "shape": "ListOfTag"
         }
       },
       "name": "And",
@@ -765,16 +765,8 @@
     },
     "Contents": {
       "members": {
-        "DisplayName": {
-          "locationName": "DisplayName",
-          "shape": "String"
-        },
         "ETag": {
           "locationName": "ETag",
-          "shape": "String"
-        },
-        "ID": {
-          "locationName": "ID",
           "shape": "String"
         },
         "Key": {
@@ -1136,7 +1128,7 @@
       "members": {
         "Rule": {
           "locationName": "Rule",
-          "shape": "Rule"
+          "shape": "ListOfRule"
         }
       },
       "name": "GetBucketLifecycleConfigurationResult",
@@ -2174,12 +2166,36 @@
       "name": "ListOfRequestRule",
       "type": "list"
     },
+    "ListOfRequestTag": {
+      "flattened": true,
+      "member": {
+        "shape": "RequestTag"
+      },
+      "name": "ListOfRequestTag",
+      "type": "list"
+    },
     "ListOfRequestTagSet": {
       "flattened": true,
       "member": {
         "shape": "RequestTagSet"
       },
       "name": "ListOfRequestTagSet",
+      "type": "list"
+    },
+    "ListOfRule": {
+      "flattened": true,
+      "member": {
+        "shape": "Rule"
+      },
+      "name": "ListOfRule",
+      "type": "list"
+    },
+    "ListOfTag": {
+      "flattened": true,
+      "member": {
+        "shape": "Tag"
+      },
+      "name": "ListOfTag",
       "type": "list"
     },
     "ListOfTagSetOfGetBucketTagging": {
@@ -2789,9 +2805,9 @@
     },
     "RequestAnd": {
       "members": {
-        "RequestTag": {
+        "ListOfRequestTag": {
           "locationName": "Tag",
-          "shape": "RequestTag"
+          "shape": "ListOfRequestTag"
         }
       },
       "name": "RequestAnd",
@@ -3137,14 +3153,6 @@
     },
     "Upload": {
       "members": {
-        "DisplayName": {
-          "locationName": "DisplayName",
-          "shape": "String"
-        },
-        "ID": {
-          "locationName": "ID",
-          "shape": "String"
-        },
         "Initiated": {
           "locationName": "Initiated",
           "shape": "TStamp"
@@ -3366,16 +3374,8 @@
     },
     "Version": {
       "members": {
-        "DisplayName": {
-          "locationName": "DisplayName",
-          "shape": "String"
-        },
         "ETag": {
           "locationName": "ETag",
-          "shape": "String"
-        },
-        "ID": {
-          "locationName": "ID",
           "shape": "String"
         },
         "IsLatest": {

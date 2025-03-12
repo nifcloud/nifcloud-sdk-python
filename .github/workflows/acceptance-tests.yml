@@ -12,7 +12,8 @@ env:
   NIFCLOUD_STORAGE_SECRET_ACCESS_KEY: ${{ secrets.NIFCLOUD_STORAGE_SECRET_ACCESS_KEY }}
 jobs:
   acceptancetest:
-    runs-on: ubuntu-latest
+    # ubuntu-24.04 later does not support Python 3.7
+    runs-on: ubuntu-22.04
     strategy:
       max-parallel: 1
       matrix:
