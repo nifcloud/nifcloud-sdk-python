@@ -15,7 +15,7 @@ It works by feeding AWS-SDK-compatible model JSONs to botocore module.
 
 ## Requirements
 
-- Python 3.7 or later
+- Python 3.8 or later
 
 ## How to Install
 
