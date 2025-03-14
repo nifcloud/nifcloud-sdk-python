@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.16.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.16.0) (2025-03-14)
+
+[Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.15.0...v1.16.0)
+
+**Merged pull requests:**
+
+- remove support python3.7 and update libs [\#128](https://github.com/nifcloud/nifcloud-sdk-python/pull/128) ([fuku2014](https://github.com/fuku2014))
+
 ## [v1.15.0](https://github.com/nifcloud/nifcloud-sdk-python/tree/v1.15.0) (2024-09-02)
 
 [Full Changelog](https://github.com/nifcloud/nifcloud-sdk-python/compare/v1.14.0...v1.15.0)
@@ -400,11 +408,11 @@
 
 - Update requires dist [\#27](https://github.com/nifcloud/nifcloud-sdk-python/pull/27) ([aokumasan](https://github.com/aokumasan))
 - Fix/update dependencies to fix vulnerability [\#26](https://github.com/nifcloud/nifcloud-sdk-python/pull/26) ([aokumasan](https://github.com/aokumasan))
-- Fix service-2.json for computing [\#25](https://github.com/nifcloud/nifcloud-sdk-python/pull/25) ([sato-mh](https://github.com/sato-mh))
+- Fix service-2.json for computing [\#25](https://github.com/nifcloud/nifcloud-sdk-python/pull/25) ([satomh](https://github.com/satomh))
 - Add serviceId to models [\#24](https://github.com/nifcloud/nifcloud-sdk-python/pull/24) ([aokumasan](https://github.com/aokumasan))
-- Fix dependency for requests [\#23](https://github.com/nifcloud/nifcloud-sdk-python/pull/23) ([sato-mh](https://github.com/sato-mh))
+- Fix dependency for requests [\#23](https://github.com/nifcloud/nifcloud-sdk-python/pull/23) ([satomh](https://github.com/satomh))
 - Add markdown support for pypi long description [\#22](https://github.com/nifcloud/nifcloud-sdk-python/pull/22) ([tottoto](https://github.com/tottoto))
-- Feature/update version of dependency libraries [\#21](https://github.com/nifcloud/nifcloud-sdk-python/pull/21) ([sato-mh](https://github.com/sato-mh))
+- Feature/update version of dependency libraries [\#21](https://github.com/nifcloud/nifcloud-sdk-python/pull/21) ([satomh](https://github.com/satomh))
 
 ## [v0.1.6](https://github.com/nifcloud/nifcloud-sdk-python/tree/v0.1.6) (2018-09-20)
 
@@ -414,9 +422,9 @@
 
 - fix botocore and awscli versions in setup.\* [\#19](https://github.com/nifcloud/nifcloud-sdk-python/pull/19) ([tily](https://github.com/tily))
 - Support Computing Network Interface API [\#18](https://github.com/nifcloud/nifcloud-sdk-python/pull/18) ([aokumasan](https://github.com/aokumasan))
-- Modify nifcloud-debugcli to support new version of awscli [\#17](https://github.com/nifcloud/nifcloud-sdk-python/pull/17) ([sato-mh](https://github.com/sato-mh))
+- Modify nifcloud-debugcli to support new version of awscli [\#17](https://github.com/nifcloud/nifcloud-sdk-python/pull/17) ([satomh](https://github.com/satomh))
 - Fix version of some dependencies for development [\#16](https://github.com/nifcloud/nifcloud-sdk-python/pull/16) ([aokumasan](https://github.com/aokumasan))
-- Modify to new endpoints [\#15](https://github.com/nifcloud/nifcloud-sdk-python/pull/15) ([sato-mh](https://github.com/sato-mh))
+- Modify to new endpoints [\#15](https://github.com/nifcloud/nifcloud-sdk-python/pull/15) ([satomh](https://github.com/satomh))
 - Fix Ca parameter of UploadSslCertificate in computing [\#14](https://github.com/nifcloud/nifcloud-sdk-python/pull/14) ([yoshd](https://github.com/yoshd))
 
 ## [v0.1.5](https://github.com/nifcloud/nifcloud-sdk-python/tree/v0.1.5) (2018-07-04)
@@ -440,8 +448,8 @@
 **Merged pull requests:**
 
 - add computing instance waiters [\#7](https://github.com/nifcloud/nifcloud-sdk-python/pull/7) ([tily](https://github.com/tily))
-- Feature/use pipenv scripts [\#6](https://github.com/nifcloud/nifcloud-sdk-python/pull/6) ([sato-mh](https://github.com/sato-mh))
-- Add script for uploading to pypi [\#5](https://github.com/nifcloud/nifcloud-sdk-python/pull/5) ([sato-mh](https://github.com/sato-mh))
+- Feature/use pipenv scripts [\#6](https://github.com/nifcloud/nifcloud-sdk-python/pull/6) ([satomh](https://github.com/satomh))
+- Add script for uploading to pypi [\#5](https://github.com/nifcloud/nifcloud-sdk-python/pull/5) ([satomh](https://github.com/satomh))
 
 ## [v0.1.3](https://github.com/nifcloud/nifcloud-sdk-python/tree/v0.1.3) (2018-04-06)
 
