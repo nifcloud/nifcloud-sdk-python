@@ -6307,7 +6307,7 @@
         },
         "DiskType": {
           "locationName": "DiskType",
-          "shape": "DiskTypeOfCreateVolumeRequest"
+          "shape": "String"
         },
         "InstanceId": {
           "locationName": "InstanceId",
@@ -8967,16 +8967,6 @@
       },
       "name": "DisassociateRouteTableResult",
       "type": "structure"
-    },
-    "DiskTypeOfCreateVolumeRequest": {
-      "enum": [
-        "6",
-        "7",
-        "8",
-        "9"
-      ],
-      "name": "DiskTypeOfCreateVolumeRequest",
-      "type": "string"
     },
     "DissociateUsersRequest": {
       "members": {
