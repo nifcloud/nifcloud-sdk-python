@@ -78,6 +78,20 @@
         "shape": "GetRunnerResult"
       }
     },
+    "GetRunnerMetrics": {
+      "documentation": "<p>Runnerのメトリックス情報を取得します。</p>",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/runners/{RunnerName}/metrics/{MetricsName}"
+      },
+      "input": {
+        "shape": "GetRunnerMetricsRequest"
+      },
+      "name": "GetRunnerMetrics",
+      "output": {
+        "shape": "GetRunnerMetricsResult"
+      }
+    },
     "GetRunnerParameterGroup": {
       "documentation": "<p>Runnerパラメーターグループの情報を取得します。</p>",
       "http": {
@@ -160,6 +174,20 @@
       "name": "RegisterRunner",
       "output": {
         "shape": "RegisterRunnerResult"
+      }
+    },
+    "SetupRunnerAlert": {
+      "documentation": "<p>指定したRunnerのアラート設定を変更します。</p>",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/runners/{RunnerName}:setupAlert"
+      },
+      "input": {
+        "shape": "SetupRunnerAlertRequest"
+      },
+      "name": "SetupRunnerAlert",
+      "output": {
+        "shape": "SetupRunnerAlertResult"
       }
     },
     "UnregisterRunner": {
@@ -426,6 +454,48 @@
       "name": "ExtraHosts",
       "type": "structure"
     },
+    "GetRunnerMetricsRequest": {
+      "members": {
+        "EndTime": {
+          "location": "querystring",
+          "locationName": "endTime",
+          "shape": "String"
+        },
+        "MetricsName": {
+          "location": "uri",
+          "locationName": "MetricsName",
+          "shape": "String"
+        },
+        "RunnerName": {
+          "location": "uri",
+          "locationName": "RunnerName",
+          "shape": "String"
+        },
+        "StartTime": {
+          "location": "querystring",
+          "locationName": "startTime",
+          "shape": "String"
+        }
+      },
+      "name": "GetRunnerMetricsRequest",
+      "required": [
+        "EndTime",
+        "MetricsName",
+        "RunnerName",
+        "StartTime"
+      ],
+      "type": "structure"
+    },
+    "GetRunnerMetricsResult": {
+      "members": {
+        "Metrics": {
+          "locationName": "metrics",
+          "shape": "ListOfMetrics"
+        }
+      },
+      "name": "GetRunnerMetricsResult",
+      "type": "structure"
+    },
     "GetRunnerParameterGroupRequest": {
       "members": {
         "ParameterGroupName": {
@@ -589,6 +659,13 @@
       "name": "ListOfExtraHosts",
       "type": "list"
     },
+    "ListOfMetrics": {
+      "member": {
+        "shape": "Metrics"
+      },
+      "name": "ListOfMetrics",
+      "type": "list"
+    },
     "ListOfParameterGroups": {
       "member": {
         "shape": "ParameterGroups"
@@ -697,6 +774,32 @@
     "Long": {
       "name": "Long",
       "type": "long"
+    },
+    "Metrics": {
+      "members": {
+        "MaxValue": {
+          "locationName": "maxValue",
+          "shape": "Double"
+        },
+        "MinValue": {
+          "locationName": "minValue",
+          "shape": "Double"
+        },
+        "Timestamp": {
+          "locationName": "timestamp",
+          "shape": "String"
+        },
+        "Timezone": {
+          "locationName": "timezone",
+          "shape": "String"
+        },
+        "Value": {
+          "locationName": "value",
+          "shape": "Double"
+        }
+      },
+      "name": "Metrics",
+      "type": "structure"
     },
     "ModifyRunnerInstanceTypeRequest": {
       "members": {
@@ -996,6 +1099,10 @@
         "SystemId": {
           "locationName": "systemId",
           "shape": "String"
+        },
+        "To": {
+          "locationName": "to",
+          "shape": "String"
         }
       },
       "name": "Runner",
@@ -1050,9 +1157,41 @@
         "SystemId": {
           "locationName": "systemId",
           "shape": "String"
+        },
+        "To": {
+          "locationName": "to",
+          "shape": "String"
         }
       },
       "name": "Runners",
+      "type": "structure"
+    },
+    "SetupRunnerAlertRequest": {
+      "members": {
+        "RunnerName": {
+          "location": "uri",
+          "locationName": "RunnerName",
+          "shape": "String"
+        },
+        "To": {
+          "locationName": "to",
+          "shape": "String"
+        }
+      },
+      "name": "SetupRunnerAlertRequest",
+      "required": [
+        "RunnerName"
+      ],
+      "type": "structure"
+    },
+    "SetupRunnerAlertResult": {
+      "members": {
+        "Runner": {
+          "locationName": "runner",
+          "shape": "Runner"
+        }
+      },
+      "name": "SetupRunnerAlertResult",
       "type": "structure"
     },
     "Status": {

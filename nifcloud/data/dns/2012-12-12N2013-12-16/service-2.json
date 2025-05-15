@@ -643,7 +643,7 @@
         },
         "SetIdentifier": {
           "locationName": "SetIdentifier",
-          "shape": "String"
+          "shape": "Integer"
         },
         "TTL": {
           "locationName": "TTL",
@@ -721,7 +721,7 @@
         },
         "SetIdentifier": {
           "locationName": "SetIdentifier",
-          "shape": "String"
+          "shape": "Integer"
         },
         "TTL": {
           "locationName": "TTL",

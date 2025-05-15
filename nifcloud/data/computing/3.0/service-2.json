@@ -264,7 +264,7 @@
       }
     },
     "CreateImage": {
-      "documentation": "<p>指定したサーバーをイメージ化し、カスタマイズイメージとして保存します。</p><p>サーバーをイメージ化するためには、サーバーが停止中もしくは起動中である必要があります。</p><p>カスタマイズイメージの作成には、時間がかかることがあります。このAPIのレスポンス「imageState」を確認し「pending」が返ってきた、またはタイムアウトした場合は、API「DescribeImages」のレスポンス値「imageState」でカスタマイズイメージのステータスを確認できます。</p><p>ディスクが接続しているサーバーのイメージ化は、指定したサーバーと同一ゾーンでのみ実行可能です。 イメージ化元サーバーを残さない場合は、関連する付替IPアドレス設定もあわせて解除します。</p>",
+      "documentation": "<p>指定したサーバーをイメージ化し、カスタマイズイメージとして保存します。</p><p>サーバーをイメージ化するためには、サーバーが停止中もしくは起動中である必要があります。</p><p>カスタマイズイメージの作成には、時間がかかることがあります。このAPIのレスポンス「imageState」を確認し「pending」が返ってきた、またはタイムアウトした場合は、API「DescribeImages」のレスポンス値「imageState」でカスタマイズイメージのステータスを確認できます。</p><p>イメージ化が完了するまでの間は、API「DescribeImages」のレスポンス値「imageState」が「deregistered(利用不可)」となります。</p><p>API「DescribeImages」のレスポンス値「imageState」が「available(利用可能)」となるまで待ってください。</p><p>ディスクが接続しているサーバーのイメージ化は、指定したサーバーと同一ゾーンでのみ実行可能です。</p><p>イメージ化元サーバーを残さない場合は、関連する付替IPアドレス設定もあわせて解除します。</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -1090,7 +1090,7 @@
       }
     },
     "DescribeSecurityActivities": {
-      "documentation": "<p>指定したファイアウォールグループのログ情報を取得します。</p><p>ファイアウォールグループを指定するためには、ファイアウォールグループ名が必要です。</p><p>ActivityDateに”all”を指定した場合は、Range設定を無視し保存されているログを全件取得します。</p><p>(この場合に返却されるログの件数については <a href=\"https://docs.nifcloud.com/cp/spec/fw/log.htm#%E3%83%AD%E3%82%B0%E4%BF%9D%E5%AD%98%E6%9C%9F%E9%96%93%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6\">技術仕様/制限値 ファイアウォール：ログ</a> をご参照ください。)</p>",
+      "documentation": "<p>指定したファイアウォールグループのログ情報を取得します。</p><p>ファイアウォールグループを指定するためには、ファイアウォールグループ名が必要です。</p><p>ActivityDateに”all”を指定した場合は、Range設定を無視し取得可能な最大件数のログを取得します。</p><p>(この場合に返却されるログの件数については <a href=\"https://docs.nifcloud.com/cp/spec/fw/log.htm#%E3%83%AD%E3%82%B0%E4%BF%9D%E5%AD%98%E6%9C%9F%E9%96%93%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6\">技術仕様/制限値 ファイアウォール：ログ</a> をご参照ください。)</p>",
       "http": {
         "method": "POST",
         "requestUri": "/api/"
@@ -6307,7 +6307,7 @@
         },
         "DiskType": {
           "locationName": "DiskType",
-          "shape": "DiskTypeOfCreateVolumeRequest"
+          "shape": "String"
         },
         "InstanceId": {
           "locationName": "InstanceId",
@@ -8967,20 +8967,6 @@
       },
       "name": "DisassociateRouteTableResult",
       "type": "structure"
-    },
-    "DiskTypeOfCreateVolumeRequest": {
-      "enum": [
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9"
-      ],
-      "name": "DiskTypeOfCreateVolumeRequest",
-      "type": "string"
     },
     "DissociateUsersRequest": {
       "members": {
